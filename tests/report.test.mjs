@@ -231,3 +231,68 @@ test('new creates an unpublished draft and refuses to overwrite existing work', 
   await assert.rejects(access(path.join(root, 'data/reports')), { code: 'ENOENT' });
   await assert.rejects(main(['new', '2026-09-29'], root), { code: 'EEXIST' });
 });
+
+function landscape() {
+  const value = report();
+  value.kind = 'landscape';
+  delete value.coverage;
+  value.overview = { 'llm-recipe': 'An editorial map of reusable training methods and open research questions.' };
+  value.entries[0].published_on = '2023-06-01';
+  value.entries[0].novelty = 'baseline';
+  value.entries[0].positioning = 'established-method';
+  value.entries[0].links.blog = 'https://research.test/method-blog';
+  return value;
+}
+function landscapeRecord(value = landscape()) { return { report: value, filePath: `data/landscapes/${value.date}.json` }; }
+
+test('landscapes admit historical references and blog links without weakening daily freshness or limits', () => {
+  const value = landscape();
+  assert.deepEqual(validateReport(value, { ...options, filePath: landscapeRecord(value).filePath }), []);
+  const daily = report();
+  daily.entries[0] = structuredClone(value.entries[0]);
+  assert.match(validateReport(daily, options).join('\n'), /novelty/);
+  value.coverage = scheduledWindow(value.date);
+  assert.match(validateReport(value, options).join('\n'), /as-of date/);
+  assert.match(validateReport(report(), { ...options, config: { ...config, delta_start_date: '2026-09-30' } }).join('\n'), /pre-baseline backfill/);
+});
+
+test('daily deltas reject baseline duplicates and accept dated substantive updates', () => {
+  const baseline = landscapeRecord();
+  const daily = report('2026-09-30');
+  assert.match(validateCollection([baseline, record(daily)], options).join('\n'), /landscape:2026-09-29/);
+  daily.entries[0].novelty = 'material-update';
+  daily.entries[0].update_note = '2026-09-30: The authors added a new evaluation protocol and results.';
+  assert.deepEqual(validateCollection([baseline, record(daily)], options), []);
+  const sameDay = report();
+  assert.match(validateCollection([record(sameDay), baseline], options).join('\n'), /repeats a source/);
+});
+
+test('material updates cannot replay changes that predate their baseline coverage', () => {
+  const baseline = landscapeRecord();
+  const daily = report('2026-09-30');
+  daily.entries[0].novelty = 'material-update';
+  daily.entries[0].update_note = '2026-09-28: The authors added a new evaluation protocol and results.';
+  // The update is recent enough for the discovery window, but already predates the baseline.
+  assert.deepEqual(validateReport(daily, options), []);
+  assert.match(validateCollection([record(daily), baseline], options).join('\n'), /previous coverage date 2026-09-29/);
+  daily.entries[0].update_note = '2026-09-29: The authors added a new evaluation protocol and results.';
+  assert.deepEqual(validateCollection([baseline, record(daily)], options), []);
+  daily.entries[0].update_note = '2026-09-30: The authors added a new evaluation protocol and results.';
+  assert.deepEqual(validateCollection([baseline, record(daily)], options), []);
+});
+
+test('landscape build integrates topic indexes and dedup registry while keeping the daily archive empty', async t => {
+  const root = await fixture(t);
+  const value = landscape();
+  const file = path.join(root, landscapeRecord(value).filePath);
+  await mkdir(path.dirname(file), { recursive: true });
+  await writeFile(file, JSON.stringify(value));
+  await buildRepository(root, { now });
+  await buildRepository(root, { now, check: true });
+  const index = JSON.parse(await readFile(path.join(root, 'data/index.json'), 'utf8'));
+  assert.equal(index.reports.length, 0);
+  assert.equal(index.landscapes[0].path, 'landscape/2026-09-29.md');
+  assert.equal(index.entries[0].report_kind, 'landscape');
+  assert.match(await readFile(path.join(root, 'landscape/2026-09-29.md'), 'utf8'), /not a list of papers released today/);
+  assert.match(await readFile(path.join(root, 'topics/llm-recipe/data-curation-tokenization/README.md'), 'utf8'), /Landscape baseline/);
+});

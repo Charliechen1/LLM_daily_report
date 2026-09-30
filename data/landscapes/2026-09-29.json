@@ -1,15 +1,315 @@
 {
   "schema_version": 1,
-  "reports": [],
-  "landscapes": [
-    {
-      "date": "2026-09-29",
-      "path": "landscape/2026-09-29.md",
-      "source": "data/landscapes/2026-09-29.json",
-      "search_status": "partial",
-      "entries": 35
-    }
-  ],
+  "kind": "landscape",
+  "date": "2026-09-29",
+  "timezone": "America/Los_Angeles",
+  "generated_at": "2026-09-30T04:13:56.564Z",
+  "overview": {
+    "llm-recipe": "The selected work connects data quality and architecture to a staged training process: broad pretraining, targeted continuation, adaptation, preference learning, and reasoning reinforcement learning. Current directions include synthetic training data, efficient hybrid expert models, architecture-aware context extension, and interpretable post-training interventions. Open recipes make individual choices easier to inspect, but improvements should be compared under the same data, total compute, evaluation protocol, and downstream task.",
+    "ai-agent-dev": "Agent capability depends on the combination of a model, its interaction loop, tools, context, and execution environment. Durable patterns include reasoning-action loops, model-oriented interfaces, retrieval, persistent progress records, and task-specific evaluation; recent work explores learned harnesses, retrospective skill learning, and more deliberate allocation of inference effort. Multi-agent execution is useful when work can be divided, while success, cost, recovery behavior, and resistance to untrusted instructions require separate measurement.",
+    "ai-training-inference-infra": "Training systems combine several forms of parallelism, while reinforcement learning adds a changing balance between generation and policy updates. Serving systems manage batching, prefill and decoding, cache reuse, and memory placement; recent work pushes attention kernels, cache compression, and low-precision learning further. Hardware, interconnects, and checkpointing determine whether local improvements survive at system scale, so kernel throughput, training throughput, and end-to-end application performance should be compared separately."
+  },
+  "search": {
+    "status": "partial",
+    "notes": "Curated baseline covering all 26 topics, with original publication dates preserved. Every included contribution was checked against full primary text; no experiments were independently reproduced. Established methods and open references provide context for current frontier research, rather than a global model leaderboard. Source-access gaps: three recent Recipe candidates (arXiv 2609.37510, 2609.38107, and 2609.37494) could not be fetched and were excluded; the Meta-Skills paper was accessible but its linked code repository could not be retrieved, so no available code release is claimed. These access gaps are recorded below; coverage is representative, not exhaustive.",
+    "sources_checked": [
+      {
+        "name": "arXiv cs.CL recent listing",
+        "url": "https://arxiv.org/list/cs.CL/recent",
+        "status": "ok"
+      },
+      {
+        "name": "Hugging Face daily discovery, September 29",
+        "url": "https://huggingface.co/papers/date/2026-09-29",
+        "status": "ok"
+      },
+      {
+        "name": "SYNTH full paper",
+        "url": "https://arxiv.org/html/2609.37891v1",
+        "status": "ok"
+      },
+      {
+        "name": "Kimi K3 full report",
+        "url": "https://arxiv.org/html/2607.24653v2",
+        "status": "ok"
+      },
+      {
+        "name": "Kimi K2 optimizer report",
+        "url": "https://arxiv.org/html/2507.20534v1",
+        "status": "ok"
+      },
+      {
+        "name": "Olmo 3 full report",
+        "url": "https://arxiv.org/html/2512.13961v2",
+        "status": "ok"
+      },
+      {
+        "name": "OlmPool full paper",
+        "url": "https://allenai.org/papers/olmpool",
+        "status": "ok"
+      },
+      {
+        "name": "LoRA Without Regret technical blog",
+        "url": "https://thinkingmachines.ai/blog/lora/",
+        "status": "ok"
+      },
+      {
+        "name": "DPO full paper",
+        "url": "https://arxiv.org/html/2305.18290v3",
+        "status": "ok"
+      },
+      {
+        "name": "DeepSeek-R1 full paper",
+        "url": "https://arxiv.org/html/2501.12948",
+        "status": "ok"
+      },
+      {
+        "name": "On-policy distillation technical blog",
+        "url": "https://thinkingmachines.ai/blog/on-policy-distillation/",
+        "status": "ok"
+      },
+      {
+        "name": "s1 full paper",
+        "url": "https://arxiv.org/html/2501.19393v3",
+        "status": "ok"
+      },
+      {
+        "name": "Anatomy of Post-Training full paper",
+        "url": "https://arxiv.org/html/2606.12360v2",
+        "status": "ok"
+      },
+      {
+        "name": "Recent teacher intervention candidate, full text unavailable",
+        "url": "https://arxiv.org/html/2609.37510v1",
+        "status": "unavailable"
+      },
+      {
+        "name": "Recent chain-of-thought evaluation candidate, full text unavailable",
+        "url": "https://arxiv.org/html/2609.38107v1",
+        "status": "unavailable"
+      },
+      {
+        "name": "Recent answer-pooling evaluation candidate, full text unavailable",
+        "url": "https://arxiv.org/html/2609.37494v1",
+        "status": "unavailable"
+      },
+      {
+        "name": "ReAct: Synergizing Reasoning and Acting in Language Models — paper",
+        "url": "https://arxiv.org/abs/2210.03629",
+        "status": "ok"
+      },
+      {
+        "name": "ReAct: Synergizing Reasoning and Acting in Language Models — project",
+        "url": "https://react-lm.github.io/",
+        "status": "ok"
+      },
+      {
+        "name": "ReAct: Synergizing Reasoning and Acting in Language Models — code",
+        "url": "https://github.com/ysymyth/ReAct",
+        "status": "ok"
+      },
+      {
+        "name": "ReAct: Synergizing Reasoning and Acting in Language Models — full text",
+        "url": "https://arxiv.org/html/2210.03629v3",
+        "status": "ok"
+      },
+      {
+        "name": "Thinking Before Thinking: Scaling Agentic Inference Through Meta-Reasoning — paper",
+        "url": "https://arxiv.org/abs/2609.38147",
+        "status": "ok"
+      },
+      {
+        "name": "Thinking Before Thinking: Scaling Agentic Inference Through Meta-Reasoning — full text",
+        "url": "https://arxiv.org/html/2609.38147v1",
+        "status": "ok"
+      },
+      {
+        "name": "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering — paper",
+        "url": "https://arxiv.org/abs/2405.15793",
+        "status": "ok"
+      },
+      {
+        "name": "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering — code",
+        "url": "https://github.com/SWE-agent/SWE-agent",
+        "status": "ok"
+      },
+      {
+        "name": "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering — full text",
+        "url": "https://arxiv.org/html/2405.15793v3",
+        "status": "ok"
+      },
+      {
+        "name": "Qwen-UI-Agent Technical Report: Toward Next-Generation Real-World Centric Foundation GUI Agents — paper",
+        "url": "https://arxiv.org/abs/2607.28227",
+        "status": "ok"
+      },
+      {
+        "name": "Qwen-UI-Agent Technical Report: Toward Next-Generation Real-World Centric Foundation GUI Agents — full text",
+        "url": "https://arxiv.org/html/2607.28227v1",
+        "status": "ok"
+      },
+      {
+        "name": "Effective context engineering for AI agents — blog",
+        "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+        "status": "ok"
+      },
+      {
+        "name": "Search-R1: Training LLMs to Reason and Leverage Search Engines with Reinforcement Learning — paper",
+        "url": "https://arxiv.org/abs/2503.09516",
+        "status": "ok"
+      },
+      {
+        "name": "Search-R1: Training LLMs to Reason and Leverage Search Engines with Reinforcement Learning — code",
+        "url": "https://github.com/PeterGriffinJin/Search-R1",
+        "status": "ok"
+      },
+      {
+        "name": "Search-R1: Training LLMs to Reason and Leverage Search Engines with Reinforcement Learning — full text",
+        "url": "https://arxiv.org/html/2503.09516v5",
+        "status": "ok"
+      },
+      {
+        "name": "Shockingly Simple Self-retrospection Improves Agentic Models Without RL — paper",
+        "url": "https://arxiv.org/abs/2609.35741",
+        "status": "ok"
+      },
+      {
+        "name": "Shockingly Simple Self-retrospection Improves Agentic Models Without RL — full text",
+        "url": "https://arxiv.org/html/2609.35741v1",
+        "status": "ok"
+      },
+      {
+        "name": "How we built our multi-agent research system — blog",
+        "url": "https://www.anthropic.com/engineering/multi-agent-research-system",
+        "status": "ok"
+      },
+      {
+        "name": "Effective harnesses for long-running agents — blog",
+        "url": "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents",
+        "status": "ok"
+      },
+      {
+        "name": "Effective harnesses for long-running agents — code",
+        "url": "https://github.com/anthropics/claude-quickstarts/tree/main/autonomous-coding",
+        "status": "ok"
+      },
+      {
+        "name": "Learning Meta-Skills for Agent Harness Design in Test-Time AI4AI — paper",
+        "url": "https://arxiv.org/abs/2609.38143",
+        "status": "ok"
+      },
+      {
+        "name": "Learning Meta-Skills for Agent Harness Design in Test-Time AI4AI — full text",
+        "url": "https://arxiv.org/html/2609.38143v1",
+        "status": "ok"
+      },
+      {
+        "name": "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents — paper",
+        "url": "https://arxiv.org/abs/2406.13352",
+        "status": "ok"
+      },
+      {
+        "name": "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents — code",
+        "url": "https://github.com/ethz-spylab/agentdojo",
+        "status": "ok"
+      },
+      {
+        "name": "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents — full text",
+        "url": "https://arxiv.org/html/2406.13352v3",
+        "status": "ok"
+      },
+      {
+        "name": "Failure-Transparent Agents: Benchmarking Post-Failure Reporting in Tool-Using Language Models — paper",
+        "url": "https://arxiv.org/abs/2609.35732",
+        "status": "ok"
+      },
+      {
+        "name": "Failure-Transparent Agents: Benchmarking Post-Failure Reporting in Tool-Using Language Models — full text",
+        "url": "https://arxiv.org/html/2609.35732v1",
+        "status": "ok"
+      },
+      {
+        "name": "Meta-Skill AI4AI linked code repository",
+        "url": "https://github.com/qiancheng-apodex/MetaSkill-AI4AI",
+        "status": "unavailable"
+      },
+      {
+        "name": "Dynamic Context Parallelism full text",
+        "url": "https://arxiv.org/html/2510.10620v1",
+        "status": "ok"
+      },
+      {
+        "name": "AReaL original full text",
+        "url": "https://arxiv.org/html/2505.24298v1",
+        "status": "ok"
+      },
+      {
+        "name": "AReaL current full text",
+        "url": "https://arxiv.org/html/2505.24298v5",
+        "status": "ok"
+      },
+      {
+        "name": "SGLang revised full text",
+        "url": "https://arxiv.org/html/2312.07104v2",
+        "status": "ok"
+      },
+      {
+        "name": "DistServe revised full text",
+        "url": "https://arxiv.org/html/2401.09670v3",
+        "status": "ok"
+      },
+      {
+        "name": "DeepSeek-V4.1-Flash full text",
+        "url": "https://arxiv.org/html/2609.19969v1",
+        "status": "ok"
+      },
+      {
+        "name": "LMCache revised full text",
+        "url": "https://arxiv.org/html/2510.09665v2",
+        "status": "ok"
+      },
+      {
+        "name": "FlashAttention-4 full text",
+        "url": "https://arxiv.org/html/2603.05451v1",
+        "status": "ok"
+      },
+      {
+        "name": "Full Pipeline FP8 RL PDF",
+        "url": "https://arxiv.org/pdf/2609.22870",
+        "status": "ok"
+      },
+      {
+        "name": "PyTorch async checkpoint technical blog",
+        "url": "https://pytorch.org/blog/6x-faster-async-checkpointing/",
+        "status": "ok"
+      },
+      {
+        "name": "DeepSeek hardware-network study full text",
+        "url": "https://arxiv.org/html/2505.09343v2",
+        "status": "ok"
+      },
+      {
+        "name": "Megatron-LM full paper",
+        "url": "https://arxiv.org/html/2104.04473v5",
+        "status": "ok"
+      },
+      {
+        "name": "Megatron-LM source repository",
+        "url": "https://github.com/NVIDIA/Megatron-LM",
+        "status": "ok"
+      },
+      {
+        "name": "PagedAttention and vLLM full paper",
+        "url": "https://arxiv.org/html/2309.06180",
+        "status": "ok"
+      },
+      {
+        "name": "vLLM source repository",
+        "url": "https://github.com/vllm-project/vllm",
+        "status": "ok"
+      }
+    ]
+  },
   "entries": [
     {
       "id": "arxiv:2609.37891",
@@ -37,11 +337,7 @@
         "limitations": "Knowledge is bounded by roughly 58,000 seed articles, language coverage is shaped by English sources, and experiments target small models; token savings are not equivalent to total savings once teacher generation is counted."
       },
       "novelty": "baseline",
-      "positioning": "frontier-research",
-      "report_kind": "landscape",
-      "report_date": "2026-09-29",
-      "report_path": "landscape/2026-09-29.md",
-      "search_status": "partial"
+      "positioning": "frontier-research"
     },
     {
       "id": "arxiv:2607.24653",
@@ -71,11 +367,7 @@
         "limitations": "The efficiency result combines multiple changes and is not an isolated architectural gain; the authors state that overall performance trails their strongest proprietary comparators, and released weights do not make the full training process reproducible."
       },
       "novelty": "baseline",
-      "positioning": "frontier-research",
-      "report_kind": "landscape",
-      "report_date": "2026-09-29",
-      "report_path": "landscape/2026-09-29.md",
-      "search_status": "partial"
+      "positioning": "frontier-research"
     },
     {
       "id": "arxiv:2507.20534",
@@ -105,11 +397,7 @@
         "limitations": "This is an established recipe component, not a current model ranking; the trillion-parameter evidence is author-reported, and the intervention needs attention-specific adaptation and threshold choices."
       },
       "novelty": "baseline",
-      "positioning": "established-method",
-      "report_kind": "landscape",
-      "report_date": "2026-09-29",
-      "report_path": "landscape/2026-09-29.md",
-      "search_status": "partial"
+      "positioning": "established-method"
     },
     {
       "id": "arxiv:2512.13961",
@@ -140,11 +428,7 @@
         "limitations": "Recipe development focuses on 7B and 32B models, with substantial compute requirements; improvements on one data domain can reduce performance on others, and release-time leadership claims are not treated as current rankings."
       },
       "novelty": "baseline",
-      "positioning": "open-reference",
-      "report_kind": "landscape",
-      "report_date": "2026-09-29",
-      "report_path": "landscape/2026-09-29.md",
-      "search_status": "partial"
+      "positioning": "open-reference"
     },
     {
       "id": "https://allenai.org/papers/olmpool",
@@ -174,11 +458,7 @@
         "limitations": "The controlled suite centers on approximately 7B dense models and one data/extension setup; these findings do not establish that the same architectural choices are universally harmful at other scales or training budgets."
       },
       "novelty": "baseline",
-      "positioning": "frontier-research",
-      "report_kind": "landscape",
-      "report_date": "2026-09-29",
-      "report_path": "landscape/2026-09-29.md",
-      "search_status": "partial"
+      "positioning": "frontier-research"
     },
     {
       "id": "https://thinkingmachines.ai/blog/lora/",
@@ -206,11 +486,7 @@
         "limitations": "Supervised comparisons primarily use log loss rather than broad downstream generation metrics; the findings apply to tested post-training regimes and do not guarantee equivalence for pretraining-like data volumes."
       },
       "novelty": "baseline",
-      "positioning": "established-method",
-      "report_kind": "landscape",
-      "report_date": "2026-09-29",
-      "report_path": "landscape/2026-09-29.md",
-      "search_status": "partial"
+      "positioning": "established-method"
     },
     {
       "id": "arxiv:2305.18290",
@@ -239,11 +515,7 @@
         "limitations": "Its preference-model assumptions and dependence on offline data matter; the original experiments do not establish universal superiority to online RL or robustness under distribution shift."
       },
       "novelty": "baseline",
-      "positioning": "established-method",
-      "report_kind": "landscape",
-      "report_date": "2026-09-29",
-      "report_path": "landscape/2026-09-29.md",
-      "search_status": "partial"
+      "positioning": "established-method"
     },
     {
       "id": "arxiv:2501.12948",
@@ -272,11 +544,7 @@
         "limitations": "Reliable verifiers are central, model-based rewards can be exploited, and the reported model has overthinking, language-mixing, structured-output, and tool-use limitations; this is a foundational recipe rather than a current leaderboard claim."
       },
       "novelty": "baseline",
-      "positioning": "established-method",
-      "report_kind": "landscape",
-      "report_date": "2026-09-29",
-      "report_path": "landscape/2026-09-29.md",
-      "search_status": "partial"
+      "positioning": "established-method"
     },
     {
       "id": "https://thinkingmachines.ai/blog/on-policy-distillation/",
@@ -305,11 +573,7 @@
         "limitations": "Teacher quality and token-probability access are prerequisites; some cost comparisons use extrapolated supervised baselines, and the cookbook's replacement models do not themselves reproduce the original numerical results."
       },
       "novelty": "baseline",
-      "positioning": "open-reference",
-      "report_kind": "landscape",
-      "report_date": "2026-09-29",
-      "report_path": "landscape/2026-09-29.md",
-      "search_status": "partial"
+      "positioning": "open-reference"
     },
     {
       "id": "arxiv:2501.19393",
@@ -338,11 +602,7 @@
         "limitations": "The principal evidence comes from a small set of math and science benchmarks; gains eventually flatten and are bounded by context length, so more thinking is not a guarantee of more reliable answers."
       },
       "novelty": "baseline",
-      "positioning": "established-method",
-      "report_kind": "landscape",
-      "report_date": "2026-09-29",
-      "report_path": "landscape/2026-09-29.md",
-      "search_status": "partial"
+      "positioning": "established-method"
     },
     {
       "id": "arxiv:2606.12360",
@@ -372,11 +632,7 @@
         "limitations": "Concept extraction and correlations constrain what can be diagnosed; the paper observes off-target effects for several interventions, so interpretability does not provide a general guarantee of safe post-training."
       },
       "novelty": "baseline",
-      "positioning": "frontier-research",
-      "report_kind": "landscape",
-      "report_date": "2026-09-29",
-      "report_path": "landscape/2026-09-29.md",
-      "search_status": "partial"
+      "positioning": "frontier-research"
     },
     {
       "id": "arxiv:2210.03629",
@@ -406,11 +662,7 @@
       ],
       "positioning": "established-method",
       "first_seen_at": "2026-09-30T04:13:56.564Z",
-      "novelty": "baseline",
-      "report_kind": "landscape",
-      "report_date": "2026-09-29",
-      "report_path": "landscape/2026-09-29.md",
-      "search_status": "partial"
+      "novelty": "baseline"
     },
     {
       "id": "arxiv:2609.38147",
@@ -439,11 +691,7 @@
       ],
       "positioning": "frontier-research",
       "first_seen_at": "2026-09-30T04:13:56.564Z",
-      "novelty": "baseline",
-      "report_kind": "landscape",
-      "report_date": "2026-09-29",
-      "report_path": "landscape/2026-09-29.md",
-      "search_status": "partial"
+      "novelty": "baseline"
     },
     {
       "id": "arxiv:2405.15793",
@@ -472,11 +720,7 @@
       ],
       "positioning": "open-reference",
       "first_seen_at": "2026-09-30T04:13:56.564Z",
-      "novelty": "baseline",
-      "report_kind": "landscape",
-      "report_date": "2026-09-29",
-      "report_path": "landscape/2026-09-29.md",
-      "search_status": "partial"
+      "novelty": "baseline"
     },
     {
       "id": "arxiv:2607.28227",
@@ -505,11 +749,7 @@
       ],
       "positioning": "frontier-research",
       "first_seen_at": "2026-09-30T04:13:56.564Z",
-      "novelty": "baseline",
-      "report_kind": "landscape",
-      "report_date": "2026-09-29",
-      "report_path": "landscape/2026-09-29.md",
-      "search_status": "partial"
+      "novelty": "baseline"
     },
     {
       "id": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
@@ -537,11 +777,7 @@
       ],
       "positioning": "established-method",
       "first_seen_at": "2026-09-30T04:13:56.564Z",
-      "novelty": "baseline",
-      "report_kind": "landscape",
-      "report_date": "2026-09-29",
-      "report_path": "landscape/2026-09-29.md",
-      "search_status": "partial"
+      "novelty": "baseline"
     },
     {
       "id": "arxiv:2503.09516",
@@ -570,11 +806,7 @@
       ],
       "positioning": "open-reference",
       "first_seen_at": "2026-09-30T04:13:56.564Z",
-      "novelty": "baseline",
-      "report_kind": "landscape",
-      "report_date": "2026-09-29",
-      "report_path": "landscape/2026-09-29.md",
-      "search_status": "partial"
+      "novelty": "baseline"
     },
     {
       "id": "arxiv:2609.35741",
@@ -602,11 +834,7 @@
       ],
       "positioning": "frontier-research",
       "first_seen_at": "2026-09-30T04:13:56.564Z",
-      "novelty": "baseline",
-      "report_kind": "landscape",
-      "report_date": "2026-09-29",
-      "report_path": "landscape/2026-09-29.md",
-      "search_status": "partial"
+      "novelty": "baseline"
     },
     {
       "id": "https://www.anthropic.com/engineering/multi-agent-research-system",
@@ -634,11 +862,7 @@
       ],
       "positioning": "established-method",
       "first_seen_at": "2026-09-30T04:13:56.564Z",
-      "novelty": "baseline",
-      "report_kind": "landscape",
-      "report_date": "2026-09-29",
-      "report_path": "landscape/2026-09-29.md",
-      "search_status": "partial"
+      "novelty": "baseline"
     },
     {
       "id": "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents",
@@ -667,11 +891,7 @@
       ],
       "positioning": "open-reference",
       "first_seen_at": "2026-09-30T04:13:56.564Z",
-      "novelty": "baseline",
-      "report_kind": "landscape",
-      "report_date": "2026-09-29",
-      "report_path": "landscape/2026-09-29.md",
-      "search_status": "partial"
+      "novelty": "baseline"
     },
     {
       "id": "arxiv:2609.38143",
@@ -699,11 +919,7 @@
       ],
       "positioning": "frontier-research",
       "first_seen_at": "2026-09-30T04:13:56.564Z",
-      "novelty": "baseline",
-      "report_kind": "landscape",
-      "report_date": "2026-09-29",
-      "report_path": "landscape/2026-09-29.md",
-      "search_status": "partial"
+      "novelty": "baseline"
     },
     {
       "id": "arxiv:2406.13352",
@@ -732,11 +948,7 @@
       ],
       "positioning": "open-reference",
       "first_seen_at": "2026-09-30T04:13:56.564Z",
-      "novelty": "baseline",
-      "report_kind": "landscape",
-      "report_date": "2026-09-29",
-      "report_path": "landscape/2026-09-29.md",
-      "search_status": "partial"
+      "novelty": "baseline"
     },
     {
       "id": "arxiv:2609.35732",
@@ -764,11 +976,7 @@
       ],
       "positioning": "frontier-research",
       "first_seen_at": "2026-09-30T04:13:56.564Z",
-      "novelty": "baseline",
-      "report_kind": "landscape",
-      "report_date": "2026-09-29",
-      "report_path": "landscape/2026-09-29.md",
-      "search_status": "partial"
+      "novelty": "baseline"
     },
     {
       "id": "arxiv:2104.04473",
@@ -797,11 +1005,7 @@
       ],
       "positioning": "established-method",
       "first_seen_at": "2026-09-30T04:13:56.564Z",
-      "novelty": "baseline",
-      "report_kind": "landscape",
-      "report_date": "2026-09-29",
-      "report_path": "landscape/2026-09-29.md",
-      "search_status": "partial"
+      "novelty": "baseline"
     },
     {
       "id": "arxiv:2510.10620",
@@ -829,11 +1033,7 @@
       ],
       "positioning": "frontier-research",
       "first_seen_at": "2026-09-30T04:13:56.564Z",
-      "novelty": "baseline",
-      "report_kind": "landscape",
-      "report_date": "2026-09-29",
-      "report_path": "landscape/2026-09-29.md",
-      "search_status": "partial"
+      "novelty": "baseline"
     },
     {
       "id": "arxiv:2505.24298",
@@ -862,11 +1062,7 @@
       ],
       "positioning": "open-reference",
       "first_seen_at": "2026-09-30T04:13:56.564Z",
-      "novelty": "baseline",
-      "report_kind": "landscape",
-      "report_date": "2026-09-29",
-      "report_path": "landscape/2026-09-29.md",
-      "search_status": "partial"
+      "novelty": "baseline"
     },
     {
       "id": "arxiv:2309.06180",
@@ -895,11 +1091,7 @@
       ],
       "positioning": "open-reference",
       "first_seen_at": "2026-09-30T04:13:56.564Z",
-      "novelty": "baseline",
-      "report_kind": "landscape",
-      "report_date": "2026-09-29",
-      "report_path": "landscape/2026-09-29.md",
-      "search_status": "partial"
+      "novelty": "baseline"
     },
     {
       "id": "arxiv:2312.07104",
@@ -928,11 +1120,7 @@
       ],
       "positioning": "open-reference",
       "first_seen_at": "2026-09-30T04:13:56.564Z",
-      "novelty": "baseline",
-      "report_kind": "landscape",
-      "report_date": "2026-09-29",
-      "report_path": "landscape/2026-09-29.md",
-      "search_status": "partial"
+      "novelty": "baseline"
     },
     {
       "id": "arxiv:2401.09670",
@@ -961,11 +1149,7 @@
       ],
       "positioning": "established-method",
       "first_seen_at": "2026-09-30T04:13:56.564Z",
-      "novelty": "baseline",
-      "report_kind": "landscape",
-      "report_date": "2026-09-29",
-      "report_path": "landscape/2026-09-29.md",
-      "search_status": "partial"
+      "novelty": "baseline"
     },
     {
       "id": "arxiv:2510.09665",
@@ -994,11 +1178,7 @@
       ],
       "positioning": "open-reference",
       "first_seen_at": "2026-09-30T04:13:56.564Z",
-      "novelty": "baseline",
-      "report_kind": "landscape",
-      "report_date": "2026-09-29",
-      "report_path": "landscape/2026-09-29.md",
-      "search_status": "partial"
+      "novelty": "baseline"
     },
     {
       "id": "arxiv:2609.19969",
@@ -1028,11 +1208,7 @@
       ],
       "positioning": "frontier-research",
       "first_seen_at": "2026-09-30T04:13:56.564Z",
-      "novelty": "baseline",
-      "report_kind": "landscape",
-      "report_date": "2026-09-29",
-      "report_path": "landscape/2026-09-29.md",
-      "search_status": "partial"
+      "novelty": "baseline"
     },
     {
       "id": "arxiv:2603.05451",
@@ -1061,11 +1237,7 @@
       ],
       "positioning": "frontier-research",
       "first_seen_at": "2026-09-30T04:13:56.564Z",
-      "novelty": "baseline",
-      "report_kind": "landscape",
-      "report_date": "2026-09-29",
-      "report_path": "landscape/2026-09-29.md",
-      "search_status": "partial"
+      "novelty": "baseline"
     },
     {
       "id": "arxiv:2609.22870",
@@ -1093,11 +1265,7 @@
       ],
       "positioning": "frontier-research",
       "first_seen_at": "2026-09-30T04:13:56.564Z",
-      "novelty": "baseline",
-      "report_kind": "landscape",
-      "report_date": "2026-09-29",
-      "report_path": "landscape/2026-09-29.md",
-      "search_status": "partial"
+      "novelty": "baseline"
     },
     {
       "id": "pytorch:6x-faster-async-checkpointing",
@@ -1126,11 +1294,7 @@
       ],
       "positioning": "open-reference",
       "first_seen_at": "2026-09-30T04:13:56.564Z",
-      "novelty": "baseline",
-      "report_kind": "landscape",
-      "report_date": "2026-09-29",
-      "report_path": "landscape/2026-09-29.md",
-      "search_status": "partial"
+      "novelty": "baseline"
     },
     {
       "id": "arxiv:2505.09343",
@@ -1158,195 +1322,7 @@
       ],
       "positioning": "established-method",
       "first_seen_at": "2026-09-30T04:13:56.564Z",
-      "novelty": "baseline",
-      "report_kind": "landscape",
-      "report_date": "2026-09-29",
-      "report_path": "landscape/2026-09-29.md",
-      "search_status": "partial"
-    }
-  ],
-  "topics": [
-    {
-      "id": "1.1",
-      "group": "llm-recipe",
-      "title": "Data Curation & Tokenization",
-      "path": "topics/llm-recipe/data-curation-tokenization/README.md",
-      "count": 1
-    },
-    {
-      "id": "1.2",
-      "group": "llm-recipe",
-      "title": "Model Architecture & Scaling Laws",
-      "path": "topics/llm-recipe/model-architecture-scaling-laws/README.md",
-      "count": 1
-    },
-    {
-      "id": "1.3",
-      "group": "llm-recipe",
-      "title": "Pretraining & Optimization",
-      "path": "topics/llm-recipe/pretraining-optimization/README.md",
-      "count": 1
-    },
-    {
-      "id": "1.4",
-      "group": "llm-recipe",
-      "title": "Mid-training & Continual Learning",
-      "path": "topics/llm-recipe/midtraining-continual-learning/README.md",
-      "count": 2
-    },
-    {
-      "id": "1.5",
-      "group": "llm-recipe",
-      "title": "Supervised Fine-tuning & Adaptation",
-      "path": "topics/llm-recipe/supervised-finetuning-adaptation/README.md",
-      "count": 1
-    },
-    {
-      "id": "1.6",
-      "group": "llm-recipe",
-      "title": "Preference Alignment & Reward Modeling",
-      "path": "topics/llm-recipe/preference-alignment-reward-modeling/README.md",
-      "count": 1
-    },
-    {
-      "id": "1.7",
-      "group": "llm-recipe",
-      "title": "Reinforcement Learning & Reasoning",
-      "path": "topics/llm-recipe/reinforcement-learning-reasoning/README.md",
-      "count": 1
-    },
-    {
-      "id": "1.8",
-      "group": "llm-recipe",
-      "title": "Distillation & Model Compression",
-      "path": "topics/llm-recipe/distillation-model-compression/README.md",
-      "count": 1
-    },
-    {
-      "id": "1.9",
-      "group": "llm-recipe",
-      "title": "Test-Time Scaling & Inference Algorithms",
-      "path": "topics/llm-recipe/test-time-scaling-inference-algorithms/README.md",
-      "count": 1
-    },
-    {
-      "id": "1.10",
-      "group": "llm-recipe",
-      "title": "Model Evaluation, Safety & Interpretability",
-      "path": "topics/llm-recipe/model-evaluation-safety-interpretability/README.md",
-      "count": 1
-    },
-    {
-      "id": "2.1",
-      "group": "ai-agent-dev",
-      "title": "Agent Architecture & Planning",
-      "path": "topics/ai-agent-dev/agent-architecture-planning/README.md",
-      "count": 2
-    },
-    {
-      "id": "2.2",
-      "group": "ai-agent-dev",
-      "title": "Tool Use & Environment Interaction",
-      "path": "topics/ai-agent-dev/tool-use-environment-interaction/README.md",
-      "count": 2
-    },
-    {
-      "id": "2.3",
-      "group": "ai-agent-dev",
-      "title": "Context Engineering & Memory",
-      "path": "topics/ai-agent-dev/context-engineering-memory/README.md",
-      "count": 1
-    },
-    {
-      "id": "2.4",
-      "group": "ai-agent-dev",
-      "title": "Retrieval & Knowledge Integration",
-      "path": "topics/ai-agent-dev/retrieval-knowledge-integration/README.md",
-      "count": 1
-    },
-    {
-      "id": "2.5",
-      "group": "ai-agent-dev",
-      "title": "Agent Learning & Skill Acquisition",
-      "path": "topics/ai-agent-dev/agent-learning-skill-acquisition/README.md",
-      "count": 1
-    },
-    {
-      "id": "2.6",
-      "group": "ai-agent-dev",
-      "title": "Multi-Agent Collaboration",
-      "path": "topics/ai-agent-dev/multi-agent-collaboration/README.md",
-      "count": 1
-    },
-    {
-      "id": "2.7",
-      "group": "ai-agent-dev",
-      "title": "Agent Harness & Reliability",
-      "path": "topics/ai-agent-dev/agent-harness-reliability/README.md",
-      "count": 2
-    },
-    {
-      "id": "2.8",
-      "group": "ai-agent-dev",
-      "title": "Agent Evaluation & Security",
-      "path": "topics/ai-agent-dev/agent-evaluation-security/README.md",
-      "count": 2
-    },
-    {
-      "id": "3.1",
-      "group": "ai-training-inference-infra",
-      "title": "Distributed Training Systems",
-      "path": "topics/ai-training-inference-infra/distributed-training-systems/README.md",
-      "count": 2
-    },
-    {
-      "id": "3.2",
-      "group": "ai-training-inference-infra",
-      "title": "RL & Rollout Infrastructure",
-      "path": "topics/ai-training-inference-infra/rl-rollout-infrastructure/README.md",
-      "count": 1
-    },
-    {
-      "id": "3.3",
-      "group": "ai-training-inference-infra",
-      "title": "Inference Engines & Serving",
-      "path": "topics/ai-training-inference-infra/inference-engines-serving/README.md",
-      "count": 3
-    },
-    {
-      "id": "3.4",
-      "group": "ai-training-inference-infra",
-      "title": "Attention, KV Cache & Memory Systems",
-      "path": "topics/ai-training-inference-infra/attention-kv-cache-memory-systems/README.md",
-      "count": 2
-    },
-    {
-      "id": "3.5",
-      "group": "ai-training-inference-infra",
-      "title": "Kernels, Compilers & Runtimes",
-      "path": "topics/ai-training-inference-infra/kernels-compilers-runtimes/README.md",
-      "count": 1
-    },
-    {
-      "id": "3.6",
-      "group": "ai-training-inference-infra",
-      "title": "Low-Precision & Efficient Execution",
-      "path": "topics/ai-training-inference-infra/low-precision-efficient-execution/README.md",
-      "count": 1
-    },
-    {
-      "id": "3.7",
-      "group": "ai-training-inference-infra",
-      "title": "Data Pipelines, Storage & Checkpointing",
-      "path": "topics/ai-training-inference-infra/data-pipelines-storage-checkpointing/README.md",
-      "count": 1
-    },
-    {
-      "id": "3.8",
-      "group": "ai-training-inference-infra",
-      "title": "Hardware, Networking & Cluster Efficiency",
-      "path": "topics/ai-training-inference-infra/hardware-networking-cluster-efficiency/README.md",
-      "count": 1
+      "novelty": "baseline"
     }
   ]
 }

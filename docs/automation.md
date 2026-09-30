@@ -2,6 +2,8 @@
 
 The intended schedule is **daily at 03:00 America/Los_Angeles**, following daylight saving time. A Codex scheduled task attached to the setup conversation performs the research and publishes to `Charliechen1/LLM_daily_report` on `main`.
 
+The 2026-09-29 landscape is the initial baseline. Beginning 2026-09-30, each run publishes only qualifying deltas relative to that baseline and earlier daily records, with paper/blog/code sources. The snapshot itself remains a dated reference; daily runs do not silently rewrite it.
+
 The scheduler is external to this repository. Changing `config/report.json` alone does not change the actual task schedule: update both together and verify the task in the app's Scheduled view. The host timezone must remain America/Los_Angeles for a host-local 03:00 schedule.
 
 ## Execution requirements
@@ -11,7 +13,7 @@ The scheduler is external to this repository. Changing `config/report.json` alon
 - Read `prompts/daily-report.md` on every run so editorial changes take effect.
 - Trigger time is not a guarantee of completion at 03:00. Research, verification, rendering and publication happen after the trigger.
 
-An installation that has no published reports starts with its first elapsed scheduled cutoff. It does not invent a historical start date or backfill indefinitely; automatic catch-up concerns gaps after reporting has begun.
+The first daily cutoff is 2026-09-30 at 03:00 Los Angeles time. Automatic catch-up concerns missed daily windows on or after that date, and never backfills pre-baseline history.
 
 ## Report and publication flow
 

@@ -8,7 +8,7 @@ The reusable task instructions are in [the daily prompt](../prompts/daily-report
 
 1. Enter the local checkout and read `AGENTS.md`, `config/report.json`, `config/taxonomy.json`, and `config/sources.json`.
 2. Check the working tree and remote. Preserve unrelated local changes. Fetch the remote and fast-forward the intended publishing branch before starting; do not reset or overwrite another contributor's work.
-3. Check existing report records for the report date, prior coverage, canonical IDs, and unfinished intervals. Re-running a date should repair or complete its report without duplicating items.
+3. Read `data/landscapes/2026-09-29.json` and the complete `data/index.json` research registry. Check daily report records for the report date, prior coverage, canonical IDs, and unfinished intervals. Daily deltas begin on `config/report.json`'s `delta_start_date` (2026-09-30); never backfill earlier dates. Re-running a date should repair or complete its report without duplicating items.
 4. Set the report date to the most recent local scheduled 03:00 cutoff that has elapsed. Coverage is the previous scheduled 03:00 through that date's 03:00; backfill missed dates as separate fixed daily windows. Keep the actual `generated_at` separate from the coverage endpoint. Review the 72 hours ending at `coverage.end` for delayed discoveries.
 
 ## 2. Discover and review

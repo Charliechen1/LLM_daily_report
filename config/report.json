@@ -2,6 +2,7 @@
   "schema_version": 1,
   "timezone": "America/Los_Angeles",
   "schedule": {"local_time": "03:00"},
+  "delta_start_date": "2026-09-30",
   "max_entries": 10,
   "lookback_hours": 24,
   "discovery_lookback_hours": 72,

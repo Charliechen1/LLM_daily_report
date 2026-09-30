@@ -1,13 +1,15 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/Charliechen1/LLM_daily_report/blob/main/schemas/report.schema.json",
-  "title": "LLM Daily Report",
+  "title": "LLM Research Report or Landscape",
   "$comment": "The zero-dependency CLI enforces this shape and additional calendar, taxonomy, schedule, placeholder, English, source availability and cross-report deduplication rules. Sentence boundaries and factual quality require human review.",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "date", "timezone", "generated_at", "coverage", "search", "entries"],
+  "required": ["schema_version", "date", "timezone", "generated_at", "search", "entries"],
   "properties": {
     "schema_version": { "const": 1 },
+    "kind": { "enum": ["daily", "landscape"] },
+    "overview": { "type": "object", "additionalProperties": { "$ref": "#/$defs/text" } },
     "date": { "$ref": "#/$defs/date" },
     "timezone": { "const": "America/Los_Angeles" },
     "generated_at": { "$ref": "#/$defs/timestamp" },
@@ -31,8 +33,13 @@
       },
       "allOf": [{ "if": { "properties": { "status": { "const": "partial" } } }, "then": { "properties": { "notes": { "$ref": "#/$defs/text" } } } }]
     },
-    "entries": { "type": "array", "maxItems": 10, "items": { "$ref": "#/$defs/entry" } }
+    "entries": { "type": "array", "items": { "$ref": "#/$defs/entry" } }
   },
+  "allOf": [{
+    "if": { "required": ["kind"], "properties": { "kind": { "const": "landscape" } } },
+    "then": { "not": { "required": ["coverage"] }, "properties": { "entries": { "minItems": 1, "items": { "required": ["positioning"], "properties": { "novelty": { "const": "baseline" } } } } } },
+    "else": { "required": ["coverage"], "not": { "required": ["overview"] }, "properties": { "entries": { "maxItems": 10, "items": { "properties": { "novelty": { "enum": ["new", "newly-discovered", "material-update"] } } } } } }
+  }],
   "$defs": {
     "text": { "type": "string", "minLength": 1, "pattern": "\\S" },
     "date": { "type": "string", "format": "date", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
@@ -51,7 +58,7 @@
         "canonical_url": { "$ref": "#/$defs/https" },
         "links": {
           "type": "object", "additionalProperties": false,
-          "properties": { "paper": { "$ref": "#/$defs/https" }, "code": { "$ref": "#/$defs/https" }, "project": { "$ref": "#/$defs/https" } }
+          "properties": { "paper": { "$ref": "#/$defs/https" }, "blog": { "$ref": "#/$defs/https" }, "code": { "$ref": "#/$defs/https" }, "project": { "$ref": "#/$defs/https" } }
         },
         "summary": { "type": "array", "minItems": 2, "maxItems": 3, "items": { "$ref": "#/$defs/text" } },
         "evidence": {
@@ -63,7 +70,8 @@
             "limitations": { "$ref": "#/$defs/text" }
           }
         },
-        "novelty": { "enum": ["new", "newly-discovered", "material-update"] },
+        "novelty": { "enum": ["new", "newly-discovered", "material-update", "baseline"] },
+        "positioning": { "enum": ["frontier-research", "established-method", "open-reference"] },
         "update_note": { "$ref": "#/$defs/text" }
       },
       "allOf": [{ "if": { "properties": { "novelty": { "const": "material-update" } } }, "then": { "required": ["update_note"] } }]

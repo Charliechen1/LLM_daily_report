@@ -2,7 +2,9 @@
 
 A daily research digest covering **LLM Recipe**, **AI Agent Dev**, and **AI Training & Inference Infra**. Each selected contribution gets **2–3 English sentences** explaining what was done, why it matters, and, when needed, the key evidence or limitation.
 
-**[Daily archive](reports/README.md) · [Browse topics](topics/README.md) · [Editorial policy](docs/editorial-policy.md) · [Daily workflow](docs/daily-workflow.md)**
+**[Current landscape](landscape/2026-09-29.md) · [Daily deltas](reports/README.md) · [Browse topics](topics/README.md) · [Editorial policy](docs/editorial-policy.md)**
+
+Start with the **2026-09-29 landscape baseline**. It distinguishes established methods, inspectable open references, and frontier research across all 26 topics. Every item includes primary paper, technical blog and/or code links. Daily delta reports begin **2026-09-30 at 03:00 America/Los_Angeles** and compare against both the baseline and prior daily reports.
 
 ## Coverage
 
@@ -23,15 +25,17 @@ The complete hierarchy lives in [`config/taxonomy.json`](config/taxonomy.json) a
 - **Evidence:** link primary sources, read the research, distinguish reported results from independent verification, and label abstract-only access.
 - **Integrity:** no invented research, dates, metrics, access claims or successful search coverage. Partial retrieval is visible in the report.
 
-This repository starts with an empty archive. Templates and test fixtures are never published as research reports.
+The baseline is a dated map of the field, not a claim that historical references were published today. "Frontier research" is not a blanket SoTA certification; reported best results retain their evaluation scope and limitations. Templates and test fixtures are never published as research reports.
 
 ## Repository layout
 
 ```text
 config/                 Taxonomy, report policy and discovery starting points
 data/reports/YYYY/MM/    Reviewed JSON reports: the source of truth
+data/landscapes/         Reviewed, dated landscape baselines
 data/index.json         Generated research index for deduplication and browsing
 reports/YYYY/MM/         Generated daily Markdown reports
+landscape/              Generated landscape snapshots
 topics/                 Generated indexes for all 3 areas and 26 subdomains
 schemas/                Machine-readable report contract
 templates/              JSON and Markdown authoring examples
@@ -63,7 +67,7 @@ The draft is created in ignored `drafts/`. Research and review it before placing
 
 ## Automation
 
-The scheduled researcher reads [`prompts/daily-report.md`](prompts/daily-report.md), searches current primary sources, writes the structured report, validates it, rebuilds the indexes, and publishes a normal commit to this repository. GitHub Actions checks repository integrity; it does not generate research or call a model.
+The scheduled researcher reads [`prompts/daily-report.md`](prompts/daily-report.md), searches current primary sources, compares them with the baseline and daily archive, writes the structured delta report, validates it, rebuilds the indexes, and publishes a normal commit to this repository. GitHub Actions checks repository integrity; it does not generate research or call a model.
 
 The schedule is managed by a Codex task outside Git; [`config/report.json`](config/report.json) records the intended timezone and time but does not itself register a scheduler. See [automation setup](docs/automation.md) for current setup and execution requirements.
 
