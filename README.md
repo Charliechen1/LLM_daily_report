@@ -1,6 +1,6 @@
 # LLM Daily Report
 
-A daily research digest covering **LLM Recipe**, **AI Agent Dev**, and **AI Training & Inference Infra**. Each selected contribution gets **2–3 English sentences** explaining what was done, why it matters, and, when needed, the key evidence or limitation.
+A daily research digest covering **LLM Recipe**, **AI Agent Dev**, and **AI Training & Inference Infra**. Each selected contribution gets **2–3 sentences** explaining what was done, why it matters, and, when needed, the key evidence or limitation.
 
 **[Current landscape](landscape/2026-09-29.md) · [Daily deltas](reports/README.md) · [Browse topics](topics/README.md) · [Editorial policy](docs/editorial-policy.md)**
 
