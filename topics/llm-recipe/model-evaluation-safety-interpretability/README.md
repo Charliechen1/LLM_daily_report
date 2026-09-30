@@ -5,6 +5,34 @@ Capability evaluation, contamination, generalization, robustness, safety and mec
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-09-30](../../../reports/2026/09/2026-09-30.md) — PARTIAL SEARCH
+
+### [Correct Answers, Invalid Traces: What Verifiable Grade-School Math Reveals About Chain-of-Thought Traces](<https://arxiv.org/abs/2609.38107>)
+
+Using mechanically verifiable synthetic math, the authors show that models can produce correct answers with invalid reasoning traces even after training exclusively on valid solutions. The work motivates checking trace semantics under distribution shift when evaluating reasoning or designing oversight, since answer accuracy alone does not establish trace validity.
+
+**Published:** 2026-09-29 · **First seen:** 2026-09-30T04:13:56.564Z · **Novelty:** new · **Tags:** Chain of Thought, Evaluation, Distribution Shift
+
+[Paper](<https://arxiv.org/abs/2609.38107>) · [Code](<https://github.com/ratishsp/igsm-trace-validity>)
+
+**Evidence:** research-paper; full-text. The study trains 124M models and checks syntax, arithmetic, and semantic dependencies on 4,096 problems per difficulty level. At the hardest out-of-distribution level, 31.6% of correct answers have invalid traces; altered-supervision experiments probe this separation. The arXiv v1 submission was 2026-09-29T17:46:55Z, within the daily interval. First seen records the earliest saved baseline source check; full text, previously inaccessible, was reviewed for this daily report.
+
+**Limitations:** A synthetic, small-model study with seed sensitivity does not establish failure rates for frontier-model monitoring. The authors explicitly distinguish trace validity from causal faithfulness and do not test adversarial concealment or an operational safety monitor.
+
+## [2026-09-30](../../../reports/2026/09/2026-09-30.md) — PARTIAL SEARCH
+
+### [Addendum to GPT-6 Astra System Card: GPT-6.1 Sol](<https://deploymentsafety.openai.com/gpt-6-1-sol>)
+
+OpenAI pairs GPT-6.1 Sol's release with evaluations of coding, computer use, factuality, and agent alignment, reporting improved capability and task cost relative to GPT-6 Sol. The evaluation package provides a current case study for comparing useful task performance with failure disclosure, permission compliance, and monitoring behavior instead of treating capability gains as a guarantee of safer agents.
+
+**Published:** 2026-09-29 · **First seen:** 2026-09-30T10:02:43Z · **Novelty:** new · **Tags:** Model Evaluation, Agent Safety, Capability-Cost Tradeoff
+
+[Paper](<https://deploymentsafety.openai.com/gpt-6-1-sol/gpt-6-1-sol.pdf>) · [Blog](<https://openai.com/index/introducing-gpt-6-1-sol/>)
+
+**Evidence:** technical-report; full-text. The September 29 system card describes adversarial evaluations and matched deployment simulations: among 49,650 internal tasks, the authors report 28 severity-3-or-higher flags for GPT-6.1 Sol versus 42 for GPT-6 Sol. The accompanying release report specifies benchmark versions and reasoning settings for capability-cost comparisons.
+
+**Limitations:** These are developer-reported evaluations, not independent reproduction or a disclosed training recipe. Internal simulations may not transfer to external deployment, evaluation awareness and model versions affect comparisons, and some safety categories regress despite aggregate improvement. The publisher provides a date, not a precise publication time.
+
 ## [2026-09-29 — Landscape baseline](../../../landscape/2026-09-29.md) — PARTIAL SEARCH
 
 ### [Anatomy of Post-Training: Using Interpretability to Characterize Data and Shape the Learning Signal](<https://arxiv.org/abs/2606.12360>)

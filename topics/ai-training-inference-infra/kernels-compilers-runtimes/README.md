@@ -5,6 +5,20 @@ GPU kernels, operator fusion, compilation, execution graphs and hardware adaptat
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-09-30](../../../reports/2026/09/2026-09-30.md) — PARTIAL SEARCH
+
+### [Mixture-of-Kittens: MoE Megakernel for NVL72s](<https://arxiv.org/abs/2609.36070>)
+
+Mixture-of-Kittens fuses expert dispatch, expert computation, and result combination into a deterministic GPU kernel, choosing communication direction per operator and avoiding CPU synchronization. It targets NVL72 systems where conventional mixture-of-experts communication schedules leave performance unused, providing an open implementation for overlapping computation and data movement.
+
+**Published:** 2026-09-28 · **First seen:** 2026-09-30T10:02:58Z · **Novelty:** newly-discovered · **Tags:** MoE Training, Kernel Fusion, NVL72
+
+[Paper](<https://arxiv.org/abs/2609.36070>) · [Code](<https://github.com/cursor/mixture-of-kittens>)
+
+**Evidence:** research-paper; full-text. Newly discovered within the 72-hour catch-up window, absent from the baseline; arXiv v1 was submitted 2026-09-28 at 18:22:34 UTC. Alongside layer benchmarks and ablations, a 512-GB300 comparison changes only the MoE backend and reports 1,070.2 versus 761.0 tokens/second/GPU, a 41% training-throughput increase.
+
+**Limitations:** The full-model result comes from the authors' internal production stack and one reported configuration; the open layer benchmarks use synthetic routing inputs. Gains vary with precision, token count, and expert parallelism, and should not be generalized to other accelerator fabrics or training convergence.
+
 ## [2026-09-29 — Landscape baseline](../../../landscape/2026-09-29.md) — PARTIAL SEARCH
 
 ### [FlashAttention-4: Algorithm and Kernel Pipelining Co-Design for Asymmetric Hardware Scaling](<https://arxiv.org/abs/2603.05451>)

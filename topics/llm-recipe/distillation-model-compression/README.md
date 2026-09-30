@@ -5,6 +5,20 @@ Knowledge/reasoning distillation, pruning, quantization algorithms and model mer
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-09-30](../../../reports/2026/09/2026-09-30.md) — PARTIAL SEARCH
+
+### [From Dissonance to Orchestration: Teacher Intervention in On-Policy Distillation](<https://arxiv.org/abs/2609.37510>)
+
+MAESTRO lets a stronger teacher briefly take over a student's reasoning during on-policy distillation, using teacher-student disagreement to choose when and how long to intervene. In small-model math experiments, this selective guidance improves accuracy while shortening training rollouts, providing a practical alternative to fixed teacher intervention.
+
+**Published:** 2026-09-29 · **First seen:** 2026-09-30T04:13:56.564Z · **Novelty:** new · **Tags:** Distillation, Reasoning, Adaptive Supervision
+
+[Paper](<https://arxiv.org/abs/2609.37510>) · [Code](<https://github.com/yhao-wang/MAESTRO>)
+
+**Evidence:** research-paper; full-text. Ablations and eight mathematical benchmarks use Qwen3 0.6B/1.7B students and a 4B teacher. The 1.7B student's macro-average accuracy is 47.12%, versus 45.18% for Relay-OPD and 41.23% for OPD; authors report 67.3% shorter training responses than OPD. The arXiv v1 submission was 2026-09-29T13:06:14Z, within the daily interval. First seen records the earliest saved baseline source check; full text, previously inaccessible, was reviewed for this daily report.
+
+**Limitations:** Evidence is confined to two small students, one teacher, and math. Shorter responses are a token metric, not demonstrated equivalent wall-clock or total-cost savings after teacher scoring and intervention overhead.
+
 ## [2026-09-29 — Landscape baseline](../../../landscape/2026-09-29.md) — PARTIAL SEARCH
 
 ### [On-Policy Distillation](<https://thinkingmachines.ai/blog/on-policy-distillation/>)

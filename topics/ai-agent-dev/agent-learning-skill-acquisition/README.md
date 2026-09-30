@@ -5,6 +5,20 @@ Learning from trajectories/feedback, skill generation/reuse, experience and self
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-09-30](../../../reports/2026/09/2026-09-30.md) — PARTIAL SEARCH
+
+### [SelfSearch: Reward-Free Search for Self-Improving Agents](<https://arxiv.org/abs/2609.37968>)
+
+SelfSearch lets a fixed-weight agent revise its instructions, tools, and execution code using records of earlier self-improvement attempts, without downstream benchmark rewards during search. The resulting tools transfer to coding and terminal tasks, offering a way to improve an agent without repeatedly paying for benchmark evaluation during candidate generation.
+
+**Published:** 2026-09-29 · **First seen:** 2026-09-30T10:01:45Z · **Novelty:** new · **Tags:** self-improvement, skill-acquisition, agent-harness
+
+[Paper](<https://arxiv.org/html/2609.37968v1>)
+
+**Evidence:** research-paper; full-text. Inspected search protocol, result tables, ablations and evaluation settings. Final population-mean success improves in all six model-family/benchmark settings; record-removal and fixed-improver ablations support the proposed mechanisms. The arXiv v1 submission was 2026-09-29T16:36:24Z, within the daily interval.
+
+**Limitations:** Tests use 120 SWE-bench Verified tasks, 60 multilingual tasks and 89 Terminal-Bench tasks, with two lineages per model configuration; independent-search consistency is unestablished. Reward-free excludes downstream scores, not local execution/check feedback. Evaluation remains a separate cost; no verified public code release.
+
 ## [2026-09-29 — Landscape baseline](../../../landscape/2026-09-29.md) — PARTIAL SEARCH
 
 ### [Shockingly Simple Self-retrospection Improves Agentic Models Without RL](<https://arxiv.org/abs/2609.35741>)

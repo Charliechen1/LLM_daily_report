@@ -5,6 +5,20 @@ Accelerators, interconnects, cluster scheduling, profiling, utilization, cost an
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-09-30](../../../reports/2026/09/2026-09-30.md) — PARTIAL SEARCH
+
+### [Purlin: Separating Orchestration from the Datapath of Collectives](<https://arxiv.org/abs/2609.36954>)
+
+Purlin separates collective operations into layout specifications, a reusable coordination protocol, and hardware-specific data-movement primitives. This makes communication easier to specialize across GPU generations while improving distributed inference when collective latency is a substantial part of request time.
+
+**Published:** 2026-09-29 · **First seen:** 2026-09-30T10:02:58Z · **Novelty:** newly-discovered · **Tags:** GPU Communication, Collectives, Distributed Inference
+
+[Paper](<https://arxiv.org/abs/2609.36954>) · [Code](<https://github.com/purlin-project/purlin>)
+
+**Evidence:** research-paper; full-text. Newly discovered in the 72-hour catch-up window: arXiv v1 was submitted 2026-09-29 at 07:57:27 UTC, before the main window opened. Tests use eight-GPU A100, H200, and B200 servers; the authors report a 1.13x geometric-mean offline serving gain across 135 configuration–baseline comparisons, with microbenchmarks and quality checks.
+
+**Limitations:** The largest online gain occurs under overload rather than sustainable service at that arrival rate. MSCCL++ wins in some high-concurrency cases, NCCL leads some large variable-length reductions, and strongly imbalanced collectives remain unevaluated; all results are author-reported.
+
 ## [2026-09-29 — Landscape baseline](../../../landscape/2026-09-29.md) — PARTIAL SEARCH
 
 ### [Insights into DeepSeek-V3: Scaling Challenges and Reflections on Hardware for AI Architectures](<https://arxiv.org/abs/2505.09343>)

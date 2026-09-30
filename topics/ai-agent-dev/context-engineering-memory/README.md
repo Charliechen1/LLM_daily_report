@@ -5,6 +5,20 @@ Context organization/compression, working memory, long-term memory and state.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-09-30](../../../reports/2026/09/2026-09-30.md) — PARTIAL SEARCH
+
+### [ContextRender: From Execution Dependencies to Agent Context](<https://arxiv.org/abs/2609.37743>)
+
+ContextRender keeps complete tool results in a persistent graph and selects what the agent sees using observed value reuse, recency, and relevance. This gives long-running agents a way to reduce repeated context costs while retaining omitted information for later recovery, with competitive task performance under a 6K history budget.
+
+**Published:** 2026-09-29 · **First seen:** 2026-09-30T10:01:45Z · **Novelty:** new · **Tags:** context-management, tool-use, long-horizon
+
+[Paper](<https://arxiv.org/html/2609.37743v1>)
+
+**Evidence:** research-paper; full-text. Full methods, matched-budget baselines and ablations inspected; three models on AppWorld and 8-objective QA. Reports better task performance than five managed-context baselines across nine settings and 10.2–32.2% lower standardized inference cost than full history. The arXiv v1 submission was 2026-09-29T14:57:00Z, within the daily interval.
+
+**Limitations:** Costs use a common pricing/cache model and only tasks triggering context management; they are not measured provider-bill savings. Performance is below full history in two settings. Reuse detection is exact, case-sensitive value matching; no independent reproduction or verified code release.
+
 ## [2026-09-29 — Landscape baseline](../../../landscape/2026-09-29.md) — PARTIAL SEARCH
 
 ### [Effective context engineering for AI agents](<https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents>)

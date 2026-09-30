@@ -5,6 +5,20 @@ Objectives, optimizers, learning rates, batch sizes and training stability.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-09-30](../../../reports/2026/09/2026-09-30.md) — PARTIAL SEARCH
+
+### [Pretraining Latent Information Feedback Transformers with Teacher Supervision](<https://arxiv.org/abs/2609.38149>)
+
+LIFT trains language models to carry a latent state across generated tokens, using a teacher's next-token distributions to supervise this feedback channel while preserving parallel pretraining. Its controlled language-modeling and procedural-task gains suggest a way to improve learning efficiency and state tracking without expressing every intermediate computation as text.
+
+**Published:** 2026-09-29 · **First seen:** 2026-09-30T10:04:44Z · **Novelty:** new · **Tags:** Pretraining, Latent Reasoning, Teacher Supervision
+
+[Paper](<https://arxiv.org/abs/2609.38149>) · [Code](<https://github.com/dortirosh1/LIFT>)
+
+**Evidence:** research-paper; full-text. Sections 3-5 and Appendix F provide architecture, ablations, and token/compute comparisons at 135M, 350M, and 1B non-embedding parameters; compute matching includes teacher forward passes. The main three-scale experiment reports 5-5.5% lower perplexity at matched tokens. The arXiv v1 submission was 2026-09-29T17:57:40Z, within the daily interval.
+
+**Limitations:** Only the smallest language-model scale has three training seeds; larger runs have one. Main evaluations use sequential prompt processing, while parallel prefill trades extra passes for quality; results are not uniformly better than vanilla Transformers across every compute-matched setting.
+
 ## [2026-09-29 — Landscape baseline](../../../landscape/2026-09-29.md) — PARTIAL SEARCH
 
 ### [Kimi K2: Open Agentic Intelligence](<https://arxiv.org/abs/2507.20534>)

@@ -5,6 +5,20 @@ Task success, trajectory evaluation, cost/reliability, prompt injection and perm
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-09-30](../../../reports/2026/09/2026-09-30.md) — PARTIAL SEARCH
+
+### [GLM-5.3 and the spread of advanced cyber capabilities](<https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities>)
+
+Anthropic evaluates GLM-5.3's autonomous cybersecurity capabilities in isolated benchmarks and separately tests whether its safeguards resist malicious requests in simulated environments. The findings illustrate why successful task execution and resistance to misuse need distinct measurements when assessing powerful tool-using models.
+
+**Published:** 2026-09-29 · **First seen:** 2026-09-30T10:02:43Z · **Novelty:** new · **Tags:** Agent Evaluation, Cybersecurity, Safeguards
+
+[Blog](<https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities>)
+
+**Evidence:** technical-report; full-text. The September 29 report describes automated and human-assisted tests, with 50 successful end-to-end exploit attempts out of 410 on ExploitBench and a separate 100-task internal evaluation. Its safeguard experiment uses 50 samples per condition and explicitly measures engagement rather than successful real-world attacks.
+
+**Limitations:** A model developer evaluates a competitor; some data and evaluation machinery are internal. Safeguard trials use an LLM-simulated shell that executes no code, and access conditions differ between released weights and guarded APIs. Results are author-reported and should not be generalized to real-world attack success rates; only a publication date is supplied.
+
 ## [2026-09-29 — Landscape baseline](../../../landscape/2026-09-29.md) — PARTIAL SEARCH
 
 ### [AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents](<https://arxiv.org/abs/2406.13352>)

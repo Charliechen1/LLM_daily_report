@@ -1,0 +1,575 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-30",
+  "timezone": "America/Los_Angeles",
+  "generated_at": "2026-09-30T10:07:31.662Z",
+  "coverage": {
+    "start": "2026-09-29T03:00:00-07:00",
+    "end": "2026-09-30T03:00:00-07:00"
+  },
+  "search": {
+    "status": "partial",
+    "notes": "First daily delta, compared against all 35 works in the September 29 landscape; no baseline entries are repeated. Discovery covered the 72 hours ending at 2026-09-30 10:00 UTC across Recipe, Agent Dev, and Infra. Purlin and Mixture-of-Kittens were first submitted before the main 24-hour interval and are labeled newly-discovered. All selected contributions were reviewed in full primary text; results are author-reported and were not independently reproduced. Previously inaccessible Recipe papers were retrieved during this run. Organization reports preserve their publisher-provided September 29 dates; precise publication times were not supplied. The September 30 Hugging Face discovery page and NVIDIA TensorRT Model Connect article were inaccessible. Artifact access also failed for the Jaseci lab projects page, AnswerPool repository, and EngiWorld task directory; their paper texts remained available. The September 29 discovery page, primary arXiv papers, and organization indexes remained usable. Selection prioritizes distinct technical contributions over an exhaustive news list; AnswerPool was omitted to reduce evaluation overlap, and EngiWorld was omitted in part because its paper and repository report inconsistent leaderboard values.",
+    "sources_checked": [
+      {
+        "name": "arXiv cs.CL recent discovery",
+        "url": "https://arxiv.org/list/cs.CL/recent",
+        "status": "ok"
+      },
+      {
+        "name": "Pretraining Latent Information Feedback Transformers with Teacher Supervision — publication metadata",
+        "url": "https://arxiv.org/abs/2609.38149",
+        "status": "ok"
+      },
+      {
+        "name": "Pretraining Latent Information Feedback Transformers with Teacher Supervision — full primary text",
+        "url": "https://arxiv.org/html/2609.38149v1",
+        "status": "ok"
+      },
+      {
+        "name": "From Dissonance to Orchestration: Teacher Intervention in On-Policy Distillation — publication metadata",
+        "url": "https://arxiv.org/abs/2609.37510",
+        "status": "ok"
+      },
+      {
+        "name": "From Dissonance to Orchestration: Teacher Intervention in On-Policy Distillation — full primary text",
+        "url": "https://arxiv.org/html/2609.37510v1",
+        "status": "ok"
+      },
+      {
+        "name": "Correct Answers, Invalid Traces: What Verifiable Grade-School Math Reveals About Chain-of-Thought Traces — publication metadata",
+        "url": "https://arxiv.org/abs/2609.38107",
+        "status": "ok"
+      },
+      {
+        "name": "Correct Answers, Invalid Traces: What Verifiable Grade-School Math Reveals About Chain-of-Thought Traces — full primary text",
+        "url": "https://arxiv.org/html/2609.38107v1",
+        "status": "ok"
+      },
+      {
+        "name": "Your Benchmark Is Not Saturated: Reviving Multiple-Choice Evaluation with Answer Pooling — publication metadata",
+        "url": "https://arxiv.org/abs/2609.37494",
+        "status": "ok"
+      },
+      {
+        "name": "Your Benchmark Is Not Saturated: Reviving Multiple-Choice Evaluation with Answer Pooling — full primary text",
+        "url": "https://arxiv.org/html/2609.37494v1",
+        "status": "ok"
+      },
+      {
+        "name": "LIFT official repository",
+        "url": "https://github.com/dortirosh1/LIFT",
+        "status": "ok"
+      },
+      {
+        "name": "MAESTRO official repository",
+        "url": "https://github.com/yhao-wang/MAESTRO",
+        "status": "ok"
+      },
+      {
+        "name": "iGSM trace validity official repository",
+        "url": "https://github.com/ratishsp/igsm-trace-validity",
+        "status": "ok"
+      },
+      {
+        "name": "AnswerPool author-linked repository",
+        "url": "https://github.com/AbobakerAhmed/AnswerPool",
+        "status": "unavailable"
+      },
+      {
+        "name": "arXiv cs.AI recent listings",
+        "url": "https://arxiv.org/list/cs.AI/recent",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv cs.AI new listings",
+        "url": "https://arxiv.org/list/cs.AI/new",
+        "status": "ok"
+      },
+      {
+        "name": "ContextRender submission history",
+        "url": "https://arxiv.org/abs/2609.37743",
+        "status": "ok"
+      },
+      {
+        "name": "ContextRender full text v1",
+        "url": "https://arxiv.org/html/2609.37743v1",
+        "status": "ok"
+      },
+      {
+        "name": "SelfSearch submission history",
+        "url": "https://arxiv.org/abs/2609.37968",
+        "status": "ok"
+      },
+      {
+        "name": "SelfSearch full text v1",
+        "url": "https://arxiv.org/html/2609.37968v1",
+        "status": "ok"
+      },
+      {
+        "name": "EngiWorld submission history",
+        "url": "https://arxiv.org/abs/2609.37686",
+        "status": "ok"
+      },
+      {
+        "name": "EngiWorld full text v1",
+        "url": "https://arxiv.org/html/2609.37686v1",
+        "status": "ok"
+      },
+      {
+        "name": "EngiWorld author project",
+        "url": "https://engiworld.github.io/",
+        "status": "ok"
+      },
+      {
+        "name": "EngiWorld public code repository",
+        "url": "https://github.com/Hongcheng-Gao/EngiWorld",
+        "status": "ok"
+      },
+      {
+        "name": "TOCOMAS candidate submission history",
+        "url": "https://arxiv.org/abs/2609.37953",
+        "status": "ok"
+      },
+      {
+        "name": "TOCOMAS candidate full text",
+        "url": "https://arxiv.org/html/2609.37953v1",
+        "status": "ok"
+      },
+      {
+        "name": "Jaseci author-lab projects page",
+        "url": "https://jaseci.engin.umich.edu/projects/",
+        "status": "unavailable"
+      },
+      {
+        "name": "EngiWorld task directory",
+        "url": "https://github.com/Hongcheng-Gao/EngiWorld/tree/main/task",
+        "status": "unavailable"
+      },
+      {
+        "name": "arXiv Distributed Computing recent submissions",
+        "url": "https://arxiv.org/list/cs.DC/recent",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv Machine Learning recent submissions",
+        "url": "https://arxiv.org/list/cs.LG/recent",
+        "status": "ok"
+      },
+      {
+        "name": "SPLASH submission history",
+        "url": "https://arxiv.org/abs/2609.37626",
+        "status": "ok"
+      },
+      {
+        "name": "SPLASH full paper",
+        "url": "https://arxiv.org/html/2609.37626v1",
+        "status": "ok"
+      },
+      {
+        "name": "Mixture-of-Kittens submission history",
+        "url": "https://arxiv.org/abs/2609.36070",
+        "status": "ok"
+      },
+      {
+        "name": "Mixture-of-Kittens full paper",
+        "url": "https://arxiv.org/html/2609.36070v1",
+        "status": "ok"
+      },
+      {
+        "name": "Purlin submission history",
+        "url": "https://arxiv.org/abs/2609.36954",
+        "status": "ok"
+      },
+      {
+        "name": "Purlin full paper",
+        "url": "https://arxiv.org/html/2609.36954v1",
+        "status": "ok"
+      },
+      {
+        "name": "vLLM official blog index",
+        "url": "https://vllm.ai/blog",
+        "status": "ok"
+      },
+      {
+        "name": "PyTorch official blog index",
+        "url": "https://pytorch.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "NVIDIA Generative AI technical blog index",
+        "url": "https://developer.nvidia.com/blog/category/generative-ai/",
+        "status": "ok"
+      },
+      {
+        "name": "NVIDIA TensorRT Model Connect development article",
+        "url": "https://developer.nvidia.com/blog/ai-native-by-design-lessons-learned-from-building-nvidia-tensorrt-model-connect/",
+        "status": "unavailable"
+      },
+      {
+        "name": "SPLASH code repository",
+        "url": "https://github.com/ict-agent/SPLASH-sglang",
+        "status": "ok"
+      },
+      {
+        "name": "Mixture-of-Kittens code repository",
+        "url": "https://github.com/cursor/mixture-of-kittens",
+        "status": "ok"
+      },
+      {
+        "name": "Purlin code repository",
+        "url": "https://github.com/purlin-project/purlin",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic research index",
+        "url": "https://www.anthropic.com/research",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic engineering index",
+        "url": "https://www.anthropic.com/engineering",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic GLM-5.3 evaluation full report",
+        "url": "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities",
+        "status": "ok"
+      },
+      {
+        "name": "Ai2 research index",
+        "url": "https://allenai.org/research",
+        "status": "ok"
+      },
+      {
+        "name": "Google DeepMind research index",
+        "url": "https://deepmind.google/research/",
+        "status": "ok"
+      },
+      {
+        "name": "Google DeepMind news index",
+        "url": "https://deepmind.google/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "Gemini 3.8 Flash announcement (September 2; outside lookback)",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
+        "status": "ok"
+      },
+      {
+        "name": "Private AI Compute memory update (September 23; outside lookback)",
+        "url": "https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory/",
+        "status": "ok"
+      },
+      {
+        "name": "OpenAI research index",
+        "url": "https://openai.com/research/index/",
+        "status": "ok"
+      },
+      {
+        "name": "GPT-6.1 Sol release evaluation report",
+        "url": "https://openai.com/index/introducing-gpt-6-1-sol/",
+        "status": "ok"
+      },
+      {
+        "name": "GPT-6.1 Sol system card full report",
+        "url": "https://deploymentsafety.openai.com/gpt-6-1-sol",
+        "status": "ok"
+      },
+      {
+        "name": "GPT-6.1 Sol system card PDF",
+        "url": "https://deploymentsafety.openai.com/gpt-6-1-sol/gpt-6-1-sol.pdf",
+        "status": "ok"
+      },
+      {
+        "name": "Hugging Face September 29 discovery index",
+        "url": "https://huggingface.co/papers/date/2026-09-29",
+        "status": "ok"
+      },
+      {
+        "name": "Hugging Face September 30 discovery index",
+        "url": "https://huggingface.co/papers/date/2026-09-30",
+        "status": "unavailable"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": "arxiv:2609.38149",
+      "title": "Pretraining Latent Information Feedback Transformers with Teacher Supervision",
+      "category": "1.3",
+      "tags": [
+        "Pretraining",
+        "Latent Reasoning",
+        "Teacher Supervision"
+      ],
+      "published_on": "2026-09-29",
+      "first_seen_at": "2026-09-30T10:04:44Z",
+      "canonical_url": "https://arxiv.org/abs/2609.38149",
+      "links": {
+        "paper": "https://arxiv.org/abs/2609.38149",
+        "code": "https://github.com/dortirosh1/LIFT"
+      },
+      "summary": [
+        "LIFT trains language models to carry a latent state across generated tokens, using a teacher's next-token distributions to supervise this feedback channel while preserving parallel pretraining.",
+        "Its controlled language-modeling and procedural-task gains suggest a way to improve learning efficiency and state tracking without expressing every intermediate computation as text."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 3-5 and Appendix F provide architecture, ablations, and token/compute comparisons at 135M, 350M, and 1B non-embedding parameters; compute matching includes teacher forward passes. The main three-scale experiment reports 5-5.5% lower perplexity at matched tokens. The arXiv v1 submission was 2026-09-29T17:57:40Z, within the daily interval.",
+        "limitations": "Only the smallest language-model scale has three training seeds; larger runs have one. Main evaluations use sequential prompt processing, while parallel prefill trades extra passes for quality; results are not uniformly better than vanilla Transformers across every compute-matched setting."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "arxiv:2609.37510",
+      "title": "From Dissonance to Orchestration: Teacher Intervention in On-Policy Distillation",
+      "category": "1.8",
+      "tags": [
+        "Distillation",
+        "Reasoning",
+        "Adaptive Supervision"
+      ],
+      "published_on": "2026-09-29",
+      "first_seen_at": "2026-09-30T04:13:56.564Z",
+      "canonical_url": "https://arxiv.org/abs/2609.37510",
+      "links": {
+        "paper": "https://arxiv.org/abs/2609.37510",
+        "code": "https://github.com/yhao-wang/MAESTRO"
+      },
+      "summary": [
+        "MAESTRO lets a stronger teacher briefly take over a student's reasoning during on-policy distillation, using teacher-student disagreement to choose when and how long to intervene.",
+        "In small-model math experiments, this selective guidance improves accuracy while shortening training rollouts, providing a practical alternative to fixed teacher intervention."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Ablations and eight mathematical benchmarks use Qwen3 0.6B/1.7B students and a 4B teacher. The 1.7B student's macro-average accuracy is 47.12%, versus 45.18% for Relay-OPD and 41.23% for OPD; authors report 67.3% shorter training responses than OPD. The arXiv v1 submission was 2026-09-29T13:06:14Z, within the daily interval. First seen records the earliest saved baseline source check; full text, previously inaccessible, was reviewed for this daily report.",
+        "limitations": "Evidence is confined to two small students, one teacher, and math. Shorter responses are a token metric, not demonstrated equivalent wall-clock or total-cost savings after teacher scoring and intervention overhead."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "arxiv:2609.38107",
+      "title": "Correct Answers, Invalid Traces: What Verifiable Grade-School Math Reveals About Chain-of-Thought Traces",
+      "category": "1.10",
+      "tags": [
+        "Chain of Thought",
+        "Evaluation",
+        "Distribution Shift"
+      ],
+      "published_on": "2026-09-29",
+      "first_seen_at": "2026-09-30T04:13:56.564Z",
+      "canonical_url": "https://arxiv.org/abs/2609.38107",
+      "links": {
+        "paper": "https://arxiv.org/abs/2609.38107",
+        "code": "https://github.com/ratishsp/igsm-trace-validity"
+      },
+      "summary": [
+        "Using mechanically verifiable synthetic math, the authors show that models can produce correct answers with invalid reasoning traces even after training exclusively on valid solutions.",
+        "The work motivates checking trace semantics under distribution shift when evaluating reasoning or designing oversight, since answer accuracy alone does not establish trace validity."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "The study trains 124M models and checks syntax, arithmetic, and semantic dependencies on 4,096 problems per difficulty level. At the hardest out-of-distribution level, 31.6% of correct answers have invalid traces; altered-supervision experiments probe this separation. The arXiv v1 submission was 2026-09-29T17:46:55Z, within the daily interval. First seen records the earliest saved baseline source check; full text, previously inaccessible, was reviewed for this daily report.",
+        "limitations": "A synthetic, small-model study with seed sensitivity does not establish failure rates for frontier-model monitoring. The authors explicitly distinguish trace validity from causal faithfulness and do not test adversarial concealment or an operational safety monitor."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "https://deploymentsafety.openai.com/gpt-6-1-sol",
+      "title": "Addendum to GPT-6 Astra System Card: GPT-6.1 Sol",
+      "category": "1.10",
+      "tags": [
+        "Model Evaluation",
+        "Agent Safety",
+        "Capability-Cost Tradeoff"
+      ],
+      "published_on": "2026-09-29",
+      "first_seen_at": "2026-09-30T10:02:43Z",
+      "canonical_url": "https://deploymentsafety.openai.com/gpt-6-1-sol",
+      "links": {
+        "paper": "https://deploymentsafety.openai.com/gpt-6-1-sol/gpt-6-1-sol.pdf",
+        "blog": "https://openai.com/index/introducing-gpt-6-1-sol/"
+      },
+      "summary": [
+        "OpenAI pairs GPT-6.1 Sol's release with evaluations of coding, computer use, factuality, and agent alignment, reporting improved capability and task cost relative to GPT-6 Sol.",
+        "The evaluation package provides a current case study for comparing useful task performance with failure disclosure, permission compliance, and monitoring behavior instead of treating capability gains as a guarantee of safer agents."
+      ],
+      "evidence": {
+        "type": "technical-report",
+        "access": "full-text",
+        "rationale": "The September 29 system card describes adversarial evaluations and matched deployment simulations: among 49,650 internal tasks, the authors report 28 severity-3-or-higher flags for GPT-6.1 Sol versus 42 for GPT-6 Sol. The accompanying release report specifies benchmark versions and reasoning settings for capability-cost comparisons.",
+        "limitations": "These are developer-reported evaluations, not independent reproduction or a disclosed training recipe. Internal simulations may not transfer to external deployment, evaluation awareness and model versions affect comparisons, and some safety categories regress despite aggregate improvement. The publisher provides a date, not a precise publication time."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "arxiv:2609.37743",
+      "title": "ContextRender: From Execution Dependencies to Agent Context",
+      "category": "2.3",
+      "tags": [
+        "context-management",
+        "tool-use",
+        "long-horizon"
+      ],
+      "published_on": "2026-09-29",
+      "first_seen_at": "2026-09-30T10:01:45Z",
+      "canonical_url": "https://arxiv.org/abs/2609.37743",
+      "links": {
+        "paper": "https://arxiv.org/html/2609.37743v1"
+      },
+      "summary": [
+        "ContextRender keeps complete tool results in a persistent graph and selects what the agent sees using observed value reuse, recency, and relevance.",
+        "This gives long-running agents a way to reduce repeated context costs while retaining omitted information for later recovery, with competitive task performance under a 6K history budget."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Full methods, matched-budget baselines and ablations inspected; three models on AppWorld and 8-objective QA. Reports better task performance than five managed-context baselines across nine settings and 10.2–32.2% lower standardized inference cost than full history. The arXiv v1 submission was 2026-09-29T14:57:00Z, within the daily interval.",
+        "limitations": "Costs use a common pricing/cache model and only tasks triggering context management; they are not measured provider-bill savings. Performance is below full history in two settings. Reuse detection is exact, case-sensitive value matching; no independent reproduction or verified code release."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "arxiv:2609.37968",
+      "title": "SelfSearch: Reward-Free Search for Self-Improving Agents",
+      "category": "2.5",
+      "tags": [
+        "self-improvement",
+        "skill-acquisition",
+        "agent-harness"
+      ],
+      "published_on": "2026-09-29",
+      "first_seen_at": "2026-09-30T10:01:45Z",
+      "canonical_url": "https://arxiv.org/abs/2609.37968",
+      "links": {
+        "paper": "https://arxiv.org/html/2609.37968v1"
+      },
+      "summary": [
+        "SelfSearch lets a fixed-weight agent revise its instructions, tools, and execution code using records of earlier self-improvement attempts, without downstream benchmark rewards during search.",
+        "The resulting tools transfer to coding and terminal tasks, offering a way to improve an agent without repeatedly paying for benchmark evaluation during candidate generation."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Inspected search protocol, result tables, ablations and evaluation settings. Final population-mean success improves in all six model-family/benchmark settings; record-removal and fixed-improver ablations support the proposed mechanisms. The arXiv v1 submission was 2026-09-29T16:36:24Z, within the daily interval.",
+        "limitations": "Tests use 120 SWE-bench Verified tasks, 60 multilingual tasks and 89 Terminal-Bench tasks, with two lineages per model configuration; independent-search consistency is unestablished. Reward-free excludes downstream scores, not local execution/check feedback. Evaluation remains a separate cost; no verified public code release."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities",
+      "title": "GLM-5.3 and the spread of advanced cyber capabilities",
+      "category": "2.8",
+      "tags": [
+        "Agent Evaluation",
+        "Cybersecurity",
+        "Safeguards"
+      ],
+      "published_on": "2026-09-29",
+      "first_seen_at": "2026-09-30T10:02:43Z",
+      "canonical_url": "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities",
+      "links": {
+        "blog": "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities"
+      },
+      "summary": [
+        "Anthropic evaluates GLM-5.3's autonomous cybersecurity capabilities in isolated benchmarks and separately tests whether its safeguards resist malicious requests in simulated environments.",
+        "The findings illustrate why successful task execution and resistance to misuse need distinct measurements when assessing powerful tool-using models."
+      ],
+      "evidence": {
+        "type": "technical-report",
+        "access": "full-text",
+        "rationale": "The September 29 report describes automated and human-assisted tests, with 50 successful end-to-end exploit attempts out of 410 on ExploitBench and a separate 100-task internal evaluation. Its safeguard experiment uses 50 samples per condition and explicitly measures engagement rather than successful real-world attacks.",
+        "limitations": "A model developer evaluates a competitor; some data and evaluation machinery are internal. Safeguard trials use an LLM-simulated shell that executes no code, and access conditions differ between released weights and guarded APIs. Results are author-reported and should not be generalized to real-world attack success rates; only a publication date is supplied."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "arxiv:2609.37626",
+      "title": "SPLASH: Switching Parallel Layouts of Attention with Seamless Handoff for LLM Serving",
+      "category": "3.3",
+      "tags": [
+        "Serving",
+        "Dynamic Parallelism",
+        "KV Cache"
+      ],
+      "published_on": "2026-09-29",
+      "first_seen_at": "2026-09-30T10:02:58Z",
+      "canonical_url": "https://arxiv.org/abs/2609.37626",
+      "links": {
+        "paper": "https://arxiv.org/abs/2609.37626",
+        "code": "https://github.com/ict-agent/SPLASH-sglang"
+      },
+      "summary": [
+        "SPLASH changes attention parallelism while requests are running by reusing resident weights and KV caches, transferring missing state in the background, and switching at a batch boundary.",
+        "This lets serving systems adapt to changing concurrency and context lengths; its additional ownership layout stores attention weights and each request's cache without replicating either."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "arXiv v1 was submitted 2026-09-29 at 14:02:29 UTC, inside the daily window. The SGLang-based implementation compares four layouts on B200, H200, and DCU; the authors report 1.3–1.73x throughput versus fixed layouts on B200/GLM-5.3 and measure all twelve switch directions.",
+        "limitations": "Main experiments use fixed output lengths and controlled concurrency sweeps. Switching needs memory headroom and pre-captured graphs; transfers contend for bandwidth, and short-lived workload changes may not repay the cost. Speculative decoding and heterogeneous workers are outside the implementation scope."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "arxiv:2609.36070",
+      "title": "Mixture-of-Kittens: MoE Megakernel for NVL72s",
+      "category": "3.5",
+      "tags": [
+        "MoE Training",
+        "Kernel Fusion",
+        "NVL72"
+      ],
+      "published_on": "2026-09-28",
+      "first_seen_at": "2026-09-30T10:02:58Z",
+      "canonical_url": "https://arxiv.org/abs/2609.36070",
+      "links": {
+        "paper": "https://arxiv.org/abs/2609.36070",
+        "code": "https://github.com/cursor/mixture-of-kittens"
+      },
+      "summary": [
+        "Mixture-of-Kittens fuses expert dispatch, expert computation, and result combination into a deterministic GPU kernel, choosing communication direction per operator and avoiding CPU synchronization.",
+        "It targets NVL72 systems where conventional mixture-of-experts communication schedules leave performance unused, providing an open implementation for overlapping computation and data movement."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Newly discovered within the 72-hour catch-up window, absent from the baseline; arXiv v1 was submitted 2026-09-28 at 18:22:34 UTC. Alongside layer benchmarks and ablations, a 512-GB300 comparison changes only the MoE backend and reports 1,070.2 versus 761.0 tokens/second/GPU, a 41% training-throughput increase.",
+        "limitations": "The full-model result comes from the authors' internal production stack and one reported configuration; the open layer benchmarks use synthetic routing inputs. Gains vary with precision, token count, and expert parallelism, and should not be generalized to other accelerator fabrics or training convergence."
+      },
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "arxiv:2609.36954",
+      "title": "Purlin: Separating Orchestration from the Datapath of Collectives",
+      "category": "3.8",
+      "tags": [
+        "GPU Communication",
+        "Collectives",
+        "Distributed Inference"
+      ],
+      "published_on": "2026-09-29",
+      "first_seen_at": "2026-09-30T10:02:58Z",
+      "canonical_url": "https://arxiv.org/abs/2609.36954",
+      "links": {
+        "paper": "https://arxiv.org/abs/2609.36954",
+        "code": "https://github.com/purlin-project/purlin"
+      },
+      "summary": [
+        "Purlin separates collective operations into layout specifications, a reusable coordination protocol, and hardware-specific data-movement primitives.",
+        "This makes communication easier to specialize across GPU generations while improving distributed inference when collective latency is a substantial part of request time."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Newly discovered in the 72-hour catch-up window: arXiv v1 was submitted 2026-09-29 at 07:57:27 UTC, before the main window opened. Tests use eight-GPU A100, H200, and B200 servers; the authors report a 1.13x geometric-mean offline serving gain across 135 configuration–baseline comparisons, with microbenchmarks and quality checks.",
+        "limitations": "The largest online gain occurs under overload rather than sustainable service at that arrival rate. MSCCL++ wins in some high-concurrency cases, NCCL leads some large variable-length reductions, and strongly imbalanced collectives remain unevaluated; all results are author-reported."
+      },
+      "novelty": "newly-discovered"
+    }
+  ]
+}

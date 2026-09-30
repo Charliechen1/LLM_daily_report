@@ -5,6 +5,20 @@ Request scheduling, continuous batching, prefill/decode disaggregation and elast
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-09-30](../../../reports/2026/09/2026-09-30.md) — PARTIAL SEARCH
+
+### [SPLASH: Switching Parallel Layouts of Attention with Seamless Handoff for LLM Serving](<https://arxiv.org/abs/2609.37626>)
+
+SPLASH changes attention parallelism while requests are running by reusing resident weights and KV caches, transferring missing state in the background, and switching at a batch boundary. This lets serving systems adapt to changing concurrency and context lengths; its additional ownership layout stores attention weights and each request's cache without replicating either.
+
+**Published:** 2026-09-29 · **First seen:** 2026-09-30T10:02:58Z · **Novelty:** new · **Tags:** Serving, Dynamic Parallelism, KV Cache
+
+[Paper](<https://arxiv.org/abs/2609.37626>) · [Code](<https://github.com/ict-agent/SPLASH-sglang>)
+
+**Evidence:** research-paper; full-text. arXiv v1 was submitted 2026-09-29 at 14:02:29 UTC, inside the daily window. The SGLang-based implementation compares four layouts on B200, H200, and DCU; the authors report 1.3–1.73x throughput versus fixed layouts on B200/GLM-5.3 and measure all twelve switch directions.
+
+**Limitations:** Main experiments use fixed output lengths and controlled concurrency sweeps. Switching needs memory headroom and pre-captured graphs; transfers contend for bandwidth, and short-lived workload changes may not repay the cost. Speculative decoding and heterogeneous workers are outside the implementation scope.
+
 ## [2026-09-29 — Landscape baseline](../../../landscape/2026-09-29.md) — PARTIAL SEARCH
 
 ### [Efficient Memory Management for Large Language Model Serving with PagedAttention](<https://arxiv.org/abs/2309.06180>)
