@@ -1,0 +1,15 @@
+{
+  "name": "llm-daily-report",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Evidence-grounded daily LLM research reports and topic indexes.",
+  "type": "module",
+  "engines": {"node": ">=22"},
+  "scripts": {
+    "new": "node scripts/report.mjs new",
+    "validate": "node scripts/report.mjs validate",
+    "build": "node scripts/report.mjs build",
+    "check": "node scripts/report.mjs build --check",
+    "test": "node --test"
+  }
+}

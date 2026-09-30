@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "date": "YYYY-MM-DD",
+  "timezone": "America/Los_Angeles",
+  "generated_at": "REPLACE_ME_ISO_TIMESTAMP_WITH_OFFSET",
+  "coverage": {
+    "start": "REPLACE_ME_PREVIOUS_LOCAL_DATE_03_00_WITH_DST_OFFSET",
+    "end": "REPLACE_ME_REPORT_DATE_03_00_WITH_DST_OFFSET"
+  },
+  "search": {
+    "status": "partial",
+    "notes": "PLACEHOLDER: replace with the actual search coverage and limitations.",
+    "sources_checked": [
+      { "name": "PLACEHOLDER source", "url": "https://example.org/source", "status": "ok" }
+    ]
+  },
+  "entries": [
+    {
+      "id": "replace-me-stable-research-id",
+      "title": "PLACEHOLDER research title; this is not a real report",
+      "category": "1.1",
+      "tags": ["PLACEHOLDER topic", "PLACEHOLDER method"],
+      "published_on": "YYYY-MM-DD",
+      "first_seen_at": "REPLACE_ME_ISO_TIMESTAMP_WITH_OFFSET",
+      "canonical_url": "https://example.org/research",
+      "links": { "paper": "https://example.org/paper", "code": "https://example.org/code" },
+      "summary": [
+        "PLACEHOLDER: explain what the research did in one concise English sentence.",
+        "PLACEHOLDER: explain why the result is useful in one concise English sentence."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "PLACEHOLDER: explain the primary-source evidence and selection rationale.",
+        "limitations": "PLACEHOLDER: describe limitations, unverified claims or conditions."
+      },
+      "novelty": "new"
+    }
+  ]
+}

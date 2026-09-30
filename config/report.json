@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "timezone": "America/Los_Angeles",
+  "schedule": {"local_time": "03:00"},
+  "max_entries": 10,
+  "lookback_hours": 24,
+  "discovery_lookback_hours": 72,
+  "summary_sentences": {"min": 2, "max": 3}
+}

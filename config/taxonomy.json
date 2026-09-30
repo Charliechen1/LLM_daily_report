@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "groups": [
+    {
+      "id": "llm-recipe",
+      "title": "LLM Recipe",
+      "topics": [
+        {"id":"1.1","slug":"data-curation-tokenization","title":"Data Curation & Tokenization","description":"Data filtering, deduplication, mixtures, synthetic data, quality and tokenizers."},
+        {"id":"1.2","slug":"model-architecture-scaling-laws","title":"Model Architecture & Scaling Laws","description":"Transformers, MoE, SSM/hybrid architectures and model/data/compute allocation."},
+        {"id":"1.3","slug":"pretraining-optimization","title":"Pretraining & Optimization","description":"Objectives, optimizers, learning rates, batch sizes and training stability."},
+        {"id":"1.4","slug":"midtraining-continual-learning","title":"Mid-training & Continual Learning","description":"Domain continued pretraining, context extension, continual learning and forgetting."},
+        {"id":"1.5","slug":"supervised-finetuning-adaptation","title":"Supervised Fine-tuning & Adaptation","description":"Instruction tuning, SFT data and mixtures, LoRA and parameter-efficient adaptation."},
+        {"id":"1.6","slug":"preference-alignment-reward-modeling","title":"Preference Alignment & Reward Modeling","description":"Preference datasets, DPO-like methods, reward models and process supervision."},
+        {"id":"1.7","slug":"reinforcement-learning-reasoning","title":"Reinforcement Learning & Reasoning","description":"RLHF, RLVR, policy optimization, reasoning training, tool use and multi-turn agent RL."},
+        {"id":"1.8","slug":"distillation-model-compression","title":"Distillation & Model Compression","description":"Knowledge/reasoning distillation, pruning, quantization algorithms and model merging."},
+        {"id":"1.9","slug":"test-time-scaling-inference-algorithms","title":"Test-Time Scaling & Inference Algorithms","description":"Inference-time search, verification, reranking and adaptive reasoning budgets."},
+        {"id":"1.10","slug":"model-evaluation-safety-interpretability","title":"Model Evaluation, Safety & Interpretability","description":"Capability evaluation, contamination, generalization, robustness, safety and mechanistic understanding."}
+      ]
+    },
+    {
+      "id": "ai-agent-dev",
+      "title": "AI Agent Dev",
+      "topics": [
+        {"id":"2.1","slug":"agent-architecture-planning","title":"Agent Architecture & Planning","description":"Agent loops, task decomposition, planning, reflection and execution control."},
+        {"id":"2.2","slug":"tool-use-environment-interaction","title":"Tool Use & Environment Interaction","description":"Tool selection/calling, APIs, code execution, browser/computer use and protocols."},
+        {"id":"2.3","slug":"context-engineering-memory","title":"Context Engineering & Memory","description":"Context organization/compression, working memory, long-term memory and state."},
+        {"id":"2.4","slug":"retrieval-knowledge-integration","title":"Retrieval & Knowledge Integration","description":"RAG, agentic search, query rewriting, knowledge bases and external grounding."},
+        {"id":"2.5","slug":"agent-learning-skill-acquisition","title":"Agent Learning & Skill Acquisition","description":"Learning from trajectories/feedback, skill generation/reuse, experience and self-improvement."},
+        {"id":"2.6","slug":"multi-agent-collaboration","title":"Multi-Agent Collaboration","description":"Division of work, communication, delegation, collaboration topology and shared memory."},
+        {"id":"2.7","slug":"agent-harness-reliability","title":"Agent Harness & Reliability","description":"Long-running execution, failure recovery, retries, persistence and human collaboration."},
+        {"id":"2.8","slug":"agent-evaluation-security","title":"Agent Evaluation & Security","description":"Task success, trajectory evaluation, cost/reliability, prompt injection and permissions."}
+      ]
+    },
+    {
+      "id": "ai-training-inference-infra",
+      "title": "AI Training & Inference Infra",
+      "topics": [
+        {"id":"3.1","slug":"distributed-training-systems","title":"Distributed Training Systems","description":"Data/tensor/pipeline/expert/context parallelism, sharding and communication overlap."},
+        {"id":"3.2","slug":"rl-rollout-infrastructure","title":"RL & Rollout Infrastructure","description":"Distributed rollouts, asynchronous RL, generation/training coordination and weight synchronization."},
+        {"id":"3.3","slug":"inference-engines-serving","title":"Inference Engines & Serving","description":"Request scheduling, continuous batching, prefill/decode disaggregation and elastic serving."},
+        {"id":"3.4","slug":"attention-kv-cache-memory-systems","title":"Attention, KV Cache & Memory Systems","description":"Attention execution, KV management/reuse, offloading and long-context memory efficiency."},
+        {"id":"3.5","slug":"kernels-compilers-runtimes","title":"Kernels, Compilers & Runtimes","description":"GPU kernels, operator fusion, compilation, execution graphs and hardware adaptation."},
+        {"id":"3.6","slug":"low-precision-efficient-execution","title":"Low-Precision & Efficient Execution","description":"FP8/FP4/INT execution, quantized kernels, sparse compute and speculative decoding systems."},
+        {"id":"3.7","slug":"data-pipelines-storage-checkpointing","title":"Data Pipelines, Storage & Checkpointing","description":"Data loading, storage throughput, distributed checkpoints, recovery and fault tolerance."},
+        {"id":"3.8","slug":"hardware-networking-cluster-efficiency","title":"Hardware, Networking & Cluster Efficiency","description":"Accelerators, interconnects, cluster scheduling, profiling, utilization, cost and energy."}
+      ]
+    }
+  ]
+}

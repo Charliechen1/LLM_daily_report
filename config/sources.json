@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "description": "Discovery starting points, not an exhaustive allowlist or endorsements. Follow primary paper, technical report and code links; verify publication dates and evidence before inclusion.",
+  "sources": [
+    {"name":"arXiv cs.CL","url":"https://arxiv.org/list/cs.CL/recent","kind":"paper-index","groups":["llm-recipe","ai-agent-dev"]},
+    {"name":"arXiv cs.AI","url":"https://arxiv.org/list/cs.AI/recent","kind":"paper-index","groups":["ai-agent-dev","llm-recipe"]},
+    {"name":"arXiv cs.LG","url":"https://arxiv.org/list/cs.LG/recent","kind":"paper-index","groups":["llm-recipe","ai-training-inference-infra"]},
+    {"name":"arXiv cs.DC","url":"https://arxiv.org/list/cs.DC/recent","kind":"paper-index","groups":["ai-training-inference-infra"]},
+    {"name":"OpenReview","url":"https://openreview.net/","kind":"paper-index","groups":["llm-recipe","ai-agent-dev","ai-training-inference-infra"]},
+    {"name":"ACL Anthology","url":"https://aclanthology.org/","kind":"paper-index","groups":["llm-recipe","ai-agent-dev"]},
+    {"name":"Ai2","url":"https://allenai.org/blog","kind":"primary-research-blog","groups":["llm-recipe","ai-agent-dev"]},
+    {"name":"Anthropic Research","url":"https://www.anthropic.com/research","kind":"primary-research-blog","groups":["llm-recipe","ai-agent-dev"]},
+    {"name":"Anthropic Engineering","url":"https://www.anthropic.com/engineering","kind":"primary-engineering-blog","groups":["ai-agent-dev","ai-training-inference-infra"]},
+    {"name":"OpenAI Research","url":"https://openai.com/research/","kind":"primary-research-blog","groups":["llm-recipe","ai-agent-dev"]},
+    {"name":"Google DeepMind","url":"https://deepmind.google/research/","kind":"primary-research-blog","groups":["llm-recipe","ai-agent-dev"]},
+    {"name":"vLLM","url":"https://blog.vllm.ai/","kind":"primary-engineering-blog","groups":["ai-training-inference-infra"]},
+    {"name":"PyTorch","url":"https://pytorch.org/blog/","kind":"primary-engineering-blog","groups":["ai-training-inference-infra"]},
+    {"name":"NVIDIA Developer","url":"https://developer.nvidia.com/blog/","kind":"primary-engineering-blog","groups":["ai-training-inference-infra"]}
+  ]
+}
