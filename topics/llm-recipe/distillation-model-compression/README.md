@@ -5,6 +5,20 @@ Knowledge/reasoning distillation, pruning, quantization algorithms and model mer
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-01](../../../reports/2026/10/2026-10-01.md) — PARTIAL SEARCH
+
+### [PivotOPD: Learning to Recover from Pivotal Mistakes in Multi-Turn Agents](<https://arxiv.org/abs/2609.40285>)
+
+PivotOPD uses a teacher to locate consequential mistakes and name corrective actions, then distills a hint-conditioned copy of the student at both mistake and recovery turns. This supplies learning signals where unsuccessful rollouts provide little reward feedback, helping agents recover instead of merely reducing the probability of a wrong action.
+
+**Published:** 2026-09-30 · **First seen:** 2026-10-02T15:32:39Z · **Novelty:** new · **Tags:** On-Policy Distillation, Agent Training, Error Recovery
+
+[Paper](<https://arxiv.org/abs/2609.40285>) · [Project](<https://research.nvidia.com/labs/lpr/pivotopd/>)
+
+**Evidence:** research-paper; full-text. Matched training budgets, 13 baselines, three seeds, and held-out ALFWorld, WebShop, and search-QA tests support the method; both 1.7B and 8B students improve benchmark averages, with additional coding-agent transfer. arXiv v1: 2026-09-30T17:48:11Z, within this report's interval. The timestamp above is submission time; the arXiv recent-submissions listing separately confirms the October 1 public announcement batch.
+
+**Limitations:** Later recovery turns require exact environment replay, which live websites may not support. Teacher action errors become incorrect training targets; pivot detection agrees with the ALFWorld oracle within one turn on 77.8% of failures, so supervision remains imperfect.
+
 ## [2026-09-30](../../../reports/2026/09/2026-09-30.md) — PARTIAL SEARCH
 
 ### [From Dissonance to Orchestration: Teacher Intervention in On-Policy Distillation](<https://arxiv.org/abs/2609.37510>)

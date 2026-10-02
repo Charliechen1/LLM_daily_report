@@ -5,6 +5,34 @@ Task success, trajectory evaluation, cost/reliability, prompt injection and perm
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-02](../../../reports/2026/10/2026-10-02.md) — PARTIAL SEARCH
+
+### [Finding the Right Fit: Model-Harness Interactions across Agent Tasks](<https://arxiv.org/abs/2610.00917>)
+
+This study compares 66 model–harness configurations across terminal and professional-work benchmarks and finds that model rankings and preferred harnesses change with the task. The released adapters and scored trajectories help developers evaluate a complete agent configuration instead of assuming that a model ranking transfers unchanged to their runtime.
+
+**Published:** 2026-10-01 · **First seen:** 2026-10-02T15:33:55Z · **Novelty:** new · **Tags:** Harness Evaluation, Model Selection, Cost
+
+[Paper](<https://arxiv.org/html/2610.00917v1>) · [Code](<https://github.com/liyix/finding-the-right-fit>)
+
+**Evidence:** research-paper; full-text. Inspected the common task sets, configuration matrix, cost accounting and matched-trajectory analysis. The study covers five models, four configurable harnesses and two native pairings, with 6,204 scored runs and a verified public code repository.
+
+**Limitations:** One counted run per task leaves run-to-run variance unmeasured. Native settings, tools and budgets are not uniformly matched, so comparisons do not isolate individual components; task subsets are not upstream leaderboard reproductions. Explanations from a few trajectory pairs remain hypotheses; not independently reproduced.
+
+## [2026-10-01](../../../reports/2026/10/2026-10-01.md) — PARTIAL SEARCH
+
+### [OSWorld-Science: A Benchmark of Computer Use Agents for Learning and Using Scientific Software](<https://arxiv.org/abs/2609.39903>)
+
+OSWorld-Science evaluates computer-use agents on 146 scientific-software tasks, checking application state and artifacts such as molecular structures, segmentation masks, and numerical results. Its shared harness and partial-credit evaluators make it useful for separating incomplete scientific workflows from valid deliverables and studying where current agents fail.
+
+**Published:** 2026-09-30 · **First seen:** 2026-10-02T15:33:55Z · **Novelty:** new · **Tags:** Computer Use, Scientific Workflows, Artifact Evaluation
+
+[Paper](<https://arxiv.org/html/2609.39903v1>) · [Code](<https://github.com/DiscoAILab/OSWorld-Science>)
+
+**Evidence:** research-paper; full-text. Inspected task construction, executable evaluators, common interaction protocol, 12-model results and trajectory analysis. The benchmark spans seven domains, and the public repository provides the evaluation runtime and links to task data.
+
+**Limitations:** Task coverage is uneven: four software configurations account for 58.2% of tasks. Scores include partial credit, not only full completion; the 23-task harness ablations have one run per cell and no comparison survives the stated multiple-testing correction. Software licensing and environment requirements constrain replication; not independently reproduced.
+
 ## [2026-09-30](../../../reports/2026/09/2026-09-30.md) — PARTIAL SEARCH
 
 ### [GLM-5.3 and the spread of advanced cyber capabilities](<https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities>)

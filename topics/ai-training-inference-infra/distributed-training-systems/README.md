@@ -5,6 +5,34 @@ Data/tensor/pipeline/expert/context parallelism, sharding and communication over
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-02](../../../reports/2026/10/2026-10-02.md) — PARTIAL SEARCH
+
+### [Introducing Olmo-core 3: Open, scalable training infrastructure for large MoEs](<https://allenai.org/blog/olmocore3>)
+
+Olmo-core 3 keeps mixture-of-experts weights resident on GPUs and combines expert and pipeline parallelism with a distributed optimizer, GPU-resident routing, and low-precision execution. The open stack offers a practical way to increase total expert capacity without repeatedly gathering weights, with throughput gains demonstrated against Ai2's earlier training implementation.
+
+**Published:** 2026-10-01 · **First seen:** 2026-10-02T15:33:55Z · **Novelty:** new · **Tags:** MoE Training, Expert Parallelism, Open Infrastructure
+
+[Blog](<https://allenai.org/blog/olmocore3>) · [Code](<https://github.com/allenai/olmo-core>)
+
+**Evidence:** engineering-report; full-text. The full October 1 engineering blog and linked repository were inspected. A preliminary 47B-model test on eight B300 GPUs reports 52,000 versus 19,400 tokens/second/GPU against the previous FSDP stack; separate experiments test expert-count scaling and MXFP8. The publisher supplies a date without an exact time.
+
+**Limitations:** Performance is author-reported and configuration-specific. Trillion-parameter results use random routing or short capacity tests, not trained-model quality or sustained convergence. The linked technical report exceeded the retrieval tool's size limit, so this entry relies on the full engineering blog rather than claiming paper review.
+
+## [2026-10-01](../../../reports/2026/10/2026-10-01.md) — PARTIAL SEARCH
+
+### [HAPMoE: Heterogeneity-Aware Automatic Parallelism Planning for Mixture-of-Experts Models Training](<https://arxiv.org/abs/2609.39350>)
+
+HAPMoE profiles accelerator and communication costs, then jointly chooses parallelism, uneven pipeline partitions, device placement, and recomputation for mixture-of-experts training. It generates runnable Megatron-LM plans that use mixed accelerator clusters more effectively without manually tuning each distributed-training configuration.
+
+**Published:** 2026-09-30 · **First seen:** 2026-10-02T15:33:57Z · **Novelty:** newly-discovered · **Tags:** MoE Training, Heterogeneous Accelerators, Parallelism Planning
+
+[Paper](<https://arxiv.org/abs/2609.39350>)
+
+**Evidence:** research-paper; full-text. Catch-up discovery: v1 was submitted September 30 at 09:11:46 UTC and is in the October 1 announcement list, consistent with scheduled availability at October 1 00:00 UTC. Across 16–32-device heterogeneous MoE configurations, the authors report geometric-mean throughput of 1.67x and 1.78x Megatron-Infinigence for two Mixtral-style models, with adapted competing planners and ablations.
+
+**Limitations:** Plans are fixed from warm-up profiles and cannot adapt online to changing routing or device availability. Tests cover limited model and cluster configurations; larger networks may add contention and failure effects. The comparison includes adapted rather than original competing systems, and no public implementation was verified.
+
 ## [2026-09-29 — Landscape baseline](../../../landscape/2026-09-29.md) — PARTIAL SEARCH
 
 ### [Efficient Large-Scale Language Model Training on GPU Clusters Using Megatron-LM](<https://arxiv.org/abs/2104.04473>)

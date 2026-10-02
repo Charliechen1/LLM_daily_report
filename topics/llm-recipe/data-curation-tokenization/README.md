@@ -5,6 +5,34 @@ Data filtering, deduplication, mixtures, synthetic data, quality and tokenizers.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-02](../../../reports/2026/10/2026-10-02.md) — PARTIAL SEARCH
+
+### [Universal Byte-Level Encoding: UTF-8/UTF-16 Routing to Reduce Cross-Script Token-Budget Disparities](<https://arxiv.org/abs/2610.01984>)
+
+Universal Byte-Level Encoding routes characters between UTF-8 and UTF-16 before standard byte-pair encoding, reducing the initial encoding cost for several scripts while preserving exact decoding. It can reduce multilingual token-budget disparities and fit more content into a fixed context window, particularly with compact vocabularies and poorly covered scripts.
+
+**Published:** 2026-10-01 · **First seen:** 2026-10-02T15:32:39Z · **Novelty:** new · **Tags:** Tokenization, Multilingual Models, Data Efficiency
+
+[Paper](<https://arxiv.org/abs/2610.01984>)
+
+**Evidence:** research-paper; full-text. Matched tokenizer-data comparisons span 204 language-script configurations, Unicode round-trip audits, and language models from 182M to 1.3B. The 101-language/32K setting reduces token-premium Gini by 9.4%; language-model quality differences are small and mixed. arXiv v1: 2026-10-01T16:26:10Z, within this report's interval. The timestamp above is submission time; the arXiv cs.CL listing separately confirms the October 2 public announcement batch.
+
+**Limitations:** Changing vocabulary requires retraining or adaptation rather than swapping into an existing checkpoint. Some languages regress, the largest token savings include scripts outside the downstream training corpus, and three-seed results do not establish improved language-model loss parity.
+
+## [2026-10-02](../../../reports/2026/10/2026-10-02.md) — PARTIAL SEARCH
+
+### [Scalable, Transferable Meta-network for Data Selection Requires a Different Loss (and Why the Obvious Choice is Problematic)](<https://arxiv.org/abs/2610.02092>)
+
+TESS learns a reusable data-selection network by matching per-example loss differences between ordinary and validation-guided models, avoiding a weighting objective that can suppress most examples and favor shortcuts. It transfers selection from a smaller sample to unseen instruction data, offering a way to target fine-tuning data without relearning a separate weight for every example.
+
+**Published:** 2026-10-01 · **First seen:** 2026-10-02T15:32:39Z · **Novelty:** new · **Tags:** Data Selection, Meta-Learning, Instruction Tuning
+
+[Paper](<https://arxiv.org/abs/2610.02092>)
+
+**Evidence:** research-paper; full-text. A selector trained on 50K Tulu V2 examples is applied to 197K candidates before Llama-2-7B fine-tuning; math/code task-average performance is 26.46 versus 21.54 for random selection. Loss ablations and cross-dataset probes support transfer. arXiv v1: 2026-10-01T17:23:29Z. The timestamp above is submission time; the arXiv cs.CL listing separately confirms the October 2 public announcement batch.
+
+**Limitations:** Task-specific validation examples and representation/gradient features are required. Evidence uses a limited set of older model families and tasks; the safety experiment measures harmful-data identification, not improved safety. Code release is promised upon acceptance rather than verified as available.
+
 ## [2026-09-29 — Landscape baseline](../../../landscape/2026-09-29.md) — PARTIAL SEARCH
 
 ### [It's All Training: A Fully Synthetic Single-Stage Recipe for LLMs](<https://arxiv.org/abs/2609.37891>)

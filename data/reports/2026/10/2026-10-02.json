@@ -1,0 +1,551 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-02",
+  "timezone": "America/Los_Angeles",
+  "generated_at": "2026-10-02T15:45:42.456Z",
+  "coverage": {
+    "start": "2026-10-01T03:00:00-07:00",
+    "end": "2026-10-02T03:00:00-07:00"
+  },
+  "search": {
+    "status": "partial",
+    "notes": "Daily delta for October 1 03:00 to October 2 03:00 America/Los_Angeles, with a 72-hour discovery lookback ending at October 2 10:00 UTC. Checked against all 45 previously published works and the nine entries in the October 1 backfill. Original arXiv v1 dates are preserved; dated October 2 announcement listings and the official schedule imply public release at October 2 00:00 UTC. This is a schedule-based inference, not an observed server timestamp. VeriHarness and Finding the Right Fit were submitted earlier but became public in this window. Leto and MegaFlux retain September 30 submission dates and catch-up labels; their October 2 announcement prevents incorrectly backfilling them into October 1. Nine selected papers were read in full; Olmo-core 3 is based on its complete primary engineering blog and verified code repository. The linked 16.6 MB Olmo-core technical report exceeded retrieval limits, and CMP's anonymous code page provided no readable contents; search is therefore partial. Other unavailable or unverified code releases are disclosed per entry. Blog dates are publisher-provided without exact timestamps. Results are author-reported, not independently reproduced, and rankings or speedups are limited to their tested settings. Source checks cover all three areas and include current organization indexes, but the selection is not exhaustive.",
+    "sources_checked": [
+      {
+        "name": "arXiv cs.CL recent listings",
+        "url": "https://arxiv.org/list/cs.CL/recent",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv cs.CL October 1 listings",
+        "url": "https://arxiv.org/list/cs.CL/recent?show=50&skip=184",
+        "status": "ok"
+      },
+      {
+        "name": "Hugging Face September 30 discovery index (prior access gap resolved)",
+        "url": "https://huggingface.co/papers/date/2026-09-30",
+        "status": "ok"
+      },
+      {
+        "name": "Hugging Face October 1 discovery index",
+        "url": "https://huggingface.co/papers/date/2026-10-01",
+        "status": "ok"
+      },
+      {
+        "name": "Universal Byte-Level Encoding: UTF-8/UTF-16 Routing to Reduce Cross-Script Token-Budget Disparities — submission history",
+        "url": "https://arxiv.org/abs/2610.01984",
+        "status": "ok"
+      },
+      {
+        "name": "Universal Byte-Level Encoding: UTF-8/UTF-16 Routing to Reduce Cross-Script Token-Budget Disparities — full text v1",
+        "url": "https://arxiv.org/html/2610.01984v1",
+        "status": "ok"
+      },
+      {
+        "name": "Hierarchical Continuous Diffusion Language Models — submission history",
+        "url": "https://arxiv.org/abs/2610.02193",
+        "status": "ok"
+      },
+      {
+        "name": "Hierarchical Continuous Diffusion Language Models — full text v1",
+        "url": "https://arxiv.org/html/2610.02193v1",
+        "status": "ok"
+      },
+      {
+        "name": "Scalable, Transferable Meta-network for Data Selection Requires a Different Loss (and Why the Obvious Choice is Problematic) — submission history",
+        "url": "https://arxiv.org/abs/2610.02092",
+        "status": "ok"
+      },
+      {
+        "name": "Scalable, Transferable Meta-network for Data Selection Requires a Different Loss (and Why the Obvious Choice is Problematic) — full text v1",
+        "url": "https://arxiv.org/html/2610.02092v1",
+        "status": "ok"
+      },
+      {
+        "name": "Text entropy filtering candidate full paper",
+        "url": "https://arxiv.org/html/2610.01493v1",
+        "status": "ok"
+      },
+      {
+        "name": "Text entropy filtering candidate submission history",
+        "url": "https://arxiv.org/abs/2610.01493",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv cs.CL October 2 announcement batch: UBE, HC-DLM, TESS",
+        "url": "https://arxiv.org/list/cs.CL/recent?show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv cs.AI recent discovery",
+        "url": "https://arxiv.org/list/cs.AI/recent",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv cs.AI new discovery",
+        "url": "https://arxiv.org/list/cs.AI/new",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv submission availability and announcement schedule",
+        "url": "https://info.arxiv.org/help/availability.html",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv Oct2 announcement listing, entries 51–150",
+        "url": "https://arxiv.org/list/cs.AI/recent?skip=50&show=100",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv Oct2 announcement listing, entries 151–250",
+        "url": "https://arxiv.org/list/cs.AI/recent?skip=150&show=100",
+        "status": "ok"
+      },
+      {
+        "name": "VeriHarness: Scaling Agentic Verification for Long-Horizon Tasks — submission history",
+        "url": "https://arxiv.org/abs/2610.00972",
+        "status": "ok"
+      },
+      {
+        "name": "VeriHarness: Scaling Agentic Verification for Long-Horizon Tasks — full text",
+        "url": "https://arxiv.org/html/2610.00972v1",
+        "status": "ok"
+      },
+      {
+        "name": "VeriHarness: Scaling Agentic Verification for Long-Horizon Tasks — linked repository",
+        "url": "https://github.com/google-research/veriharness",
+        "status": "ok"
+      },
+      {
+        "name": "Causal Memory Policy: Making Memory Utility Identifiable by Intervening on Retrieval — submission history",
+        "url": "https://arxiv.org/abs/2610.02070",
+        "status": "ok"
+      },
+      {
+        "name": "Causal Memory Policy: Making Memory Utility Identifiable by Intervening on Retrieval — full text",
+        "url": "https://arxiv.org/html/2610.02070v1",
+        "status": "ok"
+      },
+      {
+        "name": "Finding the Right Fit: Model-Harness Interactions across Agent Tasks — submission history",
+        "url": "https://arxiv.org/abs/2610.00917",
+        "status": "ok"
+      },
+      {
+        "name": "Finding the Right Fit: Model-Harness Interactions across Agent Tasks — full text",
+        "url": "https://arxiv.org/html/2610.00917v1",
+        "status": "ok"
+      },
+      {
+        "name": "Finding the Right Fit: Model-Harness Interactions across Agent Tasks — linked repository",
+        "url": "https://github.com/liyix/finding-the-right-fit",
+        "status": "ok"
+      },
+      {
+        "name": "CMP author-linked anonymous artifact",
+        "url": "https://anonymous.4open.science/r/cmp-release-D0C3/",
+        "status": "unavailable"
+      },
+      {
+        "name": "Component Routing alternate — submission history",
+        "url": "https://arxiv.org/abs/2610.01787",
+        "status": "ok"
+      },
+      {
+        "name": "Component Routing alternate — full text",
+        "url": "https://arxiv.org/html/2610.01787v1",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv Distributed Computing recent announcements",
+        "url": "https://arxiv.org/list/cs.DC/recent",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv Machine Learning recent announcements",
+        "url": "https://arxiv.org/list/cs.LG/recent",
+        "status": "ok"
+      },
+      {
+        "name": "Leto submission history",
+        "url": "https://arxiv.org/abs/2610.00687",
+        "status": "ok"
+      },
+      {
+        "name": "Leto full paper",
+        "url": "https://arxiv.org/html/2610.00687v1",
+        "status": "ok"
+      },
+      {
+        "name": "MegaFlux submission history",
+        "url": "https://arxiv.org/abs/2610.00671",
+        "status": "ok"
+      },
+      {
+        "name": "MegaFlux full paper",
+        "url": "https://arxiv.org/html/2610.00671v1",
+        "status": "ok"
+      },
+      {
+        "name": "ePACT submission history",
+        "url": "https://arxiv.org/abs/2610.01784",
+        "status": "ok"
+      },
+      {
+        "name": "ePACT full paper",
+        "url": "https://arxiv.org/html/2610.01784v1",
+        "status": "ok"
+      },
+      {
+        "name": "RapidMoE candidate abstract",
+        "url": "https://arxiv.org/abs/2610.01265",
+        "status": "ok"
+      },
+      {
+        "name": "GPU-initiated communication candidate abstract",
+        "url": "https://arxiv.org/abs/2610.01380",
+        "status": "ok"
+      },
+      {
+        "name": "vLLM official blog index",
+        "url": "https://vllm.ai/blog",
+        "status": "ok"
+      },
+      {
+        "name": "PyTorch official blog index",
+        "url": "https://pytorch.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "PyTorch Jagged Flash Attention technical post",
+        "url": "https://pytorch.org/blog/optimizing-jagged-flash-attention-with-tlx-the-road-toward-sota-fa4-on-blackwell/",
+        "status": "ok"
+      },
+      {
+        "name": "NVIDIA TensorRT Model Connect development article, prior access gap restored",
+        "url": "https://developer.nvidia.com/blog/ai-native-by-design-lessons-learned-from-building-nvidia-tensorrt-model-connect/",
+        "status": "ok"
+      },
+      {
+        "name": "OpenAI research index",
+        "url": "https://openai.com/news/research/",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic research index",
+        "url": "https://www.anthropic.com/research",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic engineering index",
+        "url": "https://www.anthropic.com/engineering",
+        "status": "ok"
+      },
+      {
+        "name": "Google DeepMind blog index",
+        "url": "https://deepmind.google/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "Ai2 research index",
+        "url": "https://allenai.org/research",
+        "status": "ok"
+      },
+      {
+        "name": "Olmo-core 3 full engineering blog",
+        "url": "https://allenai.org/blog/olmocore3",
+        "status": "ok"
+      },
+      {
+        "name": "Olmo-core repository",
+        "url": "https://github.com/allenai/olmo-core",
+        "status": "ok"
+      },
+      {
+        "name": "Olmo-core 3 technical report (16.6 MB exceeds retrieval limit)",
+        "url": "https://allenai.org/papers/olmocore3",
+        "status": "unavailable"
+      },
+      {
+        "name": "Claude-shaped science (screened, not selected)",
+        "url": "https://www.anthropic.com/research/claude-shaped-science",
+        "status": "ok"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": "arxiv:2610.01984",
+      "title": "Universal Byte-Level Encoding: UTF-8/UTF-16 Routing to Reduce Cross-Script Token-Budget Disparities",
+      "category": "1.1",
+      "tags": [
+        "Tokenization",
+        "Multilingual Models",
+        "Data Efficiency"
+      ],
+      "published_on": "2026-10-01",
+      "first_seen_at": "2026-10-02T15:32:39Z",
+      "canonical_url": "https://arxiv.org/abs/2610.01984",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.01984"
+      },
+      "summary": [
+        "Universal Byte-Level Encoding routes characters between UTF-8 and UTF-16 before standard byte-pair encoding, reducing the initial encoding cost for several scripts while preserving exact decoding.",
+        "It can reduce multilingual token-budget disparities and fit more content into a fixed context window, particularly with compact vocabularies and poorly covered scripts."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Matched tokenizer-data comparisons span 204 language-script configurations, Unicode round-trip audits, and language models from 182M to 1.3B. The 101-language/32K setting reduces token-premium Gini by 9.4%; language-model quality differences are small and mixed. arXiv v1: 2026-10-01T16:26:10Z, within this report's interval. The timestamp above is submission time; the arXiv cs.CL listing separately confirms the October 2 public announcement batch.",
+        "limitations": "Changing vocabulary requires retraining or adaptation rather than swapping into an existing checkpoint. Some languages regress, the largest token savings include scripts outside the downstream training corpus, and three-seed results do not establish improved language-model loss parity."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "arxiv:2610.02092",
+      "title": "Scalable, Transferable Meta-network for Data Selection Requires a Different Loss (and Why the Obvious Choice is Problematic)",
+      "category": "1.1",
+      "tags": [
+        "Data Selection",
+        "Meta-Learning",
+        "Instruction Tuning"
+      ],
+      "published_on": "2026-10-01",
+      "first_seen_at": "2026-10-02T15:32:39Z",
+      "canonical_url": "https://arxiv.org/abs/2610.02092",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.02092"
+      },
+      "summary": [
+        "TESS learns a reusable data-selection network by matching per-example loss differences between ordinary and validation-guided models, avoiding a weighting objective that can suppress most examples and favor shortcuts.",
+        "It transfers selection from a smaller sample to unseen instruction data, offering a way to target fine-tuning data without relearning a separate weight for every example."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "A selector trained on 50K Tulu V2 examples is applied to 197K candidates before Llama-2-7B fine-tuning; math/code task-average performance is 26.46 versus 21.54 for random selection. Loss ablations and cross-dataset probes support transfer. arXiv v1: 2026-10-01T17:23:29Z. The timestamp above is submission time; the arXiv cs.CL listing separately confirms the October 2 public announcement batch.",
+        "limitations": "Task-specific validation examples and representation/gradient features are required. Evidence uses a limited set of older model families and tasks; the safety experiment measures harmful-data identification, not improved safety. Code release is promised upon acceptance rather than verified as available."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "arxiv:2610.02193",
+      "title": "Hierarchical Continuous Diffusion Language Models",
+      "category": "1.2",
+      "tags": [
+        "Diffusion Language Models",
+        "Latent Reasoning",
+        "Model Architecture"
+      ],
+      "published_on": "2026-10-01",
+      "first_seen_at": "2026-10-02T15:32:39Z",
+      "canonical_url": "https://arxiv.org/abs/2610.02193",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.02193"
+      },
+      "summary": [
+        "HC-DLM couples a continuous latent plan with repeatedly decoded tokens that guide the next denoising step, allowing token decisions to be revised throughout generation.",
+        "The design improves controlled planning and reasoning tasks at small scale, offering evidence that latent planning and token-level feedback can complement one another in diffusion models."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Component ablations and matched 6M-parameter comparisons support the coupling: hard-Sudoku accuracy is 72.41% versus 70.73% for reproduced CCDD, and longer Countdown improves from 25.35% to 37.52%. A separate 118M sampling-model experiment evaluates short unconditional text. arXiv v1: 2026-10-01T17:59:39Z. The timestamp above is submission time; the arXiv cs.CL listing separately confirms the October 2 public announcement batch.",
+        "limitations": "Evidence remains at moderate scale; reported sampling parameter counts exclude embeddings and the training-only encoder. Natural-language comparisons use external-model generative perplexity, different tokenizers, and historical baselines; the autoregressive baseline still scores better, and reported training times are not hardware-controlled speed comparisons."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "arxiv:2610.02070",
+      "title": "Causal Memory Policy: Making Memory Utility Identifiable by Intervening on Retrieval",
+      "category": "2.3",
+      "tags": [
+        "Memory",
+        "Causal Evaluation",
+        "Retrieval"
+      ],
+      "published_on": "2026-10-01",
+      "first_seen_at": "2026-10-02T15:33:55Z",
+      "canonical_url": "https://arxiv.org/abs/2610.02070",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.02070v1"
+      },
+      "summary": [
+        "Causal Memory Policy randomizes a few retrieval slots so memories that the normal retriever misses can still have their effect on a specific answer measured.",
+        "This provides a diagnostic for biased memory-utility estimates, while showing that accurate per-query measurements alone do not tell an agent what to retain for future questions."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Inspected the intervention design, estimator assumptions, benchmark comparisons and explicit limitations. LongMemEval experiments improve required-memory discrimination from 0.542 to 0.664 AUC, with additional analyses on LoCoMo, multi-hop QA and Mem0.",
+        "limitations": "The main identification demonstration uses a candidate pool constructed with knowledge of required memories; tested deployable selectors fail to recover that pool reliably. Exposure consumes context and the work makes no effective retention-policy claim. The linked anonymous code page yielded no readable content; not independently reproduced."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "arxiv:2610.00972",
+      "title": "VeriHarness: Scaling Agentic Verification for Long-Horizon Tasks",
+      "category": "2.7",
+      "tags": [
+        "Verification",
+        "Long-Horizon Agents",
+        "Evidence"
+      ],
+      "published_on": "2026-10-01",
+      "first_seen_at": "2026-10-02T15:33:55Z",
+      "canonical_url": "https://arxiv.org/abs/2610.00972",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.00972v1",
+        "code": "https://github.com/google-research/veriharness"
+      },
+      "summary": [
+        "VeriHarness uses the generator's own model to resolve disagreements between candidate outputs and challenge claims that all candidates share, checking both against files and other environmental evidence.",
+        "It then selects or revises the deliverable with a traceable record of checks, improving verification without requiring a stronger judge model."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Full protocol, matched ten-rollout pools, three-seed verification results and ablations were inspected across five workspace benchmarks and two models. The authors report higher selection scores than the tested baselines in all ten model–benchmark settings.",
+        "limitations": "Results depend on ten candidate rollouts per task and accessible environmental evidence; shared errors still survive. Revision adds compute, some comparator costs are estimated, and verification prices do not represent the full generation-plus-verification cost. Model/rubric grading remains part of several benchmarks; no independent reproduction."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "arxiv:2610.00917",
+      "title": "Finding the Right Fit: Model-Harness Interactions across Agent Tasks",
+      "category": "2.8",
+      "tags": [
+        "Harness Evaluation",
+        "Model Selection",
+        "Cost"
+      ],
+      "published_on": "2026-10-01",
+      "first_seen_at": "2026-10-02T15:33:55Z",
+      "canonical_url": "https://arxiv.org/abs/2610.00917",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.00917v1",
+        "code": "https://github.com/liyix/finding-the-right-fit"
+      },
+      "summary": [
+        "This study compares 66 model–harness configurations across terminal and professional-work benchmarks and finds that model rankings and preferred harnesses change with the task.",
+        "The released adapters and scored trajectories help developers evaluate a complete agent configuration instead of assuming that a model ranking transfers unchanged to their runtime."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Inspected the common task sets, configuration matrix, cost accounting and matched-trajectory analysis. The study covers five models, four configurable harnesses and two native pairings, with 6,204 scored runs and a verified public code repository.",
+        "limitations": "One counted run per task leaves run-to-run variance unmeasured. Native settings, tools and budgets are not uniformly matched, so comparisons do not isolate individual components; task subsets are not upstream leaderboard reproductions. Explanations from a few trajectory pairs remain hypotheses; not independently reproduced."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "https://allenai.org/blog/olmocore3",
+      "title": "Introducing Olmo-core 3: Open, scalable training infrastructure for large MoEs",
+      "category": "3.1",
+      "tags": [
+        "MoE Training",
+        "Expert Parallelism",
+        "Open Infrastructure"
+      ],
+      "published_on": "2026-10-01",
+      "first_seen_at": "2026-10-02T15:33:55Z",
+      "canonical_url": "https://allenai.org/blog/olmocore3",
+      "links": {
+        "blog": "https://allenai.org/blog/olmocore3",
+        "code": "https://github.com/allenai/olmo-core"
+      },
+      "summary": [
+        "Olmo-core 3 keeps mixture-of-experts weights resident on GPUs and combines expert and pipeline parallelism with a distributed optimizer, GPU-resident routing, and low-precision execution.",
+        "The open stack offers a practical way to increase total expert capacity without repeatedly gathering weights, with throughput gains demonstrated against Ai2's earlier training implementation."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "The full October 1 engineering blog and linked repository were inspected. A preliminary 47B-model test on eight B300 GPUs reports 52,000 versus 19,400 tokens/second/GPU against the previous FSDP stack; separate experiments test expert-count scaling and MXFP8. The publisher supplies a date without an exact time.",
+        "limitations": "Performance is author-reported and configuration-specific. Trillion-parameter results use random routing or short capacity tests, not trained-model quality or sustained convergence. The linked technical report exceeded the retrieval tool's size limit, so this entry relies on the full engineering blog rather than claiming paper review."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "arxiv:2610.00671",
+      "title": "MegaFlux: Skew-Resilient MoE Megakernels via Pipelined Expert Replication",
+      "category": "3.5",
+      "tags": [
+        "MoE Kernels",
+        "Expert Replication",
+        "Load Balancing"
+      ],
+      "published_on": "2026-09-30",
+      "first_seen_at": "2026-10-02T15:33:57Z",
+      "canonical_url": "https://arxiv.org/abs/2610.00671",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.00671"
+      },
+      "summary": [
+        "MegaFlux dynamically replicates heavily used experts and overlaps replica transfers and gradient reductions with computation inside a mixture-of-experts megakernel.",
+        "It reduces stragglers caused by uneven routing, making fused expert execution more useful when a few experts attract disproportionate work."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Catch-up discovery: v1 was submitted September 30 at 20:09:09 UTC but is in the October 2 announcement list, consistent with scheduled public release at October 2 00:00 UTC. Eight-B200 experiments include controlled routing sweeps and pipelining ablations; DeepSeek-V4-Pro prefill in vLLM reports 1.13–1.26x median batch-latency speedups over fixed expert placement on 160 LongBench-Pro prompts.",
+        "limitations": "Layer sweeps use synthetic operands and trace-derived routing distributions, with spare memory for replicas. Small skewed backward workloads can slow down, and tests cover one NVLink domain rather than cross-node deployment. The end-to-end measurement stops at first-token production; no MegaFlux code release was verified."
+      },
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "arxiv:2610.00687",
+      "title": "Leto: Fast In-Place Recovery for LLM Training on Surviving Hardware",
+      "category": "3.7",
+      "tags": [
+        "Fault Tolerance",
+        "Training Recovery",
+        "Checkpointing"
+      ],
+      "published_on": "2026-09-30",
+      "first_seen_at": "2026-10-02T15:33:57Z",
+      "canonical_url": "https://arxiv.org/abs/2610.00687",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.00687"
+      },
+      "summary": [
+        "Leto retains recoverable model state outside a failed training process and prepares a shadow process on the same hardware, using protected memory and transactional updates to resume consistently.",
+        "For failures that leave accelerators usable, this avoids checkpoint reloads and repeated training work, reducing the time otherwise spent recovering idle GPUs."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Catch-up discovery: v1 was submitted September 30 at 20:29:57 UTC but appears in the October 2 announcement list; the official schedule implies October 2 00:00 UTC public release. On 6- and 72-A100 testbeds, five model workloads recover in 6–19 seconds, reported as 3.6–6.5x faster than their best checkpointing baseline; fault-injection tests also check recovery consistency.",
+        "limitations": "The fast path requires hardware-operable failures; fatal failures still use checkpoints. Measurements inject failures, and very large cluster claims are simulations. Protection and shadow processes add overhead, including a small regression when all failures are fatal; a public Leto implementation was not verified."
+      },
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "arxiv:2610.01784",
+      "title": "ePACT: Energy-Performance-Aware Commitment Tracking for LLM Serving",
+      "category": "3.8",
+      "tags": [
+        "Energy Control",
+        "Serving",
+        "Latency SLO"
+      ],
+      "published_on": "2026-10-01",
+      "first_seen_at": "2026-10-02T15:33:57Z",
+      "canonical_url": "https://arxiv.org/abs/2610.01784",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.01784"
+      },
+      "summary": [
+        "ePACT adjusts active serving replicas and GPU clocks using feedback on hourly energy targets and predictions of request deadlines.",
+        "It helps operators balance latency with contracts that penalize both overuse and underuse of a committed energy volume, rather than optimizing consumption alone."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "v1 was submitted October 1 at 14:32:24 UTC and appears in the October 2 announcement list, consistent with scheduled availability at October 2 00:00 UTC, inside the main interval. Physical one-hour tests use 32-GPU H20/H200 pools; full-day profile-based simulations report 73.8%/75.7% lower modeled deviation cost than fixed-capacity vLLM while preserving similar deadline attainment.",
+        "limitations": "The cost is a weighted deviation metric, not an electricity bill or total energy reduction. Full-day results are simulated, energy excludes the rest of the facility, and the positive underuse penalty does not apply to every contract. Prediction checks do not guarantee deadlines; code was not verified."
+      },
+      "novelty": "new"
+    }
+  ]
+}

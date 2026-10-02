@@ -5,6 +5,34 @@ Transformers, MoE, SSM/hybrid architectures and model/data/compute allocation.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-02](../../../reports/2026/10/2026-10-02.md) — PARTIAL SEARCH
+
+### [Hierarchical Continuous Diffusion Language Models](<https://arxiv.org/abs/2610.02193>)
+
+HC-DLM couples a continuous latent plan with repeatedly decoded tokens that guide the next denoising step, allowing token decisions to be revised throughout generation. The design improves controlled planning and reasoning tasks at small scale, offering evidence that latent planning and token-level feedback can complement one another in diffusion models.
+
+**Published:** 2026-10-01 · **First seen:** 2026-10-02T15:32:39Z · **Novelty:** new · **Tags:** Diffusion Language Models, Latent Reasoning, Model Architecture
+
+[Paper](<https://arxiv.org/abs/2610.02193>)
+
+**Evidence:** research-paper; full-text. Component ablations and matched 6M-parameter comparisons support the coupling: hard-Sudoku accuracy is 72.41% versus 70.73% for reproduced CCDD, and longer Countdown improves from 25.35% to 37.52%. A separate 118M sampling-model experiment evaluates short unconditional text. arXiv v1: 2026-10-01T17:59:39Z. The timestamp above is submission time; the arXiv cs.CL listing separately confirms the October 2 public announcement batch.
+
+**Limitations:** Evidence remains at moderate scale; reported sampling parameter counts exclude embeddings and the training-only encoder. Natural-language comparisons use external-model generative perplexity, different tokenizers, and historical baselines; the autoregressive baseline still scores better, and reported training times are not hardware-controlled speed comparisons.
+
+## [2026-10-01](../../../reports/2026/10/2026-10-01.md) — PARTIAL SEARCH
+
+### [How Much Is an AI Token Worth? Scaling Laws for Wild AI-Generated Web Text](<https://arxiv.org/abs/2609.40295>)
+
+The authors train hundreds of small language models on mixtures of human and detector-labeled AI web text, then fit scaling laws that distinguish AI text's saturating benefit from its potential harm. The results motivate tracking human and AI validation losses separately and choosing data mixtures according to the target distribution and available human data.
+
+**Published:** 2026-09-30 · **First seen:** 2026-10-02T15:32:39Z · **Novelty:** new · **Tags:** Scaling Laws, Pretraining Data, Synthetic Data
+
+[Paper](<https://arxiv.org/abs/2609.40295>) · [Code](<https://github.com/pangramlabs/WildAI>)
+
+**Evidence:** research-paper; full-text. Across 800 runs from 19.9M to 973M parameters, the paper tests data-budget and mixture effects and extrapolates fits from models up to 268M. Its fitted law predicts held-out human-text loss better than the compared laws. arXiv v1: 2026-09-30T17:50:22Z, within this report's interval. The timestamp above is submission time; the arXiv recent-submissions listing separately confirms the October 1 public announcement batch.
+
+**Limitations:** English web pretraining and next-token loss dominate the evidence; detection labels can be imperfect and the authors include detector-company researchers. Results do not establish that curated synthetic data or frontier-scale models follow the same tradeoff; forecast compute penalties are model-based projections.
+
 ## [2026-09-29 — Landscape baseline](../../../landscape/2026-09-29.md) — PARTIAL SEARCH
 
 ### [Kimi K3: Open Frontier Intelligence](<https://arxiv.org/abs/2607.24653>)

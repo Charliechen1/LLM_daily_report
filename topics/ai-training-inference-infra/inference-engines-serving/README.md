@@ -5,6 +5,34 @@ Request scheduling, continuous batching, prefill/decode disaggregation and elast
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-01](../../../reports/2026/10/2026-10-01.md) — PARTIAL SEARCH
+
+### [Vosti: Specifying, Implementing, and Verifying Deterministic LLM Inference](<https://arxiv.org/abs/2609.38981>)
+
+Vosti combines a formally verified inference engine with checked GPU-kernel contracts so batching, prompt chunking, and cache reuse preserve identical output logits under a fixed deployment configuration. It provides a foundation for reproducible serving and debugging when scheduling changes would otherwise alter a model's numerical behavior.
+
+**Published:** 2026-09-30 · **First seen:** 2026-10-02T15:33:57Z · **Novelty:** newly-discovered · **Tags:** Deterministic Inference, Formal Verification, KV Cache
+
+[Paper](<https://arxiv.org/abs/2609.38981>) · [Code](<https://github.com/QDelta/Vosti>)
+
+**Evidence:** research-paper; full-text. Catch-up discovery: v1 was submitted September 30 at 04:58:09 UTC and appears in arXiv's October 1 announcement list; the standard announcement schedule implies October 1 at 00:00 UTC availability. The authors verify engine invariants and kernel contracts and report 5,488 matching logit comparisons across seven Llama/Gemma models, with performance measured on one H200.
+
+**Limitations:** The proof establishes determinism, not model correctness or cross-hardware reproducibility, and trusts compiler/runtime boundaries. Vosti is slower than default serving modes and SGLang's deterministic mode in the evaluated synthetic sessions; its performance advantage is relative to vLLM's invariant modes on decode-heavy workloads.
+
+## [2026-10-01](../../../reports/2026/10/2026-10-01.md) — PARTIAL SEARCH
+
+### [Taming Speculative Search for Test-Time Scaling in LLM Serving](<https://arxiv.org/abs/2609.39334>)
+
+SpecScale prunes uncompetitive reasoning branches early, shares computation between identical prefixes, and batches process-reward verification across requests. These scheduling changes reduce wasted speculative work and improve the capacity of a server running verifier-guided beam search for multiple users.
+
+**Published:** 2026-09-30 · **First seen:** 2026-10-02T15:33:57Z · **Novelty:** newly-discovered · **Tags:** Reasoning Serving, Beam Search, Verification Batching
+
+[Paper](<https://arxiv.org/abs/2609.39334>)
+
+**Evidence:** research-paper; full-text. Catch-up discovery: v1 was submitted September 30 at 09:04:53 UTC and appears in the October 1 announcement list, consistent with scheduled availability at October 1 00:00 UTC. Four generator configurations and three mathematics datasets are tested on one A100 80GB; eight-beam MATH experiments report 1.51x/1.43x throughput over non-speculative search for Qwen2.5-3B/7B, alongside component ablations and accuracy checks.
+
+**Limitations:** Results concern small mathematics generators with separate reward models on a custom serving framework, not general production reasoning. FastTTS is partially reimplemented with two resource-constrained scheduling features omitted; verification thresholds require profiling, accuracy changes vary, and no SpecScale code destination was verified.
+
 ## [2026-09-30](../../../reports/2026/09/2026-09-30.md) — PARTIAL SEARCH
 
 ### [SPLASH: Switching Parallel Layouts of Attention with Seamless Handoff for LLM Serving](<https://arxiv.org/abs/2609.37626>)

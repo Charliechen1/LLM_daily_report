@@ -5,6 +5,34 @@ Long-running execution, failure recovery, retries, persistence and human collabo
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-02](../../../reports/2026/10/2026-10-02.md) — PARTIAL SEARCH
+
+### [VeriHarness: Scaling Agentic Verification for Long-Horizon Tasks](<https://arxiv.org/abs/2610.00972>)
+
+VeriHarness uses the generator's own model to resolve disagreements between candidate outputs and challenge claims that all candidates share, checking both against files and other environmental evidence. It then selects or revises the deliverable with a traceable record of checks, improving verification without requiring a stronger judge model.
+
+**Published:** 2026-10-01 · **First seen:** 2026-10-02T15:33:55Z · **Novelty:** new · **Tags:** Verification, Long-Horizon Agents, Evidence
+
+[Paper](<https://arxiv.org/html/2610.00972v1>) · [Code](<https://github.com/google-research/veriharness>)
+
+**Evidence:** research-paper; full-text. Full protocol, matched ten-rollout pools, three-seed verification results and ablations were inspected across five workspace benchmarks and two models. The authors report higher selection scores than the tested baselines in all ten model–benchmark settings.
+
+**Limitations:** Results depend on ten candidate rollouts per task and accessible environmental evidence; shared errors still survive. Revision adds compute, some comparator costs are estimated, and verification prices do not represent the full generation-plus-verification cost. Model/rubric grading remains part of several benchmarks; no independent reproduction.
+
+## [2026-10-01](../../../reports/2026/10/2026-10-01.md) — PARTIAL SEARCH
+
+### [Turbo Harness: Instance-Adaptive Harness Optimization](<https://arxiv.org/abs/2609.40330>)
+
+Turbo Harness trains a small editor to adapt an existing agent harness to each task, using a playbook distilled from earlier successful and failed harness changes. A single editor call produces a task-specific code patch, offering a way to improve a fixed execution model without running a fresh harness search for every request.
+
+**Published:** 2026-09-30 · **First seen:** 2026-10-02T15:33:55Z · **Novelty:** new · **Tags:** Harness Optimization, Instance Adaptation, Reinforcement Learning
+
+[Paper](<https://arxiv.org/html/2609.40330v1>) · [Code](<https://github.com/Tyrion58/turbo-harness>)
+
+**Evidence:** research-paper; full-text. Methods, held-out splits and ablations cover seven benchmarks; repeated coding and terminal evaluations support improvements over the corresponding global harness. The playbook and editor training are complementary in the reported ablation.
+
+**Limitations:** Benefits depend on an existing search archive and additional training rollouts. Coding tests hold out issues within selected repositories; reported execution costs exclude offline search and the per-instance editor call, so they do not establish total-cost savings. Results were not independently reproduced.
+
 ## [2026-09-29 — Landscape baseline](../../../landscape/2026-09-29.md) — PARTIAL SEARCH
 
 ### [Effective harnesses for long-running agents](<https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents>)

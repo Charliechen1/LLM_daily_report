@@ -5,6 +5,20 @@ Accelerators, interconnects, cluster scheduling, profiling, utilization, cost an
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-02](../../../reports/2026/10/2026-10-02.md) — PARTIAL SEARCH
+
+### [ePACT: Energy-Performance-Aware Commitment Tracking for LLM Serving](<https://arxiv.org/abs/2610.01784>)
+
+ePACT adjusts active serving replicas and GPU clocks using feedback on hourly energy targets and predictions of request deadlines. It helps operators balance latency with contracts that penalize both overuse and underuse of a committed energy volume, rather than optimizing consumption alone.
+
+**Published:** 2026-10-01 · **First seen:** 2026-10-02T15:33:57Z · **Novelty:** new · **Tags:** Energy Control, Serving, Latency SLO
+
+[Paper](<https://arxiv.org/abs/2610.01784>)
+
+**Evidence:** research-paper; full-text. v1 was submitted October 1 at 14:32:24 UTC and appears in the October 2 announcement list, consistent with scheduled availability at October 2 00:00 UTC, inside the main interval. Physical one-hour tests use 32-GPU H20/H200 pools; full-day profile-based simulations report 73.8%/75.7% lower modeled deviation cost than fixed-capacity vLLM while preserving similar deadline attainment.
+
+**Limitations:** The cost is a weighted deviation metric, not an electricity bill or total energy reduction. Full-day results are simulated, energy excludes the rest of the facility, and the positive underuse penalty does not apply to every contract. Prediction checks do not guarantee deadlines; code was not verified.
+
 ## [2026-09-30](../../../reports/2026/09/2026-09-30.md) — PARTIAL SEARCH
 
 ### [Purlin: Separating Orchestration from the Datapath of Collectives](<https://arxiv.org/abs/2609.36954>)

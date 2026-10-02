@@ -2,6 +2,20 @@
   "schema_version": 1,
   "reports": [
     {
+      "date": "2026-10-02",
+      "path": "reports/2026/10/2026-10-02.md",
+      "source": "data/reports/2026/10/2026-10-02.json",
+      "search_status": "partial",
+      "entries": 10
+    },
+    {
+      "date": "2026-10-01",
+      "path": "reports/2026/10/2026-10-01.md",
+      "source": "data/reports/2026/10/2026-10-01.json",
+      "search_status": "partial",
+      "entries": 9
+    },
+    {
       "date": "2026-09-30",
       "path": "reports/2026/09/2026-09-30.md",
       "source": "data/reports/2026/09/2026-09-30.json",
@@ -19,6 +33,603 @@
     }
   ],
   "entries": [
+    {
+      "id": "arxiv:2610.01984",
+      "title": "Universal Byte-Level Encoding: UTF-8/UTF-16 Routing to Reduce Cross-Script Token-Budget Disparities",
+      "category": "1.1",
+      "tags": [
+        "Tokenization",
+        "Multilingual Models",
+        "Data Efficiency"
+      ],
+      "published_on": "2026-10-01",
+      "first_seen_at": "2026-10-02T15:32:39Z",
+      "canonical_url": "https://arxiv.org/abs/2610.01984",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.01984"
+      },
+      "summary": [
+        "Universal Byte-Level Encoding routes characters between UTF-8 and UTF-16 before standard byte-pair encoding, reducing the initial encoding cost for several scripts while preserving exact decoding.",
+        "It can reduce multilingual token-budget disparities and fit more content into a fixed context window, particularly with compact vocabularies and poorly covered scripts."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Matched tokenizer-data comparisons span 204 language-script configurations, Unicode round-trip audits, and language models from 182M to 1.3B. The 101-language/32K setting reduces token-premium Gini by 9.4%; language-model quality differences are small and mixed. arXiv v1: 2026-10-01T16:26:10Z, within this report's interval. The timestamp above is submission time; the arXiv cs.CL listing separately confirms the October 2 public announcement batch.",
+        "limitations": "Changing vocabulary requires retraining or adaptation rather than swapping into an existing checkpoint. Some languages regress, the largest token savings include scripts outside the downstream training corpus, and three-seed results do not establish improved language-model loss parity."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-02",
+      "report_path": "reports/2026/10/2026-10-02.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.02092",
+      "title": "Scalable, Transferable Meta-network for Data Selection Requires a Different Loss (and Why the Obvious Choice is Problematic)",
+      "category": "1.1",
+      "tags": [
+        "Data Selection",
+        "Meta-Learning",
+        "Instruction Tuning"
+      ],
+      "published_on": "2026-10-01",
+      "first_seen_at": "2026-10-02T15:32:39Z",
+      "canonical_url": "https://arxiv.org/abs/2610.02092",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.02092"
+      },
+      "summary": [
+        "TESS learns a reusable data-selection network by matching per-example loss differences between ordinary and validation-guided models, avoiding a weighting objective that can suppress most examples and favor shortcuts.",
+        "It transfers selection from a smaller sample to unseen instruction data, offering a way to target fine-tuning data without relearning a separate weight for every example."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "A selector trained on 50K Tulu V2 examples is applied to 197K candidates before Llama-2-7B fine-tuning; math/code task-average performance is 26.46 versus 21.54 for random selection. Loss ablations and cross-dataset probes support transfer. arXiv v1: 2026-10-01T17:23:29Z. The timestamp above is submission time; the arXiv cs.CL listing separately confirms the October 2 public announcement batch.",
+        "limitations": "Task-specific validation examples and representation/gradient features are required. Evidence uses a limited set of older model families and tasks; the safety experiment measures harmful-data identification, not improved safety. Code release is promised upon acceptance rather than verified as available."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-02",
+      "report_path": "reports/2026/10/2026-10-02.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.02193",
+      "title": "Hierarchical Continuous Diffusion Language Models",
+      "category": "1.2",
+      "tags": [
+        "Diffusion Language Models",
+        "Latent Reasoning",
+        "Model Architecture"
+      ],
+      "published_on": "2026-10-01",
+      "first_seen_at": "2026-10-02T15:32:39Z",
+      "canonical_url": "https://arxiv.org/abs/2610.02193",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.02193"
+      },
+      "summary": [
+        "HC-DLM couples a continuous latent plan with repeatedly decoded tokens that guide the next denoising step, allowing token decisions to be revised throughout generation.",
+        "The design improves controlled planning and reasoning tasks at small scale, offering evidence that latent planning and token-level feedback can complement one another in diffusion models."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Component ablations and matched 6M-parameter comparisons support the coupling: hard-Sudoku accuracy is 72.41% versus 70.73% for reproduced CCDD, and longer Countdown improves from 25.35% to 37.52%. A separate 118M sampling-model experiment evaluates short unconditional text. arXiv v1: 2026-10-01T17:59:39Z. The timestamp above is submission time; the arXiv cs.CL listing separately confirms the October 2 public announcement batch.",
+        "limitations": "Evidence remains at moderate scale; reported sampling parameter counts exclude embeddings and the training-only encoder. Natural-language comparisons use external-model generative perplexity, different tokenizers, and historical baselines; the autoregressive baseline still scores better, and reported training times are not hardware-controlled speed comparisons."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-02",
+      "report_path": "reports/2026/10/2026-10-02.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.02070",
+      "title": "Causal Memory Policy: Making Memory Utility Identifiable by Intervening on Retrieval",
+      "category": "2.3",
+      "tags": [
+        "Memory",
+        "Causal Evaluation",
+        "Retrieval"
+      ],
+      "published_on": "2026-10-01",
+      "first_seen_at": "2026-10-02T15:33:55Z",
+      "canonical_url": "https://arxiv.org/abs/2610.02070",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.02070v1"
+      },
+      "summary": [
+        "Causal Memory Policy randomizes a few retrieval slots so memories that the normal retriever misses can still have their effect on a specific answer measured.",
+        "This provides a diagnostic for biased memory-utility estimates, while showing that accurate per-query measurements alone do not tell an agent what to retain for future questions."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Inspected the intervention design, estimator assumptions, benchmark comparisons and explicit limitations. LongMemEval experiments improve required-memory discrimination from 0.542 to 0.664 AUC, with additional analyses on LoCoMo, multi-hop QA and Mem0.",
+        "limitations": "The main identification demonstration uses a candidate pool constructed with knowledge of required memories; tested deployable selectors fail to recover that pool reliably. Exposure consumes context and the work makes no effective retention-policy claim. The linked anonymous code page yielded no readable content; not independently reproduced."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-02",
+      "report_path": "reports/2026/10/2026-10-02.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.00972",
+      "title": "VeriHarness: Scaling Agentic Verification for Long-Horizon Tasks",
+      "category": "2.7",
+      "tags": [
+        "Verification",
+        "Long-Horizon Agents",
+        "Evidence"
+      ],
+      "published_on": "2026-10-01",
+      "first_seen_at": "2026-10-02T15:33:55Z",
+      "canonical_url": "https://arxiv.org/abs/2610.00972",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.00972v1",
+        "code": "https://github.com/google-research/veriharness"
+      },
+      "summary": [
+        "VeriHarness uses the generator's own model to resolve disagreements between candidate outputs and challenge claims that all candidates share, checking both against files and other environmental evidence.",
+        "It then selects or revises the deliverable with a traceable record of checks, improving verification without requiring a stronger judge model."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Full protocol, matched ten-rollout pools, three-seed verification results and ablations were inspected across five workspace benchmarks and two models. The authors report higher selection scores than the tested baselines in all ten model–benchmark settings.",
+        "limitations": "Results depend on ten candidate rollouts per task and accessible environmental evidence; shared errors still survive. Revision adds compute, some comparator costs are estimated, and verification prices do not represent the full generation-plus-verification cost. Model/rubric grading remains part of several benchmarks; no independent reproduction."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-02",
+      "report_path": "reports/2026/10/2026-10-02.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.00917",
+      "title": "Finding the Right Fit: Model-Harness Interactions across Agent Tasks",
+      "category": "2.8",
+      "tags": [
+        "Harness Evaluation",
+        "Model Selection",
+        "Cost"
+      ],
+      "published_on": "2026-10-01",
+      "first_seen_at": "2026-10-02T15:33:55Z",
+      "canonical_url": "https://arxiv.org/abs/2610.00917",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.00917v1",
+        "code": "https://github.com/liyix/finding-the-right-fit"
+      },
+      "summary": [
+        "This study compares 66 model–harness configurations across terminal and professional-work benchmarks and finds that model rankings and preferred harnesses change with the task.",
+        "The released adapters and scored trajectories help developers evaluate a complete agent configuration instead of assuming that a model ranking transfers unchanged to their runtime."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Inspected the common task sets, configuration matrix, cost accounting and matched-trajectory analysis. The study covers five models, four configurable harnesses and two native pairings, with 6,204 scored runs and a verified public code repository.",
+        "limitations": "One counted run per task leaves run-to-run variance unmeasured. Native settings, tools and budgets are not uniformly matched, so comparisons do not isolate individual components; task subsets are not upstream leaderboard reproductions. Explanations from a few trajectory pairs remain hypotheses; not independently reproduced."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-02",
+      "report_path": "reports/2026/10/2026-10-02.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://allenai.org/blog/olmocore3",
+      "title": "Introducing Olmo-core 3: Open, scalable training infrastructure for large MoEs",
+      "category": "3.1",
+      "tags": [
+        "MoE Training",
+        "Expert Parallelism",
+        "Open Infrastructure"
+      ],
+      "published_on": "2026-10-01",
+      "first_seen_at": "2026-10-02T15:33:55Z",
+      "canonical_url": "https://allenai.org/blog/olmocore3",
+      "links": {
+        "blog": "https://allenai.org/blog/olmocore3",
+        "code": "https://github.com/allenai/olmo-core"
+      },
+      "summary": [
+        "Olmo-core 3 keeps mixture-of-experts weights resident on GPUs and combines expert and pipeline parallelism with a distributed optimizer, GPU-resident routing, and low-precision execution.",
+        "The open stack offers a practical way to increase total expert capacity without repeatedly gathering weights, with throughput gains demonstrated against Ai2's earlier training implementation."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "The full October 1 engineering blog and linked repository were inspected. A preliminary 47B-model test on eight B300 GPUs reports 52,000 versus 19,400 tokens/second/GPU against the previous FSDP stack; separate experiments test expert-count scaling and MXFP8. The publisher supplies a date without an exact time.",
+        "limitations": "Performance is author-reported and configuration-specific. Trillion-parameter results use random routing or short capacity tests, not trained-model quality or sustained convergence. The linked technical report exceeded the retrieval tool's size limit, so this entry relies on the full engineering blog rather than claiming paper review."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-02",
+      "report_path": "reports/2026/10/2026-10-02.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.00671",
+      "title": "MegaFlux: Skew-Resilient MoE Megakernels via Pipelined Expert Replication",
+      "category": "3.5",
+      "tags": [
+        "MoE Kernels",
+        "Expert Replication",
+        "Load Balancing"
+      ],
+      "published_on": "2026-09-30",
+      "first_seen_at": "2026-10-02T15:33:57Z",
+      "canonical_url": "https://arxiv.org/abs/2610.00671",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.00671"
+      },
+      "summary": [
+        "MegaFlux dynamically replicates heavily used experts and overlaps replica transfers and gradient reductions with computation inside a mixture-of-experts megakernel.",
+        "It reduces stragglers caused by uneven routing, making fused expert execution more useful when a few experts attract disproportionate work."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Catch-up discovery: v1 was submitted September 30 at 20:09:09 UTC but is in the October 2 announcement list, consistent with scheduled public release at October 2 00:00 UTC. Eight-B200 experiments include controlled routing sweeps and pipelining ablations; DeepSeek-V4-Pro prefill in vLLM reports 1.13–1.26x median batch-latency speedups over fixed expert placement on 160 LongBench-Pro prompts.",
+        "limitations": "Layer sweeps use synthetic operands and trace-derived routing distributions, with spare memory for replicas. Small skewed backward workloads can slow down, and tests cover one NVLink domain rather than cross-node deployment. The end-to-end measurement stops at first-token production; no MegaFlux code release was verified."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-02",
+      "report_path": "reports/2026/10/2026-10-02.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.00687",
+      "title": "Leto: Fast In-Place Recovery for LLM Training on Surviving Hardware",
+      "category": "3.7",
+      "tags": [
+        "Fault Tolerance",
+        "Training Recovery",
+        "Checkpointing"
+      ],
+      "published_on": "2026-09-30",
+      "first_seen_at": "2026-10-02T15:33:57Z",
+      "canonical_url": "https://arxiv.org/abs/2610.00687",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.00687"
+      },
+      "summary": [
+        "Leto retains recoverable model state outside a failed training process and prepares a shadow process on the same hardware, using protected memory and transactional updates to resume consistently.",
+        "For failures that leave accelerators usable, this avoids checkpoint reloads and repeated training work, reducing the time otherwise spent recovering idle GPUs."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Catch-up discovery: v1 was submitted September 30 at 20:29:57 UTC but appears in the October 2 announcement list; the official schedule implies October 2 00:00 UTC public release. On 6- and 72-A100 testbeds, five model workloads recover in 6–19 seconds, reported as 3.6–6.5x faster than their best checkpointing baseline; fault-injection tests also check recovery consistency.",
+        "limitations": "The fast path requires hardware-operable failures; fatal failures still use checkpoints. Measurements inject failures, and very large cluster claims are simulations. Protection and shadow processes add overhead, including a small regression when all failures are fatal; a public Leto implementation was not verified."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-02",
+      "report_path": "reports/2026/10/2026-10-02.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.01784",
+      "title": "ePACT: Energy-Performance-Aware Commitment Tracking for LLM Serving",
+      "category": "3.8",
+      "tags": [
+        "Energy Control",
+        "Serving",
+        "Latency SLO"
+      ],
+      "published_on": "2026-10-01",
+      "first_seen_at": "2026-10-02T15:33:57Z",
+      "canonical_url": "https://arxiv.org/abs/2610.01784",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.01784"
+      },
+      "summary": [
+        "ePACT adjusts active serving replicas and GPU clocks using feedback on hourly energy targets and predictions of request deadlines.",
+        "It helps operators balance latency with contracts that penalize both overuse and underuse of a committed energy volume, rather than optimizing consumption alone."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "v1 was submitted October 1 at 14:32:24 UTC and appears in the October 2 announcement list, consistent with scheduled availability at October 2 00:00 UTC, inside the main interval. Physical one-hour tests use 32-GPU H20/H200 pools; full-day profile-based simulations report 73.8%/75.7% lower modeled deviation cost than fixed-capacity vLLM while preserving similar deadline attainment.",
+        "limitations": "The cost is a weighted deviation metric, not an electricity bill or total energy reduction. Full-day results are simulated, energy excludes the rest of the facility, and the positive underuse penalty does not apply to every contract. Prediction checks do not guarantee deadlines; code was not verified."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-02",
+      "report_path": "reports/2026/10/2026-10-02.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2609.40295",
+      "title": "How Much Is an AI Token Worth? Scaling Laws for Wild AI-Generated Web Text",
+      "category": "1.2",
+      "tags": [
+        "Scaling Laws",
+        "Pretraining Data",
+        "Synthetic Data"
+      ],
+      "published_on": "2026-09-30",
+      "first_seen_at": "2026-10-02T15:32:39Z",
+      "canonical_url": "https://arxiv.org/abs/2609.40295",
+      "links": {
+        "paper": "https://arxiv.org/abs/2609.40295",
+        "code": "https://github.com/pangramlabs/WildAI"
+      },
+      "summary": [
+        "The authors train hundreds of small language models on mixtures of human and detector-labeled AI web text, then fit scaling laws that distinguish AI text's saturating benefit from its potential harm.",
+        "The results motivate tracking human and AI validation losses separately and choosing data mixtures according to the target distribution and available human data."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Across 800 runs from 19.9M to 973M parameters, the paper tests data-budget and mixture effects and extrapolates fits from models up to 268M. Its fitted law predicts held-out human-text loss better than the compared laws. arXiv v1: 2026-09-30T17:50:22Z, within this report's interval. The timestamp above is submission time; the arXiv recent-submissions listing separately confirms the October 1 public announcement batch.",
+        "limitations": "English web pretraining and next-token loss dominate the evidence; detection labels can be imperfect and the authors include detector-company researchers. Results do not establish that curated synthetic data or frontier-scale models follow the same tradeoff; forecast compute penalties are model-based projections."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-01",
+      "report_path": "reports/2026/10/2026-10-01.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2609.37868",
+      "title": "Learning Beyond What You Sample: Off-Policy-Aware Cross-Model Trajectory Exchange for RLVR",
+      "category": "1.7",
+      "tags": [
+        "RLVR",
+        "Trajectory Sharing",
+        "Off-Policy Learning"
+      ],
+      "published_on": "2026-09-29",
+      "first_seen_at": "2026-10-02T15:32:39Z",
+      "canonical_url": "https://arxiv.org/abs/2609.37868",
+      "links": {
+        "paper": "https://arxiv.org/abs/2609.37868"
+      },
+      "summary": [
+        "GRAFT replaces a learner's entirely unsuccessful rollout groups with informative groups from a peer model, controlling policy mismatch through compatibility weighting and clipped updates.",
+        "This lets heterogeneous models learn from complementary discoveries without a designated stronger teacher, and stored peer trajectories can retain much of the benefit."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Three model pairs and five math benchmarks show average gains of about 2.1 points over eight-rollout GRPO; ablations test gating and group replacement. arXiv v1: 2026-09-29T15:47:25Z. Newly discovered through the September 30 discovery index during this delayed run, within the 72-hour lookback and absent from prior reports. The timestamp above is submission time; the arXiv recent-submissions listing separately confirms the September 30 public announcement batch.",
+        "limitations": "Experiments use two-model pairs of at most 3B parameters on verifiable math. Gains depend on complementary successes, cross-tokenizer weights are compatibility proxies rather than exact density ratios, and paired-training compute should not be presented as a single-model cost reduction."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-01",
+      "report_path": "reports/2026/10/2026-10-01.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2609.40285",
+      "title": "PivotOPD: Learning to Recover from Pivotal Mistakes in Multi-Turn Agents",
+      "category": "1.8",
+      "tags": [
+        "On-Policy Distillation",
+        "Agent Training",
+        "Error Recovery"
+      ],
+      "published_on": "2026-09-30",
+      "first_seen_at": "2026-10-02T15:32:39Z",
+      "canonical_url": "https://arxiv.org/abs/2609.40285",
+      "links": {
+        "paper": "https://arxiv.org/abs/2609.40285",
+        "project": "https://research.nvidia.com/labs/lpr/pivotopd/"
+      },
+      "summary": [
+        "PivotOPD uses a teacher to locate consequential mistakes and name corrective actions, then distills a hint-conditioned copy of the student at both mistake and recovery turns.",
+        "This supplies learning signals where unsuccessful rollouts provide little reward feedback, helping agents recover instead of merely reducing the probability of a wrong action."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Matched training budgets, 13 baselines, three seeds, and held-out ALFWorld, WebShop, and search-QA tests support the method; both 1.7B and 8B students improve benchmark averages, with additional coding-agent transfer. arXiv v1: 2026-09-30T17:48:11Z, within this report's interval. The timestamp above is submission time; the arXiv recent-submissions listing separately confirms the October 1 public announcement batch.",
+        "limitations": "Later recovery turns require exact environment replay, which live websites may not support. Teacher action errors become incorrect training targets; pivot detection agrees with the ALFWorld oracle within one turn on 77.8% of failures, so supervision remains imperfect."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-01",
+      "report_path": "reports/2026/10/2026-10-01.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2609.40169",
+      "title": "Learning from Research: Toward Lifelong Agent Harness Evolution",
+      "category": "2.5",
+      "tags": [
+        "Harness Evolution",
+        "Research Retrieval",
+        "Modular Agents"
+      ],
+      "published_on": "2026-09-30",
+      "first_seen_at": "2026-10-02T15:33:55Z",
+      "canonical_url": "https://arxiv.org/abs/2609.40169",
+      "links": {
+        "paper": "https://arxiv.org/html/2609.40169v1"
+      },
+      "summary": [
+        "ScholarEvolve turns ideas from research papers into changes to an agent's tools, context, skills, memory, and workflow, then evaluates combinations of those changes.",
+        "It broadens the improvement strategies available to a fixed model and demonstrates how newly retrieved research can guide successive harness revisions."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Inspected module construction, validation/test separation, three-run results and cumulative ablations on AppWorld and Tau2-Bench Telecom. Reported Qwen3.5-27B AppWorld Challenge completion rises from 49.6% to 63.6%; a separate three-window experiment studies continued research-driven updates.",
+        "limitations": "Evidence covers two task backbones and two environments. Matching search rollout allocation does not match every research/coding cost; individual tasks still regress and evidence-coverage failures persist. The paper's linked GitHub repository was empty when checked, so implementation availability is unverified; no independent reproduction."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-01",
+      "report_path": "reports/2026/10/2026-10-01.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2609.40330",
+      "title": "Turbo Harness: Instance-Adaptive Harness Optimization",
+      "category": "2.7",
+      "tags": [
+        "Harness Optimization",
+        "Instance Adaptation",
+        "Reinforcement Learning"
+      ],
+      "published_on": "2026-09-30",
+      "first_seen_at": "2026-10-02T15:33:55Z",
+      "canonical_url": "https://arxiv.org/abs/2609.40330",
+      "links": {
+        "paper": "https://arxiv.org/html/2609.40330v1",
+        "code": "https://github.com/Tyrion58/turbo-harness"
+      },
+      "summary": [
+        "Turbo Harness trains a small editor to adapt an existing agent harness to each task, using a playbook distilled from earlier successful and failed harness changes.",
+        "A single editor call produces a task-specific code patch, offering a way to improve a fixed execution model without running a fresh harness search for every request."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Methods, held-out splits and ablations cover seven benchmarks; repeated coding and terminal evaluations support improvements over the corresponding global harness. The playbook and editor training are complementary in the reported ablation.",
+        "limitations": "Benefits depend on an existing search archive and additional training rollouts. Coding tests hold out issues within selected repositories; reported execution costs exclude offline search and the per-instance editor call, so they do not establish total-cost savings. Results were not independently reproduced."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-01",
+      "report_path": "reports/2026/10/2026-10-01.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2609.39903",
+      "title": "OSWorld-Science: A Benchmark of Computer Use Agents for Learning and Using Scientific Software",
+      "category": "2.8",
+      "tags": [
+        "Computer Use",
+        "Scientific Workflows",
+        "Artifact Evaluation"
+      ],
+      "published_on": "2026-09-30",
+      "first_seen_at": "2026-10-02T15:33:55Z",
+      "canonical_url": "https://arxiv.org/abs/2609.39903",
+      "links": {
+        "paper": "https://arxiv.org/html/2609.39903v1",
+        "code": "https://github.com/DiscoAILab/OSWorld-Science"
+      },
+      "summary": [
+        "OSWorld-Science evaluates computer-use agents on 146 scientific-software tasks, checking application state and artifacts such as molecular structures, segmentation masks, and numerical results.",
+        "Its shared harness and partial-credit evaluators make it useful for separating incomplete scientific workflows from valid deliverables and studying where current agents fail."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Inspected task construction, executable evaluators, common interaction protocol, 12-model results and trajectory analysis. The benchmark spans seven domains, and the public repository provides the evaluation runtime and links to task data.",
+        "limitations": "Task coverage is uneven: four software configurations account for 58.2% of tasks. Scores include partial credit, not only full completion; the 23-task harness ablations have one run per cell and no comparison survives the stated multiple-testing correction. Software licensing and environment requirements constrain replication; not independently reproduced."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-01",
+      "report_path": "reports/2026/10/2026-10-01.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2609.39350",
+      "title": "HAPMoE: Heterogeneity-Aware Automatic Parallelism Planning for Mixture-of-Experts Models Training",
+      "category": "3.1",
+      "tags": [
+        "MoE Training",
+        "Heterogeneous Accelerators",
+        "Parallelism Planning"
+      ],
+      "published_on": "2026-09-30",
+      "first_seen_at": "2026-10-02T15:33:57Z",
+      "canonical_url": "https://arxiv.org/abs/2609.39350",
+      "links": {
+        "paper": "https://arxiv.org/abs/2609.39350"
+      },
+      "summary": [
+        "HAPMoE profiles accelerator and communication costs, then jointly chooses parallelism, uneven pipeline partitions, device placement, and recomputation for mixture-of-experts training.",
+        "It generates runnable Megatron-LM plans that use mixed accelerator clusters more effectively without manually tuning each distributed-training configuration."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Catch-up discovery: v1 was submitted September 30 at 09:11:46 UTC and is in the October 1 announcement list, consistent with scheduled availability at October 1 00:00 UTC. Across 16–32-device heterogeneous MoE configurations, the authors report geometric-mean throughput of 1.67x and 1.78x Megatron-Infinigence for two Mixtral-style models, with adapted competing planners and ablations.",
+        "limitations": "Plans are fixed from warm-up profiles and cannot adapt online to changing routing or device availability. Tests cover limited model and cluster configurations; larger networks may add contention and failure effects. The comparison includes adapted rather than original competing systems, and no public implementation was verified."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-01",
+      "report_path": "reports/2026/10/2026-10-01.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2609.38981",
+      "title": "Vosti: Specifying, Implementing, and Verifying Deterministic LLM Inference",
+      "category": "3.3",
+      "tags": [
+        "Deterministic Inference",
+        "Formal Verification",
+        "KV Cache"
+      ],
+      "published_on": "2026-09-30",
+      "first_seen_at": "2026-10-02T15:33:57Z",
+      "canonical_url": "https://arxiv.org/abs/2609.38981",
+      "links": {
+        "paper": "https://arxiv.org/abs/2609.38981",
+        "code": "https://github.com/QDelta/Vosti"
+      },
+      "summary": [
+        "Vosti combines a formally verified inference engine with checked GPU-kernel contracts so batching, prompt chunking, and cache reuse preserve identical output logits under a fixed deployment configuration.",
+        "It provides a foundation for reproducible serving and debugging when scheduling changes would otherwise alter a model's numerical behavior."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Catch-up discovery: v1 was submitted September 30 at 04:58:09 UTC and appears in arXiv's October 1 announcement list; the standard announcement schedule implies October 1 at 00:00 UTC availability. The authors verify engine invariants and kernel contracts and report 5,488 matching logit comparisons across seven Llama/Gemma models, with performance measured on one H200.",
+        "limitations": "The proof establishes determinism, not model correctness or cross-hardware reproducibility, and trusts compiler/runtime boundaries. Vosti is slower than default serving modes and SGLang's deterministic mode in the evaluated synthetic sessions; its performance advantage is relative to vLLM's invariant modes on decode-heavy workloads."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-01",
+      "report_path": "reports/2026/10/2026-10-01.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2609.39334",
+      "title": "Taming Speculative Search for Test-Time Scaling in LLM Serving",
+      "category": "3.3",
+      "tags": [
+        "Reasoning Serving",
+        "Beam Search",
+        "Verification Batching"
+      ],
+      "published_on": "2026-09-30",
+      "first_seen_at": "2026-10-02T15:33:57Z",
+      "canonical_url": "https://arxiv.org/abs/2609.39334",
+      "links": {
+        "paper": "https://arxiv.org/abs/2609.39334"
+      },
+      "summary": [
+        "SpecScale prunes uncompetitive reasoning branches early, shares computation between identical prefixes, and batches process-reward verification across requests.",
+        "These scheduling changes reduce wasted speculative work and improve the capacity of a server running verifier-guided beam search for multiple users."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Catch-up discovery: v1 was submitted September 30 at 09:04:53 UTC and appears in the October 1 announcement list, consistent with scheduled availability at October 1 00:00 UTC. Four generator configurations and three mathematics datasets are tested on one A100 80GB; eight-beam MATH experiments report 1.51x/1.43x throughput over non-speculative search for Qwen2.5-3B/7B, alongside component ablations and accuracy checks.",
+        "limitations": "Results concern small mathematics generators with separate reward models on a custom serving framework, not general production reasoning. FastTTS is partially reimplemented with two resource-constrained scheduling features omitted; verification thresholds require profiling, accuracy changes vary, and no SpecScale code destination was verified."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-01",
+      "report_path": "reports/2026/10/2026-10-01.md",
+      "search_status": "partial"
+    },
     {
       "id": "arxiv:2609.38149",
       "title": "Pretraining Latent Information Feedback Transformers with Teacher Supervision",
@@ -1496,14 +2107,14 @@
       "group": "llm-recipe",
       "title": "Data Curation & Tokenization",
       "path": "topics/llm-recipe/data-curation-tokenization/README.md",
-      "count": 1
+      "count": 3
     },
     {
       "id": "1.2",
       "group": "llm-recipe",
       "title": "Model Architecture & Scaling Laws",
       "path": "topics/llm-recipe/model-architecture-scaling-laws/README.md",
-      "count": 1
+      "count": 3
     },
     {
       "id": "1.3",
@@ -1538,14 +2149,14 @@
       "group": "llm-recipe",
       "title": "Reinforcement Learning & Reasoning",
       "path": "topics/llm-recipe/reinforcement-learning-reasoning/README.md",
-      "count": 1
+      "count": 2
     },
     {
       "id": "1.8",
       "group": "llm-recipe",
       "title": "Distillation & Model Compression",
       "path": "topics/llm-recipe/distillation-model-compression/README.md",
-      "count": 2
+      "count": 3
     },
     {
       "id": "1.9",
@@ -1580,7 +2191,7 @@
       "group": "ai-agent-dev",
       "title": "Context Engineering & Memory",
       "path": "topics/ai-agent-dev/context-engineering-memory/README.md",
-      "count": 2
+      "count": 3
     },
     {
       "id": "2.4",
@@ -1594,7 +2205,7 @@
       "group": "ai-agent-dev",
       "title": "Agent Learning & Skill Acquisition",
       "path": "topics/ai-agent-dev/agent-learning-skill-acquisition/README.md",
-      "count": 2
+      "count": 3
     },
     {
       "id": "2.6",
@@ -1608,21 +2219,21 @@
       "group": "ai-agent-dev",
       "title": "Agent Harness & Reliability",
       "path": "topics/ai-agent-dev/agent-harness-reliability/README.md",
-      "count": 2
+      "count": 4
     },
     {
       "id": "2.8",
       "group": "ai-agent-dev",
       "title": "Agent Evaluation & Security",
       "path": "topics/ai-agent-dev/agent-evaluation-security/README.md",
-      "count": 3
+      "count": 5
     },
     {
       "id": "3.1",
       "group": "ai-training-inference-infra",
       "title": "Distributed Training Systems",
       "path": "topics/ai-training-inference-infra/distributed-training-systems/README.md",
-      "count": 2
+      "count": 4
     },
     {
       "id": "3.2",
@@ -1636,7 +2247,7 @@
       "group": "ai-training-inference-infra",
       "title": "Inference Engines & Serving",
       "path": "topics/ai-training-inference-infra/inference-engines-serving/README.md",
-      "count": 4
+      "count": 6
     },
     {
       "id": "3.4",
@@ -1650,7 +2261,7 @@
       "group": "ai-training-inference-infra",
       "title": "Kernels, Compilers & Runtimes",
       "path": "topics/ai-training-inference-infra/kernels-compilers-runtimes/README.md",
-      "count": 2
+      "count": 3
     },
     {
       "id": "3.6",
@@ -1664,14 +2275,14 @@
       "group": "ai-training-inference-infra",
       "title": "Data Pipelines, Storage & Checkpointing",
       "path": "topics/ai-training-inference-infra/data-pipelines-storage-checkpointing/README.md",
-      "count": 1
+      "count": 2
     },
     {
       "id": "3.8",
       "group": "ai-training-inference-infra",
       "title": "Hardware, Networking & Cluster Efficiency",
       "path": "topics/ai-training-inference-infra/hardware-networking-cluster-efficiency/README.md",
-      "count": 2
+      "count": 3
     }
   ]
 }

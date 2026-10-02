@@ -1,0 +1,516 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-01",
+  "timezone": "America/Los_Angeles",
+  "generated_at": "2026-10-02T15:45:42.449Z",
+  "coverage": {
+    "start": "2026-09-30T03:00:00-07:00",
+    "end": "2026-10-01T03:00:00-07:00"
+  },
+  "search": {
+    "status": "partial",
+    "notes": "Backfill for the missed October 1 report, researched on October 2. Coverage remains September 30 03:00 to October 1 03:00 America/Los_Angeles; discovery considers the 72 hours ending at October 1 10:00 UTC. Selection was checked against the September 29 baseline and September 30 daily report (45 distinct works). Original arXiv v1 dates are retained. Public eligibility is checked separately against dated announcement listings and the official schedule: the October 1 mailing corresponds to scheduled public release at October 1 00:00 UTC, not the original submission time; this timing is inferred rather than observed in server logs. GRAFT is an older discovery; Vosti, HAPMoE, and SpecScale carry catch-up labels because their v1 timestamps precede the main window, although their public announcement falls inside it. All selected papers were read in full; results are author-reported and not independently reproduced. The September 30 Hugging Face index and NVIDIA Model Connect article are now accessible, resolving those prior search gaps. PivotOPD's project page was initially readable but subsequent retries failed; its full paper remains available. ScholarEvolve's repository is reachable but empty. No public code was verified for GRAFT, HAPMoE, or SpecScale. Organization indexes were checked; the Gemini 4 Argon announcement was omitted because the inspected sources lacked a sufficiently detailed new research method or model-specific technical report. This is a curated selection, not exhaustive coverage.",
+    "sources_checked": [
+      {
+        "name": "arXiv cs.CL recent listings",
+        "url": "https://arxiv.org/list/cs.CL/recent",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv cs.CL October 1 listings",
+        "url": "https://arxiv.org/list/cs.CL/recent?show=50&skip=184",
+        "status": "ok"
+      },
+      {
+        "name": "Hugging Face September 30 discovery index (prior access gap resolved)",
+        "url": "https://huggingface.co/papers/date/2026-09-30",
+        "status": "ok"
+      },
+      {
+        "name": "Hugging Face October 1 discovery index",
+        "url": "https://huggingface.co/papers/date/2026-10-01",
+        "status": "ok"
+      },
+      {
+        "name": "How Much Is an AI Token Worth? Scaling Laws for Wild AI-Generated Web Text — submission history",
+        "url": "https://arxiv.org/abs/2609.40295",
+        "status": "ok"
+      },
+      {
+        "name": "How Much Is an AI Token Worth? Scaling Laws for Wild AI-Generated Web Text — full text v1",
+        "url": "https://arxiv.org/html/2609.40295v1",
+        "status": "ok"
+      },
+      {
+        "name": "PivotOPD: Learning to Recover from Pivotal Mistakes in Multi-Turn Agents — submission history",
+        "url": "https://arxiv.org/abs/2609.40285",
+        "status": "ok"
+      },
+      {
+        "name": "PivotOPD: Learning to Recover from Pivotal Mistakes in Multi-Turn Agents — full text v1",
+        "url": "https://arxiv.org/html/2609.40285v1",
+        "status": "ok"
+      },
+      {
+        "name": "Learning Beyond What You Sample: Off-Policy-Aware Cross-Model Trajectory Exchange for RLVR — submission history",
+        "url": "https://arxiv.org/abs/2609.37868",
+        "status": "ok"
+      },
+      {
+        "name": "Learning Beyond What You Sample: Off-Policy-Aware Cross-Model Trajectory Exchange for RLVR — full text v1",
+        "url": "https://arxiv.org/html/2609.37868v1",
+        "status": "ok"
+      },
+      {
+        "name": "WildAI official code repository",
+        "url": "https://github.com/pangramlabs/WildAI",
+        "status": "ok"
+      },
+      {
+        "name": "PivotOPD project page (initial read succeeded; later retries failed)",
+        "url": "https://research.nvidia.com/labs/lpr/pivotopd/",
+        "status": "unavailable"
+      },
+      {
+        "name": "RIDE reserve candidate full paper",
+        "url": "https://arxiv.org/html/2609.36484v1",
+        "status": "ok"
+      },
+      {
+        "name": "UniEvo-VL candidate publication metadata",
+        "url": "https://arxiv.org/abs/2609.38721",
+        "status": "ok"
+      },
+      {
+        "name": "Same-family OPD discovery page (original September 26 date outside lookback)",
+        "url": "https://huggingface.co/papers/2609.32722",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv cs.AI announcement batches: PivotOPD October 1; GRAFT September 30",
+        "url": "https://arxiv.org/list/cs.AI/recent?show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv cs.AI recent discovery",
+        "url": "https://arxiv.org/list/cs.AI/recent",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv cs.AI new discovery",
+        "url": "https://arxiv.org/list/cs.AI/new",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv submission availability and announcement schedule",
+        "url": "https://info.arxiv.org/help/availability.html",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv Oct1 announcement listing, first 100 entries",
+        "url": "https://arxiv.org/list/cs.AI/recent?skip=381&show=100",
+        "status": "ok"
+      },
+      {
+        "name": "Turbo Harness: Instance-Adaptive Harness Optimization — submission history",
+        "url": "https://arxiv.org/abs/2609.40330",
+        "status": "ok"
+      },
+      {
+        "name": "Turbo Harness: Instance-Adaptive Harness Optimization — full text",
+        "url": "https://arxiv.org/html/2609.40330v1",
+        "status": "ok"
+      },
+      {
+        "name": "Turbo Harness: Instance-Adaptive Harness Optimization — linked repository",
+        "url": "https://github.com/Tyrion58/turbo-harness",
+        "status": "ok"
+      },
+      {
+        "name": "Learning from Research: Toward Lifelong Agent Harness Evolution — submission history",
+        "url": "https://arxiv.org/abs/2609.40169",
+        "status": "ok"
+      },
+      {
+        "name": "Learning from Research: Toward Lifelong Agent Harness Evolution — full text",
+        "url": "https://arxiv.org/html/2609.40169v1",
+        "status": "ok"
+      },
+      {
+        "name": "OSWorld-Science: A Benchmark of Computer Use Agents for Learning and Using Scientific Software — submission history",
+        "url": "https://arxiv.org/abs/2609.39903",
+        "status": "ok"
+      },
+      {
+        "name": "OSWorld-Science: A Benchmark of Computer Use Agents for Learning and Using Scientific Software — full text",
+        "url": "https://arxiv.org/html/2609.39903v1",
+        "status": "ok"
+      },
+      {
+        "name": "OSWorld-Science: A Benchmark of Computer Use Agents for Learning and Using Scientific Software — linked repository",
+        "url": "https://github.com/DiscoAILab/OSWorld-Science",
+        "status": "ok"
+      },
+      {
+        "name": "ScholarEvolve linked repository — reachable but empty",
+        "url": "https://github.com/UCSB-NLP-Chang/ScholarEvolve",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv Distributed Computing recent announcements",
+        "url": "https://arxiv.org/list/cs.DC/recent",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv Machine Learning recent announcements",
+        "url": "https://arxiv.org/list/cs.LG/recent",
+        "status": "ok"
+      },
+      {
+        "name": "Vosti submission history",
+        "url": "https://arxiv.org/abs/2609.38981",
+        "status": "ok"
+      },
+      {
+        "name": "Vosti full paper",
+        "url": "https://arxiv.org/html/2609.38981v1",
+        "status": "ok"
+      },
+      {
+        "name": "Vosti code repository",
+        "url": "https://github.com/QDelta/Vosti",
+        "status": "ok"
+      },
+      {
+        "name": "HAPMoE submission history",
+        "url": "https://arxiv.org/abs/2609.39350",
+        "status": "ok"
+      },
+      {
+        "name": "HAPMoE full paper",
+        "url": "https://arxiv.org/html/2609.39350v1",
+        "status": "ok"
+      },
+      {
+        "name": "SpecScale submission history",
+        "url": "https://arxiv.org/abs/2609.39334",
+        "status": "ok"
+      },
+      {
+        "name": "SpecScale full paper",
+        "url": "https://arxiv.org/html/2609.39334v1",
+        "status": "ok"
+      },
+      {
+        "name": "vLLM official blog index",
+        "url": "https://vllm.ai/blog",
+        "status": "ok"
+      },
+      {
+        "name": "vLLM disaggregated serving guide",
+        "url": "https://vllm.ai/blog/2026-09-29-disaggregated-serving-guide",
+        "status": "ok"
+      },
+      {
+        "name": "PyTorch official blog index",
+        "url": "https://pytorch.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "NVIDIA TensorRT Model Connect development article, prior access gap restored",
+        "url": "https://developer.nvidia.com/blog/ai-native-by-design-lessons-learned-from-building-nvidia-tensorrt-model-connect/",
+        "status": "ok"
+      },
+      {
+        "name": "OpenAI research index",
+        "url": "https://openai.com/news/research/",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic research index",
+        "url": "https://www.anthropic.com/research",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic engineering index",
+        "url": "https://www.anthropic.com/engineering",
+        "status": "ok"
+      },
+      {
+        "name": "Google DeepMind blog index",
+        "url": "https://deepmind.google/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "Ai2 research index",
+        "url": "https://allenai.org/research",
+        "status": "ok"
+      },
+      {
+        "name": "Gemini 4 Argon announcement (not selected)",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+        "status": "ok"
+      },
+      {
+        "name": "Google DeepMind model-card index",
+        "url": "https://deepmind.google/models/model-cards/",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic robot-exposure study (outside core technical scope)",
+        "url": "https://www.anthropic.com/research/what-work-can-robots-do",
+        "status": "ok"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": "arxiv:2609.40295",
+      "title": "How Much Is an AI Token Worth? Scaling Laws for Wild AI-Generated Web Text",
+      "category": "1.2",
+      "tags": [
+        "Scaling Laws",
+        "Pretraining Data",
+        "Synthetic Data"
+      ],
+      "published_on": "2026-09-30",
+      "first_seen_at": "2026-10-02T15:32:39Z",
+      "canonical_url": "https://arxiv.org/abs/2609.40295",
+      "links": {
+        "paper": "https://arxiv.org/abs/2609.40295",
+        "code": "https://github.com/pangramlabs/WildAI"
+      },
+      "summary": [
+        "The authors train hundreds of small language models on mixtures of human and detector-labeled AI web text, then fit scaling laws that distinguish AI text's saturating benefit from its potential harm.",
+        "The results motivate tracking human and AI validation losses separately and choosing data mixtures according to the target distribution and available human data."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Across 800 runs from 19.9M to 973M parameters, the paper tests data-budget and mixture effects and extrapolates fits from models up to 268M. Its fitted law predicts held-out human-text loss better than the compared laws. arXiv v1: 2026-09-30T17:50:22Z, within this report's interval. The timestamp above is submission time; the arXiv recent-submissions listing separately confirms the October 1 public announcement batch.",
+        "limitations": "English web pretraining and next-token loss dominate the evidence; detection labels can be imperfect and the authors include detector-company researchers. Results do not establish that curated synthetic data or frontier-scale models follow the same tradeoff; forecast compute penalties are model-based projections."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "arxiv:2609.37868",
+      "title": "Learning Beyond What You Sample: Off-Policy-Aware Cross-Model Trajectory Exchange for RLVR",
+      "category": "1.7",
+      "tags": [
+        "RLVR",
+        "Trajectory Sharing",
+        "Off-Policy Learning"
+      ],
+      "published_on": "2026-09-29",
+      "first_seen_at": "2026-10-02T15:32:39Z",
+      "canonical_url": "https://arxiv.org/abs/2609.37868",
+      "links": {
+        "paper": "https://arxiv.org/abs/2609.37868"
+      },
+      "summary": [
+        "GRAFT replaces a learner's entirely unsuccessful rollout groups with informative groups from a peer model, controlling policy mismatch through compatibility weighting and clipped updates.",
+        "This lets heterogeneous models learn from complementary discoveries without a designated stronger teacher, and stored peer trajectories can retain much of the benefit."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Three model pairs and five math benchmarks show average gains of about 2.1 points over eight-rollout GRPO; ablations test gating and group replacement. arXiv v1: 2026-09-29T15:47:25Z. Newly discovered through the September 30 discovery index during this delayed run, within the 72-hour lookback and absent from prior reports. The timestamp above is submission time; the arXiv recent-submissions listing separately confirms the September 30 public announcement batch.",
+        "limitations": "Experiments use two-model pairs of at most 3B parameters on verifiable math. Gains depend on complementary successes, cross-tokenizer weights are compatibility proxies rather than exact density ratios, and paired-training compute should not be presented as a single-model cost reduction."
+      },
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "arxiv:2609.40285",
+      "title": "PivotOPD: Learning to Recover from Pivotal Mistakes in Multi-Turn Agents",
+      "category": "1.8",
+      "tags": [
+        "On-Policy Distillation",
+        "Agent Training",
+        "Error Recovery"
+      ],
+      "published_on": "2026-09-30",
+      "first_seen_at": "2026-10-02T15:32:39Z",
+      "canonical_url": "https://arxiv.org/abs/2609.40285",
+      "links": {
+        "paper": "https://arxiv.org/abs/2609.40285",
+        "project": "https://research.nvidia.com/labs/lpr/pivotopd/"
+      },
+      "summary": [
+        "PivotOPD uses a teacher to locate consequential mistakes and name corrective actions, then distills a hint-conditioned copy of the student at both mistake and recovery turns.",
+        "This supplies learning signals where unsuccessful rollouts provide little reward feedback, helping agents recover instead of merely reducing the probability of a wrong action."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Matched training budgets, 13 baselines, three seeds, and held-out ALFWorld, WebShop, and search-QA tests support the method; both 1.7B and 8B students improve benchmark averages, with additional coding-agent transfer. arXiv v1: 2026-09-30T17:48:11Z, within this report's interval. The timestamp above is submission time; the arXiv recent-submissions listing separately confirms the October 1 public announcement batch.",
+        "limitations": "Later recovery turns require exact environment replay, which live websites may not support. Teacher action errors become incorrect training targets; pivot detection agrees with the ALFWorld oracle within one turn on 77.8% of failures, so supervision remains imperfect."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "arxiv:2609.40169",
+      "title": "Learning from Research: Toward Lifelong Agent Harness Evolution",
+      "category": "2.5",
+      "tags": [
+        "Harness Evolution",
+        "Research Retrieval",
+        "Modular Agents"
+      ],
+      "published_on": "2026-09-30",
+      "first_seen_at": "2026-10-02T15:33:55Z",
+      "canonical_url": "https://arxiv.org/abs/2609.40169",
+      "links": {
+        "paper": "https://arxiv.org/html/2609.40169v1"
+      },
+      "summary": [
+        "ScholarEvolve turns ideas from research papers into changes to an agent's tools, context, skills, memory, and workflow, then evaluates combinations of those changes.",
+        "It broadens the improvement strategies available to a fixed model and demonstrates how newly retrieved research can guide successive harness revisions."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Inspected module construction, validation/test separation, three-run results and cumulative ablations on AppWorld and Tau2-Bench Telecom. Reported Qwen3.5-27B AppWorld Challenge completion rises from 49.6% to 63.6%; a separate three-window experiment studies continued research-driven updates.",
+        "limitations": "Evidence covers two task backbones and two environments. Matching search rollout allocation does not match every research/coding cost; individual tasks still regress and evidence-coverage failures persist. The paper's linked GitHub repository was empty when checked, so implementation availability is unverified; no independent reproduction."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "arxiv:2609.40330",
+      "title": "Turbo Harness: Instance-Adaptive Harness Optimization",
+      "category": "2.7",
+      "tags": [
+        "Harness Optimization",
+        "Instance Adaptation",
+        "Reinforcement Learning"
+      ],
+      "published_on": "2026-09-30",
+      "first_seen_at": "2026-10-02T15:33:55Z",
+      "canonical_url": "https://arxiv.org/abs/2609.40330",
+      "links": {
+        "paper": "https://arxiv.org/html/2609.40330v1",
+        "code": "https://github.com/Tyrion58/turbo-harness"
+      },
+      "summary": [
+        "Turbo Harness trains a small editor to adapt an existing agent harness to each task, using a playbook distilled from earlier successful and failed harness changes.",
+        "A single editor call produces a task-specific code patch, offering a way to improve a fixed execution model without running a fresh harness search for every request."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Methods, held-out splits and ablations cover seven benchmarks; repeated coding and terminal evaluations support improvements over the corresponding global harness. The playbook and editor training are complementary in the reported ablation.",
+        "limitations": "Benefits depend on an existing search archive and additional training rollouts. Coding tests hold out issues within selected repositories; reported execution costs exclude offline search and the per-instance editor call, so they do not establish total-cost savings. Results were not independently reproduced."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "arxiv:2609.39903",
+      "title": "OSWorld-Science: A Benchmark of Computer Use Agents for Learning and Using Scientific Software",
+      "category": "2.8",
+      "tags": [
+        "Computer Use",
+        "Scientific Workflows",
+        "Artifact Evaluation"
+      ],
+      "published_on": "2026-09-30",
+      "first_seen_at": "2026-10-02T15:33:55Z",
+      "canonical_url": "https://arxiv.org/abs/2609.39903",
+      "links": {
+        "paper": "https://arxiv.org/html/2609.39903v1",
+        "code": "https://github.com/DiscoAILab/OSWorld-Science"
+      },
+      "summary": [
+        "OSWorld-Science evaluates computer-use agents on 146 scientific-software tasks, checking application state and artifacts such as molecular structures, segmentation masks, and numerical results.",
+        "Its shared harness and partial-credit evaluators make it useful for separating incomplete scientific workflows from valid deliverables and studying where current agents fail."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Inspected task construction, executable evaluators, common interaction protocol, 12-model results and trajectory analysis. The benchmark spans seven domains, and the public repository provides the evaluation runtime and links to task data.",
+        "limitations": "Task coverage is uneven: four software configurations account for 58.2% of tasks. Scores include partial credit, not only full completion; the 23-task harness ablations have one run per cell and no comparison survives the stated multiple-testing correction. Software licensing and environment requirements constrain replication; not independently reproduced."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "arxiv:2609.39350",
+      "title": "HAPMoE: Heterogeneity-Aware Automatic Parallelism Planning for Mixture-of-Experts Models Training",
+      "category": "3.1",
+      "tags": [
+        "MoE Training",
+        "Heterogeneous Accelerators",
+        "Parallelism Planning"
+      ],
+      "published_on": "2026-09-30",
+      "first_seen_at": "2026-10-02T15:33:57Z",
+      "canonical_url": "https://arxiv.org/abs/2609.39350",
+      "links": {
+        "paper": "https://arxiv.org/abs/2609.39350"
+      },
+      "summary": [
+        "HAPMoE profiles accelerator and communication costs, then jointly chooses parallelism, uneven pipeline partitions, device placement, and recomputation for mixture-of-experts training.",
+        "It generates runnable Megatron-LM plans that use mixed accelerator clusters more effectively without manually tuning each distributed-training configuration."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Catch-up discovery: v1 was submitted September 30 at 09:11:46 UTC and is in the October 1 announcement list, consistent with scheduled availability at October 1 00:00 UTC. Across 16–32-device heterogeneous MoE configurations, the authors report geometric-mean throughput of 1.67x and 1.78x Megatron-Infinigence for two Mixtral-style models, with adapted competing planners and ablations.",
+        "limitations": "Plans are fixed from warm-up profiles and cannot adapt online to changing routing or device availability. Tests cover limited model and cluster configurations; larger networks may add contention and failure effects. The comparison includes adapted rather than original competing systems, and no public implementation was verified."
+      },
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "arxiv:2609.38981",
+      "title": "Vosti: Specifying, Implementing, and Verifying Deterministic LLM Inference",
+      "category": "3.3",
+      "tags": [
+        "Deterministic Inference",
+        "Formal Verification",
+        "KV Cache"
+      ],
+      "published_on": "2026-09-30",
+      "first_seen_at": "2026-10-02T15:33:57Z",
+      "canonical_url": "https://arxiv.org/abs/2609.38981",
+      "links": {
+        "paper": "https://arxiv.org/abs/2609.38981",
+        "code": "https://github.com/QDelta/Vosti"
+      },
+      "summary": [
+        "Vosti combines a formally verified inference engine with checked GPU-kernel contracts so batching, prompt chunking, and cache reuse preserve identical output logits under a fixed deployment configuration.",
+        "It provides a foundation for reproducible serving and debugging when scheduling changes would otherwise alter a model's numerical behavior."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Catch-up discovery: v1 was submitted September 30 at 04:58:09 UTC and appears in arXiv's October 1 announcement list; the standard announcement schedule implies October 1 at 00:00 UTC availability. The authors verify engine invariants and kernel contracts and report 5,488 matching logit comparisons across seven Llama/Gemma models, with performance measured on one H200.",
+        "limitations": "The proof establishes determinism, not model correctness or cross-hardware reproducibility, and trusts compiler/runtime boundaries. Vosti is slower than default serving modes and SGLang's deterministic mode in the evaluated synthetic sessions; its performance advantage is relative to vLLM's invariant modes on decode-heavy workloads."
+      },
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "arxiv:2609.39334",
+      "title": "Taming Speculative Search for Test-Time Scaling in LLM Serving",
+      "category": "3.3",
+      "tags": [
+        "Reasoning Serving",
+        "Beam Search",
+        "Verification Batching"
+      ],
+      "published_on": "2026-09-30",
+      "first_seen_at": "2026-10-02T15:33:57Z",
+      "canonical_url": "https://arxiv.org/abs/2609.39334",
+      "links": {
+        "paper": "https://arxiv.org/abs/2609.39334"
+      },
+      "summary": [
+        "SpecScale prunes uncompetitive reasoning branches early, shares computation between identical prefixes, and batches process-reward verification across requests.",
+        "These scheduling changes reduce wasted speculative work and improve the capacity of a server running verifier-guided beam search for multiple users."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Catch-up discovery: v1 was submitted September 30 at 09:04:53 UTC and appears in the October 1 announcement list, consistent with scheduled availability at October 1 00:00 UTC. Four generator configurations and three mathematics datasets are tested on one A100 80GB; eight-beam MATH experiments report 1.51x/1.43x throughput over non-speculative search for Qwen2.5-3B/7B, alongside component ablations and accuracy checks.",
+        "limitations": "Results concern small mathematics generators with separate reward models on a custom serving framework, not general production reasoning. FastTTS is partially reimplemented with two resource-constrained scheduling features omitted; verification thresholds require profiling, accuracy changes vary, and no SpecScale code destination was verified."
+      },
+      "novelty": "newly-discovered"
+    }
+  ]
+}

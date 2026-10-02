@@ -5,6 +5,20 @@ GPU kernels, operator fusion, compilation, execution graphs and hardware adaptat
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-02](../../../reports/2026/10/2026-10-02.md) — PARTIAL SEARCH
+
+### [MegaFlux: Skew-Resilient MoE Megakernels via Pipelined Expert Replication](<https://arxiv.org/abs/2610.00671>)
+
+MegaFlux dynamically replicates heavily used experts and overlaps replica transfers and gradient reductions with computation inside a mixture-of-experts megakernel. It reduces stragglers caused by uneven routing, making fused expert execution more useful when a few experts attract disproportionate work.
+
+**Published:** 2026-09-30 · **First seen:** 2026-10-02T15:33:57Z · **Novelty:** newly-discovered · **Tags:** MoE Kernels, Expert Replication, Load Balancing
+
+[Paper](<https://arxiv.org/abs/2610.00671>)
+
+**Evidence:** research-paper; full-text. Catch-up discovery: v1 was submitted September 30 at 20:09:09 UTC but is in the October 2 announcement list, consistent with scheduled public release at October 2 00:00 UTC. Eight-B200 experiments include controlled routing sweeps and pipelining ablations; DeepSeek-V4-Pro prefill in vLLM reports 1.13–1.26x median batch-latency speedups over fixed expert placement on 160 LongBench-Pro prompts.
+
+**Limitations:** Layer sweeps use synthetic operands and trace-derived routing distributions, with spare memory for replicas. Small skewed backward workloads can slow down, and tests cover one NVLink domain rather than cross-node deployment. The end-to-end measurement stops at first-token production; no MegaFlux code release was verified.
+
 ## [2026-09-30](../../../reports/2026/09/2026-09-30.md) — PARTIAL SEARCH
 
 ### [Mixture-of-Kittens: MoE Megakernel for NVL72s](<https://arxiv.org/abs/2609.36070>)

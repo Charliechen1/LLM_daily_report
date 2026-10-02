@@ -5,6 +5,20 @@ RLHF, RLVR, policy optimization, reasoning training, tool use and multi-turn age
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-01](../../../reports/2026/10/2026-10-01.md) — PARTIAL SEARCH
+
+### [Learning Beyond What You Sample: Off-Policy-Aware Cross-Model Trajectory Exchange for RLVR](<https://arxiv.org/abs/2609.37868>)
+
+GRAFT replaces a learner's entirely unsuccessful rollout groups with informative groups from a peer model, controlling policy mismatch through compatibility weighting and clipped updates. This lets heterogeneous models learn from complementary discoveries without a designated stronger teacher, and stored peer trajectories can retain much of the benefit.
+
+**Published:** 2026-09-29 · **First seen:** 2026-10-02T15:32:39Z · **Novelty:** newly-discovered · **Tags:** RLVR, Trajectory Sharing, Off-Policy Learning
+
+[Paper](<https://arxiv.org/abs/2609.37868>)
+
+**Evidence:** research-paper; full-text. Three model pairs and five math benchmarks show average gains of about 2.1 points over eight-rollout GRPO; ablations test gating and group replacement. arXiv v1: 2026-09-29T15:47:25Z. Newly discovered through the September 30 discovery index during this delayed run, within the 72-hour lookback and absent from prior reports. The timestamp above is submission time; the arXiv recent-submissions listing separately confirms the September 30 public announcement batch.
+
+**Limitations:** Experiments use two-model pairs of at most 3B parameters on verifiable math. Gains depend on complementary successes, cross-tokenizer weights are compatibility proxies rather than exact density ratios, and paired-training compute should not be presented as a single-model cost reduction.
+
 ## [2026-09-29 — Landscape baseline](../../../landscape/2026-09-29.md) — PARTIAL SEARCH
 
 ### [DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning](<https://arxiv.org/abs/2501.12948>)

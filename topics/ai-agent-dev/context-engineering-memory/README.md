@@ -5,6 +5,20 @@ Context organization/compression, working memory, long-term memory and state.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-02](../../../reports/2026/10/2026-10-02.md) — PARTIAL SEARCH
+
+### [Causal Memory Policy: Making Memory Utility Identifiable by Intervening on Retrieval](<https://arxiv.org/abs/2610.02070>)
+
+Causal Memory Policy randomizes a few retrieval slots so memories that the normal retriever misses can still have their effect on a specific answer measured. This provides a diagnostic for biased memory-utility estimates, while showing that accurate per-query measurements alone do not tell an agent what to retain for future questions.
+
+**Published:** 2026-10-01 · **First seen:** 2026-10-02T15:33:55Z · **Novelty:** new · **Tags:** Memory, Causal Evaluation, Retrieval
+
+[Paper](<https://arxiv.org/html/2610.02070v1>)
+
+**Evidence:** research-paper; full-text. Inspected the intervention design, estimator assumptions, benchmark comparisons and explicit limitations. LongMemEval experiments improve required-memory discrimination from 0.542 to 0.664 AUC, with additional analyses on LoCoMo, multi-hop QA and Mem0.
+
+**Limitations:** The main identification demonstration uses a candidate pool constructed with knowledge of required memories; tested deployable selectors fail to recover that pool reliably. Exposure consumes context and the work makes no effective retention-policy claim. The linked anonymous code page yielded no readable content; not independently reproduced.
+
 ## [2026-09-30](../../../reports/2026/09/2026-09-30.md) — PARTIAL SEARCH
 
 ### [ContextRender: From Execution Dependencies to Agent Context](<https://arxiv.org/abs/2609.37743>)

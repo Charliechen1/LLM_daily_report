@@ -5,6 +5,20 @@ Data loading, storage throughput, distributed checkpoints, recovery and fault to
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-02](../../../reports/2026/10/2026-10-02.md) — PARTIAL SEARCH
+
+### [Leto: Fast In-Place Recovery for LLM Training on Surviving Hardware](<https://arxiv.org/abs/2610.00687>)
+
+Leto retains recoverable model state outside a failed training process and prepares a shadow process on the same hardware, using protected memory and transactional updates to resume consistently. For failures that leave accelerators usable, this avoids checkpoint reloads and repeated training work, reducing the time otherwise spent recovering idle GPUs.
+
+**Published:** 2026-09-30 · **First seen:** 2026-10-02T15:33:57Z · **Novelty:** newly-discovered · **Tags:** Fault Tolerance, Training Recovery, Checkpointing
+
+[Paper](<https://arxiv.org/abs/2610.00687>)
+
+**Evidence:** research-paper; full-text. Catch-up discovery: v1 was submitted September 30 at 20:29:57 UTC but appears in the October 2 announcement list; the official schedule implies October 2 00:00 UTC public release. On 6- and 72-A100 testbeds, five model workloads recover in 6–19 seconds, reported as 3.6–6.5x faster than their best checkpointing baseline; fault-injection tests also check recovery consistency.
+
+**Limitations:** The fast path requires hardware-operable failures; fatal failures still use checkpoints. Measurements inject failures, and very large cluster claims are simulations. Protection and shadow processes add overhead, including a small regression when all failures are fatal; a public Leto implementation was not verified.
+
 ## [2026-09-29 — Landscape baseline](../../../landscape/2026-09-29.md) — PARTIAL SEARCH
 
 ### [6x faster Async Checkpointing in PyTorch, using Cached Plans, no GIL contention](<https://pytorch.org/blog/6x-faster-async-checkpointing/>)

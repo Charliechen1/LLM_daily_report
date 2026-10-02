@@ -5,6 +5,20 @@ Learning from trajectories/feedback, skill generation/reuse, experience and self
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-01](../../../reports/2026/10/2026-10-01.md) — PARTIAL SEARCH
+
+### [Learning from Research: Toward Lifelong Agent Harness Evolution](<https://arxiv.org/abs/2609.40169>)
+
+ScholarEvolve turns ideas from research papers into changes to an agent's tools, context, skills, memory, and workflow, then evaluates combinations of those changes. It broadens the improvement strategies available to a fixed model and demonstrates how newly retrieved research can guide successive harness revisions.
+
+**Published:** 2026-09-30 · **First seen:** 2026-10-02T15:33:55Z · **Novelty:** new · **Tags:** Harness Evolution, Research Retrieval, Modular Agents
+
+[Paper](<https://arxiv.org/html/2609.40169v1>)
+
+**Evidence:** research-paper; full-text. Inspected module construction, validation/test separation, three-run results and cumulative ablations on AppWorld and Tau2-Bench Telecom. Reported Qwen3.5-27B AppWorld Challenge completion rises from 49.6% to 63.6%; a separate three-window experiment studies continued research-driven updates.
+
+**Limitations:** Evidence covers two task backbones and two environments. Matching search rollout allocation does not match every research/coding cost; individual tasks still regress and evidence-coverage failures persist. The paper's linked GitHub repository was empty when checked, so implementation availability is unverified; no independent reproduction.
+
 ## [2026-09-30](../../../reports/2026/09/2026-09-30.md) — PARTIAL SEARCH
 
 ### [SelfSearch: Reward-Free Search for Self-Improving Agents](<https://arxiv.org/abs/2609.37968>)
