@@ -5,6 +5,20 @@ Attention execution, KV management/reuse, offloading and long-context memory eff
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-03](../../../reports/2026/10/2026-10-03.md) — PARTIAL SEARCH
+
+### [RapidMoE: Exploiting Cross-Asymmetry via Adaptive Residual Offloading for Large-Scale MoE Inference](<https://arxiv.org/abs/2610.01265>)
+
+RapidMoE combines low-precision expert computation on GPUs with selectively higher-precision CPU work, using residual weight representations and importance-based routing to balance the devices. This reduces duplicated host-memory storage and offloading stalls when serving large mixture-of-experts models on memory-limited CPU–GPU systems.
+
+**Published:** 2026-10-01 · **First seen:** 2026-10-02T15:33:57Z · **Novelty:** newly-discovered · **Tags:** MoE Offloading, Mixed Precision, CPU–GPU Scheduling
+
+[Paper](<https://arxiv.org/abs/2610.01265>)
+
+**Evidence:** research-paper; full-text. Screened October 2 and fully reviewed for this catch-up selection: v1 is October 1 at 08:02:24 UTC; the October 2 announcement list and official schedule imply public release at October 2 00:00 UTC. A800/RTX 4090 tests cover DeepSeek-R1/V3 and Qwen3-235B; the authors report up to 3.5x decoding speedup over KTransformers, with accuracy checks, component ablations, and a 1,000-request serving workload.
+
+**Limitations:** Serving tests use concurrency four and 0.2 requests/s; accuracy varies slightly against the Q4 reference. Calibration takes hours and performance depends on CPU memory bandwidth and hardware balance. These results do not establish high-concurrency cluster performance; no public RapidMoE implementation was verified.
+
 ## [2026-09-29 — Landscape baseline](../../../landscape/2026-09-29.md) — PARTIAL SEARCH
 
 ### [LMCache: An Efficient KV Cache Layer for Enterprise-Scale LLM Inference](<https://arxiv.org/abs/2510.09665>)

@@ -5,6 +5,20 @@ Accelerators, interconnects, cluster scheduling, profiling, utilization, cost an
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-03](../../../reports/2026/10/2026-10-03.md) — PARTIAL SEARCH
+
+### [GPU-Initiated Communication: Dissecting Down to the Bone](<https://arxiv.org/abs/2610.01380>)
+
+This study uses minimal transports and production libraries to separate GPU-driven network costs from queue management, synchronization, and CPU-proxy overhead. Its measurements explain how batching, queue isolation, and resource pressure affect fine-grained mixture-of-experts communication, helping engineers choose and tune transports for their workloads.
+
+**Published:** 2026-10-01 · **First seen:** 2026-10-02T15:33:57Z · **Novelty:** newly-discovered · **Tags:** GPU Networking, RDMA, MoE Communication
+
+[Paper](<https://arxiv.org/abs/2610.01380>) · [Code](<https://github.com/ParCoreLab/Dissecting-GPU-Communication-Experiments>)
+
+**Evidence:** research-paper; full-text. Screened October 2 and fully reviewed now: v1 is October 1 at 09:46:08 UTC; the October 2 announcement list and official schedule imply October 2 00:00 UTC availability. Controlled tests span H100, H200, B200, and GB200 with payload validation and network counters. The authors find that queue isolation reduces loaded latency and dormant communication code can reduce kernel throughput; benchmark sources and raw results are accessible.
+
+**Limitations:** This is a transport-mechanism study, not an end-to-end LLM speedup claim. Latency commonly uses median measurements on one pinned node pair, while platforms differ in CPUs, links, firmware, and providers. Small-message findings depend on traffic, clock state, completion semantics, and library configuration; no results were independently reproduced.
+
 ## [2026-10-02](../../../reports/2026/10/2026-10-02.md) — PARTIAL SEARCH
 
 ### [ePACT: Energy-Performance-Aware Commitment Tracking for LLM Serving](<https://arxiv.org/abs/2610.01784>)

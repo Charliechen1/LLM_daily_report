@@ -5,6 +5,20 @@ Instruction tuning, SFT data and mixtures, LoRA and parameter-efficient adaptati
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-03](../../../reports/2026/10/2026-10-03.md) — PARTIAL SEARCH
+
+### [AstaBrief: citation-focused SFT and preference training for scientific reports](<https://allenai.org/blog/astabrief>)
+
+AstaBrief adapts Qwen3-8B to write cited scientific reports from already retrieved literature snippets in one pass, using citation-filtered supervised examples and agreement-filtered preference pairs. The released weights and training recipe provide a practical starting point for faster evidence-grounded synthesis, with comparisons limited to the older models and report workflows used during development.
+
+**Published:** 2026-10-02 · **First seen:** 2026-10-03T10:04:56Z · **Novelty:** newly-discovered · **Tags:** Scientific Synthesis, Citation Grounding, Preference Optimization
+
+[Blog](<https://allenai.org/blog/astabrief>) · [Project](<https://huggingface.co/allenai/AstaBrief_8B>) · [Code](<https://github.com/allenai/ai2-scholarqa-lib/tree/main/api/scholarqa/lite>)
+
+**Evidence:** technical-report; full-text. The October 2 technical disclosure describes 47K supervised examples and about 6K preference pairs, with citation-density filtering producing the strongest filtering gains. The model card reports citation recall rising from 64.6 for Qwen3-8B to 78.2 for AstaBrief on the 100-question SQABench-CS2 test split. The blog reports 51.1 versus 178.5 seconds across the full Fast/Thinking pipelines, about 3.5 times faster. This is first coverage of the newly published technical write-up; model development largely predates this release. Ai2 and its official mirror date the disclosure October 2 without a verified hour; it is eligible within the 72-hour lookback but conservatively labeled newly-discovered because its position relative to the 10:00 UTC main-window boundary is uncertain.
+
+**Limitations:** Most training and evaluation occurred in 2025 and were not rerun against current frontier models. Evidence relies heavily on model judges; the human study covers only 14 questions. Pipeline latency compares different workflows, not an isolated model substitution, and citation scores do not fully measure preservation of scientific claim scope. No independent reproduction. Model weights use Apache 2.0, while the verified DPO dataset uses CC-BY-NC-4.0.
+
 ## [2026-09-29 — Landscape baseline](../../../landscape/2026-09-29.md) — PARTIAL SEARCH
 
 ### [LoRA Without Regret](<https://thinkingmachines.ai/blog/lora/>)

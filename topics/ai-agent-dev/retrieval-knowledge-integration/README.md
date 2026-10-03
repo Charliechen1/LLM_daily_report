@@ -5,6 +5,20 @@ RAG, agentic search, query rewriting, knowledge bases and external grounding.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-03](../../../reports/2026/10/2026-10-03.md) — PARTIAL SEARCH
+
+### [From Knowledge Access to Source Learning: Developing Source-Specific Competence](<https://arxiv.org/abs/2610.02150>)
+
+SourceLearn builds a persistent representation of a document collection, repository, or API source and revises it through self-directed study and feedback from earlier tasks. Reconstructing revisions from the original source helps agents reuse organized knowledge on later tasks while retaining direct retrieval for precise evidence.
+
+**Published:** 2026-10-01 · **First seen:** 2026-10-03T10:03:03Z · **Novelty:** newly-discovered · **Tags:** Retrieval, Persistent Knowledge, Source Grounding
+
+[Paper](<https://arxiv.org/html/2610.02150v1>)
+
+**Evidence:** research-paper; full-text. Five benchmarks and three backends use disjoint guidance/test tasks; the authors report the highest score among tested methods in 13 of 15 settings. Ablations and a four-source matched-context comparison support benefits beyond added context alone. Newly discovered during this run from the Oct 2 announcement batch, within the 72-hour lookback.
+
+**Limitations:** Task-guided refinement uses reference answers, and main comparisons add source-model context; matched-budget controls cover a subset. Grounding audits still find unsupported claims, and gpt-oss-120b regresses on AppWorld. The linked repository contains only LICENSE and a minimal README; the project page could not be retrieved. No independent reproduction.
+
 ## [2026-09-29 — Landscape baseline](../../../landscape/2026-09-29.md) — PARTIAL SEARCH
 
 ### [Search-R1: Training LLMs to Reason and Leverage Search Engines with Reinforcement Learning](<https://arxiv.org/abs/2503.09516>)

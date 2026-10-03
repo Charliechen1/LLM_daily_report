@@ -5,6 +5,20 @@ GPU kernels, operator fusion, compilation, execution graphs and hardware adaptat
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-03](../../../reports/2026/10/2026-10-03.md) — PARTIAL SEARCH
+
+### [Building a High-Performance and Portable vLLM Linear Backend with Helion](<https://pytorch.org/blog/building-a-high-performance-and-portable-vllm-linear-backend-with-helion/>)
+
+This vLLM backend uses Helion to automatically tune quantized matrix multiplications for individual input shapes, switching between tuned kernels and existing implementations at runtime. It offers a more compact way to optimize decoding kernels while translating some kernel-level improvements into higher serving throughput.
+
+**Published:** 2026-10-02 · **First seen:** 2026-10-03T10:06:42Z · **Novelty:** new · **Tags:** Kernel Autotuning, Quantized Inference, vLLM
+
+[Blog](<https://pytorch.org/blog/building-a-high-performance-and-portable-vllm-linear-backend-with-helion/>) · [Code](<https://github.com/redhat-et/vllm-helion>)
+
+**Evidence:** engineering-report; full-text. The page's publication metadata and official RSS agree on October 2 at 19:55:07 UTC, inside the main interval. The authors report 1.110–1.178x geometric-mean kernel speedups across tested comparisons and over 10% serving-throughput gains for some workloads, using an H100 80GB, dense Qwen models, three 8-bit formats, and ShareGPT. The linked fork includes kernels, configurations, and tuning instructions.
+
+**Limitations:** Helion runs under CUDA Graph replay for at most 32 tokens; larger shapes fall back to existing kernels. Tests disable prefix caching and do not establish cross-hardware portability. The integration is a separate fork, and additional models require offline tuning that can take hours; results were not independently reproduced.
+
 ## [2026-10-02](../../../reports/2026/10/2026-10-02.md) — PARTIAL SEARCH
 
 ### [MegaFlux: Skew-Resilient MoE Megakernels via Pipelined Expert Replication](<https://arxiv.org/abs/2610.00671>)

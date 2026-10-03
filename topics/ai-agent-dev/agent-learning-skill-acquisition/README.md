@@ -5,6 +5,20 @@ Learning from trajectories/feedback, skill generation/reuse, experience and self
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-03](../../../reports/2026/10/2026-10-03.md) — PARTIAL SEARCH
+
+### [Not All Experience Belongs in the Weights: Component Routing for Self-Improving GUI Agents](<https://arxiv.org/abs/2610.01787>)
+
+Component Routing divides a GUI agent's experience into interface locations, procedures, state facts, and lessons, then chooses whether each belongs in model weights or retrieved context. A rule based on recurrence and dependence on the current state offers a practical way to combine fine-tuning with memory instead of sending every experience through the same route.
+
+**Published:** 2026-10-01 · **First seen:** 2026-10-02T15:36:41.826Z · **Novelty:** newly-discovered · **Tags:** GUI Agents, Experience Reuse, Memory
+
+[Paper](<https://arxiv.org/html/2610.01787v1>)
+
+**Evidence:** research-paper; full-text. Paired held-out tests span three 7–8B model families, MobileGym and AndroidWorld, and three seeds, with deterministic task checkers. Routing improves over the better single destination by 3.5 percentage points on average. Inspected but deferred in the Oct 2 run; first inclusion uses newly-discovered because its Oct 2 public release is within this report's lookback and it has never been published here.
+
+**Limitations:** The route rule is calibrated on a narrow set of GUI models and extracted components, with structured-state or accessibility matching. Some component contrasts include zero, and routing does not beat the best single destination in every configuration. Code and data are described as a future release; no independent reproduction.
+
 ## [2026-10-01](../../../reports/2026/10/2026-10-01.md) — PARTIAL SEARCH
 
 ### [Learning from Research: Toward Lifelong Agent Harness Evolution](<https://arxiv.org/abs/2609.40169>)

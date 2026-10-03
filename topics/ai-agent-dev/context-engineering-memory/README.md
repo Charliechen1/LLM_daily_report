@@ -5,6 +5,20 @@ Context organization/compression, working memory, long-term memory and state.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-03](../../../reports/2026/10/2026-10-03.md) — PARTIAL SEARCH
+
+### [AutoCompact: Learning When to Compact Context in Long-Horizon Coding Agents](<https://arxiv.org/abs/2610.02163>)
+
+AutoCompact trains a coding agent to decide when to summarize its history, preserve a useful working state, and continue consistently from that summary. Judge-corrected demonstrations followed by task-success reinforcement learning improve repository problem solving even when the original history fits in the context window.
+
+**Published:** 2026-10-01 · **First seen:** 2026-10-03T10:03:03Z · **Novelty:** newly-discovered · **Tags:** Context Compaction, Coding Agents, Reinforcement Learning
+
+[Paper](<https://arxiv.org/html/2610.02163v1>)
+
+**Evidence:** research-paper; full-text. Three-run evaluations use one Qwen3-Coder backbone and a shared scaffold on SWE-bench Verified and SWE-PolyBench Verified, reporting 9.2 and 5.0 percentage-point gains over the base agent. Disabling compaction in the same trained checkpoint reduces performance, supporting a contribution beyond weight updates. Newly discovered in this run; its Oct 2 public announcement precedes the main window but falls within the 72-hour lookback.
+
+**Limitations:** Evidence covers one model and coding tasks. Inference costs are token-price estimates excluding training and judge-guided data collection; summary-quality checks use keyword screening with manual spot checks. No code or checkpoint link was found in the inspected primary publication, and results were not independently reproduced.
+
 ## [2026-10-02](../../../reports/2026/10/2026-10-02.md) — PARTIAL SEARCH
 
 ### [Causal Memory Policy: Making Memory Utility Identifiable by Intervening on Retrieval](<https://arxiv.org/abs/2610.02070>)

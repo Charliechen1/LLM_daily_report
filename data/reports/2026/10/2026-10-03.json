@@ -1,0 +1,584 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-03",
+  "timezone": "America/Los_Angeles",
+  "generated_at": "2026-10-03T10:13:54.168Z",
+  "coverage": {
+    "start": "2026-10-02T03:00:00-07:00",
+    "end": "2026-10-03T03:00:00-07:00"
+  },
+  "search": {
+    "status": "partial",
+    "notes": "Daily delta for October 2 03:00 to October 3 03:00 America/Los_Angeles; the total 72-hour discovery window is September 30 10:00 UTC through October 3 10:00 UTC. Checked against the September 29 baseline and all prior daily reports: 64 distinct published works. Eight papers are lookback discoveries, including three inspected but deferred on October 2; none is presented as newly published in the main interval. Original arXiv v1 calendar dates are retained separately from public availability. Dated October 1/2 listings and the official announcement schedule establish eligibility; corresponding 00:00 UTC public-release times are schedule-based inferences, not server logs. No Friday submission awaiting a Sunday announcement is included. Both October 2 technical blogs receive first coverage here. Helion's page metadata and official RSS establish publication inside the main interval. AstaBrief has only a verified calendar date, so its placement relative to the October 2 10:00 UTC boundary is uncertain; it is conservatively marked newly-discovered within the lookback. Its model development largely occurred in 2025. AstaBrief dataset access was recovered and its license checked. All ten selected primary papers or technical reports were inspected in full text; no experiments were reproduced. Component Routing preserves the earliest retained October 2 research-note timestamp because its exact individual discovery second was not saved. SourceLearn's project page is unavailable and its reachable repository contains no implementation; unavailable artifact links are omitted. No public implementation was verified for AutoCompact, Component Routing, LoopCD, or RapidMoE. Rechecking prior gaps restored PivotOPD project access and recovered the Olmo-core 3 PDF through a direct download; relevant methods, benchmark sections, Figure 8 and Table 30 were inspected, without re-adding either covered work. CMP's anonymous code page remains unavailable. Neighborhood OPSD HTML failed but its PDF was readable; an optional PyTorch metadata endpoint failed but page metadata and RSS resolved publication timing. Search remains partial because of the stated access gaps. Organization indexes and primary paper listings were checked across all three areas; this is a curated selection rather than exhaustive coverage.",
+    "sources_checked": [
+      {
+        "name": "Hugging Face October 2 discovery index",
+        "url": "https://huggingface.co/papers/date/2026-10-02",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv cs.CL recent listings and announcement batches",
+        "url": "https://arxiv.org/list/cs.CL/recent?show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv cs.LG recent listings and announcement batches",
+        "url": "https://arxiv.org/list/cs.LG/recent?show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv official public availability schedule",
+        "url": "https://info.arxiv.org/help/availability.html",
+        "status": "ok"
+      },
+      {
+        "name": "LoopCD publication history",
+        "url": "https://arxiv.org/abs/2610.02185",
+        "status": "ok"
+      },
+      {
+        "name": "LoopCD full paper v1",
+        "url": "https://arxiv.org/html/2610.02185v1",
+        "status": "ok"
+      },
+      {
+        "name": "CATCH publication and revision history",
+        "url": "https://arxiv.org/abs/2609.39533",
+        "status": "ok"
+      },
+      {
+        "name": "CATCH full paper v1",
+        "url": "https://arxiv.org/html/2609.39533v1",
+        "status": "ok"
+      },
+      {
+        "name": "CATCH revised full paper v2",
+        "url": "https://arxiv.org/html/2609.39533v2",
+        "status": "ok"
+      },
+      {
+        "name": "CATCH author implementation and audit utilities",
+        "url": "https://github.com/THUAIS-Lab/CATCH",
+        "status": "ok"
+      },
+      {
+        "name": "DARA publication history",
+        "url": "https://arxiv.org/abs/2610.00574",
+        "status": "ok"
+      },
+      {
+        "name": "DARA full paper v1",
+        "url": "https://arxiv.org/html/2610.00574v1",
+        "status": "ok"
+      },
+      {
+        "name": "DARA author implementation",
+        "url": "https://github.com/zhaihaotian/DARA",
+        "status": "ok"
+      },
+      {
+        "name": "Neighborhood OPSD reserve candidate publication history",
+        "url": "https://arxiv.org/abs/2609.39687",
+        "status": "ok"
+      },
+      {
+        "name": "Neighborhood OPSD HTML unavailable; PDF fallback succeeded",
+        "url": "https://arxiv.org/html/2609.39687v1",
+        "status": "unavailable"
+      },
+      {
+        "name": "Neighborhood OPSD reserve candidate PDF fallback",
+        "url": "https://arxiv.org/pdf/2609.39687",
+        "status": "ok"
+      },
+      {
+        "name": "SourceLearn abstract and exact v1 timestamp",
+        "url": "https://arxiv.org/abs/2610.02150",
+        "status": "ok"
+      },
+      {
+        "name": "SourceLearn full methods, evaluation, matched-context comparison and grounding audit",
+        "url": "https://arxiv.org/html/2610.02150v1",
+        "status": "ok"
+      },
+      {
+        "name": "Preference distillation reserve candidate metadata",
+        "url": "https://arxiv.org/abs/2609.38987",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv cs.AI recent: Oct 2 dated announcement list and candidate screening",
+        "url": "https://arxiv.org/list/cs.AI/recent",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv cs.CL recent: Oct 2 dated list containing AutoCompact, SourceLearn and Argo-Bench",
+        "url": "https://arxiv.org/list/cs.CL/recent",
+        "status": "ok"
+      },
+      {
+        "name": "AutoCompact abstract and exact v1 timestamp",
+        "url": "https://arxiv.org/abs/2610.02163",
+        "status": "ok"
+      },
+      {
+        "name": "AutoCompact full methods, comparisons and compaction ablation",
+        "url": "https://arxiv.org/html/2610.02163v1",
+        "status": "ok"
+      },
+      {
+        "name": "SourceLearn repository: reachable but only LICENSE and minimal README, no implementation",
+        "url": "https://github.com/luchengfu6/SourceLearn",
+        "status": "ok"
+      },
+      {
+        "name": "SourceLearn author-linked project page: retrieval failed twice",
+        "url": "https://sourcelearn.github.io/",
+        "status": "unavailable"
+      },
+      {
+        "name": "Component Routing abstract and exact v1 timestamp",
+        "url": "https://arxiv.org/abs/2610.01787",
+        "status": "ok"
+      },
+      {
+        "name": "Component Routing full setup, results and held-out routing analysis",
+        "url": "https://arxiv.org/html/2610.01787v1",
+        "status": "ok"
+      },
+      {
+        "name": "Argo-Bench alternate: primary abstract",
+        "url": "https://arxiv.org/abs/2610.02122",
+        "status": "ok"
+      },
+      {
+        "name": "Argo-Bench alternate: full construction, evaluation and limitations",
+        "url": "https://arxiv.org/html/2610.02122v1",
+        "status": "ok"
+      },
+      {
+        "name": "Argo-Bench alternate: public harness and partial reference solutions",
+        "url": "https://github.com/TextQLLabs/Argo-Bench",
+        "status": "ok"
+      },
+      {
+        "name": "Argo-Bench alternate: public sibling-world dataset card",
+        "url": "https://huggingface.co/datasets/textql/Argo-Bench",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv Distributed Computing recent announcements",
+        "url": "https://arxiv.org/list/cs.DC/recent",
+        "status": "ok"
+      },
+      {
+        "name": "RapidMoE submission history",
+        "url": "https://arxiv.org/abs/2610.01265",
+        "status": "ok"
+      },
+      {
+        "name": "RapidMoE full paper",
+        "url": "https://arxiv.org/html/2610.01265v1",
+        "status": "ok"
+      },
+      {
+        "name": "GPU-initiated communication submission history",
+        "url": "https://arxiv.org/abs/2610.01380",
+        "status": "ok"
+      },
+      {
+        "name": "GPU-initiated communication full paper",
+        "url": "https://arxiv.org/html/2610.01380v1",
+        "status": "ok"
+      },
+      {
+        "name": "GPU-initiated communication code and raw results",
+        "url": "https://github.com/ParCoreLab/Dissecting-GPU-Communication-Experiments",
+        "status": "ok"
+      },
+      {
+        "name": "vLLM official blog index",
+        "url": "https://vllm.ai/blog",
+        "status": "ok"
+      },
+      {
+        "name": "PyTorch official blog index",
+        "url": "https://pytorch.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "PyTorch Helion vLLM backend report and publication metadata",
+        "url": "https://pytorch.org/blog/building-a-high-performance-and-portable-vllm-linear-backend-with-helion/",
+        "status": "ok"
+      },
+      {
+        "name": "PyTorch official RSS publication timestamp, retrieved directly after browser parser failure",
+        "url": "https://pytorch.org/feed/",
+        "status": "ok"
+      },
+      {
+        "name": "Helion vLLM integration fork",
+        "url": "https://github.com/redhat-et/vllm-helion",
+        "status": "ok"
+      },
+      {
+        "name": "PyTorch Jagged Flash Attention technical post, screened but not selected",
+        "url": "https://pytorch.org/blog/optimizing-jagged-flash-attention-with-tlx-the-road-toward-sota-fa4-on-blackwell/",
+        "status": "ok"
+      },
+      {
+        "name": "Jagged Flash Attention implementation",
+        "url": "https://github.com/facebookresearch/ads_model_kernel_library/tree/main/tlx_jfa",
+        "status": "ok"
+      },
+      {
+        "name": "Optional PyTorch WordPress metadata route, returned HTTP 404; page and RSS provide the required metadata",
+        "url": "https://pytorch.org/wp-json/wp/v2/posts?slug=building-a-high-performance-and-portable-vllm-linear-backend-with-helion",
+        "status": "unavailable"
+      },
+      {
+        "name": "Ai2 research index: October 2 AstaBrief disclosure",
+        "url": "https://allenai.org/research",
+        "status": "ok"
+      },
+      {
+        "name": "OpenAI research index: checked for new technical disclosures",
+        "url": "https://openai.com/news/research/",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic research index",
+        "url": "https://www.anthropic.com/research",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic engineering index",
+        "url": "https://www.anthropic.com/engineering",
+        "status": "ok"
+      },
+      {
+        "name": "DeepMind blog index",
+        "url": "https://deepmind.google/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "AstaBrief full technical blog",
+        "url": "https://allenai.org/blog/astabrief",
+        "status": "ok"
+      },
+      {
+        "name": "AstaBrief model card: evaluation and training details",
+        "url": "https://huggingface.co/allenai/AstaBrief_8B",
+        "status": "ok"
+      },
+      {
+        "name": "AstaBrief example report workflow code",
+        "url": "https://github.com/allenai/ai2-scholarqa-lib/tree/main/api/scholarqa/lite",
+        "status": "ok"
+      },
+      {
+        "name": "PivotOPD project page: prior access gap resolved; code still coming soon",
+        "url": "https://research.nvidia.com/labs/lpr/pivotopd/",
+        "status": "ok"
+      },
+      {
+        "name": "Olmo-core 3 technical report: downloaded directly; methods and benchmark sections inspected, including figures/tables",
+        "url": "https://allenai.org/papers/olmocore3",
+        "status": "ok"
+      },
+      {
+        "name": "CMP anonymous code page: access still unavailable",
+        "url": "https://anonymous.4open.science/r/cmp-release-D0C3/",
+        "status": "unavailable"
+      },
+      {
+        "name": "AstaBrief DPO dataset card: access recovered; 6,622 preference pairs and license verified",
+        "url": "https://huggingface.co/datasets/allenai/AstaBrief_DPO_Mix",
+        "status": "ok"
+      },
+      {
+        "name": "Ai2 official AstaBrief mirror: October 2 date, no exact publication hour verified",
+        "url": "https://huggingface.co/blog/allenai/astabrief",
+        "status": "ok"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": "https://allenai.org/blog/astabrief",
+      "title": "AstaBrief: citation-focused SFT and preference training for scientific reports",
+      "category": "1.5",
+      "tags": [
+        "Scientific Synthesis",
+        "Citation Grounding",
+        "Preference Optimization"
+      ],
+      "published_on": "2026-10-02",
+      "first_seen_at": "2026-10-03T10:04:56Z",
+      "canonical_url": "https://allenai.org/blog/astabrief",
+      "links": {
+        "blog": "https://allenai.org/blog/astabrief",
+        "project": "https://huggingface.co/allenai/AstaBrief_8B",
+        "code": "https://github.com/allenai/ai2-scholarqa-lib/tree/main/api/scholarqa/lite"
+      },
+      "summary": [
+        "AstaBrief adapts Qwen3-8B to write cited scientific reports from already retrieved literature snippets in one pass, using citation-filtered supervised examples and agreement-filtered preference pairs.",
+        "The released weights and training recipe provide a practical starting point for faster evidence-grounded synthesis, with comparisons limited to the older models and report workflows used during development."
+      ],
+      "evidence": {
+        "type": "technical-report",
+        "access": "full-text",
+        "rationale": "The October 2 technical disclosure describes 47K supervised examples and about 6K preference pairs, with citation-density filtering producing the strongest filtering gains. The model card reports citation recall rising from 64.6 for Qwen3-8B to 78.2 for AstaBrief on the 100-question SQABench-CS2 test split. The blog reports 51.1 versus 178.5 seconds across the full Fast/Thinking pipelines, about 3.5 times faster. This is first coverage of the newly published technical write-up; model development largely predates this release. Ai2 and its official mirror date the disclosure October 2 without a verified hour; it is eligible within the 72-hour lookback but conservatively labeled newly-discovered because its position relative to the 10:00 UTC main-window boundary is uncertain.",
+        "limitations": "Most training and evaluation occurred in 2025 and were not rerun against current frontier models. Evidence relies heavily on model judges; the human study covers only 14 questions. Pipeline latency compares different workflows, not an isolated model substitution, and citation scores do not fully measure preservation of scientific claim scope. No independent reproduction. Model weights use Apache 2.0, while the verified DPO dataset uses CC-BY-NC-4.0."
+      },
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "arxiv:2610.00574",
+      "title": "Make Sparse Rewards Count: Density-Aware Reward Aggregation for Multi-Reward RL",
+      "category": "1.7",
+      "published_on": "2026-09-30",
+      "first_seen_at": "2026-10-03T10:04:50Z",
+      "canonical_url": "https://arxiv.org/abs/2610.00574",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.00574",
+        "code": "https://github.com/zhaihaotian/DARA"
+      },
+      "summary": [
+        "Density-Aware Reward Aggregation increases the weight of objectives that provide useful comparisons in relatively few rollout groups, recalculating these weights for each training batch.",
+        "This helps models acquire format and length constraints in fewer optimization steps, offering a practical way to balance multiple rewards while exposing the trade-off between compliance and answer accuracy."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Tool-calling and math studies cover 1.5B–7B models, matched baselines, fixed-weight ablations, and held-out evaluation. DeepSeek-R1-7B reaches 95% held-out length compliance at step 50 versus 70 for GDPO. Submission: 2026-09-30T18:45:26Z, after the daily deadline; the cs.CL listing confirms the October 2 public batch. Newly discovered in this run's lookback, with the September 30 original date retained.",
+        "limitations": "Fewer optimization steps do not establish wall-clock savings. Stronger length compliance can lower accuracy, and final accuracy leadership varies by model and variant. The exact energy-equalization result assumes ideal normalization and uncapped symmetric weights; it does not directly prove equal policy-gradient contributions for the practical asymmetric variant."
+      },
+      "tags": [
+        "Multi-Reward RL",
+        "Advantage Weighting",
+        "Training Efficiency"
+      ],
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "arxiv:2610.02185",
+      "title": "Decoding Looped Transformers Better for (Almost) Free",
+      "category": "1.9",
+      "published_on": "2026-10-01",
+      "first_seen_at": "2026-10-03T10:04:50Z",
+      "canonical_url": "https://arxiv.org/abs/2610.02185",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.02185"
+      },
+      "summary": [
+        "LoopCD guides a looped Transformer's next-token prediction by contrasting its final recurrent state with an earlier state from the same forward pass, requiring no additional training or auxiliary model.",
+        "It improves reasoning and code generation in the tested models, while separate multiple-choice experiments show that this guidance can recover accuracy lost by halving recurrent depth."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Matched checkpoints, prompts, and recurrent depths across four model families support the decoding effect. Reduced-depth multiple-choice experiments report 22.5–48.2% lower analytic forward FLOPs. Submission: 2026-10-01T17:58:38Z; the cs.LG listing confirms the October 2 public batch. Newly discovered in this run's 72-hour lookback, absent from all 64 previously covered works.",
+        "limitations": "FLOPs describe a 512-token prefill calculation, not measured serving speed. Reduced-depth evidence is limited to multiple-choice tasks; guidance strengths and reference states require screening and depend on architecture. Logit guidance adds a readout pass, while hidden guidance can be sensitive to initialization and excessive strength. No public implementation was verified."
+      },
+      "tags": [
+        "Contrastive Decoding",
+        "Looped Transformers",
+        "Test-Time Compute"
+      ],
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "arxiv:2609.39533",
+      "title": "CATCH: A Controllable Analysis Testbed for Reward Hacking in Coding RL",
+      "category": "1.10",
+      "published_on": "2026-09-30",
+      "first_seen_at": "2026-10-03T10:04:50Z",
+      "canonical_url": "https://arxiv.org/abs/2609.39533",
+      "links": {
+        "paper": "https://arxiv.org/abs/2609.39533",
+        "code": "https://github.com/THUAIS-Lab/CATCH"
+      },
+      "summary": [
+        "CATCH evaluates coding reinforcement learning with deliberately vulnerable training rewards and a separate execution audit, allowing researchers to distinguish evaluator exploitation from actual task success.",
+        "Its controlled experiments show that monitor-based protection can erode during training, making the testbed useful for studying how safeguards and model behavior adapt to one another."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Qwen3-4B experiments vary initialization, reward difficulty, and three mitigation strategies; removing code comments improves monitor recall after training against that monitor. The public repository includes training and audit utilities. Original submission: 2026-09-30T11:36:30Z; the cs.CL listing confirms the October 1 batch. Newly discovered during the 72-hour catch-up search, with original date retained and no prior coverage.",
+        "limitations": "Experiments use one 4B model, single-turn synthetic repositories, and deliberately seeded hacking demonstrations. The independent audit covers designed loopholes, not every possible exploit. Initial demonstrations are screened against a related monitor, and the observed suppression-versus-capability trade-offs are not a universal ranking of defenses."
+      },
+      "tags": [
+        "Reward Hacking",
+        "RLVR",
+        "Training-Time Evaluation"
+      ],
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "arxiv:2610.02163",
+      "title": "AutoCompact: Learning When to Compact Context in Long-Horizon Coding Agents",
+      "category": "2.3",
+      "tags": [
+        "Context Compaction",
+        "Coding Agents",
+        "Reinforcement Learning"
+      ],
+      "published_on": "2026-10-01",
+      "first_seen_at": "2026-10-03T10:03:03Z",
+      "canonical_url": "https://arxiv.org/abs/2610.02163",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.02163v1"
+      },
+      "summary": [
+        "AutoCompact trains a coding agent to decide when to summarize its history, preserve a useful working state, and continue consistently from that summary.",
+        "Judge-corrected demonstrations followed by task-success reinforcement learning improve repository problem solving even when the original history fits in the context window."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Three-run evaluations use one Qwen3-Coder backbone and a shared scaffold on SWE-bench Verified and SWE-PolyBench Verified, reporting 9.2 and 5.0 percentage-point gains over the base agent. Disabling compaction in the same trained checkpoint reduces performance, supporting a contribution beyond weight updates. Newly discovered in this run; its Oct 2 public announcement precedes the main window but falls within the 72-hour lookback.",
+        "limitations": "Evidence covers one model and coding tasks. Inference costs are token-price estimates excluding training and judge-guided data collection; summary-quality checks use keyword screening with manual spot checks. No code or checkpoint link was found in the inspected primary publication, and results were not independently reproduced."
+      },
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "arxiv:2610.02150",
+      "title": "From Knowledge Access to Source Learning: Developing Source-Specific Competence",
+      "category": "2.4",
+      "tags": [
+        "Retrieval",
+        "Persistent Knowledge",
+        "Source Grounding"
+      ],
+      "published_on": "2026-10-01",
+      "first_seen_at": "2026-10-03T10:03:03Z",
+      "canonical_url": "https://arxiv.org/abs/2610.02150",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.02150v1"
+      },
+      "summary": [
+        "SourceLearn builds a persistent representation of a document collection, repository, or API source and revises it through self-directed study and feedback from earlier tasks.",
+        "Reconstructing revisions from the original source helps agents reuse organized knowledge on later tasks while retaining direct retrieval for precise evidence."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Five benchmarks and three backends use disjoint guidance/test tasks; the authors report the highest score among tested methods in 13 of 15 settings. Ablations and a four-source matched-context comparison support benefits beyond added context alone. Newly discovered during this run from the Oct 2 announcement batch, within the 72-hour lookback.",
+        "limitations": "Task-guided refinement uses reference answers, and main comparisons add source-model context; matched-budget controls cover a subset. Grounding audits still find unsupported claims, and gpt-oss-120b regresses on AppWorld. The linked repository contains only LICENSE and a minimal README; the project page could not be retrieved. No independent reproduction."
+      },
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "arxiv:2610.01787",
+      "title": "Not All Experience Belongs in the Weights: Component Routing for Self-Improving GUI Agents",
+      "category": "2.5",
+      "tags": [
+        "GUI Agents",
+        "Experience Reuse",
+        "Memory"
+      ],
+      "published_on": "2026-10-01",
+      "first_seen_at": "2026-10-02T15:36:41.826Z",
+      "canonical_url": "https://arxiv.org/abs/2610.01787",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.01787v1"
+      },
+      "summary": [
+        "Component Routing divides a GUI agent's experience into interface locations, procedures, state facts, and lessons, then chooses whether each belongs in model weights or retrieved context.",
+        "A rule based on recurrence and dependence on the current state offers a practical way to combine fine-tuning with memory instead of sending every experience through the same route."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Paired held-out tests span three 7–8B model families, MobileGym and AndroidWorld, and three seeds, with deterministic task checkers. Routing improves over the better single destination by 3.5 percentage points on average. Inspected but deferred in the Oct 2 run; first inclusion uses newly-discovered because its Oct 2 public release is within this report's lookback and it has never been published here.",
+        "limitations": "The route rule is calibrated on a narrow set of GUI models and extracted components, with structured-state or accessibility matching. Some component contrasts include zero, and routing does not beat the best single destination in every configuration. Code and data are described as a future release; no independent reproduction."
+      },
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "arxiv:2610.01265",
+      "title": "RapidMoE: Exploiting Cross-Asymmetry via Adaptive Residual Offloading for Large-Scale MoE Inference",
+      "category": "3.4",
+      "tags": [
+        "MoE Offloading",
+        "Mixed Precision",
+        "CPU–GPU Scheduling"
+      ],
+      "published_on": "2026-10-01",
+      "first_seen_at": "2026-10-02T15:33:57Z",
+      "canonical_url": "https://arxiv.org/abs/2610.01265",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.01265"
+      },
+      "summary": [
+        "RapidMoE combines low-precision expert computation on GPUs with selectively higher-precision CPU work, using residual weight representations and importance-based routing to balance the devices.",
+        "This reduces duplicated host-memory storage and offloading stalls when serving large mixture-of-experts models on memory-limited CPU–GPU systems."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Screened October 2 and fully reviewed for this catch-up selection: v1 is October 1 at 08:02:24 UTC; the October 2 announcement list and official schedule imply public release at October 2 00:00 UTC. A800/RTX 4090 tests cover DeepSeek-R1/V3 and Qwen3-235B; the authors report up to 3.5x decoding speedup over KTransformers, with accuracy checks, component ablations, and a 1,000-request serving workload.",
+        "limitations": "Serving tests use concurrency four and 0.2 requests/s; accuracy varies slightly against the Q4 reference. Calibration takes hours and performance depends on CPU memory bandwidth and hardware balance. These results do not establish high-concurrency cluster performance; no public RapidMoE implementation was verified."
+      },
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "https://pytorch.org/blog/building-a-high-performance-and-portable-vllm-linear-backend-with-helion",
+      "title": "Building a High-Performance and Portable vLLM Linear Backend with Helion",
+      "category": "3.5",
+      "tags": [
+        "Kernel Autotuning",
+        "Quantized Inference",
+        "vLLM"
+      ],
+      "published_on": "2026-10-02",
+      "first_seen_at": "2026-10-03T10:06:42Z",
+      "canonical_url": "https://pytorch.org/blog/building-a-high-performance-and-portable-vllm-linear-backend-with-helion/",
+      "links": {
+        "blog": "https://pytorch.org/blog/building-a-high-performance-and-portable-vllm-linear-backend-with-helion/",
+        "code": "https://github.com/redhat-et/vllm-helion"
+      },
+      "summary": [
+        "This vLLM backend uses Helion to automatically tune quantized matrix multiplications for individual input shapes, switching between tuned kernels and existing implementations at runtime.",
+        "It offers a more compact way to optimize decoding kernels while translating some kernel-level improvements into higher serving throughput."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "The page's publication metadata and official RSS agree on October 2 at 19:55:07 UTC, inside the main interval. The authors report 1.110–1.178x geometric-mean kernel speedups across tested comparisons and over 10% serving-throughput gains for some workloads, using an H100 80GB, dense Qwen models, three 8-bit formats, and ShareGPT. The linked fork includes kernels, configurations, and tuning instructions.",
+        "limitations": "Helion runs under CUDA Graph replay for at most 32 tokens; larger shapes fall back to existing kernels. Tests disable prefix caching and do not establish cross-hardware portability. The integration is a separate fork, and additional models require offline tuning that can take hours; results were not independently reproduced."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "arxiv:2610.01380",
+      "title": "GPU-Initiated Communication: Dissecting Down to the Bone",
+      "category": "3.8",
+      "tags": [
+        "GPU Networking",
+        "RDMA",
+        "MoE Communication"
+      ],
+      "published_on": "2026-10-01",
+      "first_seen_at": "2026-10-02T15:33:57Z",
+      "canonical_url": "https://arxiv.org/abs/2610.01380",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.01380",
+        "code": "https://github.com/ParCoreLab/Dissecting-GPU-Communication-Experiments"
+      },
+      "summary": [
+        "This study uses minimal transports and production libraries to separate GPU-driven network costs from queue management, synchronization, and CPU-proxy overhead.",
+        "Its measurements explain how batching, queue isolation, and resource pressure affect fine-grained mixture-of-experts communication, helping engineers choose and tune transports for their workloads."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Screened October 2 and fully reviewed now: v1 is October 1 at 09:46:08 UTC; the October 2 announcement list and official schedule imply October 2 00:00 UTC availability. Controlled tests span H100, H200, B200, and GB200 with payload validation and network counters. The authors find that queue isolation reduces loaded latency and dormant communication code can reduce kernel throughput; benchmark sources and raw results are accessible.",
+        "limitations": "This is a transport-mechanism study, not an end-to-end LLM speedup claim. Latency commonly uses median measurements on one pinned node pair, while platforms differ in CPUs, links, firmware, and providers. Small-message findings depend on traffic, clock state, completion semantics, and library configuration; no results were independently reproduced."
+      },
+      "novelty": "newly-discovered"
+    }
+  ]
+}

@@ -5,6 +5,20 @@ RLHF, RLVR, policy optimization, reasoning training, tool use and multi-turn age
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-03](../../../reports/2026/10/2026-10-03.md) — PARTIAL SEARCH
+
+### [Make Sparse Rewards Count: Density-Aware Reward Aggregation for Multi-Reward RL](<https://arxiv.org/abs/2610.00574>)
+
+Density-Aware Reward Aggregation increases the weight of objectives that provide useful comparisons in relatively few rollout groups, recalculating these weights for each training batch. This helps models acquire format and length constraints in fewer optimization steps, offering a practical way to balance multiple rewards while exposing the trade-off between compliance and answer accuracy.
+
+**Published:** 2026-09-30 · **First seen:** 2026-10-03T10:04:50Z · **Novelty:** newly-discovered · **Tags:** Multi-Reward RL, Advantage Weighting, Training Efficiency
+
+[Paper](<https://arxiv.org/abs/2610.00574>) · [Code](<https://github.com/zhaihaotian/DARA>)
+
+**Evidence:** research-paper; full-text. Tool-calling and math studies cover 1.5B–7B models, matched baselines, fixed-weight ablations, and held-out evaluation. DeepSeek-R1-7B reaches 95% held-out length compliance at step 50 versus 70 for GDPO. Submission: 2026-09-30T18:45:26Z, after the daily deadline; the cs.CL listing confirms the October 2 public batch. Newly discovered in this run's lookback, with the September 30 original date retained.
+
+**Limitations:** Fewer optimization steps do not establish wall-clock savings. Stronger length compliance can lower accuracy, and final accuracy leadership varies by model and variant. The exact energy-equalization result assumes ideal normalization and uncapped symmetric weights; it does not directly prove equal policy-gradient contributions for the practical asymmetric variant.
+
 ## [2026-10-01](../../../reports/2026/10/2026-10-01.md) — PARTIAL SEARCH
 
 ### [Learning Beyond What You Sample: Off-Policy-Aware Cross-Model Trajectory Exchange for RLVR](<https://arxiv.org/abs/2609.37868>)

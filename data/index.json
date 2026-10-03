@@ -2,6 +2,13 @@
   "schema_version": 1,
   "reports": [
     {
+      "date": "2026-10-03",
+      "path": "reports/2026/10/2026-10-03.md",
+      "source": "data/reports/2026/10/2026-10-03.json",
+      "search_status": "partial",
+      "entries": 10
+    },
+    {
       "date": "2026-10-02",
       "path": "reports/2026/10/2026-10-02.md",
       "source": "data/reports/2026/10/2026-10-02.json",
@@ -33,6 +40,322 @@
     }
   ],
   "entries": [
+    {
+      "id": "https://allenai.org/blog/astabrief",
+      "title": "AstaBrief: citation-focused SFT and preference training for scientific reports",
+      "category": "1.5",
+      "tags": [
+        "Scientific Synthesis",
+        "Citation Grounding",
+        "Preference Optimization"
+      ],
+      "published_on": "2026-10-02",
+      "first_seen_at": "2026-10-03T10:04:56Z",
+      "canonical_url": "https://allenai.org/blog/astabrief",
+      "links": {
+        "blog": "https://allenai.org/blog/astabrief",
+        "project": "https://huggingface.co/allenai/AstaBrief_8B",
+        "code": "https://github.com/allenai/ai2-scholarqa-lib/tree/main/api/scholarqa/lite"
+      },
+      "summary": [
+        "AstaBrief adapts Qwen3-8B to write cited scientific reports from already retrieved literature snippets in one pass, using citation-filtered supervised examples and agreement-filtered preference pairs.",
+        "The released weights and training recipe provide a practical starting point for faster evidence-grounded synthesis, with comparisons limited to the older models and report workflows used during development."
+      ],
+      "evidence": {
+        "type": "technical-report",
+        "access": "full-text",
+        "rationale": "The October 2 technical disclosure describes 47K supervised examples and about 6K preference pairs, with citation-density filtering producing the strongest filtering gains. The model card reports citation recall rising from 64.6 for Qwen3-8B to 78.2 for AstaBrief on the 100-question SQABench-CS2 test split. The blog reports 51.1 versus 178.5 seconds across the full Fast/Thinking pipelines, about 3.5 times faster. This is first coverage of the newly published technical write-up; model development largely predates this release. Ai2 and its official mirror date the disclosure October 2 without a verified hour; it is eligible within the 72-hour lookback but conservatively labeled newly-discovered because its position relative to the 10:00 UTC main-window boundary is uncertain.",
+        "limitations": "Most training and evaluation occurred in 2025 and were not rerun against current frontier models. Evidence relies heavily on model judges; the human study covers only 14 questions. Pipeline latency compares different workflows, not an isolated model substitution, and citation scores do not fully measure preservation of scientific claim scope. No independent reproduction. Model weights use Apache 2.0, while the verified DPO dataset uses CC-BY-NC-4.0."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-03",
+      "report_path": "reports/2026/10/2026-10-03.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.00574",
+      "title": "Make Sparse Rewards Count: Density-Aware Reward Aggregation for Multi-Reward RL",
+      "category": "1.7",
+      "published_on": "2026-09-30",
+      "first_seen_at": "2026-10-03T10:04:50Z",
+      "canonical_url": "https://arxiv.org/abs/2610.00574",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.00574",
+        "code": "https://github.com/zhaihaotian/DARA"
+      },
+      "summary": [
+        "Density-Aware Reward Aggregation increases the weight of objectives that provide useful comparisons in relatively few rollout groups, recalculating these weights for each training batch.",
+        "This helps models acquire format and length constraints in fewer optimization steps, offering a practical way to balance multiple rewards while exposing the trade-off between compliance and answer accuracy."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Tool-calling and math studies cover 1.5B–7B models, matched baselines, fixed-weight ablations, and held-out evaluation. DeepSeek-R1-7B reaches 95% held-out length compliance at step 50 versus 70 for GDPO. Submission: 2026-09-30T18:45:26Z, after the daily deadline; the cs.CL listing confirms the October 2 public batch. Newly discovered in this run's lookback, with the September 30 original date retained.",
+        "limitations": "Fewer optimization steps do not establish wall-clock savings. Stronger length compliance can lower accuracy, and final accuracy leadership varies by model and variant. The exact energy-equalization result assumes ideal normalization and uncapped symmetric weights; it does not directly prove equal policy-gradient contributions for the practical asymmetric variant."
+      },
+      "tags": [
+        "Multi-Reward RL",
+        "Advantage Weighting",
+        "Training Efficiency"
+      ],
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-03",
+      "report_path": "reports/2026/10/2026-10-03.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.02185",
+      "title": "Decoding Looped Transformers Better for (Almost) Free",
+      "category": "1.9",
+      "published_on": "2026-10-01",
+      "first_seen_at": "2026-10-03T10:04:50Z",
+      "canonical_url": "https://arxiv.org/abs/2610.02185",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.02185"
+      },
+      "summary": [
+        "LoopCD guides a looped Transformer's next-token prediction by contrasting its final recurrent state with an earlier state from the same forward pass, requiring no additional training or auxiliary model.",
+        "It improves reasoning and code generation in the tested models, while separate multiple-choice experiments show that this guidance can recover accuracy lost by halving recurrent depth."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Matched checkpoints, prompts, and recurrent depths across four model families support the decoding effect. Reduced-depth multiple-choice experiments report 22.5–48.2% lower analytic forward FLOPs. Submission: 2026-10-01T17:58:38Z; the cs.LG listing confirms the October 2 public batch. Newly discovered in this run's 72-hour lookback, absent from all 64 previously covered works.",
+        "limitations": "FLOPs describe a 512-token prefill calculation, not measured serving speed. Reduced-depth evidence is limited to multiple-choice tasks; guidance strengths and reference states require screening and depend on architecture. Logit guidance adds a readout pass, while hidden guidance can be sensitive to initialization and excessive strength. No public implementation was verified."
+      },
+      "tags": [
+        "Contrastive Decoding",
+        "Looped Transformers",
+        "Test-Time Compute"
+      ],
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-03",
+      "report_path": "reports/2026/10/2026-10-03.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2609.39533",
+      "title": "CATCH: A Controllable Analysis Testbed for Reward Hacking in Coding RL",
+      "category": "1.10",
+      "published_on": "2026-09-30",
+      "first_seen_at": "2026-10-03T10:04:50Z",
+      "canonical_url": "https://arxiv.org/abs/2609.39533",
+      "links": {
+        "paper": "https://arxiv.org/abs/2609.39533",
+        "code": "https://github.com/THUAIS-Lab/CATCH"
+      },
+      "summary": [
+        "CATCH evaluates coding reinforcement learning with deliberately vulnerable training rewards and a separate execution audit, allowing researchers to distinguish evaluator exploitation from actual task success.",
+        "Its controlled experiments show that monitor-based protection can erode during training, making the testbed useful for studying how safeguards and model behavior adapt to one another."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Qwen3-4B experiments vary initialization, reward difficulty, and three mitigation strategies; removing code comments improves monitor recall after training against that monitor. The public repository includes training and audit utilities. Original submission: 2026-09-30T11:36:30Z; the cs.CL listing confirms the October 1 batch. Newly discovered during the 72-hour catch-up search, with original date retained and no prior coverage.",
+        "limitations": "Experiments use one 4B model, single-turn synthetic repositories, and deliberately seeded hacking demonstrations. The independent audit covers designed loopholes, not every possible exploit. Initial demonstrations are screened against a related monitor, and the observed suppression-versus-capability trade-offs are not a universal ranking of defenses."
+      },
+      "tags": [
+        "Reward Hacking",
+        "RLVR",
+        "Training-Time Evaluation"
+      ],
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-03",
+      "report_path": "reports/2026/10/2026-10-03.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.02163",
+      "title": "AutoCompact: Learning When to Compact Context in Long-Horizon Coding Agents",
+      "category": "2.3",
+      "tags": [
+        "Context Compaction",
+        "Coding Agents",
+        "Reinforcement Learning"
+      ],
+      "published_on": "2026-10-01",
+      "first_seen_at": "2026-10-03T10:03:03Z",
+      "canonical_url": "https://arxiv.org/abs/2610.02163",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.02163v1"
+      },
+      "summary": [
+        "AutoCompact trains a coding agent to decide when to summarize its history, preserve a useful working state, and continue consistently from that summary.",
+        "Judge-corrected demonstrations followed by task-success reinforcement learning improve repository problem solving even when the original history fits in the context window."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Three-run evaluations use one Qwen3-Coder backbone and a shared scaffold on SWE-bench Verified and SWE-PolyBench Verified, reporting 9.2 and 5.0 percentage-point gains over the base agent. Disabling compaction in the same trained checkpoint reduces performance, supporting a contribution beyond weight updates. Newly discovered in this run; its Oct 2 public announcement precedes the main window but falls within the 72-hour lookback.",
+        "limitations": "Evidence covers one model and coding tasks. Inference costs are token-price estimates excluding training and judge-guided data collection; summary-quality checks use keyword screening with manual spot checks. No code or checkpoint link was found in the inspected primary publication, and results were not independently reproduced."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-03",
+      "report_path": "reports/2026/10/2026-10-03.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.02150",
+      "title": "From Knowledge Access to Source Learning: Developing Source-Specific Competence",
+      "category": "2.4",
+      "tags": [
+        "Retrieval",
+        "Persistent Knowledge",
+        "Source Grounding"
+      ],
+      "published_on": "2026-10-01",
+      "first_seen_at": "2026-10-03T10:03:03Z",
+      "canonical_url": "https://arxiv.org/abs/2610.02150",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.02150v1"
+      },
+      "summary": [
+        "SourceLearn builds a persistent representation of a document collection, repository, or API source and revises it through self-directed study and feedback from earlier tasks.",
+        "Reconstructing revisions from the original source helps agents reuse organized knowledge on later tasks while retaining direct retrieval for precise evidence."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Five benchmarks and three backends use disjoint guidance/test tasks; the authors report the highest score among tested methods in 13 of 15 settings. Ablations and a four-source matched-context comparison support benefits beyond added context alone. Newly discovered during this run from the Oct 2 announcement batch, within the 72-hour lookback.",
+        "limitations": "Task-guided refinement uses reference answers, and main comparisons add source-model context; matched-budget controls cover a subset. Grounding audits still find unsupported claims, and gpt-oss-120b regresses on AppWorld. The linked repository contains only LICENSE and a minimal README; the project page could not be retrieved. No independent reproduction."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-03",
+      "report_path": "reports/2026/10/2026-10-03.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.01787",
+      "title": "Not All Experience Belongs in the Weights: Component Routing for Self-Improving GUI Agents",
+      "category": "2.5",
+      "tags": [
+        "GUI Agents",
+        "Experience Reuse",
+        "Memory"
+      ],
+      "published_on": "2026-10-01",
+      "first_seen_at": "2026-10-02T15:36:41.826Z",
+      "canonical_url": "https://arxiv.org/abs/2610.01787",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.01787v1"
+      },
+      "summary": [
+        "Component Routing divides a GUI agent's experience into interface locations, procedures, state facts, and lessons, then chooses whether each belongs in model weights or retrieved context.",
+        "A rule based on recurrence and dependence on the current state offers a practical way to combine fine-tuning with memory instead of sending every experience through the same route."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Paired held-out tests span three 7–8B model families, MobileGym and AndroidWorld, and three seeds, with deterministic task checkers. Routing improves over the better single destination by 3.5 percentage points on average. Inspected but deferred in the Oct 2 run; first inclusion uses newly-discovered because its Oct 2 public release is within this report's lookback and it has never been published here.",
+        "limitations": "The route rule is calibrated on a narrow set of GUI models and extracted components, with structured-state or accessibility matching. Some component contrasts include zero, and routing does not beat the best single destination in every configuration. Code and data are described as a future release; no independent reproduction."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-03",
+      "report_path": "reports/2026/10/2026-10-03.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.01265",
+      "title": "RapidMoE: Exploiting Cross-Asymmetry via Adaptive Residual Offloading for Large-Scale MoE Inference",
+      "category": "3.4",
+      "tags": [
+        "MoE Offloading",
+        "Mixed Precision",
+        "CPU–GPU Scheduling"
+      ],
+      "published_on": "2026-10-01",
+      "first_seen_at": "2026-10-02T15:33:57Z",
+      "canonical_url": "https://arxiv.org/abs/2610.01265",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.01265"
+      },
+      "summary": [
+        "RapidMoE combines low-precision expert computation on GPUs with selectively higher-precision CPU work, using residual weight representations and importance-based routing to balance the devices.",
+        "This reduces duplicated host-memory storage and offloading stalls when serving large mixture-of-experts models on memory-limited CPU–GPU systems."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Screened October 2 and fully reviewed for this catch-up selection: v1 is October 1 at 08:02:24 UTC; the October 2 announcement list and official schedule imply public release at October 2 00:00 UTC. A800/RTX 4090 tests cover DeepSeek-R1/V3 and Qwen3-235B; the authors report up to 3.5x decoding speedup over KTransformers, with accuracy checks, component ablations, and a 1,000-request serving workload.",
+        "limitations": "Serving tests use concurrency four and 0.2 requests/s; accuracy varies slightly against the Q4 reference. Calibration takes hours and performance depends on CPU memory bandwidth and hardware balance. These results do not establish high-concurrency cluster performance; no public RapidMoE implementation was verified."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-03",
+      "report_path": "reports/2026/10/2026-10-03.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://pytorch.org/blog/building-a-high-performance-and-portable-vllm-linear-backend-with-helion",
+      "title": "Building a High-Performance and Portable vLLM Linear Backend with Helion",
+      "category": "3.5",
+      "tags": [
+        "Kernel Autotuning",
+        "Quantized Inference",
+        "vLLM"
+      ],
+      "published_on": "2026-10-02",
+      "first_seen_at": "2026-10-03T10:06:42Z",
+      "canonical_url": "https://pytorch.org/blog/building-a-high-performance-and-portable-vllm-linear-backend-with-helion/",
+      "links": {
+        "blog": "https://pytorch.org/blog/building-a-high-performance-and-portable-vllm-linear-backend-with-helion/",
+        "code": "https://github.com/redhat-et/vllm-helion"
+      },
+      "summary": [
+        "This vLLM backend uses Helion to automatically tune quantized matrix multiplications for individual input shapes, switching between tuned kernels and existing implementations at runtime.",
+        "It offers a more compact way to optimize decoding kernels while translating some kernel-level improvements into higher serving throughput."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "The page's publication metadata and official RSS agree on October 2 at 19:55:07 UTC, inside the main interval. The authors report 1.110–1.178x geometric-mean kernel speedups across tested comparisons and over 10% serving-throughput gains for some workloads, using an H100 80GB, dense Qwen models, three 8-bit formats, and ShareGPT. The linked fork includes kernels, configurations, and tuning instructions.",
+        "limitations": "Helion runs under CUDA Graph replay for at most 32 tokens; larger shapes fall back to existing kernels. Tests disable prefix caching and do not establish cross-hardware portability. The integration is a separate fork, and additional models require offline tuning that can take hours; results were not independently reproduced."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-03",
+      "report_path": "reports/2026/10/2026-10-03.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.01380",
+      "title": "GPU-Initiated Communication: Dissecting Down to the Bone",
+      "category": "3.8",
+      "tags": [
+        "GPU Networking",
+        "RDMA",
+        "MoE Communication"
+      ],
+      "published_on": "2026-10-01",
+      "first_seen_at": "2026-10-02T15:33:57Z",
+      "canonical_url": "https://arxiv.org/abs/2610.01380",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.01380",
+        "code": "https://github.com/ParCoreLab/Dissecting-GPU-Communication-Experiments"
+      },
+      "summary": [
+        "This study uses minimal transports and production libraries to separate GPU-driven network costs from queue management, synchronization, and CPU-proxy overhead.",
+        "Its measurements explain how batching, queue isolation, and resource pressure affect fine-grained mixture-of-experts communication, helping engineers choose and tune transports for their workloads."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Screened October 2 and fully reviewed now: v1 is October 1 at 09:46:08 UTC; the October 2 announcement list and official schedule imply October 2 00:00 UTC availability. Controlled tests span H100, H200, B200, and GB200 with payload validation and network counters. The authors find that queue isolation reduces loaded latency and dormant communication code can reduce kernel throughput; benchmark sources and raw results are accessible.",
+        "limitations": "This is a transport-mechanism study, not an end-to-end LLM speedup claim. Latency commonly uses median measurements on one pinned node pair, while platforms differ in CPUs, links, firmware, and providers. Small-message findings depend on traffic, clock state, completion semantics, and library configuration; no results were independently reproduced."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-03",
+      "report_path": "reports/2026/10/2026-10-03.md",
+      "search_status": "partial"
+    },
     {
       "id": "arxiv:2610.01984",
       "title": "Universal Byte-Level Encoding: UTF-8/UTF-16 Routing to Reduce Cross-Script Token-Budget Disparities",
@@ -2135,7 +2458,7 @@
       "group": "llm-recipe",
       "title": "Supervised Fine-tuning & Adaptation",
       "path": "topics/llm-recipe/supervised-finetuning-adaptation/README.md",
-      "count": 1
+      "count": 2
     },
     {
       "id": "1.6",
@@ -2149,7 +2472,7 @@
       "group": "llm-recipe",
       "title": "Reinforcement Learning & Reasoning",
       "path": "topics/llm-recipe/reinforcement-learning-reasoning/README.md",
-      "count": 2
+      "count": 3
     },
     {
       "id": "1.8",
@@ -2163,14 +2486,14 @@
       "group": "llm-recipe",
       "title": "Test-Time Scaling & Inference Algorithms",
       "path": "topics/llm-recipe/test-time-scaling-inference-algorithms/README.md",
-      "count": 1
+      "count": 2
     },
     {
       "id": "1.10",
       "group": "llm-recipe",
       "title": "Model Evaluation, Safety & Interpretability",
       "path": "topics/llm-recipe/model-evaluation-safety-interpretability/README.md",
-      "count": 3
+      "count": 4
     },
     {
       "id": "2.1",
@@ -2191,21 +2514,21 @@
       "group": "ai-agent-dev",
       "title": "Context Engineering & Memory",
       "path": "topics/ai-agent-dev/context-engineering-memory/README.md",
-      "count": 3
+      "count": 4
     },
     {
       "id": "2.4",
       "group": "ai-agent-dev",
       "title": "Retrieval & Knowledge Integration",
       "path": "topics/ai-agent-dev/retrieval-knowledge-integration/README.md",
-      "count": 1
+      "count": 2
     },
     {
       "id": "2.5",
       "group": "ai-agent-dev",
       "title": "Agent Learning & Skill Acquisition",
       "path": "topics/ai-agent-dev/agent-learning-skill-acquisition/README.md",
-      "count": 3
+      "count": 4
     },
     {
       "id": "2.6",
@@ -2254,14 +2577,14 @@
       "group": "ai-training-inference-infra",
       "title": "Attention, KV Cache & Memory Systems",
       "path": "topics/ai-training-inference-infra/attention-kv-cache-memory-systems/README.md",
-      "count": 2
+      "count": 3
     },
     {
       "id": "3.5",
       "group": "ai-training-inference-infra",
       "title": "Kernels, Compilers & Runtimes",
       "path": "topics/ai-training-inference-infra/kernels-compilers-runtimes/README.md",
-      "count": 3
+      "count": 4
     },
     {
       "id": "3.6",
@@ -2282,7 +2605,7 @@
       "group": "ai-training-inference-infra",
       "title": "Hardware, Networking & Cluster Efficiency",
       "path": "topics/ai-training-inference-infra/hardware-networking-cluster-efficiency/README.md",
-      "count": 3
+      "count": 4
     }
   ]
 }

@@ -5,6 +5,20 @@ Inference-time search, verification, reranking and adaptive reasoning budgets.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-03](../../../reports/2026/10/2026-10-03.md) — PARTIAL SEARCH
+
+### [Decoding Looped Transformers Better for (Almost) Free](<https://arxiv.org/abs/2610.02185>)
+
+LoopCD guides a looped Transformer's next-token prediction by contrasting its final recurrent state with an earlier state from the same forward pass, requiring no additional training or auxiliary model. It improves reasoning and code generation in the tested models, while separate multiple-choice experiments show that this guidance can recover accuracy lost by halving recurrent depth.
+
+**Published:** 2026-10-01 · **First seen:** 2026-10-03T10:04:50Z · **Novelty:** newly-discovered · **Tags:** Contrastive Decoding, Looped Transformers, Test-Time Compute
+
+[Paper](<https://arxiv.org/abs/2610.02185>)
+
+**Evidence:** research-paper; full-text. Matched checkpoints, prompts, and recurrent depths across four model families support the decoding effect. Reduced-depth multiple-choice experiments report 22.5–48.2% lower analytic forward FLOPs. Submission: 2026-10-01T17:58:38Z; the cs.LG listing confirms the October 2 public batch. Newly discovered in this run's 72-hour lookback, absent from all 64 previously covered works.
+
+**Limitations:** FLOPs describe a 512-token prefill calculation, not measured serving speed. Reduced-depth evidence is limited to multiple-choice tasks; guidance strengths and reference states require screening and depend on architecture. Logit guidance adds a readout pass, while hidden guidance can be sensitive to initialization and excessive strength. No public implementation was verified.
+
 ## [2026-09-29 — Landscape baseline](../../../landscape/2026-09-29.md) — PARTIAL SEARCH
 
 ### [s1: Simple test-time scaling](<https://arxiv.org/abs/2501.19393>)

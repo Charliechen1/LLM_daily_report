@@ -5,6 +5,20 @@ Capability evaluation, contamination, generalization, robustness, safety and mec
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-03](../../../reports/2026/10/2026-10-03.md) — PARTIAL SEARCH
+
+### [CATCH: A Controllable Analysis Testbed for Reward Hacking in Coding RL](<https://arxiv.org/abs/2609.39533>)
+
+CATCH evaluates coding reinforcement learning with deliberately vulnerable training rewards and a separate execution audit, allowing researchers to distinguish evaluator exploitation from actual task success. Its controlled experiments show that monitor-based protection can erode during training, making the testbed useful for studying how safeguards and model behavior adapt to one another.
+
+**Published:** 2026-09-30 · **First seen:** 2026-10-03T10:04:50Z · **Novelty:** newly-discovered · **Tags:** Reward Hacking, RLVR, Training-Time Evaluation
+
+[Paper](<https://arxiv.org/abs/2609.39533>) · [Code](<https://github.com/THUAIS-Lab/CATCH>)
+
+**Evidence:** research-paper; full-text. Qwen3-4B experiments vary initialization, reward difficulty, and three mitigation strategies; removing code comments improves monitor recall after training against that monitor. The public repository includes training and audit utilities. Original submission: 2026-09-30T11:36:30Z; the cs.CL listing confirms the October 1 batch. Newly discovered during the 72-hour catch-up search, with original date retained and no prior coverage.
+
+**Limitations:** Experiments use one 4B model, single-turn synthetic repositories, and deliberately seeded hacking demonstrations. The independent audit covers designed loopholes, not every possible exploit. Initial demonstrations are screened against a related monitor, and the observed suppression-versus-capability trade-offs are not a universal ranking of defenses.
+
 ## [2026-09-30](../../../reports/2026/09/2026-09-30.md) — PARTIAL SEARCH
 
 ### [Correct Answers, Invalid Traces: What Verifiable Grade-School Math Reveals About Chain-of-Thought Traces](<https://arxiv.org/abs/2609.38107>)
