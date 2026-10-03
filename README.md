@@ -69,6 +69,8 @@ The draft is created in ignored `drafts/`. Research and review it before placing
 
 The scheduled researcher reads [`prompts/daily-report.md`](prompts/daily-report.md), searches current primary sources, compares them with the baseline and daily archive, writes the structured delta report, validates it, rebuilds the indexes, and publishes a normal commit to this repository. GitHub Actions checks repository integrity; it does not generate research or call a model.
 
+After publication, selected papers may receive English, diagram-rich PNG lecture handouts in the privately configured Google Drive destination. Selection has no quota; handouts are optional and do not block the daily report. See [the visual handout workflow](docs/visual-handouts.md) for teaching, evidence, review, and delivery requirements.
+
 The schedule is managed by a Codex task outside Git; [`config/report.json`](config/report.json) records the intended timezone and time but does not itself register a scheduler. See [automation setup](docs/automation.md) for current setup and execution requirements.
 
 ## Contributing

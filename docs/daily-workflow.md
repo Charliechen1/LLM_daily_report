@@ -52,8 +52,16 @@ Stage only the exact intended source and generated files. Commit the daily updat
 
 If another commit reaches the remote first, fetch, rebase only the run's own commit onto the updated `origin/main`, then re-check existing IDs and coverage, regenerate the reports, run all checks, and review the resulting diff before retrying. Resolve routine conflicts only when the intended result is clear. Preserve unrelated work and request help for ambiguous conflicts.
 
-## 5. Report the outcome and recover
+## 5. Prepare optional visual handouts
+
+After verifying publication, follow [the visual handout workflow](visual-handouts.md). Select zero, one, or multiple items from that date's published report based on teaching value, originality, evidence, and practical value. Read the full source before teaching; abstract-only items are ineligible. Produce clear English, diagram-rich PNG pages, visually review every page, and upload them to the privately configured Drive destination under `YYYY-MM-DD/paper_name/`.
+
+Track selection, rendering, review, and verified uploads in ignored `drafts/handouts/state.json`. List Drive contents before creating folders or files, reuse stable names, and resume missing outputs without duplicates. A published report does not mean its handouts are complete: a rerun must check both states. Record a local reason when zero items are selected. Handout failure does not block a valid daily report, and private Drive IDs or links must not enter Git.
+
+## 6. Report the outcome and recover
 
 After success, report the published date, number of selected items, any search gaps, and the repository/report link. A complete search with no qualifying results may publish an explicitly empty report; it must still show its coverage and checked sources.
+
+Report completed handouts separately with paper titles, page counts, and Drive links in the private task response. If handouts remain incomplete, state the remaining step without describing the daily report itself as unpublished. A no-op requires both verified report publication and completed handout selection/delivery, including a recorded zero-item decision when applicable.
 
 If meaningful research cannot proceed, keep a local failure note in the ignored `drafts/` directory with the attempted coverage and reason. If validation or publication fails, preserve the reviewed data and explain the exact remaining blocker. Notify the user when action is required. Never claim that a report was published when the push failed, or silently convert a failure into an empty success. The next run must revisit uncovered or partial intervals.
