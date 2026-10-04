@@ -5,6 +5,20 @@ GPU kernels, operator fusion, compilation, execution graphs and hardware adaptat
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-04](../../../reports/2026/10/2026-10-04.md) — PARTIAL SEARCH
+
+### [Optimizing Jagged Flash Attention with TLX: The Road Toward SOTA FA4 on Blackwell](<https://pytorch.org/blog/optimizing-jagged-flash-attention-with-tlx-the-road-toward-sota-fa4-on-blackwell/>)
+
+This attention kernel uses Triton Low-level Extensions to combine explicit GPU pipelines with load balancing for variable-length sequences. It provides an inspectable approach to reducing attention overhead while retaining Python-level kernel code that can be adapted to different attention patterns.
+
+**Published:** 2026-10-01 · **First seen:** 2026-10-02T15:33:57Z · **Novelty:** newly-discovered · **Tags:** Attention Kernels, Triton TLX, Blackwell
+
+[Blog](<https://pytorch.org/blog/optimizing-jagged-flash-attention-with-tlx-the-road-toward-sota-fa4-on-blackwell/>) · [Code](<https://github.com/facebookresearch/ads_model_kernel_library/tree/main/tlx_jfa>)
+
+**Evidence:** engineering-report; full-text. Previously screened in the October 2 research run and selected now as a delayed discovery. Page metadata and official RSS agree on October 1 at 22:26:57 UTC, inside the lookback. B200 BF16 kernel tests report roughly 13% higher forward and 50% higher backward throughput on jagged broadcast-query shapes versus the May 2026 FlashAttention-4 implementation, with profiling-based explanations and accessible source and correctness tests.
+
+**Limitations:** The main workload is advertising-model attention, not end-to-end LLM training. Dense forward throughput reaches about 87% of that FA4 baseline, although dense backward improves roughly 17%. Results are hardware-, shape-, and baseline-version-specific. The two-CTA backward path has restricted shapes, and backward grouped-query support is limited; no measurements were reproduced.
+
 ## [2026-10-03](../../../reports/2026/10/2026-10-03.md) — PARTIAL SEARCH
 
 ### [Building a High-Performance and Portable vLLM Linear Backend with Helion](<https://pytorch.org/blog/building-a-high-performance-and-portable-vllm-linear-backend-with-helion/>)

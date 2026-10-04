@@ -5,6 +5,34 @@ Request scheduling, continuous batching, prefill/decode disaggregation and elast
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-04](../../../reports/2026/10/2026-10-04.md) — PARTIAL SEARCH
+
+### [Serving a Revisable World: Versioned Execution for Interruptible Agents](<https://arxiv.org/abs/2610.01160>)
+
+Retire adds execution versions to a serving stack so an agent's superseded work loses permission to publish results or install cached state. Coordinating cancellation with reuse of a verified context prefix makes instruction changes faster in the tested settings.
+
+**Published:** 2026-10-01 · **First seen:** 2026-10-04T10:05:30Z · **Novelty:** newly-discovered · **Tags:** Interruptible Agents, Serving, KV Handoff
+
+[Paper](<https://arxiv.org/html/2610.01160v1>)
+
+**Evidence:** research-paper; full-text. Paired vLLM experiments report a 17.1% median paired reduction in replacement time-to-first-token in a controlled composition test; interruption timings are also replayed with synthetic prompts. Submission: 2026-10-01T06:40:30Z. Although this precedes the exact lookback start, the dated October 2 cs.DC listing and official announcement schedule establish public availability within the window at an inferred 2026-10-02T00:00:00Z.
+
+**Limitations:** Configuration-specific gains and few paired trials; no end-to-end agent task-success evaluation or verified code release. With successful native prefix caching and no memory pressure, timing differs by under 2%. Serving versions do not undo external tool side effects, and GPU writers stop at supported safe boundaries rather than instantly.
+
+## [2026-10-04](../../../reports/2026/10/2026-10-04.md) — PARTIAL SEARCH
+
+### [Prime Inference: Fast, Reliable Serving for Frontier Open Models](<https://www.primeintellect.ai/blog/prime-inference>)
+
+Prime Intellect describes how its GLM-5.3 serving stack combines separate prefill and decode pools, cache-aware routing, compressed KV storage, and a transfer-friendly memory layout. The engineering report shows how coordinating these components can support more concurrent long-context agent sessions while keeping interactive generation responsive.
+
+**Published:** 2026-10-02 · **First seen:** 2026-10-04T10:04:32Z · **Novelty:** newly-discovered · **Tags:** Disaggregated Serving, KV Compression, Agent Workloads
+
+[Blog](<https://www.primeintellect.ai/blog/prime-inference>) · [Project](<https://docs.primeintellect.ai/inference/overview>)
+
+**Evidence:** engineering-report; full-text. Newly discovered during this run; the official October 2 publication date precedes the main interval but lies inside the 72-hour lookback. The GB200 NVL72 study replays multi-turn agent sessions with cold arrivals, reports nearly 40% lower p90 inter-token latency after disaggregation, and expands cached tokens per decoder from 1.09M to 1.63M using NVFP4 storage. It explains topology, scheduling, native sparse-attention kernels, and transfer-layout changes.
+
+**Limitations:** Results are vendor measurements for GLM-5.3 and a particular workload. Individual optimizations use separate runs; their gains cannot be multiplied. NVFP4 stores KV while attention uses FP16 operands and FP32 accumulation. The kernel contribution is described as experimental work in progress, and a complete reproducible serving-stack artifact was not verified; no measurements were reproduced.
+
 ## [2026-10-01](../../../reports/2026/10/2026-10-01.md) — PARTIAL SEARCH
 
 ### [Vosti: Specifying, Implementing, and Verifying Deterministic LLM Inference](<https://arxiv.org/abs/2609.38981>)

@@ -5,6 +5,20 @@ RLHF, RLVR, policy optimization, reasoning training, tool use and multi-turn age
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-04](../../../reports/2026/10/2026-10-04.md) — PARTIAL SEARCH
+
+### [CARM: Cancellation-Aware Response Masking for LLM Reinforcement Learning](<https://arxiv.org/abs/2610.02039>)
+
+CARM filters RL training responses using the average absolute token log-probability ratio, preventing opposing policy changes from hiding one another through cancellation. It improves math and coding results in the tested GRPO runs while keeping the underlying token-level objective, providing a simple way to control response-level mismatch between rollout and training policies.
+
+**Published:** 2026-10-01 · **First seen:** 2026-10-04T10:06:11Z · **Novelty:** newly-discovered · **Tags:** GRPO, Off-Policy Correction, Response Filtering
+
+[Paper](<https://arxiv.org/abs/2610.02039>)
+
+**Evidence:** research-paper; full-text. Experiments compare five masking choices with Qwen3.5-4B/9B and three seeds; the 9B four-benchmark math average rises from 67.29% with GeoMean to 70.42% with CARM. Submission: 2026-10-01T16:51:56Z; the cs.CL listing confirms the October 2 public batch. Newly discovered in this run's lookback, absent from the registry.
+
+**Limitations:** Thresholds are swept and checkpoints selected using AIME or LiveCodeBench validation scores, limiting claims of untouched-test generalization. The bound concerns sampled-token mismatch, not full-distribution divergence or guaranteed stability. Filtering occurs after response generation and does not establish rollout-cost savings. Evidence is limited to one model family; no author implementation URL was verified.
+
 ## [2026-10-03](../../../reports/2026/10/2026-10-03.md) — PARTIAL SEARCH
 
 ### [Make Sparse Rewards Count: Density-Aware Reward Aggregation for Multi-Reward RL](<https://arxiv.org/abs/2610.00574>)

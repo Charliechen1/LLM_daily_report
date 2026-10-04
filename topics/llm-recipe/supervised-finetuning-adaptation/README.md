@@ -5,6 +5,20 @@ Instruction tuning, SFT data and mixtures, LoRA and parameter-efficient adaptati
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-04](../../../reports/2026/10/2026-10-04.md) — PARTIAL SEARCH
+
+### [Finetuning with Sampling: SFT Learns Better Than You Think](<https://arxiv.org/abs/2610.02140>)
+
+Projection sampling rewrites expert solutions using a frozen learner and selects revisions that better fit its response distribution before ordinary supervised fine-tuning. The prepared data improve task learning and prior-skill retention in several tested settings, offering a way to adapt the training data while retaining the standard SFT objective.
+
+**Published:** 2026-10-01 · **First seen:** 2026-10-03T16:42:52Z · **Novelty:** newly-discovered · **Tags:** SFT, Projection Sampling, Knowledge Retention
+
+[Paper](<https://arxiv.org/abs/2610.02140>) · [Project](<https://aakaran.github.io/finetuning_with_sampling/>) · [Code](<https://github.com/aakaran/finetuning-with-sampling>)
+
+**Evidence:** research-paper; full-text. Experiments cover math, scientific skills, and open-ended expertise with 3B/7B models, including forgetting measurements and sampling ablations. Submission: 2026-10-01T17:45:07Z; the cs.CL listing confirms the October 2 public batch. First examined for a separate October 3 handout after that day's report cutoff; absent from all 74 registry entries, so this is delayed first daily coverage.
+
+**Limitations:** The released sampler greedily improves mean token log-likelihood; it does not implement the exact Metropolis-Hastings acceptance ratio. Expert-information preservation is imperfect, offline sampling has substantial cost, and comparisons do not establish equal end-to-end compute. Results vary by task and model; the method does not uniformly beat on-policy baselines.
+
 ## [2026-10-03](../../../reports/2026/10/2026-10-03.md) — PARTIAL SEARCH
 
 ### [AstaBrief: citation-focused SFT and preference training for scientific reports](<https://allenai.org/blog/astabrief>)

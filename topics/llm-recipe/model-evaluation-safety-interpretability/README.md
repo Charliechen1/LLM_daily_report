@@ -5,6 +5,20 @@ Capability evaluation, contamination, generalization, robustness, safety and mec
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-04](../../../reports/2026/10/2026-10-04.md) — PARTIAL SEARCH
+
+### [Sharpening Tax in Post-Training](<https://arxiv.org/abs/2610.01509>)
+
+Sharpening Tax measures how post-training changes the benefit of additional sampled attempts, exposing cases where better single-shot accuracy accompanies narrower solution coverage. The authors also adapt each training prompt's sampling temperature to an online difficulty estimate, improving accuracy and repeated-attempt coverage over fixed-temperature RL in two tested environments.
+
+**Published:** 2026-10-01 · **First seen:** 2026-10-04T10:06:11Z · **Novelty:** newly-discovered · **Tags:** Post-Training Evaluation, Solution Coverage, Adaptive Sampling
+
+[Paper](<https://arxiv.org/abs/2610.01509>) · [Project](<https://changdaeoh.github.io/sharpening-tax/>) · [Code](<https://github.com/changdaeoh/sharpening-tax>)
+
+**Evidence:** research-paper; full-text. The diagnostic covers 14 base/post-trained checkpoint pairs and three agent benchmarks; calibrated tax is positive in 36 of 42 cases at 128 attempts. Submission: 2026-10-01T11:46:00Z; the cs.LG listing confirms the October 2 public batch. Newly discovered in this run's 72-hour lookback, with no prior registry entry.
+
+**Limitations:** Checkpoint comparisons are observational with undisclosed training mixtures and different scaffolding: base models receive a light harness, post-trained models use defaults. Finite-budget coverage is not proof that a capability is absent. Adaptive-sampling experiments use one 7B model and two gridworlds; released code provides reference examples rather than a complete reproduction package.
+
 ## [2026-10-03](../../../reports/2026/10/2026-10-03.md) — PARTIAL SEARCH
 
 ### [CATCH: A Controllable Analysis Testbed for Reward Hacking in Coding RL](<https://arxiv.org/abs/2609.39533>)

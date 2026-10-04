@@ -5,6 +5,20 @@ Task success, trajectory evaluation, cost/reliability, prompt injection and perm
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-04](../../../reports/2026/10/2026-10-04.md) — PARTIAL SEARCH
+
+### [Argo-Bench: Evaluating Data Agents on Enterprise-Scale Workflows](<https://arxiv.org/abs/2610.02122>)
+
+Argo-Bench tests whether data agents can investigate a large simulated enterprise warehouse and take useful actions, such as detecting fraud, allocating budgets, or filing forecasts. Scoring those actions against hidden simulator state exposes failures that correct SQL or plausible explanations alone would miss.
+
+**Published:** 2026-10-01 · **First seen:** 2026-10-03T10:08:02.138Z · **Novelty:** newly-discovered · **Tags:** Data Agents, Enterprise Evaluation, Decision Quality
+
+[Paper](<https://arxiv.org/html/2610.02122v1>) · [Code](<https://github.com/TextQLLabs/Argo-Bench>) · [Project](<https://argo-bench.com/>)
+
+**Evidence:** research-paper; full-text. The authors evaluate 14 models on 210 tasks using a shared tool loop; the strongest averages 59.5 points and reaches the 95-point solve threshold on 34.8% of tasks. Full methods, harness, public sibling-world data and selected reference solutions are available. Inspected but deferred on Oct 3, this is its first report inclusion within the discovery window.
+
+**Limitations:** One synthetic city/year/schema and one run per task/configuration; uncertainty covers task selection, not repeated runs. Simulator and graders remain private, and public data use a different seed. Repository configurations list 12 models versus 14 in the paper; exact reproduction is not established.
+
 ## [2026-10-02](../../../reports/2026/10/2026-10-02.md) — PARTIAL SEARCH
 
 ### [Finding the Right Fit: Model-Harness Interactions across Agent Tasks](<https://arxiv.org/abs/2610.00917>)

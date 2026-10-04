@@ -5,6 +5,20 @@ Attention execution, KV management/reuse, offloading and long-context memory eff
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-04](../../../reports/2026/10/2026-10-04.md) — PARTIAL SEARCH
+
+### [MoE-CORE: Coordinated Expert Offloading and Residency for Memory-Constrained MoE Inference](<https://arxiv.org/abs/2610.01950>)
+
+MoE-CORE separates full-layer expert staging during prefill from routing-aware expert caching and prefetching during decoding on a memory-limited accelerator. Coordinating which experts remain resident with when missing weights move from host memory reduces decoding stalls for large mixture-of-experts models.
+
+**Published:** 2026-10-01 · **First seen:** 2026-10-04T10:02:13Z · **Novelty:** newly-discovered · **Tags:** MoE Offloading, Expert Caching, NPU Inference
+
+[Paper](<https://arxiv.org/abs/2610.01950>) · [Code](<https://github.com/LookAround0301/vllm-ascend/tree/moe_offload_v5.0/vllm_ascend/expert_offload>)
+
+**Evidence:** research-paper; full-text. Newly discovered from the October 2 arXiv DC announcement list. Original v1 was submitted October 1 at 16:11:45 UTC; the list and official schedule place public availability at October 2 00:00 UTC, inside the lookback. Under an 84-GB Ascend 950PR memory cap, batch-one DeepSeek-V4-Flash tests report 1.39–1.75x decoding speedups over load-on-demand across five workloads using matched 1K output caps and exact expert execution. Component ablations and source files are accessible.
+
+**Limitations:** The separate vLLM Prefetch comparison uses a shorter 128-token cap and is not a matched-output end-to-end comparison. Tests use one NPU; initial-token latency can worsen, and expert residency is not jointly optimized with KV management. Optional expert substitution changes model computation without a demonstrated accuracy guarantee and is excluded from the cited exact-path result; no measurements were reproduced.
+
 ## [2026-10-03](../../../reports/2026/10/2026-10-03.md) — PARTIAL SEARCH
 
 ### [RapidMoE: Exploiting Cross-Asymmetry via Adaptive Residual Offloading for Large-Scale MoE Inference](<https://arxiv.org/abs/2610.01265>)
