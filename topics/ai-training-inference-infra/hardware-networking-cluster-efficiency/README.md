@@ -5,6 +5,20 @@ Accelerators, interconnects, cluster scheduling, profiling, utilization, cost an
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-05](../../../reports/2026/10/2026-10-05.md) — PARTIAL SEARCH
+
+### [RailWave: Adaptive Spatial and Temporal Scheduling for Expert-Parallel Communication](<https://arxiv.org/abs/2610.03415>)
+
+RailWave balances expert-parallel traffic across network rails and schedules node-pair transfers in waves, with a calibrated selector choosing when each mechanism is worthwhile. The design addresses network imbalance and receiver contention without changing which experts process tokens, providing a complementary optimization below mixture-of-experts routing.
+
+**Published:** 2026-10-02 · **First seen:** 2026-10-05T10:03:36Z · **Novelty:** newly-discovered · **Tags:** Expert Parallelism, Network Scheduling, MoE Communication
+
+[Paper](<https://arxiv.org/abs/2610.03415>) · [Code](<https://github.com/CyberSecurityErial/RailWave-EP>)
+
+**Evidence:** research-paper; full-text. Original v1 was submitted October 2 at 15:02:00 UTC; the October 5 announcement list and official schedule place public release at October 5 00:00 UTC, inside the main window. The older submission date is retained with the legacy newly-discovered label. Controlled replays derived from GLM-4.5-Air routing report 2.02–5.84x and 1.74–4.36x communication speedups over the Native replay baseline on separate 32-GPU H800 and H20 clusters. The linked implementation and README are accessible.
+
+**Limitations:** The metric sums per-layer median GPU communication intervals, not end-to-end training time. Main comparisons exclude CPU planning, indexing, and prepacking; constructed stress traffic does not establish production prevalence. The reported configuration needs about 4.11 GiB of extra workspace per GPU. Calibration is topology dependent, and neither code nor results were reproduced.
+
 ## [2026-10-03](../../../reports/2026/10/2026-10-03.md) — PARTIAL SEARCH
 
 ### [GPU-Initiated Communication: Dissecting Down to the Bone](<https://arxiv.org/abs/2610.01380>)

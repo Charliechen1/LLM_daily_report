@@ -5,6 +5,20 @@ Distributed rollouts, asynchronous RL, generation/training coordination and weig
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-05](../../../reports/2026/10/2026-10-05.md) — PARTIAL SEARCH
+
+### [VenusRL: A Fully Disaggregated Agentic RL System with Priority Scheduling and Scalable Interaction](<https://arxiv.org/abs/2610.03286>)
+
+VenusRL separates training, generation, and tool execution, then prioritizes rollout groups that can unblock the next policy update while protecting their cached state. Coordinating generation priorities with sandbox admission and shared memory reduces wasted work and environment memory pressure in long, multi-turn reinforcement learning.
+
+**Published:** 2026-10-02 · **First seen:** 2026-10-05T10:03:36Z · **Novelty:** newly-discovered · **Tags:** Agentic RL, Rollout Scheduling, KV Residency, Sandbox Memory
+
+[Paper](<https://arxiv.org/abs/2610.03286>)
+
+**Evidence:** research-paper; full-text. Original v1 was submitted October 2 at 13:29:40 UTC; the October 5 announcement list and official schedule place public release at October 5 00:00 UTC, inside the main window. The older submission date is retained with the legacy newly-discovered label. Sections 6.1–6.3 evaluate Qwen3-4B/32B OpenSWE training on 32 Hopper GPUs and report 1.06–4.24x end-to-end throughput over RollFlash across tested batch and asynchrony settings, with component ablations.
+
+**Limitations:** Gains depend on batching and asynchrony. The learned length predictor and sandbox sharing depend on workload characteristics; representative convergence plots do not establish universal learning equivalence. The paper identifies Hopper GPUs without specifying the accelerator model. No public VenusRL implementation was verified, and no results were reproduced.
+
 ## [2026-09-29 — Landscape baseline](../../../landscape/2026-09-29.md) — PARTIAL SEARCH
 
 ### [AReaL: A Large-Scale Asynchronous Reinforcement Learning System for Language Reasoning](<https://arxiv.org/abs/2505.24298>)

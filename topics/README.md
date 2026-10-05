@@ -5,14 +5,14 @@
 
 ## LLM Recipe
 
-- [1.1 Data Curation &amp; Tokenization](llm-recipe/data-curation-tokenization/README.md) — 3 item(s)
+- [1.1 Data Curation &amp; Tokenization](llm-recipe/data-curation-tokenization/README.md) — 4 item(s)
 - [1.2 Model Architecture &amp; Scaling Laws](llm-recipe/model-architecture-scaling-laws/README.md) — 3 item(s)
 - [1.3 Pretraining &amp; Optimization](llm-recipe/pretraining-optimization/README.md) — 2 item(s)
 - [1.4 Mid-training &amp; Continual Learning](llm-recipe/midtraining-continual-learning/README.md) — 2 item(s)
 - [1.5 Supervised Fine-tuning &amp; Adaptation](llm-recipe/supervised-finetuning-adaptation/README.md) — 3 item(s)
 - [1.6 Preference Alignment &amp; Reward Modeling](llm-recipe/preference-alignment-reward-modeling/README.md) — 1 item(s)
 - [1.7 Reinforcement Learning &amp; Reasoning](llm-recipe/reinforcement-learning-reasoning/README.md) — 4 item(s)
-- [1.8 Distillation &amp; Model Compression](llm-recipe/distillation-model-compression/README.md) — 3 item(s)
+- [1.8 Distillation &amp; Model Compression](llm-recipe/distillation-model-compression/README.md) — 5 item(s)
 - [1.9 Test-Time Scaling &amp; Inference Algorithms](llm-recipe/test-time-scaling-inference-algorithms/README.md) — 2 item(s)
 - [1.10 Model Evaluation, Safety &amp; Interpretability](llm-recipe/model-evaluation-safety-interpretability/README.md) — 5 item(s)
 
@@ -22,18 +22,18 @@
 - [2.2 Tool Use &amp; Environment Interaction](ai-agent-dev/tool-use-environment-interaction/README.md) — 2 item(s)
 - [2.3 Context Engineering &amp; Memory](ai-agent-dev/context-engineering-memory/README.md) — 4 item(s)
 - [2.4 Retrieval &amp; Knowledge Integration](ai-agent-dev/retrieval-knowledge-integration/README.md) — 2 item(s)
-- [2.5 Agent Learning &amp; Skill Acquisition](ai-agent-dev/agent-learning-skill-acquisition/README.md) — 4 item(s)
-- [2.6 Multi-Agent Collaboration](ai-agent-dev/multi-agent-collaboration/README.md) — 1 item(s)
+- [2.5 Agent Learning &amp; Skill Acquisition](ai-agent-dev/agent-learning-skill-acquisition/README.md) — 5 item(s)
+- [2.6 Multi-Agent Collaboration](ai-agent-dev/multi-agent-collaboration/README.md) — 2 item(s)
 - [2.7 Agent Harness &amp; Reliability](ai-agent-dev/agent-harness-reliability/README.md) — 4 item(s)
-- [2.8 Agent Evaluation &amp; Security](ai-agent-dev/agent-evaluation-security/README.md) — 6 item(s)
+- [2.8 Agent Evaluation &amp; Security](ai-agent-dev/agent-evaluation-security/README.md) — 7 item(s)
 
 ## AI Training &amp; Inference Infra
 
 - [3.1 Distributed Training Systems](ai-training-inference-infra/distributed-training-systems/README.md) — 4 item(s)
-- [3.2 RL &amp; Rollout Infrastructure](ai-training-inference-infra/rl-rollout-infrastructure/README.md) — 1 item(s)
-- [3.3 Inference Engines &amp; Serving](ai-training-inference-infra/inference-engines-serving/README.md) — 8 item(s)
+- [3.2 RL &amp; Rollout Infrastructure](ai-training-inference-infra/rl-rollout-infrastructure/README.md) — 2 item(s)
+- [3.3 Inference Engines &amp; Serving](ai-training-inference-infra/inference-engines-serving/README.md) — 9 item(s)
 - [3.4 Attention, KV Cache &amp; Memory Systems](ai-training-inference-infra/attention-kv-cache-memory-systems/README.md) — 4 item(s)
 - [3.5 Kernels, Compilers &amp; Runtimes](ai-training-inference-infra/kernels-compilers-runtimes/README.md) — 5 item(s)
 - [3.6 Low-Precision &amp; Efficient Execution](ai-training-inference-infra/low-precision-efficient-execution/README.md) — 1 item(s)
 - [3.7 Data Pipelines, Storage &amp; Checkpointing](ai-training-inference-infra/data-pipelines-storage-checkpointing/README.md) — 2 item(s)
-- [3.8 Hardware, Networking &amp; Cluster Efficiency](ai-training-inference-infra/hardware-networking-cluster-efficiency/README.md) — 4 item(s)
+- [3.8 Hardware, Networking &amp; Cluster Efficiency](ai-training-inference-infra/hardware-networking-cluster-efficiency/README.md) — 5 item(s)

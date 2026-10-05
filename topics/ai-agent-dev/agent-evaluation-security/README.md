@@ -5,6 +5,20 @@ Task success, trajectory evaluation, cost/reliability, prompt injection and perm
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-05](../../../reports/2026/10/2026-10-05.md) — PARTIAL SEARCH
+
+### [HyperBrowseComp: A Multilingual and Multimodal Stress Test for Web-Browsing Agents](<https://arxiv.org/abs/2610.03574>)
+
+HyperBrowseComp combines questions written in their source languages with evidence scattered across web pages, videos, scans, maps, and other media to stress-test browsing agents. Comparisons across search integrations on the same question set expose how evidence discovery and tool orchestration affect answer accuracy.
+
+**Published:** 2026-10-02 · **First seen:** 2026-10-05T10:03:52Z · **Novelty:** newly-discovered · **Tags:** Browsing Evaluation, Multilingual, Multimodal Evidence
+
+[Paper](<https://arxiv.org/html/2610.03574v1>) · [Project](<https://hyperbrowsecomp.github.io/>)
+
+**Evidence:** research-paper; full-text. The benchmark contains 423 human-authored, independently checked questions across 13 languages, after filtering easier items. Five models are evaluated with native search, with subsets also tested through Exa and OWL; the strongest tested configuration answers 31.68% correctly. First publicly announced in the Oct 5 arXiv batch; project and dataset card are accessible.
+
+**Limitations:** This deliberately difficult, uneven language mix is not a sample of everyday requests. Search integrations and budgets differ, live sources can change, and answer grading uses models. OWL has 93 terminal failures among 423 runs. Dataset files require accepting access conditions; the project's Code label has no link.
+
 ## [2026-10-04](../../../reports/2026/10/2026-10-04.md) — PARTIAL SEARCH
 
 ### [Argo-Bench: Evaluating Data Agents on Enterprise-Scale Workflows](<https://arxiv.org/abs/2610.02122>)

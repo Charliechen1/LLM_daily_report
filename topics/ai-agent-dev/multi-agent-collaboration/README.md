@@ -5,6 +5,20 @@ Division of work, communication, delegation, collaboration topology and shared m
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-05](../../../reports/2026/10/2026-10-05.md) — PARTIAL SEARCH
+
+### [JOVE: Joint Execution and Verification for Resource-Aware LLM Task Graphs](<https://arxiv.org/abs/2610.03296>)
+
+JOVE jointly chooses which language model executes each node of a task graph and which intermediate outputs are worth paying to verify. Asynchronous feedback improves future routing decisions, making verification itself a resource-allocation choice under cost and latency targets.
+
+**Published:** 2026-10-02 · **First seen:** 2026-10-05T10:03:52Z · **Novelty:** newly-discovered · **Tags:** Task Graphs, Model Routing, Verification Budgets
+
+[Paper](<https://arxiv.org/html/2610.03296v1>)
+
+**Evidence:** research-paper; full-text. Across four reasoning benchmarks and three sequence seeds, the authors compare joint allocation with routing and inference baselines, including randomized-verification ablations. A distinct-query MMLU-Pro check reports 55.8% accuracy versus 54.1% for the tested Qwen3-32B chain-of-thought baseline at lower reported cost and latency. Discovered in the Oct 5 public arXiv batch; the record retains its Oct 2 submission date.
+
+**Limitations:** Verification does not repair the current answer. Main sequences repeat questions with different graphs; the distinct-query check covers one benchmark. Guarantees assume a stationary linear quality model and reliable feedback, not arbitrary production traffic; finite-run spending exceeds the nominal budget. No implementation release was located.
+
 ## [2026-09-29 — Landscape baseline](../../../landscape/2026-09-29.md) — PARTIAL SEARCH
 
 ### [How we built our multi-agent research system](<https://www.anthropic.com/engineering/multi-agent-research-system>)

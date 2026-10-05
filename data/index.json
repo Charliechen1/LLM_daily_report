@@ -2,6 +2,13 @@
   "schema_version": 1,
   "reports": [
     {
+      "date": "2026-10-05",
+      "path": "reports/2026/10/2026-10-05.md",
+      "source": "data/reports/2026/10/2026-10-05.json",
+      "search_status": "partial",
+      "entries": 9
+    },
+    {
       "date": "2026-10-04",
       "path": "reports/2026/10/2026-10-04.md",
       "source": "data/reports/2026/10/2026-10-04.json",
@@ -47,6 +54,291 @@
     }
   ],
   "entries": [
+    {
+      "id": "arxiv:2610.03702",
+      "title": "LESSER: Post-Training Data Selection with Output-Layer Gradients",
+      "category": "1.1",
+      "tags": [
+        "Data Selection",
+        "Gradient Features",
+        "Post-Training"
+      ],
+      "published_on": "2026-10-02",
+      "first_seen_at": "2026-10-05T10:03:24Z",
+      "canonical_url": "https://arxiv.org/abs/2610.03702",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.03702"
+      },
+      "summary": [
+        "LESSER selects post-training data using output-layer gradient features computed from a forward pass, replacing expensive backpropagation-based gradient extraction while retaining existing selection rules.",
+        "Across supervised fine-tuning, RL data selection, and teacher selection, these cheaper features largely preserve the tested selectors' quality, making targeted training-data curation more practical."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "The SFT study covers four models, five tasks, three subset sizes, and three seeds; the mean absolute gap from LESS is 1.3 points. Reported SFT feature-extraction FLOPs fall 9.7-fold. Submission: 2026-10-02T17:55:42Z; the October 5 cs.LG batch confirms public announcement on October 5 at 00:00Z under arXiv's schedule.",
+        "limitations": "The SFT comparison also changes checkpoint preparation: LESS uses four warmup checkpoints whereas LESSER uses the base model, so it does not isolate only the feature representation. The method requires target-query data. Savings concern selection features, not total training; the reported SFT wall-clock estimate is extrapolated. No author implementation URL was verified."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-05",
+      "report_path": "reports/2026/10/2026-10-05.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.03529",
+      "title": "Divergence controls entropy in distillation",
+      "category": "1.8",
+      "tags": [
+        "Distillation",
+        "Entropy",
+        "KL Divergence"
+      ],
+      "published_on": "2026-10-02",
+      "first_seen_at": "2026-10-05T10:03:24Z",
+      "canonical_url": "https://arxiv.org/abs/2610.03529",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.03529",
+        "code": "https://github.com/NicolasZucchet/Entropy-in-distillation"
+      },
+      "summary": [
+        "This study separates the distillation loss from the source of sampled prefixes and finds that token-level reverse KL, rather than on-policy sampling itself, primarily drives lower entropy in its experiments.",
+        "Theory and controlled language-model studies show how divergence choice, teacher updates, and probability-tail handling affect diversity, providing practical knobs for diagnosing entropy collapse during distillation."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Evidence combines a stationary-point entropy identity, synthetic models, OLMo/Pythia checkpoint measurements, Qwen3 distillation, and chemistry/math self-distillation; companion code and figure data are public. Submission: 2026-10-02T16:15:53Z; the October 5 cs.LG batch and announcement schedule place public availability at October 5 00:00Z.",
+        "limitations": "The forward-KL identity assumes stationarity and an unconstrained linear softmax head, and concerns averages on the training-context distribution. Entropy inflation is relative to the teacher, not a guarantee that entropy rises during training. Some experiments use one seed; reverse KL need not always reduce entropy, and greater diversity does not guarantee higher task accuracy."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-05",
+      "report_path": "reports/2026/10/2026-10-05.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.03665",
+      "title": "Pivot-SD: Efficient Self-Distillation for Masked Diffusion Language Models",
+      "category": "1.8",
+      "tags": [
+        "Masked Diffusion",
+        "Self-Distillation",
+        "Credit Assignment"
+      ],
+      "published_on": "2026-10-02",
+      "first_seen_at": "2026-10-05T10:03:24Z",
+      "canonical_url": "https://arxiv.org/abs/2610.03665",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.03665"
+      },
+      "summary": [
+        "Pivot-SD collects masked-diffusion trajectories once from a frozen model and selects token commitments associated with the largest reduction in remaining-token uncertainty.",
+        "It reinforces pivots from successful trajectories and applies unlikelihood to pivots from failures, improving small-budget math and coding post-training without repeatedly generating online RL rollouts."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "LLaDA-8B experiments use 200 questions per domain, four trajectories each, matched baselines, and three rerandomized runs; Dream-7B provides a second backbone. Total time on two GPUs including offline generation is 2.8 hours versus 3.6–5.4 for matched RL. Submission: 2026-10-02T17:37:51Z; October 5's listing and schedule establish the 00:00Z public batch.",
+        "limitations": "Evidence is restricted to two related 7B/8B diffusion models, short generations, and task-specific tuning. The small MBPP+ gain lies within one standard deviation, and longer-generation HumanEval+ is worse than the base model. Information gain is not proof of causal blame, so failure labels can penalize valid commitments. The linked project page could not be accessed."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-05",
+      "report_path": "reports/2026/10/2026-10-05.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.03296",
+      "title": "JOVE: Joint Execution and Verification for Resource-Aware LLM Task Graphs",
+      "category": "2.6",
+      "tags": [
+        "Task Graphs",
+        "Model Routing",
+        "Verification Budgets"
+      ],
+      "published_on": "2026-10-02",
+      "first_seen_at": "2026-10-05T10:03:52Z",
+      "canonical_url": "https://arxiv.org/abs/2610.03296",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.03296v1"
+      },
+      "summary": [
+        "JOVE jointly chooses which language model executes each node of a task graph and which intermediate outputs are worth paying to verify.",
+        "Asynchronous feedback improves future routing decisions, making verification itself a resource-allocation choice under cost and latency targets."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Across four reasoning benchmarks and three sequence seeds, the authors compare joint allocation with routing and inference baselines, including randomized-verification ablations. A distinct-query MMLU-Pro check reports 55.8% accuracy versus 54.1% for the tested Qwen3-32B chain-of-thought baseline at lower reported cost and latency. Discovered in the Oct 5 public arXiv batch; the record retains its Oct 2 submission date.",
+        "limitations": "Verification does not repair the current answer. Main sequences repeat questions with different graphs; the distinct-query check covers one benchmark. Guarantees assume a stationary linear quality model and reliable feedback, not arbitrary production traffic; finite-run spending exceeds the nominal budget. No implementation release was located."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-05",
+      "report_path": "reports/2026/10/2026-10-05.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.03574",
+      "title": "HyperBrowseComp: A Multilingual and Multimodal Stress Test for Web-Browsing Agents",
+      "category": "2.8",
+      "tags": [
+        "Browsing Evaluation",
+        "Multilingual",
+        "Multimodal Evidence"
+      ],
+      "published_on": "2026-10-02",
+      "first_seen_at": "2026-10-05T10:03:52Z",
+      "canonical_url": "https://arxiv.org/abs/2610.03574",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.03574v1",
+        "project": "https://hyperbrowsecomp.github.io/"
+      },
+      "summary": [
+        "HyperBrowseComp combines questions written in their source languages with evidence scattered across web pages, videos, scans, maps, and other media to stress-test browsing agents.",
+        "Comparisons across search integrations on the same question set expose how evidence discovery and tool orchestration affect answer accuracy."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "The benchmark contains 423 human-authored, independently checked questions across 13 languages, after filtering easier items. Five models are evaluated with native search, with subsets also tested through Exa and OWL; the strongest tested configuration answers 31.68% correctly. First publicly announced in the Oct 5 arXiv batch; project and dataset card are accessible.",
+        "limitations": "This deliberately difficult, uneven language mix is not a sample of everyday requests. Search integrations and budgets differ, live sources can change, and answer grading uses models. OWL has 93 terminal failures among 423 runs. Dataset files require accepting access conditions; the project's Code label has no link."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-05",
+      "report_path": "reports/2026/10/2026-10-05.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.03190",
+      "title": "Not Until the Evidence Says So: Teaching LLM Investigators When to Close a Case",
+      "category": "2.5",
+      "tags": [
+        "Evidence Gathering",
+        "Stopping Decisions",
+        "Agent Training"
+      ],
+      "published_on": "2026-10-02",
+      "first_seen_at": "2026-10-05T10:03:52Z",
+      "canonical_url": "https://arxiv.org/abs/2610.03190",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.03190v1",
+        "code": "https://github.com/etigerstudio/Nautil"
+      },
+      "summary": [
+        "Nautil trains investigators to gather evidence, track competing explanations, and decide whether a case supports a conclusion or should remain open.",
+        "Its source-controlled and evidence-removal tests help distinguish grounded stopping from learning when a dataset usually expects an answer.",
+        "The RL checkpoint was selected using some test cases, limiting the strength of its held-out comparison."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "The authors construct 731 cases and train a 9B model on audited investigation trajectories. On the 64-case non-host test set, their main judge rates overstatement at 35% after supervised tuning versus 97% for the base model; counterfactual tests probe sensitivity to missing grounds. Source, data and model cards are accessible. Discovered in the Oct 5 public arXiv batch; the record retains its Oct 2 submission date.",
+        "limitations": "Case sources predict labels; the teacher is also the main judge, and other judges differ in absolute rates. RL checkpoint selection used 30 test cases, including 22 non-host cases. A 33-case OOD pilot was also evaluated, although the authors state it was not used to select the SFT checkpoint. RL improves closure accuracy while weakening evidence dependence. Some code dependencies are omitted and paths require adaptation."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-05",
+      "report_path": "reports/2026/10/2026-10-05.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.03286",
+      "title": "VenusRL: A Fully Disaggregated Agentic RL System with Priority Scheduling and Scalable Interaction",
+      "category": "3.2",
+      "tags": [
+        "Agentic RL",
+        "Rollout Scheduling",
+        "KV Residency",
+        "Sandbox Memory"
+      ],
+      "published_on": "2026-10-02",
+      "first_seen_at": "2026-10-05T10:03:36Z",
+      "canonical_url": "https://arxiv.org/abs/2610.03286",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.03286"
+      },
+      "summary": [
+        "VenusRL separates training, generation, and tool execution, then prioritizes rollout groups that can unblock the next policy update while protecting their cached state.",
+        "Coordinating generation priorities with sandbox admission and shared memory reduces wasted work and environment memory pressure in long, multi-turn reinforcement learning."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Original v1 was submitted October 2 at 13:29:40 UTC; the October 5 announcement list and official schedule place public release at October 5 00:00 UTC, inside the main window. The older submission date is retained with the legacy newly-discovered label. Sections 6.1–6.3 evaluate Qwen3-4B/32B OpenSWE training on 32 Hopper GPUs and report 1.06–4.24x end-to-end throughput over RollFlash across tested batch and asynchrony settings, with component ablations.",
+        "limitations": "Gains depend on batching and asynchrony. The learned length predictor and sandbox sharing depend on workload characteristics; representative convergence plots do not establish universal learning equivalence. The paper identifies Hopper GPUs without specifying the accelerator model. No public VenusRL implementation was verified, and no results were reproduced."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-05",
+      "report_path": "reports/2026/10/2026-10-05.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.03203",
+      "title": "AFORE: Attention-FFN Disaggregation with Overlapped Reconfiguration of Experts",
+      "category": "3.3",
+      "tags": [
+        "MoE Serving",
+        "Attention-FFN Disaggregation",
+        "Expert Placement"
+      ],
+      "published_on": "2026-10-02",
+      "first_seen_at": "2026-10-05T10:03:36Z",
+      "canonical_url": "https://arxiv.org/abs/2610.03203",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.03203"
+      },
+      "summary": [
+        "AFORE uses the upcoming microbatch's actual expert-routing demand to rebalance expert replicas in serving systems that separate attention from feed-forward computation.",
+        "By copying expert weights while earlier microbatches run and accounting for exposed migration cost, it reduces expert bottlenecks without placing every reconfiguration on the request's critical path."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Original v1 was submitted October 2 at 12:20:29 UTC; the October 5 announcement list and official schedule place public release at October 5 00:00 UTC, inside the main window. The older submission date is retained with the legacy newly-discovered label. Sections 7.1–7.2 test GLM-4.5-Air on 16 A100 GPUs across four dynamic workloads, reporting 10.1–17.6% higher output throughput and 7.1–9.5% lower P95 inter-token latency than the strongest competing baseline for each workload.",
+        "limitations": "Evaluation uses one model and two nodes. Expert replicas require spare memory, and successful overlap depends on pipeline timing and interconnect bandwidth; the observed hidden migrations are not a general guarantee. The larger expert-parallel scheduling study is trace based. No public AFORE implementation was verified, and no results were reproduced."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-05",
+      "report_path": "reports/2026/10/2026-10-05.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.03415",
+      "title": "RailWave: Adaptive Spatial and Temporal Scheduling for Expert-Parallel Communication",
+      "category": "3.8",
+      "tags": [
+        "Expert Parallelism",
+        "Network Scheduling",
+        "MoE Communication"
+      ],
+      "published_on": "2026-10-02",
+      "first_seen_at": "2026-10-05T10:03:36Z",
+      "canonical_url": "https://arxiv.org/abs/2610.03415",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.03415",
+        "code": "https://github.com/CyberSecurityErial/RailWave-EP"
+      },
+      "summary": [
+        "RailWave balances expert-parallel traffic across network rails and schedules node-pair transfers in waves, with a calibrated selector choosing when each mechanism is worthwhile.",
+        "The design addresses network imbalance and receiver contention without changing which experts process tokens, providing a complementary optimization below mixture-of-experts routing."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Original v1 was submitted October 2 at 15:02:00 UTC; the October 5 announcement list and official schedule place public release at October 5 00:00 UTC, inside the main window. The older submission date is retained with the legacy newly-discovered label. Controlled replays derived from GLM-4.5-Air routing report 2.02–5.84x and 1.74–4.36x communication speedups over the Native replay baseline on separate 32-GPU H800 and H20 clusters. The linked implementation and README are accessible.",
+        "limitations": "The metric sums per-layer median GPU communication intervals, not end-to-end training time. Main comparisons exclude CPU planning, indexing, and prepacking; constructed stress traffic does not establish production prevalence. The reported configuration needs about 4.11 GiB of extra workspace per GPU. Calibration is topology dependent, and neither code nor results were reproduced."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-05",
+      "report_path": "reports/2026/10/2026-10-05.md",
+      "search_status": "partial"
+    },
     {
       "id": "arxiv:2610.02140",
       "title": "Finetuning with Sampling: SFT Learns Better Than You Think",
@@ -2694,7 +2986,7 @@
       "group": "llm-recipe",
       "title": "Data Curation & Tokenization",
       "path": "topics/llm-recipe/data-curation-tokenization/README.md",
-      "count": 3
+      "count": 4
     },
     {
       "id": "1.2",
@@ -2743,7 +3035,7 @@
       "group": "llm-recipe",
       "title": "Distillation & Model Compression",
       "path": "topics/llm-recipe/distillation-model-compression/README.md",
-      "count": 3
+      "count": 5
     },
     {
       "id": "1.9",
@@ -2792,14 +3084,14 @@
       "group": "ai-agent-dev",
       "title": "Agent Learning & Skill Acquisition",
       "path": "topics/ai-agent-dev/agent-learning-skill-acquisition/README.md",
-      "count": 4
+      "count": 5
     },
     {
       "id": "2.6",
       "group": "ai-agent-dev",
       "title": "Multi-Agent Collaboration",
       "path": "topics/ai-agent-dev/multi-agent-collaboration/README.md",
-      "count": 1
+      "count": 2
     },
     {
       "id": "2.7",
@@ -2813,7 +3105,7 @@
       "group": "ai-agent-dev",
       "title": "Agent Evaluation & Security",
       "path": "topics/ai-agent-dev/agent-evaluation-security/README.md",
-      "count": 6
+      "count": 7
     },
     {
       "id": "3.1",
@@ -2827,14 +3119,14 @@
       "group": "ai-training-inference-infra",
       "title": "RL & Rollout Infrastructure",
       "path": "topics/ai-training-inference-infra/rl-rollout-infrastructure/README.md",
-      "count": 1
+      "count": 2
     },
     {
       "id": "3.3",
       "group": "ai-training-inference-infra",
       "title": "Inference Engines & Serving",
       "path": "topics/ai-training-inference-infra/inference-engines-serving/README.md",
-      "count": 8
+      "count": 9
     },
     {
       "id": "3.4",
@@ -2869,7 +3161,7 @@
       "group": "ai-training-inference-infra",
       "title": "Hardware, Networking & Cluster Efficiency",
       "path": "topics/ai-training-inference-infra/hardware-networking-cluster-efficiency/README.md",
-      "count": 4
+      "count": 5
     }
   ]
 }

@@ -5,6 +5,20 @@ Data filtering, deduplication, mixtures, synthetic data, quality and tokenizers.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-05](../../../reports/2026/10/2026-10-05.md) — PARTIAL SEARCH
+
+### [LESSER: Post-Training Data Selection with Output-Layer Gradients](<https://arxiv.org/abs/2610.03702>)
+
+LESSER selects post-training data using output-layer gradient features computed from a forward pass, replacing expensive backpropagation-based gradient extraction while retaining existing selection rules. Across supervised fine-tuning, RL data selection, and teacher selection, these cheaper features largely preserve the tested selectors' quality, making targeted training-data curation more practical.
+
+**Published:** 2026-10-02 · **First seen:** 2026-10-05T10:03:24Z · **Novelty:** newly-discovered · **Tags:** Data Selection, Gradient Features, Post-Training
+
+[Paper](<https://arxiv.org/abs/2610.03702>)
+
+**Evidence:** research-paper; full-text. The SFT study covers four models, five tasks, three subset sizes, and three seeds; the mean absolute gap from LESS is 1.3 points. Reported SFT feature-extraction FLOPs fall 9.7-fold. Submission: 2026-10-02T17:55:42Z; the October 5 cs.LG batch confirms public announcement on October 5 at 00:00Z under arXiv's schedule.
+
+**Limitations:** The SFT comparison also changes checkpoint preparation: LESS uses four warmup checkpoints whereas LESSER uses the base model, so it does not isolate only the feature representation. The method requires target-query data. Savings concern selection features, not total training; the reported SFT wall-clock estimate is extrapolated. No author implementation URL was verified.
+
 ## [2026-10-02](../../../reports/2026/10/2026-10-02.md) — PARTIAL SEARCH
 
 ### [Universal Byte-Level Encoding: UTF-8/UTF-16 Routing to Reduce Cross-Script Token-Budget Disparities](<https://arxiv.org/abs/2610.01984>)

@@ -5,6 +5,20 @@ Request scheduling, continuous batching, prefill/decode disaggregation and elast
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-05](../../../reports/2026/10/2026-10-05.md) — PARTIAL SEARCH
+
+### [AFORE: Attention-FFN Disaggregation with Overlapped Reconfiguration of Experts](<https://arxiv.org/abs/2610.03203>)
+
+AFORE uses the upcoming microbatch's actual expert-routing demand to rebalance expert replicas in serving systems that separate attention from feed-forward computation. By copying expert weights while earlier microbatches run and accounting for exposed migration cost, it reduces expert bottlenecks without placing every reconfiguration on the request's critical path.
+
+**Published:** 2026-10-02 · **First seen:** 2026-10-05T10:03:36Z · **Novelty:** newly-discovered · **Tags:** MoE Serving, Attention-FFN Disaggregation, Expert Placement
+
+[Paper](<https://arxiv.org/abs/2610.03203>)
+
+**Evidence:** research-paper; full-text. Original v1 was submitted October 2 at 12:20:29 UTC; the October 5 announcement list and official schedule place public release at October 5 00:00 UTC, inside the main window. The older submission date is retained with the legacy newly-discovered label. Sections 7.1–7.2 test GLM-4.5-Air on 16 A100 GPUs across four dynamic workloads, reporting 10.1–17.6% higher output throughput and 7.1–9.5% lower P95 inter-token latency than the strongest competing baseline for each workload.
+
+**Limitations:** Evaluation uses one model and two nodes. Expert replicas require spare memory, and successful overlap depends on pipeline timing and interconnect bandwidth; the observed hidden migrations are not a general guarantee. The larger expert-parallel scheduling study is trace based. No public AFORE implementation was verified, and no results were reproduced.
+
 ## [2026-10-04](../../../reports/2026/10/2026-10-04.md) — PARTIAL SEARCH
 
 ### [Serving a Revisable World: Versioned Execution for Interruptible Agents](<https://arxiv.org/abs/2610.01160>)

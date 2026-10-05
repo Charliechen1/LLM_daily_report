@@ -5,6 +5,20 @@ Learning from trajectories/feedback, skill generation/reuse, experience and self
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-05](../../../reports/2026/10/2026-10-05.md) — PARTIAL SEARCH
+
+### [Not Until the Evidence Says So: Teaching LLM Investigators When to Close a Case](<https://arxiv.org/abs/2610.03190>)
+
+Nautil trains investigators to gather evidence, track competing explanations, and decide whether a case supports a conclusion or should remain open. Its source-controlled and evidence-removal tests help distinguish grounded stopping from learning when a dataset usually expects an answer. The RL checkpoint was selected using some test cases, limiting the strength of its held-out comparison.
+
+**Published:** 2026-10-02 · **First seen:** 2026-10-05T10:03:52Z · **Novelty:** newly-discovered · **Tags:** Evidence Gathering, Stopping Decisions, Agent Training
+
+[Paper](<https://arxiv.org/html/2610.03190v1>) · [Code](<https://github.com/etigerstudio/Nautil>)
+
+**Evidence:** research-paper; full-text. The authors construct 731 cases and train a 9B model on audited investigation trajectories. On the 64-case non-host test set, their main judge rates overstatement at 35% after supervised tuning versus 97% for the base model; counterfactual tests probe sensitivity to missing grounds. Source, data and model cards are accessible. Discovered in the Oct 5 public arXiv batch; the record retains its Oct 2 submission date.
+
+**Limitations:** Case sources predict labels; the teacher is also the main judge, and other judges differ in absolute rates. RL checkpoint selection used 30 test cases, including 22 non-host cases. A 33-case OOD pilot was also evaluated, although the authors state it was not used to select the SFT checkpoint. RL improves closure accuracy while weakening evidence dependence. Some code dependencies are omitted and paths require adaptation.
+
 ## [2026-10-03](../../../reports/2026/10/2026-10-03.md) — PARTIAL SEARCH
 
 ### [Not All Experience Belongs in the Weights: Component Routing for Self-Improving GUI Agents](<https://arxiv.org/abs/2610.01787>)

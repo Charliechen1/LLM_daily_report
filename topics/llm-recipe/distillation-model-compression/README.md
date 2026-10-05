@@ -5,6 +5,34 @@ Knowledge/reasoning distillation, pruning, quantization algorithms and model mer
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-05](../../../reports/2026/10/2026-10-05.md) — PARTIAL SEARCH
+
+### [Divergence controls entropy in distillation](<https://arxiv.org/abs/2610.03529>)
+
+This study separates the distillation loss from the source of sampled prefixes and finds that token-level reverse KL, rather than on-policy sampling itself, primarily drives lower entropy in its experiments. Theory and controlled language-model studies show how divergence choice, teacher updates, and probability-tail handling affect diversity, providing practical knobs for diagnosing entropy collapse during distillation.
+
+**Published:** 2026-10-02 · **First seen:** 2026-10-05T10:03:24Z · **Novelty:** newly-discovered · **Tags:** Distillation, Entropy, KL Divergence
+
+[Paper](<https://arxiv.org/abs/2610.03529>) · [Code](<https://github.com/NicolasZucchet/Entropy-in-distillation>)
+
+**Evidence:** research-paper; full-text. Evidence combines a stationary-point entropy identity, synthetic models, OLMo/Pythia checkpoint measurements, Qwen3 distillation, and chemistry/math self-distillation; companion code and figure data are public. Submission: 2026-10-02T16:15:53Z; the October 5 cs.LG batch and announcement schedule place public availability at October 5 00:00Z.
+
+**Limitations:** The forward-KL identity assumes stationarity and an unconstrained linear softmax head, and concerns averages on the training-context distribution. Entropy inflation is relative to the teacher, not a guarantee that entropy rises during training. Some experiments use one seed; reverse KL need not always reduce entropy, and greater diversity does not guarantee higher task accuracy.
+
+## [2026-10-05](../../../reports/2026/10/2026-10-05.md) — PARTIAL SEARCH
+
+### [Pivot-SD: Efficient Self-Distillation for Masked Diffusion Language Models](<https://arxiv.org/abs/2610.03665>)
+
+Pivot-SD collects masked-diffusion trajectories once from a frozen model and selects token commitments associated with the largest reduction in remaining-token uncertainty. It reinforces pivots from successful trajectories and applies unlikelihood to pivots from failures, improving small-budget math and coding post-training without repeatedly generating online RL rollouts.
+
+**Published:** 2026-10-02 · **First seen:** 2026-10-05T10:03:24Z · **Novelty:** newly-discovered · **Tags:** Masked Diffusion, Self-Distillation, Credit Assignment
+
+[Paper](<https://arxiv.org/abs/2610.03665>)
+
+**Evidence:** research-paper; full-text. LLaDA-8B experiments use 200 questions per domain, four trajectories each, matched baselines, and three rerandomized runs; Dream-7B provides a second backbone. Total time on two GPUs including offline generation is 2.8 hours versus 3.6–5.4 for matched RL. Submission: 2026-10-02T17:37:51Z; October 5's listing and schedule establish the 00:00Z public batch.
+
+**Limitations:** Evidence is restricted to two related 7B/8B diffusion models, short generations, and task-specific tuning. The small MBPP+ gain lies within one standard deviation, and longer-generation HumanEval+ is worse than the base model. Information gain is not proof of causal blame, so failure labels can penalize valid commitments. The linked project page could not be accessed.
+
 ## [2026-10-01](../../../reports/2026/10/2026-10-01.md) — PARTIAL SEARCH
 
 ### [PivotOPD: Learning to Recover from Pivotal Mistakes in Multi-Turn Agents](<https://arxiv.org/abs/2609.40285>)
