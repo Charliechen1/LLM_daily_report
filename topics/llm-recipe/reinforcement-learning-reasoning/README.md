@@ -5,6 +5,38 @@ RLHF, RLVR, policy optimization, reasoning training, tool use and multi-turn age
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-06](../../../reports/2026/10/2026-10-06.md) — PARTIAL SEARCH
+
+### [LoGRA: Scaling LLM Reinforcement Learning with Low-Rank Gradient Sketches](<https://arxiv.org/abs/2610.06647>)
+
+LoGRA accumulates gradients directly into low-rank sketches, optimizes the sketches, and applies their reconstructed updates to selected full-weight matrices during language-model RL. Combining compressed optimizer state and rollout synchronization with a predicted-KL step controller substantially reduces training memory while preserving the tested reasoning performance.
+
+**Published:** 2026-10-05 · **First seen:** 2026-10-06T10:03:05Z · **Novelty:** new · **Tags:** RL Optimization, Gradient Sketching, Training Memory
+
+**Public availability:** 2026-10-06T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.06647>)
+
+**Evidence:** research-paper; full-text. Three-seed Qwen experiments span 1.5B, 7B, and 27B models. At 7B, average allocated memory per training GPU falls from 31.82 to 17.29 GiB, while peak MATH500 pass@1 is 72.48% for dense Adam versus 72.33% for LoGRA. Original submission: 2026-10-05T16:28:11Z; the October 6 listing and official schedule establish the public batch at 00:00Z.
+
+**Limitations:** The optimizer and KL control change together, and only selected matrices are trained. The local predicted-KL approximation is not a realized-KL guarantee. Throughput gains are modest; the long 27B run uses one trajectory. The paper-linked Molt implementation could not be accessed, so no code URL is asserted.
+
+## [2026-10-06](../../../reports/2026/10/2026-10-06.md) — PARTIAL SEARCH
+
+### [HuatuoGPT-3: RL-Only Domain Adaptation from Base Models](<https://arxiv.org/abs/2610.05966>)
+
+This report extends OnePO to medical domain adaptation, mixing rewarded teacher responses into RL groups only while they outperform the model's current samples and correcting weak gradients on unlikely teacher tokens. Controlled comparisons and scaled HuatuoGPT-3 models support a practical route from base models to domain specialists without a preceding domain-SFT stage, while retaining teacher supervision inside RL.
+
+**Published:** 2026-10-05 · **First seen:** 2026-10-06T10:03:05Z · **Novelty:** new · **Tags:** Domain Adaptation, Teacher Guidance, Reinforcement Learning
+
+**Public availability:** 2026-10-06T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.05966>) · [Code](<https://github.com/FreedomIntelligence/HuatuoGPT-3>) · [Project](<https://huggingface.co/FreedomIntelligence/HuatuoGPT-3-27B>)
+
+**Evidence:** technical-report; full-text. Controlled Qwen3-8B experiments compare pure RL, SFT-plus-RL, and OnePO; scaled 9B/27B models add further benchmark evidence. Training code, model cards, and a 20,338-task dataset were verified. Original submission: 2026-10-05T08:16:36Z; the October 6 public batch at 00:00Z makes the extended report eligible.
+
+**Limitations:** OnePO predates this report; the new contribution includes additional analysis and scaling rather than a newly invented algorithm. Results depend on teacher and reward quality and largely concern medicine. Automated medical benchmarks are not clinical validation. The released dataset is smaller than the expanded training mixture; artifacts were inspected, not reproduced.
+
 ## [2026-10-04](../../../reports/2026/10/2026-10-04.md) — PARTIAL SEARCH
 
 ### [CARM: Cancellation-Aware Response Masking for LLM Reinforcement Learning](<https://arxiv.org/abs/2610.02039>)

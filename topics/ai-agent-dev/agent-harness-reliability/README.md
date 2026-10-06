@@ -5,6 +5,22 @@ Long-running execution, failure recovery, retries, persistence and human collabo
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-06](../../../reports/2026/10/2026-10-06.md) — PARTIAL SEARCH
+
+### [Sentry: Learning to Recover from LLM Agent Failures at Test Time](<https://arxiv.org/abs/2610.02994>)
+
+Sentry stores recovery lessons outside an agent's standing context and retrieves matching advice when a monitor detects an execution failure. Checking whether the local failure was resolved before saving a lesson lets the harness reuse experience while limiting routine exposure to potentially irrelevant advice.
+
+**Published:** 2026-10-02 · **First seen:** 2026-10-05T10:10:57Z · **Novelty:** newly-discovered · **Tags:** Failure Recovery, Conditional Memory, Agent Harnesses
+
+**Public availability:** 2026-10-05T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/recent?skip=300&show=50>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.02994v1>) · [Project](<https://github.com/nuglifeleoji/Sentry>)
+
+**Evidence:** research-paper; full-text. Four agent benchmarks and five randomized-order runs support the runtime-recovery design. In a controlled frozen-playbook experiment, adding persistent exposure lowers WebShop reward from 0.364 to 0.296 and custom Mind2Web-Replay mean trajectory completion from 0.651 to 0.599. The Oct 5 public batch confirms eligibility despite an Oct 2 submission date. Delayed discovery: the title was preserved in an October 5 private research draft, but full-text review and selection occurred October 6; first\_seen\_at uses that earliest persisted record timestamp, not an invented observation instant. Mind2Web Replay measures normalized trajectory completion.
+
+**Limitations:** Detection and recovery judgments are fallible model assessments; hard schema repairs do not update the playbook. The replay interface differs from official Mind2Web, sample sizes are modest, and tokens and latency can increase. The repository currently contains an overview, with implementation promised later.
+
 ## [2026-10-02](../../../reports/2026/10/2026-10-02.md) — PARTIAL SEARCH
 
 ### [VeriHarness: Scaling Agentic Verification for Long-Horizon Tasks](<https://arxiv.org/abs/2610.00972>)

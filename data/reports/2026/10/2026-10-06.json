@@ -1,0 +1,748 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-06",
+  "timezone": "America/Los_Angeles",
+  "generated_at": "2026-10-06T10:13:05Z",
+  "coverage": {
+    "start": "2026-10-05T03:00:00-07:00",
+    "end": "2026-10-06T03:00:00-07:00"
+  },
+  "search": {
+    "status": "partial",
+    "notes": "Coverage is the fixed October 5 03:00 to October 6 03:00 America/Los_Angeles interval; the total discovery lookback begins October 3 10:00 UTC. All 91 prior baseline/daily entries were checked; no covered canonical work is repeated. Public availability is inferred from verified dated arXiv batches and the official Eastern-time announcement schedule, separately from preserved v1 submission dates. Sentry is a delayed discovery from the October 5 public batch; other selections are from the October 6 public batch. Ten full-text contributions were selected across the three domains after cross-domain review; HERA was deferred because its paired metric trails a control and executable data are private, while DeferKV remains a reviewed reserve. Search is partial: bounded announcement-title screening did not inspect every paper, and OpenReview/ACL/DeepMind publication-directory extraction was not a comprehensive dated search. The Hugging Face October 6 discovery page, MemPilot project page and earlier OnePO PDF were inaccessible; HERA data returned 401. LoGRA's paper-linked implementation failed twice. These access gaps are retained even for unselected leads; selected full papers were accessible. T-Search, MemPilot, HuatuoGPT-3 and SyclKittens artifacts were inspected, while Sentry currently has an overview with implementation pending. No author implementation was verified for LightMTP, Byte Language Models, MOLT or RESOLVE. Organization indexes and two October 5 PyTorch posts were inspected but yielded no additional selected contribution. No experiment was independently reproduced, and benchmark claims are scoped to cited evaluations.",
+    "sources_checked": [
+      {
+        "name": "arXiv cs.CL October 6 expanded listing; selected entries 16, 42, 46, 48",
+        "url": "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv cs.LG October 6 expanded listing; bounded title screening, not exhaustive",
+        "url": "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "Official arXiv public announcement schedule",
+        "url": "https://info.arxiv.org/help/availability.html",
+        "status": "ok"
+      },
+      {
+        "name": "Hugging Face October 6 discovery page; two tool errors",
+        "url": "https://huggingface.co/papers/date/2026-10-06",
+        "status": "unavailable"
+      },
+      {
+        "name": "LoGRA original submission metadata",
+        "url": "https://arxiv.org/abs/2610.06647",
+        "status": "ok"
+      },
+      {
+        "name": "LoGRA full methods, memory and accuracy tables, ablations, long-run evidence; linked Molt implementation inaccessible on two click attempts",
+        "url": "https://arxiv.org/html/2610.06647v1",
+        "status": "ok"
+      },
+      {
+        "name": "LightMTP original submission metadata",
+        "url": "https://arxiv.org/abs/2610.06031",
+        "status": "ok"
+      },
+      {
+        "name": "LightMTP full methods, task results, training-budget appendix, relaxed-versus-strict metrics",
+        "url": "https://arxiv.org/html/2610.06031v1",
+        "status": "ok"
+      },
+      {
+        "name": "Byte Language Models original submission metadata",
+        "url": "https://arxiv.org/abs/2610.05978",
+        "status": "ok"
+      },
+      {
+        "name": "Byte Language Models full scaling, ablations, intervention and oracle speculative-acceptance methods",
+        "url": "https://arxiv.org/html/2610.05978v1",
+        "status": "ok"
+      },
+      {
+        "name": "HuatuoGPT-3 original submission metadata",
+        "url": "https://arxiv.org/abs/2610.05966",
+        "status": "ok"
+      },
+      {
+        "name": "HuatuoGPT-3 full method, controlled comparisons, scaling, limitations and training-data details",
+        "url": "https://arxiv.org/html/2610.05966v1",
+        "status": "ok"
+      },
+      {
+        "name": "HuatuoGPT-3 author repository and README",
+        "url": "https://github.com/FreedomIntelligence/HuatuoGPT-3",
+        "status": "ok"
+      },
+      {
+        "name": "HuatuoGPT-3-27B author model card; model artifacts not downloaded",
+        "url": "https://huggingface.co/FreedomIntelligence/HuatuoGPT-3-27B",
+        "status": "ok"
+      },
+      {
+        "name": "OnePO Medical 20K author dataset card",
+        "url": "https://huggingface.co/datasets/FreedomIntelligence/OnePO-Medical-20K",
+        "status": "ok"
+      },
+      {
+        "name": "Earlier OnePO paper linked by author repository; browser challenge blocked inspection",
+        "url": "https://openreview.net/pdf?id=M8eyUQldfx",
+        "status": "unavailable"
+      },
+      {
+        "name": "Representation-space MMD alternative screened at abstract level only",
+        "url": "https://arxiv.org/abs/2610.06648",
+        "status": "ok"
+      },
+      {
+        "name": "Base Models Can Reason By Taking a Cue From Training Data; promising additional lead, abstract only",
+        "url": "https://arxiv.org/abs/2610.06851",
+        "status": "ok"
+      },
+      {
+        "name": "Looped Models Part II; promising additional lead, abstract only",
+        "url": "https://arxiv.org/abs/2610.06833",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv cs.AI Oct 6 dated batch; first 50 titles screened",
+        "url": "https://arxiv.org/list/cs.AI/recent",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv cs.CL Oct 6 dated batch; first 50 titles screened",
+        "url": "https://arxiv.org/list/cs.CL/recent",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv cs.CL Oct 6 entries 51–100; partial lower-page title screen",
+        "url": "https://arxiv.org/list/cs.CL/recent?skip=50&show=50",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv cs.CL dated Mon Oct 5 continuation; Sentry entry 329 in the current combined list",
+        "url": "https://arxiv.org/list/cs.CL/recent?skip=300&show=50",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv cs.LG October archive; targeted Sentry identity lookup, not exhaustive screening",
+        "url": "https://arxiv.org/list/cs.LG/2026-10?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "T-Search: An Open Agentic Retriever and Playground for Hard Multi-Step Search — abstract and exact v1 history",
+        "url": "https://arxiv.org/abs/2610.06782",
+        "status": "ok"
+      },
+      {
+        "name": "T-Search: An Open Agentic Retriever and Playground for Hard Multi-Step Search — full methods, results and limitations",
+        "url": "https://arxiv.org/html/2610.06782v1",
+        "status": "ok"
+      },
+      {
+        "name": "Sentry: Learning to Recover from LLM Agent Failures at Test Time — abstract and exact v1 history",
+        "url": "https://arxiv.org/abs/2610.02994",
+        "status": "ok"
+      },
+      {
+        "name": "Sentry: Learning to Recover from LLM Agent Failures at Test Time — full methods, results and limitations",
+        "url": "https://arxiv.org/html/2610.02994v1",
+        "status": "ok"
+      },
+      {
+        "name": "MemPilot: Orchestrating On-Demand Multimodal Memory Curation for LLM Agents — abstract and exact v1 history",
+        "url": "https://arxiv.org/abs/2610.06830",
+        "status": "ok"
+      },
+      {
+        "name": "MemPilot: Orchestrating On-Demand Multimodal Memory Curation for LLM Agents — full methods, results and limitations",
+        "url": "https://arxiv.org/html/2610.06830v1",
+        "status": "ok"
+      },
+      {
+        "name": "HERA: Harness-Environment Co-Evolution for Reliable Agentic Abstention — abstract and exact v1 history",
+        "url": "https://arxiv.org/abs/2610.06563",
+        "status": "ok"
+      },
+      {
+        "name": "HERA: Harness-Environment Co-Evolution for Reliable Agentic Abstention — full methods, results and limitations",
+        "url": "https://arxiv.org/html/2610.06563v1",
+        "status": "ok"
+      },
+      {
+        "name": "T-Search inference harness repository",
+        "url": "https://github.com/turbo-llm/t-search-harness",
+        "status": "ok"
+      },
+      {
+        "name": "T-Search model card and checkpoint listing",
+        "url": "https://huggingface.co/t-tech/T-Search",
+        "status": "ok"
+      },
+      {
+        "name": "T-Search artifact collection",
+        "url": "https://huggingface.co/collections/t-tech/t-search",
+        "status": "ok"
+      },
+      {
+        "name": "Sentry repository; overview only, implementation pending",
+        "url": "https://github.com/nuglifeleoji/Sentry",
+        "status": "ok"
+      },
+      {
+        "name": "MemPilot repository; source, configurations, trainers and evaluation scripts visible",
+        "url": "https://github.com/ViktorAxelsen/MemPilot",
+        "status": "ok"
+      },
+      {
+        "name": "MemPilot project page; direct fetch failed",
+        "url": "https://viktoraxelsen.github.io/MemPilot/",
+        "status": "unavailable"
+      },
+      {
+        "name": "HERA project page; direct open failed, paper-linked reference read succeeded",
+        "url": "https://hera-bench.github.io/",
+        "status": "ok"
+      },
+      {
+        "name": "HERA public code repository; base/final harnesses and shared runner",
+        "url": "https://github.com/lhannnn/HERA-Bench",
+        "status": "ok"
+      },
+      {
+        "name": "HERA required benchmark dataset; 401 Unauthorized and README confirms private access",
+        "url": "https://huggingface.co/datasets/sxcn/HERA-Bench",
+        "status": "unavailable"
+      },
+      {
+        "name": "CLIFT abstract screened only; not a fully reviewed finding",
+        "url": "https://arxiv.org/abs/2610.06829",
+        "status": "ok"
+      },
+      {
+        "name": "PrisMem abstract screened only; not a fully reviewed finding",
+        "url": "https://arxiv.org/abs/2610.06361",
+        "status": "ok"
+      },
+      {
+        "name": "AgentMonBench/EBG abstract screened only; not a fully reviewed finding",
+        "url": "https://arxiv.org/abs/2610.06406",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv cs.DC recent announcements; all 34 October 6 titles screened",
+        "url": "https://arxiv.org/list/cs.DC/recent",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv cs.LG recent announcements; first-page title screening",
+        "url": "https://arxiv.org/list/cs.LG/recent",
+        "status": "ok"
+      },
+      {
+        "name": "MOLT canonical record and exact v1 timestamp",
+        "url": "https://arxiv.org/abs/2610.05748",
+        "status": "ok"
+      },
+      {
+        "name": "MOLT full methods, baseline definitions, hardware and results",
+        "url": "https://arxiv.org/html/2610.05748v1",
+        "status": "ok"
+      },
+      {
+        "name": "RESOLVE canonical record and exact v1 timestamp",
+        "url": "https://arxiv.org/abs/2610.05683",
+        "status": "ok"
+      },
+      {
+        "name": "RESOLVE full pipeline, evaluation costs, proof and testing limitations",
+        "url": "https://arxiv.org/html/2610.05683v1",
+        "status": "ok"
+      },
+      {
+        "name": "SyclKittens canonical record and exact v1 timestamp",
+        "url": "https://arxiv.org/abs/2610.04277",
+        "status": "ok"
+      },
+      {
+        "name": "SyclKittens full paper, controlled-study protocol and end-to-end measurement definitions",
+        "url": "https://arxiv.org/html/2610.04277v1",
+        "status": "ok"
+      },
+      {
+        "name": "SyclKittens public repository tree, README and build instructions; not executed",
+        "url": "https://github.com/intel/SyclKittens",
+        "status": "ok"
+      },
+      {
+        "name": "DeferKV canonical record and exact v1 timestamp",
+        "url": "https://arxiv.org/abs/2610.06286",
+        "status": "ok"
+      },
+      {
+        "name": "DeferKV full method, matched cache budgets, tables and efficiency caveats",
+        "url": "https://arxiv.org/html/2610.06286v1",
+        "status": "ok"
+      },
+      {
+        "name": "Cross-vendor mismatch candidate; abstract and opening sections screened, not selected",
+        "url": "https://arxiv.org/html/2610.05458v1",
+        "status": "ok"
+      },
+      {
+        "name": "Behavior-Preserving KV Cache Compression; abstract screening only, not selected",
+        "url": "https://arxiv.org/abs/2610.06479",
+        "status": "ok"
+      },
+      {
+        "name": "OVAL; abstract screening only, not selected",
+        "url": "https://arxiv.org/abs/2610.06686",
+        "status": "ok"
+      },
+      {
+        "name": "PyTorch engineering blog index",
+        "url": "https://pytorch.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "PyTorch October 5 media-stack consolidation blog; full text screened",
+        "url": "https://pytorch.org/blog/evolution-of-the-pytorch-media-processing-landscape/",
+        "status": "ok"
+      },
+      {
+        "name": "PyTorch October 5 accelerator-integration retrospective; main technical sections screened",
+        "url": "https://pytorch.org/blog/pytorch-hardware-enablement-updates-from-the-acceleration-integration-working-group/",
+        "status": "ok"
+      },
+      {
+        "name": "vLLM engineering blog index; latest listed post September 29",
+        "url": "https://vllm.ai/blog",
+        "status": "ok"
+      },
+      {
+        "name": "NVIDIA developer blog index; latest listed posts October 1",
+        "url": "https://developer.nvidia.com/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "OpenAI research news index; latest listed research September 29, already covered",
+        "url": "https://openai.com/news/research/",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic research index; latest listed item October 1, outside the discovery interval",
+        "url": "https://www.anthropic.com/research",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic engineering index and bounded title screen",
+        "url": "https://www.anthropic.com/engineering",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic featured containment article; full text and May 25 date inspected, outside interval",
+        "url": "https://www.anthropic.com/engineering/how-we-contain-claude",
+        "status": "ok"
+      },
+      {
+        "name": "Ai2 research index; October 1 and 2 items already covered",
+        "url": "https://allenai.org/research",
+        "status": "ok"
+      },
+      {
+        "name": "DeepMind research landing page; bounded index inspection",
+        "url": "https://deepmind.google/research/",
+        "status": "ok"
+      },
+      {
+        "name": "DeepMind news index; newest listed month September 2026",
+        "url": "https://deepmind.google/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "DeepMind publication directory; rendered extraction lacked publication records",
+        "url": "https://deepmind.google/research/publications/",
+        "status": "ok"
+      },
+      {
+        "name": "OpenReview venue directory; accessible but no comprehensive date-filtered discovery",
+        "url": "https://openreview.net/",
+        "status": "ok"
+      },
+      {
+        "name": "ACL Anthology proceedings directory; accessible but no comprehensive date-filtered discovery",
+        "url": "https://aclanthology.org/",
+        "status": "ok"
+      },
+      {
+        "name": "Sentry cs.AI dated crosslist; targeted timing check",
+        "url": "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000",
+        "status": "ok"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": "arxiv:2610.06647",
+      "title": "LoGRA: Scaling LLM Reinforcement Learning with Low-Rank Gradient Sketches",
+      "category": "1.7",
+      "tags": [
+        "RL Optimization",
+        "Gradient Sketching",
+        "Training Memory"
+      ],
+      "published_on": "2026-10-05",
+      "first_seen_at": "2026-10-06T10:03:05Z",
+      "canonical_url": "https://arxiv.org/abs/2610.06647",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.06647"
+      },
+      "summary": [
+        "LoGRA accumulates gradients directly into low-rank sketches, optimizes the sketches, and applies their reconstructed updates to selected full-weight matrices during language-model RL.",
+        "Combining compressed optimizer state and rollout synchronization with a predicted-KL step controller substantially reduces training memory while preserving the tested reasoning performance."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Three-seed Qwen experiments span 1.5B, 7B, and 27B models. At 7B, average allocated memory per training GPU falls from 31.82 to 17.29 GiB, while peak MATH500 pass@1 is 72.48% for dense Adam versus 72.33% for LoGRA. Original submission: 2026-10-05T16:28:11Z; the October 6 listing and official schedule establish the public batch at 00:00Z.",
+        "limitations": "The optimizer and KL control change together, and only selected matrices are trained. The local predicted-KL approximation is not a realized-KL guarantee. Throughput gains are modest; the long 27B run uses one trajectory. The paper-linked Molt implementation could not be accessed, so no code URL is asserted."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-06T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.06031",
+      "title": "LightMTP: Lightweight Latent Multi-Token Prediction",
+      "category": "1.3",
+      "tags": [
+        "Pretraining",
+        "Multi-Token Prediction",
+        "Latent Targets"
+      ],
+      "published_on": "2026-10-05",
+      "first_seen_at": "2026-10-06T10:03:05Z",
+      "canonical_url": "https://arxiv.org/abs/2610.06031",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.06031"
+      },
+      "summary": [
+        "LightMTP adds a small auxiliary head that predicts the model's own future intermediate hidden states, using stopped-gradient targets from the same training pass alongside next-token prediction.",
+        "The head is discarded at inference, offering an inexpensive way to encourage future-aware representations and improve some structured reasoning tasks without changing ordinary decoding."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Experiments cover 286M–1.4B decoders and multiple seeds. Countdown accuracy rises from 46.4% for next-token training to 56.7% for a LightMTP variant; the main 24-layer heads add 0.3–0.9% parameters. Original submission: 2026-10-05T09:30:30Z; October 6's listing establishes the later 00:00Z public batch inside the main window.",
+        "limitations": "General-language aggregate results remain near the next-token baseline, and a linear token-prediction baseline scores higher on Countdown. Training budgets grow with head size and are not matched for tokens or compute; small parameter overhead is not zero training cost. Some headline GSM8K results use a relaxed matching metric. No author implementation was verified."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-06T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.05978",
+      "title": "Byte Language Models: Scaling, Emergent Abstractions, and Information Allocation",
+      "category": "1.2",
+      "tags": [
+        "Byte Models",
+        "Scaling Laws",
+        "Tokenization"
+      ],
+      "published_on": "2026-10-05",
+      "first_seen_at": "2026-10-06T10:03:05Z",
+      "canonical_url": "https://arxiv.org/abs/2610.05978",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.05978"
+      },
+      "summary": [
+        "This study compares flat byte-level and subword language models through scaling experiments, fine-grained tasks, and interventions on learned local representations.",
+        "It shows that byte models' advantages at matched parameter counts coexist with a compute disadvantage, helping practitioners distinguish tokenization benefits from extra computation and choose where byte-level modeling is useful."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "The 200M–3B task suite shows consistent word-manipulation and OCR gains, while the separate IsoFLOPs sweep favors subword models at matched training compute. Frozen layer interventions probe local aggregation. Original submission: 2026-10-05T08:29:08Z; October 6's listing and announcement schedule establish public availability at 00:00Z.",
+        "limitations": "Byte recipes also change training scheduling, hashed embeddings, and convolution width, so the comparison is not an isolated tokenizer swap. Results concern the tested hybrid backbones and scales. Speculative-decoding acceptance is simulated on reference text: the reported token-count multiplier is not measured end-to-end speedup. No author implementation was verified."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-06T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.05966",
+      "title": "HuatuoGPT-3: RL-Only Domain Adaptation from Base Models",
+      "category": "1.7",
+      "tags": [
+        "Domain Adaptation",
+        "Teacher Guidance",
+        "Reinforcement Learning"
+      ],
+      "published_on": "2026-10-05",
+      "first_seen_at": "2026-10-06T10:03:05Z",
+      "canonical_url": "https://arxiv.org/abs/2610.05966",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.05966",
+        "code": "https://github.com/FreedomIntelligence/HuatuoGPT-3",
+        "project": "https://huggingface.co/FreedomIntelligence/HuatuoGPT-3-27B"
+      },
+      "summary": [
+        "This report extends OnePO to medical domain adaptation, mixing rewarded teacher responses into RL groups only while they outperform the model's current samples and correcting weak gradients on unlikely teacher tokens.",
+        "Controlled comparisons and scaled HuatuoGPT-3 models support a practical route from base models to domain specialists without a preceding domain-SFT stage, while retaining teacher supervision inside RL."
+      ],
+      "evidence": {
+        "type": "technical-report",
+        "access": "full-text",
+        "rationale": "Controlled Qwen3-8B experiments compare pure RL, SFT-plus-RL, and OnePO; scaled 9B/27B models add further benchmark evidence. Training code, model cards, and a 20,338-task dataset were verified. Original submission: 2026-10-05T08:16:36Z; the October 6 public batch at 00:00Z makes the extended report eligible.",
+        "limitations": "OnePO predates this report; the new contribution includes additional analysis and scaling rather than a newly invented algorithm. Results depend on teacher and reward quality and largely concern medicine. Automated medical benchmarks are not clinical validation. The released dataset is smaller than the expanded training mixture; artifacts were inspected, not reproduced."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-06T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.06782",
+      "title": "T-Search: An Open Agentic Retriever and Playground for Hard Multi-Step Search",
+      "category": "2.4",
+      "tags": [
+        "Agentic Retrieval",
+        "Evidence Selection",
+        "Bounded Context"
+      ],
+      "published_on": "2026-10-05",
+      "first_seen_at": "2026-10-06T10:03:31Z",
+      "canonical_url": "https://arxiv.org/abs/2610.06782",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.06782v1",
+        "code": "https://github.com/turbo-llm/t-search-harness",
+        "project": "https://huggingface.co/t-tech/T-Search"
+      },
+      "summary": [
+        "T-Search trains a search agent to return a compact ranked evidence set through bounded search rounds, retaining explicitly saved information between rounds.",
+        "This separates evidence retrieval from answer generation, allowing builders to change the corpus backend or downstream answer model independently."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Across seven English and Russian fixed-corpus benchmark settings, the authors report average Recall@10 of 55.96 for one T-Search rollout versus 41.54 for its base model in the same five-round harness; three fused rollouts reach 61.33. The inference harness, model card and checkpoints are publicly accessible.",
+        "limitations": "Results concern retrieved evidence, not final answer accuracy, and training is tied to the released harness. Generative-agent comparisons use trajectory recall, which is not directly comparable to final-set Recall@10. The latency study samples 35 questions; reported evidence-selection reasons can be wrong."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-06T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.02994",
+      "title": "Sentry: Learning to Recover from LLM Agent Failures at Test Time",
+      "category": "2.7",
+      "tags": [
+        "Failure Recovery",
+        "Conditional Memory",
+        "Agent Harnesses"
+      ],
+      "published_on": "2026-10-02",
+      "first_seen_at": "2026-10-05T10:10:57Z",
+      "canonical_url": "https://arxiv.org/abs/2610.02994",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.02994v1",
+        "project": "https://github.com/nuglifeleoji/Sentry"
+      },
+      "summary": [
+        "Sentry stores recovery lessons outside an agent's standing context and retrieves matching advice when a monitor detects an execution failure.",
+        "Checking whether the local failure was resolved before saving a lesson lets the harness reuse experience while limiting routine exposure to potentially irrelevant advice."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Four agent benchmarks and five randomized-order runs support the runtime-recovery design. In a controlled frozen-playbook experiment, adding persistent exposure lowers WebShop reward from 0.364 to 0.296 and custom Mind2Web-Replay mean trajectory completion from 0.651 to 0.599. The Oct 5 public batch confirms eligibility despite an Oct 2 submission date. Delayed discovery: the title was preserved in an October 5 private research draft, but full-text review and selection occurred October 6; first_seen_at uses that earliest persisted record timestamp, not an invented observation instant. Mind2Web Replay measures normalized trajectory completion.",
+        "limitations": "Detection and recovery judgments are fallible model assessments; hard schema repairs do not update the playbook. The replay interface differs from official Mind2Web, sample sizes are modest, and tokens and latency can increase. The repository currently contains an overview, with implementation promised later."
+      },
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-10-05T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/recent?skip=300&show=50",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.06830",
+      "title": "MemPilot: Orchestrating On-Demand Multimodal Memory Curation for LLM Agents",
+      "category": "2.3",
+      "tags": [
+        "Multimodal Memory",
+        "Adaptive Retrieval",
+        "Resource-Aware Policies"
+      ],
+      "published_on": "2026-10-05",
+      "first_seen_at": "2026-10-06T10:03:31Z",
+      "canonical_url": "https://arxiv.org/abs/2610.06830",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.06830v1",
+        "code": "https://github.com/ViktorAxelsen/MemPilot"
+      },
+      "summary": [
+        "MemPilot learns when to reuse compressed memory and when to ask another model to re-examine raw text or images for the current question.",
+        "Jointly choosing evidence volume, processing instructions and model capacity provides a way to balance answer quality against memory-processing cost and modeled latency."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "The authors evaluate five memory benchmarks, including two held-out distributions, with separate downstream answer models and ablations of routing and reward credit. Reinforcement learning trains policies with different quality, monetary-cost and latency preferences; implementation and configuration files are publicly accessible.",
+        "limitations": "Reported latency uses a token-based proxy rather than measured deployment wall time, and cost aggregates questions per conversation history rather than per question. Filtered benchmark splits, model-based grading and one greedy trajectory per query constrain comparisons. Preference changes are evaluated through trained policies; the paper does not establish universal gains or a free runtime adjustment."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-06T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.05748",
+      "title": "MOLT: A Fine-Grained GPU Memory Sharing System for LLM Serving with Opportunistic Fine-Tuning",
+      "category": "3.4",
+      "tags": [
+        "Memory Sharing",
+        "Activation Recomputation",
+        "Serving",
+        "LoRA"
+      ],
+      "published_on": "2026-10-05",
+      "first_seen_at": "2026-10-06T10:03:46Z",
+      "canonical_url": "https://arxiv.org/abs/2610.05748",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.05748"
+      },
+      "summary": [
+        "MOLT lets inference reclaim individual saved activations from a colocated fine-tuning job, which recomputes them later instead of restarting its current training step.",
+        "Tracking outstanding GPU work and coordinating reclamation across tensor-parallel ranks makes idle serving memory usable for adaptation while preserving priority for latency-sensitive requests."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "The October 6 announcement batch establishes eligibility; original v1 is October 5 03:53:21 UTC. Sections 4–5 and Table 2 evaluate rank-8 LoRA on Mistral-Small-24B and Llama-3.1-70B across four H100 SXM/B200 deployments. Under BurstGPT arrivals, MOLT completes 1.9–3.3x the tuning tokens/s of LLMStation+SIRIUS, with 99.7–100% inference SLO attainment.",
+        "limitations": "SLO means both TTFT and TPOT are within three times the inference-only mean, not unchanged latency. Evidence covers two models and trace-driven workloads, with offline activation/dispatch profiling and substantial vLLM/PyTorch changes; it does not establish adaptation-quality gains. No primary-linked public implementation was verified or experiment reproduced."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-06T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/recent",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.05683",
+      "title": "RESOLVE: Language-Agnostic Validation of GPU Kernels Through Testing, Reduction, and Proof",
+      "category": "3.5",
+      "tags": [
+        "Kernel Validation",
+        "Concurrency Testing",
+        "Formal Verification",
+        "Coding Agents"
+      ],
+      "published_on": "2026-10-05",
+      "first_seen_at": "2026-10-06T10:03:46Z",
+      "canonical_url": "https://arxiv.org/abs/2610.05683",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.05683"
+      },
+      "summary": [
+        "RESOLVE combines GPU scheduling perturbations, agent-generated reductions of concurrency, and proofs that simplified kernels share a mathematical specification.",
+        "This helps check aggressively optimized kernels across programming languages, catching some concurrency failures that ordinary numerical-tolerance tests miss while making functional reasoning more tractable."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "The October 6 announcement batch establishes eligibility; original v1 is October 5 01:51:04 UTC. H100 PCIe experiments complete the full workflow for 11 of 14 selected KernelBench candidates, including formal proofs of their reduced specifications, and test three fused-MLP implementations. The tester exposes four mega-kernel issues, including two clear bugs; Sections 3–6 distinguish testing from proof.",
+        "limitations": "The original-to-reduced links are tested, not proved, and the final specification uses real-number semantics without floating-point error bounds. Testing misses some concurrency scopes and rejects legitimate nondeterminism; full validation takes a median 143 minutes in the selected subset. No primary-linked public RESOLVE artifact was verified, and results were not reproduced."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-06T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/recent",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.04277",
+      "title": "SyclKittens: A Tile Programming Model for Programmers and Coding Agents on Intel GPUs",
+      "category": "3.5",
+      "tags": [
+        "Intel GPU",
+        "Tile Programming",
+        "Kernel Optimization",
+        "Coding Agents"
+      ],
+      "published_on": "2026-10-03",
+      "first_seen_at": "2026-10-06T10:03:46Z",
+      "canonical_url": "https://arxiv.org/abs/2610.04277",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.04277",
+        "code": "https://github.com/intel/SyclKittens"
+      },
+      "summary": [
+        "SyclKittens packages Intel GPU matrix layouts, cooperative cache prefetching, and topology-aware communication into reusable tile operations while leaving workload schedules programmable.",
+        "These building blocks help coding agents search more effectively and support an engineer-assisted kernel suite that accelerates the evaluated Llama inference paths."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "First announced October 6; original October 3 04:06:24 UTC submission is preserved while public availability falls inside this daily window. On Intel Max 1550, the controlled Opus GEMM study improves peak-of-three performance from 57.5% to 82.1% of oneDNN. Separately, the co-designed suite reports 1.59x geometric-mean full-request rate versus torch.compile on 21 matched Llama-3.1-8B configurations. The linked implementation and build documentation are accessible.",
+        "limitations": "One accelerator family and one end-to-end model; agent benefits vary by task/model. The reported request-rate formula counts batch-wide prompt tokens plus generated length per stream, not conventional aggregate token throughput. Co-designed results are distinct from autonomous-agent results; longer-context capacity comparisons use differing GPU counts. No results were reproduced."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-06T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/recent",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    }
+  ]
+}

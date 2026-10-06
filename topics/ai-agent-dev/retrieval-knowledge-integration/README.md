@@ -5,6 +5,22 @@ RAG, agentic search, query rewriting, knowledge bases and external grounding.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-06](../../../reports/2026/10/2026-10-06.md) — PARTIAL SEARCH
+
+### [T-Search: An Open Agentic Retriever and Playground for Hard Multi-Step Search](<https://arxiv.org/abs/2610.06782>)
+
+T-Search trains a search agent to return a compact ranked evidence set through bounded search rounds, retaining explicitly saved information between rounds. This separates evidence retrieval from answer generation, allowing builders to change the corpus backend or downstream answer model independently.
+
+**Published:** 2026-10-05 · **First seen:** 2026-10-06T10:03:31Z · **Novelty:** new · **Tags:** Agentic Retrieval, Evidence Selection, Bounded Context
+
+**Public availability:** 2026-10-06T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.06782v1>) · [Code](<https://github.com/turbo-llm/t-search-harness>) · [Project](<https://huggingface.co/t-tech/T-Search>)
+
+**Evidence:** research-paper; full-text. Across seven English and Russian fixed-corpus benchmark settings, the authors report average Recall@10 of 55.96 for one T-Search rollout versus 41.54 for its base model in the same five-round harness; three fused rollouts reach 61.33. The inference harness, model card and checkpoints are publicly accessible.
+
+**Limitations:** Results concern retrieved evidence, not final answer accuracy, and training is tied to the released harness. Generative-agent comparisons use trajectory recall, which is not directly comparable to final-set Recall@10. The latency study samples 35 questions; reported evidence-selection reasons can be wrong.
+
 ## [2026-10-03](../../../reports/2026/10/2026-10-03.md) — PARTIAL SEARCH
 
 ### [From Knowledge Access to Source Learning: Developing Source-Specific Competence](<https://arxiv.org/abs/2610.02150>)

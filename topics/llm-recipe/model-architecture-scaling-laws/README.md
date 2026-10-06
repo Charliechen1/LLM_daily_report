@@ -5,6 +5,22 @@ Transformers, MoE, SSM/hybrid architectures and model/data/compute allocation.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-06](../../../reports/2026/10/2026-10-06.md) — PARTIAL SEARCH
+
+### [Byte Language Models: Scaling, Emergent Abstractions, and Information Allocation](<https://arxiv.org/abs/2610.05978>)
+
+This study compares flat byte-level and subword language models through scaling experiments, fine-grained tasks, and interventions on learned local representations. It shows that byte models' advantages at matched parameter counts coexist with a compute disadvantage, helping practitioners distinguish tokenization benefits from extra computation and choose where byte-level modeling is useful.
+
+**Published:** 2026-10-05 · **First seen:** 2026-10-06T10:03:05Z · **Novelty:** new · **Tags:** Byte Models, Scaling Laws, Tokenization
+
+**Public availability:** 2026-10-06T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.05978>)
+
+**Evidence:** research-paper; full-text. The 200M–3B task suite shows consistent word-manipulation and OCR gains, while the separate IsoFLOPs sweep favors subword models at matched training compute. Frozen layer interventions probe local aggregation. Original submission: 2026-10-05T08:29:08Z; October 6's listing and announcement schedule establish public availability at 00:00Z.
+
+**Limitations:** Byte recipes also change training scheduling, hashed embeddings, and convolution width, so the comparison is not an isolated tokenizer swap. Results concern the tested hybrid backbones and scales. Speculative-decoding acceptance is simulated on reference text: the reported token-count multiplier is not measured end-to-end speedup. No author implementation was verified.
+
 ## [2026-10-02](../../../reports/2026/10/2026-10-02.md) — PARTIAL SEARCH
 
 ### [Hierarchical Continuous Diffusion Language Models](<https://arxiv.org/abs/2610.02193>)

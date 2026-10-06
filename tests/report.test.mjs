@@ -115,6 +115,75 @@ test('freshness gates late discoveries while explicitly dated material updates c
   value.entries[0].update_note = '2026-09-29: New controlled evaluation results were published.';
   assert.deepEqual(validateReport(value, options), []);
 });
+function announcedReport(at = '2026-09-29T00:00:00Z') {
+  const value = report();
+  value.entries[0].published_on = '2026-09-25';
+  value.entries[0].public_availability = { at, basis: 'announcement-schedule', sources: ['https://arxiv.org/list/cs.CL/recent', 'https://info.arxiv.org/help/availability.html'] };
+  value.search.sources_checked.push({ name: 'Official announcement schedule', url: 'https://info.arxiv.org/help/availability.html', status: 'ok' });
+  return value;
+}
+test('verified announcement timing retains the original date and distinguishes new from delayed discovery', () => {
+  const value = announcedReport();
+  assert.deepEqual(validateReport(value, options), []);
+  const markdown = renderDaily(value, taxonomy);
+  assert.match(markdown, /Published:\*\* 2026-09-25/);
+  assert.match(markdown, /Public availability:\*\* 2026-09-29T00:00:00Z/);
+  assert.match(markdown, /inferred from dated announcement and official schedule/);
+  value.entries[0].public_availability.at = '2026-09-28T00:00:00Z';
+  assert.match(validateReport(value, options).join('\n'), /predates the daily coverage/);
+  value.entries[0].novelty = 'newly-discovered';
+  assert.deepEqual(validateReport(value, options), []);
+});
+test('public availability uses exact discovery and cutoff boundaries, including equivalent offsets', () => {
+  const value = announcedReport('2026-09-26T03:00:00-07:00');
+  value.entries[0].novelty = 'newly-discovered';
+  assert.deepEqual(validateReport(value, options), []);
+  value.entries[0].public_availability.at = '2026-09-26T09:59:59Z';
+  assert.match(validateReport(value, options).join('\n'), /outside the discovery lookback/);
+  value.entries[0].public_availability.at = '2026-09-29T10:00:00Z';
+  value.entries[0].novelty = 'new';
+  assert.deepEqual(validateReport(value, options), []);
+  value.entries[0].public_availability.at = '2026-09-29T10:00:01Z';
+  assert.match(validateReport(value, options).join('\n'), /scheduled cutoff/);
+});
+test('availability requires verified timing sources, valid metadata and chronological observations', () => {
+  const cases = [
+    [value => { value.entries[0].public_availability.at = '2026-09-29T00:00:00'; }, /explicit offset/],
+    [value => { value.entries[0].public_availability.basis = 'guess'; }, /basis/],
+    [value => { value.entries[0].public_availability.sources = []; }, /distinct HTTPS/],
+    [value => { value.entries[0].public_availability.sources = ['http://arxiv.org/list/cs.CL/recent']; }, /distinct HTTPS/],
+    [value => { value.entries[0].public_availability.sources.push(value.entries[0].public_availability.sources[0]); }, /distinct HTTPS/],
+    [value => { value.search.sources_checked.pop(); }, /successful source checks/],
+    [value => { value.search.sources_checked = {}; }, /successful source checks/],
+    [value => { value.search.sources_checked.unshift(null); }, /must be an object/],
+    [value => { value.search.sources_checked[1].status = 'unavailable'; value.search.status = 'partial'; value.search.notes = 'Timing source unavailable.'; }, /successful source checks/],
+    [value => { value.entries[0].public_availability.extra = true; }, /unknown property/],
+    [value => { value.entries[0].public_availability = null; }, /must be an object/],
+    [value => { value.entries[0].published_on = '2026-09-29'; value.entries[0].public_availability.at = '2026-09-28T10:00:00Z'; }, /original publication date/],
+    [value => { value.entries[0].first_seen_at = '2026-09-28T23:59:59Z'; }, /after first_seen_at/]
+  ];
+  for (const [mutate, pattern] of cases) { const value = announcedReport(); mutate(value); assert.match(validateReport(value, options).join('\n'), pattern); }
+});
+test('new announcement metadata cannot bypass prior coverage or the material-update date requirement', () => {
+  const first = report('2026-09-28');
+  const second = announcedReport();
+  assert.match(validateCollection([record(first), record(second)], options).join('\n'), /repeats a source/);
+  second.entries[0].novelty = 'material-update';
+  second.entries[0].update_note = '2026-09-25: A minor wording change was made.';
+  assert.match(validateReport(second, options).join('\n'), /recent update date/);
+});
+test('landscape public availability cannot exceed its local as-of date', () => {
+  const value = announcedReport('2026-09-30T00:00:00Z');
+  value.kind = 'landscape';
+  delete value.coverage;
+  value.generated_at = '2026-09-30T03:30:00-07:00';
+  value.entries[0].first_seen_at = value.generated_at;
+  value.entries[0].novelty = 'baseline';
+  value.entries[0].positioning = 'frontier-research';
+  assert.deepEqual(validateReport(value, options), []); // Sep 29 locally.
+  value.entries[0].public_availability.at = '2026-09-30T07:00:00Z';
+  assert.match(validateReport(value, options).join('\n'), /landscape as-of date/);
+});
 test('canonical identities normalize arXiv PDF/version aliases, DOI aliases and tracking parameters', () => {
   assert.equal(canonicalKey('https://arxiv.org/abs/2609.12345v2'), canonicalKey('https://export.arxiv.org/pdf/2609.12345v1.pdf'));
   assert.equal(canonicalKey('https://doi.org/10.1234/ABC'), canonicalKey('https://dx.doi.org/10.1234/abc'));

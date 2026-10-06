@@ -146,7 +146,7 @@ export function validateReport(report, { taxonomy, config = {}, filePath, now = 
   const identities = new Set();
   report.entries.forEach((entry, i) => {
     const label = `entries[${i}]`;
-    if (!object(entry, label, ['id', 'title', 'category', 'tags', 'published_on', 'first_seen_at', 'canonical_url', 'links', 'summary', 'evidence', 'novelty', 'update_note', 'positioning'])) return;
+    if (!object(entry, label, ['id', 'title', 'category', 'tags', 'published_on', 'first_seen_at', 'canonical_url', 'links', 'summary', 'evidence', 'novelty', 'update_note', 'positioning', 'public_availability'])) return;
     if (!nonempty(entry.id) || !/^[a-z0-9][a-z0-9._:/-]*$/.test(entry.id)) fail(`${label}.id must be a lowercase stable identifier.`);
     if (ids.has(stableId(entry.id))) fail(`${label}: duplicate id ${entry.id}.`);
     ids.add(stableId(entry.id));
@@ -157,6 +157,20 @@ export function validateReport(report, { taxonomy, config = {}, filePath, now = 
     else if (entry.published_on > report.date || entry.published_on > localDate(now)) fail(`${label}.published_on cannot be in the future or after the report date.`);
     if (!isTimestamp(entry.first_seen_at)) fail(`${label}.first_seen_at must be an ISO timestamp with an explicit offset.`);
     else if (Date.parse(entry.first_seen_at) > now.getTime() + 300_000 || (isTimestamp(report.generated_at) && Date.parse(entry.first_seen_at) > Date.parse(report.generated_at) + 300_000)) fail(`${label}.first_seen_at cannot be after generation or in the future (five-minute clock tolerance).`);
+    if (entry.public_availability !== undefined && object(entry.public_availability, `${label}.public_availability`, ['at', 'basis', 'sources'])) {
+      const availability = entry.public_availability;
+      if (!isTimestamp(availability.at)) fail(`${label}.public_availability.at must be an ISO timestamp with an explicit offset.`);
+      else {
+        const availableAt = Date.parse(availability.at);
+        if (availableAt > now.getTime() || (isTimestamp(report.coverage?.end) && availableAt > Date.parse(report.coverage.end))) fail(`${label}.public_availability.at must not be after the scheduled cutoff or in the future.`);
+        if (landscape && isDate(report.date) && localDate(new Date(availableAt)) > report.date) fail(`${label}.public_availability.at must not be after the landscape as-of date.`);
+        if (isDate(entry.published_on) && availableAt < Date.parse(`${entry.published_on}T00:00:00Z`)) fail(`${label}.public_availability.at must not precede the retained original publication date.`);
+        if (isTimestamp(entry.first_seen_at) && availableAt > Date.parse(entry.first_seen_at)) fail(`${label}.public_availability.at must not be after first_seen_at.`);
+      }
+      if (!['dated-source', 'announcement-schedule'].includes(availability.basis)) fail(`${label}.public_availability.basis must distinguish dated-source from announcement-schedule.`);
+      if (!Array.isArray(availability.sources) || availability.sources.length === 0 || availability.sources.some(url => !isHttps(url)) || new Set(availability.sources).size !== availability.sources.length) fail(`${label}.public_availability.sources must contain distinct HTTPS sources.`);
+      else if (!Array.isArray(report.search?.sources_checked) || availability.sources.some(url => !report.search.sources_checked.some(source => source?.url === url && source?.status === 'ok'))) fail(`${label}.public_availability.sources must have successful source checks in this report.`);
+    }
     if (!isHttps(entry.canonical_url)) fail(`${label}.canonical_url must be a real HTTPS URL.`);
     if (object(entry.links, `${label}.links`, ['paper', 'blog', 'code', 'project'])) for (const [key, value] of Object.entries(entry.links)) if (!isHttps(value)) fail(`${label}.links.${key} must be a real HTTPS URL.`);
     const min = config.summary_sentences?.min ?? 2;
@@ -178,9 +192,16 @@ export function validateReport(report, { taxonomy, config = {}, filePath, now = 
     }
     if (entry.novelty === 'material-update' || entry.update_note !== undefined) prose(entry.update_note, `${label}.update_note`);
     if (isTimestamp(report.coverage?.end) && isDate(entry.published_on)) {
-      const discoveryStart = localDate(new Date(Date.parse(report.coverage.end) - (config.discovery_lookback_hours ?? 72) * 3_600_000));
-      if (entry.novelty === 'newly-discovered' && entry.published_on < discoveryStart) fail(`${label}.published_on is outside the discovery lookback; a dated material update is required for older work.`);
-      if (entry.novelty === 'new' && isTimestamp(report.coverage.start) && entry.published_on < localDate(new Date(report.coverage.start))) fail(`${label}.published_on predates the daily coverage; use newly-discovered only within the discovery lookback.`);
+      const discoveryStartMs = Date.parse(report.coverage.end) - (config.discovery_lookback_hours ?? 72) * 3_600_000;
+      const discoveryStart = localDate(new Date(discoveryStartMs));
+      if (entry.public_availability !== undefined) {
+        const availableAt = Date.parse(entry.public_availability?.at);
+        if (entry.novelty === 'newly-discovered' && availableAt < discoveryStartMs) fail(`${label}.public_availability.at is outside the discovery lookback; a dated material update is required for older work.`);
+        if (entry.novelty === 'new' && isTimestamp(report.coverage.start) && availableAt < Date.parse(report.coverage.start)) fail(`${label}.public_availability.at predates the daily coverage; use newly-discovered only within the discovery lookback.`);
+      } else {
+        if (entry.novelty === 'newly-discovered' && entry.published_on < discoveryStart) fail(`${label}.published_on is outside the discovery lookback; a dated material update is required for older work.`);
+        if (entry.novelty === 'new' && isTimestamp(report.coverage.start) && entry.published_on < localDate(new Date(report.coverage.start))) fail(`${label}.published_on predates the daily coverage; use newly-discovered only within the discovery lookback.`);
+      }
       if (entry.novelty === 'material-update' && nonempty(entry.update_note)) {
         const dates = entry.update_note.match(/\b\d{4}-\d{2}-\d{2}\b/g) ?? [];
         if (!dates.some(date => isDate(date) && date >= discoveryStart && date <= report.date)) fail(`${label}.update_note must identify a recent update date (YYYY-MM-DD) within the discovery window.`);
@@ -235,6 +256,7 @@ function entryMarkdown(entry, { includeCategory = false, taxonomy } = {}) {
     lines.push(`**Topic:** ${escapeText(topic.title)}`, '');
   }
   lines.push(`**Published:** ${entry.published_on} · **First seen:** ${entry.first_seen_at} · **Novelty:** ${entry.novelty} · **Tags:** ${entry.tags.map(escapeText).join(', ')}`, '');
+  if (entry.public_availability) lines.push(`**Public availability:** ${entry.public_availability.at} (${entry.public_availability.basis === 'announcement-schedule' ? 'inferred from dated announcement and official schedule' : 'dated primary source'}). ${entry.public_availability.sources.map(url => link('Timing source', url)).join(' · ')}`, '');
   if (entry.positioning) lines.push(`**Positioning:** ${entry.positioning}`, '');
   const links = Object.entries(entry.links).map(([key, url]) => link(key[0].toUpperCase() + key.slice(1), url));
   if (links.length) lines.push(links.join(' · '), '');

@@ -55,6 +55,14 @@
         "tags": { "type": "array", "minItems": 2, "maxItems": 4, "uniqueItems": true, "items": { "$ref": "#/$defs/text" } },
         "published_on": { "$ref": "#/$defs/date" },
         "first_seen_at": { "$ref": "#/$defs/timestamp" },
+        "public_availability": {
+          "type": "object", "additionalProperties": false, "required": ["at", "basis", "sources"],
+          "properties": {
+            "at": { "$ref": "#/$defs/timestamp" },
+            "basis": { "enum": ["dated-source", "announcement-schedule"] },
+            "sources": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/https" } }
+          }
+        },
         "canonical_url": { "$ref": "#/$defs/https" },
         "links": {
           "type": "object", "additionalProperties": false,

@@ -5,6 +5,22 @@ Attention execution, KV management/reuse, offloading and long-context memory eff
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-06](../../../reports/2026/10/2026-10-06.md) — PARTIAL SEARCH
+
+### [MOLT: A Fine-Grained GPU Memory Sharing System for LLM Serving with Opportunistic Fine-Tuning](<https://arxiv.org/abs/2610.05748>)
+
+MOLT lets inference reclaim individual saved activations from a colocated fine-tuning job, which recomputes them later instead of restarting its current training step. Tracking outstanding GPU work and coordinating reclamation across tensor-parallel ranks makes idle serving memory usable for adaptation while preserving priority for latency-sensitive requests.
+
+**Published:** 2026-10-05 · **First seen:** 2026-10-06T10:03:46Z · **Novelty:** new · **Tags:** Memory Sharing, Activation Recomputation, Serving, LoRA
+
+**Public availability:** 2026-10-06T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/recent>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.05748>)
+
+**Evidence:** research-paper; full-text. The October 6 announcement batch establishes eligibility; original v1 is October 5 03:53:21 UTC. Sections 4–5 and Table 2 evaluate rank-8 LoRA on Mistral-Small-24B and Llama-3.1-70B across four H100 SXM/B200 deployments. Under BurstGPT arrivals, MOLT completes 1.9–3.3x the tuning tokens/s of LLMStation+SIRIUS, with 99.7–100% inference SLO attainment.
+
+**Limitations:** SLO means both TTFT and TPOT are within three times the inference-only mean, not unchanged latency. Evidence covers two models and trace-driven workloads, with offline activation/dispatch profiling and substantial vLLM/PyTorch changes; it does not establish adaptation-quality gains. No primary-linked public implementation was verified or experiment reproduced.
+
 ## [2026-10-04](../../../reports/2026/10/2026-10-04.md) — PARTIAL SEARCH
 
 ### [MoE-CORE: Coordinated Expert Offloading and Residency for Memory-Constrained MoE Inference](<https://arxiv.org/abs/2610.01950>)

@@ -5,6 +5,38 @@ GPU kernels, operator fusion, compilation, execution graphs and hardware adaptat
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-06](../../../reports/2026/10/2026-10-06.md) — PARTIAL SEARCH
+
+### [RESOLVE: Language-Agnostic Validation of GPU Kernels Through Testing, Reduction, and Proof](<https://arxiv.org/abs/2610.05683>)
+
+RESOLVE combines GPU scheduling perturbations, agent-generated reductions of concurrency, and proofs that simplified kernels share a mathematical specification. This helps check aggressively optimized kernels across programming languages, catching some concurrency failures that ordinary numerical-tolerance tests miss while making functional reasoning more tractable.
+
+**Published:** 2026-10-05 · **First seen:** 2026-10-06T10:03:46Z · **Novelty:** new · **Tags:** Kernel Validation, Concurrency Testing, Formal Verification, Coding Agents
+
+**Public availability:** 2026-10-06T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/recent>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.05683>)
+
+**Evidence:** research-paper; full-text. The October 6 announcement batch establishes eligibility; original v1 is October 5 01:51:04 UTC. H100 PCIe experiments complete the full workflow for 11 of 14 selected KernelBench candidates, including formal proofs of their reduced specifications, and test three fused-MLP implementations. The tester exposes four mega-kernel issues, including two clear bugs; Sections 3–6 distinguish testing from proof.
+
+**Limitations:** The original-to-reduced links are tested, not proved, and the final specification uses real-number semantics without floating-point error bounds. Testing misses some concurrency scopes and rejects legitimate nondeterminism; full validation takes a median 143 minutes in the selected subset. No primary-linked public RESOLVE artifact was verified, and results were not reproduced.
+
+## [2026-10-06](../../../reports/2026/10/2026-10-06.md) — PARTIAL SEARCH
+
+### [SyclKittens: A Tile Programming Model for Programmers and Coding Agents on Intel GPUs](<https://arxiv.org/abs/2610.04277>)
+
+SyclKittens packages Intel GPU matrix layouts, cooperative cache prefetching, and topology-aware communication into reusable tile operations while leaving workload schedules programmable. These building blocks help coding agents search more effectively and support an engineer-assisted kernel suite that accelerates the evaluated Llama inference paths.
+
+**Published:** 2026-10-03 · **First seen:** 2026-10-06T10:03:46Z · **Novelty:** new · **Tags:** Intel GPU, Tile Programming, Kernel Optimization, Coding Agents
+
+**Public availability:** 2026-10-06T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/recent>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.04277>) · [Code](<https://github.com/intel/SyclKittens>)
+
+**Evidence:** research-paper; full-text. First announced October 6; original October 3 04:06:24 UTC submission is preserved while public availability falls inside this daily window. On Intel Max 1550, the controlled Opus GEMM study improves peak-of-three performance from 57.5% to 82.1% of oneDNN. Separately, the co-designed suite reports 1.59x geometric-mean full-request rate versus torch.compile on 21 matched Llama-3.1-8B configurations. The linked implementation and build documentation are accessible.
+
+**Limitations:** One accelerator family and one end-to-end model; agent benefits vary by task/model. The reported request-rate formula counts batch-wide prompt tokens plus generated length per stream, not conventional aggregate token throughput. Co-designed results are distinct from autonomous-agent results; longer-context capacity comparisons use differing GPU counts. No results were reproduced.
+
 ## [2026-10-04](../../../reports/2026/10/2026-10-04.md) — PARTIAL SEARCH
 
 ### [Optimizing Jagged Flash Attention with TLX: The Road Toward SOTA FA4 on Blackwell](<https://pytorch.org/blog/optimizing-jagged-flash-attention-with-tlx-the-road-toward-sota-fa4-on-blackwell/>)

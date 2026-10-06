@@ -5,6 +5,22 @@ Objectives, optimizers, learning rates, batch sizes and training stability.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-06](../../../reports/2026/10/2026-10-06.md) — PARTIAL SEARCH
+
+### [LightMTP: Lightweight Latent Multi-Token Prediction](<https://arxiv.org/abs/2610.06031>)
+
+LightMTP adds a small auxiliary head that predicts the model's own future intermediate hidden states, using stopped-gradient targets from the same training pass alongside next-token prediction. The head is discarded at inference, offering an inexpensive way to encourage future-aware representations and improve some structured reasoning tasks without changing ordinary decoding.
+
+**Published:** 2026-10-05 · **First seen:** 2026-10-06T10:03:05Z · **Novelty:** new · **Tags:** Pretraining, Multi-Token Prediction, Latent Targets
+
+**Public availability:** 2026-10-06T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.06031>)
+
+**Evidence:** research-paper; full-text. Experiments cover 286M–1.4B decoders and multiple seeds. Countdown accuracy rises from 46.4% for next-token training to 56.7% for a LightMTP variant; the main 24-layer heads add 0.3–0.9% parameters. Original submission: 2026-10-05T09:30:30Z; October 6's listing establishes the later 00:00Z public batch inside the main window.
+
+**Limitations:** General-language aggregate results remain near the next-token baseline, and a linear token-prediction baseline scores higher on Countdown. Training budgets grow with head size and are not matched for tokens or compute; small parameter overhead is not zero training cost. Some headline GSM8K results use a relaxed matching metric. No author implementation was verified.
+
 ## [2026-09-30](../../../reports/2026/09/2026-09-30.md) — PARTIAL SEARCH
 
 ### [Pretraining Latent Information Feedback Transformers with Teacher Supervision](<https://arxiv.org/abs/2609.38149>)

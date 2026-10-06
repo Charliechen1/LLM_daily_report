@@ -33,6 +33,8 @@ Required report fields are `schema_version` (1), `date`, `timezone`, `generated_
 
 Each entry contains `id`, `title`, a taxonomy `category`, 2–4 `tags`, `published_on`, `first_seen_at`, `canonical_url`, `links`, a 2–3 sentence English `summary`, `evidence`, and `novelty`. Evidence records its type (`research-paper`, `technical-report`, or `engineering-report`), access (`full-text` or `abstract-only`), rationale, and limitations. Novelty is `new`, `newly-discovered`, or `material-update`; a material update also requires `update_note`.
 
+If first public release differs from the submission date, preserve `published_on` and add `public_availability: { "at": "2026-10-06T00:00:00Z", "basis": "announcement-schedule", "sources": ["https://arxiv.org/list/cs.CL/recent", "https://info.arxiv.org/help/availability.html"] }` only after checking the dated announcement and official schedule. Use `dated-source` for a directly documented release timestamp. List each timing source under successful source checks. The renderer makes the distinction visible; the validator uses exact coverage and discovery boundaries for these entries.
+
 Do not copy the illustrative Markdown template into the published archive. Generate reading views from reviewed JSON so daily reports and topic indexes stay consistent.
 
 ## 4. Validate and publish

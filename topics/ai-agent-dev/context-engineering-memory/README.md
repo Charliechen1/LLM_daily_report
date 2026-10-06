@@ -5,6 +5,22 @@ Context organization/compression, working memory, long-term memory and state.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-06](../../../reports/2026/10/2026-10-06.md) — PARTIAL SEARCH
+
+### [MemPilot: Orchestrating On-Demand Multimodal Memory Curation for LLM Agents](<https://arxiv.org/abs/2610.06830>)
+
+MemPilot learns when to reuse compressed memory and when to ask another model to re-examine raw text or images for the current question. Jointly choosing evidence volume, processing instructions and model capacity provides a way to balance answer quality against memory-processing cost and modeled latency.
+
+**Published:** 2026-10-05 · **First seen:** 2026-10-06T10:03:31Z · **Novelty:** new · **Tags:** Multimodal Memory, Adaptive Retrieval, Resource-Aware Policies
+
+**Public availability:** 2026-10-06T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.06830v1>) · [Code](<https://github.com/ViktorAxelsen/MemPilot>)
+
+**Evidence:** research-paper; full-text. The authors evaluate five memory benchmarks, including two held-out distributions, with separate downstream answer models and ablations of routing and reward credit. Reinforcement learning trains policies with different quality, monetary-cost and latency preferences; implementation and configuration files are publicly accessible.
+
+**Limitations:** Reported latency uses a token-based proxy rather than measured deployment wall time, and cost aggregates questions per conversation history rather than per question. Filtered benchmark splits, model-based grading and one greedy trajectory per query constrain comparisons. Preference changes are evaluated through trained policies; the paper does not establish universal gains or a free runtime adjustment.
+
 ## [2026-10-03](../../../reports/2026/10/2026-10-03.md) — PARTIAL SEARCH
 
 ### [AutoCompact: Learning When to Compact Context in Long-Horizon Coding Agents](<https://arxiv.org/abs/2610.02163>)
