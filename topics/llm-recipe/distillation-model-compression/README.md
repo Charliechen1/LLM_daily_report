@@ -5,6 +5,22 @@ Knowledge/reasoning distillation, pruning, quantization algorithms and model mer
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-07](../../../reports/2026/10/2026-10-07.md) — PARTIAL SEARCH
+
+### [Rethinking Cross-Tokenizer On-Policy Distillation: From Alignment Coverage to Supervision Reliability](<https://arxiv.org/abs/2610.08448>)
+
+This study distills between differently tokenized models using strictly aligned positions and reverse KL over shared vocabulary, then compresses supervision to a student-selected top-16 subset. The tested results favor reliable token-level feedback over an added mismatch-span loss, suggesting that broader supervision coverage need not improve practical distillation.
+
+**Published:** 2026-10-06 · **First seen:** 2026-10-07T10:04:34Z · **Novelty:** new · **Tags:** On-Policy Distillation, Token Alignment, Teacher Supervision
+
+**Public availability:** 2026-10-07T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/recent?show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.08448>)
+
+**Evidence:** research-paper; full-text. Across three main teacher-student pairs, top-16 retains at least 96% of full strict-supervision gains on domain-balanced math/code accuracy. The appendix adds a 235B teacher and ALFWorld tests. Gradient diagnostics examine why the span objective conflicts with strict supervision. Original v1: 2026-10-06T14:37:22Z; verified October 7 new-submission batch.
+
+**Limitations:** The negative coverage result concerns a particular span-MSE objective and weight sweep, not every possible mismatch loss. Gradient alignment is diagnostic rather than causal proof. Reported math/code metrics average sampled accuracy, not pass@32 or pass@8. No author implementation was verified.
+
 ## [2026-10-05](../../../reports/2026/10/2026-10-05.md) — PARTIAL SEARCH
 
 ### [Divergence controls entropy in distillation](<https://arxiv.org/abs/2610.03529>)

@@ -5,6 +5,22 @@ Domain continued pretraining, context extension, continual learning and forgetti
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-07](../../../reports/2026/10/2026-10-07.md) — PARTIAL SEARCH
+
+### [When Forgetting is not Catastrophic: On the Mechanics of Spurious Forgetting](<https://arxiv.org/abs/2610.08718>)
+
+This study separates reversible loss of access to facts from lasting fact-specific erosion during fine-tuning, using a minimal memory model and controlled neural-network interventions. It shows why an accuracy collapse need not imply erased knowledge, providing a useful diagnostic framework for continual-learning experiments.
+
+**Published:** 2026-10-06 · **First seen:** 2026-10-07T10:04:34Z · **Novelty:** new · **Tags:** Continual Learning, Forgetting, Mechanistic Analysis
+
+**Public availability:** 2026-10-07T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/recent?show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.08718>) · [Code](<https://github.com/vedantpalit/spurious-forgetting-mechanics>)
+
+**Evidence:** research-paper; full-text. Controlled Transformers and three-seed OLMo 2 1B experiments support the mechanism; removing the leading singular component of accumulated weight changes restores old-fact recall beyond a matched-norm random control. Author code covers all three experimental settings. Original v1: 2026-10-06T17:25:48Z; October 7's new-submission listing supports the inferred public batch.
+
+**Limitations:** The weight intervention is an evaluation-only edit; original weights are restored before training resumes. It also reduces new-fact recall. Spontaneous recovery occurs for synthetic individuals but not the tested real-entity facts. The minimal model uses deliberately strong assumptions, and pretrained evidence is limited to one 1B model.
+
 ## [2026-09-29 — Landscape baseline](../../../landscape/2026-09-29.md) — PARTIAL SEARCH
 
 ### [Olmo 3](<https://arxiv.org/abs/2512.13961>)

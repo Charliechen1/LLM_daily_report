@@ -5,6 +5,22 @@ Transformers, MoE, SSM/hybrid architectures and model/data/compute allocation.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-07](../../../reports/2026/10/2026-10-07.md) — PARTIAL SEARCH
+
+### [DeltaTTT: Layerwise Optimization for Nonlinear Recurrent Memory](<https://arxiv.org/abs/2610.08553>)
+
+DeltaTTT trains a nonlinear recurrent memory through separate local delta-rule objectives for its two layers, with chunkwise computation that preserves their tokenwise updates. The design improves the tested recurrent models' context use while retaining a compact memory state, offering an alternative between linear memory and full attention.
+
+**Published:** 2026-10-06 · **First seen:** 2026-10-07T10:04:34Z · **Novelty:** new · **Tags:** Recurrent Memory, Test-Time Training, Delta Rule
+
+**Public availability:** 2026-10-07T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.08553>)
+
+**Evidence:** research-paper; full-text. Roughly 0.5B models share 92.5B training tokens and 32K sequences. In the LaCT backbone, mean single-needle retrieval rises from 37.87 to 50.47; training throughput is 1.37 times the full-attention reference with 0.69 times its reserved memory. Original v1: 2026-10-06T15:40:06Z; verified October 7 new-submission batch.
+
+**Limitations:** Full attention still reaches 72.42 on the retrieval aggregate and lower held-out loss. DeltaNet is faster and uses less memory than DeltaTTT. Experiments use a two-layer memory and 512-token sliding attention at modest model scale; no author implementation or independent reproduction was verified.
+
 ## [2026-10-06](../../../reports/2026/10/2026-10-06.md) — PARTIAL SEARCH
 
 ### [Byte Language Models: Scaling, Emergent Abstractions, and Information Allocation](<https://arxiv.org/abs/2610.05978>)

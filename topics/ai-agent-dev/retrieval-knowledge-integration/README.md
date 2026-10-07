@@ -5,6 +5,20 @@ RAG, agentic search, query rewriting, knowledge bases and external grounding.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-07](../../../reports/2026/10/2026-10-07.md) — PARTIAL SEARCH
+
+### [EmbeddingGemma 2: an open, lightweight multimodal embedding model](<https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/>)
+
+EmbeddingGemma 2 maps text, code, images, audio and video into a shared embedding space using a modular 740M-parameter model with selectively loadable encoders. Its open weights and truncatable vectors make local multimodal retrieval practical, with the model card reporting higher code-retrieval quality than its predecessor while exposing the quality cost of smaller vectors.
+
+**Published:** 2026-10-06 · **First seen:** 2026-10-07T10:04:54Z · **Novelty:** new · **Tags:** Multimodal Retrieval, On-Device, Open Weights, Vector Compression
+
+[Blog](<https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/>) · [Project](<https://huggingface.co/google/embeddinggemma-2>)
+
+**Evidence:** technical-report; full-text. The October 6 launch post, complete model-card architecture/evaluation/usage/limitations sections and Hugging Face weights listing were inspected. The full-precision 768-dimensional model card reports MTEB Code v1 mean NDCG@10 of 78.68 versus 68.76 for EmbeddingGemma 1; its vector-truncation table reports 76.18 at 256 dimensions and 71.41 at 128. The separately loadable text, vision and audio components are 270M, 170M and 300M parameters. This is a useful concrete open retrieval artifact; the linked GitHub destination is a general organization, so it is not labeled as a dedicated implementation.
+
+**Limitations:** Quality figures use full-precision checkpoints, whereas launch RAM estimates use quantization; they do not establish identical quantized accuracy. All modalities share the 8,192-token budget, and 128-dimensional vectors degrade multimodal retrieval more than text retrieval. Cross-language quality and task-prefix choices require application-specific checks; no independent benchmark reproduction was performed. The primary launch supplies a calendar date rather than an exact release clock.
+
 ## [2026-10-06](../../../reports/2026/10/2026-10-06.md) — PARTIAL SEARCH
 
 ### [T-Search: An Open Agentic Retriever and Playground for Hard Multi-Step Search](<https://arxiv.org/abs/2610.06782>)

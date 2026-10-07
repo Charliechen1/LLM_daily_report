@@ -5,6 +5,22 @@ Task success, trajectory evaluation, cost/reliability, prompt injection and perm
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-07](../../../reports/2026/10/2026-10-07.md) — PARTIAL SEARCH
+
+### [Agent in a Bottle: Can LLM Agents Turn Their Capabilities Into Cheap, Scalable Artifacts?](<https://arxiv.org/abs/2610.08775>)
+
+BOTTLED tests whether an agent can build and apply a reusable program or smaller model to an entire unlabeled workload under fixed time and API budgets. It measures the practical ability to turn expensive per-example competence into an economical batch solution, revealing failures that ordinary zero-shot accuracy misses.
+
+**Published:** 2026-10-06 · **First seen:** 2026-10-07T10:05:04Z · **Novelty:** new · **Tags:** Agent Evaluation, Reusable Artifacts, Amortized Cost
+
+**Public availability:** 2026-10-07T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/recent>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.08775v1>) · [Code](<https://github.com/aktsonthalia/bottled>)
+
+**Evidence:** research-paper; full-text. Across ten models, three tasks and two runs per setting, 31 of 60 agent runs underperform the stronger of two small-model distillation baselines with the same weighted-token budget. A populated public repository provides the harness, budget enforcement, datasets scripts and baselines.
+
+**Limitations:** Only three narrow NLP workloads and one harness are evaluated. Zero-shot scores and full-workload costs are estimated from 1,000 examples, while bottled predictions cover the full workload. Equal token budgets do not mean identical monetary or compute budgets, and contamination checking uses an agentic judge.
+
 ## [2026-10-05](../../../reports/2026/10/2026-10-05.md) — PARTIAL SEARCH
 
 ### [HyperBrowseComp: A Multilingual and Multimodal Stress Test for Web-Browsing Agents](<https://arxiv.org/abs/2610.03574>)

@@ -5,6 +5,22 @@ Accelerators, interconnects, cluster scheduling, profiling, utilization, cost an
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-07](../../../reports/2026/10/2026-10-07.md) — PARTIAL SEARCH
+
+### [T-CCL: Resource Efficient and Performant Collective Communication using Tensor Memory Accelerator](<https://arxiv.org/abs/2610.07098>)
+
+T-CCL uses Tensor Memory Accelerator operations and pipelined intra-node collectives to move and reduce data with fewer GPU compute resources. Leaving more resources available for concurrent computation improves the evaluated tensor-parallel inference workloads and communication/GEMM overlap.
+
+**Published:** 2026-10-05 · **First seen:** 2026-10-07T10:05:15Z · **Novelty:** new · **Tags:** Collective Communication, TMA, Tensor Parallelism, Serving
+
+**Public availability:** 2026-10-07T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/recent>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.07098>) · [Code](<https://github.com/ooverlap/ooverlap>)
+
+**Evidence:** research-paper; full-text. Sections IV–V test two H100 NVL GPUs and four GH200 GPUs. Figure 6 reports 1.10x and 1.15x geometric-mean throughput versus vLLM Auto for conversational and decode-heavy Qwen2.5-72B workloads on four GH200s. The public artifact repository and benchmark directories are accessible.
+
+**Limitations:** All vLLM comparisons disable CUDA graphs because T-CCL does not support them. Evidence covers small intra-node systems and synthetic prompts; some small-message cases regress. Patched NCCL-TMA profiling is separate from the vLLM comparison. The paper names artifact commit 9abd9cf, but that specific tree could not be retrieved. No results were reproduced.
+
 ## [2026-10-05](../../../reports/2026/10/2026-10-05.md) — PARTIAL SEARCH
 
 ### [RailWave: Adaptive Spatial and Temporal Scheduling for Expert-Parallel Communication](<https://arxiv.org/abs/2610.03415>)

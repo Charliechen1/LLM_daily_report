@@ -5,6 +5,22 @@ RLHF, RLVR, policy optimization, reasoning training, tool use and multi-turn age
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-07](../../../reports/2026/10/2026-10-07.md) — PARTIAL SEARCH
+
+### [TRACE: Rollout-Guided Quantization-Aware Training for FP4 Reinforcement Learning of MoE Language Models](<https://arxiv.org/abs/2610.07767>)
+
+TRACE uses recorded rollout quantization outcomes to guide training-time FP4 rounding, compressing the guidance to mantissa bits and scales from later layers. This reduces train-rollout mismatch in the tested MoE reinforcement-learning runs, helping preserve model quality while exploiting cheaper low-precision generation.
+
+**Published:** 2026-10-06 · **First seen:** 2026-10-07T10:09:33Z · **Novelty:** new · **Tags:** Quantization-Aware RL, FP4, Policy Consistency
+
+**Public availability:** 2026-10-07T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.07767>)
+
+**Evidence:** research-paper; full-text. Four Qwen MoE models span reasoning, coding and long-horizon tasks. The 35B model averages 75.3 versus BF16's 74.9 and ordinary QAT's 59.6. Its rollout reaches up to 5.4 times BF16 throughput at 128K outputs on four GB200s; RL step overhead versus vanilla joint FP4 is 7.4%. Original v1: 2026-10-06T05:03:47Z; public batch inferred from October 7's listing.
+
+**Limitations:** The speedup is for decoding, not total training. Only routed experts and attention KV are quantized; backward remains BF16. Exact-codeword guidance has a local guarantee that does not extend to global policy divergence, and compressed guidance is approximate. Results are author-run point estimates; no author implementation was verified.
+
 ## [2026-10-06](../../../reports/2026/10/2026-10-06.md) — PARTIAL SEARCH
 
 ### [LoGRA: Scaling LLM Reinforcement Learning with Low-Rank Gradient Sketches](<https://arxiv.org/abs/2610.06647>)

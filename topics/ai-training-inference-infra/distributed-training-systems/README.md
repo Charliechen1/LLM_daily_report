@@ -5,6 +5,22 @@ Data/tensor/pipeline/expert/context parallelism, sharding and communication over
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-07](../../../reports/2026/10/2026-10-07.md) — PARTIAL SEARCH
+
+### [Memory-Efficient Expert Routing for Distributed MoE Training](<https://arxiv.org/abs/2610.07333>)
+
+RelayMoE routes expert computation through a ring and recomputes transient intermediates locally, avoiding the large expanded dispatch buffers of conventional all-to-all routing. Choosing token or weight circulation according to communication cost frees memory for larger batches, longer contexts or fewer attention recomputations.
+
+**Published:** 2026-10-05 · **First seen:** 2026-10-07T10:05:15Z · **Novelty:** new · **Tags:** MoE, Expert Parallelism, Activation Recomputation
+
+**Public availability:** 2026-10-07T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/recent>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.07333>)
+
+**Evidence:** research-paper; full-text. Sections 4.1–4.5 evaluate MareNostrum5 H100 64GB GPUs. Figure 11 doubles the largest tested Qwen3-30B and Qwen3.5-35B context from 393K to 786K on 32 GPUs. Figure 18 reports matching Qwen3-30B training-loss trajectories over 1,500 steps; the PDF supplies evaluation missing from truncated HTML.
+
+**Limitations:** Context capacity is not a long-context quality result. Throughput depends on shapes, routing and recomputation choices; wide-FFN cases can be slower. DeepEP comparisons are limited to four GPUs in one node and are generally comparable where both fit. Floating-point accumulation order can differ. No primary-linked public implementation was verified or experiment reproduced.
+
 ## [2026-10-02](../../../reports/2026/10/2026-10-02.md) — PARTIAL SEARCH
 
 ### [Introducing Olmo-core 3: Open, scalable training infrastructure for large MoEs](<https://allenai.org/blog/olmocore3>)

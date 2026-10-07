@@ -5,6 +5,22 @@ Distributed rollouts, asynchronous RL, generation/training coordination and weig
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-07](../../../reports/2026/10/2026-10-07.md) — PARTIAL SEARCH
+
+### [NeMo-DCR: Bit-Exact Delta-Compressed Refit for Scalable Agentic RL at Trillion-Parameter Scale](<https://arxiv.org/abs/2610.08430>)
+
+The NeMo-DCR paper evaluates sparse synchronization of changed weight bits between training and rollout systems with different shard layouts. Canonical coordinates, selective conversion and retry-safe repairs reduce transfer volume while preserving exact dense-refit results under stated loader and failure assumptions.
+
+**Published:** 2026-10-06 · **First seen:** 2026-10-07T10:05:15Z · **Novelty:** new · **Tags:** Weight Synchronization, Agentic RL, Delta Compression, Failure Recovery
+
+**Public availability:** 2026-10-07T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/recent>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.08430>) · [Code](<https://github.com/NVIDIA-NeMo/RL/pull/2444>) · [Project](<https://docs.nvidia.com/nemo/rl/nightly/guides/refit.html>)
+
+**Evidence:** research-paper; full-text. Sections 8.1–8.6 evaluate cross-region refits with 32 GB300 training GPUs and 64 H100 rollout GPUs. At 3% synthetic changes, Table 4 reports 22.6 seconds for 120B relay refit versus 750 seconds for full-checkpoint transport. Separate 30B GRPO experiments span 50 steps and five runs, including injected receiver failures.
+
+**Limitations:** The reference measures transport only, not dense load or end-to-end RL. Stress tests use synthetic 3–5% changes; 1T doubles Nemotron-550B layers. Exactness is conditional; quantized rollout is unsupported. This is a new paper/evaluation of code merged in July, not a new implementation release. No results were reproduced.
+
 ## [2026-10-05](../../../reports/2026/10/2026-10-05.md) — PARTIAL SEARCH
 
 ### [VenusRL: A Fully Disaggregated Agentic RL System with Priority Scheduling and Scalable Interaction](<https://arxiv.org/abs/2610.03286>)

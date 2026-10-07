@@ -5,6 +5,22 @@ Long-running execution, failure recovery, retries, persistence and human collabo
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-07](../../../reports/2026/10/2026-10-07.md) — PARTIAL SEARCH
+
+### [Beyond Corrected Memory: Execution Consistency in Multi-Agent Systems](<https://arxiv.org/abs/2610.08101>)
+
+CAVERT links task duties to evidence of message receipt, state use and lasting tool effects, then applies explicit rules for violation, fulfillment or insufficient evidence. These checks turn shared-memory records into actionable execution diagnostics and can guide state refresh before an unsafe proposed write is committed.
+
+**Published:** 2026-10-06 · **First seen:** 2026-10-07T10:05:04Z · **Novelty:** new · **Tags:** Execution Contracts, Evidence Sufficiency, Pre-Commit Recovery
+
+**Public availability:** 2026-10-07T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/recent>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.08101v1>)
+
+**Evidence:** research-paper; full-text. On 720 annotated executions, diagnostic accuracy is 87.1% versus 80.6% for a contract-prompted LLM and 78.9% for rules. Matched recovery experiments hold the gate and executor limits fixed; AppWorld success rises from 89/180 to 122/180 versus rule-guided recovery.
+
+**Limitations:** Semantic extraction can still produce unsupported no-violation judgments when logs are incomplete. The gate assumes interceptable, uncommitted writes and side-effect-free rejection; it cannot undo committed external effects. The paper describes supplementary implementation material, but no public repository link was located.
+
 ## [2026-10-06](../../../reports/2026/10/2026-10-06.md) — PARTIAL SEARCH
 
 ### [Sentry: Learning to Recover from LLM Agent Failures at Test Time](<https://arxiv.org/abs/2610.02994>)
