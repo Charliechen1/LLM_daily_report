@@ -338,7 +338,7 @@
         "type": "research-paper",
         "access": "full-text",
         "rationale": "Sections 8.1–8.6 evaluate cross-region refits with 32 GB300 training GPUs and 64 H100 rollout GPUs. At 3% synthetic changes, Table 4 reports 22.6 seconds for 120B relay refit versus 750 seconds for full-checkpoint transport. Separate 30B GRPO experiments span 50 steps and five runs, including injected receiver failures.",
-        "limitations": "The reference measures transport only, not dense load or end-to-end RL. Stress tests use synthetic 3–5% changes; 1T doubles Nemotron-550B layers. Exactness is conditional; quantized rollout is unsupported. This is a new paper/evaluation of code merged in July, not a new implementation release. No results were reproduced."
+        "limitations": "The reference measures transport only, not dense load or end-to-end RL. Stress tests use synthetic 3–5% changes; 1T doubles Nemotron-550B layers. Exactness is conditional; quantized rollout is unsupported. This is a new paper/evaluation of code merged in July, not a new implementation release. No results were reproduced. The linked PR's still-open recovery issue describes checkpoint reload after partial failure; parity with the paper's transactional recovery protocol was not independently verified."
       },
       "novelty": "new",
       "report_kind": "daily",
