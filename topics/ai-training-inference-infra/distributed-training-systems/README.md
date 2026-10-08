@@ -5,6 +5,22 @@ Data/tensor/pipeline/expert/context parallelism, sharding and communication over
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-08](../../../reports/2026/10/2026-10-08.md) — PARTIAL SEARCH
+
+### [Expert Coupling in MoE Pretraining: Reducing All-to-All Overhead with Correlated Placement and Token Shuffling](<https://arxiv.org/abs/2610.09372>)
+
+The method places frequently co-selected experts together and dispatches each token only once per destination GPU, reducing communication without changing router decisions. For compatible sequence-parallel layouts, it also predicts next-layer destinations and shuffles tokens within existing collectives to increase locality during MoE pretraining.
+
+**Published:** 2026-10-07 · **First seen:** 2026-10-08T10:04:07Z · **Novelty:** new · **Tags:** MoE, Expert Parallelism, Token Shuffling, Communication
+
+**Public availability:** 2026-10-08T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/recent?show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.09372>)
+
+**Evidence:** research-paper; full-text. Section VI and Appendix A use 13.6B, 12-layer models trained for 2.1B tokens on MI300X nodes. Placement plus deduplication reaches 1.41× step speedup at top-6 TP1/EP16; adding shuffling reaches 1.34× on TP16/EP16 against contiguous Megatron-LM routing.
+
+**Limitations:** Timings use medians of ten measured steps after four warm-ups, not full-run savings. Shuffling requires identical TP/EP groups; results cover one architecture with routing variants. Correlations need profiling, and long-run refresh behavior remains unverified. No dedicated code release was located.
+
 ## [2026-10-07](../../../reports/2026/10/2026-10-07.md) — PARTIAL SEARCH
 
 ### [Memory-Efficient Expert Routing for Distributed MoE Training](<https://arxiv.org/abs/2610.07333>)

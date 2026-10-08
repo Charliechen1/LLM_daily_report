@@ -5,6 +5,22 @@ Request scheduling, continuous batching, prefill/decode disaggregation and elast
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-08](../../../reports/2026/10/2026-10-08.md) — PARTIAL SEARCH
+
+### [DeepSeek-V4.1-Flash on vLLM: 5x Agentic Throughput Since Day 0](<https://vllm.ai/blog/2026-10-07-deepseek-v41-flash>)
+
+vLLM combines approximate sliding-window replay, CUDA graphs and model-specific fused kernels to reduce repeated prefill and decode work for DeepSeek-V4.1-Flash. Its GB300 NVL72 AgentX comparison reports 5.3× token throughput per chip at 155 tokens/s/user P90 interactivity, offering a concrete serving recipe for long, reusable agent contexts.
+
+**Published:** 2026-10-07 · **First seen:** 2026-10-08T10:04:26Z · **Novelty:** newly-discovered · **Tags:** Agentic Serving, Prefix Caching, CUDA Graphs, Kernel Fusion
+
+**Public availability:** 2026-10-07T09:00:00Z (dated primary source). [Timing source](<https://github.com/vllm-project/vllm-project.github.io/blob/main/_posts/2026-10-07-deepseek-v41-flash.md>)
+
+[Blog](<https://vllm.ai/blog/2026-10-07-deepseek-v41-flash>) · [Code](<https://github.com/vllm-project/vllm/issues/57448>) · [Project](<https://github.com/vllm-project/vllm>)
+
+**Evidence:** engineering-report; full-text. The October 7 engineering report explains encoder/decoder bounded replay and linked kernel integrations. Its Agentic performance chart compares optimal September 11 and October 2 configurations: 27K versus 144K tokens/s/chip at 155 tokens/s/user, with TP4 for low latency and DEP2 for throughput. The chart and tracking issue were inspected.
+
+**Limitations:** This is a new report about an existing model and older integrations, not a new model release. The gain bundles configuration and kernel changes; it is not one optimization's isolated effect. Replay is approximate; GSM8K/GPQA checks are within roughly 1.5 standard errors, not universal accuracy guarantees. Benchmark configurations and GPU generation limit portability. Delayed discovery: author-linked source dates the report October 7 09:00 UTC, one hour before the main interval, within the 72-hour lookback. No results were reproduced.
+
 ## [2026-10-05](../../../reports/2026/10/2026-10-05.md) — PARTIAL SEARCH
 
 ### [AFORE: Attention-FFN Disaggregation with Overlapped Reconfiguration of Experts](<https://arxiv.org/abs/2610.03203>)

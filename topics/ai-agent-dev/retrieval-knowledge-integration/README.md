@@ -5,6 +5,22 @@ RAG, agentic search, query rewriting, knowledge bases and external grounding.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-08](../../../reports/2026/10/2026-10-08.md) — PARTIAL SEARCH
+
+### [RECAST: Learning to Compute the Right Context through Adaptive Evidence Routing](<https://arxiv.org/abs/2610.10507>)
+
+RECAST trains a router to construct answer context through retrieval, relational queries and synthesized Python operations, using execution feedback to decide what evidence to gather next. This lets an agent compute task-specific evidence from tables and documents instead of relying only on retrieved passages, then hand the accepted context to a frozen answer model.
+
+**Published:** 2026-10-07 · **First seen:** 2026-10-08T10:03:51Z · **Novelty:** new · **Tags:** Agentic Retrieval, Evidence Routing, Code Synthesis
+
+**Public availability:** 2026-10-08T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/recent>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.10507v1>)
+
+**Evidence:** research-paper; full-text. With a trained Qwen3.5-9B router, average judged accuracy is 75.6% across six 100-question test sets, versus 64.1% for the untrained router and 59.7% for the strongest non-RECAST baseline. Three entirely held-out benchmark families additionally test generalization.
+
+**Limitations:** Frozen Gemini compiler, answer and judging models remain part of the system. Baselines receive no matching task-specific training; judged success and adapted baselines limit comparison scope. Multi-round latency and compiler errors remain concerns. The paper promises code, data and the trained router upon acceptance; no released implementation was verified.
+
 ## [2026-10-07](../../../reports/2026/10/2026-10-07.md) — PARTIAL SEARCH
 
 ### [EmbeddingGemma 2: an open, lightweight multimodal embedding model](<https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/>)

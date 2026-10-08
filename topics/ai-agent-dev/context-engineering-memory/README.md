@@ -5,6 +5,22 @@ Context organization/compression, working memory, long-term memory and state.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-08](../../../reports/2026/10/2026-10-08.md) — PARTIAL SEARCH
+
+### [RunningTab: Direct Workspace Interaction with Environment-Side Tabs](<https://arxiv.org/abs/2610.10444>)
+
+RunningTab maintains an external ledger of task requirements, captured file-reading observations and unopened candidate files while an agent works directly in a workspace. Requirement-focused review and a final completion check help the agent recover evidence that has left its context and identify missing parts of a deliverable.
+
+**Published:** 2026-10-07 · **First seen:** 2026-10-08T10:03:51Z · **Novelty:** new · **Tags:** Working Memory, Evidence Tracking, Workspace Agents
+
+**Public availability:** 2026-10-08T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/recent>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.10444v1>)
+
+**Evidence:** research-paper; full-text. Across three models and three workspace benchmarks, the authors report consistent gains over direct interaction and model-managed tracking. For DeepSeek V4 Flash, Workspace-Bench rubric pass rate rises from 53.28% to 59.99%, averaged over three runs; component ablations support the design. All methods share a 300-turn and one-hour task limit.
+
+**Limitations:** The citation gate checks lexical overlap, not semantic correctness. Two benchmarks use restricted subsets, and the capture ablation also removes dependent review/evidence features. Equal turn limits do not establish equal cost; no public implementation link was located.
+
 ## [2026-10-06](../../../reports/2026/10/2026-10-06.md) — PARTIAL SEARCH
 
 ### [MemPilot: Orchestrating On-Demand Multimodal Memory Curation for LLM Agents](<https://arxiv.org/abs/2610.06830>)

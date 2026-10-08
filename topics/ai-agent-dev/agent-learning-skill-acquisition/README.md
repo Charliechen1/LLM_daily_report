@@ -5,6 +5,22 @@ Learning from trajectories/feedback, skill generation/reuse, experience and self
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-08](../../../reports/2026/10/2026-10-08.md) — PARTIAL SEARCH
+
+### [SkillSandbox: Skill Verification via Dynamic Scenario Synthesis](<https://arxiv.org/abs/2610.10088>)
+
+SkillSandbox generates executable scenarios that preserve a skill's applicability conditions, then compares agent trajectories with and without that skill. It retains guidance supported by a positive score combining successful execution and remaining action counts, helping filter harmful memories before they enter a reusable skill library.
+
+**Published:** 2026-10-07 · **First seen:** 2026-10-08T10:03:51Z · **Novelty:** new · **Tags:** Skill Verification, Scenario Generation, Experience Reuse
+
+**Public availability:** 2026-10-08T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/recent>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.10088v1>)
+
+**Evidence:** research-paper; full-text. On 500 held-out WebShop tasks, Qwen3.5-27B success reaches 45.0%, versus 31.8% with unverified skills and 37.4% with ACE. Three executors and ALFWorld provide additional tests; a fixed-rollout-budget ablation compares synthesized, source and random verification tasks.
+
+**Limitations:** Evidence covers two constructible environments, with imperfect model-based scenario validation. Matching observations is not a causal guarantee, and library construction adds rollout costs. ALFWorld verification precision is only 39.1% in one analysis; the anonymous code page returned no inspectable content.
+
 ## [2026-10-05](../../../reports/2026/10/2026-10-05.md) — PARTIAL SEARCH
 
 ### [Not Until the Evidence Says So: Teaching LLM Investigators When to Close a Case](<https://arxiv.org/abs/2610.03190>)

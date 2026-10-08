@@ -5,6 +5,22 @@ Preference datasets, DPO-like methods, reward models and process supervision.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-08](../../../reports/2026/10/2026-10-08.md) — PARTIAL SEARCH
+
+### [Judging in Latent Space: Efficient Generative Reward Modeling via Semantics-Preserving Compression](<https://arxiv.org/abs/2610.09788>)
+
+LatentGRM trains a rubric-based preference judge to replace lengthy textual assessments with compact sequences of continuous states, using semantic boundaries to guide compression. It preserves broadly comparable preference accuracy while reducing judging time in the tested settings, with an optional offline decoder for inspecting compressed teacher evaluations.
+
+**Published:** 2026-10-07 · **First seen:** 2026-10-08T10:03:53Z · **Novelty:** new · **Tags:** Reward Modeling, Latent Reasoning, Semantic Compression
+
+**Public availability:** 2026-10-08T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.09788>)
+
+**Evidence:** research-paper; full-text. Matched Qwen3-4B/8B judges share 35,612 training records. The 8B model averages 69.0 versus 68.1 across eight domains and runs 6.11–6.95 times faster in four timed domains at vote@5 on eight GPUs. Original v1: 2026-10-07T10:05:06Z; verified October 8 new-submission batch.
+
+**Limitations:** Timing excludes offline rubric generation and interpretation; accuracy gains vary by domain. Reconstruction tests teacher-derived trajectories and does not establish faithful explanations of autonomous judgments. Evidence is limited to one backbone family and pairwise judging, without downstream RL validation or a verified author implementation.
+
 ## [2026-09-29 — Landscape baseline](../../../landscape/2026-09-29.md) — PARTIAL SEARCH
 
 ### [Direct Preference Optimization: Your Language Model is Secretly a Reward Model](<https://arxiv.org/abs/2305.18290>)

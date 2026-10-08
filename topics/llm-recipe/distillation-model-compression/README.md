@@ -5,6 +5,22 @@ Knowledge/reasoning distillation, pruning, quantization algorithms and model mer
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-08](../../../reports/2026/10/2026-10-08.md) — PARTIAL SEARCH
+
+### [On-Policy Distillation Teaches New Skills but Not New Knowledge](<https://arxiv.org/abs/2610.09639>)
+
+This controlled study separates learning new factual associations from learning how to compose known facts, then varies both distillation prefixes and KL direction. Its results suggest that student-generated trajectories help compositional reasoning, while forward KL can transfer missing facts more effectively than the tested reverse-KL recipe.
+
+**Published:** 2026-10-07 · **First seen:** 2026-10-08T10:03:53Z · **Novelty:** new · **Tags:** On-Policy Distillation, KL Divergence, Knowledge Transfer
+
+**Public availability:** 2026-10-08T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.09639>)
+
+**Evidence:** research-paper; full-text. Synthetic experiments cover four models from three families. With student prefixes, switching KL direction raises Qwen3-4B held-out-fact accuracy from 10.95% to 54.10%; a natural-task extension separates factual QA and mathematics. Original v1: 2026-10-07T08:15:10Z; verified October 8 new-submission batch establishes availability within the main window.
+
+**Limitations:** The title is stronger than the evidence: reverse KL sometimes transfers facts, and forward KL clearly does. Tests use one seed, LoRA and fixed budgets; the factual-QA extension reuses training questions as a transfer probe. No author implementation was verified.
+
 ## [2026-10-07](../../../reports/2026/10/2026-10-07.md) — PARTIAL SEARCH
 
 ### [Rethinking Cross-Tokenizer On-Policy Distillation: From Alignment Coverage to Supervision Reliability](<https://arxiv.org/abs/2610.08448>)

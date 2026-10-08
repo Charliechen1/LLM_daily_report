@@ -5,6 +5,38 @@ Domain continued pretraining, context extension, continual learning and forgetti
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-08](../../../reports/2026/10/2026-10-08.md) — PARTIAL SEARCH
+
+### [EngramEdit: Decoupled Knowledge Updates in LLMs through Conditional Memory](<https://arxiv.org/abs/2610.10533>)
+
+EngramEdit updates an LLM's conditional n-gram memory while keeping its Transformer backbone fixed, jointly fitting fact paraphrases and penalizing changes to frequently reused embeddings. This creates a targeted interface for revising facts that can generalize to new wording and support multi-hop use of edited knowledge in the tested model.
+
+**Published:** 2026-10-07 · **First seen:** 2026-10-08T10:03:53Z · **Novelty:** new · **Tags:** Knowledge Editing, Conditional Memory, Continual Learning
+
+**Public availability:** 2026-10-08T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.10533>) · [Code](<https://github.com/ModalityDance/EngramEdit>)
+
+**Evidence:** research-paper; full-text. On LongCat-Flash-Lite, 2,000 sequential CounterFact edits achieve 99.5% efficacy and 97.0% paraphrase generalization; specificity is 85.2%, versus 86.8% before editing. The method solves a reuse-weighted ridge system after fitting target memory representations. Author code and experiment instructions are accessible. Original v1: 2026-10-07T17:58:52Z; verified October 8 new-submission batch.
+
+**Limitations:** Evidence covers one conditional-memory model, not an ordinary Transformer or an empirical DeepSeek Engram test. Shared n-grams can still interfere, and general-capability checks use only 100 examples per task. The author repository was inspected but not reproduced.
+
+## [2026-10-08](../../../reports/2026/10/2026-10-08.md) — PARTIAL SEARCH
+
+### [A Deafening Silence: Catastrophic Forgetting Lives in the Output Embeddings of Tokens the Data Never Speaks](<https://arxiv.org/abs/2610.09835>)
+
+This study traces some domain-adaptation forgetting to rarely observed output-token embeddings, whose small persistent gradients Adam can turn into substantial updates. Increasing Adam's denominator epsilon only for the output projection reduces this drift during training, offering a simple retention intervention for vocabulary-shifting adaptation.
+
+**Published:** 2026-10-07 · **First seen:** 2026-10-08T10:03:53Z · **Novelty:** new · **Tags:** Continual Learning, Adam, Output Embeddings
+
+**Public availability:** 2026-10-08T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.09835>)
+
+**Evidence:** research-paper; full-text. The intervention raises output-projection epsilon from 1e-8 to 1e-4. Seven stable configurations spanning four model families report 39.4–67.9% reductions in old-domain cross-entropy degradation, with parameter-freezing controls supporting localization. Original v1: 2026-10-07T11:01:01Z; verified October 8 new-submission batch.
+
+**Limitations:** Retention is primarily held-out loss under vocabulary-shifting adaptation, not general benchmark accuracy. A six-seed Pythia-410M stress test weakens retention gains and loses target learning; learning-rate regime matters. The mechanism does not explain all forgetting or other optimizers. No author implementation was verified.
+
 ## [2026-10-07](../../../reports/2026/10/2026-10-07.md) — PARTIAL SEARCH
 
 ### [When Forgetting is not Catastrophic: On the Mechanics of Spurious Forgetting](<https://arxiv.org/abs/2610.08718>)

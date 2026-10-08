@@ -5,6 +5,22 @@ Accelerators, interconnects, cluster scheduling, profiling, utilization, cost an
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-08](../../../reports/2026/10/2026-10-08.md) — PARTIAL SEARCH
+
+### [Democratizing MoE inference on commodity GPUs with CoMoE](<https://arxiv.org/abs/2610.09424>)
+
+CoMoE lets GPUs route MoE tokens through pinned host memory, writing each remote token once and combining completed contributions without a batch-wide barrier. This reduces redundant PCIe traffic and exposed synchronization, making multi-GPU inference more efficient on the evaluated RTX 5090 server without NVLink.
+
+**Published:** 2026-10-07 · **First seen:** 2026-10-08T10:04:07Z · **Novelty:** new · **Tags:** MoE, PCIe Communication, Host Memory, Inference
+
+**Public availability:** 2026-10-08T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/recent>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.09424>)
+
+**Evidence:** research-paper; full-text. Sections 3–4 evaluate an SGLang backend on eight RTX 5090 GPUs, four BF16 MoEs and ShareGPT. Throughput improves 1.24–1.46× over SGLang 0.5.9 with NCCL on the same server; dispatch, combine and NUMA ablations isolate the mechanisms.
+
+**Limitations:** These are author measurements on a specific eight-GPU topology and 16–31B models, not a single-GPU or universal hardware result. Host staging still consumes PCIe/DRAM bandwidth. No dedicated public implementation was located, and benchmarks were not reproduced.
+
 ## [2026-10-07](../../../reports/2026/10/2026-10-07.md) — PARTIAL SEARCH
 
 ### [T-CCL: Resource Efficient and Performant Collective Communication using Tensor Memory Accelerator](<https://arxiv.org/abs/2610.07098>)
