@@ -5,6 +5,22 @@ Division of work, communication, delegation, collaboration topology and shared m
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-09](../../../reports/2026/10/2026-10-09.md) — PARTIAL SEARCH
+
+### [Recursive Self-Improvement through Multi-Agent Self-Supervision](<https://arxiv.org/abs/2610.12176>)
+
+MASS alternates searching for multi-agent workflows with training a shared model on the resulting coordinator and worker trajectories. The updated model then proposes, executes and evaluates workflows in the next cycle, creating a route to learning coordination without an external judge inside the main loop.
+
+**Published:** 2026-10-08 · **First seen:** 2026-10-09T10:05:20Z · **Novelty:** new · **Tags:** Multi-Agent, Self-Supervision, Workflow Optimization
+
+**Public availability:** 2026-10-09T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.12176>)
+
+**Evidence:** research-paper; full-text. Two Qwen3.6-27B cycles are evaluated with external reporting judges and public benchmarks. Appendix C/Table 7 reports MLR-Bench mean overall score rising from 1.58 to 2.40 on a 12-task subset, with delivered papers increasing from 31/60 to 50/60. Original v1: 2026-10-08T15:44:02Z; October 9 new-submission batch.
+
+**Limitations:** Completion drives part of the aggregate research gain; paired task-level evidence is weaker than trial-level significance. Terminal-Bench and SWE-bench scores decline. Performance per output token is not raw accuracy gain or total-compute savings; only two cycles were tested. Linked code and blog returned 404.
+
 ## [2026-10-05](../../../reports/2026/10/2026-10-05.md) — PARTIAL SEARCH
 
 ### [JOVE: Joint Execution and Verification for Resource-Aware LLM Task Graphs](<https://arxiv.org/abs/2610.03296>)

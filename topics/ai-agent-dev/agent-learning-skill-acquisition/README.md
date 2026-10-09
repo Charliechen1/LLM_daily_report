@@ -5,6 +5,22 @@ Learning from trajectories/feedback, skill generation/reuse, experience and self
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-09](../../../reports/2026/10/2026-10-09.md) — PARTIAL SEARCH
+
+### [When Should Agents Think? Adaptive Reasoning via Cross-Turn Estimation](<https://arxiv.org/abs/2610.12061>)
+
+RACE trains agents to skip repeated reasoning when earlier thoughts still support subsequent actions, estimating this through the likelihood of reference actions after reasoning removal. Supervised training and reinforcement learning turn these signals into a policy that can act directly when fresh deliberation is unnecessary.
+
+**Published:** 2026-10-08 · **First seen:** 2026-10-09T10:05:20Z · **Novelty:** new · **Tags:** Adaptive Reasoning, Agent Training, Cross-Turn Reuse
+
+**Public availability:** 2026-10-09T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.12061>)
+
+**Evidence:** research-paper; full-text. Table 2 compares Qwen3.5-9B against standard SFT+GRPO: WebShop reasoning tokens fall from 2,702 to 535 while success changes from 52.0% to 53.4%. Methods and four-environment evaluation were inspected. Original v1: 2026-10-08T14:43:09Z; October 9 new-submission batch.
+
+**Limitations:** Likelihood is a training proxy, not a causal guarantee. Reasoning-token reductions do not measure total training cost or end-to-end latency; AppWorld uses precomputed task-specific API lists. The paper-linked code repository is currently empty, and results were not reproduced.
+
 ## [2026-10-08](../../../reports/2026/10/2026-10-08.md) — PARTIAL SEARCH
 
 ### [SkillSandbox: Skill Verification via Dynamic Scenario Synthesis](<https://arxiv.org/abs/2610.10088>)

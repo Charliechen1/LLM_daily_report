@@ -5,6 +5,22 @@ Knowledge/reasoning distillation, pruning, quantization algorithms and model mer
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-09](../../../reports/2026/10/2026-10-09.md) — PARTIAL SEARCH
+
+### [DIAL-OPD: Learning More from Fewer Tokens in On-Policy Distillation](<https://arxiv.org/abs/2610.11659>)
+
+DIAL-OPD selects student-generated tokens for distillation by combining teacher–student disagreement with their absolute probability scale, reducing emphasis on tokens both models consider unlikely. Masking supervision this way improves mathematical reasoning in the tested small Qwen3 students, offering a practical way to allocate teacher signals more effectively.
+
+**Published:** 2026-10-08 · **First seen:** 2026-10-09T10:03:31Z · **Novelty:** new · **Tags:** On-Policy Distillation, Token Selection, Reasoning
+
+**Public availability:** 2026-10-09T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.11659>)
+
+**Evidence:** research-paper; full-text. Four Qwen3 teacher–student pairs and seven math benchmarks compare nine baselines. At 40% retention, mean accuracy improves by up to 5.25 points over Vanilla OPD and 1.24 over the strongest full-token variant. Original v1: 2026-10-08T10:36:00Z; October 9 new-submission batch verified.
+
+**Limitations:** Experiments use 0.6B/1.7B students, 4B/8B teachers and 800 updates. Masked tokens remain in context; reduced supervised-token count is not demonstrated end-to-end compute savings. Results are task- and hyperparameter-dependent. The paper-linked code repository returned HTTP 404 during verification.
+
 ## [2026-10-08](../../../reports/2026/10/2026-10-08.md) — PARTIAL SEARCH
 
 ### [On-Policy Distillation Teaches New Skills but Not New Knowledge](<https://arxiv.org/abs/2610.09639>)

@@ -5,6 +5,22 @@ Objectives, optimizers, learning rates, batch sizes and training stability.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-09](../../../reports/2026/10/2026-10-09.md) — PARTIAL SEARCH
+
+### [Smoothing the Top-k Exposure Boundary for Sparse Mixture-of-Experts](<https://arxiv.org/abs/2610.11575>)
+
+Elastic Expert Routing varies the number of active experts around the deployment budget during training, giving experts just beyond the usual cutoff occasional task-loss feedback. It improves the tested MoE models while retaining ordinary fixed top-k inference, providing a training intervention that preserves the serving architecture.
+
+**Published:** 2026-10-08 · **First seen:** 2026-10-09T10:03:31Z · **Novelty:** new · **Tags:** Mixture of Experts, Routing, Pretraining
+
+**Public availability:** 2026-10-09T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.11575>)
+
+**Evidence:** research-paper; full-text. A 6–10 expert schedule centered on eight improves nine-task SFT averages by 0.84 points on OLMoE and 2.02 on Qwen3-30B-A3B; 1.42B-model pretraining improves its separate task average by 1.6 points. Original v1: 2026-10-08T09:31:19Z; October 9 new-submission batch verified.
+
+**Limitations:** Matched expected expert FLOPs do not imply equal runtime: the preferred schedule costs about 3–5% more per SFT iteration. From-scratch evidence covers 26.25B tokens at moderate scale; results do not establish gains at frontier pretraining scale. No author implementation was verified.
+
 ## [2026-10-06](../../../reports/2026/10/2026-10-06.md) — PARTIAL SEARCH
 
 ### [LightMTP: Lightweight Latent Multi-Token Prediction](<https://arxiv.org/abs/2610.06031>)

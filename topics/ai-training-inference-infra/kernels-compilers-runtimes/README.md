@@ -5,6 +5,22 @@ GPU kernels, operator fusion, compilation, execution graphs and hardware adaptat
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-09](../../../reports/2026/10/2026-10-09.md) — PARTIAL SEARCH
+
+### [QUILT: Rethinking Sparse-Attention Prefill through Shared Query Execution](<https://arxiv.org/abs/2610.11134>)
+
+QUILT groups overlapping sparse-attention selections across nearby queries so shared key/value blocks can be processed together, while keeping each query's attention normalization separate. A pipelined grouping stage and hierarchical execution reduce prefill work, with optional clipping of small private residual tiles trading some attention fidelity for speed.
+
+**Published:** 2026-10-08 · **First seen:** 2026-10-09T10:07:33Z · **Novelty:** new · **Tags:** Sparse Attention, Prefill, Ascend, Kernel Optimization
+
+**Public availability:** 2026-10-09T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.11134>)
+
+**Evidence:** research-paper; full-text. Section 4 compares QUILT with OPS-Transformer inside XYServe on 16 Ascend 910C NPUs. Across four timed LongBench workloads, tensor-parallel TTFT falls 35.6% for GLM-5.3 and 23.0% for DeepSeek-3.2; 21-task LongBench mean absolute score changes are 0.42 and 0.75 points.
+
+**Limitations:** These are NPU measurements, not demonstrated GPU gains. Shared-selection overlap governs the benefit, sequence-parallel gains are smaller, and residual clipping is approximate. The quality averages do not imply unchanged scores on every task. No dedicated public implementation was located.
+
 ## [2026-10-06](../../../reports/2026/10/2026-10-06.md) — PARTIAL SEARCH
 
 ### [RESOLVE: Language-Agnostic Validation of GPU Kernels Through Testing, Reduction, and Proof](<https://arxiv.org/abs/2610.05683>)

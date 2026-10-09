@@ -5,6 +5,20 @@ Data filtering, deduplication, mixtures, synthetic data, quality and tokenizers.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-09](../../../reports/2026/10/2026-10-09.md) — PARTIAL SEARCH
+
+### [Adapting English Quality Classifiers for Multilingual LLM Pretraining Data Selection](<https://arxiv.org/abs/2610.11585>)
+
+This pipeline transfers English data-quality criteria to multilingual text by scoring translations and training small classifiers over frozen multilingual embeddings. Released classifiers achieve broadly comparable downstream performance to strong multilingual filters, making quality selection easier to extend without collecting separate annotations for every language.
+
+**Published:** 2026-10-08 · **First seen:** 2026-10-09T10:03:31Z · **Novelty:** newly-discovered · **Tags:** Data Curation, Multilingual, Quality Filtering
+
+[Paper](<https://arxiv.org/abs/2610.11585>) · [Project](<https://huggingface.co/epfml/FineWeb2-HQ-PlusPlus-Classifier>)
+
+**Evidence:** research-paper; full-text. The study tests 1B training from scratch and 3B/8B cooldown runs, selecting the top 10% of documents per language. Regional and cultural checks accompany classifier-transfer analyses, and the author model card exposes weights and inference code. Original v1: 2026-10-08T09:33:32Z; October 9 new-submission batch verified. Conservatively marked newly discovered: the confirmed paper batch is recent, but the earlier public availability of its classifier artifact cannot be reconstructed.
+
+**Limitations:** The largest models receive short cooldowns, not complete matched pretraining. Long-tail evidence partly uses synthetic text and LLM judges, and limited cultural benchmarks cannot establish absence of bias. Translation cost and inherited English quality preferences remain; prior public artifact timing is uncertain after repository-history squashing.
+
 ## [2026-10-05](../../../reports/2026/10/2026-10-05.md) — PARTIAL SEARCH
 
 ### [LESSER: Post-Training Data Selection with Output-Layer Gradients](<https://arxiv.org/abs/2610.03702>)

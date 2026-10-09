@@ -5,6 +5,22 @@ Task success, trajectory evaluation, cost/reliability, prompt injection and perm
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-09](../../../reports/2026/10/2026-10-09.md) — PARTIAL SEARCH
+
+### [On the estimation and validity of AI time horizons—a statistical look at the METR plot](<https://arxiv.org/abs/2610.12466>)
+
+This statistical audit re-estimates METR's software-task time horizons with shared monotone splines and item-response models, testing predictions by holding out entire task families. It finds that equal multipliers in human task duration can represent different capability gains, providing diagnostics for interpreting agent progress without treating a single horizon number as a universal capability scale.
+
+**Published:** 2026-10-08 · **First seen:** 2026-10-09T10:05:00Z · **Novelty:** new · **Tags:** Agent Evaluation, Construct Validity, Item Response Theory
+
+**Public availability:** 2026-10-09T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.12466>)
+
+**Evidence:** research-paper; full-text. Sections 2–3 and Appendix A analyze 228 software tasks, 79 families and 26 AIs. Five-fold family-level validation crosses four proper scoring rules with three task/family weightings; both proposed models have better pooled point estimates than shared-slope logistic regression on all 12 metrics. Figures 1 and 4 identify a relatively flat human-time-to-difficulty mapping around 2–30 minutes.
+
+**Limitations:** This is a reanalysis of one task suite, not a new agent or an independent capability benchmark. Most per-AI intervals remain wide. The audit assumes task representativeness and annotation validity, and does not overturn the empirical exponential trend. A horizon refers to human completion time, not AI runtime; no author code artifact was verified.
+
 ## [2026-10-07](../../../reports/2026/10/2026-10-07.md) — PARTIAL SEARCH
 
 ### [Agent in a Bottle: Can LLM Agents Turn Their Capabilities Into Cheap, Scalable Artifacts?](<https://arxiv.org/abs/2610.08775>)

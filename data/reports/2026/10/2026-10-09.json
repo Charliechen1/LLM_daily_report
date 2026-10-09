@@ -1,0 +1,779 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-09",
+  "timezone": "America/Los_Angeles",
+  "generated_at": "2026-10-09T10:16:30Z",
+  "coverage": {
+    "start": "2026-10-08T03:00:00-07:00",
+    "end": "2026-10-09T03:00:00-07:00"
+  },
+  "search": {
+    "status": "partial",
+    "notes": "Coverage is October 8 03:00 through October 9 03:00 America/Los_Angeles; the total 72-hour discovery lookback begins October 6 10:00 UTC. The complete 121-work registry and 35-work landscape were compared before selection; September 30 through October 8 daily windows are present. No covered canonical work repeats. Selected arXiv papers occur in explicitly dated October 9 NEW-submission batches; first public paper availability is inferred from the official Thursday 20:00 Eastern announcement schedule as October 9 00:00 UTC, with original October 8 submission dates preserved. The multilingual classifier uses a conservative date-based newly-discovered label because the weights repository was created October 7 but its surviving history was squashed; creation does not prove public availability, and an exact earlier artifact release cannot be verified. The Dynamo blog also uses a conservative date-based newly-discovered label: it supplies an October 8 publication date without an exact posting time, and reports on existing serving software rather than establishing that Dynamo or all discussed controls first shipped today. Ten full-text contributions were selected across the three research areas without category quotas. RaReCache and PageWeaver remain technically reviewed reserves; scoped or mixed evidence and overlap were weighed against the selected contributions. MiMo-V2.6 was excluded because its official technical report was uploaded approximately 17 days earlier; Thinking Inertia was excluded because its initial public code release predates the 72-hour window. Ai2 Bolmo Nature/news and new checkpoint cards were screened as reserves, without treating journal publication as a new method. Search is partial: arXiv and organization-index screening is bounded, Hugging Face October 9 retrieval failed, ICLR OpenReview returned a loading shell, and ACL inspection did not provide comprehensive date-filtered discovery. DIAL-OPD and MASS implementation links were unavailable, MASS blog returned 404, RACE code is empty, and the precise Dynamo scheduler directory could not be retrieved; unavailable implementation links are omitted. Anthropic OSS Scanner was reviewed as a service-launch reserve: validation on selected high/critical findings is not aggregate recall or a reusable disclosed agent algorithm. All numerical evidence retains its model, metric, hardware and benchmark scope. No experiment was independently reproduced.",
+    "sources_checked": [
+      {
+        "name": "arXiv cs.CL recent October 9 discovery",
+        "url": "https://arxiv.org/list/cs.CL/recent?show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv cs.LG recent source availability check; not exhaustive screening",
+        "url": "https://arxiv.org/list/cs.LG/recent?show=2000&skip=0",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv cs.CL October 9 NEW submissions: shortlisted items #50, #51 and #57",
+        "url": "https://arxiv.org/list/cs.CL/new",
+        "status": "ok"
+      },
+      {
+        "name": "Official announcement schedule: Thursday 20:00 EDT corresponds to Friday 00:00 UTC",
+        "url": "https://info.arxiv.org/help/availability.html",
+        "status": "ok"
+      },
+      {
+        "name": "HF October 9 discovery page failed",
+        "url": "https://huggingface.co/papers/date/2026-10-09",
+        "status": "unavailable"
+      },
+      {
+        "name": "DIAL original timestamp",
+        "url": "https://arxiv.org/abs/2610.11659",
+        "status": "ok"
+      },
+      {
+        "name": "DIAL full methods, results, token-selection objective and training appendix",
+        "url": "https://arxiv.org/html/2610.11659v1",
+        "status": "ok"
+      },
+      {
+        "name": "DIAL paper-linked code: web unavailable, direct HTTPS returned 404",
+        "url": "https://github.com/EIT-NLP/DIAL-OPD",
+        "status": "unavailable"
+      },
+      {
+        "name": "DIAL README fallback unavailable",
+        "url": "https://github.com/EIT-NLP/DIAL-OPD/blob/main/README.md",
+        "status": "unavailable"
+      },
+      {
+        "name": "DIAL raw README fallback unavailable",
+        "url": "https://raw.githubusercontent.com/EIT-NLP/DIAL-OPD/main/README.md",
+        "status": "unavailable"
+      },
+      {
+        "name": "Elastic Expert Routing original timestamp",
+        "url": "https://arxiv.org/abs/2610.11575",
+        "status": "ok"
+      },
+      {
+        "name": "Elastic Expert Routing full main experiments and Appendix A measured training costs",
+        "url": "https://arxiv.org/html/2610.11575v1",
+        "status": "ok"
+      },
+      {
+        "name": "Multilingual filtering original timestamp",
+        "url": "https://arxiv.org/abs/2610.11585",
+        "status": "ok"
+      },
+      {
+        "name": "Multilingual filtering full pipeline, training/cooldown controls and cultural checks",
+        "url": "https://arxiv.org/html/2610.11585v1",
+        "status": "ok"
+      },
+      {
+        "name": "Author classifier model card, verified weights names and example",
+        "url": "https://huggingface.co/epfml/FineWeb2-HQ-PlusPlus-Classifier",
+        "status": "ok"
+      },
+      {
+        "name": "Classifier model metadata, read by direct HTTPS after web-tool failure",
+        "url": "https://huggingface.co/api/models/epfml/FineWeb2-HQ-PlusPlus-Classifier",
+        "status": "ok"
+      },
+      {
+        "name": "Classifier history, direct HTTPS: only super-squashed commit survives",
+        "url": "https://huggingface.co/api/models/epfml/FineWeb2-HQ-PlusPlus-Classifier/commits/main",
+        "status": "ok"
+      },
+      {
+        "name": "Classifier history HTML, direct HTTPS recovered dated time tag",
+        "url": "https://huggingface.co/epfml/FineWeb2-HQ-PlusPlus-Classifier/commits/main",
+        "status": "ok"
+      },
+      {
+        "name": "Classifier file-tree page inaccessible in web tool",
+        "url": "https://huggingface.co/epfml/FineWeb2-HQ-PlusPlus-Classifier/tree/main",
+        "status": "unavailable"
+      },
+      {
+        "name": "Excluded MiMo arXiv metadata",
+        "url": "https://arxiv.org/abs/2610.11959",
+        "status": "ok"
+      },
+      {
+        "name": "Excluded MiMo report overview, not complete methodological review",
+        "url": "https://arxiv.org/html/2610.11959v1",
+        "status": "ok"
+      },
+      {
+        "name": "MiMo official model card links earlier PDF",
+        "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL",
+        "status": "ok"
+      },
+      {
+        "name": "MiMo official report file",
+        "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL/blob/main/MiMo_V2_6_technical_report.pdf",
+        "status": "ok"
+      },
+      {
+        "name": "MiMo PDF history proves upload predates lookback",
+        "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL/commits/main/MiMo_V2_6_technical_report.pdf",
+        "status": "ok"
+      },
+      {
+        "name": "MiMo typo-only report update already about 17 days old",
+        "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL/commit/5711b268169967567844e1e560e8a3966da959b1",
+        "status": "ok"
+      },
+      {
+        "name": "MiMo official project has no extractable content",
+        "url": "https://mimo.xiaomi.com/rl/mimo-v26/",
+        "status": "unavailable"
+      },
+      {
+        "name": "Thinking Inertia original timestamp",
+        "url": "https://arxiv.org/abs/2610.11765",
+        "status": "ok"
+      },
+      {
+        "name": "Thinking Inertia methods, measured visible-text scope, main results and limitations",
+        "url": "https://arxiv.org/html/2610.11765v1",
+        "status": "ok"
+      },
+      {
+        "name": "Thinking Inertia project",
+        "url": "https://thinking-inertia.github.io/",
+        "status": "ok"
+      },
+      {
+        "name": "Thinking Inertia author code and README",
+        "url": "https://github.com/thinking-inertia/code",
+        "status": "ok"
+      },
+      {
+        "name": "Thinking Inertia initial public release timing, direct HTTPS Atom feed",
+        "url": "https://github.com/thinking-inertia/code/commits/main.atom",
+        "status": "ok"
+      },
+      {
+        "name": "Thinking Inertia commits HTML unavailable",
+        "url": "https://github.com/thinking-inertia/code/commits/main/",
+        "status": "unavailable"
+      },
+      {
+        "name": "Latent Core Tokenizer abstract and original metadata",
+        "url": "https://arxiv.org/abs/2610.12376",
+        "status": "ok"
+      },
+      {
+        "name": "Latent Core Tokenizer method and limitations screening; not selected",
+        "url": "https://arxiv.org/html/2610.12376v1",
+        "status": "ok"
+      },
+      {
+        "name": "Ai2 research dated index",
+        "url": "https://allenai.org/research",
+        "status": "ok"
+      },
+      {
+        "name": "Bolmo Nature release blog and artifact links; reserve screening",
+        "url": "https://allenai.org/blog/bolmo-nature",
+        "status": "ok"
+      },
+      {
+        "name": "Bolmo collection and listed artifact dates",
+        "url": "https://huggingface.co/collections/allenai/bolmo",
+        "status": "ok"
+      },
+      {
+        "name": "Bwen8B author model card",
+        "url": "https://huggingface.co/allenai/Bwen-8B",
+        "status": "ok"
+      },
+      {
+        "name": "Bolmo7B Stage1 author model card; original inner model unchanged",
+        "url": "https://huggingface.co/allenai/Bolmo-7B-Stage1",
+        "status": "ok"
+      },
+      {
+        "name": "Bolmo Nature article unavailable through publisher redirect",
+        "url": "https://www.nature.com/articles/s41586-026-11111-4",
+        "status": "unavailable"
+      },
+      {
+        "name": "October 9 cs.AI recent listing; first 50 of 302 entries screened",
+        "url": "https://arxiv.org/list/cs.AI/recent",
+        "status": "ok"
+      },
+      {
+        "name": "Dated Friday October 9 cs.AI NEW submissions; RACE item 95, Hippocam item 100, MASS item 106",
+        "url": "https://arxiv.org/list/cs.AI/new",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv 2610.12061 original submission history",
+        "url": "https://arxiv.org/abs/2610.12061",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv 2610.12061 full HTML methods, results and evaluation appendices",
+        "url": "https://arxiv.org/html/2610.12061v1",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv 2610.12176 original submission history",
+        "url": "https://arxiv.org/abs/2610.12176",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv 2610.12176 full HTML methods, results and evaluation appendices",
+        "url": "https://arxiv.org/html/2610.12176v1",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv 2610.12124 original submission history",
+        "url": "https://arxiv.org/abs/2610.12124",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv 2610.12124 full HTML methods, results and evaluation appendices",
+        "url": "https://arxiv.org/html/2610.12124v1",
+        "status": "ok"
+      },
+      {
+        "name": "RACE author-linked GitHub repository; accessible but empty",
+        "url": "https://github.com/HututuAI/RACE",
+        "status": "ok"
+      },
+      {
+        "name": "MASS author-linked code; 404 at inspection",
+        "url": "https://github.com/SakanaAI/mass",
+        "status": "unavailable"
+      },
+      {
+        "name": "MASS author-linked blog; 404 at inspection",
+        "url": "https://pub.sakana.ai/mass/",
+        "status": "unavailable"
+      },
+      {
+        "name": "October 9 arXiv cs.DC new batch; all eight new titles screened, Zepp and PageWeaver confirmed",
+        "url": "https://arxiv.org/list/cs.DC/new",
+        "status": "ok"
+      },
+      {
+        "name": "October 9 arXiv cs.LG new batch; targeted systems title screening and QUILT original-category item 63 confirmed",
+        "url": "https://arxiv.org/list/cs.LG/new",
+        "status": "ok"
+      },
+      {
+        "name": "Zepp abstract and exact v1 submission receipt",
+        "url": "https://arxiv.org/abs/2610.11158",
+        "status": "ok"
+      },
+      {
+        "name": "Zepp full methods, evaluation and limitations",
+        "url": "https://arxiv.org/html/2610.11158v1",
+        "status": "ok"
+      },
+      {
+        "name": "Zepp public repository README, source, benchmark and test directory listings; no execution",
+        "url": "https://github.com/andronius-yang/zepp",
+        "status": "ok"
+      },
+      {
+        "name": "Zepp Python package deep directory; retrieval cache miss",
+        "url": "https://github.com/andronius-yang/zepp/tree/main/python/zepp",
+        "status": "unavailable"
+      },
+      {
+        "name": "QUILT abstract and exact v1 submission receipt",
+        "url": "https://arxiv.org/abs/2610.11134",
+        "status": "ok"
+      },
+      {
+        "name": "QUILT full methods, 21-task quality table, prefill timings and ablations",
+        "url": "https://arxiv.org/html/2610.11134v1",
+        "status": "ok"
+      },
+      {
+        "name": "RaReCache abstract and exact v1 submission receipt",
+        "url": "https://arxiv.org/abs/2610.11358",
+        "status": "ok"
+      },
+      {
+        "name": "RaReCache full method, quality tables and Appendix B system evaluation",
+        "url": "https://arxiv.org/html/2610.11358v1",
+        "status": "ok"
+      },
+      {
+        "name": "PageWeaver abstract and exact v1 submission receipt",
+        "url": "https://arxiv.org/abs/2610.11201",
+        "status": "ok"
+      },
+      {
+        "name": "PageWeaver full methods, captured-kernel replay, whole-model experiments and hardware limits",
+        "url": "https://arxiv.org/html/2610.11201v1",
+        "status": "ok"
+      },
+      {
+        "name": "PyTorch blog dated index; October 8 Dynamo and Spyre posts discovered",
+        "url": "https://pytorch.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "Dynamo full October 8 engineering report and reported deployment measurements",
+        "url": "https://pytorch.org/blog/session-aware-agentic-inference-with-nvidia-dynamo/",
+        "status": "ok"
+      },
+      {
+        "name": "Dynamo main public repository; repository availability only, not benchmark reproduction",
+        "url": "https://github.com/ai-dynamo/dynamo",
+        "status": "ok"
+      },
+      {
+        "name": "Dynamo session-ID documentation; metadata alone does not enable placement policy",
+        "url": "https://docs.nvidia.com/dynamo/dev/agents/session-i-ds",
+        "status": "ok"
+      },
+      {
+        "name": "Native ThunderAgent program-scheduler documentation; prototype/native feature distinctions and configuration",
+        "url": "https://docs.nvidia.com/dynamo/dev/agents/thunder-agent-program-scheduler",
+        "status": "ok"
+      },
+      {
+        "name": "Blog-linked native ThunderAgent source directory; retrieval failed twice",
+        "url": "https://github.com/ai-dynamo/dynamo/tree/main/lib/router-plugins/builtin/src/thunderagent",
+        "status": "unavailable"
+      },
+      {
+        "name": "SGLang KV-hint design issue; proposal and implementation-status caveats",
+        "url": "https://github.com/sgl-project/sglang/issues/27574",
+        "status": "ok"
+      },
+      {
+        "name": "vLLM KV-hint RFC; earlier August 7 proposal, not a new October 8 release",
+        "url": "https://github.com/vllm-project/vllm/issues/51428",
+        "status": "ok"
+      },
+      {
+        "name": "Spyre full October 8 native-PyTorch runtime report, benchmark scope and planned event hooks",
+        "url": "https://pytorch.org/blog/building-spyre-as-a-native-pytorch-device/",
+        "status": "ok"
+      },
+      {
+        "name": "vLLM blog index; newest visible October 7 DeepSeek article already covered October 8",
+        "url": "https://vllm.ai/blog",
+        "status": "ok"
+      },
+      {
+        "name": "NVIDIA developer blog index; dated October 8 post titles screened, no fresh selected LLM-infra article",
+        "url": "https://developer.nvidia.com/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "October 9 cs.CL recent first-page title screen only",
+        "url": "https://arxiv.org/list/cs.CL/recent",
+        "status": "ok"
+      },
+      {
+        "name": "METR audit original submission and version metadata",
+        "url": "https://arxiv.org/abs/2610.12466",
+        "status": "ok"
+      },
+      {
+        "name": "METR audit full methods, family validation, construct diagnostics, discussion and appendix",
+        "url": "https://arxiv.org/html/2610.12466v1",
+        "status": "ok"
+      },
+      {
+        "name": "ICLR 2027 OpenReview group returned a loading shell, no enumerable submissions",
+        "url": "https://openreview.net/group?id=ICLR.cc/2027/Conference",
+        "status": "unavailable"
+      },
+      {
+        "name": "ACL Anthology homepage only; no comprehensive date-filtered enumeration",
+        "url": "https://aclanthology.org/",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic research index, bounded latest dated rows",
+        "url": "https://www.anthropic.com/research",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic engineering index, bounded displayed posts",
+        "url": "https://www.anthropic.com/engineering",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic OSS Scanner Oct8 full service-launch article and validation scope",
+        "url": "https://www.anthropic.com/research/launching-opt-in-vuln-finding-service-for-open-source",
+        "status": "ok"
+      },
+      {
+        "name": "Google DeepMind news index; displayed cards have month-level dates",
+        "url": "https://deepmind.google/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "Google Research October index, displayed posts screened",
+        "url": "https://research.google/blog/2026/10/",
+        "status": "ok"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": "arxiv:2610.11585",
+      "title": "Adapting English Quality Classifiers for Multilingual LLM Pretraining Data Selection",
+      "category": "1.1",
+      "tags": [
+        "Data Curation",
+        "Multilingual",
+        "Quality Filtering"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-09T10:03:31Z",
+      "canonical_url": "https://arxiv.org/abs/2610.11585",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.11585",
+        "project": "https://huggingface.co/epfml/FineWeb2-HQ-PlusPlus-Classifier"
+      },
+      "summary": [
+        "This pipeline transfers English data-quality criteria to multilingual text by scoring translations and training small classifiers over frozen multilingual embeddings.",
+        "Released classifiers achieve broadly comparable downstream performance to strong multilingual filters, making quality selection easier to extend without collecting separate annotations for every language."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "The study tests 1B training from scratch and 3B/8B cooldown runs, selecting the top 10% of documents per language. Regional and cultural checks accompany classifier-transfer analyses, and the author model card exposes weights and inference code. Original v1: 2026-10-08T09:33:32Z; October 9 new-submission batch verified. Conservatively marked newly discovered: the confirmed paper batch is recent, but the earlier public availability of its classifier artifact cannot be reconstructed.",
+        "limitations": "The largest models receive short cooldowns, not complete matched pretraining. Long-tail evidence partly uses synthetic text and LLM judges, and limited cultural benchmarks cannot establish absence of bias. Translation cost and inherited English quality preferences remain; prior public artifact timing is uncertain after repository-history squashing."
+      },
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "arxiv:2610.11575",
+      "title": "Smoothing the Top-k Exposure Boundary for Sparse Mixture-of-Experts",
+      "category": "1.3",
+      "tags": [
+        "Mixture of Experts",
+        "Routing",
+        "Pretraining"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-09T10:03:31Z",
+      "public_availability": {
+        "at": "2026-10-09T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.11575",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.11575"
+      },
+      "summary": [
+        "Elastic Expert Routing varies the number of active experts around the deployment budget during training, giving experts just beyond the usual cutoff occasional task-loss feedback.",
+        "It improves the tested MoE models while retaining ordinary fixed top-k inference, providing a training intervention that preserves the serving architecture."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "A 6–10 expert schedule centered on eight improves nine-task SFT averages by 0.84 points on OLMoE and 2.02 on Qwen3-30B-A3B; 1.42B-model pretraining improves its separate task average by 1.6 points. Original v1: 2026-10-08T09:31:19Z; October 9 new-submission batch verified.",
+        "limitations": "Matched expected expert FLOPs do not imply equal runtime: the preferred schedule costs about 3–5% more per SFT iteration. From-scratch evidence covers 26.25B tokens at moderate scale; results do not establish gains at frontier pretraining scale. No author implementation was verified."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "arxiv:2610.11659",
+      "title": "DIAL-OPD: Learning More from Fewer Tokens in On-Policy Distillation",
+      "category": "1.8",
+      "tags": [
+        "On-Policy Distillation",
+        "Token Selection",
+        "Reasoning"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-09T10:03:31Z",
+      "public_availability": {
+        "at": "2026-10-09T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.11659",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.11659"
+      },
+      "summary": [
+        "DIAL-OPD selects student-generated tokens for distillation by combining teacher–student disagreement with their absolute probability scale, reducing emphasis on tokens both models consider unlikely.",
+        "Masking supervision this way improves mathematical reasoning in the tested small Qwen3 students, offering a practical way to allocate teacher signals more effectively."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Four Qwen3 teacher–student pairs and seven math benchmarks compare nine baselines. At 40% retention, mean accuracy improves by up to 5.25 points over Vanilla OPD and 1.24 over the strongest full-token variant. Original v1: 2026-10-08T10:36:00Z; October 9 new-submission batch verified.",
+        "limitations": "Experiments use 0.6B/1.7B students, 4B/8B teachers and 800 updates. Masked tokens remain in context; reduced supervised-token count is not demonstrated end-to-end compute savings. Results are task- and hyperparameter-dependent. The paper-linked code repository returned HTTP 404 during verification."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "arxiv:2610.12124",
+      "title": "Use and Disuse: Intent-Structured Experience Consolidation for Memory and Learning in LLM Agents",
+      "category": "2.3",
+      "tags": [
+        "Agent Memory",
+        "Context Consolidation",
+        "Progressive Recall"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-09T10:05:20Z",
+      "public_availability": {
+        "at": "2026-10-09T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.12124",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.12124"
+      },
+      "summary": [
+        "Hippocam organizes ongoing work into nested intents, compressing completed work and older history while preserving original messages in a recallable tree.",
+        "Recalled experience is consolidated again with new outcomes, allowing useful details and lessons to evolve without changing model weights."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 2–5 and Appendix A describe the memory operations and ablations. With the same 64K MemoryAgentBench snapshot, recall achieves 41% accuracy versus 27% when disabled across 100 questions. Original v1: 2026-10-08T15:16:56Z; October 9 new-submission batch.",
+        "limitations": "Single runs and unmatched auxiliary compute limit system comparisons; interfaces and reasoning settings differ across baselines. LoCoMo uses an LLM judge rather than its original lexical score. Reported cost advantages depend on caching prices and workload. No author code artifact was verified."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "arxiv:2610.12061",
+      "title": "When Should Agents Think? Adaptive Reasoning via Cross-Turn Estimation",
+      "category": "2.5",
+      "tags": [
+        "Adaptive Reasoning",
+        "Agent Training",
+        "Cross-Turn Reuse"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-09T10:05:20Z",
+      "public_availability": {
+        "at": "2026-10-09T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.12061",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.12061"
+      },
+      "summary": [
+        "RACE trains agents to skip repeated reasoning when earlier thoughts still support subsequent actions, estimating this through the likelihood of reference actions after reasoning removal.",
+        "Supervised training and reinforcement learning turn these signals into a policy that can act directly when fresh deliberation is unnecessary."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Table 2 compares Qwen3.5-9B against standard SFT+GRPO: WebShop reasoning tokens fall from 2,702 to 535 while success changes from 52.0% to 53.4%. Methods and four-environment evaluation were inspected. Original v1: 2026-10-08T14:43:09Z; October 9 new-submission batch.",
+        "limitations": "Likelihood is a training proxy, not a causal guarantee. Reasoning-token reductions do not measure total training cost or end-to-end latency; AppWorld uses precomputed task-specific API lists. The paper-linked code repository is currently empty, and results were not reproduced."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "arxiv:2610.12176",
+      "title": "Recursive Self-Improvement through Multi-Agent Self-Supervision",
+      "category": "2.6",
+      "tags": [
+        "Multi-Agent",
+        "Self-Supervision",
+        "Workflow Optimization"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-09T10:05:20Z",
+      "public_availability": {
+        "at": "2026-10-09T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.12176",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.12176"
+      },
+      "summary": [
+        "MASS alternates searching for multi-agent workflows with training a shared model on the resulting coordinator and worker trajectories.",
+        "The updated model then proposes, executes and evaluates workflows in the next cycle, creating a route to learning coordination without an external judge inside the main loop."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Two Qwen3.6-27B cycles are evaluated with external reporting judges and public benchmarks. Appendix C/Table 7 reports MLR-Bench mean overall score rising from 1.58 to 2.40 on a 12-task subset, with delivered papers increasing from 31/60 to 50/60. Original v1: 2026-10-08T15:44:02Z; October 9 new-submission batch.",
+        "limitations": "Completion drives part of the aggregate research gain; paired task-level evidence is weaker than trial-level significance. Terminal-Bench and SWE-bench scores decline. Performance per output token is not raw accuracy gain or total-compute savings; only two cycles were tested. Linked code and blog returned 404."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "arxiv:2610.12466",
+      "title": "On the estimation and validity of AI time horizons—a statistical look at the METR plot",
+      "category": "2.8",
+      "tags": [
+        "Agent Evaluation",
+        "Construct Validity",
+        "Item Response Theory"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-09T10:05:00Z",
+      "canonical_url": "https://arxiv.org/abs/2610.12466",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.12466"
+      },
+      "summary": [
+        "This statistical audit re-estimates METR's software-task time horizons with shared monotone splines and item-response models, testing predictions by holding out entire task families.",
+        "It finds that equal multipliers in human task duration can represent different capability gains, providing diagnostics for interpreting agent progress without treating a single horizon number as a universal capability scale."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 2–3 and Appendix A analyze 228 software tasks, 79 families and 26 AIs. Five-fold family-level validation crosses four proper scoring rules with three task/family weightings; both proposed models have better pooled point estimates than shared-slope logistic regression on all 12 metrics. Figures 1 and 4 identify a relatively flat human-time-to-difficulty mapping around 2–30 minutes.",
+        "limitations": "This is a reanalysis of one task suite, not a new agent or an independent capability benchmark. Most per-AI intervals remain wide. The audit assumes task representativeness and annotation validity, and does not overturn the empirical exponential trend. A horizon refers to human completion time, not AI runtime; no author code artifact was verified."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-09T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.11158",
+      "title": "Zepp: Accelerating Distributed MoE Serving under Relaxed Balance Constraints",
+      "category": "3.3",
+      "tags": [
+        "MoE",
+        "Expert Parallelism",
+        "Communication",
+        "Serving"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-09T10:07:33Z",
+      "public_availability": {
+        "at": "2026-10-09T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.11158",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.11158",
+        "code": "https://github.com/andronius-yang/zepp"
+      },
+      "summary": [
+        "Zepp combines locality-aware expert placement and routing with traffic splitting, node-local aggregation and overlapping execution to reduce communication in distributed MoE serving.",
+        "Allowing bounded load imbalance avoids some remote transfers and expert-weight movement while preserving the model's logical expert choices."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 6.1–6.4 report a 1.86× geometric-mean MoE-layer speedup over the fastest compared baseline across 4–16-node configurations. A separate Qwen3-30B SGLang experiment reports 1.32–1.92× prefill throughput and 1.04–1.57× decode speedup.",
+        "limitations": "Layer tests replay profiled routing traces; end-to-end gains use a separate all-gather/GEMM/reduce-scatter baseline without overlap. Results depend on topology, replica memory and demand profiles; greedy planning is not globally optimal. The public repository was inspected, but no benchmarks were reproduced."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "blog:pytorch-session-aware-agentic-inference-dynamo-2026-10-08",
+      "title": "Session-Aware Agentic Inference with NVIDIA Dynamo",
+      "category": "3.3",
+      "tags": [
+        "Agentic Serving",
+        "Session Scheduling",
+        "KV Cache",
+        "Dynamo"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-09T10:09:02Z",
+      "canonical_url": "https://pytorch.org/blog/session-aware-agentic-inference-with-nvidia-dynamo/",
+      "links": {
+        "blog": "https://pytorch.org/blog/session-aware-agentic-inference-with-nvidia-dynamo/",
+        "code": "https://github.com/ai-dynamo/dynamo",
+        "project": "https://docs.nvidia.com/dynamo/dev/agents/thunder-agent-program-scheduler"
+      },
+      "summary": [
+        "Dynamo carries session identity into opt-in routing and admission, allowing serving policies to track agent working sets across tool calls.",
+        "Deferring sessions at tool boundaries can reduce repeated prefill under memory pressure, while experimental cache indexing and proposed cache hints extend the design toward shared KV storage."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "The October 8 report measures 12–16% higher throughput on SWE-bench with MiniMax-M2 using two TP4 replicas on eight H100s. A separate Qwen3-Coder-30B-A3B rollout test on eight H20-3e GPUs reports 11.0–14.6% higher model-token throughput at concurrency 192–256 versus VERL's global load balancer. Conservatively labeled newly discovered because the source exposes an October 8 date without an exact posting time; this is a new technical report on existing software, not a new software-release claim.",
+        "limitations": "Gains depend on load; the rollout comparison is roughly tied at lower concurrency. Native admission is frontend-local and estimates logical GPU capacity, without the older Python prototype's host-cache budget or soft-demotion controls. Several KV hints remain proposals. The main repository and docs opened; the linked scheduler subdirectory did not."
+      },
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "arxiv:2610.11134",
+      "title": "QUILT: Rethinking Sparse-Attention Prefill through Shared Query Execution",
+      "category": "3.5",
+      "tags": [
+        "Sparse Attention",
+        "Prefill",
+        "Ascend",
+        "Kernel Optimization"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-09T10:07:33Z",
+      "public_availability": {
+        "at": "2026-10-09T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.11134",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.11134"
+      },
+      "summary": [
+        "QUILT groups overlapping sparse-attention selections across nearby queries so shared key/value blocks can be processed together, while keeping each query's attention normalization separate.",
+        "A pipelined grouping stage and hierarchical execution reduce prefill work, with optional clipping of small private residual tiles trading some attention fidelity for speed."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Section 4 compares QUILT with OPS-Transformer inside XYServe on 16 Ascend 910C NPUs. Across four timed LongBench workloads, tensor-parallel TTFT falls 35.6% for GLM-5.3 and 23.0% for DeepSeek-3.2; 21-task LongBench mean absolute score changes are 0.42 and 0.75 points.",
+        "limitations": "These are NPU measurements, not demonstrated GPU gains. Shared-selection overlap governs the benefit, sequence-parallel gains are smaller, and residual clipping is approximate. The quality averages do not imply unchanged scores on every task. No dedicated public implementation was located."
+      },
+      "novelty": "new"
+    }
+  ]
+}

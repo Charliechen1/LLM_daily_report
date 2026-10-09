@@ -5,6 +5,36 @@ Request scheduling, continuous batching, prefill/decode disaggregation and elast
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-09](../../../reports/2026/10/2026-10-09.md) — PARTIAL SEARCH
+
+### [Zepp: Accelerating Distributed MoE Serving under Relaxed Balance Constraints](<https://arxiv.org/abs/2610.11158>)
+
+Zepp combines locality-aware expert placement and routing with traffic splitting, node-local aggregation and overlapping execution to reduce communication in distributed MoE serving. Allowing bounded load imbalance avoids some remote transfers and expert-weight movement while preserving the model's logical expert choices.
+
+**Published:** 2026-10-08 · **First seen:** 2026-10-09T10:07:33Z · **Novelty:** new · **Tags:** MoE, Expert Parallelism, Communication, Serving
+
+**Public availability:** 2026-10-09T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.11158>) · [Code](<https://github.com/andronius-yang/zepp>)
+
+**Evidence:** research-paper; full-text. Sections 6.1–6.4 report a 1.86× geometric-mean MoE-layer speedup over the fastest compared baseline across 4–16-node configurations. A separate Qwen3-30B SGLang experiment reports 1.32–1.92× prefill throughput and 1.04–1.57× decode speedup.
+
+**Limitations:** Layer tests replay profiled routing traces; end-to-end gains use a separate all-gather/GEMM/reduce-scatter baseline without overlap. Results depend on topology, replica memory and demand profiles; greedy planning is not globally optimal. The public repository was inspected, but no benchmarks were reproduced.
+
+## [2026-10-09](../../../reports/2026/10/2026-10-09.md) — PARTIAL SEARCH
+
+### [Session-Aware Agentic Inference with NVIDIA Dynamo](<https://pytorch.org/blog/session-aware-agentic-inference-with-nvidia-dynamo/>)
+
+Dynamo carries session identity into opt-in routing and admission, allowing serving policies to track agent working sets across tool calls. Deferring sessions at tool boundaries can reduce repeated prefill under memory pressure, while experimental cache indexing and proposed cache hints extend the design toward shared KV storage.
+
+**Published:** 2026-10-08 · **First seen:** 2026-10-09T10:09:02Z · **Novelty:** newly-discovered · **Tags:** Agentic Serving, Session Scheduling, KV Cache, Dynamo
+
+[Blog](<https://pytorch.org/blog/session-aware-agentic-inference-with-nvidia-dynamo/>) · [Code](<https://github.com/ai-dynamo/dynamo>) · [Project](<https://docs.nvidia.com/dynamo/dev/agents/thunder-agent-program-scheduler>)
+
+**Evidence:** engineering-report; full-text. The October 8 report measures 12–16% higher throughput on SWE-bench with MiniMax-M2 using two TP4 replicas on eight H100s. A separate Qwen3-Coder-30B-A3B rollout test on eight H20-3e GPUs reports 11.0–14.6% higher model-token throughput at concurrency 192–256 versus VERL's global load balancer. Conservatively labeled newly discovered because the source exposes an October 8 date without an exact posting time; this is a new technical report on existing software, not a new software-release claim.
+
+**Limitations:** Gains depend on load; the rollout comparison is roughly tied at lower concurrency. Native admission is frontend-local and estimates logical GPU capacity, without the older Python prototype's host-cache budget or soft-demotion controls. Several KV hints remain proposals. The main repository and docs opened; the linked scheduler subdirectory did not.
+
 ## [2026-10-08](../../../reports/2026/10/2026-10-08.md) — PARTIAL SEARCH
 
 ### [DeepSeek-V4.1-Flash on vLLM: 5x Agentic Throughput Since Day 0](<https://vllm.ai/blog/2026-10-07-deepseek-v41-flash>)

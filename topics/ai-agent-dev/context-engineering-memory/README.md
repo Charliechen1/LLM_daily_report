@@ -5,6 +5,22 @@ Context organization/compression, working memory, long-term memory and state.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-09](../../../reports/2026/10/2026-10-09.md) — PARTIAL SEARCH
+
+### [Use and Disuse: Intent-Structured Experience Consolidation for Memory and Learning in LLM Agents](<https://arxiv.org/abs/2610.12124>)
+
+Hippocam organizes ongoing work into nested intents, compressing completed work and older history while preserving original messages in a recallable tree. Recalled experience is consolidated again with new outcomes, allowing useful details and lessons to evolve without changing model weights.
+
+**Published:** 2026-10-08 · **First seen:** 2026-10-09T10:05:20Z · **Novelty:** new · **Tags:** Agent Memory, Context Consolidation, Progressive Recall
+
+**Public availability:** 2026-10-09T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.12124>)
+
+**Evidence:** research-paper; full-text. Sections 2–5 and Appendix A describe the memory operations and ablations. With the same 64K MemoryAgentBench snapshot, recall achieves 41% accuracy versus 27% when disabled across 100 questions. Original v1: 2026-10-08T15:16:56Z; October 9 new-submission batch.
+
+**Limitations:** Single runs and unmatched auxiliary compute limit system comparisons; interfaces and reasoning settings differ across baselines. LoCoMo uses an LLM judge rather than its original lexical score. Reported cost advantages depend on caching prices and workload. No author code artifact was verified.
+
 ## [2026-10-08](../../../reports/2026/10/2026-10-08.md) — PARTIAL SEARCH
 
 ### [RunningTab: Direct Workspace Interaction with Environment-Side Tabs](<https://arxiv.org/abs/2610.10444>)

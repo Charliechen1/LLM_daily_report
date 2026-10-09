@@ -2,6 +2,13 @@
   "schema_version": 1,
   "reports": [
     {
+      "date": "2026-10-09",
+      "path": "reports/2026/10/2026-10-09.md",
+      "source": "data/reports/2026/10/2026-10-09.json",
+      "search_status": "partial",
+      "entries": 10
+    },
+    {
       "date": "2026-10-08",
       "path": "reports/2026/10/2026-10-08.md",
       "source": "data/reports/2026/10/2026-10-08.json",
@@ -75,6 +82,387 @@
     }
   ],
   "entries": [
+    {
+      "id": "arxiv:2610.11585",
+      "title": "Adapting English Quality Classifiers for Multilingual LLM Pretraining Data Selection",
+      "category": "1.1",
+      "tags": [
+        "Data Curation",
+        "Multilingual",
+        "Quality Filtering"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-09T10:03:31Z",
+      "canonical_url": "https://arxiv.org/abs/2610.11585",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.11585",
+        "project": "https://huggingface.co/epfml/FineWeb2-HQ-PlusPlus-Classifier"
+      },
+      "summary": [
+        "This pipeline transfers English data-quality criteria to multilingual text by scoring translations and training small classifiers over frozen multilingual embeddings.",
+        "Released classifiers achieve broadly comparable downstream performance to strong multilingual filters, making quality selection easier to extend without collecting separate annotations for every language."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "The study tests 1B training from scratch and 3B/8B cooldown runs, selecting the top 10% of documents per language. Regional and cultural checks accompany classifier-transfer analyses, and the author model card exposes weights and inference code. Original v1: 2026-10-08T09:33:32Z; October 9 new-submission batch verified. Conservatively marked newly discovered: the confirmed paper batch is recent, but the earlier public availability of its classifier artifact cannot be reconstructed.",
+        "limitations": "The largest models receive short cooldowns, not complete matched pretraining. Long-tail evidence partly uses synthetic text and LLM judges, and limited cultural benchmarks cannot establish absence of bias. Translation cost and inherited English quality preferences remain; prior public artifact timing is uncertain after repository-history squashing."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-09",
+      "report_path": "reports/2026/10/2026-10-09.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.11575",
+      "title": "Smoothing the Top-k Exposure Boundary for Sparse Mixture-of-Experts",
+      "category": "1.3",
+      "tags": [
+        "Mixture of Experts",
+        "Routing",
+        "Pretraining"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-09T10:03:31Z",
+      "public_availability": {
+        "at": "2026-10-09T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.11575",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.11575"
+      },
+      "summary": [
+        "Elastic Expert Routing varies the number of active experts around the deployment budget during training, giving experts just beyond the usual cutoff occasional task-loss feedback.",
+        "It improves the tested MoE models while retaining ordinary fixed top-k inference, providing a training intervention that preserves the serving architecture."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "A 6–10 expert schedule centered on eight improves nine-task SFT averages by 0.84 points on OLMoE and 2.02 on Qwen3-30B-A3B; 1.42B-model pretraining improves its separate task average by 1.6 points. Original v1: 2026-10-08T09:31:19Z; October 9 new-submission batch verified.",
+        "limitations": "Matched expected expert FLOPs do not imply equal runtime: the preferred schedule costs about 3–5% more per SFT iteration. From-scratch evidence covers 26.25B tokens at moderate scale; results do not establish gains at frontier pretraining scale. No author implementation was verified."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-09",
+      "report_path": "reports/2026/10/2026-10-09.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.11659",
+      "title": "DIAL-OPD: Learning More from Fewer Tokens in On-Policy Distillation",
+      "category": "1.8",
+      "tags": [
+        "On-Policy Distillation",
+        "Token Selection",
+        "Reasoning"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-09T10:03:31Z",
+      "public_availability": {
+        "at": "2026-10-09T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.11659",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.11659"
+      },
+      "summary": [
+        "DIAL-OPD selects student-generated tokens for distillation by combining teacher–student disagreement with their absolute probability scale, reducing emphasis on tokens both models consider unlikely.",
+        "Masking supervision this way improves mathematical reasoning in the tested small Qwen3 students, offering a practical way to allocate teacher signals more effectively."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Four Qwen3 teacher–student pairs and seven math benchmarks compare nine baselines. At 40% retention, mean accuracy improves by up to 5.25 points over Vanilla OPD and 1.24 over the strongest full-token variant. Original v1: 2026-10-08T10:36:00Z; October 9 new-submission batch verified.",
+        "limitations": "Experiments use 0.6B/1.7B students, 4B/8B teachers and 800 updates. Masked tokens remain in context; reduced supervised-token count is not demonstrated end-to-end compute savings. Results are task- and hyperparameter-dependent. The paper-linked code repository returned HTTP 404 during verification."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-09",
+      "report_path": "reports/2026/10/2026-10-09.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.12124",
+      "title": "Use and Disuse: Intent-Structured Experience Consolidation for Memory and Learning in LLM Agents",
+      "category": "2.3",
+      "tags": [
+        "Agent Memory",
+        "Context Consolidation",
+        "Progressive Recall"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-09T10:05:20Z",
+      "public_availability": {
+        "at": "2026-10-09T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.12124",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.12124"
+      },
+      "summary": [
+        "Hippocam organizes ongoing work into nested intents, compressing completed work and older history while preserving original messages in a recallable tree.",
+        "Recalled experience is consolidated again with new outcomes, allowing useful details and lessons to evolve without changing model weights."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 2–5 and Appendix A describe the memory operations and ablations. With the same 64K MemoryAgentBench snapshot, recall achieves 41% accuracy versus 27% when disabled across 100 questions. Original v1: 2026-10-08T15:16:56Z; October 9 new-submission batch.",
+        "limitations": "Single runs and unmatched auxiliary compute limit system comparisons; interfaces and reasoning settings differ across baselines. LoCoMo uses an LLM judge rather than its original lexical score. Reported cost advantages depend on caching prices and workload. No author code artifact was verified."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-09",
+      "report_path": "reports/2026/10/2026-10-09.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.12061",
+      "title": "When Should Agents Think? Adaptive Reasoning via Cross-Turn Estimation",
+      "category": "2.5",
+      "tags": [
+        "Adaptive Reasoning",
+        "Agent Training",
+        "Cross-Turn Reuse"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-09T10:05:20Z",
+      "public_availability": {
+        "at": "2026-10-09T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.12061",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.12061"
+      },
+      "summary": [
+        "RACE trains agents to skip repeated reasoning when earlier thoughts still support subsequent actions, estimating this through the likelihood of reference actions after reasoning removal.",
+        "Supervised training and reinforcement learning turn these signals into a policy that can act directly when fresh deliberation is unnecessary."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Table 2 compares Qwen3.5-9B against standard SFT+GRPO: WebShop reasoning tokens fall from 2,702 to 535 while success changes from 52.0% to 53.4%. Methods and four-environment evaluation were inspected. Original v1: 2026-10-08T14:43:09Z; October 9 new-submission batch.",
+        "limitations": "Likelihood is a training proxy, not a causal guarantee. Reasoning-token reductions do not measure total training cost or end-to-end latency; AppWorld uses precomputed task-specific API lists. The paper-linked code repository is currently empty, and results were not reproduced."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-09",
+      "report_path": "reports/2026/10/2026-10-09.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.12176",
+      "title": "Recursive Self-Improvement through Multi-Agent Self-Supervision",
+      "category": "2.6",
+      "tags": [
+        "Multi-Agent",
+        "Self-Supervision",
+        "Workflow Optimization"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-09T10:05:20Z",
+      "public_availability": {
+        "at": "2026-10-09T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.12176",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.12176"
+      },
+      "summary": [
+        "MASS alternates searching for multi-agent workflows with training a shared model on the resulting coordinator and worker trajectories.",
+        "The updated model then proposes, executes and evaluates workflows in the next cycle, creating a route to learning coordination without an external judge inside the main loop."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Two Qwen3.6-27B cycles are evaluated with external reporting judges and public benchmarks. Appendix C/Table 7 reports MLR-Bench mean overall score rising from 1.58 to 2.40 on a 12-task subset, with delivered papers increasing from 31/60 to 50/60. Original v1: 2026-10-08T15:44:02Z; October 9 new-submission batch.",
+        "limitations": "Completion drives part of the aggregate research gain; paired task-level evidence is weaker than trial-level significance. Terminal-Bench and SWE-bench scores decline. Performance per output token is not raw accuracy gain or total-compute savings; only two cycles were tested. Linked code and blog returned 404."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-09",
+      "report_path": "reports/2026/10/2026-10-09.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.12466",
+      "title": "On the estimation and validity of AI time horizons—a statistical look at the METR plot",
+      "category": "2.8",
+      "tags": [
+        "Agent Evaluation",
+        "Construct Validity",
+        "Item Response Theory"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-09T10:05:00Z",
+      "canonical_url": "https://arxiv.org/abs/2610.12466",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.12466"
+      },
+      "summary": [
+        "This statistical audit re-estimates METR's software-task time horizons with shared monotone splines and item-response models, testing predictions by holding out entire task families.",
+        "It finds that equal multipliers in human task duration can represent different capability gains, providing diagnostics for interpreting agent progress without treating a single horizon number as a universal capability scale."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 2–3 and Appendix A analyze 228 software tasks, 79 families and 26 AIs. Five-fold family-level validation crosses four proper scoring rules with three task/family weightings; both proposed models have better pooled point estimates than shared-slope logistic regression on all 12 metrics. Figures 1 and 4 identify a relatively flat human-time-to-difficulty mapping around 2–30 minutes.",
+        "limitations": "This is a reanalysis of one task suite, not a new agent or an independent capability benchmark. Most per-AI intervals remain wide. The audit assumes task representativeness and annotation validity, and does not overturn the empirical exponential trend. A horizon refers to human completion time, not AI runtime; no author code artifact was verified."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-09T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-09",
+      "report_path": "reports/2026/10/2026-10-09.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.11158",
+      "title": "Zepp: Accelerating Distributed MoE Serving under Relaxed Balance Constraints",
+      "category": "3.3",
+      "tags": [
+        "MoE",
+        "Expert Parallelism",
+        "Communication",
+        "Serving"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-09T10:07:33Z",
+      "public_availability": {
+        "at": "2026-10-09T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.11158",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.11158",
+        "code": "https://github.com/andronius-yang/zepp"
+      },
+      "summary": [
+        "Zepp combines locality-aware expert placement and routing with traffic splitting, node-local aggregation and overlapping execution to reduce communication in distributed MoE serving.",
+        "Allowing bounded load imbalance avoids some remote transfers and expert-weight movement while preserving the model's logical expert choices."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 6.1–6.4 report a 1.86× geometric-mean MoE-layer speedup over the fastest compared baseline across 4–16-node configurations. A separate Qwen3-30B SGLang experiment reports 1.32–1.92× prefill throughput and 1.04–1.57× decode speedup.",
+        "limitations": "Layer tests replay profiled routing traces; end-to-end gains use a separate all-gather/GEMM/reduce-scatter baseline without overlap. Results depend on topology, replica memory and demand profiles; greedy planning is not globally optimal. The public repository was inspected, but no benchmarks were reproduced."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-09",
+      "report_path": "reports/2026/10/2026-10-09.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "blog:pytorch-session-aware-agentic-inference-dynamo-2026-10-08",
+      "title": "Session-Aware Agentic Inference with NVIDIA Dynamo",
+      "category": "3.3",
+      "tags": [
+        "Agentic Serving",
+        "Session Scheduling",
+        "KV Cache",
+        "Dynamo"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-09T10:09:02Z",
+      "canonical_url": "https://pytorch.org/blog/session-aware-agentic-inference-with-nvidia-dynamo/",
+      "links": {
+        "blog": "https://pytorch.org/blog/session-aware-agentic-inference-with-nvidia-dynamo/",
+        "code": "https://github.com/ai-dynamo/dynamo",
+        "project": "https://docs.nvidia.com/dynamo/dev/agents/thunder-agent-program-scheduler"
+      },
+      "summary": [
+        "Dynamo carries session identity into opt-in routing and admission, allowing serving policies to track agent working sets across tool calls.",
+        "Deferring sessions at tool boundaries can reduce repeated prefill under memory pressure, while experimental cache indexing and proposed cache hints extend the design toward shared KV storage."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "The October 8 report measures 12–16% higher throughput on SWE-bench with MiniMax-M2 using two TP4 replicas on eight H100s. A separate Qwen3-Coder-30B-A3B rollout test on eight H20-3e GPUs reports 11.0–14.6% higher model-token throughput at concurrency 192–256 versus VERL's global load balancer. Conservatively labeled newly discovered because the source exposes an October 8 date without an exact posting time; this is a new technical report on existing software, not a new software-release claim.",
+        "limitations": "Gains depend on load; the rollout comparison is roughly tied at lower concurrency. Native admission is frontend-local and estimates logical GPU capacity, without the older Python prototype's host-cache budget or soft-demotion controls. Several KV hints remain proposals. The main repository and docs opened; the linked scheduler subdirectory did not."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-09",
+      "report_path": "reports/2026/10/2026-10-09.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.11134",
+      "title": "QUILT: Rethinking Sparse-Attention Prefill through Shared Query Execution",
+      "category": "3.5",
+      "tags": [
+        "Sparse Attention",
+        "Prefill",
+        "Ascend",
+        "Kernel Optimization"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-09T10:07:33Z",
+      "public_availability": {
+        "at": "2026-10-09T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.11134",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.11134"
+      },
+      "summary": [
+        "QUILT groups overlapping sparse-attention selections across nearby queries so shared key/value blocks can be processed together, while keeping each query's attention normalization separate.",
+        "A pipelined grouping stage and hierarchical execution reduce prefill work, with optional clipping of small private residual tiles trading some attention fidelity for speed."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Section 4 compares QUILT with OPS-Transformer inside XYServe on 16 Ascend 910C NPUs. Across four timed LongBench workloads, tensor-parallel TTFT falls 35.6% for GLM-5.3 and 23.0% for DeepSeek-3.2; 21-task LongBench mean absolute score changes are 0.42 and 0.75 points.",
+        "limitations": "These are NPU measurements, not demonstrated GPU gains. Shared-selection overlap governs the benefit, sequence-parallel gains are smaller, and residual clipping is approximate. The quality averages do not imply unchanged scores on every task. No dedicated public implementation was located."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-09",
+      "report_path": "reports/2026/10/2026-10-09.md",
+      "search_status": "partial"
+    },
     {
       "id": "arxiv:2610.10533",
       "title": "EngramEdit: Decoupled Knowledge Updates in LLMs through Conditional Memory",
@@ -4193,7 +4581,7 @@
       "group": "llm-recipe",
       "title": "Data Curation & Tokenization",
       "path": "topics/llm-recipe/data-curation-tokenization/README.md",
-      "count": 4
+      "count": 5
     },
     {
       "id": "1.2",
@@ -4207,7 +4595,7 @@
       "group": "llm-recipe",
       "title": "Pretraining & Optimization",
       "path": "topics/llm-recipe/pretraining-optimization/README.md",
-      "count": 3
+      "count": 4
     },
     {
       "id": "1.4",
@@ -4242,7 +4630,7 @@
       "group": "llm-recipe",
       "title": "Distillation & Model Compression",
       "path": "topics/llm-recipe/distillation-model-compression/README.md",
-      "count": 7
+      "count": 8
     },
     {
       "id": "1.9",
@@ -4277,7 +4665,7 @@
       "group": "ai-agent-dev",
       "title": "Context Engineering & Memory",
       "path": "topics/ai-agent-dev/context-engineering-memory/README.md",
-      "count": 6
+      "count": 7
     },
     {
       "id": "2.4",
@@ -4291,14 +4679,14 @@
       "group": "ai-agent-dev",
       "title": "Agent Learning & Skill Acquisition",
       "path": "topics/ai-agent-dev/agent-learning-skill-acquisition/README.md",
-      "count": 6
+      "count": 7
     },
     {
       "id": "2.6",
       "group": "ai-agent-dev",
       "title": "Multi-Agent Collaboration",
       "path": "topics/ai-agent-dev/multi-agent-collaboration/README.md",
-      "count": 2
+      "count": 3
     },
     {
       "id": "2.7",
@@ -4312,7 +4700,7 @@
       "group": "ai-agent-dev",
       "title": "Agent Evaluation & Security",
       "path": "topics/ai-agent-dev/agent-evaluation-security/README.md",
-      "count": 8
+      "count": 9
     },
     {
       "id": "3.1",
@@ -4333,7 +4721,7 @@
       "group": "ai-training-inference-infra",
       "title": "Inference Engines & Serving",
       "path": "topics/ai-training-inference-infra/inference-engines-serving/README.md",
-      "count": 10
+      "count": 12
     },
     {
       "id": "3.4",
@@ -4347,7 +4735,7 @@
       "group": "ai-training-inference-infra",
       "title": "Kernels, Compilers & Runtimes",
       "path": "topics/ai-training-inference-infra/kernels-compilers-runtimes/README.md",
-      "count": 7
+      "count": 8
     },
     {
       "id": "3.6",
