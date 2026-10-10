@@ -5,6 +5,22 @@ Knowledge/reasoning distillation, pruning, quantization algorithms and model mer
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-10](../../../reports/2026/10/2026-10-10.md) — PARTIAL SEARCH
+
+### [Bridging KV-Cache Quantization and Linear Attention: From Theory to Pretrained Weight Migration](<https://arxiv.org/abs/2610.11214>)
+
+This migration recipe converts pretrained Transformers into recurrent RAM-Net models through soft address matching, followed by progressively broader recovery training. It offers a way to reuse pretrained weights in an architecture with bounded memory state, while measuring the capabilities lost during conversion.
+
+**Published:** 2026-10-08 · **First seen:** 2026-10-09T10:17:53Z · **Novelty:** newly-discovered · **Tags:** Architecture Distillation, Linear Attention, Pretrained Migration
+
+**Public availability:** 2026-10-09T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.11214>)
+
+**Evidence:** research-paper; full-text. Nine teachers from 340M to 7B receive 500M migration tokens each; the reported mean recovery is 87.1% of teacher accuracy gains above chance on six tasks, not 87.1% raw accuracy retention. Original v1: 2026-10-08T04:12:49Z. October 9 NEW item 73 supports inferred availability; delayed review explains newly-discovered status.
+
+**Limitations:** The theoretical correspondence is local and restricted; practical projections relax those assumptions. LongBench losses remain substantial for larger models, and internal ablations do not establish superiority over prior migration methods at matched budgets. No end-to-end serving speedup or author implementation was verified.
+
 ## [2026-10-09](../../../reports/2026/10/2026-10-09.md) — PARTIAL SEARCH
 
 ### [DIAL-OPD: Learning More from Fewer Tokens in On-Policy Distillation](<https://arxiv.org/abs/2610.11659>)

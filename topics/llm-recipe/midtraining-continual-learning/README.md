@@ -5,6 +5,22 @@ Domain continued pretraining, context extension, continual learning and forgetti
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-10](../../../reports/2026/10/2026-10-10.md) — PARTIAL SEARCH
+
+### [Stability-Plasticity Balance via Singular-Vector Selection in LLM Continual Learning](<https://arxiv.org/abs/2610.11076>)
+
+SVC selects trainable singular-vector channels using current-task gradients and a general-text activation proxy for forgetting, while allowing every singular value to adapt. Merging each task's updates back into the model avoids accumulating task-specific adapters and improves the tested balance between learning new tasks and retaining existing capabilities.
+
+**Published:** 2026-10-08 · **First seen:** 2026-10-09T10:17:53Z · **Novelty:** newly-discovered · **Tags:** Continual Learning, PEFT, Capability Retention
+
+**Public availability:** 2026-10-09T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.11076>)
+
+**Evidence:** research-paper; full-text. The study tests four model families, eight tasks and three task orders, with channel-selection ablations and an expanded-module PEFT control. Original v1: 2026-10-08T01:35:48Z. October 9 NEW item 58 supports inferred availability; delayed full-text review explains newly-discovered status.
+
+**Limitations:** Forgetting is estimated through a fixed 30,000-example proxy; channel interactions and later training drift are not modeled. Retention evaluation is limited to HumanEval/GSM8K, task training uses 1,000 examples each, and broad module/compute matching is incomplete. No author implementation or comprehensive runtime analysis was verified.
+
 ## [2026-10-08](../../../reports/2026/10/2026-10-08.md) — PARTIAL SEARCH
 
 ### [EngramEdit: Decoupled Knowledge Updates in LLMs through Conditional Memory](<https://arxiv.org/abs/2610.10533>)

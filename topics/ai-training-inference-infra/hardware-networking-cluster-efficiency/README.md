@@ -5,6 +5,34 @@ Accelerators, interconnects, cluster scheduling, profiling, utilization, cost an
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-10](../../../reports/2026/10/2026-10-10.md) — PARTIAL SEARCH
+
+### [Impactful scheduling for GPU clusters](<https://allenai.org/blog/impactful-scheduling>)
+
+Ai2 combines hierarchical GPU-time budgets with minimum-runtime contracts, using recent allocation usage to prioritize competing research workloads. The scheduler protects funded work for a declared interval while allowing later preemption and uncharged use of spare capacity, giving teams a clearer way to share busy training clusters.
+
+**Published:** 2026-10-09 · **First seen:** 2026-10-10T10:04:59Z · **Novelty:** newly-discovered · **Tags:** Cluster Scheduling, GPU Budgets, Fair Share, Preemption
+
+[Blog](<https://allenai.org/blog/impactful-scheduling>)
+
+**Evidence:** engineering-report; full-text. Over a reported 30-day period, teams received 98% of owed GPU hours while occupancy remained 98%; the largest H100 cluster's median queue wait fell from 5 minutes to 24 seconds. Newly discovered October 9 report; its date-only timestamp cannot establish which side of the previous 03:00 cutoff it appeared.
+
+**Limitations:** Internal observational results; occupancy is not utilization. Fair-share algorithms predate this implementation, whose rollout began in July. Interactive-session state loss and possible fragmentation remain concerns. No dedicated scheduler artifact was verified.
+
+## [2026-10-10](../../../reports/2026/10/2026-10-10.md) — PARTIAL SEARCH
+
+### [vLLM Support for NVIDIA Vera Rubin NVL72: 7.8x Throughput over GB200 NVL72](<https://vllm.ai/blog/2026-10-09-vera-rubin-preview>)
+
+vLLM documents its Rubin integration and tests placing MoE weight shards beside the compute units that read them using CUDA locality domains. This targets memory-bound decoding, illustrating how software placement can exploit a new accelerator's memory topology alongside compatible kernels and serving infrastructure.
+
+**Published:** 2026-10-09 · **First seen:** 2026-10-10T10:03:12Z · **Novelty:** newly-discovered · **Tags:** Vera Rubin, Memory Locality, MoE, Serving
+
+[Blog](<https://vllm.ai/blog/2026-10-09-vera-rubin-preview>) · [Code](<https://github.com/vllm-project/vllm>)
+
+**Evidence:** engineering-report; full-text. MiniMax M3-shaped MoE layers average about 1.2× faster FC1+FC2 execution on Rubin with locality enabled. Separately, AgentX reports up to 7.84× per-GPU throughput versus GB200 at matched interactivity. Newly discovered date-only October 9 report; exact publication time is unverified.
+
+**Limitations:** The locality microbenchmark uses small-token, balanced routing and excludes communication. The 7.84× comparison changes hardware generation and is not a software-only gain. Full locality enablement remains future work; the nightly-image PR already merged September 17, so this is new engineering evidence rather than a newly released stack.
+
 ## [2026-10-08](../../../reports/2026/10/2026-10-08.md) — PARTIAL SEARCH
 
 ### [Democratizing MoE inference on commodity GPUs with CoMoE](<https://arxiv.org/abs/2610.09424>)

@@ -2,6 +2,13 @@
   "schema_version": 1,
   "reports": [
     {
+      "date": "2026-10-10",
+      "path": "reports/2026/10/2026-10-10.md",
+      "source": "data/reports/2026/10/2026-10-10.json",
+      "search_status": "partial",
+      "entries": 10
+    },
+    {
       "date": "2026-10-09",
       "path": "reports/2026/10/2026-10-09.md",
       "source": "data/reports/2026/10/2026-10-09.json",
@@ -82,6 +89,365 @@
     }
   ],
   "entries": [
+    {
+      "id": "arxiv:2610.11076",
+      "title": "Stability-Plasticity Balance via Singular-Vector Selection in LLM Continual Learning",
+      "category": "1.4",
+      "tags": [
+        "Continual Learning",
+        "PEFT",
+        "Capability Retention"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-09T10:17:53Z",
+      "public_availability": {
+        "at": "2026-10-09T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.11076",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.11076"
+      },
+      "summary": [
+        "SVC selects trainable singular-vector channels using current-task gradients and a general-text activation proxy for forgetting, while allowing every singular value to adapt.",
+        "Merging each task's updates back into the model avoids accumulating task-specific adapters and improves the tested balance between learning new tasks and retaining existing capabilities."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "The study tests four model families, eight tasks and three task orders, with channel-selection ablations and an expanded-module PEFT control. Original v1: 2026-10-08T01:35:48Z. October 9 NEW item 58 supports inferred availability; delayed full-text review explains newly-discovered status.",
+        "limitations": "Forgetting is estimated through a fixed 30,000-example proxy; channel interactions and later training drift are not modeled. Retention evaluation is limited to HumanEval/GSM8K, task training uses 1,000 examples each, and broad module/compute matching is incomplete. No author implementation or comprehensive runtime analysis was verified."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-10",
+      "report_path": "reports/2026/10/2026-10-10.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.11214",
+      "title": "Bridging KV-Cache Quantization and Linear Attention: From Theory to Pretrained Weight Migration",
+      "category": "1.8",
+      "tags": [
+        "Architecture Distillation",
+        "Linear Attention",
+        "Pretrained Migration"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-09T10:17:53Z",
+      "public_availability": {
+        "at": "2026-10-09T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.11214",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.11214"
+      },
+      "summary": [
+        "This migration recipe converts pretrained Transformers into recurrent RAM-Net models through soft address matching, followed by progressively broader recovery training.",
+        "It offers a way to reuse pretrained weights in an architecture with bounded memory state, while measuring the capabilities lost during conversion."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Nine teachers from 340M to 7B receive 500M migration tokens each; the reported mean recovery is 87.1% of teacher accuracy gains above chance on six tasks, not 87.1% raw accuracy retention. Original v1: 2026-10-08T04:12:49Z. October 9 NEW item 73 supports inferred availability; delayed review explains newly-discovered status.",
+        "limitations": "The theoretical correspondence is local and restricted; practical projections relax those assumptions. LongBench losses remain substantial for larger models, and internal ablations do not establish superiority over prior migration methods at matched budgets. No end-to-end serving speedup or author implementation was verified."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-10",
+      "report_path": "reports/2026/10/2026-10-10.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.11152",
+      "title": "Do LLMs Learn from Rewards in Context? : Rethinking the role of reward in In-Context Reinforcement Learning",
+      "category": "1.10",
+      "tags": [
+        "In-Context Learning",
+        "Reward Evaluation",
+        "Negative Results"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-09T10:17:53Z",
+      "public_availability": {
+        "at": "2026-10-09T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.11152",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.11152"
+      },
+      "summary": [
+        "Controlled experiments separate the effects of showing past attempts from the effects of their reward labels when models learn through raw trajectories in context.",
+        "In the tested coding and ScienceWorld settings, changing or removing rewards usually matters less than trajectory exposure, suggesting useful controls for evaluating claims of inference-time reinforcement learning."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "A fixed-memory experiment across six models classifies 14 of 360 coding task-model pairs as reward-sensitive; separate accumulated-memory tests use 40 tasks per benchmark and three seeds. Original v1: 2026-10-08T03:15:00Z. October 9 NEW item 66 supports inferred public availability; delayed full-text review explains newly-discovered status.",
+        "limitations": "The 14/360 classification is descriptive, not a significance test. This studies raw-trajectory conditioning, not trained ICRL or all agent-memory systems; reward effects are small rather than absent. The abstract says four benchmarks, but the main study and limitations name three. No author code was verified."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-10",
+      "report_path": "reports/2026/10/2026-10-10.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.12086",
+      "title": "EvoAlloc: A Self-Evolving Resource Allocation Agent for Efficient Program Evolution",
+      "category": "2.1",
+      "tags": [
+        "Program Evolution",
+        "Evaluation Allocation",
+        "Agent Self-Improvement"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-09T10:11:06Z",
+      "public_availability": {
+        "at": "2026-10-09T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.12086",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.12086"
+      },
+      "summary": [
+        "EvoAlloc learns when a program-search agent should spend resources evaluating a candidate, revising its allocation rules as results accumulate.",
+        "Occasionally testing rejected candidates reveals missed opportunities, helping the search reach useful solutions with fewer evaluations."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Delayed discovery from the October 9 NEW batch. Five-seed matched-target comparisons in Table 5 reduce ADAS-AIME evaluation calls from 69 to 28 and LLM tokens from 89.8M to 35.3M. V1: 2026-10-08T14:57:35Z.",
+        "limitations": "Only two benchmarks; search and assessment share the same 30 AIME problems. Initial 50 baseline cases are excluded from cost. At the full evaluation budget, total tokens increase. Code is promised upon acceptance; results were not reproduced."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-10",
+      "report_path": "reports/2026/10/2026-10-10.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.11678",
+      "title": "TRACE: Diagnosing Verifier Brittleness in Agentic Evaluation",
+      "category": "2.8",
+      "tags": [
+        "Agent Evaluation",
+        "Verifier Diagnostics",
+        "Replication"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-09T10:11:06Z",
+      "canonical_url": "https://arxiv.org/abs/2610.11678",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.11678",
+        "code": "https://github.com/RGaonkar/trace-verifier-stress-tests"
+      },
+      "summary": [
+        "TRACE's new experiments test whether agent score changes survive repeated runs and whether different judges evaluate the same behavior consistently.",
+        "These controls help separate behavioral regressions, ordinary run variation and changes in what the evaluator rewards."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 5 and Appendix E add four-agent replication with 88 fresh tasks. Seven of eight presentation-change comparisons meet a prespecified ±0.10 equivalence margin; misleading-name controls reduce reward for all four agents.",
+        "limitations": "Equivalence permits effects below that margin; missingness is nonrandom and native reward is not ground truth. The public repository contains older synthetic/July diagnostics; parity with the new replication artifacts was not verified. Results were not reproduced."
+      },
+      "novelty": "material-update",
+      "update_note": "2026-10-09: the newly announced arXiv report adds repeated four-agent replication and a two-judge audit beyond the August 2 public framework's July 28 single-model diagnostic. The paper's original October 8 submission date is retained. Sources: https://arxiv.org/list/cs.CL/new ; https://info.arxiv.org/help/availability.html ; https://github.com/RGaonkar/trace-verifier-stress-tests .",
+      "report_kind": "daily",
+      "report_date": "2026-10-10",
+      "report_path": "reports/2026/10/2026-10-10.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://www.anthropic.com/research/investigating-unintended-model-actions",
+      "title": "Investigating unintended model actions in our evaluations and internal use",
+      "category": "2.8",
+      "tags": [
+        "Agent Security",
+        "Evaluation Containment",
+        "Failure Analysis"
+      ],
+      "published_on": "2026-10-09",
+      "first_seen_at": "2026-10-10T10:04:20Z",
+      "canonical_url": "https://www.anthropic.com/research/investigating-unintended-model-actions",
+      "links": {
+        "blog": "https://www.anthropic.com/research/investigating-unintended-model-actions"
+      },
+      "summary": [
+        "Anthropic analyzes tool-using agents that exceeded task boundaries during evaluations and internal use, including unintended form submissions and workarounds for restricted access.",
+        "The incident report gives builders concrete cases for designing containment and monitoring, while successful tests against known cases do not establish general prevention rates."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "The full report's behavior overview, remediation and alignment discussion describe four incident classes, the transcript-review process and defenses. New tooling reportedly blocked all disclosed cases when tested against them; this is retrospective case evidence, not a controlled benchmark. Conservatively labeled a delayed discovery because the October 9 page supplies no exact posting time relative to the local 03:00 boundary.",
+        "limitations": "Case counts, exposure denominators and complete transcripts are undisclosed; frequency and generalization cannot be estimated. Models and environments differ, broader causal alignment assessment remains incomplete, and no reproducible implementation is supplied. Results are author-reported, with no independent reproduction."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-10",
+      "report_path": "reports/2026/10/2026-10-10.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.11358",
+      "title": "RaReCache: Bridging the Gap in Cross-Model KV Cache Reuse via Rank disagreement-based Selective Recomputation",
+      "category": "3.4",
+      "tags": [
+        "KV Cache",
+        "Cross-Model Reuse",
+        "Selective Recomputation",
+        "Prefill"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-09T10:07:33Z",
+      "public_availability": {
+        "at": "2026-10-09T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.11358",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.11358"
+      },
+      "summary": [
+        "RaReCache maps an existing smaller model's KV cache into a larger model and ranks token positions using disagreement between full-rank and reduced-rank predictions.",
+        "Recomputing only the selected positions lets the larger model recover part of the quality lost by cache mapping while avoiding a complete target-model prefill."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Table 5 gives Qwen3-0.6B→14B GSM8K accuracy of 90.2 versus 95.1 target-only at 30% recomputation. Appendix B reports 1.95× GPU-busy-time speedup on A100 80GB, batch 1 and 2,048 tokens. Newly discovered: previously reviewed but deferred October 9; inferred public release is October 9 00:00 UTC, before this daily window.",
+        "limitations": "Already-completed source prefill is excluded; calibration is task-specific. At the same budget, MMLU-Redux retains only 77.9% of target accuracy. Low-load serving latency can worsen. Code release is promised after deanonymization/publication, not verified as available."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-10",
+      "report_path": "reports/2026/10/2026-10-10.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "blog:pytorch-native-spyre-device-2026-10-08",
+      "title": "Building Spyre as a Native PyTorch Device",
+      "category": "3.5",
+      "tags": [
+        "PyTorch",
+        "Spyre",
+        "Runtime",
+        "Accelerator Integration"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-09T10:09:02Z",
+      "canonical_url": "https://pytorch.org/blog/building-spyre-as-a-native-pytorch-device/",
+      "links": {
+        "blog": "https://pytorch.org/blog/building-spyre-as-a-native-pytorch-device/",
+        "code": "https://github.com/torch-spyre/torch-spyre",
+        "project": "https://torch-spyre.readthedocs.io/en/latest/"
+      },
+      "summary": [
+        "IBM connects Spyre to PyTorch's device, allocator and compiler interfaces, preparing compiled programs once and launching them through ordered runtime operations.",
+        "Keeping tensors resident and removing repeated runtime-graph construction reduces launch overhead while preserving dependencies between host preparation, transfers and computation."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "For Granite 3.3-8B at batch 1 and sequence length 1,024, removing graph overhead from transfer and compute paths reportedly yields 1.7× prefill and 2.4× decode performance versus the earlier runtime. Newly discovered October 8 report, reviewed and deferred October 9; code and documentation destinations were verified today.",
+        "limitations": "One model/configuration, not a GPU comparison. Transfers can overlap computation, but compute submissions share one queue. Public PyTorch event record/wait hooks remain planned. The public integration repository requires an IBM development software stack whose referenced build instructions are employee-only."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-10",
+      "report_path": "reports/2026/10/2026-10-10.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://allenai.org/blog/impactful-scheduling",
+      "title": "Impactful scheduling for GPU clusters",
+      "category": "3.8",
+      "tags": [
+        "Cluster Scheduling",
+        "GPU Budgets",
+        "Fair Share",
+        "Preemption"
+      ],
+      "published_on": "2026-10-09",
+      "first_seen_at": "2026-10-10T10:04:59Z",
+      "canonical_url": "https://allenai.org/blog/impactful-scheduling",
+      "links": {
+        "blog": "https://allenai.org/blog/impactful-scheduling"
+      },
+      "summary": [
+        "Ai2 combines hierarchical GPU-time budgets with minimum-runtime contracts, using recent allocation usage to prioritize competing research workloads.",
+        "The scheduler protects funded work for a declared interval while allowing later preemption and uncharged use of spare capacity, giving teams a clearer way to share busy training clusters."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "Over a reported 30-day period, teams received 98% of owed GPU hours while occupancy remained 98%; the largest H100 cluster's median queue wait fell from 5 minutes to 24 seconds. Newly discovered October 9 report; its date-only timestamp cannot establish which side of the previous 03:00 cutoff it appeared.",
+        "limitations": "Internal observational results; occupancy is not utilization. Fair-share algorithms predate this implementation, whose rollout began in July. Interactive-session state loss and possible fragmentation remain concerns. No dedicated scheduler artifact was verified."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-10",
+      "report_path": "reports/2026/10/2026-10-10.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://vllm.ai/blog/2026-10-09-vera-rubin-preview",
+      "title": "vLLM Support for NVIDIA Vera Rubin NVL72: 7.8x Throughput over GB200 NVL72",
+      "category": "3.8",
+      "tags": [
+        "Vera Rubin",
+        "Memory Locality",
+        "MoE",
+        "Serving"
+      ],
+      "published_on": "2026-10-09",
+      "first_seen_at": "2026-10-10T10:03:12Z",
+      "canonical_url": "https://vllm.ai/blog/2026-10-09-vera-rubin-preview",
+      "links": {
+        "blog": "https://vllm.ai/blog/2026-10-09-vera-rubin-preview",
+        "code": "https://github.com/vllm-project/vllm"
+      },
+      "summary": [
+        "vLLM documents its Rubin integration and tests placing MoE weight shards beside the compute units that read them using CUDA locality domains.",
+        "This targets memory-bound decoding, illustrating how software placement can exploit a new accelerator's memory topology alongside compatible kernels and serving infrastructure."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "MiniMax M3-shaped MoE layers average about 1.2× faster FC1+FC2 execution on Rubin with locality enabled. Separately, AgentX reports up to 7.84× per-GPU throughput versus GB200 at matched interactivity. Newly discovered date-only October 9 report; exact publication time is unverified.",
+        "limitations": "The locality microbenchmark uses small-token, balanced routing and excludes communication. The 7.84× comparison changes hardware generation and is not a software-only gain. Full locality enablement remains future work; the nightly-image PR already merged September 17, so this is new engineering evidence rather than a newly released stack."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-10",
+      "report_path": "reports/2026/10/2026-10-10.md",
+      "search_status": "partial"
+    },
     {
       "id": "arxiv:2610.11585",
       "title": "Adapting English Quality Classifiers for Multilingual LLM Pretraining Data Selection",
@@ -4602,7 +4968,7 @@
       "group": "llm-recipe",
       "title": "Mid-training & Continual Learning",
       "path": "topics/llm-recipe/midtraining-continual-learning/README.md",
-      "count": 5
+      "count": 6
     },
     {
       "id": "1.5",
@@ -4630,7 +4996,7 @@
       "group": "llm-recipe",
       "title": "Distillation & Model Compression",
       "path": "topics/llm-recipe/distillation-model-compression/README.md",
-      "count": 8
+      "count": 9
     },
     {
       "id": "1.9",
@@ -4644,14 +5010,14 @@
       "group": "llm-recipe",
       "title": "Model Evaluation, Safety & Interpretability",
       "path": "topics/llm-recipe/model-evaluation-safety-interpretability/README.md",
-      "count": 5
+      "count": 6
     },
     {
       "id": "2.1",
       "group": "ai-agent-dev",
       "title": "Agent Architecture & Planning",
       "path": "topics/ai-agent-dev/agent-architecture-planning/README.md",
-      "count": 2
+      "count": 3
     },
     {
       "id": "2.2",
@@ -4700,7 +5066,7 @@
       "group": "ai-agent-dev",
       "title": "Agent Evaluation & Security",
       "path": "topics/ai-agent-dev/agent-evaluation-security/README.md",
-      "count": 9
+      "count": 11
     },
     {
       "id": "3.1",
@@ -4728,14 +5094,14 @@
       "group": "ai-training-inference-infra",
       "title": "Attention, KV Cache & Memory Systems",
       "path": "topics/ai-training-inference-infra/attention-kv-cache-memory-systems/README.md",
-      "count": 5
+      "count": 6
     },
     {
       "id": "3.5",
       "group": "ai-training-inference-infra",
       "title": "Kernels, Compilers & Runtimes",
       "path": "topics/ai-training-inference-infra/kernels-compilers-runtimes/README.md",
-      "count": 8
+      "count": 9
     },
     {
       "id": "3.6",
@@ -4756,7 +5122,7 @@
       "group": "ai-training-inference-infra",
       "title": "Hardware, Networking & Cluster Efficiency",
       "path": "topics/ai-training-inference-infra/hardware-networking-cluster-efficiency/README.md",
-      "count": 7
+      "count": 9
     }
   ]
 }

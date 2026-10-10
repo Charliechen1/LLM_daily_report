@@ -5,6 +5,22 @@ Capability evaluation, contamination, generalization, robustness, safety and mec
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-10](../../../reports/2026/10/2026-10-10.md) — PARTIAL SEARCH
+
+### [Do LLMs Learn from Rewards in Context? : Rethinking the role of reward in In-Context Reinforcement Learning](<https://arxiv.org/abs/2610.11152>)
+
+Controlled experiments separate the effects of showing past attempts from the effects of their reward labels when models learn through raw trajectories in context. In the tested coding and ScienceWorld settings, changing or removing rewards usually matters less than trajectory exposure, suggesting useful controls for evaluating claims of inference-time reinforcement learning.
+
+**Published:** 2026-10-08 · **First seen:** 2026-10-09T10:17:53Z · **Novelty:** newly-discovered · **Tags:** In-Context Learning, Reward Evaluation, Negative Results
+
+**Public availability:** 2026-10-09T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.11152>)
+
+**Evidence:** research-paper; full-text. A fixed-memory experiment across six models classifies 14 of 360 coding task-model pairs as reward-sensitive; separate accumulated-memory tests use 40 tasks per benchmark and three seeds. Original v1: 2026-10-08T03:15:00Z. October 9 NEW item 66 supports inferred public availability; delayed full-text review explains newly-discovered status.
+
+**Limitations:** The 14/360 classification is descriptive, not a significance test. This studies raw-trajectory conditioning, not trained ICRL or all agent-memory systems; reward effects are small rather than absent. The abstract says four benchmarks, but the main study and limitations name three. No author code was verified.
+
 ## [2026-10-04](../../../reports/2026/10/2026-10-04.md) — PARTIAL SEARCH
 
 ### [Sharpening Tax in Post-Training](<https://arxiv.org/abs/2610.01509>)

@@ -5,6 +5,20 @@ GPU kernels, operator fusion, compilation, execution graphs and hardware adaptat
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-10](../../../reports/2026/10/2026-10-10.md) — PARTIAL SEARCH
+
+### [Building Spyre as a Native PyTorch Device](<https://pytorch.org/blog/building-spyre-as-a-native-pytorch-device/>)
+
+IBM connects Spyre to PyTorch's device, allocator and compiler interfaces, preparing compiled programs once and launching them through ordered runtime operations. Keeping tensors resident and removing repeated runtime-graph construction reduces launch overhead while preserving dependencies between host preparation, transfers and computation.
+
+**Published:** 2026-10-08 · **First seen:** 2026-10-09T10:09:02Z · **Novelty:** newly-discovered · **Tags:** PyTorch, Spyre, Runtime, Accelerator Integration
+
+[Blog](<https://pytorch.org/blog/building-spyre-as-a-native-pytorch-device/>) · [Code](<https://github.com/torch-spyre/torch-spyre>) · [Project](<https://torch-spyre.readthedocs.io/en/latest/>)
+
+**Evidence:** engineering-report; full-text. For Granite 3.3-8B at batch 1 and sequence length 1,024, removing graph overhead from transfer and compute paths reportedly yields 1.7× prefill and 2.4× decode performance versus the earlier runtime. Newly discovered October 8 report, reviewed and deferred October 9; code and documentation destinations were verified today.
+
+**Limitations:** One model/configuration, not a GPU comparison. Transfers can overlap computation, but compute submissions share one queue. Public PyTorch event record/wait hooks remain planned. The public integration repository requires an IBM development software stack whose referenced build instructions are employee-only.
+
 ## [2026-10-09](../../../reports/2026/10/2026-10-09.md) — PARTIAL SEARCH
 
 ### [QUILT: Rethinking Sparse-Attention Prefill through Shared Query Execution](<https://arxiv.org/abs/2610.11134>)

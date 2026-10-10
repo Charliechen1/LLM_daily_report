@@ -5,6 +5,22 @@ Agent loops, task decomposition, planning, reflection and execution control.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-10](../../../reports/2026/10/2026-10-10.md) — PARTIAL SEARCH
+
+### [EvoAlloc: A Self-Evolving Resource Allocation Agent for Efficient Program Evolution](<https://arxiv.org/abs/2610.12086>)
+
+EvoAlloc learns when a program-search agent should spend resources evaluating a candidate, revising its allocation rules as results accumulate. Occasionally testing rejected candidates reveals missed opportunities, helping the search reach useful solutions with fewer evaluations.
+
+**Published:** 2026-10-08 · **First seen:** 2026-10-09T10:11:06Z · **Novelty:** newly-discovered · **Tags:** Program Evolution, Evaluation Allocation, Agent Self-Improvement
+
+**Public availability:** 2026-10-09T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.12086>)
+
+**Evidence:** research-paper; full-text. Delayed discovery from the October 9 NEW batch. Five-seed matched-target comparisons in Table 5 reduce ADAS-AIME evaluation calls from 69 to 28 and LLM tokens from 89.8M to 35.3M. V1: 2026-10-08T14:57:35Z.
+
+**Limitations:** Only two benchmarks; search and assessment share the same 30 AIME problems. Initial 50 baseline cases are excluded from cost. At the full evaluation budget, total tokens increase. Code is promised upon acceptance; results were not reproduced.
+
 ## [2026-09-29 — Landscape baseline](../../../landscape/2026-09-29.md) — PARTIAL SEARCH
 
 ### [ReAct: Synergizing Reasoning and Acting in Language Models](<https://arxiv.org/abs/2210.03629>)

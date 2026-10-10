@@ -5,6 +5,22 @@ Attention execution, KV management/reuse, offloading and long-context memory eff
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-10](../../../reports/2026/10/2026-10-10.md) — PARTIAL SEARCH
+
+### [RaReCache: Bridging the Gap in Cross-Model KV Cache Reuse via Rank disagreement-based Selective Recomputation](<https://arxiv.org/abs/2610.11358>)
+
+RaReCache maps an existing smaller model's KV cache into a larger model and ranks token positions using disagreement between full-rank and reduced-rank predictions. Recomputing only the selected positions lets the larger model recover part of the quality lost by cache mapping while avoiding a complete target-model prefill.
+
+**Published:** 2026-10-08 · **First seen:** 2026-10-09T10:07:33Z · **Novelty:** newly-discovered · **Tags:** KV Cache, Cross-Model Reuse, Selective Recomputation, Prefill
+
+**Public availability:** 2026-10-09T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.11358>)
+
+**Evidence:** research-paper; full-text. Table 5 gives Qwen3-0.6B→14B GSM8K accuracy of 90.2 versus 95.1 target-only at 30% recomputation. Appendix B reports 1.95× GPU-busy-time speedup on A100 80GB, batch 1 and 2,048 tokens. Newly discovered: previously reviewed but deferred October 9; inferred public release is October 9 00:00 UTC, before this daily window.
+
+**Limitations:** Already-completed source prefill is excluded; calibration is task-specific. At the same budget, MMLU-Redux retains only 77.9% of target accuracy. Low-load serving latency can worsen. Code release is promised after deanonymization/publication, not verified as available.
+
 ## [2026-10-06](../../../reports/2026/10/2026-10-06.md) — PARTIAL SEARCH
 
 ### [MOLT: A Fine-Grained GPU Memory Sharing System for LLM Serving with Opportunistic Fine-Tuning](<https://arxiv.org/abs/2610.05748>)
