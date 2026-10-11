@@ -5,6 +5,22 @@ RLHF, RLVR, policy optimization, reasoning training, tool use and multi-turn age
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-11](../../../reports/2026/10/2026-10-11.md) — PARTIAL SEARCH
+
+### [When KL Regularization Misfires in Group Policy Optimization](<https://arxiv.org/abs/2610.12161>)
+
+ZCPO folds length-normalized, group-centered policy divergence into frozen response-level update coefficients instead of adding a separate KL penalty. This makes reference-policy guidance interact with the same update controls as reward feedback, improving the tested reasoning and long-context training runs.
+
+**Published:** 2026-10-08 · **First seen:** 2026-10-11T10:02:36Z · **Novelty:** newly-discovered · **Tags:** RLVR, KL Regularization, Policy Optimization
+
+**Public availability:** 2026-10-09T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.12161>)
+
+**Evidence:** research-paper; full-text. Table 1 reports Qwen2.5-32B AIME24/25 avg@32 of 56.8/48.5 versus 47.3/37.1 for DAPO without KL, averaged across three seeds and aligned by cumulative GPU compute. Newly discovered: October 9 00:00 UTC public availability is inferred from the dated NEW batch and official schedule.
+
+**Limitations:** The proof optimizes coefficients for fixed inputs, not policy convergence; several mechanisms remain hypotheses. Full-vocabulary KL needs numerical care. The paper says runnable supplementary code exists, but no public implementation was verified. Results were not reproduced.
+
 ## [2026-10-07](../../../reports/2026/10/2026-10-07.md) — PARTIAL SEARCH
 
 ### [TRACE: Rollout-Guided Quantization-Aware Training for FP4 Reinforcement Learning of MoE Language Models](<https://arxiv.org/abs/2610.07767>)

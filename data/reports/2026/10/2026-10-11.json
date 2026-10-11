@@ -1,0 +1,601 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-11",
+  "timezone": "America/Los_Angeles",
+  "generated_at": "2026-10-11T10:10:41Z",
+  "coverage": {
+    "start": "2026-10-10T03:00:00-07:00",
+    "end": "2026-10-11T03:00:00-07:00"
+  },
+  "search": {
+    "status": "partial",
+    "notes": "Coverage is October 10 03:00 through October 11 03:00 America/Los_Angeles; the total 72-hour discovery lookback begins October 8 10:00 UTC. The September 29 landscape of 35 works and complete 141-work registry were compared before selecting 7 full-text contributions; all September 30 through October 10 daily windows are present. No entry repeats a registered canonical work, and no subdomain quota is used. The current arXiv NEW lists still show Friday October 9: its Thursday 20:00 Eastern announcement is inferred as October 9 00:00 UTC from the dated batch and official schedule. No Friday/Saturday announcement or new Sunday-morning batch is invented. Delayed discoveries retain original submission/publication dates. Previously screened reserves retain their prior recorded discovery checkpoints; STI uses October 10 report generation as a conservative prior-run checkpoint because its exact encounter time was not logged. The multilingual tokenizer item concerns the new language-specific analysis, not a new release of its broader existing model artifact; exact artifact parity and history are unresolved. PAP preserves its October 6 identity and date and explicitly identifies the October 9 public draft specification as the substantive update. Search is partial: arXiv and organization-index screening was bounded; OpenReview returned only a loading shell, and ACL inspection did not provide comprehensive date-filtered discovery. Hugging Face October 10 daily discovery, tokenizer GitHub and Hugging Face history were inaccessible; the October 9 discovery page and tokenizer model card were accessible. LMSYS/SGLang blog-index shells limit broad discovery, although targeted primary links recovered the selected LMSYS Rubin report. The LMSYS report is distinct engineering evidence about SGLang inference and Miles reinforcement-learning orchestration; the October 10 vLLM Rubin report was checked for overlap. Existing Rubin software support is not presented as newly released here. Verified source and code/project links are explicit where accessible. No implementation, full artifact parity or independent reproduction is inferred from a paper statement alone. All numerical results are author-reported and scoped to their models, tasks, metrics, hardware and measurement boundaries.",
+    "sources_checked": [
+      {
+        "name": "arXiv cs.CL NEW index: Friday October 9 batch; STI #11 and tokenizer #79",
+        "url": "https://arxiv.org/list/cs.CL/new",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv cs.LG NEW index: Friday October 9 batch; ZCPO #153",
+        "url": "https://arxiv.org/list/cs.LG/new",
+        "status": "ok"
+      },
+      {
+        "name": "Official arXiv availability schedule; no Friday/Saturday announcements",
+        "url": "https://info.arxiv.org/help/availability.html",
+        "status": "ok"
+      },
+      {
+        "name": "Hugging Face October 9 daily discovery",
+        "url": "https://huggingface.co/papers/date/2026-10-09",
+        "status": "ok"
+      },
+      {
+        "name": "2610.12144 primary metadata and original v1 timestamp",
+        "url": "https://arxiv.org/abs/2610.12144",
+        "status": "ok"
+      },
+      {
+        "name": "2610.12144 full primary methods, experiments and limitations",
+        "url": "https://arxiv.org/html/2610.12144v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.12161 primary metadata and original v1 timestamp",
+        "url": "https://arxiv.org/abs/2610.12161",
+        "status": "ok"
+      },
+      {
+        "name": "2610.12161 full primary methods, experiments and limitations",
+        "url": "https://arxiv.org/html/2610.12161v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.10878 primary metadata and original v1 timestamp",
+        "url": "https://arxiv.org/abs/2610.10878",
+        "status": "ok"
+      },
+      {
+        "name": "2610.10878 full primary methods, experiments and limitations",
+        "url": "https://arxiv.org/html/2610.10878v1",
+        "status": "ok"
+      },
+      {
+        "name": "Tokenizer author model card; broader artifact supporting three studies",
+        "url": "https://huggingface.co/cmeister/tokenizer-lm-ablations",
+        "status": "ok"
+      },
+      {
+        "name": "Tokenizer author GitHub; repeated internal retrieval failure",
+        "url": "https://github.com/cimeister/tokenizer-lm-ablations",
+        "status": "unavailable"
+      },
+      {
+        "name": "Tokenizer artifact README history; retrieval failure",
+        "url": "https://huggingface.co/cmeister/tokenizer-lm-ablations/commits/main/README.md",
+        "status": "unavailable"
+      },
+      {
+        "name": "Tokenizer artifact full history; retrieval failure",
+        "url": "https://huggingface.co/cmeister/tokenizer-lm-ablations/commits/main",
+        "status": "unavailable"
+      },
+      {
+        "name": "MiMo metadata; excluded because prior primary report predates lookback",
+        "url": "https://arxiv.org/abs/2610.11959",
+        "status": "ok"
+      },
+      {
+        "name": "MiMo original PDF history; old upload and typo correction",
+        "url": "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL/commits/main/MiMo_V2_6_technical_report.pdf",
+        "status": "ok"
+      },
+      {
+        "name": "Ai2 latest research index; latest relevant cards already covered or outside lookback",
+        "url": "https://allenai.org/research",
+        "status": "ok"
+      },
+      {
+        "name": "Thinking Machines primary research blog index; no qualifying new card",
+        "url": "https://thinkingmachines.ai/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv cs.AI NEW listing, Friday October 9; Plan-and-Patch NEW item 7, plus bounded planning/tools/memory/learning/multi-agent/harness/evaluation screening",
+        "url": "https://arxiv.org/list/cs.AI/new",
+        "status": "ok"
+      },
+      {
+      "name": "Hugging Face October 10 discovery index; fresh retrieval failed, limiting daily discovery",
+        "url": "https://huggingface.co/papers/date/2026-10-10",
+        "status": "unavailable"
+      },
+      {
+        "name": "Plan-and-Patch original submission history",
+        "url": "https://arxiv.org/abs/2610.10786",
+        "status": "ok"
+      },
+      {
+        "name": "Plan-and-Patch full primary HTML: methods, results, limitations, evaluation populations and implementation/prompt appendices",
+        "url": "https://arxiv.org/html/2610.10786v1",
+        "status": "ok"
+      },
+      {
+        "name": "On the Clock original submission history",
+        "url": "https://arxiv.org/abs/2610.10833",
+        "status": "ok"
+      },
+      {
+        "name": "On the Clock full primary HTML: harness and RL methods, results, limitations and implementation appendix; retained as reserve",
+        "url": "https://arxiv.org/html/2610.10833v1",
+        "status": "ok"
+      },
+      {
+        "name": "AgentHorizon original submission history",
+        "url": "https://arxiv.org/abs/2610.11050",
+        "status": "ok"
+      },
+      {
+        "name": "AgentHorizon full primary HTML: paired construction, split protocol, judge results, limitations and technical appendices",
+        "url": "https://arxiv.org/html/2610.11050v1",
+        "status": "ok"
+      },
+      {
+        "name": "AgentHorizon author repository README and linked code destination",
+        "url": "https://github.com/ServiceNow/agenthorizon",
+        "status": "ok"
+      },
+      {
+        "name": "AgentHorizon author evaluation protocol; blind inputs, balanced accuracy and invalid-output denominator",
+        "url": "https://github.com/ServiceNow/agenthorizon/blob/main/docs/evaluation-protocol.md",
+        "status": "ok"
+      },
+      {
+        "name": "AgentHorizon author dataset card; still documents 605/768 two-way splits",
+        "url": "https://huggingface.co/datasets/ServiceNow/AgentHorizon",
+        "status": "ok"
+      },
+      {
+        "name": "AgentHorizon public repository metadata, retrieved via read-only HTTPS after web API retrieval failed",
+        "url": "https://api.github.com/repos/ServiceNow/agenthorizon",
+        "status": "ok"
+      },
+      {
+        "name": "AgentHorizon complete four-commit history, retrieved via read-only HTTPS; June initial commit and latest October 6 documentation merge",
+        "url": "https://api.github.com/repos/ServiceNow/agenthorizon/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "AgentHorizon web commit listing; internal retrieval error, recovered through public API",
+        "url": "https://github.com/ServiceNow/agenthorizon/commits/main/",
+        "status": "unavailable"
+      },
+      {
+        "name": "AgentHorizon dataset commit history; internal retrieval error",
+        "url": "https://huggingface.co/datasets/ServiceNow/AgentHorizon/commits/main",
+        "status": "unavailable"
+      },
+      {
+        "name": "Synthesis Through Simulation primary HTML; methods screened, not full selection review",
+        "url": "https://arxiv.org/html/2610.10549v1",
+        "status": "ok"
+      },
+      {
+        "name": "QGMem primary HTML; introduction and method structure screened, not full selection review",
+        "url": "https://arxiv.org/html/2610.11920v1",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv cs.DC new: Friday October 9 dated listing; all eight new titles screened",
+        "url": "https://arxiv.org/list/cs.DC/new",
+        "status": "ok"
+      },
+      {
+        "name": "PageWeaver abstract and original submission timestamp",
+        "url": "https://arxiv.org/abs/2610.11201",
+        "status": "ok"
+      },
+      {
+        "name": "PageWeaver complete HTML: methods, results, numerical checks and appendices",
+        "url": "https://arxiv.org/html/2610.11201v1",
+        "status": "ok"
+      },
+      {
+        "name": "vLLM blog index: latest visible October 9 Rubin preview already covered",
+        "url": "https://vllm.ai/blog",
+        "status": "ok"
+      },
+      {
+        "name": "PyTorch blog index: latest October 8 Dynamo and Spyre already covered",
+        "url": "https://pytorch.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "NVIDIA technical blog index: bounded dated cards; no qualifying fresh infrastructure report selected",
+        "url": "https://developer.nvidia.com/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "SGLang blog index: empty navigation shell on today's retry",
+        "url": "https://www.sglang.io/blog",
+        "status": "unavailable"
+      },
+      {
+        "name": "LMSYS blog index: navigation shell on today's retry",
+        "url": "https://www.lmsys.org/blog/",
+        "status": "unavailable"
+      },
+      {
+        "name": "LMSYS homepage: dated October 9 Rubin report link recovered",
+        "url": "https://www.lmsys.org/",
+        "status": "ok"
+      },
+      {
+        "name": "SGLang/Miles Rubin report: complete production article",
+        "url": "https://www.lmsys.org/blog/2026-10-09-vera-rubin",
+        "status": "ok"
+      },
+      {
+        "name": "LMSYS staging article: discovery destination, canonical production version subsequently verified",
+        "url": "https://staging.lmsys.org/blog/2026-10-09-vera-rubin",
+        "status": "ok"
+      },
+      {
+        "name": "SGLang public repository destination",
+        "url": "https://github.com/sgl-project/sglang",
+        "status": "ok"
+      },
+      {
+        "name": "Miles public repository destination",
+        "url": "https://github.com/radixark/miles",
+        "status": "ok"
+      },
+      {
+        "name": "Miles Rubin integration PR3700: review fixes, validation and October 8 merge",
+        "url": "https://github.com/radixark/miles/pull/3700",
+        "status": "ok"
+      },
+      {
+        "name": "Kimi K3 DSpark linked checkpoint model card",
+        "url": "https://huggingface.co/RadixArk/Kimi-K3-DSpark",
+        "status": "ok"
+      },
+      {
+        "name": "Galahad-KV abstract and original submission timestamp",
+        "url": "https://arxiv.org/abs/2610.10845",
+        "status": "ok"
+      },
+      {
+        "name": "Galahad-KV complete methods/results/limitations and named artifact appendix",
+        "url": "https://arxiv.org/html/2610.10845v1",
+        "status": "ok"
+      },
+      {
+        "name": "Tested galahad-kv 1.31.4 package metadata: October 7 release, now yanked; proprietary license",
+        "url": "https://pypi.org/project/galahad-kv/1.31.4/",
+        "status": "ok"
+      },
+      {
+        "name": "Galahad public repository README and available files; named experiment harness not verified",
+        "url": "https://github.com/corbenicai/galahad",
+        "status": "ok"
+      },
+      {
+        "name": "Galahad public API/wiki documentation",
+        "url": "https://github.com/corbenicai/galahad/wiki",
+        "status": "ok"
+      },
+      {
+        "name": "SPIN abstract/version history: latest replacement corrects an author's name",
+        "url": "https://arxiv.org/abs/2610.09025",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic research index; latest October 9 item already covered",
+        "url": "https://www.anthropic.com/research",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic engineering index; visible featured article date checked",
+        "url": "https://www.anthropic.com/engineering",
+        "status": "ok"
+      },
+      {
+        "name": "Claude containment engineering article; May 25 publication excluded as old",
+        "url": "https://www.anthropic.com/engineering/how-we-contain-claude",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic opt-in OSS vulnerability service; dated announcement screened",
+        "url": "https://www.anthropic.com/research/launching-opt-in-vuln-finding-service-for-open-source",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic ultraviolet-sky application; header and overview screened",
+        "url": "https://www.anthropic.com/research/the-missing-map-of-the-sky",
+        "status": "ok"
+      },
+      {
+        "name": "OpenAI research index; latest dated cards screened",
+        "url": "https://openai.com/research/index/",
+        "status": "ok"
+      },
+      {
+        "name": "DeepMind research landing page; bounded visible publications only",
+        "url": "https://deepmind.google/research/",
+        "status": "ok"
+      },
+      {
+        "name": "ICLR 2027 OpenReview discovery; loading shell only",
+        "url": "https://openreview.net/group?id=ICLR.cc/2027/Conference",
+        "status": "unavailable"
+      },
+      {
+        "name": "ACL Anthology landing index; no exhaustive date filtering",
+        "url": "https://aclanthology.org/",
+        "status": "ok"
+      },
+      {
+        "name": "Microsoft Research latest blog index; newest visible dated card October 7",
+        "url": "https://www.microsoft.com/en-us/research/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "Sierra blog index; October 9 draft publication discovered",
+        "url": "https://sierra.ai/blog",
+        "status": "ok"
+      },
+      {
+        "name": "Personal Agent Protocol original October 6 announcement; chronology retained",
+        "url": "https://sierra.ai/blog/introducing-personal-agent-protocol",
+        "status": "ok"
+      },
+      {
+        "name": "Personal Agent Protocol October 9 primary release report; complete article",
+        "url": "https://sierra.ai/blog/poppy",
+        "status": "ok"
+      },
+      {
+        "name": "Personal Agent Protocol landing page and specification links",
+        "url": "https://personalagentprotocol.org/",
+        "status": "ok"
+      },
+      {
+        "name": "Personal Agent Protocol draft 0.1; updated October 9, technical sections 1-6 inspected",
+        "url": "https://personalagentprotocol.org/docs/spec",
+        "status": "ok"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": "arxiv:2610.12144",
+      "title": "Language-Specific Effects of Tokenizer Choice in Multilingual Language Models",
+      "category": "1.1",
+      "tags": [
+        "Tokenization",
+        "Multilingual",
+        "Controlled Ablations"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-11T10:02:36Z",
+      "canonical_url": "https://arxiv.org/abs/2610.12144",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.12144",
+        "project": "https://huggingface.co/cmeister/tokenizer-lm-ablations"
+      },
+      "summary": [
+        "A controlled multilingual study measures how tokenizer choices affect individual languages and tests inexpensive metrics for screening candidates before model training.",
+        "The results favor language-specific evaluation over a single average and show why allocating more tokenizer capacity to a low-resource language should be validated rather than assumed beneficial."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 2–6 compare 123 models spanning 54 tokenizers; the main setup uses 1.27B models and 9.2B tokens. Family-held-out ranking reaches 89.0% accuracy for mean FLORES+ bits-per-byte. Newly discovered October 8 paper, announced in October 9's batch; the linked artifact predates this analysis, so no earliest-public timestamp or new-weight release is asserted.",
+        "limitations": "Mostly one seed per tokenizer, one main architecture/vocabulary scale and observational metric correlations. Fixed tokens change training bytes; task-level generalization remains limited. GitHub and artifact history were inaccessible, and exact artifact parity is unverified."
+      },
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "arxiv:2610.12161",
+      "title": "When KL Regularization Misfires in Group Policy Optimization",
+      "category": "1.7",
+      "tags": [
+        "RLVR",
+        "KL Regularization",
+        "Policy Optimization"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-11T10:02:36Z",
+      "public_availability": {
+        "at": "2026-10-09T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.12161",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.12161"
+      },
+      "summary": [
+        "ZCPO folds length-normalized, group-centered policy divergence into frozen response-level update coefficients instead of adding a separate KL penalty.",
+        "This makes reference-policy guidance interact with the same update controls as reward feedback, improving the tested reasoning and long-context training runs."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Table 1 reports Qwen2.5-32B AIME24/25 avg@32 of 56.8/48.5 versus 47.3/37.1 for DAPO without KL, averaged across three seeds and aligned by cumulative GPU compute. Newly discovered: October 9 00:00 UTC public availability is inferred from the dated NEW batch and official schedule.",
+        "limitations": "The proof optimizes coefficients for fixed inputs, not policy convergence; several mechanisms remain hypotheses. Full-vocabulary KL needs numerical care. The paper says runnable supplementary code exists, but no public implementation was verified. Results were not reproduced."
+      },
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "arxiv:2610.10878",
+      "title": "Stochastic Teacher Intervention for Agentic On-Policy Distillation",
+      "category": "1.8",
+      "tags": [
+        "On-Policy Distillation",
+        "Teacher Intervention",
+        "Agent Training"
+      ],
+      "published_on": "2026-10-07",
+      "first_seen_at": "2026-10-10T10:12:31Z",
+      "public_availability": {
+        "at": "2026-10-09T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.10878",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.10878"
+      },
+      "summary": [
+        "STI-OPD uses teacher–student disagreement to probabilistically replace a proposed agent turn before execution, then importance-weights supervision on teacher-generated tokens.",
+        "This offers a training recipe for limiting compounding trajectory errors while leaving the student to act alone at evaluation time."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 3–4 and Table 2 report ScienceWorld success of 27.5% versus FutureBridge-OPD's 22.2% for a Qwen3-1.7B student and 4B teacher, alongside component ablations. Newly discovered: the October 7 receipt preceded its inferred October 9 00:00 UTC public announcement; an October 10 discovery checkpoint is retained.",
+        "limitations": "Importance weighting corrects teacher-token sampling at fixed contexts, not intervention-induced histories or adaptive selection. Teacher probabilities are required. Evidence uses small text-only Qwen students; matched intervention counts are not matched teacher FLOPs. No author code was verified."
+      },
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "arxiv:2610.10786",
+      "title": "Plan-and-Patch: Diffusion Language Models for Agentic Planning",
+      "category": "2.1",
+      "tags": [
+        "Agent Planning",
+        "Diffusion Models",
+        "Plan Repair"
+      ],
+      "published_on": "2026-10-07",
+      "first_seen_at": "2026-10-10T10:09:23Z",
+      "public_availability": {
+        "at": "2026-10-09T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.10786",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.10786"
+      },
+      "summary": [
+        "Plan-and-Patch trains a diffusion model to generate structured agent plans and replace selected spans while preserving the surrounding steps.",
+        "This makes local plan revision explicit and reduces planner-generation latency in two tested environments, while showing that finding the right repair region remains a bottleneck."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Delayed discovery from the October 9 NEW batch, item 7; v1 received October 7 at 18:45:45 UTC. Appendix A.2 reports generation latency of 14.3 versus 23.3 seconds on ALFWorld and 21.7 versus 40.2 seconds on TextCraft, with diffusion versus autoregressive 8B planners and a common Qwen3-8B executor.",
+        "limitations": "Latency is synchronized, unbatched bf16 planner decoding on one A100, excluding environment execution. Interactive success does not consistently favor diffusion; repair restarts from the initial state. One fine-tuning seed and different pretrained model families limit attribution. No author implementation was verified; results were not reproduced."
+      },
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "https://sierra.ai/blog/introducing-personal-agent-protocol",
+      "title": "Personal Agent Protocol: public draft 0.1",
+      "category": "2.2",
+      "tags": [
+        "Agent Protocols",
+        "Delegated Authorization",
+        "Tool Integration"
+      ],
+      "published_on": "2026-10-06",
+      "first_seen_at": "2026-10-11T10:05:27Z",
+      "canonical_url": "https://sierra.ai/blog/introducing-personal-agent-protocol",
+      "links": {
+        "blog": "https://sierra.ai/blog/poppy",
+        "project": "https://personalagentprotocol.org/docs/spec"
+      },
+      "summary": [
+        "Sierra published draft 0.1 of Personal Agent Protocol, specifying company discovery, delegated sign-in and sessions shared across web browsing, APIs and company-agent conversations.",
+        "The draft gives builders a concrete integration contract for identifying agents and enforcing user-approved account scopes across channels.",
+        "It remains a changeable draft with no reported performance or security benchmark, and its reference implementation is still planned."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "The October 9 publication moves beyond the October 6 announcement to a public specification: sections 3-6 define discovery validation, OAuth flows, session/account tokens, browser-session assertions and API authorization. This is a delayed discovery of a concrete interoperability design, not an experimentally validated reliability result. First-seen uses the canonical-source review checkpoint; the earlier search encounter was not precisely logged.",
+        "limitations": "Draft 0.1 permits incompatible changes. Broad read/write scopes require company enforcement; mediated sign-in handles credentials, MCP uses resource-specific bearer tokens, and revocation of already issued session tokens depends on enforcement. No controlled benchmark or independent security evaluation is supplied. The promised reference implementation was not verified as released."
+      },
+      "novelty": "material-update",
+      "update_note": "2026-10-09: https://sierra.ai/blog/poppy releases the public draft at https://personalagentprotocol.org/docs/spec, whose header confirms the update date. The October 6 announcement only promised a later specification; the new contribution is an inspectable protocol contract. The original October 6 publication date and canonical identity are preserved; no new standard adoption or demonstrated security guarantee is inferred."
+    },
+    {
+      "id": "arxiv:2610.11201",
+      "title": "PageWeaver: KV-Guided Query Unions for Sparse Attention",
+      "category": "3.4",
+      "tags": [
+        "Sparse Attention",
+        "KV Reuse",
+        "GPU Scheduling"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-09T10:07:33Z",
+      "public_availability": {
+        "at": "2026-10-09T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.11201",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.11201"
+      },
+      "summary": [
+        "PageWeaver groups sparse-attention queries by overlap in their selected KV pages, then executes them through a kernel that retains each query's original support and output location.",
+        "This reduces repeated page traversal while accounting for the cost of constructing useful query groups."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "On selected MiniMax-M3 H200 captures, online regrouping lowers complete-call latency by 3.26–7.66% versus original-order Union8, including preparation. Newly discovered: reviewed and deferred October 9; its inferred public release precedes this daily window.",
+        "limitations": "Incremental service throughput gains are only 0.47–0.73% at 32K/64K and negative at 8K. Few independent prompts, one generated token and no downstream quality evaluation; no win over the faster existing B300 backend. A dedicated public artifact URL was not verified."
+      },
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "https://www.lmsys.org/blog/2026-10-09-vera-rubin",
+      "title": "SGLang and Miles on NVIDIA Vera Rubin",
+      "category": "3.5",
+      "tags": [
+        "SGLang",
+        "Kernel Fusion",
+        "Vera Rubin",
+        "RL Infrastructure"
+      ],
+      "published_on": "2026-10-09",
+      "first_seen_at": "2026-10-11T10:04:14Z",
+      "canonical_url": "https://www.lmsys.org/blog/2026-10-09-vera-rubin",
+      "links": {
+        "blog": "https://www.lmsys.org/blog/2026-10-09-vera-rubin",
+        "code": "https://github.com/sgl-project/sglang",
+        "project": "https://github.com/radixark/miles"
+      },
+      "summary": [
+        "SGLang retunes attention, communication and hybrid-model kernels for Rubin, while Miles connects rollout and training to CPU-hosted agent sandboxes.",
+        "The report shows how removing memory, synchronization and launch overhead can improve a ported LLM stack, with small-scale RL runs checking the integrated execution path."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "For Kimi K3 NVFP4 on eight Rubin GPUs, fusing the MoE tail reportedly removes 276 launches per decode step and improves end-to-end performance by 5.9%. A separate MLA configuration improves 16% at batch 16/context 128K. Newly discovered October 9 report, recovered through the homepage after the blog index returned a shell.",
+        "limitations": "Configuration-specific gains are not additive. Early-access hardware; RL training reward is not held-out accuracy, and the FP8 DeepSeek test uses only four layers. The public Miles integration PR predates this report; the article does not establish first availability of every kernel patch."
+      },
+      "novelty": "newly-discovered"
+    }
+  ]
+}

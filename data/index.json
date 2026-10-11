@@ -2,6 +2,13 @@
   "schema_version": 1,
   "reports": [
     {
+      "date": "2026-10-11",
+      "path": "reports/2026/10/2026-10-11.md",
+      "source": "data/reports/2026/10/2026-10-11.json",
+      "search_status": "partial",
+      "entries": 7
+    },
+    {
       "date": "2026-10-10",
       "path": "reports/2026/10/2026-10-10.md",
       "source": "data/reports/2026/10/2026-10-10.json",
@@ -89,6 +96,262 @@
     }
   ],
   "entries": [
+    {
+      "id": "arxiv:2610.12144",
+      "title": "Language-Specific Effects of Tokenizer Choice in Multilingual Language Models",
+      "category": "1.1",
+      "tags": [
+        "Tokenization",
+        "Multilingual",
+        "Controlled Ablations"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-11T10:02:36Z",
+      "canonical_url": "https://arxiv.org/abs/2610.12144",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.12144",
+        "project": "https://huggingface.co/cmeister/tokenizer-lm-ablations"
+      },
+      "summary": [
+        "A controlled multilingual study measures how tokenizer choices affect individual languages and tests inexpensive metrics for screening candidates before model training.",
+        "The results favor language-specific evaluation over a single average and show why allocating more tokenizer capacity to a low-resource language should be validated rather than assumed beneficial."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 2–6 compare 123 models spanning 54 tokenizers; the main setup uses 1.27B models and 9.2B tokens. Family-held-out ranking reaches 89.0% accuracy for mean FLORES+ bits-per-byte. Newly discovered October 8 paper, announced in October 9's batch; the linked artifact predates this analysis, so no earliest-public timestamp or new-weight release is asserted.",
+        "limitations": "Mostly one seed per tokenizer, one main architecture/vocabulary scale and observational metric correlations. Fixed tokens change training bytes; task-level generalization remains limited. GitHub and artifact history were inaccessible, and exact artifact parity is unverified."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-11",
+      "report_path": "reports/2026/10/2026-10-11.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.12161",
+      "title": "When KL Regularization Misfires in Group Policy Optimization",
+      "category": "1.7",
+      "tags": [
+        "RLVR",
+        "KL Regularization",
+        "Policy Optimization"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-11T10:02:36Z",
+      "public_availability": {
+        "at": "2026-10-09T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.12161",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.12161"
+      },
+      "summary": [
+        "ZCPO folds length-normalized, group-centered policy divergence into frozen response-level update coefficients instead of adding a separate KL penalty.",
+        "This makes reference-policy guidance interact with the same update controls as reward feedback, improving the tested reasoning and long-context training runs."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Table 1 reports Qwen2.5-32B AIME24/25 avg@32 of 56.8/48.5 versus 47.3/37.1 for DAPO without KL, averaged across three seeds and aligned by cumulative GPU compute. Newly discovered: October 9 00:00 UTC public availability is inferred from the dated NEW batch and official schedule.",
+        "limitations": "The proof optimizes coefficients for fixed inputs, not policy convergence; several mechanisms remain hypotheses. Full-vocabulary KL needs numerical care. The paper says runnable supplementary code exists, but no public implementation was verified. Results were not reproduced."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-11",
+      "report_path": "reports/2026/10/2026-10-11.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.10878",
+      "title": "Stochastic Teacher Intervention for Agentic On-Policy Distillation",
+      "category": "1.8",
+      "tags": [
+        "On-Policy Distillation",
+        "Teacher Intervention",
+        "Agent Training"
+      ],
+      "published_on": "2026-10-07",
+      "first_seen_at": "2026-10-10T10:12:31Z",
+      "public_availability": {
+        "at": "2026-10-09T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.10878",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.10878"
+      },
+      "summary": [
+        "STI-OPD uses teacher–student disagreement to probabilistically replace a proposed agent turn before execution, then importance-weights supervision on teacher-generated tokens.",
+        "This offers a training recipe for limiting compounding trajectory errors while leaving the student to act alone at evaluation time."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 3–4 and Table 2 report ScienceWorld success of 27.5% versus FutureBridge-OPD's 22.2% for a Qwen3-1.7B student and 4B teacher, alongside component ablations. Newly discovered: the October 7 receipt preceded its inferred October 9 00:00 UTC public announcement; an October 10 discovery checkpoint is retained.",
+        "limitations": "Importance weighting corrects teacher-token sampling at fixed contexts, not intervention-induced histories or adaptive selection. Teacher probabilities are required. Evidence uses small text-only Qwen students; matched intervention counts are not matched teacher FLOPs. No author code was verified."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-11",
+      "report_path": "reports/2026/10/2026-10-11.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.10786",
+      "title": "Plan-and-Patch: Diffusion Language Models for Agentic Planning",
+      "category": "2.1",
+      "tags": [
+        "Agent Planning",
+        "Diffusion Models",
+        "Plan Repair"
+      ],
+      "published_on": "2026-10-07",
+      "first_seen_at": "2026-10-10T10:09:23Z",
+      "public_availability": {
+        "at": "2026-10-09T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.10786",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.10786"
+      },
+      "summary": [
+        "Plan-and-Patch trains a diffusion model to generate structured agent plans and replace selected spans while preserving the surrounding steps.",
+        "This makes local plan revision explicit and reduces planner-generation latency in two tested environments, while showing that finding the right repair region remains a bottleneck."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Delayed discovery from the October 9 NEW batch, item 7; v1 received October 7 at 18:45:45 UTC. Appendix A.2 reports generation latency of 14.3 versus 23.3 seconds on ALFWorld and 21.7 versus 40.2 seconds on TextCraft, with diffusion versus autoregressive 8B planners and a common Qwen3-8B executor.",
+        "limitations": "Latency is synchronized, unbatched bf16 planner decoding on one A100, excluding environment execution. Interactive success does not consistently favor diffusion; repair restarts from the initial state. One fine-tuning seed and different pretrained model families limit attribution. No author implementation was verified; results were not reproduced."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-11",
+      "report_path": "reports/2026/10/2026-10-11.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://sierra.ai/blog/introducing-personal-agent-protocol",
+      "title": "Personal Agent Protocol: public draft 0.1",
+      "category": "2.2",
+      "tags": [
+        "Agent Protocols",
+        "Delegated Authorization",
+        "Tool Integration"
+      ],
+      "published_on": "2026-10-06",
+      "first_seen_at": "2026-10-11T10:05:27Z",
+      "canonical_url": "https://sierra.ai/blog/introducing-personal-agent-protocol",
+      "links": {
+        "blog": "https://sierra.ai/blog/poppy",
+        "project": "https://personalagentprotocol.org/docs/spec"
+      },
+      "summary": [
+        "Sierra published draft 0.1 of Personal Agent Protocol, specifying company discovery, delegated sign-in and sessions shared across web browsing, APIs and company-agent conversations.",
+        "The draft gives builders a concrete integration contract for identifying agents and enforcing user-approved account scopes across channels.",
+        "It remains a changeable draft with no reported performance or security benchmark, and its reference implementation is still planned."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "The October 9 publication moves beyond the October 6 announcement to a public specification: sections 3-6 define discovery validation, OAuth flows, session/account tokens, browser-session assertions and API authorization. This is a delayed discovery of a concrete interoperability design, not an experimentally validated reliability result. First-seen uses the canonical-source review checkpoint; the earlier search encounter was not precisely logged.",
+        "limitations": "Draft 0.1 permits incompatible changes. Broad read/write scopes require company enforcement; mediated sign-in handles credentials, MCP uses resource-specific bearer tokens, and revocation of already issued session tokens depends on enforcement. No controlled benchmark or independent security evaluation is supplied. The promised reference implementation was not verified as released."
+      },
+      "novelty": "material-update",
+      "update_note": "2026-10-09: https://sierra.ai/blog/poppy releases the public draft at https://personalagentprotocol.org/docs/spec, whose header confirms the update date. The October 6 announcement only promised a later specification; the new contribution is an inspectable protocol contract. The original October 6 publication date and canonical identity are preserved; no new standard adoption or demonstrated security guarantee is inferred.",
+      "report_kind": "daily",
+      "report_date": "2026-10-11",
+      "report_path": "reports/2026/10/2026-10-11.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.11201",
+      "title": "PageWeaver: KV-Guided Query Unions for Sparse Attention",
+      "category": "3.4",
+      "tags": [
+        "Sparse Attention",
+        "KV Reuse",
+        "GPU Scheduling"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-09T10:07:33Z",
+      "public_availability": {
+        "at": "2026-10-09T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.11201",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.11201"
+      },
+      "summary": [
+        "PageWeaver groups sparse-attention queries by overlap in their selected KV pages, then executes them through a kernel that retains each query's original support and output location.",
+        "This reduces repeated page traversal while accounting for the cost of constructing useful query groups."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "On selected MiniMax-M3 H200 captures, online regrouping lowers complete-call latency by 3.26–7.66% versus original-order Union8, including preparation. Newly discovered: reviewed and deferred October 9; its inferred public release precedes this daily window.",
+        "limitations": "Incremental service throughput gains are only 0.47–0.73% at 32K/64K and negative at 8K. Few independent prompts, one generated token and no downstream quality evaluation; no win over the faster existing B300 backend. A dedicated public artifact URL was not verified."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-11",
+      "report_path": "reports/2026/10/2026-10-11.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://www.lmsys.org/blog/2026-10-09-vera-rubin",
+      "title": "SGLang and Miles on NVIDIA Vera Rubin",
+      "category": "3.5",
+      "tags": [
+        "SGLang",
+        "Kernel Fusion",
+        "Vera Rubin",
+        "RL Infrastructure"
+      ],
+      "published_on": "2026-10-09",
+      "first_seen_at": "2026-10-11T10:04:14Z",
+      "canonical_url": "https://www.lmsys.org/blog/2026-10-09-vera-rubin",
+      "links": {
+        "blog": "https://www.lmsys.org/blog/2026-10-09-vera-rubin",
+        "code": "https://github.com/sgl-project/sglang",
+        "project": "https://github.com/radixark/miles"
+      },
+      "summary": [
+        "SGLang retunes attention, communication and hybrid-model kernels for Rubin, while Miles connects rollout and training to CPU-hosted agent sandboxes.",
+        "The report shows how removing memory, synchronization and launch overhead can improve a ported LLM stack, with small-scale RL runs checking the integrated execution path."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "For Kimi K3 NVFP4 on eight Rubin GPUs, fusing the MoE tail reportedly removes 276 launches per decode step and improves end-to-end performance by 5.9%. A separate MLA configuration improves 16% at batch 16/context 128K. Newly discovered October 9 report, recovered through the homepage after the blog index returned a shell.",
+        "limitations": "Configuration-specific gains are not additive. Early-access hardware; RL training reward is not held-out accuracy, and the FP8 DeepSeek test uses only four layers. The public Miles integration PR predates this report; the article does not establish first availability of every kernel patch."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-11",
+      "report_path": "reports/2026/10/2026-10-11.md",
+      "search_status": "partial"
+    },
     {
       "id": "arxiv:2610.11076",
       "title": "Stability-Plasticity Balance via Singular-Vector Selection in LLM Continual Learning",
@@ -4947,7 +5210,7 @@
       "group": "llm-recipe",
       "title": "Data Curation & Tokenization",
       "path": "topics/llm-recipe/data-curation-tokenization/README.md",
-      "count": 5
+      "count": 6
     },
     {
       "id": "1.2",
@@ -4989,14 +5252,14 @@
       "group": "llm-recipe",
       "title": "Reinforcement Learning & Reasoning",
       "path": "topics/llm-recipe/reinforcement-learning-reasoning/README.md",
-      "count": 7
+      "count": 8
     },
     {
       "id": "1.8",
       "group": "llm-recipe",
       "title": "Distillation & Model Compression",
       "path": "topics/llm-recipe/distillation-model-compression/README.md",
-      "count": 9
+      "count": 10
     },
     {
       "id": "1.9",
@@ -5017,14 +5280,14 @@
       "group": "ai-agent-dev",
       "title": "Agent Architecture & Planning",
       "path": "topics/ai-agent-dev/agent-architecture-planning/README.md",
-      "count": 3
+      "count": 4
     },
     {
       "id": "2.2",
       "group": "ai-agent-dev",
       "title": "Tool Use & Environment Interaction",
       "path": "topics/ai-agent-dev/tool-use-environment-interaction/README.md",
-      "count": 2
+      "count": 3
     },
     {
       "id": "2.3",
@@ -5094,14 +5357,14 @@
       "group": "ai-training-inference-infra",
       "title": "Attention, KV Cache & Memory Systems",
       "path": "topics/ai-training-inference-infra/attention-kv-cache-memory-systems/README.md",
-      "count": 6
+      "count": 7
     },
     {
       "id": "3.5",
       "group": "ai-training-inference-infra",
       "title": "Kernels, Compilers & Runtimes",
       "path": "topics/ai-training-inference-infra/kernels-compilers-runtimes/README.md",
-      "count": 9
+      "count": 10
     },
     {
       "id": "3.6",

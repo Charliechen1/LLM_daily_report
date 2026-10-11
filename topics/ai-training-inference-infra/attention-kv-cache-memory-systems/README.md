@@ -5,6 +5,22 @@ Attention execution, KV management/reuse, offloading and long-context memory eff
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-11](../../../reports/2026/10/2026-10-11.md) — PARTIAL SEARCH
+
+### [PageWeaver: KV-Guided Query Unions for Sparse Attention](<https://arxiv.org/abs/2610.11201>)
+
+PageWeaver groups sparse-attention queries by overlap in their selected KV pages, then executes them through a kernel that retains each query's original support and output location. This reduces repeated page traversal while accounting for the cost of constructing useful query groups.
+
+**Published:** 2026-10-08 · **First seen:** 2026-10-09T10:07:33Z · **Novelty:** newly-discovered · **Tags:** Sparse Attention, KV Reuse, GPU Scheduling
+
+**Public availability:** 2026-10-09T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.11201>)
+
+**Evidence:** research-paper; full-text. On selected MiniMax-M3 H200 captures, online regrouping lowers complete-call latency by 3.26–7.66% versus original-order Union8, including preparation. Newly discovered: reviewed and deferred October 9; its inferred public release precedes this daily window.
+
+**Limitations:** Incremental service throughput gains are only 0.47–0.73% at 32K/64K and negative at 8K. Few independent prompts, one generated token and no downstream quality evaluation; no win over the faster existing B300 backend. A dedicated public artifact URL was not verified.
+
 ## [2026-10-10](../../../reports/2026/10/2026-10-10.md) — PARTIAL SEARCH
 
 ### [RaReCache: Bridging the Gap in Cross-Model KV Cache Reuse via Rank disagreement-based Selective Recomputation](<https://arxiv.org/abs/2610.11358>)

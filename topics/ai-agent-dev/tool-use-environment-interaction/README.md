@@ -5,6 +5,22 @@ Tool selection/calling, APIs, code execution, browser/computer use and protocols
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-11](../../../reports/2026/10/2026-10-11.md) — PARTIAL SEARCH
+
+### [Personal Agent Protocol: public draft 0.1](<https://sierra.ai/blog/introducing-personal-agent-protocol>)
+
+Sierra published draft 0.1 of Personal Agent Protocol, specifying company discovery, delegated sign-in and sessions shared across web browsing, APIs and company-agent conversations. The draft gives builders a concrete integration contract for identifying agents and enforcing user-approved account scopes across channels. It remains a changeable draft with no reported performance or security benchmark, and its reference implementation is still planned.
+
+**Published:** 2026-10-06 · **First seen:** 2026-10-11T10:05:27Z · **Novelty:** material-update · **Tags:** Agent Protocols, Delegated Authorization, Tool Integration
+
+[Blog](<https://sierra.ai/blog/poppy>) · [Project](<https://personalagentprotocol.org/docs/spec>)
+
+**Evidence:** engineering-report; full-text. The October 9 publication moves beyond the October 6 announcement to a public specification: sections 3-6 define discovery validation, OAuth flows, session/account tokens, browser-session assertions and API authorization. This is a delayed discovery of a concrete interoperability design, not an experimentally validated reliability result. First-seen uses the canonical-source review checkpoint; the earlier search encounter was not precisely logged.
+
+**Limitations:** Draft 0.1 permits incompatible changes. Broad read/write scopes require company enforcement; mediated sign-in handles credentials, MCP uses resource-specific bearer tokens, and revocation of already issued session tokens depends on enforcement. No controlled benchmark or independent security evaluation is supplied. The promised reference implementation was not verified as released.
+
+**Update:** 2026-10-09: https://sierra.ai/blog/poppy releases the public draft at https://personalagentprotocol.org/docs/spec, whose header confirms the update date. The October 6 announcement only promised a later specification; the new contribution is an inspectable protocol contract. The original October 6 publication date and canonical identity are preserved; no new standard adoption or demonstrated security guarantee is inferred.
+
 ## [2026-09-29 — Landscape baseline](../../../landscape/2026-09-29.md) — PARTIAL SEARCH
 
 ### [SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering](<https://arxiv.org/abs/2405.15793>)

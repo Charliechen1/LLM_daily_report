@@ -5,6 +5,22 @@ Knowledge/reasoning distillation, pruning, quantization algorithms and model mer
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-11](../../../reports/2026/10/2026-10-11.md) — PARTIAL SEARCH
+
+### [Stochastic Teacher Intervention for Agentic On-Policy Distillation](<https://arxiv.org/abs/2610.10878>)
+
+STI-OPD uses teacher–student disagreement to probabilistically replace a proposed agent turn before execution, then importance-weights supervision on teacher-generated tokens. This offers a training recipe for limiting compounding trajectory errors while leaving the student to act alone at evaluation time.
+
+**Published:** 2026-10-07 · **First seen:** 2026-10-10T10:12:31Z · **Novelty:** newly-discovered · **Tags:** On-Policy Distillation, Teacher Intervention, Agent Training
+
+**Public availability:** 2026-10-09T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.10878>)
+
+**Evidence:** research-paper; full-text. Sections 3–4 and Table 2 report ScienceWorld success of 27.5% versus FutureBridge-OPD's 22.2% for a Qwen3-1.7B student and 4B teacher, alongside component ablations. Newly discovered: the October 7 receipt preceded its inferred October 9 00:00 UTC public announcement; an October 10 discovery checkpoint is retained.
+
+**Limitations:** Importance weighting corrects teacher-token sampling at fixed contexts, not intervention-induced histories or adaptive selection. Teacher probabilities are required. Evidence uses small text-only Qwen students; matched intervention counts are not matched teacher FLOPs. No author code was verified.
+
 ## [2026-10-10](../../../reports/2026/10/2026-10-10.md) — PARTIAL SEARCH
 
 ### [Bridging KV-Cache Quantization and Linear Attention: From Theory to Pretrained Weight Migration](<https://arxiv.org/abs/2610.11214>)

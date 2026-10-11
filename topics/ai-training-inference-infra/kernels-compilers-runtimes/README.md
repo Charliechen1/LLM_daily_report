@@ -5,6 +5,20 @@ GPU kernels, operator fusion, compilation, execution graphs and hardware adaptat
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-11](../../../reports/2026/10/2026-10-11.md) — PARTIAL SEARCH
+
+### [SGLang and Miles on NVIDIA Vera Rubin](<https://www.lmsys.org/blog/2026-10-09-vera-rubin>)
+
+SGLang retunes attention, communication and hybrid-model kernels for Rubin, while Miles connects rollout and training to CPU-hosted agent sandboxes. The report shows how removing memory, synchronization and launch overhead can improve a ported LLM stack, with small-scale RL runs checking the integrated execution path.
+
+**Published:** 2026-10-09 · **First seen:** 2026-10-11T10:04:14Z · **Novelty:** newly-discovered · **Tags:** SGLang, Kernel Fusion, Vera Rubin, RL Infrastructure
+
+[Blog](<https://www.lmsys.org/blog/2026-10-09-vera-rubin>) · [Code](<https://github.com/sgl-project/sglang>) · [Project](<https://github.com/radixark/miles>)
+
+**Evidence:** engineering-report; full-text. For Kimi K3 NVFP4 on eight Rubin GPUs, fusing the MoE tail reportedly removes 276 launches per decode step and improves end-to-end performance by 5.9%. A separate MLA configuration improves 16% at batch 16/context 128K. Newly discovered October 9 report, recovered through the homepage after the blog index returned a shell.
+
+**Limitations:** Configuration-specific gains are not additive. Early-access hardware; RL training reward is not held-out accuracy, and the FP8 DeepSeek test uses only four layers. The public Miles integration PR predates this report; the article does not establish first availability of every kernel patch.
+
 ## [2026-10-10](../../../reports/2026/10/2026-10-10.md) — PARTIAL SEARCH
 
 ### [Building Spyre as a Native PyTorch Device](<https://pytorch.org/blog/building-spyre-as-a-native-pytorch-device/>)

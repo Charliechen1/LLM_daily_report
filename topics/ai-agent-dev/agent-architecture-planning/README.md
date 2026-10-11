@@ -5,6 +5,22 @@ Agent loops, task decomposition, planning, reflection and execution control.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-11](../../../reports/2026/10/2026-10-11.md) — PARTIAL SEARCH
+
+### [Plan-and-Patch: Diffusion Language Models for Agentic Planning](<https://arxiv.org/abs/2610.10786>)
+
+Plan-and-Patch trains a diffusion model to generate structured agent plans and replace selected spans while preserving the surrounding steps. This makes local plan revision explicit and reduces planner-generation latency in two tested environments, while showing that finding the right repair region remains a bottleneck.
+
+**Published:** 2026-10-07 · **First seen:** 2026-10-10T10:09:23Z · **Novelty:** newly-discovered · **Tags:** Agent Planning, Diffusion Models, Plan Repair
+
+**Public availability:** 2026-10-09T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.10786>)
+
+**Evidence:** research-paper; full-text. Delayed discovery from the October 9 NEW batch, item 7; v1 received October 7 at 18:45:45 UTC. Appendix A.2 reports generation latency of 14.3 versus 23.3 seconds on ALFWorld and 21.7 versus 40.2 seconds on TextCraft, with diffusion versus autoregressive 8B planners and a common Qwen3-8B executor.
+
+**Limitations:** Latency is synchronized, unbatched bf16 planner decoding on one A100, excluding environment execution. Interactive success does not consistently favor diffusion; repair restarts from the initial state. One fine-tuning seed and different pretrained model families limit attribution. No author implementation was verified; results were not reproduced.
+
 ## [2026-10-10](../../../reports/2026/10/2026-10-10.md) — PARTIAL SEARCH
 
 ### [EvoAlloc: A Self-Evolving Resource Allocation Agent for Efficient Program Evolution](<https://arxiv.org/abs/2610.12086>)

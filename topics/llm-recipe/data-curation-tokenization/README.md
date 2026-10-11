@@ -5,6 +5,20 @@ Data filtering, deduplication, mixtures, synthetic data, quality and tokenizers.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-11](../../../reports/2026/10/2026-10-11.md) — PARTIAL SEARCH
+
+### [Language-Specific Effects of Tokenizer Choice in Multilingual Language Models](<https://arxiv.org/abs/2610.12144>)
+
+A controlled multilingual study measures how tokenizer choices affect individual languages and tests inexpensive metrics for screening candidates before model training. The results favor language-specific evaluation over a single average and show why allocating more tokenizer capacity to a low-resource language should be validated rather than assumed beneficial.
+
+**Published:** 2026-10-08 · **First seen:** 2026-10-11T10:02:36Z · **Novelty:** newly-discovered · **Tags:** Tokenization, Multilingual, Controlled Ablations
+
+[Paper](<https://arxiv.org/abs/2610.12144>) · [Project](<https://huggingface.co/cmeister/tokenizer-lm-ablations>)
+
+**Evidence:** research-paper; full-text. Sections 2–6 compare 123 models spanning 54 tokenizers; the main setup uses 1.27B models and 9.2B tokens. Family-held-out ranking reaches 89.0% accuracy for mean FLORES+ bits-per-byte. Newly discovered October 8 paper, announced in October 9's batch; the linked artifact predates this analysis, so no earliest-public timestamp or new-weight release is asserted.
+
+**Limitations:** Mostly one seed per tokenizer, one main architecture/vocabulary scale and observational metric correlations. Fixed tokens change training bytes; task-level generalization remains limited. GitHub and artifact history were inaccessible, and exact artifact parity is unverified.
+
 ## [2026-10-09](../../../reports/2026/10/2026-10-09.md) — PARTIAL SEARCH
 
 ### [Adapting English Quality Classifiers for Multilingual LLM Pretraining Data Selection](<https://arxiv.org/abs/2610.11585>)
