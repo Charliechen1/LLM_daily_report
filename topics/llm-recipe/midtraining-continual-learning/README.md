@@ -5,6 +5,22 @@ Domain continued pretraining, context extension, continual learning and forgetti
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-12](../../../reports/2026/10/2026-10-12.md) — PARTIAL SEARCH
+
+### [Self-Preservation in Language Models](<https://arxiv.org/abs/2610.12602>)
+
+Task-Bank Self-Replay uses a frozen pre-update model to generate rehearsal data for selected task descriptions, then mixes that data into supervised adaptation. Experiments show that broader replay can protect capabilities outside the supplied task bank, while tracking previously correct answers reveals forgetting that aggregate accuracy can hide.
+
+**Published:** 2026-10-08 · **First seen:** 2026-10-12T10:07:12Z · **Novelty:** new · **Tags:** Continual Learning, Synthetic Replay, Capability Retention
+
+**Public availability:** 2026-10-12T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.12602>)
+
+**Evidence:** research-paper; full-text. Sections 2–3 study Qwen3 models from 0.6B to 4B with four replay tasks and four strictly held-out tasks. In the five-seed 4B MedQA comparison, incoming-aware selection achieves 95.69% held-out retention versus 92.94% for random selection. Public announcement is inferred as October 12 00:00 UTC from the dated new listing and official schedule; October 8 remains the submission date.
+
+**Limitations:** Selection gains do not transfer to the smaller tested sizes. Most experiments cover one update; a two-stage pilot has mixed results. Fixed example counts do not match tokens or generation cost, and replay can reduce new-task learning. This does not demonstrate autonomous preservation of all capabilities. The linked repository is currently empty.
+
 ## [2026-10-10](../../../reports/2026/10/2026-10-10.md) — PARTIAL SEARCH
 
 ### [Stability-Plasticity Balance via Singular-Vector Selection in LLM Continual Learning](<https://arxiv.org/abs/2610.11076>)

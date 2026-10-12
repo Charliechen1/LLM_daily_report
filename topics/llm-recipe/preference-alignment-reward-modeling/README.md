@@ -5,6 +5,22 @@ Preference datasets, DPO-like methods, reward models and process supervision.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-12](../../../reports/2026/10/2026-10-12.md) — PARTIAL SEARCH
+
+### [Unsupervised Multimodal Reward Modeling](<https://arxiv.org/abs/2610.12707>)
+
+This study trains a small linear reward head on frozen vision-language features by contrasting web captions with perturbed captions, avoiding human preference labels for head training while using labeled data to select the layer. It shows that strong reward-benchmark accuracy need not produce good candidate selection, and that retraining on verifier-labeled policy outputs can improve deployment-specific selection even as its VL-RewardBench score falls.
+
+**Published:** 2026-10-08 · **First seen:** 2026-10-12T10:07:12Z · **Novelty:** new · **Tags:** Reward Modeling, Multimodal, Negative Sampling
+
+**Public availability:** 2026-10-12T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.12707>)
+
+**Evidence:** research-paper; full-text. Sections 2–3 test four Qwen3-VL sizes and GLM-4.1V-9B; Table 1 reports 72.4% VL-RewardBench accuracy for the 32B probe versus published GPT-4o's 65.8%. Section 3.4 tests one verifier-driven adaptation round. The actual October 12 new listing plus official schedule imply October 12 00:00 UTC announcement, not the October 8 submission timestamp.
+
+**Limitations:** Layer selection uses labeled development data; benchmark rank is not general reward quality. CHAIR supplies both caption labels and evaluation, Best-of-N cells are single-seed, and matched-pair comparisons are not token-matched. The approximate 1/1000 training-compute claim excludes shared backbone forwards. Code release is promised but unverified.
+
 ## [2026-10-08](../../../reports/2026/10/2026-10-08.md) — PARTIAL SEARCH
 
 ### [Judging in Latent Space: Efficient Generative Reward Modeling via Semantics-Preserving Compression](<https://arxiv.org/abs/2610.09788>)

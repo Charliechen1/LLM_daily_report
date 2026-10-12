@@ -2,6 +2,13 @@
   "schema_version": 1,
   "reports": [
     {
+      "date": "2026-10-12",
+      "path": "reports/2026/10/2026-10-12.md",
+      "source": "data/reports/2026/10/2026-10-12.json",
+      "search_status": "partial",
+      "entries": 10
+    },
+    {
       "date": "2026-10-11",
       "path": "reports/2026/10/2026-10-11.md",
       "source": "data/reports/2026/10/2026-10-11.json",
@@ -96,6 +103,386 @@
     }
   ],
   "entries": [
+    {
+      "id": "arxiv:2610.12582",
+      "title": "One Model to Loop Them All: Elastic Latent Recurrence for Language Models",
+      "category": "1.2",
+      "tags": [
+        "Recurrent Depth",
+        "Pretraining",
+        "Test-Time Compute"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-12T10:07:12Z",
+      "canonical_url": "https://arxiv.org/abs/2610.12582",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.12582"
+      },
+      "summary": [
+        "Elastic Latent Recurrence combines gated state updates, mixed loop counts within optimizer updates, and loop conditioning so one model can serve several inference depths while preserving competitive one-loop accuracy.",
+        "Late mixed-depth training and cache reuse make this a practical recipe for trading additional computation for stronger answers within a fixed model footprint."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 3–6 include matched-data 4B and 30B-A3B experiments: one-loop ten-task averages differ from non-recurrent baselines by -0.52/+1.04 points, and four loops improve over one loop by 7.25/4.75 points. Ablations isolate the training choices. The October 12 new-submission listing and official schedule imply October 12 00:00 UTC public announcement; this is inferred timing, distinct from the October 8 receipt date.",
+        "limitations": "Additional loops increase computation and latency. The 16% training overhead is a layer-execution estimate; Koi-4B has no matched non-recurrent control, and its AA scores are author-harness estimates. Last-loop caching changes attention semantics and retains separate GDP state. No released implementation or weights were verified."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-12T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-12",
+      "report_path": "reports/2026/10/2026-10-12.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.13630",
+      "title": "Multi-Stream Attention Residuals",
+      "category": "1.2",
+      "tags": [
+        "Residual Architecture",
+        "MoE",
+        "Scaling Laws"
+      ],
+      "published_on": "2026-10-09",
+      "first_seen_at": "2026-10-12T10:07:12Z",
+      "canonical_url": "https://arxiv.org/abs/2610.13630",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.13630"
+      },
+      "summary": [
+        "MSAR lets each layer retrieve earlier representations through several contextual views created by causal convolutions, then combines those views into one layer input.",
+        "Its blockwise design stores a single stream of source summaries while improving pretraining results in the tested MoE models, offering an alternative to fixed residual addition and single-stream depth attention."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 3–4 compare 18B/28B MoE models across 12 tasks; averages rise from AttnRes's 41.8/49.4 to 45.7/52.4. Four-scale fits estimate a 1.58x iso-loss compute advantage over standard residuals. The October 12 new listing and official schedule imply October 12 00:00 UTC public availability, distinct from the October 9 receipt date.",
+        "limitations": "The compute advantage is fitted, not measured wall-clock speedup; training-token budgets are omitted in the appendix tables. FLOPs estimates exclude recomputation and optimizer updates, and no multi-seed uncertainty is reported. Source-storage savings do not remove all intermediate memory traffic. The linked project failed to load twice, so code was not verified."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-12T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-12",
+      "report_path": "reports/2026/10/2026-10-12.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.12602",
+      "title": "Self-Preservation in Language Models",
+      "category": "1.4",
+      "tags": [
+        "Continual Learning",
+        "Synthetic Replay",
+        "Capability Retention"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-12T10:07:12Z",
+      "canonical_url": "https://arxiv.org/abs/2610.12602",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.12602"
+      },
+      "summary": [
+        "Task-Bank Self-Replay uses a frozen pre-update model to generate rehearsal data for selected task descriptions, then mixes that data into supervised adaptation.",
+        "Experiments show that broader replay can protect capabilities outside the supplied task bank, while tracking previously correct answers reveals forgetting that aggregate accuracy can hide."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 2–3 study Qwen3 models from 0.6B to 4B with four replay tasks and four strictly held-out tasks. In the five-seed 4B MedQA comparison, incoming-aware selection achieves 95.69% held-out retention versus 92.94% for random selection. Public announcement is inferred as October 12 00:00 UTC from the dated new listing and official schedule; October 8 remains the submission date.",
+        "limitations": "Selection gains do not transfer to the smaller tested sizes. Most experiments cover one update; a two-stage pilot has mixed results. Fixed example counts do not match tokens or generation cost, and replay can reduce new-task learning. This does not demonstrate autonomous preservation of all capabilities. The linked repository is currently empty."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-12T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-12",
+      "report_path": "reports/2026/10/2026-10-12.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.12707",
+      "title": "Unsupervised Multimodal Reward Modeling",
+      "category": "1.6",
+      "tags": [
+        "Reward Modeling",
+        "Multimodal",
+        "Negative Sampling"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-12T10:07:12Z",
+      "canonical_url": "https://arxiv.org/abs/2610.12707",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.12707"
+      },
+      "summary": [
+        "This study trains a small linear reward head on frozen vision-language features by contrasting web captions with perturbed captions, avoiding human preference labels for head training while using labeled data to select the layer.",
+        "It shows that strong reward-benchmark accuracy need not produce good candidate selection, and that retraining on verifier-labeled policy outputs can improve deployment-specific selection even as its VL-RewardBench score falls."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 2–3 test four Qwen3-VL sizes and GLM-4.1V-9B; Table 1 reports 72.4% VL-RewardBench accuracy for the 32B probe versus published GPT-4o's 65.8%. Section 3.4 tests one verifier-driven adaptation round. The actual October 12 new listing plus official schedule imply October 12 00:00 UTC announcement, not the October 8 submission timestamp.",
+        "limitations": "Layer selection uses labeled development data; benchmark rank is not general reward quality. CHAIR supplies both caption labels and evaluation, Best-of-N cells are single-seed, and matched-pair comparisons are not token-matched. The approximate 1/1000 training-compute claim excludes shared backbone forwards. Code release is promised but unverified."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-12T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-12",
+      "report_path": "reports/2026/10/2026-10-12.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.12789",
+      "title": "EvoBelief: Falsifiable World Models for Self-Improving LLM Agents",
+      "category": "2.5",
+      "tags": [
+        "World Models",
+        "Test-Time Learning",
+        "Evidence Validation"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-12T10:03:40Z",
+      "public_availability": {
+        "at": "2026-10-12T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.12789",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.12789"
+      },
+      "summary": [
+        "EvoBelief keeps a frozen agent model while learning explicit rules about environment dynamics, testing those rules against observations and withdrawing their authority when counterexamples appear.",
+        "The external belief system helps agents reuse verified knowledge across tasks and adapt to changing environments, with benchmark-specific code connecting supported rules to action predictions and plans."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 3–4 and Appendices B–F describe the lifecycle, matched controls and diagnostics. On 134 ALFWorld tasks without actor transition memory, Table 1 reports 66.42% versus 42.54% success with Haiku 4.5 and 76.12% versus 44.78% with GPT-5.4 against Frozen WM; these are 23.88 and 31.34 percentage-point differences. October 12 NEW item 11 and the official Sunday announcement schedule support inferred public availability, preserving the October 8 submission date.",
+        "limitations": "Text environments and specialized adapters limit generality; the actor never receives rule text. Live experiments consume interaction budgets, and the full-system comparison does not isolate rule validation. The MiniGrid commitment-gate ablation is a null result. No author implementation was verified, and results were not reproduced."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-12",
+      "report_path": "reports/2026/10/2026-10-12.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.12601",
+      "title": "Reflective Prompt Optimization of a Deep-Research Agent: A Topic-Disjoint, Multi-Seed Protocol for Measuring Transferable Gains and Prompt-Level Overfitting",
+      "category": "2.5",
+      "tags": [
+        "Prompt Optimization",
+        "Held-Out Evaluation",
+        "Citation Quality"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-12T10:04:25Z",
+      "public_availability": {
+        "at": "2026-10-12T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.12601",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.12601"
+      },
+      "summary": [
+        "This study evaluates reflective prompt rewrites using topic-disjoint tests, multiple search seeds and controlled changes to verifier feedback.",
+        "The protocol helps distinguish improvements in citation behavior from noisy candidate selection, while structured feedback transfers better than scalar-only feedback in the tested research agent."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Tables 4 and 6 report gated citation-reward gains of 0.079 on 500 held-out tasks and 0.107 averaged over three seeds. Sections 3-6 and Appendix C specify the controls. Monday's dated batch implies Sunday 20:00 Eastern public release; the retained first-seen time is the initial listing-review checkpoint.",
+        "limitations": "One agent and frozen corpus; judge validation uses one annotator and 48 pairs. Verifier ablations use two seeds. The 100-task hand-written control and six-query latency estimates are inconclusive individually. Artifact release is claimed without a verified study-specific URL; results were not reproduced."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-12",
+      "report_path": "reports/2026/10/2026-10-12.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.12813",
+      "title": "VEPA: Verified Evolving Formal Policy for Lifelong LLM Agent Guardrails",
+      "category": "2.8",
+      "tags": [
+        "Agent Guardrails",
+        "Formal Policies",
+        "Online Adaptation"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-12T10:03:40Z",
+      "public_availability": {
+        "at": "2026-10-12T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.12813",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.12813"
+      },
+      "summary": [
+        "VEPA uses a language model to propose symbolic guardrail updates, then checks rule structure and conflicts before granting supported rules permission to make deterministic decisions on parsed events.",
+        "This separates policy learning from enforcement and improves the reported safety-versus-overrefusal tradeoff as feedback accumulates, while uncovered events require a separate fallback."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 3–5 and Appendices B–F specify search, evidence gating and five-seed prequential evaluation. On the same covered examples, final macro-F1 is 0.81 on ASSEBench-Safety and 0.76 on ATBench, exceeding the strongest baselines by 0.02 and 0.09; active coverage is approximately 80% and 88%. October 12 NEW item 12 plus the official Sunday schedule supports inferred public availability, preserving the October 8 submission date.",
+        "limitations": "Recorded trajectory streams do not test live behavioral feedback. Guarantees apply only after neural parsing and within a fixed schema, excluding fallback. The default posterior median gate reuses policy-selection data and is neither selection-adjusted nor time-uniform assurance. No author code was verified; results were not reproduced."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-12",
+      "report_path": "reports/2026/10/2026-10-12.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.13325",
+      "title": "Taking Tokenization off the Host for Agentic LLM Serving",
+      "category": "3.3",
+      "tags": [
+        "Tokenization",
+        "CUDA Graphs",
+        "Serving Frontends"
+      ],
+      "published_on": "2026-10-09",
+      "first_seen_at": "2026-10-12T10:04:28Z",
+      "canonical_url": "https://arxiv.org/abs/2610.13325",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.13325",
+        "code": "https://github.com/Msiavashi/GraphTok",
+        "project": "https://msiavashi.github.io/GraphTok/"
+      },
+      "summary": [
+        "GraphTok captures supported BPE-tokenizer operations in a reusable CUDA graph while preserving reference token IDs and routing small inputs to a CPU engine.",
+        "Its new paper evaluates how tokenization affects long-context serving, separating gains in a real vLLM instance from the capacity of a shared Dynamo frontend."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "On one H100 NVL, replacing stock vLLM tokenization lowers cold-cache mean TTFT only 2–4%, but gives 2.06–2.43× gains with 99% prefix reuse. A controlled Dynamo frontend sustains 518 versus gigatoken's 296 requests/s for 121K-token prompts under a 2-second P99 target.",
+        "limitations": "Dynamo uses simulated GPU workers: this is frontend capacity, not a measured 56-GPU serving deployment. Five tokenizer configurations, one GPU type and limited repeated trials; optimized CPU tokenization is close in the small vLLM experiment. Qwen normalization remains host-side."
+      },
+      "novelty": "material-update",
+      "update_note": "2026-10-12: the newly announced paper supplies detailed serving experiments and controls beyond the implementation descriptions on GraphTok's October 9 first-release changelog and project page. The code's exact release time is unavailable, so no in-window first-release claim is made. Paper-update availability is inferred as October 12 00:00 UTC from https://arxiv.org/list/cs.DC/new and https://info.arxiv.org/help/availability.html; original v1 submission remains October 9. Earlier release: https://github.com/Msiavashi/GraphTok/blob/develop/CHANGELOG.md.",
+      "report_kind": "daily",
+      "report_date": "2026-10-12",
+      "report_path": "reports/2026/10/2026-10-12.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.13778",
+      "title": "ReplaySSM: Cache SSM Inputs, Not State",
+      "category": "3.4",
+      "tags": [
+        "SSM State",
+        "Speculative Decoding",
+        "Low Precision"
+      ],
+      "published_on": "2026-10-09",
+      "first_seen_at": "2026-10-12T10:04:28Z",
+      "canonical_url": "https://arxiv.org/abs/2610.13778",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.13778",
+        "blog": "https://dao-lab.ai/blog/2026/replayssm/",
+        "code": "https://github.com/Johnny-Liou/ReplaySSM"
+      },
+      "summary": [
+        "ReplaySSM represents recurrent state as a checkpoint plus recent inputs, avoiding most full-state writes and making speculative rollback a buffer operation.",
+        "The new paper extends this approach with separate precisions for output reads and recurrent updates, reducing the feedback of state-quantization error during long generations."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "The new quantization study reports mean GPQA-Diamond losses of 13.05 percentage points for shared NVFP4+SR versus 2.36 for NVFP4 reads with FP16+SR recurrence across four hybrid models. Separately, FP32-state decoding at batch 256 improves whole-step latency by 1.20–1.47× on one H100 or B300 per model.",
+        "limitations": "Quantization accuracy uses emulation, standard decoding and full-precision prefill; residual errors remain. Performance gains shrink at batch 1. The public fork contains experimental paths beyond the upstream Mamba2 integration; benchmarks were not reproduced."
+      },
+      "novelty": "material-update",
+      "update_note": "2026-10-12: the newly announced paper adds two-precision state algorithms and long-generation KL/accuracy experiments beyond the June 15 ReplaySSM blog (https://dao-lab.ai/blog/). The retained October 9 date is this arXiv paper's v1 submission date, not the method's first release. Paper-update availability is inferred as October 12 00:00 UTC from https://arxiv.org/list/cs.LG/new and https://info.arxiv.org/help/availability.html; the June method is not being presented as newly invented.",
+      "report_kind": "daily",
+      "report_date": "2026-10-12",
+      "report_path": "reports/2026/10/2026-10-12.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.13474",
+      "title": "CompileMask: Bridging the Gap Between Expressiveness and Efficiency in Attention Masking",
+      "category": "3.5",
+      "tags": [
+        "Attention Kernels",
+        "Compiler",
+        "Training Throughput"
+      ],
+      "published_on": "2026-10-09",
+      "first_seen_at": "2026-10-12T10:04:28Z",
+      "public_availability": {
+        "at": "2026-10-12T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.13474",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.13474"
+      },
+      "summary": [
+        "CompileMask translates region-based attention visibility rules into batch-specific interval tables and tile metadata, moving repeated mask calculations out of the attention kernel.",
+        "This supports configurable masking while retaining efficient execution, with measured gains in complete Qwen training steps as well as standalone operators."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "For packed Qwen3-8B training with HSTU masks and KuaiRand length traces, throughput is 15.038 versus Flex-FA4's 11.325 kTok/s (1.33×), including preprocessing and full training steps. The same result is 3.83× Flex-Triton; these are different baselines.",
+        "limitations": "The paper specifies Blackwell GPUs but not an exact SKU. Its interval fast path requires bounded interval structure; unsupported predicates retain a callable fallback, and forward/backward specifications are supplied separately. No dedicated public code artifact was verified; no task-quality improvement is established."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-12",
+      "report_path": "reports/2026/10/2026-10-12.md",
+      "search_status": "partial"
+    },
     {
       "id": "arxiv:2610.12144",
       "title": "Language-Specific Effects of Tokenizer Choice in Multilingual Language Models",
@@ -5217,7 +5604,7 @@
       "group": "llm-recipe",
       "title": "Model Architecture & Scaling Laws",
       "path": "topics/llm-recipe/model-architecture-scaling-laws/README.md",
-      "count": 5
+      "count": 7
     },
     {
       "id": "1.3",
@@ -5231,7 +5618,7 @@
       "group": "llm-recipe",
       "title": "Mid-training & Continual Learning",
       "path": "topics/llm-recipe/midtraining-continual-learning/README.md",
-      "count": 6
+      "count": 7
     },
     {
       "id": "1.5",
@@ -5245,7 +5632,7 @@
       "group": "llm-recipe",
       "title": "Preference Alignment & Reward Modeling",
       "path": "topics/llm-recipe/preference-alignment-reward-modeling/README.md",
-      "count": 2
+      "count": 3
     },
     {
       "id": "1.7",
@@ -5308,7 +5695,7 @@
       "group": "ai-agent-dev",
       "title": "Agent Learning & Skill Acquisition",
       "path": "topics/ai-agent-dev/agent-learning-skill-acquisition/README.md",
-      "count": 7
+      "count": 9
     },
     {
       "id": "2.6",
@@ -5329,7 +5716,7 @@
       "group": "ai-agent-dev",
       "title": "Agent Evaluation & Security",
       "path": "topics/ai-agent-dev/agent-evaluation-security/README.md",
-      "count": 11
+      "count": 12
     },
     {
       "id": "3.1",
@@ -5350,21 +5737,21 @@
       "group": "ai-training-inference-infra",
       "title": "Inference Engines & Serving",
       "path": "topics/ai-training-inference-infra/inference-engines-serving/README.md",
-      "count": 12
+      "count": 13
     },
     {
       "id": "3.4",
       "group": "ai-training-inference-infra",
       "title": "Attention, KV Cache & Memory Systems",
       "path": "topics/ai-training-inference-infra/attention-kv-cache-memory-systems/README.md",
-      "count": 7
+      "count": 8
     },
     {
       "id": "3.5",
       "group": "ai-training-inference-infra",
       "title": "Kernels, Compilers & Runtimes",
       "path": "topics/ai-training-inference-infra/kernels-compilers-runtimes/README.md",
-      "count": 10
+      "count": 11
     },
     {
       "id": "3.6",

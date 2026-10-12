@@ -5,6 +5,22 @@ Request scheduling, continuous batching, prefill/decode disaggregation and elast
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-12](../../../reports/2026/10/2026-10-12.md) — PARTIAL SEARCH
+
+### [Taking Tokenization off the Host for Agentic LLM Serving](<https://arxiv.org/abs/2610.13325>)
+
+GraphTok captures supported BPE-tokenizer operations in a reusable CUDA graph while preserving reference token IDs and routing small inputs to a CPU engine. Its new paper evaluates how tokenization affects long-context serving, separating gains in a real vLLM instance from the capacity of a shared Dynamo frontend.
+
+**Published:** 2026-10-09 · **First seen:** 2026-10-12T10:04:28Z · **Novelty:** material-update · **Tags:** Tokenization, CUDA Graphs, Serving Frontends
+
+[Paper](<https://arxiv.org/abs/2610.13325>) · [Code](<https://github.com/Msiavashi/GraphTok>) · [Project](<https://msiavashi.github.io/GraphTok/>)
+
+**Evidence:** research-paper; full-text. On one H100 NVL, replacing stock vLLM tokenization lowers cold-cache mean TTFT only 2–4%, but gives 2.06–2.43× gains with 99% prefix reuse. A controlled Dynamo frontend sustains 518 versus gigatoken's 296 requests/s for 121K-token prompts under a 2-second P99 target.
+
+**Limitations:** Dynamo uses simulated GPU workers: this is frontend capacity, not a measured 56-GPU serving deployment. Five tokenizer configurations, one GPU type and limited repeated trials; optimized CPU tokenization is close in the small vLLM experiment. Qwen normalization remains host-side.
+
+**Update:** 2026-10-12: the newly announced paper supplies detailed serving experiments and controls beyond the implementation descriptions on GraphTok's October 9 first-release changelog and project page. The code's exact release time is unavailable, so no in-window first-release claim is made. Paper-update availability is inferred as October 12 00:00 UTC from https://arxiv.org/list/cs.DC/new and https://info.arxiv.org/help/availability.html; original v1 submission remains October 9. Earlier release: https://github.com/Msiavashi/GraphTok/blob/develop/CHANGELOG.md.
+
 ## [2026-10-09](../../../reports/2026/10/2026-10-09.md) — PARTIAL SEARCH
 
 ### [Zepp: Accelerating Distributed MoE Serving under Relaxed Balance Constraints](<https://arxiv.org/abs/2610.11158>)

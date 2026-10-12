@@ -5,6 +5,22 @@ Attention execution, KV management/reuse, offloading and long-context memory eff
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-12](../../../reports/2026/10/2026-10-12.md) — PARTIAL SEARCH
+
+### [ReplaySSM: Cache SSM Inputs, Not State](<https://arxiv.org/abs/2610.13778>)
+
+ReplaySSM represents recurrent state as a checkpoint plus recent inputs, avoiding most full-state writes and making speculative rollback a buffer operation. The new paper extends this approach with separate precisions for output reads and recurrent updates, reducing the feedback of state-quantization error during long generations.
+
+**Published:** 2026-10-09 · **First seen:** 2026-10-12T10:04:28Z · **Novelty:** material-update · **Tags:** SSM State, Speculative Decoding, Low Precision
+
+[Paper](<https://arxiv.org/abs/2610.13778>) · [Blog](<https://dao-lab.ai/blog/2026/replayssm/>) · [Code](<https://github.com/Johnny-Liou/ReplaySSM>)
+
+**Evidence:** research-paper; full-text. The new quantization study reports mean GPQA-Diamond losses of 13.05 percentage points for shared NVFP4+SR versus 2.36 for NVFP4 reads with FP16+SR recurrence across four hybrid models. Separately, FP32-state decoding at batch 256 improves whole-step latency by 1.20–1.47× on one H100 or B300 per model.
+
+**Limitations:** Quantization accuracy uses emulation, standard decoding and full-precision prefill; residual errors remain. Performance gains shrink at batch 1. The public fork contains experimental paths beyond the upstream Mamba2 integration; benchmarks were not reproduced.
+
+**Update:** 2026-10-12: the newly announced paper adds two-precision state algorithms and long-generation KL/accuracy experiments beyond the June 15 ReplaySSM blog (https://dao-lab.ai/blog/). The retained October 9 date is this arXiv paper's v1 submission date, not the method's first release. Paper-update availability is inferred as October 12 00:00 UTC from https://arxiv.org/list/cs.LG/new and https://info.arxiv.org/help/availability.html; the June method is not being presented as newly invented.
+
 ## [2026-10-11](../../../reports/2026/10/2026-10-11.md) — PARTIAL SEARCH
 
 ### [PageWeaver: KV-Guided Query Unions for Sparse Attention](<https://arxiv.org/abs/2610.11201>)

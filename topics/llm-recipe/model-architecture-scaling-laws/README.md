@@ -5,6 +5,38 @@ Transformers, MoE, SSM/hybrid architectures and model/data/compute allocation.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-12](../../../reports/2026/10/2026-10-12.md) — PARTIAL SEARCH
+
+### [One Model to Loop Them All: Elastic Latent Recurrence for Language Models](<https://arxiv.org/abs/2610.12582>)
+
+Elastic Latent Recurrence combines gated state updates, mixed loop counts within optimizer updates, and loop conditioning so one model can serve several inference depths while preserving competitive one-loop accuracy. Late mixed-depth training and cache reuse make this a practical recipe for trading additional computation for stronger answers within a fixed model footprint.
+
+**Published:** 2026-10-08 · **First seen:** 2026-10-12T10:07:12Z · **Novelty:** new · **Tags:** Recurrent Depth, Pretraining, Test-Time Compute
+
+**Public availability:** 2026-10-12T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.12582>)
+
+**Evidence:** research-paper; full-text. Sections 3–6 include matched-data 4B and 30B-A3B experiments: one-loop ten-task averages differ from non-recurrent baselines by -0.52/+1.04 points, and four loops improve over one loop by 7.25/4.75 points. Ablations isolate the training choices. The October 12 new-submission listing and official schedule imply October 12 00:00 UTC public announcement; this is inferred timing, distinct from the October 8 receipt date.
+
+**Limitations:** Additional loops increase computation and latency. The 16% training overhead is a layer-execution estimate; Koi-4B has no matched non-recurrent control, and its AA scores are author-harness estimates. Last-loop caching changes attention semantics and retains separate GDP state. No released implementation or weights were verified.
+
+## [2026-10-12](../../../reports/2026/10/2026-10-12.md) — PARTIAL SEARCH
+
+### [Multi-Stream Attention Residuals](<https://arxiv.org/abs/2610.13630>)
+
+MSAR lets each layer retrieve earlier representations through several contextual views created by causal convolutions, then combines those views into one layer input. Its blockwise design stores a single stream of source summaries while improving pretraining results in the tested MoE models, offering an alternative to fixed residual addition and single-stream depth attention.
+
+**Published:** 2026-10-09 · **First seen:** 2026-10-12T10:07:12Z · **Novelty:** new · **Tags:** Residual Architecture, MoE, Scaling Laws
+
+**Public availability:** 2026-10-12T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.13630>)
+
+**Evidence:** research-paper; full-text. Sections 3–4 compare 18B/28B MoE models across 12 tasks; averages rise from AttnRes's 41.8/49.4 to 45.7/52.4. Four-scale fits estimate a 1.58x iso-loss compute advantage over standard residuals. The October 12 new listing and official schedule imply October 12 00:00 UTC public availability, distinct from the October 9 receipt date.
+
+**Limitations:** The compute advantage is fitted, not measured wall-clock speedup; training-token budgets are omitted in the appendix tables. FLOPs estimates exclude recomputation and optimizer updates, and no multi-seed uncertainty is reported. Source-storage savings do not remove all intermediate memory traffic. The linked project failed to load twice, so code was not verified.
+
 ## [2026-10-07](../../../reports/2026/10/2026-10-07.md) — PARTIAL SEARCH
 
 ### [DeltaTTT: Layerwise Optimization for Nonlinear Recurrent Memory](<https://arxiv.org/abs/2610.08553>)

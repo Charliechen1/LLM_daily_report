@@ -1,0 +1,688 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-12",
+  "timezone": "America/Los_Angeles",
+  "generated_at": "2026-10-12T10:14:38Z",
+  "coverage": {
+    "start": "2026-10-11T03:00:00-07:00",
+    "end": "2026-10-12T03:00:00-07:00"
+  },
+  "search": {
+    "status": "partial",
+    "notes": "Coverage is October 11 03:00 through October 12 03:00 America/Los_Angeles; the total 72-hour discovery lookback begins October 9 10:00 UTC. The September 29 landscape of 35 works and complete 148-work registry were compared before selecting 10 full-text contributions; all September 30 through October 11 daily windows are present. The current arXiv NEW listings show a real Monday October 12 batch. Sunday 20:00 Eastern public availability is inferred as October 12 00:00 UTC from its dated listings and the official schedule. Original receipt dates remain unchanged; receipt dates are not treated as announcement dates. October 12 is on the official holiday list, but that does not negate the observed batch; no exact future deferred-mailing schedule is asserted. October 9 00:00 UTC batch reserves are outside this run's 72-hour interval and were not recycled. No registered canonical work is repeated. Selection considers the inspected methods, controls, practical value and limitations, without a minimum or subdomain quota. Older dependency code or an arXiv identifier alone does not establish a new released framework. Search is partial: screening of arXiv and organizational archives is bounded, OpenReview returned a loading shell, and ACL/DeepMind landing-page checks did not give comprehensive date-filtered discovery. Actual additional access gaps and recovered sources are listed individually below; outages from previous days are not carried forward. Primary papers and technical blogs were checked, but no qualifying fresh blog contribution was inferred merely from a featured or older card. Code/project URLs appear only when actually verified; statements that authors will release artifacts do not prove availability or parity. Results are author-reported, not independently reproduced. Training compute, repeated inference compute, standalone-kernel latency, whole-step inference and covered-subset evaluation are distinguished; formal claims remain scoped to their stated input and precision assumptions.",
+    "sources_checked": [
+      {
+        "name": "arXiv cs.CL new submissions: observed Monday October 12 batch",
+        "url": "https://arxiv.org/list/cs.CL/new",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv cs.LG new submissions: observed Monday October 12 batch",
+        "url": "https://arxiv.org/list/cs.LG/new",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv official announcement schedule and 2026 holidays",
+        "url": "https://info.arxiv.org/help/availability.html",
+        "status": "ok"
+      },
+      {
+        "name": "Hugging Face October 12 discovery page: failed twice",
+        "url": "https://huggingface.co/papers/date/2026-10-12",
+        "status": "unavailable"
+      },
+      {
+        "name": "ELR primary metadata and exact v1 receipt timestamp",
+        "url": "https://arxiv.org/abs/2610.12582",
+        "status": "ok"
+      },
+      {
+        "name": "ELR full-text methods, experiments and appendices",
+        "url": "https://arxiv.org/html/2610.12582v1",
+        "status": "ok"
+      },
+      {
+        "name": "Unsupervised Multimodal Reward Modeling metadata",
+        "url": "https://arxiv.org/abs/2610.12707",
+        "status": "ok"
+      },
+      {
+        "name": "Unsupervised Multimodal Reward Modeling full text",
+        "url": "https://arxiv.org/html/2610.12707v1",
+        "status": "ok"
+      },
+      {
+        "name": "MSAR primary metadata",
+        "url": "https://arxiv.org/abs/2610.13630",
+        "status": "ok"
+      },
+      {
+        "name": "MSAR full-text method, main experiments and cost appendices",
+        "url": "https://arxiv.org/html/2610.13630v1",
+        "status": "ok"
+      },
+      {
+        "name": "MSAR linked project: failed twice",
+        "url": "https://github.com/jianke0604/MSAR",
+        "status": "unavailable"
+      },
+      {
+        "name": "Self-Preservation primary metadata",
+        "url": "https://arxiv.org/abs/2610.12602",
+        "status": "ok"
+      },
+      {
+        "name": "Self-Preservation full-text methods, results and limitations",
+        "url": "https://arxiv.org/html/2610.12602v1",
+        "status": "ok"
+      },
+      {
+        "name": "Self-Preservation linked repository: page accessible but empty",
+        "url": "https://github.com/umamicode/self-preservation",
+        "status": "ok"
+      },
+      {
+        "name": "AutoIndexer primary metadata",
+        "url": "https://arxiv.org/abs/2610.12545",
+        "status": "ok"
+      },
+      {
+        "name": "AutoIndexer primary method and empirical sections",
+        "url": "https://arxiv.org/html/2610.12545v1",
+        "status": "ok"
+      },
+      {
+        "name": "AutoIndexer implementation and training README",
+        "url": "https://github.com/AutodeskAILab/autoindexer",
+        "status": "ok"
+      },
+      {
+        "name": "AutoIndexer commit history could not be fetched",
+        "url": "https://github.com/AutodeskAILab/autoindexer/commits/main/",
+        "status": "unavailable"
+      },
+      {
+        "name": "AutoIndexer linked OpenReview paper challenged access",
+        "url": "https://openreview.net/pdf?id=QxsLMneprg",
+        "status": "unavailable"
+      },
+      {
+        "name": "arXiv cs.AI NEW, Monday October 12; selected items 11 and 12 and bounded screening across agent topics",
+        "url": "https://arxiv.org/list/cs.AI/new",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv operational status, checked October 12; no current deferred-mailing notice displayed",
+        "url": "https://status.arxiv.org/",
+        "status": "ok"
+      },
+      {
+        "name": "EvoBelief original v1 history, October 8 22:46:14 UTC",
+        "url": "https://arxiv.org/abs/2610.12789",
+        "status": "ok"
+      },
+      {
+        "name": "EvoBelief full primary HTML and locally retrieved text; methods, results, limitations and relevant technical appendices inspected",
+        "url": "https://arxiv.org/html/2610.12789v1",
+        "status": "ok"
+      },
+      {
+        "name": "VEPA original v1 history, October 8 23:49:50 UTC",
+        "url": "https://arxiv.org/abs/2610.12813",
+        "status": "ok"
+      },
+      {
+        "name": "VEPA full primary HTML and locally retrieved text; policy search, authority derivation, covered-versus-full-stream evaluation and limitations",
+        "url": "https://arxiv.org/html/2610.12813v1",
+        "status": "ok"
+      },
+      {
+        "name": "SWE-Duel v1 history, October 8 18:01:00 UTC; reviewed reserve",
+        "url": "https://arxiv.org/abs/2610.12569",
+        "status": "ok"
+      },
+      {
+        "name": "SWE-Duel full primary HTML; task gates, tournament results, test audits, freshness and compute conditions",
+        "url": "https://arxiv.org/html/2610.12569v1",
+        "status": "ok"
+      },
+      {
+        "name": "SWE-Duel author repository and implementation layout; reviewed reserve",
+        "url": "https://github.com/sweduel/SWE-Duel",
+        "status": "ok"
+      },
+      {
+        "name": "SWE-Duel repository metadata via read-only public HTTPS; repository creation October 8",
+        "url": "https://api.github.com/repos/sweduel/SWE-Duel",
+        "status": "ok"
+      },
+      {
+        "name": "SWE-Duel complete five-commit history via read-only public HTTPS; later changes only tags, page title and setup URL",
+        "url": "https://api.github.com/repos/sweduel/SWE-Duel/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "SWE-Duel author project, web retrieval failed but public HTTPS recovery succeeded",
+        "url": "https://sweduel.github.io/SWE-Duel/",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv cs.DC NEW dated Monday October 12: all 12 new titles plus infrastructure cross-lists screened",
+        "url": "https://arxiv.org/list/cs.DC/new",
+        "status": "ok"
+      },
+      {
+        "name": "ReplaySSM abstract and exact v1 submission timestamp",
+        "url": "https://arxiv.org/abs/2610.13778",
+        "status": "ok"
+      },
+      {
+        "name": "ReplaySSM primary full HTML: methods, experiments, timing and precision appendices reviewed",
+        "url": "https://arxiv.org/html/2610.13778v1",
+        "status": "ok"
+      },
+      {
+        "name": "ReplaySSM public implementation README and file tree; not executed",
+        "url": "https://github.com/Johnny-Liou/ReplaySSM",
+        "status": "ok"
+      },
+      {
+        "name": "Dao AI Lab index: ReplaySSM original blog dated June 15, 2026",
+        "url": "https://dao-lab.ai/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "ReplaySSM earlier blog: method and evaluation compared with new paper; no two-precision study",
+        "url": "https://dao-lab.ai/blog/2026/replayssm/",
+        "status": "ok"
+      },
+      {
+        "name": "Existing vLLM ReplaySSM backend PR merged September 1; historical artifact chronology",
+        "url": "https://github.com/vllm-project/vllm/pull/52506",
+        "status": "ok"
+      },
+      {
+        "name": "Earlier vLLM ReplaySSM PR: retrieval failed",
+        "url": "https://github.com/vllm-project/vllm/pull/48018",
+        "status": "unavailable"
+      },
+      {
+        "name": "GraphTok abstract and exact v1 submission timestamp",
+        "url": "https://arxiv.org/abs/2610.13325",
+        "status": "ok"
+      },
+      {
+        "name": "GraphTok full HTML: algorithms, single-GPU serving, frontend simulation and limitations",
+        "url": "https://arxiv.org/html/2610.13325v1",
+        "status": "ok"
+      },
+      {
+        "name": "GraphTok repository README and artifact structure, not executed",
+        "url": "https://github.com/Msiavashi/GraphTok",
+        "status": "ok"
+      },
+      {
+        "name": "GraphTok changelog: first public release October 9, date only",
+        "url": "https://github.com/Msiavashi/GraphTok/blob/develop/CHANGELOG.md",
+        "status": "ok"
+      },
+      {
+        "name": "GraphTok project page read successfully via initial result; later direct retries intermittently failed",
+        "url": "https://msiavashi.github.io/GraphTok/",
+        "status": "ok"
+      },
+      {
+        "name": "GraphTok commit-history view: unavailable; exact public-code release time not recovered",
+        "url": "https://github.com/Msiavashi/GraphTok/commits/develop/",
+        "status": "unavailable"
+      },
+      {
+        "name": "GraphTok GitHub metadata API: web retrieval unavailable and shell network restricted",
+        "url": "https://api.github.com/repos/Msiavashi/GraphTok",
+        "status": "unavailable"
+      },
+      {
+        "name": "GraphTok releases API: web retrieval unavailable and shell network restricted",
+        "url": "https://api.github.com/repos/Msiavashi/GraphTok/releases",
+        "status": "unavailable"
+      },
+      {
+        "name": "CompileMask abstract and exact v1 submission timestamp",
+        "url": "https://arxiv.org/abs/2610.13474",
+        "status": "ok"
+      },
+      {
+        "name": "CompileMask full HTML: compiler, fallback, Tables 1–3 and end-to-end training results",
+        "url": "https://arxiv.org/html/2610.13474v1",
+        "status": "ok"
+      },
+      {
+        "name": "ByteExpress abstract screened as networking reserve; no full-method review",
+        "url": "https://arxiv.org/abs/2610.12815",
+        "status": "ok"
+      },
+      {
+        "name": "vLLM primary blog index: latest October 9 Rubin already covered",
+        "url": "https://vllm.ai/blog",
+        "status": "ok"
+      },
+      {
+        "name": "PyTorch primary blog index: latest October 8 items outside this lookback and previously covered",
+        "url": "https://pytorch.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "NVIDIA technical index: latest visible recent posts October 8; no eligible fresh infrastructure article on checked index",
+        "url": "https://developer.nvidia.com/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "LMSYS homepage latest blog: October 9 SGLang/Miles Rubin already covered",
+        "url": "https://www.lmsys.org/",
+        "status": "ok"
+      },
+      {
+        "name": "SGLang blog index: navigation shell without readable articles",
+        "url": "https://www.sglang.io/blog",
+        "status": "unavailable"
+      },
+      {
+        "name": "2610.12601 original October 8 18:23 UTC submission history",
+        "url": "https://arxiv.org/abs/2610.12601",
+        "status": "ok"
+      },
+      {
+        "name": "2610.12601 full methods, controls, experimental tables, limitations and appendices",
+        "url": "https://arxiv.org/html/2610.12601v1",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic research index; latest October 9 contribution already covered",
+        "url": "https://www.anthropic.com/research",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic engineering index; bounded featured and dated archive cards",
+        "url": "https://www.anthropic.com/engineering",
+        "status": "ok"
+      },
+      {
+        "name": "Ai2 research index; latest October 9 scheduling report already covered",
+        "url": "https://allenai.org/research",
+        "status": "ok"
+      },
+      {
+        "name": "OpenAI research index; latest visible cards dated October 7",
+        "url": "https://openai.com/research/index/",
+        "status": "ok"
+      },
+      {
+        "name": "DeepMind research landing page; latest visible news chiefly September, bounded publications only",
+        "url": "https://deepmind.google/research/",
+        "status": "ok"
+      },
+      {
+        "name": "ICLR 2027 OpenReview discovery; loading shell only on fresh checks",
+        "url": "https://openreview.net/group?id=ICLR.cc/2027/Conference",
+        "status": "unavailable"
+      },
+      {
+        "name": "ACL Anthology landing index; bounded inspection without exhaustive date filtering",
+        "url": "https://aclanthology.org/",
+        "status": "ok"
+      },
+      {
+        "name": "Microsoft Research blog index; latest visible October 7 card outside lookback",
+        "url": "https://www.microsoft.com/en-us/research/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "Sierra blog index; latest October 9 protocol draft already covered",
+        "url": "https://sierra.ai/blog",
+        "status": "ok"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": "arxiv:2610.12582",
+      "title": "One Model to Loop Them All: Elastic Latent Recurrence for Language Models",
+      "category": "1.2",
+      "tags": [
+        "Recurrent Depth",
+        "Pretraining",
+        "Test-Time Compute"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-12T10:07:12Z",
+      "canonical_url": "https://arxiv.org/abs/2610.12582",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.12582"
+      },
+      "summary": [
+        "Elastic Latent Recurrence combines gated state updates, mixed loop counts within optimizer updates, and loop conditioning so one model can serve several inference depths while preserving competitive one-loop accuracy.",
+        "Late mixed-depth training and cache reuse make this a practical recipe for trading additional computation for stronger answers within a fixed model footprint."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 3–6 include matched-data 4B and 30B-A3B experiments: one-loop ten-task averages differ from non-recurrent baselines by -0.52/+1.04 points, and four loops improve over one loop by 7.25/4.75 points. Ablations isolate the training choices. The October 12 new-submission listing and official schedule imply October 12 00:00 UTC public announcement; this is inferred timing, distinct from the October 8 receipt date.",
+        "limitations": "Additional loops increase computation and latency. The 16% training overhead is a layer-execution estimate; Koi-4B has no matched non-recurrent control, and its AA scores are author-harness estimates. Last-loop caching changes attention semantics and retains separate GDP state. No released implementation or weights were verified."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-12T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.13630",
+      "title": "Multi-Stream Attention Residuals",
+      "category": "1.2",
+      "tags": [
+        "Residual Architecture",
+        "MoE",
+        "Scaling Laws"
+      ],
+      "published_on": "2026-10-09",
+      "first_seen_at": "2026-10-12T10:07:12Z",
+      "canonical_url": "https://arxiv.org/abs/2610.13630",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.13630"
+      },
+      "summary": [
+        "MSAR lets each layer retrieve earlier representations through several contextual views created by causal convolutions, then combines those views into one layer input.",
+        "Its blockwise design stores a single stream of source summaries while improving pretraining results in the tested MoE models, offering an alternative to fixed residual addition and single-stream depth attention."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 3–4 compare 18B/28B MoE models across 12 tasks; averages rise from AttnRes's 41.8/49.4 to 45.7/52.4. Four-scale fits estimate a 1.58x iso-loss compute advantage over standard residuals. The October 12 new listing and official schedule imply October 12 00:00 UTC public availability, distinct from the October 9 receipt date.",
+        "limitations": "The compute advantage is fitted, not measured wall-clock speedup; training-token budgets are omitted in the appendix tables. FLOPs estimates exclude recomputation and optimizer updates, and no multi-seed uncertainty is reported. Source-storage savings do not remove all intermediate memory traffic. The linked project failed to load twice, so code was not verified."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-12T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.12602",
+      "title": "Self-Preservation in Language Models",
+      "category": "1.4",
+      "tags": [
+        "Continual Learning",
+        "Synthetic Replay",
+        "Capability Retention"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-12T10:07:12Z",
+      "canonical_url": "https://arxiv.org/abs/2610.12602",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.12602"
+      },
+      "summary": [
+        "Task-Bank Self-Replay uses a frozen pre-update model to generate rehearsal data for selected task descriptions, then mixes that data into supervised adaptation.",
+        "Experiments show that broader replay can protect capabilities outside the supplied task bank, while tracking previously correct answers reveals forgetting that aggregate accuracy can hide."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 2–3 study Qwen3 models from 0.6B to 4B with four replay tasks and four strictly held-out tasks. In the five-seed 4B MedQA comparison, incoming-aware selection achieves 95.69% held-out retention versus 92.94% for random selection. Public announcement is inferred as October 12 00:00 UTC from the dated new listing and official schedule; October 8 remains the submission date.",
+        "limitations": "Selection gains do not transfer to the smaller tested sizes. Most experiments cover one update; a two-stage pilot has mixed results. Fixed example counts do not match tokens or generation cost, and replay can reduce new-task learning. This does not demonstrate autonomous preservation of all capabilities. The linked repository is currently empty."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-12T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.12707",
+      "title": "Unsupervised Multimodal Reward Modeling",
+      "category": "1.6",
+      "tags": [
+        "Reward Modeling",
+        "Multimodal",
+        "Negative Sampling"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-12T10:07:12Z",
+      "canonical_url": "https://arxiv.org/abs/2610.12707",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.12707"
+      },
+      "summary": [
+        "This study trains a small linear reward head on frozen vision-language features by contrasting web captions with perturbed captions, avoiding human preference labels for head training while using labeled data to select the layer.",
+        "It shows that strong reward-benchmark accuracy need not produce good candidate selection, and that retraining on verifier-labeled policy outputs can improve deployment-specific selection even as its VL-RewardBench score falls."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 2–3 test four Qwen3-VL sizes and GLM-4.1V-9B; Table 1 reports 72.4% VL-RewardBench accuracy for the 32B probe versus published GPT-4o's 65.8%. Section 3.4 tests one verifier-driven adaptation round. The actual October 12 new listing plus official schedule imply October 12 00:00 UTC announcement, not the October 8 submission timestamp.",
+        "limitations": "Layer selection uses labeled development data; benchmark rank is not general reward quality. CHAIR supplies both caption labels and evaluation, Best-of-N cells are single-seed, and matched-pair comparisons are not token-matched. The approximate 1/1000 training-compute claim excludes shared backbone forwards. Code release is promised but unverified."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-12T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.12789",
+      "title": "EvoBelief: Falsifiable World Models for Self-Improving LLM Agents",
+      "category": "2.5",
+      "tags": [
+        "World Models",
+        "Test-Time Learning",
+        "Evidence Validation"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-12T10:03:40Z",
+      "public_availability": {
+        "at": "2026-10-12T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.12789",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.12789"
+      },
+      "summary": [
+        "EvoBelief keeps a frozen agent model while learning explicit rules about environment dynamics, testing those rules against observations and withdrawing their authority when counterexamples appear.",
+        "The external belief system helps agents reuse verified knowledge across tasks and adapt to changing environments, with benchmark-specific code connecting supported rules to action predictions and plans."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 3–4 and Appendices B–F describe the lifecycle, matched controls and diagnostics. On 134 ALFWorld tasks without actor transition memory, Table 1 reports 66.42% versus 42.54% success with Haiku 4.5 and 76.12% versus 44.78% with GPT-5.4 against Frozen WM; these are 23.88 and 31.34 percentage-point differences. October 12 NEW item 11 and the official Sunday announcement schedule support inferred public availability, preserving the October 8 submission date.",
+        "limitations": "Text environments and specialized adapters limit generality; the actor never receives rule text. Live experiments consume interaction budgets, and the full-system comparison does not isolate rule validation. The MiniGrid commitment-gate ablation is a null result. No author implementation was verified, and results were not reproduced."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "arxiv:2610.12601",
+      "title": "Reflective Prompt Optimization of a Deep-Research Agent: A Topic-Disjoint, Multi-Seed Protocol for Measuring Transferable Gains and Prompt-Level Overfitting",
+      "category": "2.5",
+      "tags": [
+        "Prompt Optimization",
+        "Held-Out Evaluation",
+        "Citation Quality"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-12T10:04:25Z",
+      "public_availability": {
+        "at": "2026-10-12T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.12601",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.12601"
+      },
+      "summary": [
+        "This study evaluates reflective prompt rewrites using topic-disjoint tests, multiple search seeds and controlled changes to verifier feedback.",
+        "The protocol helps distinguish improvements in citation behavior from noisy candidate selection, while structured feedback transfers better than scalar-only feedback in the tested research agent."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Tables 4 and 6 report gated citation-reward gains of 0.079 on 500 held-out tasks and 0.107 averaged over three seeds. Sections 3-6 and Appendix C specify the controls. Monday's dated batch implies Sunday 20:00 Eastern public release; the retained first-seen time is the initial listing-review checkpoint.",
+        "limitations": "One agent and frozen corpus; judge validation uses one annotator and 48 pairs. Verifier ablations use two seeds. The 100-task hand-written control and six-query latency estimates are inconclusive individually. Artifact release is claimed without a verified study-specific URL; results were not reproduced."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "arxiv:2610.12813",
+      "title": "VEPA: Verified Evolving Formal Policy for Lifelong LLM Agent Guardrails",
+      "category": "2.8",
+      "tags": [
+        "Agent Guardrails",
+        "Formal Policies",
+        "Online Adaptation"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-12T10:03:40Z",
+      "public_availability": {
+        "at": "2026-10-12T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.12813",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.12813"
+      },
+      "summary": [
+        "VEPA uses a language model to propose symbolic guardrail updates, then checks rule structure and conflicts before granting supported rules permission to make deterministic decisions on parsed events.",
+        "This separates policy learning from enforcement and improves the reported safety-versus-overrefusal tradeoff as feedback accumulates, while uncovered events require a separate fallback."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 3–5 and Appendices B–F specify search, evidence gating and five-seed prequential evaluation. On the same covered examples, final macro-F1 is 0.81 on ASSEBench-Safety and 0.76 on ATBench, exceeding the strongest baselines by 0.02 and 0.09; active coverage is approximately 80% and 88%. October 12 NEW item 12 plus the official Sunday schedule supports inferred public availability, preserving the October 8 submission date.",
+        "limitations": "Recorded trajectory streams do not test live behavioral feedback. Guarantees apply only after neural parsing and within a fixed schema, excluding fallback. The default posterior median gate reuses policy-selection data and is neither selection-adjusted nor time-uniform assurance. No author code was verified; results were not reproduced."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "arxiv:2610.13325",
+      "title": "Taking Tokenization off the Host for Agentic LLM Serving",
+      "category": "3.3",
+      "tags": [
+        "Tokenization",
+        "CUDA Graphs",
+        "Serving Frontends"
+      ],
+      "published_on": "2026-10-09",
+      "first_seen_at": "2026-10-12T10:04:28Z",
+      "canonical_url": "https://arxiv.org/abs/2610.13325",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.13325",
+        "code": "https://github.com/Msiavashi/GraphTok",
+        "project": "https://msiavashi.github.io/GraphTok/"
+      },
+      "summary": [
+        "GraphTok captures supported BPE-tokenizer operations in a reusable CUDA graph while preserving reference token IDs and routing small inputs to a CPU engine.",
+        "Its new paper evaluates how tokenization affects long-context serving, separating gains in a real vLLM instance from the capacity of a shared Dynamo frontend."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "On one H100 NVL, replacing stock vLLM tokenization lowers cold-cache mean TTFT only 2–4%, but gives 2.06–2.43× gains with 99% prefix reuse. A controlled Dynamo frontend sustains 518 versus gigatoken's 296 requests/s for 121K-token prompts under a 2-second P99 target.",
+        "limitations": "Dynamo uses simulated GPU workers: this is frontend capacity, not a measured 56-GPU serving deployment. Five tokenizer configurations, one GPU type and limited repeated trials; optimized CPU tokenization is close in the small vLLM experiment. Qwen normalization remains host-side."
+      },
+      "novelty": "material-update",
+      "update_note": "2026-10-12: the newly announced paper supplies detailed serving experiments and controls beyond the implementation descriptions on GraphTok's October 9 first-release changelog and project page. The code's exact release time is unavailable, so no in-window first-release claim is made. Paper-update availability is inferred as October 12 00:00 UTC from https://arxiv.org/list/cs.DC/new and https://info.arxiv.org/help/availability.html; original v1 submission remains October 9. Earlier release: https://github.com/Msiavashi/GraphTok/blob/develop/CHANGELOG.md."
+    },
+    {
+      "id": "arxiv:2610.13778",
+      "title": "ReplaySSM: Cache SSM Inputs, Not State",
+      "category": "3.4",
+      "tags": [
+        "SSM State",
+        "Speculative Decoding",
+        "Low Precision"
+      ],
+      "published_on": "2026-10-09",
+      "first_seen_at": "2026-10-12T10:04:28Z",
+      "canonical_url": "https://arxiv.org/abs/2610.13778",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.13778",
+        "blog": "https://dao-lab.ai/blog/2026/replayssm/",
+        "code": "https://github.com/Johnny-Liou/ReplaySSM"
+      },
+      "summary": [
+        "ReplaySSM represents recurrent state as a checkpoint plus recent inputs, avoiding most full-state writes and making speculative rollback a buffer operation.",
+        "The new paper extends this approach with separate precisions for output reads and recurrent updates, reducing the feedback of state-quantization error during long generations."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "The new quantization study reports mean GPQA-Diamond losses of 13.05 percentage points for shared NVFP4+SR versus 2.36 for NVFP4 reads with FP16+SR recurrence across four hybrid models. Separately, FP32-state decoding at batch 256 improves whole-step latency by 1.20–1.47× on one H100 or B300 per model.",
+        "limitations": "Quantization accuracy uses emulation, standard decoding and full-precision prefill; residual errors remain. Performance gains shrink at batch 1. The public fork contains experimental paths beyond the upstream Mamba2 integration; benchmarks were not reproduced."
+      },
+      "novelty": "material-update",
+      "update_note": "2026-10-12: the newly announced paper adds two-precision state algorithms and long-generation KL/accuracy experiments beyond the June 15 ReplaySSM blog (https://dao-lab.ai/blog/). The retained October 9 date is this arXiv paper's v1 submission date, not the method's first release. Paper-update availability is inferred as October 12 00:00 UTC from https://arxiv.org/list/cs.LG/new and https://info.arxiv.org/help/availability.html; the June method is not being presented as newly invented."
+    },
+    {
+      "id": "arxiv:2610.13474",
+      "title": "CompileMask: Bridging the Gap Between Expressiveness and Efficiency in Attention Masking",
+      "category": "3.5",
+      "tags": [
+        "Attention Kernels",
+        "Compiler",
+        "Training Throughput"
+      ],
+      "published_on": "2026-10-09",
+      "first_seen_at": "2026-10-12T10:04:28Z",
+      "public_availability": {
+        "at": "2026-10-12T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.13474",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.13474"
+      },
+      "summary": [
+        "CompileMask translates region-based attention visibility rules into batch-specific interval tables and tile metadata, moving repeated mask calculations out of the attention kernel.",
+        "This supports configurable masking while retaining efficient execution, with measured gains in complete Qwen training steps as well as standalone operators."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "For packed Qwen3-8B training with HSTU masks and KuaiRand length traces, throughput is 15.038 versus Flex-FA4's 11.325 kTok/s (1.33×), including preprocessing and full training steps. The same result is 3.83× Flex-Triton; these are different baselines.",
+        "limitations": "The paper specifies Blackwell GPUs but not an exact SKU. Its interval fast path requires bounded interval structure; unsupported predicates retain a callable fallback, and forward/backward specifications are supplied separately. No dedicated public code artifact was verified; no task-quality improvement is established."
+      },
+      "novelty": "new"
+    }
+  ]
+}

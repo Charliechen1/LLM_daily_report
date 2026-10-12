@@ -5,6 +5,22 @@ Task success, trajectory evaluation, cost/reliability, prompt injection and perm
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-12](../../../reports/2026/10/2026-10-12.md) — PARTIAL SEARCH
+
+### [VEPA: Verified Evolving Formal Policy for Lifelong LLM Agent Guardrails](<https://arxiv.org/abs/2610.12813>)
+
+VEPA uses a language model to propose symbolic guardrail updates, then checks rule structure and conflicts before granting supported rules permission to make deterministic decisions on parsed events. This separates policy learning from enforcement and improves the reported safety-versus-overrefusal tradeoff as feedback accumulates, while uncovered events require a separate fallback.
+
+**Published:** 2026-10-08 · **First seen:** 2026-10-12T10:03:40Z · **Novelty:** new · **Tags:** Agent Guardrails, Formal Policies, Online Adaptation
+
+**Public availability:** 2026-10-12T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.12813>)
+
+**Evidence:** research-paper; full-text. Sections 3–5 and Appendices B–F specify search, evidence gating and five-seed prequential evaluation. On the same covered examples, final macro-F1 is 0.81 on ASSEBench-Safety and 0.76 on ATBench, exceeding the strongest baselines by 0.02 and 0.09; active coverage is approximately 80% and 88%. October 12 NEW item 12 plus the official Sunday schedule supports inferred public availability, preserving the October 8 submission date.
+
+**Limitations:** Recorded trajectory streams do not test live behavioral feedback. Guarantees apply only after neural parsing and within a fixed schema, excluding fallback. The default posterior median gate reuses policy-selection data and is neither selection-adjusted nor time-uniform assurance. No author code was verified; results were not reproduced.
+
 ## [2026-10-10](../../../reports/2026/10/2026-10-10.md) — PARTIAL SEARCH
 
 ### [TRACE: Diagnosing Verifier Brittleness in Agentic Evaluation](<https://arxiv.org/abs/2610.11678>)

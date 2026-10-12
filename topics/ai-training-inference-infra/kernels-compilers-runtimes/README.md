@@ -5,6 +5,22 @@ GPU kernels, operator fusion, compilation, execution graphs and hardware adaptat
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-12](../../../reports/2026/10/2026-10-12.md) — PARTIAL SEARCH
+
+### [CompileMask: Bridging the Gap Between Expressiveness and Efficiency in Attention Masking](<https://arxiv.org/abs/2610.13474>)
+
+CompileMask translates region-based attention visibility rules into batch-specific interval tables and tile metadata, moving repeated mask calculations out of the attention kernel. This supports configurable masking while retaining efficient execution, with measured gains in complete Qwen training steps as well as standalone operators.
+
+**Published:** 2026-10-09 · **First seen:** 2026-10-12T10:04:28Z · **Novelty:** new · **Tags:** Attention Kernels, Compiler, Training Throughput
+
+**Public availability:** 2026-10-12T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.13474>)
+
+**Evidence:** research-paper; full-text. For packed Qwen3-8B training with HSTU masks and KuaiRand length traces, throughput is 15.038 versus Flex-FA4's 11.325 kTok/s (1.33×), including preprocessing and full training steps. The same result is 3.83× Flex-Triton; these are different baselines.
+
+**Limitations:** The paper specifies Blackwell GPUs but not an exact SKU. Its interval fast path requires bounded interval structure; unsupported predicates retain a callable fallback, and forward/backward specifications are supplied separately. No dedicated public code artifact was verified; no task-quality improvement is established.
+
 ## [2026-10-11](../../../reports/2026/10/2026-10-11.md) — PARTIAL SEARCH
 
 ### [SGLang and Miles on NVIDIA Vera Rubin](<https://www.lmsys.org/blog/2026-10-09-vera-rubin>)

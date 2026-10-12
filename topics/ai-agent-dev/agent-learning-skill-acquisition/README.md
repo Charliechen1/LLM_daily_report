@@ -5,6 +5,38 @@ Learning from trajectories/feedback, skill generation/reuse, experience and self
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-12](../../../reports/2026/10/2026-10-12.md) — PARTIAL SEARCH
+
+### [EvoBelief: Falsifiable World Models for Self-Improving LLM Agents](<https://arxiv.org/abs/2610.12789>)
+
+EvoBelief keeps a frozen agent model while learning explicit rules about environment dynamics, testing those rules against observations and withdrawing their authority when counterexamples appear. The external belief system helps agents reuse verified knowledge across tasks and adapt to changing environments, with benchmark-specific code connecting supported rules to action predictions and plans.
+
+**Published:** 2026-10-08 · **First seen:** 2026-10-12T10:03:40Z · **Novelty:** new · **Tags:** World Models, Test-Time Learning, Evidence Validation
+
+**Public availability:** 2026-10-12T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.12789>)
+
+**Evidence:** research-paper; full-text. Sections 3–4 and Appendices B–F describe the lifecycle, matched controls and diagnostics. On 134 ALFWorld tasks without actor transition memory, Table 1 reports 66.42% versus 42.54% success with Haiku 4.5 and 76.12% versus 44.78% with GPT-5.4 against Frozen WM; these are 23.88 and 31.34 percentage-point differences. October 12 NEW item 11 and the official Sunday announcement schedule support inferred public availability, preserving the October 8 submission date.
+
+**Limitations:** Text environments and specialized adapters limit generality; the actor never receives rule text. Live experiments consume interaction budgets, and the full-system comparison does not isolate rule validation. The MiniGrid commitment-gate ablation is a null result. No author implementation was verified, and results were not reproduced.
+
+## [2026-10-12](../../../reports/2026/10/2026-10-12.md) — PARTIAL SEARCH
+
+### [Reflective Prompt Optimization of a Deep-Research Agent: A Topic-Disjoint, Multi-Seed Protocol for Measuring Transferable Gains and Prompt-Level Overfitting](<https://arxiv.org/abs/2610.12601>)
+
+This study evaluates reflective prompt rewrites using topic-disjoint tests, multiple search seeds and controlled changes to verifier feedback. The protocol helps distinguish improvements in citation behavior from noisy candidate selection, while structured feedback transfers better than scalar-only feedback in the tested research agent.
+
+**Published:** 2026-10-08 · **First seen:** 2026-10-12T10:04:25Z · **Novelty:** new · **Tags:** Prompt Optimization, Held-Out Evaluation, Citation Quality
+
+**Public availability:** 2026-10-12T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.12601>)
+
+**Evidence:** research-paper; full-text. Tables 4 and 6 report gated citation-reward gains of 0.079 on 500 held-out tasks and 0.107 averaged over three seeds. Sections 3-6 and Appendix C specify the controls. Monday's dated batch implies Sunday 20:00 Eastern public release; the retained first-seen time is the initial listing-review checkpoint.
+
+**Limitations:** One agent and frozen corpus; judge validation uses one annotator and 48 pairs. Verifier ablations use two seeds. The 100-task hand-written control and six-query latency estimates are inconclusive individually. Artifact release is claimed without a verified study-specific URL; results were not reproduced.
+
 ## [2026-10-09](../../../reports/2026/10/2026-10-09.md) — PARTIAL SEARCH
 
 ### [When Should Agents Think? Adaptive Reasoning via Cross-Turn Estimation](<https://arxiv.org/abs/2610.12061>)
