@@ -1,0 +1,841 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-13",
+  "timezone": "America/Los_Angeles",
+  "generated_at": "2026-10-15T04:45:46Z",
+  "coverage": {
+    "start": "2026-10-12T03:00:00-07:00",
+    "end": "2026-10-13T03:00:00-07:00"
+  },
+  "search": {
+    "status": "partial",
+    "notes": "This is a separate catch-up report for 2026-10-12T03:00:00-07:00 through 2026-10-13T03:00:00-07:00; actual retrieval and generation occurred later. The total 72-hour discovery lookback starts 2026-10-10T10:00:00+00:00. The September 29 baseline of 35 works and complete 158-work registry were compared before selection; earlier catch-up selections are also excluded. Current dated arXiv listings show October 12 and October 14 batches, with no October 13 batch. October 12 appears on the official holiday list; no unobserved deferred-mailing time is asserted. October 15 announcements are after the latest elapsed cutoff and are excluded. For confirmed NEW items, dated primary-category listings plus the official announcement schedule support inferred 00:00 UTC public availability; original submission dates remain unchanged. Cross-listing dates, repository creation dates and commit timestamps alone do not prove first public visibility. Earlier previews and genuinely substantive paper updates are distinguished where relevant. 8 contributions were selected for mechanism, evidence and practical value, without a quota. Delayed discoveries are labeled. Technical blogs and original papers were inspected, and results remain author-reported rather than independently reproduced. Search is partial: arXiv and organizational archives were screened within a bounded scope; OpenReview and ACL loaded but do not provide comprehensive daily discovery. Anthropic research/engineering and vLLM/LMSYS index pages exposed limited article lists or shells. Targeted searches recovered usable primary articles, while the HF October 13/14 discovery pages worked. No implementation release was verified for Web$hell, Ember or SlackSwap. Earlier public visibility of several code-first reserves could not be established, so uncertain novelty was excluded. The shared source log records actual checks from this two-date catch-up run, including excluded and later candidates; only date-eligible contributions appear above. No implementation or experiment was executed.",
+    "sources_checked": [
+      {
+        "name": "arXiv cs.CL dated recent batches, October 12 and October 14",
+        "url": "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv cs.LG dated recent batches, October 12 and October 14",
+        "url": "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv cs.AI dated recent batches, October 12 and October 14",
+        "url": "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv stat.ML dated recent batches, October 12 and October 14",
+        "url": "https://arxiv.org/list/stat.ML/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "Official arXiv announcement schedule and 2026 deferred-mailing holidays",
+        "url": "https://info.arxiv.org/help/availability.html",
+        "status": "ok"
+      },
+      {
+        "name": "Hugging Face daily discovery 2026-10-13",
+        "url": "https://huggingface.co/papers/date/2026-10-13",
+        "status": "ok"
+      },
+      {
+        "name": "Hugging Face daily discovery 2026-10-14",
+        "url": "https://huggingface.co/papers/date/2026-10-14",
+        "status": "ok"
+      },
+      {
+        "name": "MagicBeanStalk: Escaping the RLVR Zero Advantage Trap with Recursive Data Synthesis — abstract and submission history",
+        "url": "https://arxiv.org/abs/2610.12659",
+        "status": "ok"
+      },
+      {
+        "name": "MagicBeanStalk: Escaping the RLVR Zero Advantage Trap with Recursive Data Synthesis — full primary text",
+        "url": "https://arxiv.org/html/2610.12659v1",
+        "status": "ok"
+      },
+      {
+        "name": "Overcoming Data Imbalances with Expert Selection Biases — abstract and submission history",
+        "url": "https://arxiv.org/abs/2610.13370",
+        "status": "ok"
+      },
+      {
+        "name": "Overcoming Data Imbalances with Expert Selection Biases — full primary text",
+        "url": "https://arxiv.org/html/2610.13370v1",
+        "status": "ok"
+      },
+      {
+        "name": "A Critical Look at Power Sampling when Test Time Sharpening LLMs — abstract and submission history",
+        "url": "https://arxiv.org/abs/2610.13653",
+        "status": "ok"
+      },
+      {
+        "name": "A Critical Look at Power Sampling when Test Time Sharpening LLMs — full primary text",
+        "url": "https://arxiv.org/html/2610.13653v1",
+        "status": "ok"
+      },
+      {
+        "name": "Scaling Laws for Multimodal Data Mixtures — abstract and submission history",
+        "url": "https://arxiv.org/abs/2610.14423",
+        "status": "ok"
+      },
+      {
+        "name": "Scaling Laws for Multimodal Data Mixtures — full primary text",
+        "url": "https://arxiv.org/html/2610.14423v1",
+        "status": "ok"
+      },
+      {
+        "name": "Two Clocks: Why Larger Rollout Batches Learn Slower but Fail on Schedule in Reinforcement Learning with Verifiable Rewards — abstract and submission history",
+        "url": "https://arxiv.org/abs/2610.18853",
+        "status": "ok"
+      },
+      {
+        "name": "Two Clocks: Why Larger Rollout Batches Learn Slower but Fail on Schedule in Reinforcement Learning with Verifiable Rewards — full primary text",
+        "url": "https://arxiv.org/html/2610.18853v1",
+        "status": "ok"
+      },
+      {
+        "name": "CIG-SFT — abstract and submission history",
+        "url": "https://arxiv.org/abs/2610.12995",
+        "status": "ok"
+      },
+      {
+        "name": "CIG-SFT — full-text candidate inspection",
+        "url": "https://arxiv.org/html/2610.12995v1",
+        "status": "ok"
+      },
+      {
+        "name": "TPPO — abstract and submission history",
+        "url": "https://arxiv.org/abs/2610.16794",
+        "status": "ok"
+      },
+      {
+        "name": "TPPO — full-text candidate inspection",
+        "url": "https://arxiv.org/html/2610.16794v1",
+        "status": "ok"
+      },
+      {
+        "name": "Top-k distillation — abstract and submission history",
+        "url": "https://arxiv.org/abs/2610.15589",
+        "status": "ok"
+      },
+      {
+        "name": "Top-k distillation — full-text candidate inspection",
+        "url": "https://arxiv.org/html/2610.15589v1",
+        "status": "ok"
+      },
+      {
+        "name": "CIG-SFT — author code repository",
+        "url": "https://github.com/NiuKequan/CIG-SFT-public",
+        "status": "ok"
+      },
+      {
+        "name": "CIG-SFT — repository metadata (CLI retrieval succeeded after web failure)",
+        "url": "https://api.github.com/repos/NiuKequan/CIG-SFT-public",
+        "status": "ok"
+      },
+      {
+        "name": "CIG-SFT — commit history inspected through public API",
+        "url": "https://api.github.com/repos/NiuKequan/CIG-SFT-public/commits?per_page=20",
+        "status": "ok"
+      },
+      {
+        "name": "TPPO — author code repository",
+        "url": "https://github.com/LINs-lab/TPPO",
+        "status": "ok"
+      },
+      {
+        "name": "TPPO — repository metadata (CLI retrieval succeeded after web failure)",
+        "url": "https://api.github.com/repos/LINs-lab/TPPO",
+        "status": "ok"
+      },
+      {
+        "name": "TPPO — commit history inspected through public API",
+        "url": "https://api.github.com/repos/LINs-lab/TPPO/commits?per_page=20",
+        "status": "ok"
+      },
+      {
+        "name": "Top-k distillation — author code repository",
+        "url": "https://github.com/KurbanIntelligenceLab/top-k-distillation",
+        "status": "ok"
+      },
+      {
+        "name": "Top-k distillation — repository metadata (CLI retrieval succeeded after web failure)",
+        "url": "https://api.github.com/repos/KurbanIntelligenceLab/top-k-distillation",
+        "status": "ok"
+      },
+      {
+        "name": "Top-k distillation — commit history inspected through public API",
+        "url": "https://api.github.com/repos/KurbanIntelligenceLab/top-k-distillation/commits?per_page=20",
+        "status": "ok"
+      },
+      {
+        "name": "Two Clocks author-linked code repository",
+        "url": "https://github.com/WinstonLiyt/two-clocks-rlvr",
+        "status": "unavailable"
+      },
+      {
+        "name": "Two Clocks public repository API corroborates 404",
+        "url": "https://api.github.com/repos/WinstonLiyt/two-clocks-rlvr",
+        "status": "unavailable"
+      },
+      {
+        "name": "Ai2 research archive, bounded current-page inspection",
+        "url": "https://allenai.org/blog",
+        "status": "ok"
+      },
+      {
+        "name": "Google DeepMind research landing page, bounded inspection",
+        "url": "https://deepmind.google/research/",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv cs.CL recent dated listing",
+        "url": "https://arxiv.org/list/cs.CL/recent?skip=0&show=1000",
+        "status": "ok"
+      },
+      {
+        "name": "Web$hell abstract and submission history",
+        "url": "https://arxiv.org/abs/2610.13416",
+        "status": "ok"
+      },
+      {
+        "name": "Web$hell full methods, evaluation and appendices",
+        "url": "https://arxiv.org/html/2610.13416v1",
+        "status": "ok"
+      },
+      {
+        "name": "AgentSWE abstract and submission history",
+        "url": "https://arxiv.org/abs/2610.13361",
+        "status": "ok"
+      },
+      {
+        "name": "AgentSWE full methods, results and limitations",
+        "url": "https://arxiv.org/html/2610.13361v1",
+        "status": "ok"
+      },
+      {
+        "name": "AgentSWE accessible implementation",
+        "url": "https://github.com/VectorSpaceLab/AgentSWE",
+        "status": "ok"
+      },
+      {
+        "name": "AgentSWE GitHub source history via public API",
+        "url": "https://api.github.com/repos/VectorSpaceLab/AgentSWE/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "CarryOn abstract and version history",
+        "url": "https://arxiv.org/abs/2610.18784",
+        "status": "ok"
+      },
+      {
+        "name": "CarryOn full paper v1, methods, results and implementation appendices",
+        "url": "https://arxiv.org/html/2610.18784v1",
+        "status": "ok"
+      },
+      {
+        "name": "CarryOn project preview (retried through link and direct HTTP after intermittent web failures)",
+        "url": "https://ethannju.github.io/carryon/",
+        "status": "ok"
+      },
+      {
+        "name": "CarryOn repository preview; implementation not released",
+        "url": "https://github.com/Ethannju/carryon",
+        "status": "ok"
+      },
+      {
+        "name": "CarryOn source history via public GitHub API",
+        "url": "https://api.github.com/repos/Ethannju/carryon/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "CarryOn GitHub repository creation metadata via public API",
+        "url": "https://api.github.com/repos/Ethannju/carryon",
+        "status": "ok"
+      },
+      {
+        "name": "ReTerm abstract and submission history",
+        "url": "https://arxiv.org/abs/2610.18484",
+        "status": "ok"
+      },
+      {
+        "name": "ReTerm full method, results, ablations and recovery analysis",
+        "url": "https://arxiv.org/html/2610.18484v1",
+        "status": "ok"
+      },
+      {
+        "name": "ReTerm public implementation",
+        "url": "https://github.com/twothsnd/ReTerm",
+        "status": "ok"
+      },
+      {
+        "name": "ReTerm source history via public GitHub API",
+        "url": "https://api.github.com/repos/twothsnd/ReTerm/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "Parallel specialist-connectors controlled evaluation technical blog",
+        "url": "https://parallel.ai/blog/specialized-data-labbench2",
+        "status": "ok"
+      },
+      {
+        "name": "RATED abstract and submission history, later excluded for older public release",
+        "url": "https://arxiv.org/abs/2610.13889",
+        "status": "ok"
+      },
+      {
+        "name": "RATED full method and simulated-outage evaluation",
+        "url": "https://arxiv.org/html/2610.13889v1",
+        "status": "ok"
+      },
+      {
+        "name": "EcoAgent implementation predating lookback",
+        "url": "https://github.com/Elliotes/EcoAgent",
+        "status": "ok"
+      },
+      {
+        "name": "EcoAgent source history via public GitHub API",
+        "url": "https://api.github.com/repos/Elliotes/EcoAgent/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "Hybrid Reasoning Agents abstract and submission history",
+        "url": "https://arxiv.org/abs/2610.18861",
+        "status": "ok"
+      },
+      {
+        "name": "Hybrid Reasoning Agents full architecture, training and scoped cost analysis",
+        "url": "https://arxiv.org/html/2610.18861v1",
+        "status": "ok"
+      },
+      {
+        "name": "HybridAgent implementation",
+        "url": "https://github.com/togethercomputer/HybridAgent",
+        "status": "ok"
+      },
+      {
+        "name": "HybridAgent source history via public GitHub API",
+        "url": "https://api.github.com/repos/togethercomputer/HybridAgent/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "HybridAgent October 10 release README via direct HTTP fallback",
+        "url": "https://raw.githubusercontent.com/togethercomputer/HybridAgent/3c98dc0c970c/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "Self-Evolving Agent Harness abstract",
+        "url": "https://arxiv.org/abs/2610.18813",
+        "status": "ok"
+      },
+      {
+        "name": "Self-Evolving Agent Harness partial HTML conversion, not selected",
+        "url": "https://arxiv.org/html/2610.18813v1",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic Engineering index shell; article enumeration incomplete",
+        "url": "https://www.anthropic.com/engineering",
+        "status": "unavailable"
+      },
+      {
+        "name": "arXiv cs.DC recent, dated batches and first 50 titles",
+        "url": "https://arxiv.org/list/cs.DC/recent",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv cs.DC recent, remaining October 14 and complete October 12 batch",
+        "url": "https://arxiv.org/list/cs.DC/recent?skip=50&show=100",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv cs.LG recent, bounded discovery",
+        "url": "https://arxiv.org/list/cs.LG/recent",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv cs.AR recent, bounded discovery",
+        "url": "https://arxiv.org/list/cs.AR/recent",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv cs.OS recent, Ember first announcement batch",
+        "url": "https://arxiv.org/list/cs.OS/recent",
+        "status": "ok"
+      },
+      {
+        "name": "SlackSwap publication history",
+        "url": "https://arxiv.org/abs/2610.13003",
+        "status": "ok"
+      },
+      {
+        "name": "SlackSwap full methods, simulation, ablations and limitations",
+        "url": "https://arxiv.org/html/2610.13003v1",
+        "status": "ok"
+      },
+      {
+        "name": "Ember publication history",
+        "url": "https://arxiv.org/abs/2610.13408",
+        "status": "ok"
+      },
+      {
+        "name": "Ember full architecture, implementation, LLM generation and limitations",
+        "url": "https://arxiv.org/html/2610.13408v1",
+        "status": "ok"
+      },
+      {
+        "name": "FastEEP publication history",
+        "url": "https://arxiv.org/abs/2610.18451",
+        "status": "ok"
+      },
+      {
+        "name": "FastEEP full design, six-model evaluation and limitations",
+        "url": "https://arxiv.org/html/2610.18451v1",
+        "status": "ok"
+      },
+      {
+        "name": "Prorsa publication history",
+        "url": "https://arxiv.org/abs/2610.16592",
+        "status": "ok"
+      },
+      {
+        "name": "Prorsa full predictor, allocator, rollout evaluation and negative math result",
+        "url": "https://arxiv.org/html/2610.16592v1",
+        "status": "ok"
+      },
+      {
+        "name": "PyTorch technical blog archive",
+        "url": "https://pytorch.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "Spyre Inductor engineering report and exact publication metadata",
+        "url": "https://pytorch.org/blog/extending-inductor-for-the-ibm-spyre-accelerator/",
+        "status": "ok"
+      },
+      {
+        "name": "Torch-Spyre author repository",
+        "url": "https://github.com/torch-spyre/torch-spyre",
+        "status": "ok"
+      },
+      {
+        "name": "Torch-Spyre Inductor backend directory",
+        "url": "https://github.com/torch-spyre/torch-spyre/tree/main/torch_spyre/_inductor",
+        "status": "ok"
+      },
+      {
+        "name": "Torch-Spyre Inductor integration implementation",
+        "url": "https://raw.githubusercontent.com/torch-spyre/torch-spyre/main/torch_spyre/_inductor/__init__.py",
+        "status": "ok"
+      },
+      {
+        "name": "ATTUNE full method, controlled tuner comparisons and correctness-gate limits",
+        "url": "https://arxiv.org/html/2610.17528v1",
+        "status": "ok"
+      },
+      {
+        "name": "ATTUNE publication history",
+        "url": "https://arxiv.org/abs/2610.17528",
+        "status": "ok"
+      },
+      {
+        "name": "ATTUNE author code and readme; fetched after report cutoff",
+        "url": "https://github.com/amazon-science/attune",
+        "status": "ok"
+      },
+      {
+        "name": "ATTUNE commit history establishes earliest code commit after October 14 cutoff",
+        "url": "https://api.github.com/repos/amazon-science/attune/commits?per_page=10",
+        "status": "ok"
+      },
+      {
+        "name": "ATTUNE correctness implementation protocol; fetched after report cutoff",
+        "url": "https://raw.githubusercontent.com/amazon-science/attune/main/skill/scripts/correctness/PROTOCOL.md",
+        "status": "ok"
+      },
+      {
+        "name": "ByteExpress RDMA v1 full deployment design and production results",
+        "url": "https://arxiv.org/html/2610.12815v1",
+        "status": "ok"
+      },
+      {
+        "name": "ByteExpress RDMA publication history",
+        "url": "https://arxiv.org/abs/2610.12815",
+        "status": "ok"
+      },
+      {
+        "name": "Minions full short deployment report, not selected",
+        "url": "https://arxiv.org/html/2610.12970v1",
+        "status": "ok"
+      },
+      {
+        "name": "Execution-feasible pretraining dispatch, initial full-text screening",
+        "url": "https://arxiv.org/html/2610.13047v1",
+        "status": "ok"
+      },
+      {
+        "name": "GPU Goldmines full text available, initial screening only",
+        "url": "https://arxiv.org/html/2610.17321v1",
+        "status": "ok"
+      },
+      {
+        "name": "NVIDIA Developer archive, bounded discovery",
+        "url": "https://developer.nvidia.com/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "vLLM blog archive returned a limited application shell",
+        "url": "https://blog.vllm.ai/",
+        "status": "unavailable"
+      },
+      {
+        "name": "LMSYS blog archive returned a limited application shell",
+        "url": "https://www.lmsys.org/blog/",
+        "status": "unavailable"
+      },
+      {
+        "name": "PyTorch decomposition-hook PR 176811 inspected; not used to claim a new merged release",
+        "url": "https://github.com/pytorch/pytorch/pull/176811",
+        "status": "ok"
+      },
+      {
+        "name": "PyTorch PR 185909 retrieval failed; no merge claim adopted",
+        "url": "https://github.com/pytorch/pytorch/pull/185909",
+        "status": "unavailable"
+      },
+      {
+        "name": "arXiv cs.CL dated recent batches, including October 14 and 12",
+        "url": "https://arxiv.org/list/cs.CL/recent?show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "OpenReview venue directory, bounded discovery only",
+        "url": "https://openreview.net/",
+        "status": "ok"
+      },
+      {
+        "name": "ACL Anthology archive, bounded discovery only",
+        "url": "https://aclanthology.org/",
+        "status": "ok"
+      },
+      {
+        "name": "Thinking Machines dated research-blog index",
+        "url": "https://thinkingmachines.ai/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic research landing page, discovery shell only",
+        "url": "https://www.anthropic.com/research",
+        "status": "unavailable"
+      },
+      {
+        "name": "Anthropic distillation-defenses full technical report",
+        "url": "https://www.anthropic.com/research/distillation-defenses",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic source-control engineering case study, inspected but outside selected scope",
+        "url": "https://www.anthropic.com/engineering/redesigning-source-control",
+        "status": "ok"
+      },
+      {
+        "name": "OpenAI research overview",
+        "url": "https://openai.com/research/",
+        "status": "ok"
+      },
+      {
+        "name": "OpenAI dated research index",
+        "url": "https://openai.com/research/index/",
+        "status": "ok"
+      },
+      {
+        "name": "DeepMind dated publications index, bounded view",
+        "url": "https://deepmind.google/research/publications/",
+        "status": "ok"
+      },
+      {
+        "name": "DeepMind on-device scam model article, inspected but not selected",
+        "url": "https://deepmind.google/blog/on-device-ai-scam-detection-mddi/",
+        "status": "ok"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": "arxiv:2610.12659",
+      "title": "MagicBeanStalk: Escaping the RLVR Zero Advantage Trap with Recursive Data Synthesis",
+      "category": "1.1",
+      "tags": [
+        "Synthetic Data",
+        "RLVR",
+        "Difficulty Calibration"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-15T04:36:31.851Z",
+      "canonical_url": "https://arxiv.org/abs/2610.12659",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.12659"
+      },
+      "public_availability": {
+        "at": "2026-10-12T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "summary": [
+        "MagicBeanStalk decomposes hard problems into verified subproblems, then recombines new variants into training tasks calibrated to a target model and response budget.",
+        "It turns otherwise uninformative all-failure reward groups into useful reinforcement-learning data while preserving the reasoning skills that made the original seeds valuable."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Delayed discovery of the October 12 new-submission batch; availability is inferred from that dated primary-category batch and the official schedule. Sections 2–4 and Appendices D–G provide synthesis controls, qualification screens and evaluations; gpt-oss-120b improves from 61.2 to 69.8 average pass@1 across eight math benchmarks at 16K output tokens.",
+        "limitations": "Difficulty is a finite-sample, policy-and-budget-dependent estimate. Synthesis and some verification rely on proprietary teachers; data release is promised upon acceptance. Extra synthesis cost is not an end-to-end efficiency win. Synthetic errors and unequal sample counts limit cross-model comparisons; no results were independently reproduced."
+      },
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "arxiv:2610.13370",
+      "title": "Overcoming Data Imbalances with Expert Selection Biases",
+      "category": "1.2",
+      "tags": [
+        "Mixture of Experts",
+        "Multilingual Training",
+        "Capacity Allocation"
+      ],
+      "published_on": "2026-10-09",
+      "first_seen_at": "2026-10-15T04:36:31.851Z",
+      "canonical_url": "https://arxiv.org/abs/2610.13370",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.13370"
+      },
+      "public_availability": {
+        "at": "2026-10-12T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "summary": [
+        "COAX adds category-dependent biases to expert selection during pretraining, giving scarce languages or modalities a larger preferred expert pool while keeping the number of active experts per token fixed.",
+        "This supplies a simple capacity-allocation control for imbalanced training mixtures, with most multilingual and multimodal loss gains retained after removing the bias for standard inference."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Delayed discovery of the October 12 new-submission batch, with availability inferred using the official schedule. Sections 3–6 and Appendices B, F and G compare matched MoEs up to 10.6B total parameters, routing alternatives and data upsampling; seven-minority-language validation loss improves 0.286% relative in the largest eight-language setup.",
+        "limitations": "Most evidence concerns held-out next-token loss; multilingual task benchmarks are inconclusive and free generation remains undertrained. Some domains regress without inference-time bias. Training overhead ranges from about 20% at the smallest scale to 1.3%–2.4% in tested large/coarse configurations; no public implementation was verified."
+      },
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "arxiv:2610.13653",
+      "title": "A Critical Look at Power Sampling when Test Time Sharpening LLMs",
+      "category": "1.9",
+      "tags": [
+        "Test-Time Scaling",
+        "Power Sampling",
+        "Controlled Evaluation"
+      ],
+      "published_on": "2026-10-09",
+      "first_seen_at": "2026-10-15T04:36:31.851Z",
+      "canonical_url": "https://arxiv.org/abs/2610.13653",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.13653"
+      },
+      "public_availability": {
+        "at": "2026-10-12T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/stat.ML/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "summary": [
+        "This study tests whether power-distribution sampling improves reasoning because it faithfully sharpens a model or simply searches for likely responses, and introduces a fine-tuning control that targets that distribution more directly.",
+        "Its model-dependent results motivate testing inexpensive likelihood-based selection and low-temperature decoding before investing in more elaborate samplers."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Delayed discovery of the October 12 new-submission batch, with inferred availability grounded in the official schedule. Sections 3–5 and Table 1 compare three models on MATH500 and GPQA Diamond; simple selection often matches Power-SMC, while more faithful POWER-RLOO produces both gains and a length-collapse failure.",
+        "limitations": "Experiments use a 1,564-token generation cap, three models, two tasks and seed 0; results are not a universal rejection of sharpening. Training and inference costs are different. Code is promised upon acceptance; a broad prose claim about beating POWER-RLOO contradicts the Qwen-Instruct GPQA table, so it is not repeated."
+      },
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "https://www.anthropic.com/research/distillation-defenses",
+      "title": "Strengthening our defenses against distillation attacks",
+      "category": "1.10",
+      "tags": [
+        "Model Extraction",
+        "Reasoning Distillation",
+        "Platform Safeguards"
+      ],
+      "published_on": "2026-10-12",
+      "first_seen_at": "2026-10-15T04:37:12.000Z",
+      "canonical_url": "https://www.anthropic.com/research/distillation-defenses",
+      "links": {
+        "blog": "https://www.anthropic.com/research/distillation-defenses"
+      },
+      "summary": [
+        "Anthropic describes a layered defense against unauthorized reasoning extraction that combines protected-context boundaries, extraction classifiers and account-level abuse controls.",
+        "Its new technical report connects information exposure to downstream distillation performance and documents deployment tradeoffs, offering a concrete case study for platforms that expose powerful reasoning models."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "The October 12 report gives SWE-bench Verified scores of 80.4% versus 71.8% for a pretrained Claude student distilled from full versus summarized Opus 4.8 transcripts, and estimates 10-100x less reasoning-token extraction on its platform after classifier introduction. Delayed discovery concerns this report; its controls were introduced earlier.",
+        "limitations": "Internal author measurements lack released data, complete training controls and independent replication. The reported false-positive rate below 0.1% and platform-specific extraction estimates are not universal guarantees; highly persistent attacks remain untested. Legitimate integrations can require changes and benign blocked requests can incur charges. No code release was verified."
+      },
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "arxiv:2610.13416",
+      "title": "Web$hell: A Unified Interface for Agentic Web Access",
+      "category": "2.2",
+      "tags": [
+        "Web Interfaces",
+        "Persistent Evidence",
+        "Browser Actions"
+      ],
+      "published_on": "2026-10-09",
+      "first_seen_at": "2026-10-15T04:39:34.000Z",
+      "public_availability": {
+        "at": "2026-10-12T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.13416",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.13416"
+      },
+      "summary": [
+        "Web$hell compiles webpages into addressable information and action objects, letting agents search stored evidence and operate live controls through one interface.",
+        "This makes complex web tasks easier to continue across many pages; the authors report stronger results on six search, navigation and research benchmarks with comparable or lower model cost than their tested interfaces."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Delayed discovery from the October 12 arXiv batch, absent the baseline and all 158 registry works; submission was October 9 at 11:23:40 UTC. Sections 3–6 and Appendices A–D expose deterministic compilation, persistent read-only prior states, controlled interface comparisons and association ablations. With GPT-5.6-Luna/high, Table 3 reports WebArena-Verified success 67.9% versus 57.8% for the combined search/browser/filesystem baseline.",
+        "limitations": "Work in progress using one principal model and finite benchmark subsets. Cost is model inference rather than total system cost: compilation adds 0.46–2.79 seconds per acquired page, and cached-token pricing affects comparisons. Stored page states cannot restore live browser state; no available implementation was verified and results were not independently reproduced."
+      },
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "arxiv:2610.13361",
+      "title": "AgentSWE: Can Coding Agents Build the Agent You Actually Want?",
+      "category": "2.8",
+      "tags": [
+        "Agent Construction",
+        "Held-Out Evaluation",
+        "Requirement Fidelity"
+      ],
+      "published_on": "2026-10-09",
+      "first_seen_at": "2026-10-15T04:39:34.000Z",
+      "public_availability": {
+        "at": "2026-10-12T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.13361",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.13361",
+        "code": "https://github.com/VectorSpaceLab/AgentSWE"
+      },
+      "summary": [
+        "AgentSWE tests whether coding agents can create, edit and optimize the agents users request, freezing each delivery before running it on held-out cases derived from the requirements.",
+        "Its 25 commissions expose a gap between convincing development demonstrations and working delivered behavior, giving builders a concrete evaluation for overfitting, incomplete runtimes and unsupported completion claims."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Delayed discovery from the October 12 batch; original submission was October 9 at 10:35:27 UTC. Sections 3–5 and Appendix J distinguish requirement rubrics, hard validity gates, development/held-out splits and model/harness pairings. Main Creation results average 11.2/100 over 50 builds; 20 score zero. The code and 25-task package are accessible, and source history begins October 12 at 02:05:44 UTC, within the discovery lookback.",
+        "limitations": "Main model/task pairings were built once; an eight-task subset uses three builds and shows large variation. Creation/Editing rely on model judges whose model families overlap some builders, and absolute scores across task families and Lite/main settings are not directly comparable. Public held-out assets and builder network access leave contamination risks; no experiments were reproduced."
+      },
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "arxiv:2610.13408",
+      "title": "Ember: Making Unified Virtual Memory Practical for Discrete-Memory GPUs",
+      "category": "3.4",
+      "tags": [
+        "Unified Memory",
+        "GPU Offloading",
+        "Memory Oversubscription"
+      ],
+      "published_on": "2026-10-09",
+      "first_seen_at": "2026-10-15T04:38:15.060Z",
+      "canonical_url": "https://arxiv.org/abs/2610.13408",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.13408"
+      },
+      "public_availability": {
+        "at": "2026-10-12T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.OS/recent",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "novelty": "newly-discovered",
+      "summary": [
+        "Ember keeps oversubscribed GPU allocations accessible in host memory and selectively promotes useful regions into GPU memory, with an adaptive variant using hardware access counters and proactive reclamation.",
+        "This reduces page-migration thrashing when model weights exceed device capacity, offering a concrete memory-management design for constrained LLM inference rather than requiring the whole model to fit on the GPU."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Delayed discovery of the October 12 batch; October 9 v1 date retained, with public availability inferred from the dated listing and official schedule. Sections 4–8 distinguish stock-CUDA static placement from the patched-driver adaptive policy. Section 7.4 tests Qwen2.5-14B/Qwen3-32B generation on RTX 5080, A40 and H200, each capped to 16 GB; at 1.41x oversubscription, the static variant reports 4.7–13x over stock UVM.",
+        "limitations": "These are 128-token decode benchmarks, not serving throughput: no strategy exceeds 3 tokens/s in the oversubscribed cases. Adaptive placement requires a driver patch and administrator access; only managed allocations and one GPU-to-host tier are controlled. No dedicated source-code release was verified; the abstract's larger headline is not substituted for the narrower Section 7.4 result."
+      }
+    },
+    {
+      "id": "arxiv:2610.13003",
+      "title": "SlackSwap: Bandwidth-Aware Activation Swapping and Recomputation for Memory-Efficient DNN Training",
+      "category": "3.4",
+      "tags": [
+        "Activation Memory",
+        "Offloading",
+        "Recomputation"
+      ],
+      "published_on": "2026-10-09",
+      "first_seen_at": "2026-10-15T04:36:42.817Z",
+      "canonical_url": "https://arxiv.org/abs/2610.13003",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.13003"
+      },
+      "public_availability": {
+        "at": "2026-10-12T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/recent?skip=50&show=100",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "novelty": "newly-discovered",
+      "summary": [
+        "SlackSwap treats host-link time as a limited budget, offloading activations that would be expensive to rebuild and recomputing cheaper tensors once that transfer budget is exhausted.",
+        "Its trace-driven simulations suggest that combining bandwidth-aware placement with asynchronous copies can retain training throughput under tight activation-memory budgets, while leaving real-system performance to be demonstrated."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Delayed discovery of the verified October 12 batch; original October 9 submission retained and availability inferred from the dated listing plus schedule. Algorithm 1 and Sections 3–4 specify two-pass planning, FIFO offloads and earliest-deadline-first prefetches. A100 simulations of BERT-Large, GPT-2 XL and a Llama-7B-style model retain 96.3–99.6% of unlimited-memory throughput at half the activation budget, 1.10–1.11x the best simulated baseline.",
+        "limitations": "All performance results are simulated. The model omits allocator fragmentation, copy-induced HBM contention, and shared PCIe/host-memory contention; model states remain resident on one GPU. The SwapAdvisor comparison omits its operator-order and memory-pool genetic search. No dedicated implementation or independent reproduction was verified."
+      }
+    }
+  ]
+}

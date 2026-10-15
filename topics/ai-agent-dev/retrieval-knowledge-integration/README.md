@@ -5,6 +5,20 @@ RAG, agentic search, query rewriting, knowledge bases and external grounding.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-14](../../../reports/2026/10/2026-10-14.md) — PARTIAL SEARCH
+
+### [Using specialized data to improve research agent accuracy](<https://parallel.ai/blog/specialized-data-labbench2>)
+
+Parallel compares the same research agent with public-web access alone and with additional PubMed and ClinicalTrials.gov connectors on 288 LABBench2 questions. Structured specialist access yields 12 net additional correct answers and illustrates how constrained search, complete records and web-to-database handoffs can improve evidence retrieval even when similar data is publicly indexed.
+
+**Published:** 2026-10-13 · **First seen:** 2026-10-15T04:39:34.000Z · **Novelty:** new · **Tags:** Structured Retrieval, Data Connectors, Controlled Evaluation
+
+[Blog](<https://parallel.ai/blog/specialized-data-labbench2>)
+
+**Evidence:** engineering-report; full-text. The dated October 13 primary report specifies matched agent/model/processor configurations, 168 LitQA3 and 120 TrialQA questions, unchanged benchmark scoring and inspected call traces. Errors change 34 to 22 overall; 15 questions improve and three regress. Connector calls complement web searches for literature questions and often substitute for general lookups on trial records.
+
+**Limitations:** Vendor-authored study with one run per question per condition, no reported confidence interval or repeated-seed analysis, and no isolated attribution across search-space and representation changes. Only two biomedical benchmark subtasks were tested; extrapolation to private legal/financial databases is speculative. Fixed per-question pricing is not a measurement of underlying compute. No paper or released experiment code was verified.
+
 ## [2026-10-08](../../../reports/2026/10/2026-10-08.md) — PARTIAL SEARCH
 
 ### [RECAST: Learning to Compute the Right Context through Adaptive Evidence Routing](<https://arxiv.org/abs/2610.10507>)

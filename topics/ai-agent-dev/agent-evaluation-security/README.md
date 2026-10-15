@@ -5,6 +5,22 @@ Task success, trajectory evaluation, cost/reliability, prompt injection and perm
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-13](../../../reports/2026/10/2026-10-13.md) — PARTIAL SEARCH
+
+### [AgentSWE: Can Coding Agents Build the Agent You Actually Want?](<https://arxiv.org/abs/2610.13361>)
+
+AgentSWE tests whether coding agents can create, edit and optimize the agents users request, freezing each delivery before running it on held-out cases derived from the requirements. Its 25 commissions expose a gap between convincing development demonstrations and working delivered behavior, giving builders a concrete evaluation for overfitting, incomplete runtimes and unsupported completion claims.
+
+**Published:** 2026-10-09 · **First seen:** 2026-10-15T04:39:34.000Z · **Novelty:** newly-discovered · **Tags:** Agent Construction, Held-Out Evaluation, Requirement Fidelity
+
+**Public availability:** 2026-10-12T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.13361>) · [Code](<https://github.com/VectorSpaceLab/AgentSWE>)
+
+**Evidence:** research-paper; full-text. Delayed discovery from the October 12 batch; original submission was October 9 at 10:35:27 UTC. Sections 3–5 and Appendix J distinguish requirement rubrics, hard validity gates, development/held-out splits and model/harness pairings. Main Creation results average 11.2/100 over 50 builds; 20 score zero. The code and 25-task package are accessible, and source history begins October 12 at 02:05:44 UTC, within the discovery lookback.
+
+**Limitations:** Main model/task pairings were built once; an eight-task subset uses three builds and shows large variation. Creation/Editing rely on model judges whose model families overlap some builders, and absolute scores across task families and Lite/main settings are not directly comparable. Public held-out assets and builder network access leave contamination risks; no experiments were reproduced.
+
 ## [2026-10-12](../../../reports/2026/10/2026-10-12.md) — PARTIAL SEARCH
 
 ### [VEPA: Verified Evolving Formal Policy for Lifelong LLM Agent Guardrails](<https://arxiv.org/abs/2610.12813>)

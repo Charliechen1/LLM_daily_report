@@ -5,6 +5,22 @@ Distributed rollouts, asynchronous RL, generation/training coordination and weig
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-14](../../../reports/2026/10/2026-10-14.md) — PARTIAL SEARCH
+
+### [Prorsa: Unleashing the Potential of Prefill-Decode Disaggregation in Agentic Reinforcement Learning](<https://arxiv.org/abs/2610.16592>)
+
+Prorsa monitors agent trajectories, sandbox startup and tool execution to forecast short-term prefill and decode demand, then switches rollout workers between the two roles. This adapts disaggregated inference to multi-turn reinforcement learning, reducing interference and cache-capacity bottlenecks; the authors report 1.11–4.05x faster agentic rollouts, with slowdowns in most tested single-turn math settings.
+
+**Published:** 2026-10-12 · **First seen:** 2026-10-15T04:36:43.360Z · **Novelty:** new · **Tags:** Agentic RL, Prefill Decode Disaggregation, Workload Prediction
+
+**Public availability:** 2026-10-14T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/recent>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.16592>)
+
+**Evidence:** research-paper; full-text. Sections 3–5 inspect workload characterization, lifecycle prediction and adaptive allocation atop Verl/SGLang. Experiments use FP8 Qwen3-235B-A22B, DeepSeek-V3.2 and MiMo-V2.5-Pro on a 16-server, 128-GPU cluster with NVLink and 400-Gbps RDMA NICs, comparing rollout time against prefill-decode colocation. Role switching adds 1.0–1.44x over task-tuned static splits in the MiMo ablation. The October 12 v1 submission predates its verified October 14 announcement batch.
+
+**Limitations:** Rollout speedups do not measure full training time or final policy quality. Results depend strongly on attention parallelism and task mix; KV transfer and switching can hurt single-turn workloads. Decode allocation forecasts admission-cache volume without explicitly predicting output lengths or near-term cache reclamation. GPU model and a dedicated code release were not verified.
+
 ## [2026-10-07](../../../reports/2026/10/2026-10-07.md) — PARTIAL SEARCH
 
 ### [NeMo-DCR: Bit-Exact Delta-Compressed Refit for Scalable Agentic RL at Trillion-Parameter Scale](<https://arxiv.org/abs/2610.08430>)

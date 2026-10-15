@@ -5,6 +5,22 @@ Learning from trajectories/feedback, skill generation/reuse, experience and self
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-14](../../../reports/2026/10/2026-10-14.md) — PARTIAL SEARCH
+
+### [ReTerm: Recovery Training for Self-Improving Terminal Agents](<https://arxiv.org/abs/2610.18484>)
+
+ReTerm teaches terminal agents to recover from their own failed environment states, first using teacher-generated repair demonstrations and then mixing ordinary and recovery rollouts during reinforcement learning. Its bounded queue of recent failure states keeps recovery practice aligned with the evolving policy; the authors' matched 9B-model evaluation improves Terminal-Bench 2.0 from 20.2% to 34.8% Pass@1.
+
+**Published:** 2026-10-13 · **First seen:** 2026-10-15T04:39:34.000Z · **Novelty:** new · **Tags:** Recovery Training, Agent Reinforcement Learning, Terminal Agents
+
+**Public availability:** 2026-10-14T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.18484>) · [Code](<https://github.com/twothsnd/ReTerm>)
+
+**Evidence:** research-paper; full-text. October 14 batch; arXiv submission October 13 at 14:44:24 UTC. Sections 3–4 describe pre-verifier VM snapshots, teacher-only SFT loss and separate group normalization for original/recovery tasks. Table 4 reports 25.8% for recovery SFT, 28.0% for standard GRPO and 34.8% for ReTerm-GRPO. Three alternative harnesses retain 6.7–12.4-point gains; accessible implementation history begins with October 14 05:52:49 UTC initial release.
+
+**Limitations:** The principal study uses Qwen3.5-9B trained on 16 A100-80GB GPUs, verifier-based synthetic terminal tasks and a fixed evaluation seed. Most other model comparisons come from original papers/releases and are not matched reruns. Recovery analysis uses model judging with manual verification; except tool-use errors, recovery rates remain at or below 32%. No independent experiments were reproduced.
+
 ## [2026-10-12](../../../reports/2026/10/2026-10-12.md) — PARTIAL SEARCH
 
 ### [EvoBelief: Falsifiable World Models for Self-Improving LLM Agents](<https://arxiv.org/abs/2610.12789>)

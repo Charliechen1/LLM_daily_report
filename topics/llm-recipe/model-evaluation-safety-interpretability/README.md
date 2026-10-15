@@ -5,6 +5,20 @@ Capability evaluation, contamination, generalization, robustness, safety and mec
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-13](../../../reports/2026/10/2026-10-13.md) — PARTIAL SEARCH
+
+### [Strengthening our defenses against distillation attacks](<https://www.anthropic.com/research/distillation-defenses>)
+
+Anthropic describes a layered defense against unauthorized reasoning extraction that combines protected-context boundaries, extraction classifiers and account-level abuse controls. Its new technical report connects information exposure to downstream distillation performance and documents deployment tradeoffs, offering a concrete case study for platforms that expose powerful reasoning models.
+
+**Published:** 2026-10-12 · **First seen:** 2026-10-15T04:37:12.000Z · **Novelty:** newly-discovered · **Tags:** Model Extraction, Reasoning Distillation, Platform Safeguards
+
+[Blog](<https://www.anthropic.com/research/distillation-defenses>)
+
+**Evidence:** engineering-report; full-text. The October 12 report gives SWE-bench Verified scores of 80.4% versus 71.8% for a pretrained Claude student distilled from full versus summarized Opus 4.8 transcripts, and estimates 10-100x less reasoning-token extraction on its platform after classifier introduction. Delayed discovery concerns this report; its controls were introduced earlier.
+
+**Limitations:** Internal author measurements lack released data, complete training controls and independent replication. The reported false-positive rate below 0.1% and platform-specific extraction estimates are not universal guarantees; highly persistent attacks remain untested. Legitimate integrations can require changes and benign blocked requests can incur charges. No code release was verified.
+
 ## [2026-10-10](../../../reports/2026/10/2026-10-10.md) — PARTIAL SEARCH
 
 ### [Do LLMs Learn from Rewards in Context? : Rethinking the role of reward in In-Context Reinforcement Learning](<https://arxiv.org/abs/2610.11152>)

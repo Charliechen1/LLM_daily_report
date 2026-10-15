@@ -5,6 +5,22 @@ Tool selection/calling, APIs, code execution, browser/computer use and protocols
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-13](../../../reports/2026/10/2026-10-13.md) — PARTIAL SEARCH
+
+### [Web$hell: A Unified Interface for Agentic Web Access](<https://arxiv.org/abs/2610.13416>)
+
+Web$hell compiles webpages into addressable information and action objects, letting agents search stored evidence and operate live controls through one interface. This makes complex web tasks easier to continue across many pages; the authors report stronger results on six search, navigation and research benchmarks with comparable or lower model cost than their tested interfaces.
+
+**Published:** 2026-10-09 · **First seen:** 2026-10-15T04:39:34.000Z · **Novelty:** newly-discovered · **Tags:** Web Interfaces, Persistent Evidence, Browser Actions
+
+**Public availability:** 2026-10-12T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.13416>)
+
+**Evidence:** research-paper; full-text. Delayed discovery from the October 12 arXiv batch, absent the baseline and all 158 registry works; submission was October 9 at 11:23:40 UTC. Sections 3–6 and Appendices A–D expose deterministic compilation, persistent read-only prior states, controlled interface comparisons and association ablations. With GPT-5.6-Luna/high, Table 3 reports WebArena-Verified success 67.9% versus 57.8% for the combined search/browser/filesystem baseline.
+
+**Limitations:** Work in progress using one principal model and finite benchmark subsets. Cost is model inference rather than total system cost: compilation adds 0.46–2.79 seconds per acquired page, and cached-token pricing affects comparisons. Stored page states cannot restore live browser state; no available implementation was verified and results were not independently reproduced.
+
 ## [2026-10-11](../../../reports/2026/10/2026-10-11.md) — PARTIAL SEARCH
 
 ### [Personal Agent Protocol: public draft 0.1](<https://sierra.ai/blog/introducing-personal-agent-protocol>)

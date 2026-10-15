@@ -2,6 +2,20 @@
   "schema_version": 1,
   "reports": [
     {
+      "date": "2026-10-14",
+      "path": "reports/2026/10/2026-10-14.md",
+      "source": "data/reports/2026/10/2026-10-14.json",
+      "search_status": "partial",
+      "entries": 8
+    },
+    {
+      "date": "2026-10-13",
+      "path": "reports/2026/10/2026-10-13.md",
+      "source": "data/reports/2026/10/2026-10-13.json",
+      "search_status": "partial",
+      "entries": 8
+    },
+    {
       "date": "2026-10-12",
       "path": "reports/2026/10/2026-10-12.md",
       "source": "data/reports/2026/10/2026-10-12.json",
@@ -103,6 +117,610 @@
     }
   ],
   "entries": [
+    {
+      "id": "arxiv:2610.14423",
+      "title": "Scaling Laws for Multimodal Data Mixtures",
+      "category": "1.2",
+      "tags": [
+        "Scaling Laws",
+        "Multimodal Pretraining",
+        "Data Mixtures"
+      ],
+      "published_on": "2026-10-10",
+      "first_seen_at": "2026-10-15T04:36:31.851Z",
+      "canonical_url": "https://arxiv.org/abs/2610.14423",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.14423"
+      },
+      "public_availability": {
+        "at": "2026-10-14T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "summary": [
+        "This work fits multimodal pretraining laws that account for directional transfer, competition for model capacity and diminishing returns from repeated vision or audio data.",
+        "Controlled mixture-of-experts experiments make the framework useful for planning how to divide a training budget among model size, unique data and modality mixtures, while requiring coefficients to be fitted for the intended setup."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "The October 14 new-submission batch and official schedule imply public availability at October 14 00:00 UTC, despite the October 10 submission date. Sections 2–6 and Appendices G–I cover 268 fitting experiments and three held-out runs; eight of nine held-out modality-loss predictions are within 2.6% of observed values.",
+        "limitations": "Coefficients depend on tokenizers, discrete next-token objectives, data quality and sparse architecture. The non-text-heavy continuation underpredicts text loss by 6.73%; larger-scale and video validation remain future work. Loss prediction is not a downstream-capability guarantee, and no code release or independent reproduction was verified."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-14",
+      "report_path": "reports/2026/10/2026-10-14.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.18853",
+      "title": "Two Clocks: Why Larger Rollout Batches Learn Slower but Fail on Schedule in Reinforcement Learning with Verifiable Rewards",
+      "category": "1.7",
+      "tags": [
+        "RLVR",
+        "Batch Scaling",
+        "Training Stability"
+      ],
+      "published_on": "2026-10-13",
+      "first_seen_at": "2026-10-15T04:36:31.851Z",
+      "canonical_url": "https://arxiv.org/abs/2610.18853",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.18853"
+      },
+      "public_availability": {
+        "at": "2026-10-14T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "summary": [
+        "Two Clocks separates the samples needed for learning progress from those consumed before training collapse when rollout batches and learning rates are scaled together.",
+        "Its controlled GRPO experiments motivate starting below a critical batch size and increasing the batch later, helping practitioners evaluate sample efficiency and stability separately from hardware throughput."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Availability is inferred from the October 14 primary-category new-submission batch and official schedule. Sections 3–6 and Appendices B, F and G test 512–8,192-response batches, clipping and batch ramps on Qwen math models; larger batches lose sample efficiency above a learning-rate-dependent critical scale.",
+        "limitations": "The local quadratic progress model and drift-threshold failure hypothesis are conditional approximations. Most runs use a modified 1.5B math recipe with KL, entropy bonuses and gradient clipping disabled; robustness settings have limited seeds. The author-linked code repository returned 404, and no end-to-end throughput gain was established."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-14",
+      "report_path": "reports/2026/10/2026-10-14.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.18784",
+      "title": "Pack Light, CarryOn: Building Object-Oriented Context for Long-Horizon Agents",
+      "category": "2.3",
+      "tags": [
+        "Context Engineering",
+        "Versioned State",
+        "Long-Horizon Agents"
+      ],
+      "published_on": "2026-10-13",
+      "first_seen_at": "2026-10-15T04:39:34.000Z",
+      "canonical_url": "https://arxiv.org/abs/2610.18784",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.18784",
+        "project": "https://ethannju.github.io/carryon/"
+      },
+      "summary": [
+        "CarryOn organizes an agent's context around versioned reusable task objects, explicit unfinished obligations and a recent interaction tail, folding history only after evidence and consistency checks.",
+        "This lets long-running agents continue from work already present in files or application state; matched Claude Opus 4.7 experiments improve OSWorld 2.0 partial score by 5.8 points while reducing total tokens by 51.9%, including context-management calls."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "The detailed paper is in the October 14 batch, whose 00:00 UTC availability is inferred from the dated listing and official announcement schedule. October 13 repository preview history contains earlier headline results, although commit times do not prove first public visibility. Sections 3–4 and Appendices A–C add candidate/evidence binding, atomic folds, 40-task ablations and explicit resource accounting. Matched OSWorld 2.0 partial score rises 43.9% to 49.7%, binary success 15.7% to 19.4%; 100 BrowseComp-Plus questions rise 49% to 56%.",
+        "limitations": "Only one principal host model, one 100-question browsing subset and small 40-task ablations; no independent reproduction. Grounder checks establish scoped consistency and availability, not semantic task correctness. Some comparator scores are previously reported, not matched reruns. The linked repository is a preview and explicitly postpones implementation release until after review; no available code is claimed."
+      },
+      "novelty": "material-update",
+      "update_note": "2026-10-14: the detailed primary paper supplies the context-update mechanism, atomic validation and commitment protocol, complete resource accounting and controlled ablations beyond the October 13 project preview history at https://github.com/Ethannju/carryon; that history does not establish its exact first public visibility. New-paper availability at 00:00 UTC is inferred from https://arxiv.org/list/cs.AI/recent?skip=0&show=2000 and https://info.arxiv.org/help/availability.html. The idea and preview headline are not claimed to have first appeared today.",
+      "report_kind": "daily",
+      "report_date": "2026-10-14",
+      "report_path": "reports/2026/10/2026-10-14.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://parallel.ai/blog/specialized-data-labbench2",
+      "title": "Using specialized data to improve research agent accuracy",
+      "category": "2.4",
+      "tags": [
+        "Structured Retrieval",
+        "Data Connectors",
+        "Controlled Evaluation"
+      ],
+      "published_on": "2026-10-13",
+      "first_seen_at": "2026-10-15T04:39:34.000Z",
+      "canonical_url": "https://parallel.ai/blog/specialized-data-labbench2",
+      "links": {
+        "blog": "https://parallel.ai/blog/specialized-data-labbench2"
+      },
+      "summary": [
+        "Parallel compares the same research agent with public-web access alone and with additional PubMed and ClinicalTrials.gov connectors on 288 LABBench2 questions.",
+        "Structured specialist access yields 12 net additional correct answers and illustrates how constrained search, complete records and web-to-database handoffs can improve evidence retrieval even when similar data is publicly indexed."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "The dated October 13 primary report specifies matched agent/model/processor configurations, 168 LitQA3 and 120 TrialQA questions, unchanged benchmark scoring and inspected call traces. Errors change 34 to 22 overall; 15 questions improve and three regress. Connector calls complement web searches for literature questions and often substitute for general lookups on trial records.",
+        "limitations": "Vendor-authored study with one run per question per condition, no reported confidence interval or repeated-seed analysis, and no isolated attribution across search-space and representation changes. Only two biomedical benchmark subtasks were tested; extrapolation to private legal/financial databases is speculative. Fixed per-question pricing is not a measurement of underlying compute. No paper or released experiment code was verified."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-14",
+      "report_path": "reports/2026/10/2026-10-14.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.18484",
+      "title": "ReTerm: Recovery Training for Self-Improving Terminal Agents",
+      "category": "2.5",
+      "tags": [
+        "Recovery Training",
+        "Agent Reinforcement Learning",
+        "Terminal Agents"
+      ],
+      "published_on": "2026-10-13",
+      "first_seen_at": "2026-10-15T04:39:34.000Z",
+      "public_availability": {
+        "at": "2026-10-14T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.18484",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.18484",
+        "code": "https://github.com/twothsnd/ReTerm"
+      },
+      "summary": [
+        "ReTerm teaches terminal agents to recover from their own failed environment states, first using teacher-generated repair demonstrations and then mixing ordinary and recovery rollouts during reinforcement learning.",
+        "Its bounded queue of recent failure states keeps recovery practice aligned with the evolving policy; the authors' matched 9B-model evaluation improves Terminal-Bench 2.0 from 20.2% to 34.8% Pass@1."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "October 14 batch; arXiv submission October 13 at 14:44:24 UTC. Sections 3–4 describe pre-verifier VM snapshots, teacher-only SFT loss and separate group normalization for original/recovery tasks. Table 4 reports 25.8% for recovery SFT, 28.0% for standard GRPO and 34.8% for ReTerm-GRPO. Three alternative harnesses retain 6.7–12.4-point gains; accessible implementation history begins with October 14 05:52:49 UTC initial release.",
+        "limitations": "The principal study uses Qwen3.5-9B trained on 16 A100-80GB GPUs, verifier-based synthetic terminal tasks and a fixed evaluation seed. Most other model comparisons come from original papers/releases and are not matched reruns. Recovery analysis uses model judging with manual verification; except tool-use errors, recovery rates remain at or below 32%. No independent experiments were reproduced."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-14",
+      "report_path": "reports/2026/10/2026-10-14.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.16592",
+      "title": "Prorsa: Unleashing the Potential of Prefill-Decode Disaggregation in Agentic Reinforcement Learning",
+      "category": "3.2",
+      "tags": [
+        "Agentic RL",
+        "Prefill Decode Disaggregation",
+        "Workload Prediction"
+      ],
+      "published_on": "2026-10-12",
+      "first_seen_at": "2026-10-15T04:36:43.360Z",
+      "canonical_url": "https://arxiv.org/abs/2610.16592",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.16592"
+      },
+      "public_availability": {
+        "at": "2026-10-14T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/recent",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "novelty": "new",
+      "summary": [
+        "Prorsa monitors agent trajectories, sandbox startup and tool execution to forecast short-term prefill and decode demand, then switches rollout workers between the two roles.",
+        "This adapts disaggregated inference to multi-turn reinforcement learning, reducing interference and cache-capacity bottlenecks; the authors report 1.11–4.05x faster agentic rollouts, with slowdowns in most tested single-turn math settings."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 3–5 inspect workload characterization, lifecycle prediction and adaptive allocation atop Verl/SGLang. Experiments use FP8 Qwen3-235B-A22B, DeepSeek-V3.2 and MiMo-V2.5-Pro on a 16-server, 128-GPU cluster with NVLink and 400-Gbps RDMA NICs, comparing rollout time against prefill-decode colocation. Role switching adds 1.0–1.44x over task-tuned static splits in the MiMo ablation. The October 12 v1 submission predates its verified October 14 announcement batch.",
+        "limitations": "Rollout speedups do not measure full training time or final policy quality. Results depend strongly on attention parallelism and task mix; KV transfer and switching can hurt single-turn workloads. Decode allocation forecasts admission-cache volume without explicitly predicting output lengths or near-term cache reclamation. GPU model and a dedicated code release were not verified."
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-14",
+      "report_path": "reports/2026/10/2026-10-14.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.18451",
+      "title": "FastEEP: Fast Intra-Instance Elastic Scaling for Expert-Parallel MoE Serving",
+      "category": "3.3",
+      "tags": [
+        "MoE Serving",
+        "Elastic Expert Parallelism",
+        "Runtime State Reuse"
+      ],
+      "published_on": "2026-10-13",
+      "first_seen_at": "2026-10-15T04:36:43.065Z",
+      "canonical_url": "https://arxiv.org/abs/2610.18451",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.18451"
+      },
+      "public_availability": {
+        "at": "2026-10-14T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/recent",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "novelty": "new",
+      "summary": [
+        "FastEEP resizes expert-parallel MoE serving instances by reusing worker processes, communication structure and address-stable runtime state while changing which GPUs actively participate.",
+        "This lets a running service release or reacquire individual GPUs with shorter reconstruction delays; the authors report 4.5–11.7x faster resizing than their vLLM Elastic EP baseline on supported comparisons."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 3–6 describe persistent-parent NCCL subgroups, NIXL peer masks, CUDA virtual-memory offload and coordinated worker transitions. Six MoE models are evaluated on two eight-H20-3e nodes with NVLink and 400-Gbps RDMA; resizing takes 4.2–13.4 seconds, while the compared vLLM Elastic EP takes 36.4–92.0 seconds. ShareGPT experiments also measure service interruption, distinct from overall scaling latency.",
+        "limitations": "This is a 16-GPU evaluation, not demonstrated hundred-rank scaling. Expansion remains bounded by the initialized maximum topology and available memory; dormant state consumes host memory. Resizing still interrupts token output. The Elastic EP baseline cannot run two of the six models, so its speedup range excludes those comparisons. A specific open-source repository or PR was not verified."
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-14",
+      "report_path": "reports/2026/10/2026-10-14.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://pytorch.org/blog/extending-inductor-for-the-ibm-spyre-accelerator/",
+      "title": "Extending Inductor for the IBM Spyre Accelerator",
+      "category": "3.5",
+      "tags": [
+        "Inductor",
+        "Compiler Backends",
+        "Accelerator Memory"
+      ],
+      "published_on": "2026-10-13",
+      "first_seen_at": "2026-10-15T04:36:43.837Z",
+      "canonical_url": "https://pytorch.org/blog/extending-inductor-for-the-ibm-spyre-accelerator/",
+      "links": {
+        "blog": "https://pytorch.org/blog/extending-inductor-for-the-ibm-spyre-accelerator/",
+        "code": "https://github.com/torch-spyre/torch-spyre/tree/main/torch_spyre/_inductor"
+      },
+      "public_availability": {
+        "at": "2026-10-13T05:45:30-07:00",
+        "basis": "dated-source",
+        "sources": [
+          "https://pytorch.org/blog/extending-inductor-for-the-ibm-spyre-accelerator/"
+        ]
+      },
+      "novelty": "new",
+      "summary": [
+        "IBM explains how its Spyre backend extends PyTorch Inductor with graph-wide tensor layouts, explicit scratchpad planning and compile-time work distribution for a dataflow accelerator.",
+        "The engineering report offers concrete guidance for adapting a shared compiler to unfamiliar hardware, with measured kernel improvements and a smaller custom backend rather than a claimed end-to-end LLM speedup."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "The October 13 report adds compiler-design and evaluation detail beyond the October 8 native-device integration already covered. Publication metadata is 05:45:30 PDT, after the October 13 cutoff. It reports 27% lower median time for a scratchpad-optimized softmax and 29–69% lower resident batched-matmul kernel times with improved layouts. The public Inductor backend directory and source were inspected.",
+        "limitations": "The second compiler stage remains proprietary. The roughly sevenfold code reduction excludes reused Inductor machinery and is not a throughput gain. Measurements concern different microbenchmarks, not full-model inference. A central pre-scheduling hook remains a monkey patch, and proposed upstream interfaces are unfinished."
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-14",
+      "report_path": "reports/2026/10/2026-10-14.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.12659",
+      "title": "MagicBeanStalk: Escaping the RLVR Zero Advantage Trap with Recursive Data Synthesis",
+      "category": "1.1",
+      "tags": [
+        "Synthetic Data",
+        "RLVR",
+        "Difficulty Calibration"
+      ],
+      "published_on": "2026-10-08",
+      "first_seen_at": "2026-10-15T04:36:31.851Z",
+      "canonical_url": "https://arxiv.org/abs/2610.12659",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.12659"
+      },
+      "public_availability": {
+        "at": "2026-10-12T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "summary": [
+        "MagicBeanStalk decomposes hard problems into verified subproblems, then recombines new variants into training tasks calibrated to a target model and response budget.",
+        "It turns otherwise uninformative all-failure reward groups into useful reinforcement-learning data while preserving the reasoning skills that made the original seeds valuable."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Delayed discovery of the October 12 new-submission batch; availability is inferred from that dated primary-category batch and the official schedule. Sections 2–4 and Appendices D–G provide synthesis controls, qualification screens and evaluations; gpt-oss-120b improves from 61.2 to 69.8 average pass@1 across eight math benchmarks at 16K output tokens.",
+        "limitations": "Difficulty is a finite-sample, policy-and-budget-dependent estimate. Synthesis and some verification rely on proprietary teachers; data release is promised upon acceptance. Extra synthesis cost is not an end-to-end efficiency win. Synthetic errors and unequal sample counts limit cross-model comparisons; no results were independently reproduced."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-13",
+      "report_path": "reports/2026/10/2026-10-13.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.13370",
+      "title": "Overcoming Data Imbalances with Expert Selection Biases",
+      "category": "1.2",
+      "tags": [
+        "Mixture of Experts",
+        "Multilingual Training",
+        "Capacity Allocation"
+      ],
+      "published_on": "2026-10-09",
+      "first_seen_at": "2026-10-15T04:36:31.851Z",
+      "canonical_url": "https://arxiv.org/abs/2610.13370",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.13370"
+      },
+      "public_availability": {
+        "at": "2026-10-12T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "summary": [
+        "COAX adds category-dependent biases to expert selection during pretraining, giving scarce languages or modalities a larger preferred expert pool while keeping the number of active experts per token fixed.",
+        "This supplies a simple capacity-allocation control for imbalanced training mixtures, with most multilingual and multimodal loss gains retained after removing the bias for standard inference."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Delayed discovery of the October 12 new-submission batch, with availability inferred using the official schedule. Sections 3–6 and Appendices B, F and G compare matched MoEs up to 10.6B total parameters, routing alternatives and data upsampling; seven-minority-language validation loss improves 0.286% relative in the largest eight-language setup.",
+        "limitations": "Most evidence concerns held-out next-token loss; multilingual task benchmarks are inconclusive and free generation remains undertrained. Some domains regress without inference-time bias. Training overhead ranges from about 20% at the smallest scale to 1.3%–2.4% in tested large/coarse configurations; no public implementation was verified."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-13",
+      "report_path": "reports/2026/10/2026-10-13.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.13653",
+      "title": "A Critical Look at Power Sampling when Test Time Sharpening LLMs",
+      "category": "1.9",
+      "tags": [
+        "Test-Time Scaling",
+        "Power Sampling",
+        "Controlled Evaluation"
+      ],
+      "published_on": "2026-10-09",
+      "first_seen_at": "2026-10-15T04:36:31.851Z",
+      "canonical_url": "https://arxiv.org/abs/2610.13653",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.13653"
+      },
+      "public_availability": {
+        "at": "2026-10-12T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/stat.ML/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "summary": [
+        "This study tests whether power-distribution sampling improves reasoning because it faithfully sharpens a model or simply searches for likely responses, and introduces a fine-tuning control that targets that distribution more directly.",
+        "Its model-dependent results motivate testing inexpensive likelihood-based selection and low-temperature decoding before investing in more elaborate samplers."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Delayed discovery of the October 12 new-submission batch, with inferred availability grounded in the official schedule. Sections 3–5 and Table 1 compare three models on MATH500 and GPQA Diamond; simple selection often matches Power-SMC, while more faithful POWER-RLOO produces both gains and a length-collapse failure.",
+        "limitations": "Experiments use a 1,564-token generation cap, three models, two tasks and seed 0; results are not a universal rejection of sharpening. Training and inference costs are different. Code is promised upon acceptance; a broad prose claim about beating POWER-RLOO contradicts the Qwen-Instruct GPQA table, so it is not repeated."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-13",
+      "report_path": "reports/2026/10/2026-10-13.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://www.anthropic.com/research/distillation-defenses",
+      "title": "Strengthening our defenses against distillation attacks",
+      "category": "1.10",
+      "tags": [
+        "Model Extraction",
+        "Reasoning Distillation",
+        "Platform Safeguards"
+      ],
+      "published_on": "2026-10-12",
+      "first_seen_at": "2026-10-15T04:37:12.000Z",
+      "canonical_url": "https://www.anthropic.com/research/distillation-defenses",
+      "links": {
+        "blog": "https://www.anthropic.com/research/distillation-defenses"
+      },
+      "summary": [
+        "Anthropic describes a layered defense against unauthorized reasoning extraction that combines protected-context boundaries, extraction classifiers and account-level abuse controls.",
+        "Its new technical report connects information exposure to downstream distillation performance and documents deployment tradeoffs, offering a concrete case study for platforms that expose powerful reasoning models."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "The October 12 report gives SWE-bench Verified scores of 80.4% versus 71.8% for a pretrained Claude student distilled from full versus summarized Opus 4.8 transcripts, and estimates 10-100x less reasoning-token extraction on its platform after classifier introduction. Delayed discovery concerns this report; its controls were introduced earlier.",
+        "limitations": "Internal author measurements lack released data, complete training controls and independent replication. The reported false-positive rate below 0.1% and platform-specific extraction estimates are not universal guarantees; highly persistent attacks remain untested. Legitimate integrations can require changes and benign blocked requests can incur charges. No code release was verified."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-13",
+      "report_path": "reports/2026/10/2026-10-13.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.13416",
+      "title": "Web$hell: A Unified Interface for Agentic Web Access",
+      "category": "2.2",
+      "tags": [
+        "Web Interfaces",
+        "Persistent Evidence",
+        "Browser Actions"
+      ],
+      "published_on": "2026-10-09",
+      "first_seen_at": "2026-10-15T04:39:34.000Z",
+      "public_availability": {
+        "at": "2026-10-12T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.13416",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.13416"
+      },
+      "summary": [
+        "Web$hell compiles webpages into addressable information and action objects, letting agents search stored evidence and operate live controls through one interface.",
+        "This makes complex web tasks easier to continue across many pages; the authors report stronger results on six search, navigation and research benchmarks with comparable or lower model cost than their tested interfaces."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Delayed discovery from the October 12 arXiv batch, absent the baseline and all 158 registry works; submission was October 9 at 11:23:40 UTC. Sections 3–6 and Appendices A–D expose deterministic compilation, persistent read-only prior states, controlled interface comparisons and association ablations. With GPT-5.6-Luna/high, Table 3 reports WebArena-Verified success 67.9% versus 57.8% for the combined search/browser/filesystem baseline.",
+        "limitations": "Work in progress using one principal model and finite benchmark subsets. Cost is model inference rather than total system cost: compilation adds 0.46–2.79 seconds per acquired page, and cached-token pricing affects comparisons. Stored page states cannot restore live browser state; no available implementation was verified and results were not independently reproduced."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-13",
+      "report_path": "reports/2026/10/2026-10-13.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.13361",
+      "title": "AgentSWE: Can Coding Agents Build the Agent You Actually Want?",
+      "category": "2.8",
+      "tags": [
+        "Agent Construction",
+        "Held-Out Evaluation",
+        "Requirement Fidelity"
+      ],
+      "published_on": "2026-10-09",
+      "first_seen_at": "2026-10-15T04:39:34.000Z",
+      "public_availability": {
+        "at": "2026-10-12T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.13361",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.13361",
+        "code": "https://github.com/VectorSpaceLab/AgentSWE"
+      },
+      "summary": [
+        "AgentSWE tests whether coding agents can create, edit and optimize the agents users request, freezing each delivery before running it on held-out cases derived from the requirements.",
+        "Its 25 commissions expose a gap between convincing development demonstrations and working delivered behavior, giving builders a concrete evaluation for overfitting, incomplete runtimes and unsupported completion claims."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Delayed discovery from the October 12 batch; original submission was October 9 at 10:35:27 UTC. Sections 3–5 and Appendix J distinguish requirement rubrics, hard validity gates, development/held-out splits and model/harness pairings. Main Creation results average 11.2/100 over 50 builds; 20 score zero. The code and 25-task package are accessible, and source history begins October 12 at 02:05:44 UTC, within the discovery lookback.",
+        "limitations": "Main model/task pairings were built once; an eight-task subset uses three builds and shows large variation. Creation/Editing rely on model judges whose model families overlap some builders, and absolute scores across task families and Lite/main settings are not directly comparable. Public held-out assets and builder network access leave contamination risks; no experiments were reproduced."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-13",
+      "report_path": "reports/2026/10/2026-10-13.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.13408",
+      "title": "Ember: Making Unified Virtual Memory Practical for Discrete-Memory GPUs",
+      "category": "3.4",
+      "tags": [
+        "Unified Memory",
+        "GPU Offloading",
+        "Memory Oversubscription"
+      ],
+      "published_on": "2026-10-09",
+      "first_seen_at": "2026-10-15T04:38:15.060Z",
+      "canonical_url": "https://arxiv.org/abs/2610.13408",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.13408"
+      },
+      "public_availability": {
+        "at": "2026-10-12T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.OS/recent",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "novelty": "newly-discovered",
+      "summary": [
+        "Ember keeps oversubscribed GPU allocations accessible in host memory and selectively promotes useful regions into GPU memory, with an adaptive variant using hardware access counters and proactive reclamation.",
+        "This reduces page-migration thrashing when model weights exceed device capacity, offering a concrete memory-management design for constrained LLM inference rather than requiring the whole model to fit on the GPU."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Delayed discovery of the October 12 batch; October 9 v1 date retained, with public availability inferred from the dated listing and official schedule. Sections 4–8 distinguish stock-CUDA static placement from the patched-driver adaptive policy. Section 7.4 tests Qwen2.5-14B/Qwen3-32B generation on RTX 5080, A40 and H200, each capped to 16 GB; at 1.41x oversubscription, the static variant reports 4.7–13x over stock UVM.",
+        "limitations": "These are 128-token decode benchmarks, not serving throughput: no strategy exceeds 3 tokens/s in the oversubscribed cases. Adaptive placement requires a driver patch and administrator access; only managed allocations and one GPU-to-host tier are controlled. No dedicated source-code release was verified; the abstract's larger headline is not substituted for the narrower Section 7.4 result."
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-13",
+      "report_path": "reports/2026/10/2026-10-13.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.13003",
+      "title": "SlackSwap: Bandwidth-Aware Activation Swapping and Recomputation for Memory-Efficient DNN Training",
+      "category": "3.4",
+      "tags": [
+        "Activation Memory",
+        "Offloading",
+        "Recomputation"
+      ],
+      "published_on": "2026-10-09",
+      "first_seen_at": "2026-10-15T04:36:42.817Z",
+      "canonical_url": "https://arxiv.org/abs/2610.13003",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.13003"
+      },
+      "public_availability": {
+        "at": "2026-10-12T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/recent?skip=50&show=100",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "novelty": "newly-discovered",
+      "summary": [
+        "SlackSwap treats host-link time as a limited budget, offloading activations that would be expensive to rebuild and recomputing cheaper tensors once that transfer budget is exhausted.",
+        "Its trace-driven simulations suggest that combining bandwidth-aware placement with asynchronous copies can retain training throughput under tight activation-memory budgets, while leaving real-system performance to be demonstrated."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Delayed discovery of the verified October 12 batch; original October 9 submission retained and availability inferred from the dated listing plus schedule. Algorithm 1 and Sections 3–4 specify two-pass planning, FIFO offloads and earliest-deadline-first prefetches. A100 simulations of BERT-Large, GPT-2 XL and a Llama-7B-style model retain 96.3–99.6% of unlimited-memory throughput at half the activation budget, 1.10–1.11x the best simulated baseline.",
+        "limitations": "All performance results are simulated. The model omits allocator fragmentation, copy-induced HBM contention, and shared PCIe/host-memory contention; model states remain resident on one GPU. The SwapAdvisor comparison omits its operator-order and memory-pool genetic search. No dedicated implementation or independent reproduction was verified."
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-13",
+      "report_path": "reports/2026/10/2026-10-13.md",
+      "search_status": "partial"
+    },
     {
       "id": "arxiv:2610.12582",
       "title": "One Model to Loop Them All: Elastic Latent Recurrence for Language Models",
@@ -5597,14 +6215,14 @@
       "group": "llm-recipe",
       "title": "Data Curation & Tokenization",
       "path": "topics/llm-recipe/data-curation-tokenization/README.md",
-      "count": 6
+      "count": 7
     },
     {
       "id": "1.2",
       "group": "llm-recipe",
       "title": "Model Architecture & Scaling Laws",
       "path": "topics/llm-recipe/model-architecture-scaling-laws/README.md",
-      "count": 7
+      "count": 9
     },
     {
       "id": "1.3",
@@ -5639,7 +6257,7 @@
       "group": "llm-recipe",
       "title": "Reinforcement Learning & Reasoning",
       "path": "topics/llm-recipe/reinforcement-learning-reasoning/README.md",
-      "count": 8
+      "count": 9
     },
     {
       "id": "1.8",
@@ -5653,14 +6271,14 @@
       "group": "llm-recipe",
       "title": "Test-Time Scaling & Inference Algorithms",
       "path": "topics/llm-recipe/test-time-scaling-inference-algorithms/README.md",
-      "count": 2
+      "count": 3
     },
     {
       "id": "1.10",
       "group": "llm-recipe",
       "title": "Model Evaluation, Safety & Interpretability",
       "path": "topics/llm-recipe/model-evaluation-safety-interpretability/README.md",
-      "count": 6
+      "count": 7
     },
     {
       "id": "2.1",
@@ -5674,28 +6292,28 @@
       "group": "ai-agent-dev",
       "title": "Tool Use & Environment Interaction",
       "path": "topics/ai-agent-dev/tool-use-environment-interaction/README.md",
-      "count": 3
+      "count": 4
     },
     {
       "id": "2.3",
       "group": "ai-agent-dev",
       "title": "Context Engineering & Memory",
       "path": "topics/ai-agent-dev/context-engineering-memory/README.md",
-      "count": 7
+      "count": 8
     },
     {
       "id": "2.4",
       "group": "ai-agent-dev",
       "title": "Retrieval & Knowledge Integration",
       "path": "topics/ai-agent-dev/retrieval-knowledge-integration/README.md",
-      "count": 5
+      "count": 6
     },
     {
       "id": "2.5",
       "group": "ai-agent-dev",
       "title": "Agent Learning & Skill Acquisition",
       "path": "topics/ai-agent-dev/agent-learning-skill-acquisition/README.md",
-      "count": 9
+      "count": 10
     },
     {
       "id": "2.6",
@@ -5716,7 +6334,7 @@
       "group": "ai-agent-dev",
       "title": "Agent Evaluation & Security",
       "path": "topics/ai-agent-dev/agent-evaluation-security/README.md",
-      "count": 12
+      "count": 13
     },
     {
       "id": "3.1",
@@ -5730,28 +6348,28 @@
       "group": "ai-training-inference-infra",
       "title": "RL & Rollout Infrastructure",
       "path": "topics/ai-training-inference-infra/rl-rollout-infrastructure/README.md",
-      "count": 3
+      "count": 4
     },
     {
       "id": "3.3",
       "group": "ai-training-inference-infra",
       "title": "Inference Engines & Serving",
       "path": "topics/ai-training-inference-infra/inference-engines-serving/README.md",
-      "count": 13
+      "count": 14
     },
     {
       "id": "3.4",
       "group": "ai-training-inference-infra",
       "title": "Attention, KV Cache & Memory Systems",
       "path": "topics/ai-training-inference-infra/attention-kv-cache-memory-systems/README.md",
-      "count": 8
+      "count": 10
     },
     {
       "id": "3.5",
       "group": "ai-training-inference-infra",
       "title": "Kernels, Compilers & Runtimes",
       "path": "topics/ai-training-inference-infra/kernels-compilers-runtimes/README.md",
-      "count": 11
+      "count": 12
     },
     {
       "id": "3.6",

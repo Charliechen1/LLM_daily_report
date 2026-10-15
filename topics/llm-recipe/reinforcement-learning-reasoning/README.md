@@ -5,6 +5,22 @@ RLHF, RLVR, policy optimization, reasoning training, tool use and multi-turn age
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-14](../../../reports/2026/10/2026-10-14.md) — PARTIAL SEARCH
+
+### [Two Clocks: Why Larger Rollout Batches Learn Slower but Fail on Schedule in Reinforcement Learning with Verifiable Rewards](<https://arxiv.org/abs/2610.18853>)
+
+Two Clocks separates the samples needed for learning progress from those consumed before training collapse when rollout batches and learning rates are scaled together. Its controlled GRPO experiments motivate starting below a critical batch size and increasing the batch later, helping practitioners evaluate sample efficiency and stability separately from hardware throughput.
+
+**Published:** 2026-10-13 · **First seen:** 2026-10-15T04:36:31.851Z · **Novelty:** new · **Tags:** RLVR, Batch Scaling, Training Stability
+
+**Public availability:** 2026-10-14T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.18853>)
+
+**Evidence:** research-paper; full-text. Availability is inferred from the October 14 primary-category new-submission batch and official schedule. Sections 3–6 and Appendices B, F and G test 512–8,192-response batches, clipping and batch ramps on Qwen math models; larger batches lose sample efficiency above a learning-rate-dependent critical scale.
+
+**Limitations:** The local quadratic progress model and drift-threshold failure hypothesis are conditional approximations. Most runs use a modified 1.5B math recipe with KL, entropy bonuses and gradient clipping disabled; robustness settings have limited seeds. The author-linked code repository returned 404, and no end-to-end throughput gain was established.
+
 ## [2026-10-11](../../../reports/2026/10/2026-10-11.md) — PARTIAL SEARCH
 
 ### [When KL Regularization Misfires in Group Policy Optimization](<https://arxiv.org/abs/2610.12161>)

@@ -5,6 +5,22 @@ GPU kernels, operator fusion, compilation, execution graphs and hardware adaptat
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-14](../../../reports/2026/10/2026-10-14.md) — PARTIAL SEARCH
+
+### [Extending Inductor for the IBM Spyre Accelerator](<https://pytorch.org/blog/extending-inductor-for-the-ibm-spyre-accelerator/>)
+
+IBM explains how its Spyre backend extends PyTorch Inductor with graph-wide tensor layouts, explicit scratchpad planning and compile-time work distribution for a dataflow accelerator. The engineering report offers concrete guidance for adapting a shared compiler to unfamiliar hardware, with measured kernel improvements and a smaller custom backend rather than a claimed end-to-end LLM speedup.
+
+**Published:** 2026-10-13 · **First seen:** 2026-10-15T04:36:43.837Z · **Novelty:** new · **Tags:** Inductor, Compiler Backends, Accelerator Memory
+
+**Public availability:** 2026-10-13T05:45:30-07:00 (dated primary source). [Timing source](<https://pytorch.org/blog/extending-inductor-for-the-ibm-spyre-accelerator/>)
+
+[Blog](<https://pytorch.org/blog/extending-inductor-for-the-ibm-spyre-accelerator/>) · [Code](<https://github.com/torch-spyre/torch-spyre/tree/main/torch_spyre/_inductor>)
+
+**Evidence:** engineering-report; full-text. The October 13 report adds compiler-design and evaluation detail beyond the October 8 native-device integration already covered. Publication metadata is 05:45:30 PDT, after the October 13 cutoff. It reports 27% lower median time for a scratchpad-optimized softmax and 29–69% lower resident batched-matmul kernel times with improved layouts. The public Inductor backend directory and source were inspected.
+
+**Limitations:** The second compiler stage remains proprietary. The roughly sevenfold code reduction excludes reused Inductor machinery and is not a throughput gain. Measurements concern different microbenchmarks, not full-model inference. A central pre-scheduling hook remains a monkey patch, and proposed upstream interfaces are unfinished.
+
 ## [2026-10-12](../../../reports/2026/10/2026-10-12.md) — PARTIAL SEARCH
 
 ### [CompileMask: Bridging the Gap Between Expressiveness and Efficiency in Attention Masking](<https://arxiv.org/abs/2610.13474>)

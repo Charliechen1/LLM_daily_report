@@ -5,6 +5,22 @@ Inference-time search, verification, reranking and adaptive reasoning budgets.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-13](../../../reports/2026/10/2026-10-13.md) — PARTIAL SEARCH
+
+### [A Critical Look at Power Sampling when Test Time Sharpening LLMs](<https://arxiv.org/abs/2610.13653>)
+
+This study tests whether power-distribution sampling improves reasoning because it faithfully sharpens a model or simply searches for likely responses, and introduces a fine-tuning control that targets that distribution more directly. Its model-dependent results motivate testing inexpensive likelihood-based selection and low-temperature decoding before investing in more elaborate samplers.
+
+**Published:** 2026-10-09 · **First seen:** 2026-10-15T04:36:31.851Z · **Novelty:** newly-discovered · **Tags:** Test-Time Scaling, Power Sampling, Controlled Evaluation
+
+**Public availability:** 2026-10-12T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/stat.ML/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.13653>)
+
+**Evidence:** research-paper; full-text. Delayed discovery of the October 12 new-submission batch, with inferred availability grounded in the official schedule. Sections 3–5 and Table 1 compare three models on MATH500 and GPQA Diamond; simple selection often matches Power-SMC, while more faithful POWER-RLOO produces both gains and a length-collapse failure.
+
+**Limitations:** Experiments use a 1,564-token generation cap, three models, two tasks and seed 0; results are not a universal rejection of sharpening. Training and inference costs are different. Code is promised upon acceptance; a broad prose claim about beating POWER-RLOO contradicts the Qwen-Instruct GPQA table, so it is not repeated.
+
 ## [2026-10-03](../../../reports/2026/10/2026-10-03.md) — PARTIAL SEARCH
 
 ### [Decoding Looped Transformers Better for (Almost) Free](<https://arxiv.org/abs/2610.02185>)

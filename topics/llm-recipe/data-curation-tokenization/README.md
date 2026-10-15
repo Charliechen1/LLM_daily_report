@@ -5,6 +5,22 @@ Data filtering, deduplication, mixtures, synthetic data, quality and tokenizers.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-13](../../../reports/2026/10/2026-10-13.md) — PARTIAL SEARCH
+
+### [MagicBeanStalk: Escaping the RLVR Zero Advantage Trap with Recursive Data Synthesis](<https://arxiv.org/abs/2610.12659>)
+
+MagicBeanStalk decomposes hard problems into verified subproblems, then recombines new variants into training tasks calibrated to a target model and response budget. It turns otherwise uninformative all-failure reward groups into useful reinforcement-learning data while preserving the reasoning skills that made the original seeds valuable.
+
+**Published:** 2026-10-08 · **First seen:** 2026-10-15T04:36:31.851Z · **Novelty:** newly-discovered · **Tags:** Synthetic Data, RLVR, Difficulty Calibration
+
+**Public availability:** 2026-10-12T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.12659>)
+
+**Evidence:** research-paper; full-text. Delayed discovery of the October 12 new-submission batch; availability is inferred from that dated primary-category batch and the official schedule. Sections 2–4 and Appendices D–G provide synthesis controls, qualification screens and evaluations; gpt-oss-120b improves from 61.2 to 69.8 average pass@1 across eight math benchmarks at 16K output tokens.
+
+**Limitations:** Difficulty is a finite-sample, policy-and-budget-dependent estimate. Synthesis and some verification rely on proprietary teachers; data release is promised upon acceptance. Extra synthesis cost is not an end-to-end efficiency win. Synthetic errors and unequal sample counts limit cross-model comparisons; no results were independently reproduced.
+
 ## [2026-10-11](../../../reports/2026/10/2026-10-11.md) — PARTIAL SEARCH
 
 ### [Language-Specific Effects of Tokenizer Choice in Multilingual Language Models](<https://arxiv.org/abs/2610.12144>)

@@ -5,6 +5,22 @@ Request scheduling, continuous batching, prefill/decode disaggregation and elast
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-14](../../../reports/2026/10/2026-10-14.md) — PARTIAL SEARCH
+
+### [FastEEP: Fast Intra-Instance Elastic Scaling for Expert-Parallel MoE Serving](<https://arxiv.org/abs/2610.18451>)
+
+FastEEP resizes expert-parallel MoE serving instances by reusing worker processes, communication structure and address-stable runtime state while changing which GPUs actively participate. This lets a running service release or reacquire individual GPUs with shorter reconstruction delays; the authors report 4.5–11.7x faster resizing than their vLLM Elastic EP baseline on supported comparisons.
+
+**Published:** 2026-10-13 · **First seen:** 2026-10-15T04:36:43.065Z · **Novelty:** new · **Tags:** MoE Serving, Elastic Expert Parallelism, Runtime State Reuse
+
+**Public availability:** 2026-10-14T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/recent>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.18451>)
+
+**Evidence:** research-paper; full-text. Sections 3–6 describe persistent-parent NCCL subgroups, NIXL peer masks, CUDA virtual-memory offload and coordinated worker transitions. Six MoE models are evaluated on two eight-H20-3e nodes with NVLink and 400-Gbps RDMA; resizing takes 4.2–13.4 seconds, while the compared vLLM Elastic EP takes 36.4–92.0 seconds. ShareGPT experiments also measure service interruption, distinct from overall scaling latency.
+
+**Limitations:** This is a 16-GPU evaluation, not demonstrated hundred-rank scaling. Expansion remains bounded by the initialized maximum topology and available memory; dormant state consumes host memory. Resizing still interrupts token output. The Elastic EP baseline cannot run two of the six models, so its speedup range excludes those comparisons. A specific open-source repository or PR was not verified.
+
 ## [2026-10-12](../../../reports/2026/10/2026-10-12.md) — PARTIAL SEARCH
 
 ### [Taking Tokenization off the Host for Agentic LLM Serving](<https://arxiv.org/abs/2610.13325>)

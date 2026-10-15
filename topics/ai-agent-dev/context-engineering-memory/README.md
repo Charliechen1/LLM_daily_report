@@ -5,6 +5,22 @@ Context organization/compression, working memory, long-term memory and state.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-14](../../../reports/2026/10/2026-10-14.md) — PARTIAL SEARCH
+
+### [Pack Light, CarryOn: Building Object-Oriented Context for Long-Horizon Agents](<https://arxiv.org/abs/2610.18784>)
+
+CarryOn organizes an agent's context around versioned reusable task objects, explicit unfinished obligations and a recent interaction tail, folding history only after evidence and consistency checks. This lets long-running agents continue from work already present in files or application state; matched Claude Opus 4.7 experiments improve OSWorld 2.0 partial score by 5.8 points while reducing total tokens by 51.9%, including context-management calls.
+
+**Published:** 2026-10-13 · **First seen:** 2026-10-15T04:39:34.000Z · **Novelty:** material-update · **Tags:** Context Engineering, Versioned State, Long-Horizon Agents
+
+[Paper](<https://arxiv.org/abs/2610.18784>) · [Project](<https://ethannju.github.io/carryon/>)
+
+**Evidence:** research-paper; full-text. The detailed paper is in the October 14 batch, whose 00:00 UTC availability is inferred from the dated listing and official announcement schedule. October 13 repository preview history contains earlier headline results, although commit times do not prove first public visibility. Sections 3–4 and Appendices A–C add candidate/evidence binding, atomic folds, 40-task ablations and explicit resource accounting. Matched OSWorld 2.0 partial score rises 43.9% to 49.7%, binary success 15.7% to 19.4%; 100 BrowseComp-Plus questions rise 49% to 56%.
+
+**Limitations:** Only one principal host model, one 100-question browsing subset and small 40-task ablations; no independent reproduction. Grounder checks establish scoped consistency and availability, not semantic task correctness. Some comparator scores are previously reported, not matched reruns. The linked repository is a preview and explicitly postpones implementation release until after review; no available code is claimed.
+
+**Update:** 2026-10-14: the detailed primary paper supplies the context-update mechanism, atomic validation and commitment protocol, complete resource accounting and controlled ablations beyond the October 13 project preview history at https://github.com/Ethannju/carryon; that history does not establish its exact first public visibility. New-paper availability at 00:00 UTC is inferred from https://arxiv.org/list/cs.AI/recent?skip=0&amp;show=2000 and https://info.arxiv.org/help/availability.html. The idea and preview headline are not claimed to have first appeared today.
+
 ## [2026-10-09](../../../reports/2026/10/2026-10-09.md) — PARTIAL SEARCH
 
 ### [Use and Disuse: Intent-Structured Experience Consolidation for Memory and Learning in LLM Agents](<https://arxiv.org/abs/2610.12124>)

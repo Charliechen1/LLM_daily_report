@@ -5,6 +5,38 @@ Attention execution, KV management/reuse, offloading and long-context memory eff
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-13](../../../reports/2026/10/2026-10-13.md) — PARTIAL SEARCH
+
+### [Ember: Making Unified Virtual Memory Practical for Discrete-Memory GPUs](<https://arxiv.org/abs/2610.13408>)
+
+Ember keeps oversubscribed GPU allocations accessible in host memory and selectively promotes useful regions into GPU memory, with an adaptive variant using hardware access counters and proactive reclamation. This reduces page-migration thrashing when model weights exceed device capacity, offering a concrete memory-management design for constrained LLM inference rather than requiring the whole model to fit on the GPU.
+
+**Published:** 2026-10-09 · **First seen:** 2026-10-15T04:38:15.060Z · **Novelty:** newly-discovered · **Tags:** Unified Memory, GPU Offloading, Memory Oversubscription
+
+**Public availability:** 2026-10-12T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.OS/recent>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.13408>)
+
+**Evidence:** research-paper; full-text. Delayed discovery of the October 12 batch; October 9 v1 date retained, with public availability inferred from the dated listing and official schedule. Sections 4–8 distinguish stock-CUDA static placement from the patched-driver adaptive policy. Section 7.4 tests Qwen2.5-14B/Qwen3-32B generation on RTX 5080, A40 and H200, each capped to 16 GB; at 1.41x oversubscription, the static variant reports 4.7–13x over stock UVM.
+
+**Limitations:** These are 128-token decode benchmarks, not serving throughput: no strategy exceeds 3 tokens/s in the oversubscribed cases. Adaptive placement requires a driver patch and administrator access; only managed allocations and one GPU-to-host tier are controlled. No dedicated source-code release was verified; the abstract's larger headline is not substituted for the narrower Section 7.4 result.
+
+## [2026-10-13](../../../reports/2026/10/2026-10-13.md) — PARTIAL SEARCH
+
+### [SlackSwap: Bandwidth-Aware Activation Swapping and Recomputation for Memory-Efficient DNN Training](<https://arxiv.org/abs/2610.13003>)
+
+SlackSwap treats host-link time as a limited budget, offloading activations that would be expensive to rebuild and recomputing cheaper tensors once that transfer budget is exhausted. Its trace-driven simulations suggest that combining bandwidth-aware placement with asynchronous copies can retain training throughput under tight activation-memory budgets, while leaving real-system performance to be demonstrated.
+
+**Published:** 2026-10-09 · **First seen:** 2026-10-15T04:36:42.817Z · **Novelty:** newly-discovered · **Tags:** Activation Memory, Offloading, Recomputation
+
+**Public availability:** 2026-10-12T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/recent?skip=50&show=100>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.13003>)
+
+**Evidence:** research-paper; full-text. Delayed discovery of the verified October 12 batch; original October 9 submission retained and availability inferred from the dated listing plus schedule. Algorithm 1 and Sections 3–4 specify two-pass planning, FIFO offloads and earliest-deadline-first prefetches. A100 simulations of BERT-Large, GPT-2 XL and a Llama-7B-style model retain 96.3–99.6% of unlimited-memory throughput at half the activation budget, 1.10–1.11x the best simulated baseline.
+
+**Limitations:** All performance results are simulated. The model omits allocator fragmentation, copy-induced HBM contention, and shared PCIe/host-memory contention; model states remain resident on one GPU. The SwapAdvisor comparison omits its operator-order and memory-pool genetic search. No dedicated implementation or independent reproduction was verified.
+
 ## [2026-10-12](../../../reports/2026/10/2026-10-12.md) — PARTIAL SEARCH
 
 ### [ReplaySSM: Cache SSM Inputs, Not State](<https://arxiv.org/abs/2610.13778>)

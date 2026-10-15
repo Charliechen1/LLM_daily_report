@@ -5,6 +5,38 @@ Transformers, MoE, SSM/hybrid architectures and model/data/compute allocation.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-14](../../../reports/2026/10/2026-10-14.md) — PARTIAL SEARCH
+
+### [Scaling Laws for Multimodal Data Mixtures](<https://arxiv.org/abs/2610.14423>)
+
+This work fits multimodal pretraining laws that account for directional transfer, competition for model capacity and diminishing returns from repeated vision or audio data. Controlled mixture-of-experts experiments make the framework useful for planning how to divide a training budget among model size, unique data and modality mixtures, while requiring coefficients to be fitted for the intended setup.
+
+**Published:** 2026-10-10 · **First seen:** 2026-10-15T04:36:31.851Z · **Novelty:** new · **Tags:** Scaling Laws, Multimodal Pretraining, Data Mixtures
+
+**Public availability:** 2026-10-14T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.14423>)
+
+**Evidence:** research-paper; full-text. The October 14 new-submission batch and official schedule imply public availability at October 14 00:00 UTC, despite the October 10 submission date. Sections 2–6 and Appendices G–I cover 268 fitting experiments and three held-out runs; eight of nine held-out modality-loss predictions are within 2.6% of observed values.
+
+**Limitations:** Coefficients depend on tokenizers, discrete next-token objectives, data quality and sparse architecture. The non-text-heavy continuation underpredicts text loss by 6.73%; larger-scale and video validation remain future work. Loss prediction is not a downstream-capability guarantee, and no code release or independent reproduction was verified.
+
+## [2026-10-13](../../../reports/2026/10/2026-10-13.md) — PARTIAL SEARCH
+
+### [Overcoming Data Imbalances with Expert Selection Biases](<https://arxiv.org/abs/2610.13370>)
+
+COAX adds category-dependent biases to expert selection during pretraining, giving scarce languages or modalities a larger preferred expert pool while keeping the number of active experts per token fixed. This supplies a simple capacity-allocation control for imbalanced training mixtures, with most multilingual and multimodal loss gains retained after removing the bias for standard inference.
+
+**Published:** 2026-10-09 · **First seen:** 2026-10-15T04:36:31.851Z · **Novelty:** newly-discovered · **Tags:** Mixture of Experts, Multilingual Training, Capacity Allocation
+
+**Public availability:** 2026-10-12T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.13370>)
+
+**Evidence:** research-paper; full-text. Delayed discovery of the October 12 new-submission batch, with availability inferred using the official schedule. Sections 3–6 and Appendices B, F and G compare matched MoEs up to 10.6B total parameters, routing alternatives and data upsampling; seven-minority-language validation loss improves 0.286% relative in the largest eight-language setup.
+
+**Limitations:** Most evidence concerns held-out next-token loss; multilingual task benchmarks are inconclusive and free generation remains undertrained. Some domains regress without inference-time bias. Training overhead ranges from about 20% at the smallest scale to 1.3%–2.4% in tested large/coarse configurations; no public implementation was verified.
+
 ## [2026-10-12](../../../reports/2026/10/2026-10-12.md) — PARTIAL SEARCH
 
 ### [One Model to Loop Them All: Elastic Latent Recurrence for Language Models](<https://arxiv.org/abs/2610.12582>)
