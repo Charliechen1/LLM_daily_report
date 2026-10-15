@@ -5,6 +5,22 @@ Attention execution, KV management/reuse, offloading and long-context memory eff
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-15](../../../reports/2026/10/2026-10-15.md) — PARTIAL SEARCH
+
+### [CacheSmith: Accurate RAG Serving under Latency SLOs with Adaptive KV Reuse](<https://arxiv.org/abs/2610.18925>)
+
+CacheSmith adapts how much cross-chunk attention is recomputed when reusing cached RAG context, jointly choosing request batches and a warm-up, probe and patch plan under latency budgets. Its objective counts responses that meet both a generation-quality gate and a first-token deadline, helping serving systems allocate recomputation where it improves useful responses rather than latency alone.
+
+**Published:** 2026-10-13 · **First seen:** 2026-10-15T15:09:52.031Z · **Novelty:** new · **Tags:** RAG, KV Reuse, Selective Recomputation, Latency SLO
+
+**Public availability:** 2026-10-15T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AR/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.18925>)
+
+**Evidence:** research-paper; full-text. Reviewed method, planner/scheduler Algorithm 1, runtime and all evaluation/ablation sections. vLLM 0.10.2 experiments use Llama 3.1-8B on one 96 GB RTX PRO 6000 and Qwen3-32B on two, EPYC 9554 and NVMe-cached chunks. Across 96 task/arrival/SLO combinations, authors exceed an oracle best-static configuration in 93 and report 2-27.5% higher quality-gated SLO attainment. Timing is inferred from CacheSmith's PRIMARY cs.AR Oct 15 batch plus official announcement schedule; Oct 13 is receipt, not asserted public release.
+
+**Limitations:** Quality is estimated from offline demand profiles, not guaranteed for every request; experiments use four small benchmark-derived/synthetic tasks, Poisson/Gamma arrivals and precomputed SSD chunks. Majority signal selection can hurt minority requests in mixed batches. Query-context baselines share authors' untuned reimplementation because original kernels were unavailable. Quality gates are task-specific, not general answer correctness. No verified implementation release or independent reproduction; do not relabel the paper's 27.5% as percentage points.
+
 ## [2026-10-13](../../../reports/2026/10/2026-10-13.md) — PARTIAL SEARCH
 
 ### [Ember: Making Unified Virtual Memory Practical for Discrete-Memory GPUs](<https://arxiv.org/abs/2610.13408>)

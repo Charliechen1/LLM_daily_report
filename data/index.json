@@ -2,6 +2,13 @@
   "schema_version": 1,
   "reports": [
     {
+      "date": "2026-10-15",
+      "path": "reports/2026/10/2026-10-15.md",
+      "source": "data/reports/2026/10/2026-10-15.json",
+      "search_status": "partial",
+      "entries": 9
+    },
+    {
       "date": "2026-10-14",
       "path": "reports/2026/10/2026-10-14.md",
       "source": "data/reports/2026/10/2026-10-14.json",
@@ -117,6 +124,367 @@
     }
   ],
   "entries": [
+    {
+      "id": "arxiv:2610.20456",
+      "title": "The COUNT: Counting N-grams Unlocks Scaling on Host Memory and Training-Free Adaptation",
+      "category": "1.2",
+      "tags": [
+        "N-gram Memory",
+        "Pretraining",
+        "Host Memory",
+        "Domain Adaptation"
+      ],
+      "published_on": "2026-10-14",
+      "first_seen_at": "2026-10-15T15:10:36.803Z",
+      "canonical_url": "https://arxiv.org/abs/2610.20456",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.20456",
+        "code": "https://github.com/IanMagnusson/COUNT",
+        "project": "https://huggingface.co/datasets/IanMagnusson/count-ngram-tables"
+      },
+      "public_availability": {
+        "at": "2026-10-15T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "summary": [
+        "COUNT adds corpus-count memory during language-model pretraining by combining the model's output embeddings using read-only n-gram statistics stored in host RAM.",
+        "Models trained with COUNT can later adapt by swapping these tables without updating their weights, providing a way to improve language modeling and domain specialization through additional host memory."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "October 15 public availability is inferred from the dated new-submission batch and official schedule. Sections 2–6 and Appendix A inspect 60M–1B backbones, 11 validation sources and 74 downstream configurations; fitted loss frontiers correspond to 46–89% more standard-transformer 6ND compute. Author code, tables and checkpoints are accessible.",
+        "limitations": "Flagship tables require about 797 GB host RAM and summarize the full Dolma corpus; table construction and extra gather work are outside 6ND. Measured throughput is slightly lower, not faster. COUNT requires modified pretraining; domain accuracy gains are mixed, and released core code omits the optimized runtime used for throughput measurements. No independent reproduction."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-15",
+      "report_path": "reports/2026/10/2026-10-15.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.19975",
+      "title": "LatentLoop: Scaling Looped MoE Models with Asymmetric Compute Allocation",
+      "category": "1.2",
+      "tags": [
+        "Looped MoE",
+        "Compute Allocation",
+        "Scaling Laws"
+      ],
+      "published_on": "2026-10-14",
+      "first_seen_at": "2026-10-15T15:10:37.108Z",
+      "canonical_url": "https://arxiv.org/abs/2610.19975",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.19975",
+        "code": "https://github.com/lcqysl/LatentLoop",
+        "project": "https://latentloop-project.github.io/"
+      },
+      "summary": [
+        "LatentLoop's new release supplies three pretrained checkpoints and a native inference loader for its mixture-of-experts architecture, which compresses the first loop pass and retains a full-resolution second pass.",
+        "These artifacts let researchers test asymmetric compute allocation without repeating pretraining; the previously documented experiments match resource budgets and show lower validation loss across 15 settings."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "The update is the October 15 checkpoint and loader release. Hugging Face records model-repository creation at 06:56:35 UTC and modification at 07:37 UTC; code history adds checkpoint support and native inference loading at 07:45 UTC, before cutoff. The model card lists 1.3B, 3B and 7B endpoints, configurations and checksums. The original 24-page project PDF already contained the methods, ablations and 15 matched settings.",
+        "limitations": "Exact first public visibility of earlier code and project artifacts is unknown, so no earliest-public timestamp is assigned. Models use one FineWeb-Edu stream, 4K context and one training seed; compute savings are fitted theoretical FLOPs rather than guaranteed latency. Checkpoints omit optimizer and RNG state, and released code omits internal experiments and analysis. No independent reproduction."
+      },
+      "novelty": "material-update",
+      "update_note": "2026-10-15: three largest-budget pretrained checkpoints (1.3B, 3B and 7B), model and tokenizer configurations, and native incremental inference loading are now available at https://huggingface.co/yhx12/LatentLoop and https://github.com/lcqysl/LatentLoop. The checked model metadata records creation at 06:56:35 UTC and modification at 07:37 UTC, while the 07:45 UTC code revision adds loader and checkpoint support. Earlier October 14 code and project history already includes the full paper and headline results; those results and the method are not claimed new. Git chronology does not establish exact first public visibility.",
+      "report_kind": "daily",
+      "report_date": "2026-10-15",
+      "report_path": "reports/2026/10/2026-10-15.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.19789",
+      "title": "More Methods, Better Agents? A Reality Check on Self-Distillation in Agentic Reinforcement Learning",
+      "category": "1.8",
+      "tags": [
+        "Self-Distillation",
+        "Agent RL",
+        "Controlled Evaluation",
+        "Training Cost"
+      ],
+      "published_on": "2026-10-14",
+      "first_seen_at": "2026-10-15T15:10:37.678Z",
+      "canonical_url": "https://arxiv.org/abs/2610.19789",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.19789",
+        "code": "https://github.com/aim-uofa/Self-Distillation-AgentRL",
+        "project": "https://aim-uofa.github.io/Self-Distillation-AgentRL/"
+      },
+      "public_availability": {
+        "at": "2026-10-15T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "summary": [
+        "This study reruns ten self-distillation approaches against group-relative policy optimization across four text-agent benchmarks and three model sizes, comparing final scores, learning stability and measured training cost.",
+        "The released implementation and detailed evaluation protocol help researchers choose training baselines: gains depend on the setting, and additional teacher computation frequently fails to improve performance."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "The 39-page primary PDF supplies 132 training runs, 100 updates per run and eight sampled final-evaluation rollout seeds on Qwen3.5-2B/4B/9B. Only PCSD and AgentOPSD exceed GRPO's equal-weight twelve-setting mean; 112 of 120 alternatives take longer to train. Tables S5/S13–S16 separate mixed task metrics, net training time and broader recorded GPU-hours; method adaptations are explicit.",
+        "limitations": "Eight rollout seeds measure evaluation variation, not independent retraining variability. The study uses fixed validation/final task sets, method-specific hyperparameters/adaptations, a 100-step horizon, four simulated text environments and one model family. Its heterogeneous-score mean is descriptive, not universal ranking; timing is specific to eight H800 GPUs. No independent reproduction here."
+      },
+      "novelty": "material-update",
+      "update_note": "2026-10-15: the complete paper adds executable method definitions, adaptation details, training records and cost accounting beyond the earlier project preview; the author implementation is now available. The project history includes an October 14 06:51 UTC preview with headline results, but commit time does not prove public visibility. This entry covers the detailed paper and released implementation, not a claim that its headline findings first appeared today; paper availability is inferred from the dated October 15 announcement batch and official schedule.",
+      "report_kind": "daily",
+      "report_date": "2026-10-15",
+      "report_path": "reports/2026/10/2026-10-15.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.20563",
+      "title": "Scaling Discovery Requires Forgetting",
+      "category": "2.3",
+      "tags": [
+        "Agent Memory",
+        "Automated Discovery",
+        "Search Restarts"
+      ],
+      "published_on": "2026-10-14",
+      "first_seen_at": "2026-10-15T15:09:00.000Z",
+      "public_availability": {
+        "at": "2026-10-15T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.20563",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.20563"
+      },
+      "summary": [
+        "The authors periodically restart communicating research agents from their best candidate while clearing conversation and candidate histories, helping stalled searches explore larger changes.",
+        "Across four code-optimization and model-training tasks, four-agent teams with this reset policy outperform their tested single-agent and independent parallel baselines at matched model spend, suggesting a practical memory policy for prolonged automated discovery."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "October 15 new-submission listing and official schedule imply 00:00 UTC paper availability; submission was October 14 at 17:49:37 UTC. Full 14-page PDF, Sections 3–5, Tables 1–4 and Appendix B inspected, including visual checks of Tables 1–3. Pi/DeepSeek-V4.1-Flash, three runs per configuration: AHC014 mean best score is 1, 103k versus 964k for independent parallel agents. A same-state 30-proposal ablation gives communicating teams +9.2% after reset versus +1.4% on continuation.",
+        "limitations": "Four tasks and one model/harness; reset timing is fixed, not learned. Dollar budgets cover model spend rather than total experiment compute or elapsed time. Main comparisons combine communication and resetting; the same-state ablation better isolates resetting. No dedicated author implementation was verified, and results were not reproduced."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-15",
+      "report_path": "reports/2026/10/2026-10-15.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.20518",
+      "title": "The Wealth of Agents: Scaling Agentic AI Across Developers",
+      "category": "2.6",
+      "tags": [
+        "Multi-Agent Systems",
+        "Specialist Routing",
+        "Developer Incentives"
+      ],
+      "published_on": "2026-10-14",
+      "first_seen_at": "2026-10-15T15:09:00.000Z",
+      "public_availability": {
+        "at": "2026-10-15T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.20518",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.20518"
+      },
+      "summary": [
+        "This study models independently developed agents as an ecosystem and combines specialized systems through task decomposition, learned routing and answer composition.",
+        "In a controlled simulation of developers, its specialist coalition reaches about 70% on the evaluated GAIA split while individual specialists reach at most 35%, illustrating how complementary capabilities can matter more than standalone scores."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Submitted October 14 at 17:19:11 UTC and listed as a new October 15 paper. Sections 3–7 and Appendices A.4/B/C inspected. The GAIA experiment constructs 54 specialists versus nine generalists with equal aggregate development iterations; half the validation set trains the router and half evaluates it. Figure 5 comparisons average four runs. A learned contextual router reaches 70.13%, versus 61.04% without router learning.",
+        "limitations": "Developers are simulated by meta-agents, not independent real organizations, and evaluation covers two datasets. Coordination can increase cost and reduce accuracy on SealQA or generalist pools. Theory assumes stylized development costs, routing and additive capabilities, omits coordination cost, and does not establish convergence to specialization. Security, compensation and real ecosystem deployment remain open; no dedicated implementation was verified."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-15",
+      "report_path": "reports/2026/10/2026-10-15.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.19159",
+      "title": "Into the Unknown: Benchmarking AI agents on open scientific research problems",
+      "category": "2.8",
+      "tags": [
+        "Scientific Agents",
+        "Evidence Integrity",
+        "Research Evaluation"
+      ],
+      "published_on": "2026-10-13",
+      "first_seen_at": "2026-10-15T15:09:00.000Z",
+      "public_availability": {
+        "at": "2026-10-15T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.19159",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.19159",
+        "code": "https://github.com/prometheus-eval/into-the-unknown",
+        "project": "https://prometheus-eval.github.io/into-the-unknown/viewer/"
+      },
+      "summary": [
+        "Into the Unknown evaluates scientific agents on 15 researcher-proposed follow-up problems using explicit integrity, completeness and scientific-success rubrics tied to submitted code and logs.",
+        "In its expanded nine-agent evaluation, none of 135 submissions passes all strict gates and 114 fail integrity checks, providing a concrete testbed for separating credible research execution from persuasive paper writing."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "New detailed paper is in the October 15 batch; submission was October 13 at 20:25:59 UTC. Main methods/results and Appendices A/B inspected in the 163-page PDF. The October 13 project history expands the evaluator from 342 to 540 judgments covering all 135 submissions. Four GPT-6-Astra judgments per submission are combined by 3-of-4 node majority; the expert check covers 41 follow-up judgments.",
+        "limitations": "Only 15 computational directions, generally one attempt per agent/task, and automated judges rather than exhaustive expert review. Strict all-node grading is demanding; passing necessary conditions would not establish publication quality. The text retains stale 105-submission references and inconsistent ancillary statistics, so only Table 2/Section 4's cross-checked 135-submission results are used. Historical commit dates do not prove first public visibility; no experiments were reproduced."
+      },
+      "novelty": "material-update",
+      "update_note": "2026-10-15: the primary paper documents the expanded nine-agent/135-submission evaluation, evidence-linked strict grading and expert meta-validation. October 13 project revision 3d3496430ea1 expands the earlier October 6 artifact from 342 judgments to 540 (four per submission), within this run's discovery lookback; the current README dates its release October 15. The benchmark idea predates today, and commit timestamps do not establish exact historical public visibility. Earlier artifact: https://raw.githubusercontent.com/prometheus-eval/into-the-unknown/8f531eeacd7a/README.md; expanded artifact: https://raw.githubusercontent.com/prometheus-eval/into-the-unknown/3d3496430ea1/README.md.",
+      "report_kind": "daily",
+      "report_date": "2026-10-15",
+      "report_path": "reports/2026/10/2026-10-15.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://vllm.ai/blog/2026-10-14-train-inference-consistency",
+      "title": "Finish RL Training Faster: Bitwise-Consistent, High-Performance, Agent-Driven",
+      "category": "3.2",
+      "published_on": "2026-10-14",
+      "first_seen_at": "2026-10-15T15:09:52.031Z",
+      "public_availability": {
+        "at": "2026-10-14T09:00:00Z",
+        "basis": "dated-source",
+        "sources": [
+          "https://raw.githubusercontent.com/vllm-project/vllm-project.github.io/main/_posts/2026-10-14-train-inference-consistency.md"
+        ]
+      },
+      "canonical_url": "https://vllm.ai/blog/2026-10-14-train-inference-consistency",
+      "links": {
+        "blog": "https://vllm.ai/blog/2026-10-14-train-inference-consistency",
+        "code": "https://github.com/verl-project/verl/pull/7688",
+        "project": "https://github.com/vllm-project/vllm/pull/61551"
+      },
+      "summary": [
+        "This engineering report makes training recomputation and vLLM rollout share a numerical execution path, aligning low-precision kernels, routing and reduction order so sampled-token probabilities match bit for bit in the tested recipes.",
+        "It documents DeepSeek and Mamba-hybrid transfers plus an agent-assisted debugging workflow, providing a practical recipe for reducing train-rollout mismatch while making the remaining throughput and training-quality trade-offs explicit."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "Delayed discovery: blog front matter documents Oct 14 09:00 UTC, one hour before this daily window but within 72 h. Complete blog/technical tables and linked preview PR descriptions inspected. DeepSeek-V4-Flash GRPO uses 32 GB200 GPUs, 128 prompts x 8 responses and one update/step; over 100 steps authors report exactly zero same-weight token differences and 91.3% of baseline rollout throughput. Nemotron-3.5-Lightning-30B-A3B NVFP4 on 8 GB200 nodes retains training reward on a 375-task filtered SWE-bench Pro training subset. The contribution covered is the detailed dated report and transfer evidence; existing DeepSeek preview PR opened Sep 2, and bitwise consistency is not a new invention here.",
+        "limitations": "No end-to-end wall-clock gain was measured; training overhead was not separately isolated. The 91.3% rollout ratio includes differing response lengths and late baseline degradation; first 89 steps give 88.6%. Each baseline has one untuned recipe without TIS/MIS; collapse is not universal. Same-weight forward equality does not prove gradient correctness or account for stale/asynchronously changed policies. Recipe requires one update/step and TP=1; speculative decoding is not covered. Code links are preview/open PRs, not an asserted upstream release. No independent reproduction."
+      },
+      "tags": [
+        "Train-Rollout Consistency",
+        "Low Precision",
+        "Agentic RL",
+        "vLLM"
+      ],
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-15",
+      "report_path": "reports/2026/10/2026-10-15.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.18925",
+      "title": "CacheSmith: Accurate RAG Serving under Latency SLOs with Adaptive KV Reuse",
+      "category": "3.4",
+      "published_on": "2026-10-13",
+      "first_seen_at": "2026-10-15T15:09:52.031Z",
+      "public_availability": {
+        "at": "2026-10-15T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AR/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.18925",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.18925"
+      },
+      "summary": [
+        "CacheSmith adapts how much cross-chunk attention is recomputed when reusing cached RAG context, jointly choosing request batches and a warm-up, probe and patch plan under latency budgets.",
+        "Its objective counts responses that meet both a generation-quality gate and a first-token deadline, helping serving systems allocate recomputation where it improves useful responses rather than latency alone."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Reviewed method, planner/scheduler Algorithm 1, runtime and all evaluation/ablation sections. vLLM 0.10.2 experiments use Llama 3.1-8B on one 96 GB RTX PRO 6000 and Qwen3-32B on two, EPYC 9554 and NVMe-cached chunks. Across 96 task/arrival/SLO combinations, authors exceed an oracle best-static configuration in 93 and report 2-27.5% higher quality-gated SLO attainment. Timing is inferred from CacheSmith's PRIMARY cs.AR Oct 15 batch plus official announcement schedule; Oct 13 is receipt, not asserted public release.",
+        "limitations": "Quality is estimated from offline demand profiles, not guaranteed for every request; experiments use four small benchmark-derived/synthetic tasks, Poisson/Gamma arrivals and precomputed SSD chunks. Majority signal selection can hurt minority requests in mixed batches. Query-context baselines share authors' untuned reimplementation because original kernels were unavailable. Quality gates are task-specific, not general answer correctness. No verified implementation release or independent reproduction; do not relabel the paper's 27.5% as percentage points."
+      },
+      "tags": [
+        "RAG",
+        "KV Reuse",
+        "Selective Recomputation",
+        "Latency SLO"
+      ],
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-15",
+      "report_path": "reports/2026/10/2026-10-15.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.19801",
+      "title": "Delta Tokenizer: Reference-Identical Tokenization of Session Deltas and Segment-Parallelism for Long Prompts on Multicore CPUs",
+      "category": "3.5",
+      "published_on": "2026-10-14",
+      "first_seen_at": "2026-10-15T15:09:52.031Z",
+      "public_availability": {
+        "at": "2026-10-15T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.19801",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.19801",
+        "code": "https://github.com/asu-idi/toktier"
+      },
+      "summary": [
+        "Delta Tokenizer extends earlier TokTier session reuse with tokenizer-aware CPU chunking and scheduling, so long fresh prompts can share cores without delaying short agent updates or changing reference token IDs.",
+        "The paper reports 59% lower median time to first token for tested 100K-token chat contexts in SGLang, showing how to remove CPU work that remains after model-side prefix caching."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Reviewed Sections 3-6, safe-splice/cut arguments, evaluation setup, exactness checks and limitations, plus TokTier README. New paper adds normalized/special-token-safe CPU segmentation, shared chunk scheduling and expanded measurements beyond July's session-repair method. SGLang 0.5.19/Qwen3-8B on EPYC 9115/RTX PRO 6000 reports chat median 145 ms to 60 ms at 100K tokens; 16-core full encoding of 4M characters is 8.2x faster than direct serial encoding. Public availability is inferred from the Oct 15 primary cs.CL batch and official 20:00 Eastern announcement schedule, not the Oct 14 receipt timestamp.",
+        "limitations": "Benefits depend on long cache-friendly sessions; cold GPU prefill can dominate with all front ends within 5%. The 23x tail result includes overlength requests declined after tokenization; admitted repeated-document tests show about 7x instead. Exactness applies to admitted frozen tokenizer configurations with fallback. Incremental/fast encoders are released, but chunk pool and SGLang adapter are promised future code. Session repair itself predates this paper in TokTier. No independent reproduction."
+      },
+      "tags": [
+        "CPU Tokenization",
+        "Agent Workloads",
+        "Tail Latency",
+        "SGLang"
+      ],
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-15",
+      "report_path": "reports/2026/10/2026-10-15.md",
+      "search_status": "partial"
+    },
     {
       "id": "arxiv:2610.14423",
       "title": "Scaling Laws for Multimodal Data Mixtures",
@@ -6222,7 +6590,7 @@
       "group": "llm-recipe",
       "title": "Model Architecture & Scaling Laws",
       "path": "topics/llm-recipe/model-architecture-scaling-laws/README.md",
-      "count": 9
+      "count": 11
     },
     {
       "id": "1.3",
@@ -6264,7 +6632,7 @@
       "group": "llm-recipe",
       "title": "Distillation & Model Compression",
       "path": "topics/llm-recipe/distillation-model-compression/README.md",
-      "count": 10
+      "count": 11
     },
     {
       "id": "1.9",
@@ -6299,7 +6667,7 @@
       "group": "ai-agent-dev",
       "title": "Context Engineering & Memory",
       "path": "topics/ai-agent-dev/context-engineering-memory/README.md",
-      "count": 8
+      "count": 9
     },
     {
       "id": "2.4",
@@ -6320,7 +6688,7 @@
       "group": "ai-agent-dev",
       "title": "Multi-Agent Collaboration",
       "path": "topics/ai-agent-dev/multi-agent-collaboration/README.md",
-      "count": 3
+      "count": 4
     },
     {
       "id": "2.7",
@@ -6334,7 +6702,7 @@
       "group": "ai-agent-dev",
       "title": "Agent Evaluation & Security",
       "path": "topics/ai-agent-dev/agent-evaluation-security/README.md",
-      "count": 13
+      "count": 14
     },
     {
       "id": "3.1",
@@ -6348,7 +6716,7 @@
       "group": "ai-training-inference-infra",
       "title": "RL & Rollout Infrastructure",
       "path": "topics/ai-training-inference-infra/rl-rollout-infrastructure/README.md",
-      "count": 4
+      "count": 5
     },
     {
       "id": "3.3",
@@ -6362,14 +6730,14 @@
       "group": "ai-training-inference-infra",
       "title": "Attention, KV Cache & Memory Systems",
       "path": "topics/ai-training-inference-infra/attention-kv-cache-memory-systems/README.md",
-      "count": 10
+      "count": 11
     },
     {
       "id": "3.5",
       "group": "ai-training-inference-infra",
       "title": "Kernels, Compilers & Runtimes",
       "path": "topics/ai-training-inference-infra/kernels-compilers-runtimes/README.md",
-      "count": 12
+      "count": 13
     },
     {
       "id": "3.6",

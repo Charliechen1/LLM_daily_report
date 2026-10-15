@@ -5,6 +5,38 @@ Transformers, MoE, SSM/hybrid architectures and model/data/compute allocation.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-15](../../../reports/2026/10/2026-10-15.md) — PARTIAL SEARCH
+
+### [The COUNT: Counting N-grams Unlocks Scaling on Host Memory and Training-Free Adaptation](<https://arxiv.org/abs/2610.20456>)
+
+COUNT adds corpus-count memory during language-model pretraining by combining the model's output embeddings using read-only n-gram statistics stored in host RAM. Models trained with COUNT can later adapt by swapping these tables without updating their weights, providing a way to improve language modeling and domain specialization through additional host memory.
+
+**Published:** 2026-10-14 · **First seen:** 2026-10-15T15:10:36.803Z · **Novelty:** new · **Tags:** N-gram Memory, Pretraining, Host Memory, Domain Adaptation
+
+**Public availability:** 2026-10-15T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.20456>) · [Code](<https://github.com/IanMagnusson/COUNT>) · [Project](<https://huggingface.co/datasets/IanMagnusson/count-ngram-tables>)
+
+**Evidence:** research-paper; full-text. October 15 public availability is inferred from the dated new-submission batch and official schedule. Sections 2–6 and Appendix A inspect 60M–1B backbones, 11 validation sources and 74 downstream configurations; fitted loss frontiers correspond to 46–89% more standard-transformer 6ND compute. Author code, tables and checkpoints are accessible.
+
+**Limitations:** Flagship tables require about 797 GB host RAM and summarize the full Dolma corpus; table construction and extra gather work are outside 6ND. Measured throughput is slightly lower, not faster. COUNT requires modified pretraining; domain accuracy gains are mixed, and released core code omits the optimized runtime used for throughput measurements. No independent reproduction.
+
+## [2026-10-15](../../../reports/2026/10/2026-10-15.md) — PARTIAL SEARCH
+
+### [LatentLoop: Scaling Looped MoE Models with Asymmetric Compute Allocation](<https://arxiv.org/abs/2610.19975>)
+
+LatentLoop's new release supplies three pretrained checkpoints and a native inference loader for its mixture-of-experts architecture, which compresses the first loop pass and retains a full-resolution second pass. These artifacts let researchers test asymmetric compute allocation without repeating pretraining; the previously documented experiments match resource budgets and show lower validation loss across 15 settings.
+
+**Published:** 2026-10-14 · **First seen:** 2026-10-15T15:10:37.108Z · **Novelty:** material-update · **Tags:** Looped MoE, Compute Allocation, Scaling Laws
+
+[Paper](<https://arxiv.org/abs/2610.19975>) · [Code](<https://github.com/lcqysl/LatentLoop>) · [Project](<https://latentloop-project.github.io/>)
+
+**Evidence:** research-paper; full-text. The update is the October 15 checkpoint and loader release. Hugging Face records model-repository creation at 06:56:35 UTC and modification at 07:37 UTC; code history adds checkpoint support and native inference loading at 07:45 UTC, before cutoff. The model card lists 1.3B, 3B and 7B endpoints, configurations and checksums. The original 24-page project PDF already contained the methods, ablations and 15 matched settings.
+
+**Limitations:** Exact first public visibility of earlier code and project artifacts is unknown, so no earliest-public timestamp is assigned. Models use one FineWeb-Edu stream, 4K context and one training seed; compute savings are fitted theoretical FLOPs rather than guaranteed latency. Checkpoints omit optimizer and RNG state, and released code omits internal experiments and analysis. No independent reproduction.
+
+**Update:** 2026-10-15: three largest-budget pretrained checkpoints (1.3B, 3B and 7B), model and tokenizer configurations, and native incremental inference loading are now available at https://huggingface.co/yhx12/LatentLoop and https://github.com/lcqysl/LatentLoop. The checked model metadata records creation at 06:56:35 UTC and modification at 07:37 UTC, while the 07:45 UTC code revision adds loader and checkpoint support. Earlier October 14 code and project history already includes the full paper and headline results; those results and the method are not claimed new. Git chronology does not establish exact first public visibility.
+
 ## [2026-10-14](../../../reports/2026/10/2026-10-14.md) — PARTIAL SEARCH
 
 ### [Scaling Laws for Multimodal Data Mixtures](<https://arxiv.org/abs/2610.14423>)

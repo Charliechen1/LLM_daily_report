@@ -5,6 +5,22 @@ Distributed rollouts, asynchronous RL, generation/training coordination and weig
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-15](../../../reports/2026/10/2026-10-15.md) — PARTIAL SEARCH
+
+### [Finish RL Training Faster: Bitwise-Consistent, High-Performance, Agent-Driven](<https://vllm.ai/blog/2026-10-14-train-inference-consistency>)
+
+This engineering report makes training recomputation and vLLM rollout share a numerical execution path, aligning low-precision kernels, routing and reduction order so sampled-token probabilities match bit for bit in the tested recipes. It documents DeepSeek and Mamba-hybrid transfers plus an agent-assisted debugging workflow, providing a practical recipe for reducing train-rollout mismatch while making the remaining throughput and training-quality trade-offs explicit.
+
+**Published:** 2026-10-14 · **First seen:** 2026-10-15T15:09:52.031Z · **Novelty:** newly-discovered · **Tags:** Train-Rollout Consistency, Low Precision, Agentic RL, vLLM
+
+**Public availability:** 2026-10-14T09:00:00Z (dated primary source). [Timing source](<https://raw.githubusercontent.com/vllm-project/vllm-project.github.io/main/_posts/2026-10-14-train-inference-consistency.md>)
+
+[Blog](<https://vllm.ai/blog/2026-10-14-train-inference-consistency>) · [Code](<https://github.com/verl-project/verl/pull/7688>) · [Project](<https://github.com/vllm-project/vllm/pull/61551>)
+
+**Evidence:** engineering-report; full-text. Delayed discovery: blog front matter documents Oct 14 09:00 UTC, one hour before this daily window but within 72 h. Complete blog/technical tables and linked preview PR descriptions inspected. DeepSeek-V4-Flash GRPO uses 32 GB200 GPUs, 128 prompts x 8 responses and one update/step; over 100 steps authors report exactly zero same-weight token differences and 91.3% of baseline rollout throughput. Nemotron-3.5-Lightning-30B-A3B NVFP4 on 8 GB200 nodes retains training reward on a 375-task filtered SWE-bench Pro training subset. The contribution covered is the detailed dated report and transfer evidence; existing DeepSeek preview PR opened Sep 2, and bitwise consistency is not a new invention here.
+
+**Limitations:** No end-to-end wall-clock gain was measured; training overhead was not separately isolated. The 91.3% rollout ratio includes differing response lengths and late baseline degradation; first 89 steps give 88.6%. Each baseline has one untuned recipe without TIS/MIS; collapse is not universal. Same-weight forward equality does not prove gradient correctness or account for stale/asynchronously changed policies. Recipe requires one update/step and TP=1; speculative decoding is not covered. Code links are preview/open PRs, not an asserted upstream release. No independent reproduction.
+
 ## [2026-10-14](../../../reports/2026/10/2026-10-14.md) — PARTIAL SEARCH
 
 ### [Prorsa: Unleashing the Potential of Prefill-Decode Disaggregation in Agentic Reinforcement Learning](<https://arxiv.org/abs/2610.16592>)

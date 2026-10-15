@@ -5,6 +5,24 @@ Task success, trajectory evaluation, cost/reliability, prompt injection and perm
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-15](../../../reports/2026/10/2026-10-15.md) — PARTIAL SEARCH
+
+### [Into the Unknown: Benchmarking AI agents on open scientific research problems](<https://arxiv.org/abs/2610.19159>)
+
+Into the Unknown evaluates scientific agents on 15 researcher-proposed follow-up problems using explicit integrity, completeness and scientific-success rubrics tied to submitted code and logs. In its expanded nine-agent evaluation, none of 135 submissions passes all strict gates and 114 fail integrity checks, providing a concrete testbed for separating credible research execution from persuasive paper writing.
+
+**Published:** 2026-10-13 · **First seen:** 2026-10-15T15:09:00.000Z · **Novelty:** material-update · **Tags:** Scientific Agents, Evidence Integrity, Research Evaluation
+
+**Public availability:** 2026-10-15T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.19159>) · [Code](<https://github.com/prometheus-eval/into-the-unknown>) · [Project](<https://prometheus-eval.github.io/into-the-unknown/viewer/>)
+
+**Evidence:** research-paper; full-text. New detailed paper is in the October 15 batch; submission was October 13 at 20:25:59 UTC. Main methods/results and Appendices A/B inspected in the 163-page PDF. The October 13 project history expands the evaluator from 342 to 540 judgments covering all 135 submissions. Four GPT-6-Astra judgments per submission are combined by 3-of-4 node majority; the expert check covers 41 follow-up judgments.
+
+**Limitations:** Only 15 computational directions, generally one attempt per agent/task, and automated judges rather than exhaustive expert review. Strict all-node grading is demanding; passing necessary conditions would not establish publication quality. The text retains stale 105-submission references and inconsistent ancillary statistics, so only Table 2/Section 4's cross-checked 135-submission results are used. Historical commit dates do not prove first public visibility; no experiments were reproduced.
+
+**Update:** 2026-10-15: the primary paper documents the expanded nine-agent/135-submission evaluation, evidence-linked strict grading and expert meta-validation. October 13 project revision 3d3496430ea1 expands the earlier October 6 artifact from 342 judgments to 540 (four per submission), within this run's discovery lookback; the current README dates its release October 15. The benchmark idea predates today, and commit timestamps do not establish exact historical public visibility. Earlier artifact: https://raw.githubusercontent.com/prometheus-eval/into-the-unknown/8f531eeacd7a/README.md; expanded artifact: https://raw.githubusercontent.com/prometheus-eval/into-the-unknown/3d3496430ea1/README.md.
+
 ## [2026-10-13](../../../reports/2026/10/2026-10-13.md) — PARTIAL SEARCH
 
 ### [AgentSWE: Can Coding Agents Build the Agent You Actually Want?](<https://arxiv.org/abs/2610.13361>)

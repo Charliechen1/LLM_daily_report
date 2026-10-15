@@ -5,6 +5,22 @@ GPU kernels, operator fusion, compilation, execution graphs and hardware adaptat
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-15](../../../reports/2026/10/2026-10-15.md) — PARTIAL SEARCH
+
+### [Delta Tokenizer: Reference-Identical Tokenization of Session Deltas and Segment-Parallelism for Long Prompts on Multicore CPUs](<https://arxiv.org/abs/2610.19801>)
+
+Delta Tokenizer extends earlier TokTier session reuse with tokenizer-aware CPU chunking and scheduling, so long fresh prompts can share cores without delaying short agent updates or changing reference token IDs. The paper reports 59% lower median time to first token for tested 100K-token chat contexts in SGLang, showing how to remove CPU work that remains after model-side prefix caching.
+
+**Published:** 2026-10-14 · **First seen:** 2026-10-15T15:09:52.031Z · **Novelty:** new · **Tags:** CPU Tokenization, Agent Workloads, Tail Latency, SGLang
+
+**Public availability:** 2026-10-15T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.19801>) · [Code](<https://github.com/asu-idi/toktier>)
+
+**Evidence:** research-paper; full-text. Reviewed Sections 3-6, safe-splice/cut arguments, evaluation setup, exactness checks and limitations, plus TokTier README. New paper adds normalized/special-token-safe CPU segmentation, shared chunk scheduling and expanded measurements beyond July's session-repair method. SGLang 0.5.19/Qwen3-8B on EPYC 9115/RTX PRO 6000 reports chat median 145 ms to 60 ms at 100K tokens; 16-core full encoding of 4M characters is 8.2x faster than direct serial encoding. Public availability is inferred from the Oct 15 primary cs.CL batch and official 20:00 Eastern announcement schedule, not the Oct 14 receipt timestamp.
+
+**Limitations:** Benefits depend on long cache-friendly sessions; cold GPU prefill can dominate with all front ends within 5%. The 23x tail result includes overlength requests declined after tokenization; admitted repeated-document tests show about 7x instead. Exactness applies to admitted frozen tokenizer configurations with fallback. Incremental/fast encoders are released, but chunk pool and SGLang adapter are promised future code. Session repair itself predates this paper in TokTier. No independent reproduction.
+
 ## [2026-10-14](../../../reports/2026/10/2026-10-14.md) — PARTIAL SEARCH
 
 ### [Extending Inductor for the IBM Spyre Accelerator](<https://pytorch.org/blog/extending-inductor-for-the-ibm-spyre-accelerator/>)

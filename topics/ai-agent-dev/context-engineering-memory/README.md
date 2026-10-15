@@ -5,6 +5,22 @@ Context organization/compression, working memory, long-term memory and state.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-15](../../../reports/2026/10/2026-10-15.md) — PARTIAL SEARCH
+
+### [Scaling Discovery Requires Forgetting](<https://arxiv.org/abs/2610.20563>)
+
+The authors periodically restart communicating research agents from their best candidate while clearing conversation and candidate histories, helping stalled searches explore larger changes. Across four code-optimization and model-training tasks, four-agent teams with this reset policy outperform their tested single-agent and independent parallel baselines at matched model spend, suggesting a practical memory policy for prolonged automated discovery.
+
+**Published:** 2026-10-14 · **First seen:** 2026-10-15T15:09:00.000Z · **Novelty:** new · **Tags:** Agent Memory, Automated Discovery, Search Restarts
+
+**Public availability:** 2026-10-15T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.20563>)
+
+**Evidence:** research-paper; full-text. October 15 new-submission listing and official schedule imply 00:00 UTC paper availability; submission was October 14 at 17:49:37 UTC. Full 14-page PDF, Sections 3–5, Tables 1–4 and Appendix B inspected, including visual checks of Tables 1–3. Pi/DeepSeek-V4.1-Flash, three runs per configuration: AHC014 mean best score is 1, 103k versus 964k for independent parallel agents. A same-state 30-proposal ablation gives communicating teams +9.2% after reset versus +1.4% on continuation.
+
+**Limitations:** Four tasks and one model/harness; reset timing is fixed, not learned. Dollar budgets cover model spend rather than total experiment compute or elapsed time. Main comparisons combine communication and resetting; the same-state ablation better isolates resetting. No dedicated author implementation was verified, and results were not reproduced.
+
 ## [2026-10-14](../../../reports/2026/10/2026-10-14.md) — PARTIAL SEARCH
 
 ### [Pack Light, CarryOn: Building Object-Oriented Context for Long-Horizon Agents](<https://arxiv.org/abs/2610.18784>)

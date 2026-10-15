@@ -5,6 +5,22 @@ Division of work, communication, delegation, collaboration topology and shared m
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-15](../../../reports/2026/10/2026-10-15.md) — PARTIAL SEARCH
+
+### [The Wealth of Agents: Scaling Agentic AI Across Developers](<https://arxiv.org/abs/2610.20518>)
+
+This study models independently developed agents as an ecosystem and combines specialized systems through task decomposition, learned routing and answer composition. In a controlled simulation of developers, its specialist coalition reaches about 70% on the evaluated GAIA split while individual specialists reach at most 35%, illustrating how complementary capabilities can matter more than standalone scores.
+
+**Published:** 2026-10-14 · **First seen:** 2026-10-15T15:09:00.000Z · **Novelty:** new · **Tags:** Multi-Agent Systems, Specialist Routing, Developer Incentives
+
+**Public availability:** 2026-10-15T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.20518>)
+
+**Evidence:** research-paper; full-text. Submitted October 14 at 17:19:11 UTC and listed as a new October 15 paper. Sections 3–7 and Appendices A.4/B/C inspected. The GAIA experiment constructs 54 specialists versus nine generalists with equal aggregate development iterations; half the validation set trains the router and half evaluates it. Figure 5 comparisons average four runs. A learned contextual router reaches 70.13%, versus 61.04% without router learning.
+
+**Limitations:** Developers are simulated by meta-agents, not independent real organizations, and evaluation covers two datasets. Coordination can increase cost and reduce accuracy on SealQA or generalist pools. Theory assumes stylized development costs, routing and additive capabilities, omits coordination cost, and does not establish convergence to specialization. Security, compensation and real ecosystem deployment remain open; no dedicated implementation was verified.
+
 ## [2026-10-09](../../../reports/2026/10/2026-10-09.md) — PARTIAL SEARCH
 
 ### [Recursive Self-Improvement through Multi-Agent Self-Supervision](<https://arxiv.org/abs/2610.12176>)

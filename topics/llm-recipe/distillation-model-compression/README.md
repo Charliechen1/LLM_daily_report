@@ -5,6 +5,24 @@ Knowledge/reasoning distillation, pruning, quantization algorithms and model mer
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-15](../../../reports/2026/10/2026-10-15.md) — PARTIAL SEARCH
+
+### [More Methods, Better Agents? A Reality Check on Self-Distillation in Agentic Reinforcement Learning](<https://arxiv.org/abs/2610.19789>)
+
+This study reruns ten self-distillation approaches against group-relative policy optimization across four text-agent benchmarks and three model sizes, comparing final scores, learning stability and measured training cost. The released implementation and detailed evaluation protocol help researchers choose training baselines: gains depend on the setting, and additional teacher computation frequently fails to improve performance.
+
+**Published:** 2026-10-14 · **First seen:** 2026-10-15T15:10:37.678Z · **Novelty:** material-update · **Tags:** Self-Distillation, Agent RL, Controlled Evaluation, Training Cost
+
+**Public availability:** 2026-10-15T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.19789>) · [Code](<https://github.com/aim-uofa/Self-Distillation-AgentRL>) · [Project](<https://aim-uofa.github.io/Self-Distillation-AgentRL/>)
+
+**Evidence:** research-paper; full-text. The 39-page primary PDF supplies 132 training runs, 100 updates per run and eight sampled final-evaluation rollout seeds on Qwen3.5-2B/4B/9B. Only PCSD and AgentOPSD exceed GRPO's equal-weight twelve-setting mean; 112 of 120 alternatives take longer to train. Tables S5/S13–S16 separate mixed task metrics, net training time and broader recorded GPU-hours; method adaptations are explicit.
+
+**Limitations:** Eight rollout seeds measure evaluation variation, not independent retraining variability. The study uses fixed validation/final task sets, method-specific hyperparameters/adaptations, a 100-step horizon, four simulated text environments and one model family. Its heterogeneous-score mean is descriptive, not universal ranking; timing is specific to eight H800 GPUs. No independent reproduction here.
+
+**Update:** 2026-10-15: the complete paper adds executable method definitions, adaptation details, training records and cost accounting beyond the earlier project preview; the author implementation is now available. The project history includes an October 14 06:51 UTC preview with headline results, but commit time does not prove public visibility. This entry covers the detailed paper and released implementation, not a claim that its headline findings first appeared today; paper availability is inferred from the dated October 15 announcement batch and official schedule.
+
 ## [2026-10-11](../../../reports/2026/10/2026-10-11.md) — PARTIAL SEARCH
 
 ### [Stochastic Teacher Intervention for Agentic On-Policy Distillation](<https://arxiv.org/abs/2610.10878>)
