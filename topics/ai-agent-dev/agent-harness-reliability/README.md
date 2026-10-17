@@ -5,6 +5,22 @@ Long-running execution, failure recovery, retries, persistence and human collabo
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-16](../../../reports/2026/10/2026-10-16.md) — PARTIAL SEARCH
+
+### [LEASH: Uncertainty-Aware Weak-to-Strong Escalation and Oversight for Computer-Use Agents](<https://arxiv.org/abs/2610.22280>)
+
+LEASH uses a small computer-use model's hidden-state similarity to past successes and failures to decide when to hand a task to a stronger model and when to request reassessment after handoff. It offers a way to allocate expensive model calls dynamically, with near always-strong success at lower estimated inference cost in the authors' OSWorld evaluation.
+
+**Published:** 2026-10-15 · **First seen:** 2026-10-17T10:07:30.000Z · **Novelty:** new · **Tags:** Computer Use, Model Routing, Uncertainty, Oversight
+
+**Public availability:** 2026-10-16T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/recent?show=1000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.22280>)
+
+**Evidence:** research-paper; full-text. Sections 3–4 and Appendices A–B define reference-bank calibration, gates and oversight. On 262 held-out OSWorld tasks, the Qwen3.5-35B-A3B configuration reaches 73.66% success at $0.4117/task versus 72.90% and $0.5094 for always-on Opus 5; costs include Manager and monitoring calls. ArXiv availability is inferred from the dated batch and official schedule.
+
+**Limitations:** One benchmark and token-priced reference costs, not measured hardware cost or latency. Reference trajectories require upfront collection; failure risk need not predict escalation benefit. Shadow monitoring faces distribution shift and its causal effect is not isolated. No independent reproduction.
+
 ## [2026-10-07](../../../reports/2026/10/2026-10-07.md) — PARTIAL SEARCH
 
 ### [Beyond Corrected Memory: Execution Consistency in Multi-Agent Systems](<https://arxiv.org/abs/2610.08101>)

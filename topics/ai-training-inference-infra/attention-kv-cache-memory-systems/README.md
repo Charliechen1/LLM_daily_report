@@ -5,6 +5,22 @@ Attention execution, KV management/reuse, offloading and long-context memory eff
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-16](../../../reports/2026/10/2026-10-16.md) — PARTIAL SEARCH
+
+### [When the KV Cache Is Slower Than the GPU: Scaling Remote KV Tiers for Context-Parallel Prefill](<https://arxiv.org/abs/2610.21500>)
+
+This study explains why a remote key-value cache can be slower than recomputing a prompt, then shards cache work across context-parallel ranks and remote servers while moving loads off the engine's blocking path. Its production-trace replay and bandwidth-plus-fixed-cost model give serving engineers a practical way to decide when cache reuse helps, and to separate capacity benefits from first-token latency.
+
+**Published:** 2026-10-15 · **First seen:** 2026-10-17T10:02:23.724Z · **Novelty:** material-update · **Tags:** Remote KV Cache, Context Parallelism, Asynchronous Loading, Trace Replay
+
+[Paper](<https://arxiv.org/abs/2610.21500>) · [Code](<https://github.com/LMCache/LMCache/pull/5545>)
+
+**Evidence:** research-paper; full-text. Reviewed Sections 3-8, all tables, the collective-safe sharding protocol and the linked LMCache PR. GLM-5.3 FP8 runs on one 8-GPU B300 PCP8/EP8 prefill engine using vLLM 0.31.0 and LMCache 0.5.5. A 683-request production trace and a primed 450-request subset support the cost model; on the hit-heavy subset, final prefill-leg p99 is 0.67 s versus 83.32 s for the overloaded single-server baseline, with 98.5% of prompt tokens cached. Final remote-hit median remains 0.40 s versus 0.31 s for recomputation. This is a new detailed paper and evaluation of engineering whose sharding PR opened October 8. Public-paper availability is inferred as October 16 00:00 UTC from its primary cs.DC batch and the official announcement schedule; the October 15 receipt date is preserved. The linked PR 5545 implements the synchronous sharding component, not all asynchronous extensions or client fixes evaluated in the paper.
+
+**Limitations:** Each condition ran once; differences below about 10% are not established. The dramatic p99 ratio repairs an overloaded hit-heavy queue rather than showing a universal cache speedup. Replays omit decode handoff and shared multi-engine contention, and the selected subset fits the private cache. The approximately 17K-token crossover is a one-point-fitted prediction, not a measured general threshold. Deployment comparisons change parallelism and placement too. Correctness evidence is needle retrieval and soak testing, not bit-exact or broad answer-quality proof. The linked PR remains open; no independent reproduction was performed. PR 5545 explicitly rejects asynchronous loading; the paper references separate extensions and fixes, so this link is not a complete reproduction artifact.
+
+**Update:** 2026-10-16: The newly announced paper adds a detailed fixed-cost/bandwidth model, collective-safe remote-cache protocol, production-trace evaluation and limitations beyond the earlier sharding implementation (https://arxiv.org/html/2610.21500v1; https://arxiv.org/list/cs.DC/recent?skip=0&amp;show=2000; https://info.arxiv.org/help/availability.html; https://github.com/LMCache/LMCache/pull/5545). The PR opened October 8, which is provenance rather than an asserted exact first-public timestamp. The preserved October 15 published\_on is this paper's receipt date, not the implementation's release date.
+
 ## [2026-10-15](../../../reports/2026/10/2026-10-15.md) — PARTIAL SEARCH
 
 ### [CacheSmith: Accurate RAG Serving under Latency SLOs with Adaptive KV Reuse](<https://arxiv.org/abs/2610.18925>)

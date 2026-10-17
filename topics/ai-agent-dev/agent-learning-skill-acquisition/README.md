@@ -5,6 +5,22 @@ Learning from trajectories/feedback, skill generation/reuse, experience and self
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-16](../../../reports/2026/10/2026-10-16.md) — PARTIAL SEARCH
+
+### [Mosaic: Multi-Session Agentic Reinforcement Learning](<https://arxiv.org/abs/2610.22174>)
+
+Mosaic trains agents across context-compaction and subagent sessions by combining outcome-aware session-use guidance with a per-session signal based on changes in correct-answer likelihood. This assigns more specific feedback to useful state transfers, improving BrowseComp success while reducing average session counts in the tested 4B agent.
+
+**Published:** 2026-10-15 · **First seen:** 2026-10-17T10:07:30.000Z · **Novelty:** new · **Tags:** Agent Learning, Context Compaction, Credit Assignment, Subagents
+
+**Public availability:** 2026-10-16T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/recent?show=1000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.22174>) · [Project](<https://lark-ai-lab.github.io/Mosaic/>)
+
+**Evidence:** research-paper; full-text. Methods 3.1–3.2, Table 1 and Appendices C–D specify critic-free shaping, type-wise normalization and matched training. With Qwen3.5-4B, compaction accuracy rises 35.31→38.86% while sessions fall 3.17→2.35; forking rises 31.44→32.46% with 4.43→3.77 sessions. Training uses 1,000 REDSearcher tasks; BrowseComp evaluation covers 1,266 questions. ArXiv availability is inferred from its original dated batch and official schedule.
+
+**Limitations:** One backbone and benchmark; session count is a proxy rather than measured end-to-end cost. Correct answers are needed for training-time likelihood scoring, and immediate gains approximate branching-session contributions. Production asynchrony is untested. The project was retrieved, but no released implementation was verified. No independent reproduction.
+
 ## [2026-10-14](../../../reports/2026/10/2026-10-14.md) — PARTIAL SEARCH
 
 ### [ReTerm: Recovery Training for Self-Improving Terminal Agents](<https://arxiv.org/abs/2610.18484>)

@@ -5,6 +5,22 @@ Distributed rollouts, asynchronous RL, generation/training coordination and weig
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-16](../../../reports/2026/10/2026-10-16.md) — PARTIAL SEARCH
+
+### [ReFlow: Replay-Driven Decoupling for Efficient RL Post-Training](<https://arxiv.org/abs/2610.21640>)
+
+ReFlow mixes a bounded, down-weighted share of recently used trajectories into asynchronous reinforcement-learning batches, reducing the trainer's dependence on expensive fresh rollouts. Prewarmed workers and an adaptive scheduler move GPUs between generation and training as demand changes, increasing processed-training-token throughput while preserving comparable training-reward progress in the tested reasoning and agent workloads.
+
+**Published:** 2026-10-15 · **First seen:** 2026-10-17T10:02:23.384Z · **Novelty:** new · **Tags:** Experience Replay, Asynchronous RL, Elastic Workers, Rollout Scheduling
+
+**Public availability:** 2026-10-16T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.21640>)
+
+**Evidence:** research-paper; full-text. Reviewed Sections 1-8, the replay-weighting analysis, worker transitions, both schedulers and complete evaluations. The VeRL/Ray/vLLM/FSDP2 system tests Qwen3-4B/8B/14B/32B on 8-128 H800 GPUs using DAPO math, APPS coding and ReTool sandbox reasoning. Replay fraction and replay loss weight are capped/set at 0.5, with maximum policy lag one; sampling is random and reinsertion unfiltered. Authors report up to 2.06x trainer-processed token throughput, reward-versus-step/time curves, and 5.72/9.20 s resource rebalances on 32 GPUs. Public-paper timing is inferred from the PRIMARY cs.LG October 16 batch and official release schedule, rather than the October 15 receipt timestamp.
+
+**Limitations:** Throughput includes replayed tokens consumed by the trainer; it is not fresh-trajectory generation throughput. Quality evidence is training reward rather than held-out reasoning or coding evaluation. Throughput windows are five measured steps after five warmups, or ten after ten for coding. The local gradient-error argument assumes unbiased unused samples, bounded replay bias and uncorrelated centered errors; it is not a global convergence guarantee. Prewarmed hybrid workers require CPU offload and compatible replica groups, and adaptation depends on workload. The code is awaiting approval and not yet released. No independent reproduction was performed.
+
 ## [2026-10-15](../../../reports/2026/10/2026-10-15.md) — PARTIAL SEARCH
 
 ### [Finish RL Training Faster: Bitwise-Consistent, High-Performance, Agent-Driven](<https://vllm.ai/blog/2026-10-14-train-inference-consistency>)

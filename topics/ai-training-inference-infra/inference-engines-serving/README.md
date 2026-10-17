@@ -5,6 +5,20 @@ Request scheduling, continuous batching, prefill/decode disaggregation and elast
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-17](../../../reports/2026/10/2026-10-17.md) — PARTIAL SEARCH
+
+### [SGLang Powers Beam in Production](<https://www.lmsys.org/blog/2026-10-16-beam>)
+
+SGLang integrates Beam's hybrid sliding-window and full-attention mixture-of-experts model with fused precision-sensitive operations and a jointly budgeted target-and-drafter cache for blockwise speculative decoding. The report explains how cache reuse, draft-memory placement and supported parallel layouts fit together for long-context agents, with public serving recipes and replay scripts that separate simulated acceptance from natural-workload measurements.
+
+**Published:** 2026-10-16 · **First seen:** 2026-10-17T10:04:34.136Z · **Novelty:** new · **Tags:** Hybrid Attention, Speculative Decoding, KV Memory, Serving Recipes
+
+[Blog](<https://www.lmsys.org/blog/2026-10-16-beam>) · [Code](<https://github.com/sgl-project/sglang/tree/bench-openhands-gb300-sweep-beam/benchmark/beam_openhands>) · [Project](<https://docs.sglang.io/cookbook/autoregressive/Reflection/Beam-1_0>)
+
+**Evidence:** engineering-report; full-text. Read the full October 16 report, including target/draft cache placement, DFlash2 with attention data parallelism, heterogeneous TP transfer, precision/fusion gates and the reproduction appendix. The public benchmark branch, serving cookbook and PRs 40331/40492/40909 were retrieved. Beam has 501B total/23B active parameters, hybrid attention, FP32 routing and rounded scaled residuals. On four GB300 GPUs, the OpenHands NVFP4 TP4 replay uses 13 turns, about 74K initial tokens, about 220 output tokens per turn and approximately 92% prefix-cache hits; its 127.6K total token/s/GPU headline at concurrency 32 uses fixed simulated acceptance length four. The separate AgentX replay reports 83,504 total token/s/GPU and 43.9 P90 token/s/user at concurrency 96. These are distinct workloads, not an engine leaderboard.
+
+**Limitations:** Total throughput includes cached input tokens and is not newly computed or output-token throughput. OpenHands uses simulated acceptance with real draft tokens, so it does not measure natural acceptance or model accuracy; AgentX has a different workload and latency percentile. Shared draft placement excludes HiCache, host retraction and DCP; private fallbacks and startup gates apply, and draft capture requires PP=1. BF16 and dynamic FP8 do not use the NVFP4 MegaMoE extension. TPU recipes are forthcoming. Production-API use is author-reported rather than independent reliability evidence. Miles training results are separate from serving quality, and no author code or model experiment was executed.
+
 ## [2026-10-14](../../../reports/2026/10/2026-10-14.md) — PARTIAL SEARCH
 
 ### [FastEEP: Fast Intra-Instance Elastic Scaling for Expert-Parallel MoE Serving](<https://arxiv.org/abs/2610.18451>)

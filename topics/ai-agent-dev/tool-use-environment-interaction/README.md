@@ -5,6 +5,20 @@ Tool selection/calling, APIs, code execution, browser/computer use and protocols
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-17](../../../reports/2026/10/2026-10-17.md) — PARTIAL SEARCH
+
+### [Claude reveals ECDSA curve origins](<https://www.anthropic.com/research/ecdsa-curve-origins>)
+
+Anthropic documents an LLM-assisted investigation that tested pseudorandom-generator hypotheses and recovered the origins of several standardized elliptic-curve seeds and base points. Its published verification code makes this a useful case study of combining model-generated hypotheses with exact computational checks in scientific investigation.
+
+**Published:** 2026-10-16 · **First seen:** 2026-10-17T10:06:03.000Z · **Novelty:** new · **Tags:** Scientific Discovery, Tool Use, Verification
+
+[Blog](<https://www.anthropic.com/research/ecdsa-curve-origins>)
+
+**Evidence:** engineering-report; full-text. The October 16 primary report explains generator scanning, hidden-state recovery, backward reconstruction and timestamp checks, and includes code and expected outputs for ten prime-curve seeds, four binary-curve seeds and six base points. Its stated sub-half-hour discovery is author-reported.
+
+**Limitations:** A single investigation with an internal research model, not a controlled comparison or reusable agent-system evaluation. B-163 and several base-point origins remain unexplained; skipped candidate curves leave historical selection criteria uncertain. The result does not break ECDSA or demonstrate a weakness in the standardized curves. No independent reproduction.
+
 ## [2026-10-13](../../../reports/2026/10/2026-10-13.md) — PARTIAL SEARCH
 
 ### [Web$hell: A Unified Interface for Agentic Web Access](<https://arxiv.org/abs/2610.13416>)

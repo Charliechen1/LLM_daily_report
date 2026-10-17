@@ -5,6 +5,20 @@ Agent loops, task decomposition, planning, reflection and execution control.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-16](../../../reports/2026/10/2026-10-16.md) — PARTIAL SEARCH
+
+### [Discovering state-of-the-art quantum circuits with large language models](<https://arxiv.org/abs/2610.22367>)
+
+This framework evolves Python circuit generators with parallel algorithm families, a diverse program archive, and an independent evaluator that checks correctness before scoring quantum resource costs. It provides a concrete example of evaluator-guided agents discovering new algorithmic structures, rather than only refining a fixed implementation.
+
+**Published:** 2026-10-15 · **First seen:** 2026-10-17T10:06:03.000Z · **Novelty:** new · **Tags:** Scientific Discovery, Evolutionary Search, Verification
+
+[Paper](<https://arxiv.org/abs/2610.22367>) · [Blog](<https://www.anthropic.com/research/designing-efficient-quantum-circuits>) · [Code](<https://github.com/andigu/uncompute>) · [Project](<https://andigu.github.io/projects/uncompute/>)
+
+**Evidence:** research-paper; full-text. Methods, Figure 1 and Table 1 describe fresh agent sessions, MAP-Elites retention and eight task-specific evaluations. The Reed–Solomon decoder uses about 440,000 Toffolis and 1,837 qubits versus 5.1 million and 1,938 for its reconstructed baseline. Author circuits, evaluators and Lean proofs are available.
+
+**Limitations:** These are simulated logical resource counts, not hardware runtime or a general agent leaderboard. Some tasks permit distribution-specific failures; sampled validation is not a universal proof. The Hermitian comparator is a naive construction, not a prior published reversible circuit. No independent reproduction.
+
 ## [2026-10-11](../../../reports/2026/10/2026-10-11.md) — PARTIAL SEARCH
 
 ### [Plan-and-Patch: Diffusion Language Models for Agentic Planning](<https://arxiv.org/abs/2610.10786>)

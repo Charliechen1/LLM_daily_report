@@ -5,6 +5,20 @@ GPU kernels, operator fusion, compilation, execution graphs and hardware adaptat
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-17](../../../reports/2026/10/2026-10-17.md) — PARTIAL SEARCH
+
+### [Hyper Optimizing Kimi K3 in vLLM: Moving Fast and Responsibly](<https://vllm.ai/blog/2026-10-16-kimi-k3-megakernel>)
+
+This vLLM engineering report replaces Kimi K3's decode path with workload-tuned kernels that fuse projections, residual operations and GPU communication while overlapping expert computation and weight prefetch. It pairs measured decode gains with a scoped validation process for agent-written optimizations, showing how to accelerate supported Blackwell configurations without treating one synthetic benchmark as a general serving result.
+
+**Published:** 2026-10-16 · **First seen:** 2026-10-17T10:02:23.261Z · **Novelty:** newly-discovered · **Tags:** GPU Kernels, Communication Fusion, GB300, Validation
+
+[Blog](<https://vllm.ai/blog/2026-10-16-kimi-k3-megakernel>) · [Code](<https://github.com/vllm-project/vllm/pull/61867>)
+
+**Evidence:** engineering-report; full-text. Read the complete dated Markdown and PR 61867 description, covering CuTe DSL projection/KDA kernels, DCP, NVLink fusion, sharded router work, expert overlap and weight prefetching. The blog reports no-speculation aggregate TP-group gains of 1.31-1.92x across TP8/16 and batch sizes 1-64 on GB300. Its 842 versus 488 decode token/s comparison uses synthetic DSpark acceptance length six and excludes prefill. The merged opt-in implementation includes task/numerical checks and investigation of a compiler load-before-wait bug. The contribution selected is the new detailed engineering report and validation evidence, not a first-ever code release: the PR opened October 15. The displayed blog date is October 16; its source was added October 17 01:21 UTC, which is source provenance rather than an asserted exact website publication time. Delayed discovery: the optimization work, scoped benchmarks and validation were already described in the October 15 PR, within this report's 72-hour discovery lookback and before its main window. This entry inspects the October 16 detailed blog on October 17; it does not claim the method or code first appeared in the main coverage window.
+
+**Limitations:** Scope is GB300 TP8/TP16 within one NVLink domain; speculative batch coverage is narrower than the no-speculation batch-64 range. Synthetic acceptance and decode-only throughput do not establish normal serving speed. The AgentX 1.8x interactivity comparison uses 16 optimized GPUs versus eight earlier GPUs. Blog and PR use different benchmark snapshots. Task scores near one standard error and sensitive long-context checks are not bitwise equivalence or general production reliability proofs. Development and review savings are not quantified. No independent reproduction was performed. The PR predates the main window, so the dated blog does not reset the optimization's age; inclusion is explicitly a delayed discovery, not an indexing-delay claim.
+
 ## [2026-10-15](../../../reports/2026/10/2026-10-15.md) — PARTIAL SEARCH
 
 ### [Delta Tokenizer: Reference-Identical Tokenization of Session Deltas and Segment-Parallelism for Long Prompts on Multicore CPUs](<https://arxiv.org/abs/2610.19801>)

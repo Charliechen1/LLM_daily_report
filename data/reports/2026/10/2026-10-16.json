@@ -1,0 +1,1003 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-16",
+  "timezone": "America/Los_Angeles",
+  "generated_at": "2026-10-17T10:17:34.132Z",
+  "coverage": {
+    "start": "2026-10-15T03:00:00-07:00",
+    "end": "2026-10-16T03:00:00-07:00"
+  },
+  "search": {
+    "status": "partial",
+    "notes": "Scheduled coverage is 2026-10-15T03:00:00-07:00 through 2026-10-16T03:00:00-07:00; actual retrieval occurred during this delayed October 17 run. The total 72-hour discovery lookback starts 2026-10-13T10:00:00+00:00 and ends at the scheduled cutoff. The immutable September 29 baseline and complete 183-work registry were read before selection; October 17 selection also excludes the newly selected October 16 items. Dated original-category announcements and the official release schedule support inferred arXiv availability only where earlier primary artifacts do not contradict it. Original submission dates are retained; repository creation and commit dates alone do not prove historical public visibility. Earlier previews and new detailed studies are distinguished. Eight contributions were selected across all three areas for practical mechanism, inspectable evidence and clear novelty; no category or item quota was filled. Older ETH and remote-cache implementations are distinguished from the new detailed studies. Remaining candidates were excluded or left as lower-priority reserves because of uncertain earlier releases, weaker causal evidence, narrower utility or incomplete artifacts. All selected sources were read in full text for the claims summarized, and all empirical results are author-reported without independent reproduction. Search is partial; bounded organization and conference screening is not exhaustive. Main tokenizer analysis repository: 404 via direct HTTP and GitHub API. Full paper and separate VISTA artifacts were inspected; complete analysis-code availability is not claimed. https://github.com/AntonioLopardo/tokenizer-metric-multilingual-correlations No new October17 arXiv batch was observed; the official schedule has no Friday-evening or Saturday announcement. October16-batch contributions are ranked in the first eligible report, not shifted to fill October17. FDE-Gym project HTTPS certificate expired and the full task README required authorization; paper and public harness were accessible. No task-access claim is made. Mosaic project HTML was retrieved by direct HTTPS after the web tool failed. Its backing GitHub Pages repository API returned404, so exact earlier site-publication history and a code release could not be verified. Public repository creation/commit dates were inspected as earlier-content evidence, not equated with exact first-public visibility. Ambiguous old-release candidates were excluded. Organization archives are bounded discovery. Root independently covers Anthropic research and conference indexes; selected primary methods, evaluation and limitations were accessible. Organization and conference landing pages were screened within a bounded scope; this is not comprehensive dated venue discovery. Anthropic overview pages expose limited publication lists, supplemented by targeted primary-domain searches. Direct Python HTTPS retrieval of Anthropic pages failed certificate validation, but full primary text was successfully inspected with the connected web tool; no continuing source outage claimed. GitHub API access failed in the web tool but succeeded by direct HTTPS; metadata and chronology are preserved privately.",
+    "sources_checked": [
+      {
+        "name": "clrecent",
+        "url": "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "lg",
+        "url": "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "Hugging Face October16 discovery",
+        "url": "https://huggingface.co/papers/date/2026-10-16",
+        "status": "ok"
+      },
+      {
+        "name": "Hugging Face October15 discovery",
+        "url": "https://huggingface.co/papers/date/2026-10-15",
+        "status": "ok"
+      },
+      {
+        "name": "hf17",
+        "url": "https://huggingface.co/papers/date/2026-10-17",
+        "status": "ok"
+      },
+      {
+        "name": "Official arXiv public release schedule",
+        "url": "https://info.arxiv.org/help/availability.html",
+        "status": "ok"
+      },
+      {
+        "name": "deepmind",
+        "url": "https://deepmind.google/research/",
+        "status": "ok"
+      },
+      {
+        "name": "Thinking Machines research archive",
+        "url": "https://thinkingmachines.ai/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "2610.22019-abs",
+        "url": "https://arxiv.org/abs/2610.22019",
+        "status": "ok"
+      },
+      {
+        "name": "2610.22019-html",
+        "url": "https://arxiv.org/html/2610.22019v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.22300-abs",
+        "url": "https://arxiv.org/abs/2610.22300",
+        "status": "ok"
+      },
+      {
+        "name": "2610.22300-html",
+        "url": "https://arxiv.org/html/2610.22300v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.21679-abs",
+        "url": "https://arxiv.org/abs/2610.21679",
+        "status": "ok"
+      },
+      {
+        "name": "2610.21679-html",
+        "url": "https://arxiv.org/html/2610.21679v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.22236-abs",
+        "url": "https://arxiv.org/abs/2610.22236",
+        "status": "ok"
+      },
+      {
+        "name": "2610.22236-html",
+        "url": "https://arxiv.org/html/2610.22236v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.19761-abs",
+        "url": "https://arxiv.org/abs/2610.19761",
+        "status": "ok"
+      },
+      {
+        "name": "2610.19761-html",
+        "url": "https://arxiv.org/html/2610.19761v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.20898-abs",
+        "url": "https://arxiv.org/abs/2610.20898",
+        "status": "ok"
+      },
+      {
+        "name": "2610.20898-html",
+        "url": "https://arxiv.org/html/2610.20898v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.20588-abs",
+        "url": "https://arxiv.org/abs/2610.20588",
+        "status": "ok"
+      },
+      {
+        "name": "2610.20588-html",
+        "url": "https://arxiv.org/html/2610.20588v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.21025-abs",
+        "url": "https://arxiv.org/abs/2610.21025",
+        "status": "ok"
+      },
+      {
+        "name": "2610.21025-html",
+        "url": "https://arxiv.org/html/2610.21025v1",
+        "status": "ok"
+      },
+      {
+        "name": "linear-repo",
+        "url": "https://api.github.com/repos/NightMachinery/active-inert-facts",
+        "status": "ok"
+      },
+      {
+        "name": "linear-readme",
+        "url": "https://api.github.com/repos/NightMachinery/active-inert-facts/readme",
+        "status": "ok"
+      },
+      {
+        "name": "linear-commits",
+        "url": "https://api.github.com/repos/NightMachinery/active-inert-facts/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "tokenizer-repo",
+        "url": "https://api.github.com/repos/AntonioLopardo/tokenizer-metric-multilingual-correlations",
+        "status": "unavailable"
+      },
+      {
+        "name": "tokenizer-readme",
+        "url": "https://api.github.com/repos/AntonioLopardo/tokenizer-metric-multilingual-correlations/readme",
+        "status": "unavailable"
+      },
+      {
+        "name": "tokenizer-commits",
+        "url": "https://api.github.com/repos/AntonioLopardo/tokenizer-metric-multilingual-correlations/commits?per_page=100",
+        "status": "unavailable"
+      },
+      {
+        "name": "wrongvotes-repo",
+        "url": "https://api.github.com/repos/dylan518/wrong-votes-right-gradients",
+        "status": "ok"
+      },
+      {
+        "name": "wrongvotes-readme",
+        "url": "https://api.github.com/repos/dylan518/wrong-votes-right-gradients/readme",
+        "status": "ok"
+      },
+      {
+        "name": "wrongvotes-commits",
+        "url": "https://api.github.com/repos/dylan518/wrong-votes-right-gradients/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "2610.21337-abs",
+        "url": "https://arxiv.org/abs/2610.21337",
+        "status": "ok"
+      },
+      {
+        "name": "2610.21337-html",
+        "url": "https://arxiv.org/html/2610.21337v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.21555-pdf",
+        "url": "https://arxiv.org/pdf/2610.21555v1",
+        "status": "ok"
+      },
+      {
+        "name": "linear-tree",
+        "url": "https://api.github.com/repos/NightMachinery/active-inert-facts/git/trees/main?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "wrongvotes-tree",
+        "url": "https://api.github.com/repos/dylan518/wrong-votes-right-gradients/git/trees/main?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "tokenizer-code",
+        "url": "https://github.com/AntonioLopardo/tokenizer-metric-multilingual-correlations",
+        "status": "unavailable"
+      },
+      {
+        "name": "linear-code",
+        "url": "https://github.com/NightMachinery/active-inert-facts",
+        "status": "ok"
+      },
+      {
+        "name": "wrongvotes-code",
+        "url": "https://github.com/dylan518/wrong-votes-right-gradients",
+        "status": "ok"
+      },
+      {
+        "name": "2610.21555-abs",
+        "url": "https://arxiv.org/abs/2610.21555",
+        "status": "ok"
+      },
+      {
+        "name": "tokenizer-vista350",
+        "url": "https://huggingface.co/collections/shikhar-srivastava/vista-350m",
+        "status": "ok"
+      },
+      {
+        "name": "tokenizer-vista130",
+        "url": "https://huggingface.co/collections/shikhar-srivastava/vista-130m",
+        "status": "ok"
+      },
+      {
+        "name": "vista-training",
+        "url": "https://github.com/shikhar-srivastava/vista-training",
+        "status": "ok"
+      },
+      {
+        "name": "2610.22350",
+        "url": "https://arxiv.org/html/2610.22350v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.22280",
+        "url": "https://arxiv.org/html/2610.22280v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.21656",
+        "url": "https://arxiv.org/html/2610.21656v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.22124",
+        "url": "https://arxiv.org/html/2610.22124v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.22319",
+        "url": "https://arxiv.org/html/2610.22319v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.20597",
+        "url": "https://arxiv.org/html/2610.20597v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.22192",
+        "url": "https://arxiv.org/html/2610.22192v1",
+        "status": "ok"
+      },
+      {
+        "name": "cs-ai",
+        "url": "https://arxiv.org/list/cs.AI/recent?show=1000",
+        "status": "ok"
+      },
+      {
+        "name": "cs-cl",
+        "url": "https://arxiv.org/list/cs.CL/recent?show=1000",
+        "status": "ok"
+      },
+      {
+        "name": "fde-meta",
+        "url": "https://api.github.com/repos/deeplethe/fde-gym",
+        "status": "ok"
+      },
+      {
+        "name": "fde-commits",
+        "url": "https://api.github.com/repos/deeplethe/fde-gym/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "fde-paper",
+        "url": "https://fde-gym.com/paper/",
+        "status": "unavailable"
+      },
+      {
+        "name": "fde-data",
+        "url": "https://huggingface.co/datasets/DeepLethe/FDE-Gym/raw/main/README.md",
+        "status": "unavailable"
+      },
+      {
+        "name": "world-meta",
+        "url": "https://api.github.com/repos/Zhanli-Li/Data-World",
+        "status": "ok"
+      },
+      {
+        "name": "world-commits",
+        "url": "https://api.github.com/repos/Zhanli-Li/Data-World/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "world-project",
+        "url": "https://zhanli-li.github.io/Data-World/",
+        "status": "ok"
+      },
+      {
+        "name": "world-data",
+        "url": "https://huggingface.co/collections/Zhanli-Li/dataworld",
+        "status": "ok"
+      },
+      {
+        "name": "probe-meta",
+        "url": "https://api.github.com/repos/Mishrakshitij/PROBE",
+        "status": "ok"
+      },
+      {
+        "name": "probe-commits",
+        "url": "https://api.github.com/repos/Mishrakshitij/PROBE/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "probe-readme",
+        "url": "https://raw.githubusercontent.com/Mishrakshitij/PROBE/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "world-readme",
+        "url": "https://raw.githubusercontent.com/Zhanli-Li/Data-World/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "fde-readme",
+        "url": "https://raw.githubusercontent.com/deeplethe/fde-gym/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "simular-blog",
+        "url": "https://www.simular.ai/blog",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic engineering overview, limited visible list",
+        "url": "https://www.anthropic.com/engineering",
+        "status": "ok"
+      },
+      {
+        "name": "Ai2 latest research archive, blog URL redirects to research",
+        "url": "https://allenai.org/blog",
+        "status": "ok"
+      },
+      {
+        "name": "Google DeepMind dated news archive, bounded visible list",
+        "url": "https://deepmind.google/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "2610.22273",
+        "url": "https://arxiv.org/html/2610.22273v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.22174",
+        "url": "https://arxiv.org/html/2610.22174v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.22234",
+        "url": "https://arxiv.org/html/2610.22234v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.21109",
+        "url": "https://arxiv.org/html/2610.21109v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.21170",
+        "url": "https://arxiv.org/html/2610.21170v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.22322",
+        "url": "https://arxiv.org/html/2610.22322v1",
+        "status": "ok"
+      },
+      {
+        "name": "cs-lg",
+        "url": "https://arxiv.org/list/cs.LG/recent?show=1000",
+        "status": "ok"
+      },
+      {
+        "name": "librarian-meta",
+        "url": "https://api.github.com/repos/teresaz05/librarian-agents",
+        "status": "ok"
+      },
+      {
+        "name": "librarian-commits",
+        "url": "https://api.github.com/repos/teresaz05/librarian-agents/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "librarian-readme",
+        "url": "https://raw.githubusercontent.com/teresaz05/librarian-agents/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "librarian-project",
+        "url": "https://librarian-agents.github.io/",
+        "status": "ok"
+      },
+      {
+        "name": "librarian-site-meta",
+        "url": "https://api.github.com/repos/librarian-agents/librarian-agents.github.io",
+        "status": "ok"
+      },
+      {
+        "name": "librarian-site-commits",
+        "url": "https://api.github.com/repos/librarian-agents/librarian-agents.github.io/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "mosaic-project",
+        "url": "https://lark-ai-lab.github.io/Mosaic/",
+        "status": "ok"
+      },
+      {
+        "name": "helix-project",
+        "url": "https://os-copilot.github.io/OS-Helix/",
+        "status": "ok"
+      },
+      {
+        "name": "LEASH canonical paper and receipt history",
+        "url": "https://arxiv.org/abs/2610.22280",
+        "status": "ok"
+      },
+      {
+        "name": "Librarian Agents canonical paper",
+        "url": "https://arxiv.org/abs/2610.22273",
+        "status": "ok"
+      },
+      {
+        "name": "Mosaic canonical paper and receipt history",
+        "url": "https://arxiv.org/abs/2610.22174",
+        "status": "ok"
+      },
+      {
+        "name": "mosaic-site-meta",
+        "url": "https://api.github.com/repos/LARK-AI-Lab/lark-ai-lab.github.io",
+        "status": "unavailable"
+      },
+      {
+        "name": "mosaic-site-commits",
+        "url": "https://api.github.com/repos/LARK-AI-Lab/lark-ai-lab.github.io/commits?path=Mosaic&per_page=100",
+        "status": "unavailable"
+      },
+      {
+        "name": "helix-meta",
+        "url": "https://api.github.com/repos/OS-Copilot/OS-Helix",
+        "status": "ok"
+      },
+      {
+        "name": "helix-commits",
+        "url": "https://api.github.com/repos/OS-Copilot/OS-Helix/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "helix-readme",
+        "url": "https://raw.githubusercontent.com/OS-Copilot/OS-Helix/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "helix-site-commits",
+        "url": "https://api.github.com/repos/OS-Copilot/os-copilot.github.io/commits?path=OS-Helix&per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "FDE-Gym canonical paper",
+        "url": "https://arxiv.org/abs/2610.22350",
+        "status": "ok"
+      },
+      {
+        "name": "Data World canonical paper",
+        "url": "https://arxiv.org/abs/2610.21656",
+        "status": "ok"
+      },
+      {
+        "name": "PROBE canonical paper",
+        "url": "https://arxiv.org/abs/2610.22124",
+        "status": "ok"
+      },
+      {
+        "name": "Minecraft canonical paper",
+        "url": "https://arxiv.org/abs/2610.22319",
+        "status": "ok"
+      },
+      {
+        "name": "OS-Helix canonical paper",
+        "url": "https://arxiv.org/abs/2610.22234",
+        "status": "ok"
+      },
+      {
+        "name": "OS-Helix repository preview",
+        "url": "https://github.com/OS-Copilot/OS-Helix",
+        "status": "ok"
+      },
+      {
+        "name": "Librarian Agents repository",
+        "url": "https://github.com/teresaz05/librarian-agents",
+        "status": "ok"
+      },
+      {
+        "name": "Data World repository",
+        "url": "https://github.com/Zhanli-Li/Data-World",
+        "status": "ok"
+      },
+      {
+        "name": "PROBE repository",
+        "url": "https://github.com/Mishrakshitij/PROBE",
+        "status": "ok"
+      },
+      {
+        "name": "FDE-Gym repository",
+        "url": "https://github.com/deeplethe/fde-gym",
+        "status": "ok"
+      },
+      {
+        "name": "dc",
+        "url": "https://arxiv.org/list/cs.DC/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "ar",
+        "url": "https://arxiv.org/list/cs.AR/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "vllm-index",
+        "url": "https://vllm.ai/blog",
+        "status": "ok"
+      },
+      {
+        "name": "pytorch-index",
+        "url": "https://pytorch.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "nvidia-index",
+        "url": "https://developer.nvidia.com/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "lmsys-index",
+        "url": "https://www.lmsys.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "reflow",
+        "url": "https://arxiv.org/html/2610.21640v1",
+        "status": "ok"
+      },
+      {
+        "name": "reflow-abs",
+        "url": "https://arxiv.org/abs/2610.21640",
+        "status": "ok"
+      },
+      {
+        "name": "eth",
+        "url": "https://arxiv.org/html/2610.22035v1",
+        "status": "ok"
+      },
+      {
+        "name": "eth-abs",
+        "url": "https://arxiv.org/abs/2610.22035",
+        "status": "ok"
+      },
+      {
+        "name": "eth-code",
+        "url": "https://github.com/YuMJie/ETH",
+        "status": "ok"
+      },
+      {
+        "name": "eth-repo",
+        "url": "https://api.github.com/repos/YuMJie/ETH",
+        "status": "ok"
+      },
+      {
+        "name": "eth-readme",
+        "url": "https://raw.githubusercontent.com/YuMJie/ETH/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "eth-tree",
+        "url": "https://api.github.com/repos/YuMJie/ETH/git/trees/main?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "eth-initial-tree",
+        "url": "https://api.github.com/repos/YuMJie/ETH/git/trees/c0e6c042b389721e05702df871f2db311ab41475?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "eth-first-commits",
+        "url": "https://api.github.com/repos/YuMJie/ETH/commits?until=2026-10-16T10:00:00Z&per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "remote",
+        "url": "https://arxiv.org/html/2610.21500v1",
+        "status": "ok"
+      },
+      {
+        "name": "remote-abs",
+        "url": "https://arxiv.org/abs/2610.21500",
+        "status": "ok"
+      },
+      {
+        "name": "remote-pr",
+        "url": "https://api.github.com/repos/LMCache/LMCache/pulls/5545",
+        "status": "ok"
+      },
+      {
+        "name": "remote-pr-web",
+        "url": "https://github.com/LMCache/LMCache/pull/5545",
+        "status": "ok"
+      },
+      {
+        "name": "bcl",
+        "url": "https://arxiv.org/html/2610.21162v1",
+        "status": "ok"
+      },
+      {
+        "name": "amd",
+        "url": "https://arxiv.org/html/2610.22230v1",
+        "status": "ok"
+      },
+      {
+        "name": "ssd",
+        "url": "https://arxiv.org/html/2610.21249v1",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic research overview, limited visible list",
+        "url": "https://www.anthropic.com/research",
+        "status": "ok"
+      },
+      {
+        "name": "OpenReview venue index, bounded discovery only",
+        "url": "https://openreview.net/",
+        "status": "ok"
+      },
+      {
+        "name": "ACL Anthology index, bounded discovery only",
+        "url": "https://aclanthology.org/",
+        "status": "ok"
+      },
+      {
+        "name": "Thinking Machines news archive",
+        "url": "https://thinkingmachines.ai/news/",
+        "status": "ok"
+      },
+      {
+        "name": "Tinker one-year retrospective, inspected and excluded",
+        "url": "https://thinkingmachines.ai/news/one-year-of-tinker/",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic ECDSA primary report including verification code",
+        "url": "https://www.anthropic.com/research/ecdsa-curve-origins",
+        "status": "ok"
+      },
+      {
+        "name": "Quantum-circuit paper abstract and submission history",
+        "url": "https://arxiv.org/abs/2610.22367",
+        "status": "ok"
+      },
+      {
+        "name": "Quantum-circuit full primary HTML, methods and results",
+        "url": "https://arxiv.org/html/2610.22367v1",
+        "status": "ok"
+      },
+      {
+        "name": "Dated quant-ph original-category batch, October 16",
+        "url": "https://arxiv.org/list/quant-ph/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "Quantum circuit primary blog",
+        "url": "https://www.anthropic.com/research/designing-efficient-quantum-circuits",
+        "status": "ok"
+      },
+      {
+        "name": "Author circuit/evaluator repository",
+        "url": "https://github.com/andigu/uncompute",
+        "status": "ok"
+      },
+      {
+        "name": "Author repository full README",
+        "url": "https://raw.githubusercontent.com/andigu/uncompute/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "Author repository creation metadata, not proof of visibility",
+        "url": "https://api.github.com/repos/andigu/uncompute",
+        "status": "ok"
+      },
+      {
+        "name": "Author repository recent chronology, not proof of visibility",
+        "url": "https://api.github.com/repos/andigu/uncompute/commits?per_page=10",
+        "status": "ok"
+      },
+      {
+        "name": "Author quantum-circuit project page",
+        "url": "https://andigu.github.io/projects/uncompute/",
+        "status": "ok"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": "arxiv:2610.22019",
+      "title": "Priming Base Models for Agentic Post-Training: An Open Midtraining Recipe",
+      "category": "1.4",
+      "tags": [
+        "Mid-training",
+        "Agentic Coding",
+        "Data Mixtures",
+        "Long Context"
+      ],
+      "published_on": "2026-10-15",
+      "first_seen_at": "2026-10-17T10:02:15.717Z",
+      "canonical_url": "https://arxiv.org/abs/2610.22019",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.22019"
+      },
+      "summary": [
+        "This documented midtraining recipe combines natural software-engineering data with a bounded share of agent traces at 256K context before supervised post-training.",
+        "Matched post-training comparisons on two Nemotron model sizes show stronger coding-agent results in several settings, while the data and masking ablations provide concrete guidance for building and evaluating this intermediate training stage."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "The complete main text and Appendices A-E were inspected. The token blend contains 40.8% issue-PR data, 20% dependency-packed repositories, 10% agent traces, 3% diffs, 1.2% build/CI logs, 20% pretraining replay and 5% long-context data; trace tool responses are masked and only assistant turns contribute loss. Nemotron 3.5 Lightning (30B total/3B active) receives up to 500B midtraining tokens and Super (120B/12B) receives 280B, followed by identical 33B-token short or 100B-token full SFT. Table 3 reports Lightning full-SFT success changing from 60.7 to 64.5 on SWE-bench Verified, 55.8 to 62.8 Multilingual, and 32.0 to 35.5 Pro; Table 6 reports Super DeepSWE 11.7 to 15.7 and SWE-bench Verified 72.9 to 74.3. SWE-bench Verified uses 500 tasks and three rollouts per task; DeepSWE pass@1 is averaged over four runs. Public availability is inferred as October 16 00:00 UTC from the verified cs.CL new-submission batch and official schedule, retaining the original October 15 14:58:21 UTC receipt date.",
+        "limitations": "Added midtraining compute is not compared with spending the same tokens on longer pretraining or SFT. Comparisons use one run each, only Nemotron models and agentic-focused post-training; Super full-SFT Multilingual falls from 69.0 to 67.9 and Pro from 53.9 to 51.8. The single-seed, 20-step RL pilot shows only that an SFT advantage survives the start of RL, not better eventual RL trainability. Some one- or two-point differences fall within reported run variation. Data-processing scripts and metadata are promised for a future version, so this is a documented recipe rather than a verified complete training-corpus or implementation release."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-16T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.21337",
+      "title": "Does On-Policy Distillation Need to Complete Every Rollout?",
+      "category": "1.8",
+      "tags": [
+        "On-Policy Distillation",
+        "Rollout Truncation",
+        "Importance Weighting"
+      ],
+      "published_on": "2026-10-15",
+      "first_seen_at": "2026-10-17T10:05:55.063Z",
+      "canonical_url": "https://arxiv.org/abs/2610.21337",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.21337"
+      },
+      "summary": [
+        "STOPD randomly truncates student rollouts at block boundaries and reweights retained token losses to preserve the expected full-rollout gradient sum.",
+        "Across tested Qwen students and mathematics, coding and instruction-following tasks, the authors report similar accuracy with 25-48% fewer generated tokens and 1.3-2.2x faster training steps, offering a practical way to reduce distillation cost."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 3-5 and relevant Appendices A/B/D-H were inspected. STOPD samples independent cutoffs, rounds each to a block end, and uses exact inverse inclusion probabilities with K=128 after 25 Vanilla warmup steps. The main comparison distills Qwen3-4B-Instruct-2507 into Qwen3-1.7B-Base over 250 steps, three training seeds and batch 256 on two H100s: reported full-step times are 941 to 513 seconds for math, 566 to 260 for code, and 104 to 80 for instruction following, including generation, teacher scoring, updates and other overhead. Vanilla versus STOPD endpoint aggregate accuracy is 30.1 versus 29.4 for math, 28.5 versus 28.1 for code, and 59.8 versus 60.1 for instruction following. Additional 30B-A3B-teacher experiments use 4B/8B students on two H200/GB200 GPUs respectively. Public availability is inferred as October 16 00:00 UTC from the verified cs.LG new-submission batch and official schedule; the original October 15 06:22:08 UTC receipt date is retained.",
+        "limitations": "The expected unnormalized gradient and token-count sums are preserved only under budget-invariant generation, prefix-local loss, independent truncation and exact inclusion probabilities. The actual normalized loss uses the previous batch token-count estimate and can retain a scale mismatch; optimizer bounds compare one step from identical parameters and state, not complete training trajectories. Evidence covers Qwen 1.7B-8B students and 250-step runs, with speed depending on rollout length, hardware and scheduling. The weight-free random-truncation ablation also preserves accuracy closely, while inverse weighting better aligns response lengths, so accuracy alone does not prove the weights necessary. No author implementation or model artifact URL was verified; cited Muon code is not a STOPD release."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-16T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.22367",
+      "title": "Discovering state-of-the-art quantum circuits with large language models",
+      "category": "2.1",
+      "tags": [
+        "Scientific Discovery",
+        "Evolutionary Search",
+        "Verification"
+      ],
+      "published_on": "2026-10-15",
+      "first_seen_at": "2026-10-17T10:06:03.000Z",
+      "canonical_url": "https://arxiv.org/abs/2610.22367",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.22367",
+        "blog": "https://www.anthropic.com/research/designing-efficient-quantum-circuits",
+        "code": "https://github.com/andigu/uncompute",
+        "project": "https://andigu.github.io/projects/uncompute/"
+      },
+      "summary": [
+        "This framework evolves Python circuit generators with parallel algorithm families, a diverse program archive, and an independent evaluator that checks correctness before scoring quantum resource costs.",
+        "It provides a concrete example of evaluator-guided agents discovering new algorithmic structures, rather than only refining a fixed implementation."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Methods, Figure 1 and Table 1 describe fresh agent sessions, MAP-Elites retention and eight task-specific evaluations. The Reed–Solomon decoder uses about 440,000 Toffolis and 1,837 qubits versus 5.1 million and 1,938 for its reconstructed baseline. Author circuits, evaluators and Lean proofs are available.",
+        "limitations": "These are simulated logical resource counts, not hardware runtime or a general agent leaderboard. Some tasks permit distribution-specific failures; sampled validation is not a universal proof. The Hermitian comparator is a naive construction, not a prior published reversible circuit. No independent reproduction."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "arxiv:2610.22174",
+      "title": "Mosaic: Multi-Session Agentic Reinforcement Learning",
+      "category": "2.5",
+      "tags": [
+        "Agent Learning",
+        "Context Compaction",
+        "Credit Assignment",
+        "Subagents"
+      ],
+      "published_on": "2026-10-15",
+      "first_seen_at": "2026-10-17T10:07:30.000Z",
+      "canonical_url": "https://arxiv.org/abs/2610.22174",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.22174",
+        "project": "https://lark-ai-lab.github.io/Mosaic/"
+      },
+      "summary": [
+        "Mosaic trains agents across context-compaction and subagent sessions by combining outcome-aware session-use guidance with a per-session signal based on changes in correct-answer likelihood.",
+        "This assigns more specific feedback to useful state transfers, improving BrowseComp success while reducing average session counts in the tested 4B agent."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Methods 3.1–3.2, Table 1 and Appendices C–D specify critic-free shaping, type-wise normalization and matched training. With Qwen3.5-4B, compaction accuracy rises 35.31→38.86% while sessions fall 3.17→2.35; forking rises 31.44→32.46% with 4.43→3.77 sessions. Training uses 1,000 REDSearcher tasks; BrowseComp evaluation covers 1,266 questions. ArXiv availability is inferred from its original dated batch and official schedule.",
+        "limitations": "One backbone and benchmark; session count is a proxy rather than measured end-to-end cost. Correct answers are needed for training-time likelihood scoring, and immediate gains approximate branching-session contributions. Production asynchrony is untested. The project was retrieved, but no released implementation was verified. No independent reproduction."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-16T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/recent?show=1000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.22280",
+      "title": "LEASH: Uncertainty-Aware Weak-to-Strong Escalation and Oversight for Computer-Use Agents",
+      "category": "2.7",
+      "tags": [
+        "Computer Use",
+        "Model Routing",
+        "Uncertainty",
+        "Oversight"
+      ],
+      "published_on": "2026-10-15",
+      "first_seen_at": "2026-10-17T10:07:30.000Z",
+      "canonical_url": "https://arxiv.org/abs/2610.22280",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.22280"
+      },
+      "summary": [
+        "LEASH uses a small computer-use model's hidden-state similarity to past successes and failures to decide when to hand a task to a stronger model and when to request reassessment after handoff.",
+        "It offers a way to allocate expensive model calls dynamically, with near always-strong success at lower estimated inference cost in the authors' OSWorld evaluation."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 3–4 and Appendices A–B define reference-bank calibration, gates and oversight. On 262 held-out OSWorld tasks, the Qwen3.5-35B-A3B configuration reaches 73.66% success at $0.4117/task versus 72.90% and $0.5094 for always-on Opus 5; costs include Manager and monitoring calls. ArXiv availability is inferred from the dated batch and official schedule.",
+        "limitations": "One benchmark and token-priced reference costs, not measured hardware cost or latency. Reference trajectories require upfront collection; failure risk need not predict escalation benefit. Shadow monitoring faces distribution shift and its causal effect is not isolated. No independent reproduction."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-16T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/recent?show=1000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.22035",
+      "title": "ETH: Data-Balanced Heterogeneous Pipeline Parallelism for Training Large Models",
+      "category": "3.1",
+      "published_on": "2026-10-15",
+      "first_seen_at": "2026-10-17T10:02:23.708Z",
+      "canonical_url": "https://arxiv.org/abs/2610.22035",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.22035",
+        "code": "https://github.com/YuMJie/ETH"
+      },
+      "summary": [
+        "ETH balances heterogeneous training pipelines by assigning different local batch sizes as well as different layer and parallelism layouts, avoiding the coarse memory trade-offs of layer balancing alone.",
+        "Its hierarchical search and block-wise gradient synchronization make a larger configuration space practical, with reported iteration-time improvements on mixed Ascend devices and A100/RTX3090 clusters."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Reviewed the HPP formulation, greedy local-batch allocation and stage refinement, block-wise AllReduce, cached/pruned search, implementation, Sections 7-8 and appendices. Main tests use GPT-3 350M-175B and LLaMA-2 70B on mixed Ascend 910B2/B3/B4 devices, chiefly at sequence length 2,048 and global batch 1,024. NVIDIA tests cover 350M-13B on A100/RTX 3090 clusters with 100 Gbps links. Main Ascend iteration speedups are 1.36-2.00x over HexiScale and 1.20-1.84x over Metis; a 2,000-iteration Enwiki check reports approximately 0.1% loss differences. Public code predates the paper: the July 29 initial tree has no PDF, and the October 16 change only adds a citation. Selection covers the new detailed paper/evidence. Public-paper timing is inferred from the primary cs.DC October 16 batch and official schedule, preserving the October 15 receipt.",
+        "limitations": "Search is heuristic and approximate pruning can discard better candidates, so no global optimum is guaranteed. The cost model assumes 1F1B with pipeline, tensor and data parallelism; context and expert parallelism are not included. Benefits depend on batch size, hardware imbalance and profiling, and HPP adds communication. NVIDIA validation stops at 13B while larger-model results use Ascend. Loss similarity on one corpus does not prove broad downstream equivalence. Abstract headline search speedups are avoided in favor of scoped body results. Public code was inspected but not executed; there is no independent reproduction."
+      },
+      "tags": [
+        "Heterogeneous Training",
+        "Pipeline Parallelism",
+        "Batch Balancing",
+        "Gradient Synchronization"
+      ],
+      "novelty": "material-update",
+      "update_note": "2026-10-16: The newly announced paper supplies the formal heterogeneous-pipeline/batch-allocation method, block-wise synchronization, search design and detailed Ascend/NVIDIA evaluation beyond the older implementation (https://arxiv.org/html/2610.22035v1; https://arxiv.org/list/cs.DC/recent?skip=0&show=2000; https://info.arxiv.org/help/availability.html; https://github.com/YuMJie/ETH). The initial July 29 code tree contains no paper PDF; commit dates are provenance, not proof of an exact first-public timestamp. The preserved October 15 published_on is this paper's receipt date."
+    },
+    {
+      "id": "arxiv:2610.21640",
+      "title": "ReFlow: Replay-Driven Decoupling for Efficient RL Post-Training",
+      "category": "3.2",
+      "published_on": "2026-10-15",
+      "first_seen_at": "2026-10-17T10:02:23.384Z",
+      "public_availability": {
+        "at": "2026-10-16T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.21640",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.21640"
+      },
+      "summary": [
+        "ReFlow mixes a bounded, down-weighted share of recently used trajectories into asynchronous reinforcement-learning batches, reducing the trainer's dependence on expensive fresh rollouts.",
+        "Prewarmed workers and an adaptive scheduler move GPUs between generation and training as demand changes, increasing processed-training-token throughput while preserving comparable training-reward progress in the tested reasoning and agent workloads."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Reviewed Sections 1-8, the replay-weighting analysis, worker transitions, both schedulers and complete evaluations. The VeRL/Ray/vLLM/FSDP2 system tests Qwen3-4B/8B/14B/32B on 8-128 H800 GPUs using DAPO math, APPS coding and ReTool sandbox reasoning. Replay fraction and replay loss weight are capped/set at 0.5, with maximum policy lag one; sampling is random and reinsertion unfiltered. Authors report up to 2.06x trainer-processed token throughput, reward-versus-step/time curves, and 5.72/9.20 s resource rebalances on 32 GPUs. Public-paper timing is inferred from the PRIMARY cs.LG October 16 batch and official release schedule, rather than the October 15 receipt timestamp.",
+        "limitations": "Throughput includes replayed tokens consumed by the trainer; it is not fresh-trajectory generation throughput. Quality evidence is training reward rather than held-out reasoning or coding evaluation. Throughput windows are five measured steps after five warmups, or ten after ten for coding. The local gradient-error argument assumes unbiased unused samples, bounded replay bias and uncorrelated centered errors; it is not a global convergence guarantee. Prewarmed hybrid workers require CPU offload and compatible replica groups, and adaptation depends on workload. The code is awaiting approval and not yet released. No independent reproduction was performed."
+      },
+      "tags": [
+        "Experience Replay",
+        "Asynchronous RL",
+        "Elastic Workers",
+        "Rollout Scheduling"
+      ],
+      "novelty": "new"
+    },
+    {
+      "id": "arxiv:2610.21500",
+      "title": "When the KV Cache Is Slower Than the GPU: Scaling Remote KV Tiers for Context-Parallel Prefill",
+      "category": "3.4",
+      "published_on": "2026-10-15",
+      "first_seen_at": "2026-10-17T10:02:23.724Z",
+      "canonical_url": "https://arxiv.org/abs/2610.21500",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.21500",
+        "code": "https://github.com/LMCache/LMCache/pull/5545"
+      },
+      "summary": [
+        "This study explains why a remote key-value cache can be slower than recomputing a prompt, then shards cache work across context-parallel ranks and remote servers while moving loads off the engine's blocking path.",
+        "Its production-trace replay and bandwidth-plus-fixed-cost model give serving engineers a practical way to decide when cache reuse helps, and to separate capacity benefits from first-token latency."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Reviewed Sections 3-8, all tables, the collective-safe sharding protocol and the linked LMCache PR. GLM-5.3 FP8 runs on one 8-GPU B300 PCP8/EP8 prefill engine using vLLM 0.31.0 and LMCache 0.5.5. A 683-request production trace and a primed 450-request subset support the cost model; on the hit-heavy subset, final prefill-leg p99 is 0.67 s versus 83.32 s for the overloaded single-server baseline, with 98.5% of prompt tokens cached. Final remote-hit median remains 0.40 s versus 0.31 s for recomputation. This is a new detailed paper and evaluation of engineering whose sharding PR opened October 8. Public-paper availability is inferred as October 16 00:00 UTC from its primary cs.DC batch and the official announcement schedule; the October 15 receipt date is preserved. The linked PR 5545 implements the synchronous sharding component, not all asynchronous extensions or client fixes evaluated in the paper.",
+        "limitations": "Each condition ran once; differences below about 10% are not established. The dramatic p99 ratio repairs an overloaded hit-heavy queue rather than showing a universal cache speedup. Replays omit decode handoff and shared multi-engine contention, and the selected subset fits the private cache. The approximately 17K-token crossover is a one-point-fitted prediction, not a measured general threshold. Deployment comparisons change parallelism and placement too. Correctness evidence is needle retrieval and soak testing, not bit-exact or broad answer-quality proof. The linked PR remains open; no independent reproduction was performed. PR 5545 explicitly rejects asynchronous loading; the paper references separate extensions and fixes, so this link is not a complete reproduction artifact."
+      },
+      "tags": [
+        "Remote KV Cache",
+        "Context Parallelism",
+        "Asynchronous Loading",
+        "Trace Replay"
+      ],
+      "novelty": "material-update",
+      "update_note": "2026-10-16: The newly announced paper adds a detailed fixed-cost/bandwidth model, collective-safe remote-cache protocol, production-trace evaluation and limitations beyond the earlier sharding implementation (https://arxiv.org/html/2610.21500v1; https://arxiv.org/list/cs.DC/recent?skip=0&show=2000; https://info.arxiv.org/help/availability.html; https://github.com/LMCache/LMCache/pull/5545). The PR opened October 8, which is provenance rather than an asserted exact first-public timestamp. The preserved October 15 published_on is this paper's receipt date, not the implementation's release date."
+    }
+  ]
+}

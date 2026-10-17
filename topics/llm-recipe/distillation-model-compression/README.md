@@ -5,6 +5,22 @@ Knowledge/reasoning distillation, pruning, quantization algorithms and model mer
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-16](../../../reports/2026/10/2026-10-16.md) — PARTIAL SEARCH
+
+### [Does On-Policy Distillation Need to Complete Every Rollout?](<https://arxiv.org/abs/2610.21337>)
+
+STOPD randomly truncates student rollouts at block boundaries and reweights retained token losses to preserve the expected full-rollout gradient sum. Across tested Qwen students and mathematics, coding and instruction-following tasks, the authors report similar accuracy with 25-48% fewer generated tokens and 1.3-2.2x faster training steps, offering a practical way to reduce distillation cost.
+
+**Published:** 2026-10-15 · **First seen:** 2026-10-17T10:05:55.063Z · **Novelty:** new · **Tags:** On-Policy Distillation, Rollout Truncation, Importance Weighting
+
+**Public availability:** 2026-10-16T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.21337>)
+
+**Evidence:** research-paper; full-text. Sections 3-5 and relevant Appendices A/B/D-H were inspected. STOPD samples independent cutoffs, rounds each to a block end, and uses exact inverse inclusion probabilities with K=128 after 25 Vanilla warmup steps. The main comparison distills Qwen3-4B-Instruct-2507 into Qwen3-1.7B-Base over 250 steps, three training seeds and batch 256 on two H100s: reported full-step times are 941 to 513 seconds for math, 566 to 260 for code, and 104 to 80 for instruction following, including generation, teacher scoring, updates and other overhead. Vanilla versus STOPD endpoint aggregate accuracy is 30.1 versus 29.4 for math, 28.5 versus 28.1 for code, and 59.8 versus 60.1 for instruction following. Additional 30B-A3B-teacher experiments use 4B/8B students on two H200/GB200 GPUs respectively. Public availability is inferred as October 16 00:00 UTC from the verified cs.LG new-submission batch and official schedule; the original October 15 06:22:08 UTC receipt date is retained.
+
+**Limitations:** The expected unnormalized gradient and token-count sums are preserved only under budget-invariant generation, prefix-local loss, independent truncation and exact inclusion probabilities. The actual normalized loss uses the previous batch token-count estimate and can retain a scale mismatch; optimizer bounds compare one step from identical parameters and state, not complete training trajectories. Evidence covers Qwen 1.7B-8B students and 250-step runs, with speed depending on rollout length, hardware and scheduling. The weight-free random-truncation ablation also preserves accuracy closely, while inverse weighting better aligns response lengths, so accuracy alone does not prove the weights necessary. No author implementation or model artifact URL was verified; cited Muon code is not a STOPD release.
+
 ## [2026-10-15](../../../reports/2026/10/2026-10-15.md) — PARTIAL SEARCH
 
 ### [More Methods, Better Agents? A Reality Check on Self-Distillation in Agentic Reinforcement Learning](<https://arxiv.org/abs/2610.19789>)

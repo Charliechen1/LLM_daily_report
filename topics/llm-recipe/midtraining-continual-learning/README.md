@@ -5,6 +5,22 @@ Domain continued pretraining, context extension, continual learning and forgetti
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-16](../../../reports/2026/10/2026-10-16.md) — PARTIAL SEARCH
+
+### [Priming Base Models for Agentic Post-Training: An Open Midtraining Recipe](<https://arxiv.org/abs/2610.22019>)
+
+This documented midtraining recipe combines natural software-engineering data with a bounded share of agent traces at 256K context before supervised post-training. Matched post-training comparisons on two Nemotron model sizes show stronger coding-agent results in several settings, while the data and masking ablations provide concrete guidance for building and evaluating this intermediate training stage.
+
+**Published:** 2026-10-15 · **First seen:** 2026-10-17T10:02:15.717Z · **Novelty:** new · **Tags:** Mid-training, Agentic Coding, Data Mixtures, Long Context
+
+**Public availability:** 2026-10-16T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.22019>)
+
+**Evidence:** research-paper; full-text. The complete main text and Appendices A-E were inspected. The token blend contains 40.8% issue-PR data, 20% dependency-packed repositories, 10% agent traces, 3% diffs, 1.2% build/CI logs, 20% pretraining replay and 5% long-context data; trace tool responses are masked and only assistant turns contribute loss. Nemotron 3.5 Lightning (30B total/3B active) receives up to 500B midtraining tokens and Super (120B/12B) receives 280B, followed by identical 33B-token short or 100B-token full SFT. Table 3 reports Lightning full-SFT success changing from 60.7 to 64.5 on SWE-bench Verified, 55.8 to 62.8 Multilingual, and 32.0 to 35.5 Pro; Table 6 reports Super DeepSWE 11.7 to 15.7 and SWE-bench Verified 72.9 to 74.3. SWE-bench Verified uses 500 tasks and three rollouts per task; DeepSWE pass@1 is averaged over four runs. Public availability is inferred as October 16 00:00 UTC from the verified cs.CL new-submission batch and official schedule, retaining the original October 15 14:58:21 UTC receipt date.
+
+**Limitations:** Added midtraining compute is not compared with spending the same tokens on longer pretraining or SFT. Comparisons use one run each, only Nemotron models and agentic-focused post-training; Super full-SFT Multilingual falls from 69.0 to 67.9 and Pro from 53.9 to 51.8. The single-seed, 20-step RL pilot shows only that an SFT advantage survives the start of RL, not better eventual RL trainability. Some one- or two-point differences fall within reported run variation. Data-processing scripts and metadata are promised for a future version, so this is a documented recipe rather than a verified complete training-corpus or implementation release.
+
 ## [2026-10-12](../../../reports/2026/10/2026-10-12.md) — PARTIAL SEARCH
 
 ### [Self-Preservation in Language Models](<https://arxiv.org/abs/2610.12602>)

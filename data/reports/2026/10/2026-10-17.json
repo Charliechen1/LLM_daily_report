@@ -1,0 +1,784 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-17",
+  "timezone": "America/Los_Angeles",
+  "generated_at": "2026-10-17T10:17:34.143Z",
+  "coverage": {
+    "start": "2026-10-16T03:00:00-07:00",
+    "end": "2026-10-17T03:00:00-07:00"
+  },
+  "search": {
+    "status": "partial",
+    "notes": "Scheduled coverage is 2026-10-16T03:00:00-07:00 through 2026-10-17T03:00:00-07:00; actual retrieval occurred during this delayed October 17 run. The total 72-hour discovery lookback starts 2026-10-14T10:00:00+00:00 and ends at the scheduled cutoff. The immutable September 29 baseline and complete 183-work registry were read before selection; October 17 selection also excludes the newly selected October 16 items. Dated original-category announcements and the official release schedule support inferred arXiv availability only where earlier primary artifacts do not contradict it. Original submission dates are retained; repository creation and commit dates alone do not prove historical public visibility. Earlier previews and new detailed studies are distinguished. Three substantive Friday technical reports were selected. No new Saturday arXiv batch was observed, and earlier-batch papers were not shifted into this date to inflate its count. Date-only blogs preserve their displayed October 16 publication dates without invented precise website-release times. Code integration, new report evidence and benchmark snapshots are distinguished; no general throughput or security superiority is inferred. All selected sources were read in full text for the claims summarized, and all empirical results are author-reported without independent reproduction. Search is partial; bounded organization and conference screening is not exhaustive. No new October17 arXiv batch was observed; the official schedule has no Friday-evening or Saturday announcement. October16-batch contributions are ranked in the first eligible report, not shifted to fill October17. FDE-Gym project HTTPS certificate expired and the full task README required authorization; paper and public harness were accessible. No task-access claim is made. Mosaic project HTML was retrieved by direct HTTPS after the web tool failed. Its backing GitHub Pages repository API returned404, so exact earlier site-publication history and a code release could not be verified. Public repository creation/commit dates were inspected as earlier-content evidence, not equated with exact first-public visibility. Ambiguous old-release candidates were excluded. Organization archives are bounded discovery. Root independently covers Anthropic research and conference indexes; selected primary methods, evaluation and limitations were accessible. Organization and conference landing pages were screened within a bounded scope; this is not comprehensive dated venue discovery. Anthropic overview pages expose limited publication lists, supplemented by targeted primary-domain searches. Direct Python HTTPS retrieval of Anthropic pages failed certificate validation, but full primary text was successfully inspected with the connected web tool; no continuing source outage claimed. GitHub API access failed in the web tool but succeeded by direct HTTPS; metadata and chronology are preserved privately.",
+    "sources_checked": [
+      {
+        "name": "clrecent",
+        "url": "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "lg",
+        "url": "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "Hugging Face October16 discovery",
+        "url": "https://huggingface.co/papers/date/2026-10-16",
+        "status": "ok"
+      },
+      {
+        "name": "Hugging Face October15 discovery",
+        "url": "https://huggingface.co/papers/date/2026-10-15",
+        "status": "ok"
+      },
+      {
+        "name": "hf17",
+        "url": "https://huggingface.co/papers/date/2026-10-17",
+        "status": "ok"
+      },
+      {
+        "name": "schedule",
+        "url": "https://info.arxiv.org/help/availability.html",
+        "status": "ok"
+      },
+      {
+        "name": "deepmind",
+        "url": "https://deepmind.google/research/",
+        "status": "ok"
+      },
+      {
+        "name": "Thinking Machines research archive",
+        "url": "https://thinkingmachines.ai/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "2610.22019-abs",
+        "url": "https://arxiv.org/abs/2610.22019",
+        "status": "ok"
+      },
+      {
+        "name": "2610.22019-html",
+        "url": "https://arxiv.org/html/2610.22019v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.22300-abs",
+        "url": "https://arxiv.org/abs/2610.22300",
+        "status": "ok"
+      },
+      {
+        "name": "2610.22300-html",
+        "url": "https://arxiv.org/html/2610.22300v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.21679-abs",
+        "url": "https://arxiv.org/abs/2610.21679",
+        "status": "ok"
+      },
+      {
+        "name": "2610.21679-html",
+        "url": "https://arxiv.org/html/2610.21679v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.22236-abs",
+        "url": "https://arxiv.org/abs/2610.22236",
+        "status": "ok"
+      },
+      {
+        "name": "2610.22236-html",
+        "url": "https://arxiv.org/html/2610.22236v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.19761-abs",
+        "url": "https://arxiv.org/abs/2610.19761",
+        "status": "ok"
+      },
+      {
+        "name": "2610.19761-html",
+        "url": "https://arxiv.org/html/2610.19761v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.20898-abs",
+        "url": "https://arxiv.org/abs/2610.20898",
+        "status": "ok"
+      },
+      {
+        "name": "2610.20898-html",
+        "url": "https://arxiv.org/html/2610.20898v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.20588-abs",
+        "url": "https://arxiv.org/abs/2610.20588",
+        "status": "ok"
+      },
+      {
+        "name": "2610.20588-html",
+        "url": "https://arxiv.org/html/2610.20588v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.21025-abs",
+        "url": "https://arxiv.org/abs/2610.21025",
+        "status": "ok"
+      },
+      {
+        "name": "2610.21025-html",
+        "url": "https://arxiv.org/html/2610.21025v1",
+        "status": "ok"
+      },
+      {
+        "name": "linear-repo",
+        "url": "https://api.github.com/repos/NightMachinery/active-inert-facts",
+        "status": "ok"
+      },
+      {
+        "name": "linear-readme",
+        "url": "https://api.github.com/repos/NightMachinery/active-inert-facts/readme",
+        "status": "ok"
+      },
+      {
+        "name": "linear-commits",
+        "url": "https://api.github.com/repos/NightMachinery/active-inert-facts/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "tokenizer-repo",
+        "url": "https://api.github.com/repos/AntonioLopardo/tokenizer-metric-multilingual-correlations",
+        "status": "unavailable"
+      },
+      {
+        "name": "tokenizer-readme",
+        "url": "https://api.github.com/repos/AntonioLopardo/tokenizer-metric-multilingual-correlations/readme",
+        "status": "unavailable"
+      },
+      {
+        "name": "tokenizer-commits",
+        "url": "https://api.github.com/repos/AntonioLopardo/tokenizer-metric-multilingual-correlations/commits?per_page=100",
+        "status": "unavailable"
+      },
+      {
+        "name": "wrongvotes-repo",
+        "url": "https://api.github.com/repos/dylan518/wrong-votes-right-gradients",
+        "status": "ok"
+      },
+      {
+        "name": "wrongvotes-readme",
+        "url": "https://api.github.com/repos/dylan518/wrong-votes-right-gradients/readme",
+        "status": "ok"
+      },
+      {
+        "name": "wrongvotes-commits",
+        "url": "https://api.github.com/repos/dylan518/wrong-votes-right-gradients/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "2610.21337-abs",
+        "url": "https://arxiv.org/abs/2610.21337",
+        "status": "ok"
+      },
+      {
+        "name": "2610.21337-html",
+        "url": "https://arxiv.org/html/2610.21337v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.21555-pdf",
+        "url": "https://arxiv.org/pdf/2610.21555v1",
+        "status": "ok"
+      },
+      {
+        "name": "linear-tree",
+        "url": "https://api.github.com/repos/NightMachinery/active-inert-facts/git/trees/main?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "wrongvotes-tree",
+        "url": "https://api.github.com/repos/dylan518/wrong-votes-right-gradients/git/trees/main?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "tokenizer-code",
+        "url": "https://github.com/AntonioLopardo/tokenizer-metric-multilingual-correlations",
+        "status": "unavailable"
+      },
+      {
+        "name": "linear-code",
+        "url": "https://github.com/NightMachinery/active-inert-facts",
+        "status": "ok"
+      },
+      {
+        "name": "wrongvotes-code",
+        "url": "https://github.com/dylan518/wrong-votes-right-gradients",
+        "status": "ok"
+      },
+      {
+        "name": "2610.21555-abs",
+        "url": "https://arxiv.org/abs/2610.21555",
+        "status": "ok"
+      },
+      {
+        "name": "tokenizer-vista350",
+        "url": "https://huggingface.co/collections/shikhar-srivastava/vista-350m",
+        "status": "ok"
+      },
+      {
+        "name": "tokenizer-vista130",
+        "url": "https://huggingface.co/collections/shikhar-srivastava/vista-130m",
+        "status": "ok"
+      },
+      {
+        "name": "vista-training",
+        "url": "https://github.com/shikhar-srivastava/vista-training",
+        "status": "ok"
+      },
+      {
+        "name": "2610.22350",
+        "url": "https://arxiv.org/html/2610.22350v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.22280",
+        "url": "https://arxiv.org/html/2610.22280v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.21656",
+        "url": "https://arxiv.org/html/2610.21656v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.22124",
+        "url": "https://arxiv.org/html/2610.22124v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.22319",
+        "url": "https://arxiv.org/html/2610.22319v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.20597",
+        "url": "https://arxiv.org/html/2610.20597v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.22192",
+        "url": "https://arxiv.org/html/2610.22192v1",
+        "status": "ok"
+      },
+      {
+        "name": "cs-ai",
+        "url": "https://arxiv.org/list/cs.AI/recent?show=1000",
+        "status": "ok"
+      },
+      {
+        "name": "cs-cl",
+        "url": "https://arxiv.org/list/cs.CL/recent?show=1000",
+        "status": "ok"
+      },
+      {
+        "name": "fde-meta",
+        "url": "https://api.github.com/repos/deeplethe/fde-gym",
+        "status": "ok"
+      },
+      {
+        "name": "fde-commits",
+        "url": "https://api.github.com/repos/deeplethe/fde-gym/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "fde-paper",
+        "url": "https://fde-gym.com/paper/",
+        "status": "unavailable"
+      },
+      {
+        "name": "fde-data",
+        "url": "https://huggingface.co/datasets/DeepLethe/FDE-Gym/raw/main/README.md",
+        "status": "unavailable"
+      },
+      {
+        "name": "world-meta",
+        "url": "https://api.github.com/repos/Zhanli-Li/Data-World",
+        "status": "ok"
+      },
+      {
+        "name": "world-commits",
+        "url": "https://api.github.com/repos/Zhanli-Li/Data-World/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "world-project",
+        "url": "https://zhanli-li.github.io/Data-World/",
+        "status": "ok"
+      },
+      {
+        "name": "world-data",
+        "url": "https://huggingface.co/collections/Zhanli-Li/dataworld",
+        "status": "ok"
+      },
+      {
+        "name": "probe-meta",
+        "url": "https://api.github.com/repos/Mishrakshitij/PROBE",
+        "status": "ok"
+      },
+      {
+        "name": "probe-commits",
+        "url": "https://api.github.com/repos/Mishrakshitij/PROBE/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "probe-readme",
+        "url": "https://raw.githubusercontent.com/Mishrakshitij/PROBE/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "world-readme",
+        "url": "https://raw.githubusercontent.com/Zhanli-Li/Data-World/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "fde-readme",
+        "url": "https://raw.githubusercontent.com/deeplethe/fde-gym/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "simular-blog",
+        "url": "https://www.simular.ai/blog",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic engineering overview, limited visible list",
+        "url": "https://www.anthropic.com/engineering",
+        "status": "ok"
+      },
+      {
+        "name": "Ai2 latest research archive, blog URL redirects to research",
+        "url": "https://allenai.org/blog",
+        "status": "ok"
+      },
+      {
+        "name": "Google DeepMind dated news archive, bounded visible list",
+        "url": "https://deepmind.google/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "2610.22273",
+        "url": "https://arxiv.org/html/2610.22273v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.22174",
+        "url": "https://arxiv.org/html/2610.22174v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.22234",
+        "url": "https://arxiv.org/html/2610.22234v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.21109",
+        "url": "https://arxiv.org/html/2610.21109v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.21170",
+        "url": "https://arxiv.org/html/2610.21170v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.22322",
+        "url": "https://arxiv.org/html/2610.22322v1",
+        "status": "ok"
+      },
+      {
+        "name": "cs-lg",
+        "url": "https://arxiv.org/list/cs.LG/recent?show=1000",
+        "status": "ok"
+      },
+      {
+        "name": "librarian-meta",
+        "url": "https://api.github.com/repos/teresaz05/librarian-agents",
+        "status": "ok"
+      },
+      {
+        "name": "librarian-commits",
+        "url": "https://api.github.com/repos/teresaz05/librarian-agents/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "librarian-readme",
+        "url": "https://raw.githubusercontent.com/teresaz05/librarian-agents/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "librarian-project",
+        "url": "https://librarian-agents.github.io/",
+        "status": "ok"
+      },
+      {
+        "name": "librarian-site-meta",
+        "url": "https://api.github.com/repos/librarian-agents/librarian-agents.github.io",
+        "status": "ok"
+      },
+      {
+        "name": "librarian-site-commits",
+        "url": "https://api.github.com/repos/librarian-agents/librarian-agents.github.io/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "mosaic-project",
+        "url": "https://lark-ai-lab.github.io/Mosaic/",
+        "status": "ok"
+      },
+      {
+        "name": "helix-project",
+        "url": "https://os-copilot.github.io/OS-Helix/",
+        "status": "ok"
+      },
+      {
+        "name": "LEASH canonical paper and receipt history",
+        "url": "https://arxiv.org/abs/2610.22280",
+        "status": "ok"
+      },
+      {
+        "name": "Librarian Agents canonical paper",
+        "url": "https://arxiv.org/abs/2610.22273",
+        "status": "ok"
+      },
+      {
+        "name": "Mosaic canonical paper and receipt history",
+        "url": "https://arxiv.org/abs/2610.22174",
+        "status": "ok"
+      },
+      {
+        "name": "mosaic-site-meta",
+        "url": "https://api.github.com/repos/LARK-AI-Lab/lark-ai-lab.github.io",
+        "status": "unavailable"
+      },
+      {
+        "name": "mosaic-site-commits",
+        "url": "https://api.github.com/repos/LARK-AI-Lab/lark-ai-lab.github.io/commits?path=Mosaic&per_page=100",
+        "status": "unavailable"
+      },
+      {
+        "name": "helix-meta",
+        "url": "https://api.github.com/repos/OS-Copilot/OS-Helix",
+        "status": "ok"
+      },
+      {
+        "name": "helix-commits",
+        "url": "https://api.github.com/repos/OS-Copilot/OS-Helix/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "helix-readme",
+        "url": "https://raw.githubusercontent.com/OS-Copilot/OS-Helix/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "helix-site-commits",
+        "url": "https://api.github.com/repos/OS-Copilot/os-copilot.github.io/commits?path=OS-Helix&per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "FDE-Gym canonical paper",
+        "url": "https://arxiv.org/abs/2610.22350",
+        "status": "ok"
+      },
+      {
+        "name": "Data World canonical paper",
+        "url": "https://arxiv.org/abs/2610.21656",
+        "status": "ok"
+      },
+      {
+        "name": "PROBE canonical paper",
+        "url": "https://arxiv.org/abs/2610.22124",
+        "status": "ok"
+      },
+      {
+        "name": "Minecraft canonical paper",
+        "url": "https://arxiv.org/abs/2610.22319",
+        "status": "ok"
+      },
+      {
+        "name": "OS-Helix canonical paper",
+        "url": "https://arxiv.org/abs/2610.22234",
+        "status": "ok"
+      },
+      {
+        "name": "OS-Helix repository preview",
+        "url": "https://github.com/OS-Copilot/OS-Helix",
+        "status": "ok"
+      },
+      {
+        "name": "Librarian Agents repository",
+        "url": "https://github.com/teresaz05/librarian-agents",
+        "status": "ok"
+      },
+      {
+        "name": "Data World repository",
+        "url": "https://github.com/Zhanli-Li/Data-World",
+        "status": "ok"
+      },
+      {
+        "name": "PROBE repository",
+        "url": "https://github.com/Mishrakshitij/PROBE",
+        "status": "ok"
+      },
+      {
+        "name": "FDE-Gym repository",
+        "url": "https://github.com/deeplethe/fde-gym",
+        "status": "ok"
+      },
+      {
+        "name": "dc",
+        "url": "https://arxiv.org/list/cs.DC/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "ar",
+        "url": "https://arxiv.org/list/cs.AR/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "vllm-index",
+        "url": "https://vllm.ai/blog",
+        "status": "ok"
+      },
+      {
+        "name": "pytorch-index",
+        "url": "https://pytorch.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "nvidia-index",
+        "url": "https://developer.nvidia.com/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "lmsys-index",
+        "url": "https://www.lmsys.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "kimi",
+        "url": "https://vllm.ai/blog/2026-10-16-kimi-k3-megakernel",
+        "status": "ok"
+      },
+      {
+        "name": "kimi-md",
+        "url": "https://raw.githubusercontent.com/vllm-project/vllm-project.github.io/main/_posts/2026-10-16-kimi-k3-megakernel.md",
+        "status": "ok"
+      },
+      {
+        "name": "kimi-pr",
+        "url": "https://api.github.com/repos/vllm-project/vllm/pulls/61867",
+        "status": "ok"
+      },
+      {
+        "name": "kimi-pr-web",
+        "url": "https://github.com/vllm-project/vllm/pull/61867",
+        "status": "ok"
+      },
+      {
+        "name": "kimi-first-source",
+        "url": "https://api.github.com/repos/vllm-project/vllm-project.github.io/commits?path=_posts/2026-10-16-kimi-k3-megakernel.md&per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "beam-sglang",
+        "url": "https://www.lmsys.org/blog/2026-10-16-beam",
+        "status": "ok"
+      },
+      {
+        "name": "sgl-beam-code",
+        "url": "https://github.com/sgl-project/sglang/tree/bench-openhands-gb300-sweep-beam/benchmark/beam_openhands",
+        "status": "ok"
+      },
+      {
+        "name": "sgl-beam-pr40331",
+        "url": "https://github.com/sgl-project/sglang/pull/40331",
+        "status": "ok"
+      },
+      {
+        "name": "sgl-beam-pr40492",
+        "url": "https://github.com/sgl-project/sglang/pull/40492",
+        "status": "ok"
+      },
+      {
+        "name": "sgl-beam-pr40909",
+        "url": "https://github.com/sgl-project/sglang/pull/40909",
+        "status": "ok"
+      },
+      {
+        "name": "sgl-beam-cookbook",
+        "url": "https://docs.sglang.io/cookbook/autoregressive/Reflection/Beam-1_0",
+        "status": "ok"
+      },
+      {
+        "name": "beam-vllm",
+        "url": "https://vllm.ai/blog/2026-10-16-reflection-beam",
+        "status": "ok"
+      },
+      {
+        "name": "beam-recipe",
+        "url": "https://recipes.vllm.ai/reflection/Beam-1.0-501B-A23B",
+        "status": "ok"
+      },
+      {
+        "name": "beam-md",
+        "url": "https://raw.githubusercontent.com/vllm-project/vllm-project.github.io/main/_posts/2026-10-16-reflection-beam.md",
+        "status": "ok"
+      },
+      {
+        "name": "zephon",
+        "url": "https://pytorch.org/blog/bringing-elastically-deterministic-data-loading-to-torchtitan-with-zephon/",
+        "status": "ok"
+      },
+      {
+        "name": "zephon-paper",
+        "url": "https://arxiv.org/html/2610.03087v1",
+        "status": "ok"
+      },
+      {
+        "name": "zephon-launch",
+        "url": "https://www.datologyai.com/blog/zephon",
+        "status": "ok"
+      },
+      {
+        "name": "zephon-titan-commits",
+        "url": "https://api.github.com/repos/datologyai/torchtitan-zephon/commits?per_page=30",
+        "status": "ok"
+      },
+      {
+        "name": "kimi-amd",
+        "url": "https://vllm.ai/blog/2026-10-16-kimi-k3-mi355x",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic research overview, limited visible list",
+        "url": "https://www.anthropic.com/research",
+        "status": "ok"
+      },
+      {
+        "name": "OpenReview venue index, bounded discovery only",
+        "url": "https://openreview.net/",
+        "status": "ok"
+      },
+      {
+        "name": "ACL Anthology index, bounded discovery only",
+        "url": "https://aclanthology.org/",
+        "status": "ok"
+      },
+      {
+        "name": "Thinking Machines news archive",
+        "url": "https://thinkingmachines.ai/news/",
+        "status": "ok"
+      },
+      {
+        "name": "Tinker one-year retrospective, inspected and excluded",
+        "url": "https://thinkingmachines.ai/news/one-year-of-tinker/",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic ECDSA primary report including verification code",
+        "url": "https://www.anthropic.com/research/ecdsa-curve-origins",
+        "status": "ok"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": "https://www.anthropic.com/research/ecdsa-curve-origins",
+      "title": "Claude reveals ECDSA curve origins",
+      "category": "2.2",
+      "tags": [
+        "Scientific Discovery",
+        "Tool Use",
+        "Verification"
+      ],
+      "published_on": "2026-10-16",
+      "first_seen_at": "2026-10-17T10:06:03.000Z",
+      "canonical_url": "https://www.anthropic.com/research/ecdsa-curve-origins",
+      "links": {
+        "blog": "https://www.anthropic.com/research/ecdsa-curve-origins"
+      },
+      "summary": [
+        "Anthropic documents an LLM-assisted investigation that tested pseudorandom-generator hypotheses and recovered the origins of several standardized elliptic-curve seeds and base points.",
+        "Its published verification code makes this a useful case study of combining model-generated hypotheses with exact computational checks in scientific investigation."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "The October 16 primary report explains generator scanning, hidden-state recovery, backward reconstruction and timestamp checks, and includes code and expected outputs for ten prime-curve seeds, four binary-curve seeds and six base points. Its stated sub-half-hour discovery is author-reported.",
+        "limitations": "A single investigation with an internal research model, not a controlled comparison or reusable agent-system evaluation. B-163 and several base-point origins remain unexplained; skipped candidate curves leave historical selection criteria uncertain. The result does not break ECDSA or demonstrate a weakness in the standardized curves. No independent reproduction."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "https://www.lmsys.org/blog/2026-10-16-beam",
+      "title": "SGLang Powers Beam in Production",
+      "category": "3.3",
+      "published_on": "2026-10-16",
+      "first_seen_at": "2026-10-17T10:04:34.136Z",
+      "canonical_url": "https://www.lmsys.org/blog/2026-10-16-beam",
+      "links": {
+        "blog": "https://www.lmsys.org/blog/2026-10-16-beam",
+        "code": "https://github.com/sgl-project/sglang/tree/bench-openhands-gb300-sweep-beam/benchmark/beam_openhands",
+        "project": "https://docs.sglang.io/cookbook/autoregressive/Reflection/Beam-1_0"
+      },
+      "summary": [
+        "SGLang integrates Beam's hybrid sliding-window and full-attention mixture-of-experts model with fused precision-sensitive operations and a jointly budgeted target-and-drafter cache for blockwise speculative decoding.",
+        "The report explains how cache reuse, draft-memory placement and supported parallel layouts fit together for long-context agents, with public serving recipes and replay scripts that separate simulated acceptance from natural-workload measurements."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "Read the full October 16 report, including target/draft cache placement, DFlash2 with attention data parallelism, heterogeneous TP transfer, precision/fusion gates and the reproduction appendix. The public benchmark branch, serving cookbook and PRs 40331/40492/40909 were retrieved. Beam has 501B total/23B active parameters, hybrid attention, FP32 routing and rounded scaled residuals. On four GB300 GPUs, the OpenHands NVFP4 TP4 replay uses 13 turns, about 74K initial tokens, about 220 output tokens per turn and approximately 92% prefix-cache hits; its 127.6K total token/s/GPU headline at concurrency 32 uses fixed simulated acceptance length four. The separate AgentX replay reports 83,504 total token/s/GPU and 43.9 P90 token/s/user at concurrency 96. These are distinct workloads, not an engine leaderboard.",
+        "limitations": "Total throughput includes cached input tokens and is not newly computed or output-token throughput. OpenHands uses simulated acceptance with real draft tokens, so it does not measure natural acceptance or model accuracy; AgentX has a different workload and latency percentile. Shared draft placement excludes HiCache, host retraction and DCP; private fallbacks and startup gates apply, and draft capture requires PP=1. BF16 and dynamic FP8 do not use the NVFP4 MegaMoE extension. TPU recipes are forthcoming. Production-API use is author-reported rather than independent reliability evidence. Miles training results are separate from serving quality, and no author code or model experiment was executed."
+      },
+      "tags": [
+        "Hybrid Attention",
+        "Speculative Decoding",
+        "KV Memory",
+        "Serving Recipes"
+      ],
+      "novelty": "new"
+    },
+    {
+      "id": "https://vllm.ai/blog/2026-10-16-kimi-k3-megakernel",
+      "title": "Hyper Optimizing Kimi K3 in vLLM: Moving Fast and Responsibly",
+      "category": "3.5",
+      "published_on": "2026-10-16",
+      "first_seen_at": "2026-10-17T10:02:23.261Z",
+      "canonical_url": "https://vllm.ai/blog/2026-10-16-kimi-k3-megakernel",
+      "links": {
+        "blog": "https://vllm.ai/blog/2026-10-16-kimi-k3-megakernel",
+        "code": "https://github.com/vllm-project/vllm/pull/61867"
+      },
+      "summary": [
+        "This vLLM engineering report replaces Kimi K3's decode path with workload-tuned kernels that fuse projections, residual operations and GPU communication while overlapping expert computation and weight prefetch.",
+        "It pairs measured decode gains with a scoped validation process for agent-written optimizations, showing how to accelerate supported Blackwell configurations without treating one synthetic benchmark as a general serving result."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "Read the complete dated Markdown and PR 61867 description, covering CuTe DSL projection/KDA kernels, DCP, NVLink fusion, sharded router work, expert overlap and weight prefetching. The blog reports no-speculation aggregate TP-group gains of 1.31-1.92x across TP8/16 and batch sizes 1-64 on GB300. Its 842 versus 488 decode token/s comparison uses synthetic DSpark acceptance length six and excludes prefill. The merged opt-in implementation includes task/numerical checks and investigation of a compiler load-before-wait bug. The contribution selected is the new detailed engineering report and validation evidence, not a first-ever code release: the PR opened October 15. The displayed blog date is October 16; its source was added October 17 01:21 UTC, which is source provenance rather than an asserted exact website publication time. Delayed discovery: the optimization work, scoped benchmarks and validation were already described in the October 15 PR, within this report's 72-hour discovery lookback and before its main window. This entry inspects the October 16 detailed blog on October 17; it does not claim the method or code first appeared in the main coverage window.",
+        "limitations": "Scope is GB300 TP8/TP16 within one NVLink domain; speculative batch coverage is narrower than the no-speculation batch-64 range. Synthetic acceptance and decode-only throughput do not establish normal serving speed. The AgentX 1.8x interactivity comparison uses 16 optimized GPUs versus eight earlier GPUs. Blog and PR use different benchmark snapshots. Task scores near one standard error and sensitive long-context checks are not bitwise equivalence or general production reliability proofs. Development and review savings are not quantified. No independent reproduction was performed. The PR predates the main window, so the dated blog does not reset the optimization's age; inclusion is explicitly a delayed discovery, not an indexing-delay claim."
+      },
+      "tags": [
+        "GPU Kernels",
+        "Communication Fusion",
+        "GB300",
+        "Validation"
+      ],
+      "novelty": "newly-discovered"
+    }
+  ]
+}

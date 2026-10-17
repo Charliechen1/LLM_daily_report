@@ -5,6 +5,22 @@ Data/tensor/pipeline/expert/context parallelism, sharding and communication over
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-16](../../../reports/2026/10/2026-10-16.md) — PARTIAL SEARCH
+
+### [ETH: Data-Balanced Heterogeneous Pipeline Parallelism for Training Large Models](<https://arxiv.org/abs/2610.22035>)
+
+ETH balances heterogeneous training pipelines by assigning different local batch sizes as well as different layer and parallelism layouts, avoiding the coarse memory trade-offs of layer balancing alone. Its hierarchical search and block-wise gradient synchronization make a larger configuration space practical, with reported iteration-time improvements on mixed Ascend devices and A100/RTX3090 clusters.
+
+**Published:** 2026-10-15 · **First seen:** 2026-10-17T10:02:23.708Z · **Novelty:** material-update · **Tags:** Heterogeneous Training, Pipeline Parallelism, Batch Balancing, Gradient Synchronization
+
+[Paper](<https://arxiv.org/abs/2610.22035>) · [Code](<https://github.com/YuMJie/ETH>)
+
+**Evidence:** research-paper; full-text. Reviewed the HPP formulation, greedy local-batch allocation and stage refinement, block-wise AllReduce, cached/pruned search, implementation, Sections 7-8 and appendices. Main tests use GPT-3 350M-175B and LLaMA-2 70B on mixed Ascend 910B2/B3/B4 devices, chiefly at sequence length 2,048 and global batch 1,024. NVIDIA tests cover 350M-13B on A100/RTX 3090 clusters with 100 Gbps links. Main Ascend iteration speedups are 1.36-2.00x over HexiScale and 1.20-1.84x over Metis; a 2,000-iteration Enwiki check reports approximately 0.1% loss differences. Public code predates the paper: the July 29 initial tree has no PDF, and the October 16 change only adds a citation. Selection covers the new detailed paper/evidence. Public-paper timing is inferred from the primary cs.DC October 16 batch and official schedule, preserving the October 15 receipt.
+
+**Limitations:** Search is heuristic and approximate pruning can discard better candidates, so no global optimum is guaranteed. The cost model assumes 1F1B with pipeline, tensor and data parallelism; context and expert parallelism are not included. Benefits depend on batch size, hardware imbalance and profiling, and HPP adds communication. NVIDIA validation stops at 13B while larger-model results use Ascend. Loss similarity on one corpus does not prove broad downstream equivalence. Abstract headline search speedups are avoided in favor of scoped body results. Public code was inspected but not executed; there is no independent reproduction.
+
+**Update:** 2026-10-16: The newly announced paper supplies the formal heterogeneous-pipeline/batch-allocation method, block-wise synchronization, search design and detailed Ascend/NVIDIA evaluation beyond the older implementation (https://arxiv.org/html/2610.22035v1; https://arxiv.org/list/cs.DC/recent?skip=0&amp;show=2000; https://info.arxiv.org/help/availability.html; https://github.com/YuMJie/ETH). The initial July 29 code tree contains no paper PDF; commit dates are provenance, not proof of an exact first-public timestamp. The preserved October 15 published\_on is this paper's receipt date.
+
 ## [2026-10-08](../../../reports/2026/10/2026-10-08.md) — PARTIAL SEARCH
 
 ### [Expert Coupling in MoE Pretraining: Reducing All-to-All Overhead with Correlated Placement and Token Shuffling](<https://arxiv.org/abs/2610.09372>)

@@ -2,6 +2,20 @@
   "schema_version": 1,
   "reports": [
     {
+      "date": "2026-10-17",
+      "path": "reports/2026/10/2026-10-17.md",
+      "source": "data/reports/2026/10/2026-10-17.json",
+      "search_status": "partial",
+      "entries": 3
+    },
+    {
+      "date": "2026-10-16",
+      "path": "reports/2026/10/2026-10-16.md",
+      "source": "data/reports/2026/10/2026-10-16.json",
+      "search_status": "partial",
+      "entries": 8
+    },
+    {
       "date": "2026-10-15",
       "path": "reports/2026/10/2026-10-15.md",
       "source": "data/reports/2026/10/2026-10-15.json",
@@ -124,6 +138,406 @@
     }
   ],
   "entries": [
+    {
+      "id": "https://www.anthropic.com/research/ecdsa-curve-origins",
+      "title": "Claude reveals ECDSA curve origins",
+      "category": "2.2",
+      "tags": [
+        "Scientific Discovery",
+        "Tool Use",
+        "Verification"
+      ],
+      "published_on": "2026-10-16",
+      "first_seen_at": "2026-10-17T10:06:03.000Z",
+      "canonical_url": "https://www.anthropic.com/research/ecdsa-curve-origins",
+      "links": {
+        "blog": "https://www.anthropic.com/research/ecdsa-curve-origins"
+      },
+      "summary": [
+        "Anthropic documents an LLM-assisted investigation that tested pseudorandom-generator hypotheses and recovered the origins of several standardized elliptic-curve seeds and base points.",
+        "Its published verification code makes this a useful case study of combining model-generated hypotheses with exact computational checks in scientific investigation."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "The October 16 primary report explains generator scanning, hidden-state recovery, backward reconstruction and timestamp checks, and includes code and expected outputs for ten prime-curve seeds, four binary-curve seeds and six base points. Its stated sub-half-hour discovery is author-reported.",
+        "limitations": "A single investigation with an internal research model, not a controlled comparison or reusable agent-system evaluation. B-163 and several base-point origins remain unexplained; skipped candidate curves leave historical selection criteria uncertain. The result does not break ECDSA or demonstrate a weakness in the standardized curves. No independent reproduction."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-17",
+      "report_path": "reports/2026/10/2026-10-17.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://www.lmsys.org/blog/2026-10-16-beam",
+      "title": "SGLang Powers Beam in Production",
+      "category": "3.3",
+      "published_on": "2026-10-16",
+      "first_seen_at": "2026-10-17T10:04:34.136Z",
+      "canonical_url": "https://www.lmsys.org/blog/2026-10-16-beam",
+      "links": {
+        "blog": "https://www.lmsys.org/blog/2026-10-16-beam",
+        "code": "https://github.com/sgl-project/sglang/tree/bench-openhands-gb300-sweep-beam/benchmark/beam_openhands",
+        "project": "https://docs.sglang.io/cookbook/autoregressive/Reflection/Beam-1_0"
+      },
+      "summary": [
+        "SGLang integrates Beam's hybrid sliding-window and full-attention mixture-of-experts model with fused precision-sensitive operations and a jointly budgeted target-and-drafter cache for blockwise speculative decoding.",
+        "The report explains how cache reuse, draft-memory placement and supported parallel layouts fit together for long-context agents, with public serving recipes and replay scripts that separate simulated acceptance from natural-workload measurements."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "Read the full October 16 report, including target/draft cache placement, DFlash2 with attention data parallelism, heterogeneous TP transfer, precision/fusion gates and the reproduction appendix. The public benchmark branch, serving cookbook and PRs 40331/40492/40909 were retrieved. Beam has 501B total/23B active parameters, hybrid attention, FP32 routing and rounded scaled residuals. On four GB300 GPUs, the OpenHands NVFP4 TP4 replay uses 13 turns, about 74K initial tokens, about 220 output tokens per turn and approximately 92% prefix-cache hits; its 127.6K total token/s/GPU headline at concurrency 32 uses fixed simulated acceptance length four. The separate AgentX replay reports 83,504 total token/s/GPU and 43.9 P90 token/s/user at concurrency 96. These are distinct workloads, not an engine leaderboard.",
+        "limitations": "Total throughput includes cached input tokens and is not newly computed or output-token throughput. OpenHands uses simulated acceptance with real draft tokens, so it does not measure natural acceptance or model accuracy; AgentX has a different workload and latency percentile. Shared draft placement excludes HiCache, host retraction and DCP; private fallbacks and startup gates apply, and draft capture requires PP=1. BF16 and dynamic FP8 do not use the NVFP4 MegaMoE extension. TPU recipes are forthcoming. Production-API use is author-reported rather than independent reliability evidence. Miles training results are separate from serving quality, and no author code or model experiment was executed."
+      },
+      "tags": [
+        "Hybrid Attention",
+        "Speculative Decoding",
+        "KV Memory",
+        "Serving Recipes"
+      ],
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-17",
+      "report_path": "reports/2026/10/2026-10-17.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://vllm.ai/blog/2026-10-16-kimi-k3-megakernel",
+      "title": "Hyper Optimizing Kimi K3 in vLLM: Moving Fast and Responsibly",
+      "category": "3.5",
+      "published_on": "2026-10-16",
+      "first_seen_at": "2026-10-17T10:02:23.261Z",
+      "canonical_url": "https://vllm.ai/blog/2026-10-16-kimi-k3-megakernel",
+      "links": {
+        "blog": "https://vllm.ai/blog/2026-10-16-kimi-k3-megakernel",
+        "code": "https://github.com/vllm-project/vllm/pull/61867"
+      },
+      "summary": [
+        "This vLLM engineering report replaces Kimi K3's decode path with workload-tuned kernels that fuse projections, residual operations and GPU communication while overlapping expert computation and weight prefetch.",
+        "It pairs measured decode gains with a scoped validation process for agent-written optimizations, showing how to accelerate supported Blackwell configurations without treating one synthetic benchmark as a general serving result."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "Read the complete dated Markdown and PR 61867 description, covering CuTe DSL projection/KDA kernels, DCP, NVLink fusion, sharded router work, expert overlap and weight prefetching. The blog reports no-speculation aggregate TP-group gains of 1.31-1.92x across TP8/16 and batch sizes 1-64 on GB300. Its 842 versus 488 decode token/s comparison uses synthetic DSpark acceptance length six and excludes prefill. The merged opt-in implementation includes task/numerical checks and investigation of a compiler load-before-wait bug. The contribution selected is the new detailed engineering report and validation evidence, not a first-ever code release: the PR opened October 15. The displayed blog date is October 16; its source was added October 17 01:21 UTC, which is source provenance rather than an asserted exact website publication time. Delayed discovery: the optimization work, scoped benchmarks and validation were already described in the October 15 PR, within this report's 72-hour discovery lookback and before its main window. This entry inspects the October 16 detailed blog on October 17; it does not claim the method or code first appeared in the main coverage window.",
+        "limitations": "Scope is GB300 TP8/TP16 within one NVLink domain; speculative batch coverage is narrower than the no-speculation batch-64 range. Synthetic acceptance and decode-only throughput do not establish normal serving speed. The AgentX 1.8x interactivity comparison uses 16 optimized GPUs versus eight earlier GPUs. Blog and PR use different benchmark snapshots. Task scores near one standard error and sensitive long-context checks are not bitwise equivalence or general production reliability proofs. Development and review savings are not quantified. No independent reproduction was performed. The PR predates the main window, so the dated blog does not reset the optimization's age; inclusion is explicitly a delayed discovery, not an indexing-delay claim."
+      },
+      "tags": [
+        "GPU Kernels",
+        "Communication Fusion",
+        "GB300",
+        "Validation"
+      ],
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-17",
+      "report_path": "reports/2026/10/2026-10-17.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.22019",
+      "title": "Priming Base Models for Agentic Post-Training: An Open Midtraining Recipe",
+      "category": "1.4",
+      "tags": [
+        "Mid-training",
+        "Agentic Coding",
+        "Data Mixtures",
+        "Long Context"
+      ],
+      "published_on": "2026-10-15",
+      "first_seen_at": "2026-10-17T10:02:15.717Z",
+      "canonical_url": "https://arxiv.org/abs/2610.22019",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.22019"
+      },
+      "summary": [
+        "This documented midtraining recipe combines natural software-engineering data with a bounded share of agent traces at 256K context before supervised post-training.",
+        "Matched post-training comparisons on two Nemotron model sizes show stronger coding-agent results in several settings, while the data and masking ablations provide concrete guidance for building and evaluating this intermediate training stage."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "The complete main text and Appendices A-E were inspected. The token blend contains 40.8% issue-PR data, 20% dependency-packed repositories, 10% agent traces, 3% diffs, 1.2% build/CI logs, 20% pretraining replay and 5% long-context data; trace tool responses are masked and only assistant turns contribute loss. Nemotron 3.5 Lightning (30B total/3B active) receives up to 500B midtraining tokens and Super (120B/12B) receives 280B, followed by identical 33B-token short or 100B-token full SFT. Table 3 reports Lightning full-SFT success changing from 60.7 to 64.5 on SWE-bench Verified, 55.8 to 62.8 Multilingual, and 32.0 to 35.5 Pro; Table 6 reports Super DeepSWE 11.7 to 15.7 and SWE-bench Verified 72.9 to 74.3. SWE-bench Verified uses 500 tasks and three rollouts per task; DeepSWE pass@1 is averaged over four runs. Public availability is inferred as October 16 00:00 UTC from the verified cs.CL new-submission batch and official schedule, retaining the original October 15 14:58:21 UTC receipt date.",
+        "limitations": "Added midtraining compute is not compared with spending the same tokens on longer pretraining or SFT. Comparisons use one run each, only Nemotron models and agentic-focused post-training; Super full-SFT Multilingual falls from 69.0 to 67.9 and Pro from 53.9 to 51.8. The single-seed, 20-step RL pilot shows only that an SFT advantage survives the start of RL, not better eventual RL trainability. Some one- or two-point differences fall within reported run variation. Data-processing scripts and metadata are promised for a future version, so this is a documented recipe rather than a verified complete training-corpus or implementation release."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-16T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-16",
+      "report_path": "reports/2026/10/2026-10-16.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.21337",
+      "title": "Does On-Policy Distillation Need to Complete Every Rollout?",
+      "category": "1.8",
+      "tags": [
+        "On-Policy Distillation",
+        "Rollout Truncation",
+        "Importance Weighting"
+      ],
+      "published_on": "2026-10-15",
+      "first_seen_at": "2026-10-17T10:05:55.063Z",
+      "canonical_url": "https://arxiv.org/abs/2610.21337",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.21337"
+      },
+      "summary": [
+        "STOPD randomly truncates student rollouts at block boundaries and reweights retained token losses to preserve the expected full-rollout gradient sum.",
+        "Across tested Qwen students and mathematics, coding and instruction-following tasks, the authors report similar accuracy with 25-48% fewer generated tokens and 1.3-2.2x faster training steps, offering a practical way to reduce distillation cost."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 3-5 and relevant Appendices A/B/D-H were inspected. STOPD samples independent cutoffs, rounds each to a block end, and uses exact inverse inclusion probabilities with K=128 after 25 Vanilla warmup steps. The main comparison distills Qwen3-4B-Instruct-2507 into Qwen3-1.7B-Base over 250 steps, three training seeds and batch 256 on two H100s: reported full-step times are 941 to 513 seconds for math, 566 to 260 for code, and 104 to 80 for instruction following, including generation, teacher scoring, updates and other overhead. Vanilla versus STOPD endpoint aggregate accuracy is 30.1 versus 29.4 for math, 28.5 versus 28.1 for code, and 59.8 versus 60.1 for instruction following. Additional 30B-A3B-teacher experiments use 4B/8B students on two H200/GB200 GPUs respectively. Public availability is inferred as October 16 00:00 UTC from the verified cs.LG new-submission batch and official schedule; the original October 15 06:22:08 UTC receipt date is retained.",
+        "limitations": "The expected unnormalized gradient and token-count sums are preserved only under budget-invariant generation, prefix-local loss, independent truncation and exact inclusion probabilities. The actual normalized loss uses the previous batch token-count estimate and can retain a scale mismatch; optimizer bounds compare one step from identical parameters and state, not complete training trajectories. Evidence covers Qwen 1.7B-8B students and 250-step runs, with speed depending on rollout length, hardware and scheduling. The weight-free random-truncation ablation also preserves accuracy closely, while inverse weighting better aligns response lengths, so accuracy alone does not prove the weights necessary. No author implementation or model artifact URL was verified; cited Muon code is not a STOPD release."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-16T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-16",
+      "report_path": "reports/2026/10/2026-10-16.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.22367",
+      "title": "Discovering state-of-the-art quantum circuits with large language models",
+      "category": "2.1",
+      "tags": [
+        "Scientific Discovery",
+        "Evolutionary Search",
+        "Verification"
+      ],
+      "published_on": "2026-10-15",
+      "first_seen_at": "2026-10-17T10:06:03.000Z",
+      "canonical_url": "https://arxiv.org/abs/2610.22367",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.22367",
+        "blog": "https://www.anthropic.com/research/designing-efficient-quantum-circuits",
+        "code": "https://github.com/andigu/uncompute",
+        "project": "https://andigu.github.io/projects/uncompute/"
+      },
+      "summary": [
+        "This framework evolves Python circuit generators with parallel algorithm families, a diverse program archive, and an independent evaluator that checks correctness before scoring quantum resource costs.",
+        "It provides a concrete example of evaluator-guided agents discovering new algorithmic structures, rather than only refining a fixed implementation."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Methods, Figure 1 and Table 1 describe fresh agent sessions, MAP-Elites retention and eight task-specific evaluations. The Reed–Solomon decoder uses about 440,000 Toffolis and 1,837 qubits versus 5.1 million and 1,938 for its reconstructed baseline. Author circuits, evaluators and Lean proofs are available.",
+        "limitations": "These are simulated logical resource counts, not hardware runtime or a general agent leaderboard. Some tasks permit distribution-specific failures; sampled validation is not a universal proof. The Hermitian comparator is a naive construction, not a prior published reversible circuit. No independent reproduction."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-16",
+      "report_path": "reports/2026/10/2026-10-16.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.22174",
+      "title": "Mosaic: Multi-Session Agentic Reinforcement Learning",
+      "category": "2.5",
+      "tags": [
+        "Agent Learning",
+        "Context Compaction",
+        "Credit Assignment",
+        "Subagents"
+      ],
+      "published_on": "2026-10-15",
+      "first_seen_at": "2026-10-17T10:07:30.000Z",
+      "canonical_url": "https://arxiv.org/abs/2610.22174",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.22174",
+        "project": "https://lark-ai-lab.github.io/Mosaic/"
+      },
+      "summary": [
+        "Mosaic trains agents across context-compaction and subagent sessions by combining outcome-aware session-use guidance with a per-session signal based on changes in correct-answer likelihood.",
+        "This assigns more specific feedback to useful state transfers, improving BrowseComp success while reducing average session counts in the tested 4B agent."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Methods 3.1–3.2, Table 1 and Appendices C–D specify critic-free shaping, type-wise normalization and matched training. With Qwen3.5-4B, compaction accuracy rises 35.31→38.86% while sessions fall 3.17→2.35; forking rises 31.44→32.46% with 4.43→3.77 sessions. Training uses 1,000 REDSearcher tasks; BrowseComp evaluation covers 1,266 questions. ArXiv availability is inferred from its original dated batch and official schedule.",
+        "limitations": "One backbone and benchmark; session count is a proxy rather than measured end-to-end cost. Correct answers are needed for training-time likelihood scoring, and immediate gains approximate branching-session contributions. Production asynchrony is untested. The project was retrieved, but no released implementation was verified. No independent reproduction."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-16T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/recent?show=1000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-16",
+      "report_path": "reports/2026/10/2026-10-16.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.22280",
+      "title": "LEASH: Uncertainty-Aware Weak-to-Strong Escalation and Oversight for Computer-Use Agents",
+      "category": "2.7",
+      "tags": [
+        "Computer Use",
+        "Model Routing",
+        "Uncertainty",
+        "Oversight"
+      ],
+      "published_on": "2026-10-15",
+      "first_seen_at": "2026-10-17T10:07:30.000Z",
+      "canonical_url": "https://arxiv.org/abs/2610.22280",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.22280"
+      },
+      "summary": [
+        "LEASH uses a small computer-use model's hidden-state similarity to past successes and failures to decide when to hand a task to a stronger model and when to request reassessment after handoff.",
+        "It offers a way to allocate expensive model calls dynamically, with near always-strong success at lower estimated inference cost in the authors' OSWorld evaluation."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 3–4 and Appendices A–B define reference-bank calibration, gates and oversight. On 262 held-out OSWorld tasks, the Qwen3.5-35B-A3B configuration reaches 73.66% success at $0.4117/task versus 72.90% and $0.5094 for always-on Opus 5; costs include Manager and monitoring calls. ArXiv availability is inferred from the dated batch and official schedule.",
+        "limitations": "One benchmark and token-priced reference costs, not measured hardware cost or latency. Reference trajectories require upfront collection; failure risk need not predict escalation benefit. Shadow monitoring faces distribution shift and its causal effect is not isolated. No independent reproduction."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-16T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/recent?show=1000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-16",
+      "report_path": "reports/2026/10/2026-10-16.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.22035",
+      "title": "ETH: Data-Balanced Heterogeneous Pipeline Parallelism for Training Large Models",
+      "category": "3.1",
+      "published_on": "2026-10-15",
+      "first_seen_at": "2026-10-17T10:02:23.708Z",
+      "canonical_url": "https://arxiv.org/abs/2610.22035",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.22035",
+        "code": "https://github.com/YuMJie/ETH"
+      },
+      "summary": [
+        "ETH balances heterogeneous training pipelines by assigning different local batch sizes as well as different layer and parallelism layouts, avoiding the coarse memory trade-offs of layer balancing alone.",
+        "Its hierarchical search and block-wise gradient synchronization make a larger configuration space practical, with reported iteration-time improvements on mixed Ascend devices and A100/RTX3090 clusters."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Reviewed the HPP formulation, greedy local-batch allocation and stage refinement, block-wise AllReduce, cached/pruned search, implementation, Sections 7-8 and appendices. Main tests use GPT-3 350M-175B and LLaMA-2 70B on mixed Ascend 910B2/B3/B4 devices, chiefly at sequence length 2,048 and global batch 1,024. NVIDIA tests cover 350M-13B on A100/RTX 3090 clusters with 100 Gbps links. Main Ascend iteration speedups are 1.36-2.00x over HexiScale and 1.20-1.84x over Metis; a 2,000-iteration Enwiki check reports approximately 0.1% loss differences. Public code predates the paper: the July 29 initial tree has no PDF, and the October 16 change only adds a citation. Selection covers the new detailed paper/evidence. Public-paper timing is inferred from the primary cs.DC October 16 batch and official schedule, preserving the October 15 receipt.",
+        "limitations": "Search is heuristic and approximate pruning can discard better candidates, so no global optimum is guaranteed. The cost model assumes 1F1B with pipeline, tensor and data parallelism; context and expert parallelism are not included. Benefits depend on batch size, hardware imbalance and profiling, and HPP adds communication. NVIDIA validation stops at 13B while larger-model results use Ascend. Loss similarity on one corpus does not prove broad downstream equivalence. Abstract headline search speedups are avoided in favor of scoped body results. Public code was inspected but not executed; there is no independent reproduction."
+      },
+      "tags": [
+        "Heterogeneous Training",
+        "Pipeline Parallelism",
+        "Batch Balancing",
+        "Gradient Synchronization"
+      ],
+      "novelty": "material-update",
+      "update_note": "2026-10-16: The newly announced paper supplies the formal heterogeneous-pipeline/batch-allocation method, block-wise synchronization, search design and detailed Ascend/NVIDIA evaluation beyond the older implementation (https://arxiv.org/html/2610.22035v1; https://arxiv.org/list/cs.DC/recent?skip=0&show=2000; https://info.arxiv.org/help/availability.html; https://github.com/YuMJie/ETH). The initial July 29 code tree contains no paper PDF; commit dates are provenance, not proof of an exact first-public timestamp. The preserved October 15 published_on is this paper's receipt date.",
+      "report_kind": "daily",
+      "report_date": "2026-10-16",
+      "report_path": "reports/2026/10/2026-10-16.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.21640",
+      "title": "ReFlow: Replay-Driven Decoupling for Efficient RL Post-Training",
+      "category": "3.2",
+      "published_on": "2026-10-15",
+      "first_seen_at": "2026-10-17T10:02:23.384Z",
+      "public_availability": {
+        "at": "2026-10-16T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "canonical_url": "https://arxiv.org/abs/2610.21640",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.21640"
+      },
+      "summary": [
+        "ReFlow mixes a bounded, down-weighted share of recently used trajectories into asynchronous reinforcement-learning batches, reducing the trainer's dependence on expensive fresh rollouts.",
+        "Prewarmed workers and an adaptive scheduler move GPUs between generation and training as demand changes, increasing processed-training-token throughput while preserving comparable training-reward progress in the tested reasoning and agent workloads."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Reviewed Sections 1-8, the replay-weighting analysis, worker transitions, both schedulers and complete evaluations. The VeRL/Ray/vLLM/FSDP2 system tests Qwen3-4B/8B/14B/32B on 8-128 H800 GPUs using DAPO math, APPS coding and ReTool sandbox reasoning. Replay fraction and replay loss weight are capped/set at 0.5, with maximum policy lag one; sampling is random and reinsertion unfiltered. Authors report up to 2.06x trainer-processed token throughput, reward-versus-step/time curves, and 5.72/9.20 s resource rebalances on 32 GPUs. Public-paper timing is inferred from the PRIMARY cs.LG October 16 batch and official release schedule, rather than the October 15 receipt timestamp.",
+        "limitations": "Throughput includes replayed tokens consumed by the trainer; it is not fresh-trajectory generation throughput. Quality evidence is training reward rather than held-out reasoning or coding evaluation. Throughput windows are five measured steps after five warmups, or ten after ten for coding. The local gradient-error argument assumes unbiased unused samples, bounded replay bias and uncorrelated centered errors; it is not a global convergence guarantee. Prewarmed hybrid workers require CPU offload and compatible replica groups, and adaptation depends on workload. The code is awaiting approval and not yet released. No independent reproduction was performed."
+      },
+      "tags": [
+        "Experience Replay",
+        "Asynchronous RL",
+        "Elastic Workers",
+        "Rollout Scheduling"
+      ],
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-16",
+      "report_path": "reports/2026/10/2026-10-16.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.21500",
+      "title": "When the KV Cache Is Slower Than the GPU: Scaling Remote KV Tiers for Context-Parallel Prefill",
+      "category": "3.4",
+      "published_on": "2026-10-15",
+      "first_seen_at": "2026-10-17T10:02:23.724Z",
+      "canonical_url": "https://arxiv.org/abs/2610.21500",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.21500",
+        "code": "https://github.com/LMCache/LMCache/pull/5545"
+      },
+      "summary": [
+        "This study explains why a remote key-value cache can be slower than recomputing a prompt, then shards cache work across context-parallel ranks and remote servers while moving loads off the engine's blocking path.",
+        "Its production-trace replay and bandwidth-plus-fixed-cost model give serving engineers a practical way to decide when cache reuse helps, and to separate capacity benefits from first-token latency."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Reviewed Sections 3-8, all tables, the collective-safe sharding protocol and the linked LMCache PR. GLM-5.3 FP8 runs on one 8-GPU B300 PCP8/EP8 prefill engine using vLLM 0.31.0 and LMCache 0.5.5. A 683-request production trace and a primed 450-request subset support the cost model; on the hit-heavy subset, final prefill-leg p99 is 0.67 s versus 83.32 s for the overloaded single-server baseline, with 98.5% of prompt tokens cached. Final remote-hit median remains 0.40 s versus 0.31 s for recomputation. This is a new detailed paper and evaluation of engineering whose sharding PR opened October 8. Public-paper availability is inferred as October 16 00:00 UTC from its primary cs.DC batch and the official announcement schedule; the October 15 receipt date is preserved. The linked PR 5545 implements the synchronous sharding component, not all asynchronous extensions or client fixes evaluated in the paper.",
+        "limitations": "Each condition ran once; differences below about 10% are not established. The dramatic p99 ratio repairs an overloaded hit-heavy queue rather than showing a universal cache speedup. Replays omit decode handoff and shared multi-engine contention, and the selected subset fits the private cache. The approximately 17K-token crossover is a one-point-fitted prediction, not a measured general threshold. Deployment comparisons change parallelism and placement too. Correctness evidence is needle retrieval and soak testing, not bit-exact or broad answer-quality proof. The linked PR remains open; no independent reproduction was performed. PR 5545 explicitly rejects asynchronous loading; the paper references separate extensions and fixes, so this link is not a complete reproduction artifact."
+      },
+      "tags": [
+        "Remote KV Cache",
+        "Context Parallelism",
+        "Asynchronous Loading",
+        "Trace Replay"
+      ],
+      "novelty": "material-update",
+      "update_note": "2026-10-16: The newly announced paper adds a detailed fixed-cost/bandwidth model, collective-safe remote-cache protocol, production-trace evaluation and limitations beyond the earlier sharding implementation (https://arxiv.org/html/2610.21500v1; https://arxiv.org/list/cs.DC/recent?skip=0&show=2000; https://info.arxiv.org/help/availability.html; https://github.com/LMCache/LMCache/pull/5545). The PR opened October 8, which is provenance rather than an asserted exact first-public timestamp. The preserved October 15 published_on is this paper's receipt date, not the implementation's release date.",
+      "report_kind": "daily",
+      "report_date": "2026-10-16",
+      "report_path": "reports/2026/10/2026-10-16.md",
+      "search_status": "partial"
+    },
     {
       "id": "arxiv:2610.20456",
       "title": "The COUNT: Counting N-grams Unlocks Scaling on Host Memory and Training-Free Adaptation",
@@ -6604,7 +7018,7 @@
       "group": "llm-recipe",
       "title": "Mid-training & Continual Learning",
       "path": "topics/llm-recipe/midtraining-continual-learning/README.md",
-      "count": 7
+      "count": 8
     },
     {
       "id": "1.5",
@@ -6632,7 +7046,7 @@
       "group": "llm-recipe",
       "title": "Distillation & Model Compression",
       "path": "topics/llm-recipe/distillation-model-compression/README.md",
-      "count": 11
+      "count": 12
     },
     {
       "id": "1.9",
@@ -6653,14 +7067,14 @@
       "group": "ai-agent-dev",
       "title": "Agent Architecture & Planning",
       "path": "topics/ai-agent-dev/agent-architecture-planning/README.md",
-      "count": 4
+      "count": 5
     },
     {
       "id": "2.2",
       "group": "ai-agent-dev",
       "title": "Tool Use & Environment Interaction",
       "path": "topics/ai-agent-dev/tool-use-environment-interaction/README.md",
-      "count": 4
+      "count": 5
     },
     {
       "id": "2.3",
@@ -6681,7 +7095,7 @@
       "group": "ai-agent-dev",
       "title": "Agent Learning & Skill Acquisition",
       "path": "topics/ai-agent-dev/agent-learning-skill-acquisition/README.md",
-      "count": 10
+      "count": 11
     },
     {
       "id": "2.6",
@@ -6695,7 +7109,7 @@
       "group": "ai-agent-dev",
       "title": "Agent Harness & Reliability",
       "path": "topics/ai-agent-dev/agent-harness-reliability/README.md",
-      "count": 6
+      "count": 7
     },
     {
       "id": "2.8",
@@ -6709,35 +7123,35 @@
       "group": "ai-training-inference-infra",
       "title": "Distributed Training Systems",
       "path": "topics/ai-training-inference-infra/distributed-training-systems/README.md",
-      "count": 6
+      "count": 7
     },
     {
       "id": "3.2",
       "group": "ai-training-inference-infra",
       "title": "RL & Rollout Infrastructure",
       "path": "topics/ai-training-inference-infra/rl-rollout-infrastructure/README.md",
-      "count": 5
+      "count": 6
     },
     {
       "id": "3.3",
       "group": "ai-training-inference-infra",
       "title": "Inference Engines & Serving",
       "path": "topics/ai-training-inference-infra/inference-engines-serving/README.md",
-      "count": 14
+      "count": 15
     },
     {
       "id": "3.4",
       "group": "ai-training-inference-infra",
       "title": "Attention, KV Cache & Memory Systems",
       "path": "topics/ai-training-inference-infra/attention-kv-cache-memory-systems/README.md",
-      "count": 11
+      "count": 12
     },
     {
       "id": "3.5",
       "group": "ai-training-inference-infra",
       "title": "Kernels, Compilers & Runtimes",
       "path": "topics/ai-training-inference-infra/kernels-compilers-runtimes/README.md",
-      "count": 13
+      "count": 14
     },
     {
       "id": "3.6",
