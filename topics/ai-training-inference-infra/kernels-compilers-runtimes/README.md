@@ -5,6 +5,38 @@ GPU kernels, operator fusion, compilation, execution graphs and hardware adaptat
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-21](../../../reports/2026/10/2026-10-21.md) — PARTIAL SEARCH
+
+### [TorchTPU: Native PyTorch Backend, Pod-Scale Training and vLLM Serving](<https://pytorch.org/blog/introducing-torchtpu/>)
+
+The new TorchTPU reports explain how native PyTorch tensors, eager execution, graph compilation and distributed collectives map to Google TPUs, alongside a vLLM plugin that reuses upstream model and serving code. They provide concrete portability and scaling evidence plus implementation guidance for precision, views, collective safety and custom kernels, helping developers distinguish a working port from a tuned deployment.
+
+**Published:** 2026-10-20 · **First seen:** 2026-10-21T10:05:03.395Z · **Novelty:** material-update · **Tags:** Hardware Portability, TPU, PyTorch Runtime, Weak Scaling
+
+[Blog](<https://pytorch.org/blog/introducing-torchtpu/>) · [Code](<https://github.com/google-pytorch/torch_tpu>) · [Project](<https://github.com/vllm-project/vllm-torchtpu>)
+
+**Evidence:** engineering-report; full-text. Read the full PyTorch architecture/case-study report, complete vLLM launch report, current code READMEs/support matrix and earlier April7 Google architecture article. PyTorch publication metadata is October20 16:02:30Z; the vLLM launch source merged16:29:35Z, both after October20 cutoff and before October21 cutoff. New detailed evidence includes4917-model smoke/lowering testing (4821passes) and a657-model numerical subset (638passes under stated tolerances), not universal model equivalence. Qwen3-MoE235B BF16 training uses SimpleFSDP/HSDP, Pallas kernels, scan, collective overlap, activation offload/checkpointing and fixed per-TensorCore batch16/length4096; increasing from1024to8192 TPUv7 chips grows global batch32768to262144, with2236to2104tokens/s/TensorCore and28.8to27.1%MFU. This is weak scaling. vLLM TorchTPU is an out-of-tree plugin using torch.compile to XLA and Pallas custom ops, plus TPU Sync for host KV offload and resharded disaggregation. The April article already described eager/compile/distributed architecture; the update is inspectable code integration and expanded implementation/coverage/scaling evidence.
+
+**Limitations:** Portability does not promise peak performance or bitwise equality: default matrix multiplication uses BF16 inputs/FP32 accumulation; higher precision is multipass. The5000-model headline mixes smoke/lowering checks and narrower numerical tests with nonzero tolerances. Pod scaling is weak scaling with tuned kernels/scan and increased global batch, not strong scaling or a pure eager baseline. TPUv7 chip and TensorCore counts differ by2x; avoid mixing their throughput units. Bounded dynamism/MPMD collective optimization remains conditional or experimental; unsafe SPMD assumptions can deadlock or corrupt execution. vLLM recommendsv7x whilev5/v6are experimental; feature-specific support is narrower than every upstream model. No broad GPU/TPU TCO leadership or model-quality claim is inferred from third-party/author benchmark summaries. No independent reproduction.
+
+**Update:** 2026-10-20: The PyTorch report and vLLM TorchTPU launch add implementation-level explanations, public backend/plugin artifacts, model-coverage protocols and pod-scale training/serving case studies (https://pytorch.org/blog/introducing-torchtpu/; https://vllm.ai/blog/2026-10-20-vllm-torchtpu). The April7 Google article already introduced the native backend architecture (https://developers.googleblog.com/torchtpu-running-pytorch-natively-on-tpus-at-google-scale/); repository creation dates in March/June are not first-public-release proof. This entry selects the new detailed evidence and public integration, not a first invention of the eager or XLA path.
+
+## [2026-10-20](../../../reports/2026/10/2026-10-20.md) — PARTIAL SEARCH
+
+### [One Search, Two Layers: Compiler Controls Inside PyTorch Helion using NVIDIA CompileIQ](<https://pytorch.org/blog/one-search-two-layers-compiler-controls-inside-pytorch-helion-using-nvidia-compileiq/>)
+
+This engineering study treats compiler control files as another tuning dimension alongside a kernel’s tile shapes, warp counts and pipeline settings, rather than stopping optimization at the kernel source. It demonstrates a measured workflow for finding and pinning small additional gains in already tuned kernels, while validating numerical outputs and matching each control file to its hardware and compiler version.
+
+**Published:** 2026-10-19 · **First seen:** 2026-10-21T10:05:03.422Z · **Novelty:** material-update · **Tags:** Compiler Tuning, GPU Kernels, NVFP4, Numerical Validation
+
+[Blog](<https://pytorch.org/blog/one-search-two-layers-compiler-controls-inside-pytorch-helion-using-nvidia-compileiq/>) · [Code](<https://github.com/pytorch/helion>) · [Project](<https://github.com/NVIDIA/CompileIQ>)
+
+**Evidence:** engineering-report; full-text. Read the complete report including fixed/joint search, runtime/occupancy/multi-objective experiments and caveats. Article metadata gives publication October19 15:45:05Z, after the October19 cutoff and before October20 cutoff. The new experimental case uses a pre-tuned Helion NVFP4 decode GEMV on GB200/sm100, ptxas13.3.73, CUDA13.3, CompileIQ1.0.3 and Triton3.8.0, locked clocks and PyTorch-reference output checks. For N8192/K28672, fixed-kernel compiler-control search remeasures about0.0975to0.0930ms (1.048x); the joint runtime/L1TEX objective reports1.0689x with L1TEX throughput81.51to85.96%. Two-shape search reports about1.05x and1.01x on the respective validated shapes. Welch tests and effect-size filters are author-side repeated-timing checks. Helion ACF support existed March6, CompileIQ1.0 released May26, and booster packs existed May/August; this is selected as a new scoped experiment/workflow report, not a new compiler or integration release.
+
+**Limitations:** Kernel microbenchmark improvements do not establish end-to-end LLM speedup, broad model coverage or universal2-7% gains. Search multiplies compilation/measurement trials and is intended offline; no amortized whole-workload savings are measured. Compiler-control files are architecture/toolkit specific, and mismatched controls can cause wrong results or runtime errors. Correctness checks cover the supplied reference cases, not all shapes or full training convergence. CompileIQ is distributed under a proprietary NVIDIA EULA even though Helion is open source and generated ACFs are redistributable. Code was inspected, not executed; no independent reproduction.
+
+**Update:** 2026-10-19: The new PyTorch report publishes controlled Helion NVFP4 GEMV compiler-control tuning experiments, including repeated validation, two-shape and multi-objective cases (https://pytorch.org/blog/one-search-two-layers-compiler-controls-inside-pytorch-helion-using-nvidia-compileiq/). It builds on earlier Helion ACF integration and CompileIQ releases (https://api.github.com/repos/pytorch/helion/commits?path=examples/acfs&amp;per\_page=10; https://api.github.com/repos/NVIDIA/CompileIQ/releases?per\_page=10), rather than introducing either project for the first time.
+
 ## [2026-10-17](../../../reports/2026/10/2026-10-17.md) — PARTIAL SEARCH
 
 ### [Hyper Optimizing Kimi K3 in vLLM: Moving Fast and Responsibly](<https://vllm.ai/blog/2026-10-16-kimi-k3-megakernel>)

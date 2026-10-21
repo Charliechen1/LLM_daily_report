@@ -5,6 +5,22 @@ FP8/FP4/INT execution, quantized kernels, sparse compute and speculative decodin
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-21](../../../reports/2026/10/2026-10-21.md) — PARTIAL SEARCH
+
+### [Humming: Unified Quantized Inference Kernels and New Serving Measurements](<https://vllm.ai/blog/2026-10-21-humming>)
+
+Humming separates a model’s quantization description from hardware-specific execution choices, composing shared data movement, dequantization, scheduling and Tensor Core components into specialized kernels. The new engineering report shows how this design translates selected low-bit formats into practical dense and mixture-of-experts execution, with an explicit serving comparison that changes activation precision while preserving the checkpoint’s quantized weights.
+
+**Published:** 2026-10-21 · **First seen:** 2026-10-21T10:05:03.280Z · **Novelty:** material-update · **Tags:** Quantized Kernels, MoE, Kernel Composition, Serving Measurements
+
+[Blog](<https://vllm.ai/blog/2026-10-21-humming>) · [Code](<https://github.com/vllm-project/humming>)
+
+**Evidence:** engineering-report; full-text. Read the complete dated blog/Markdown and prior source document, architecture/format/device support, benchmark methodology, full end-to-end table and future-work caveats. The main article source merged October21 02:45:20Z; its PR opened October19 and cites an earlier Humming source. The verified source commit8549542 at October20 09:35:28Z specifically adds end-to-end results, so this is an editorial catch-up of that substantive report update within the October21 total72-hour lookback, not a first-ever library release. Humming code dates to February and its PyPI README update to September. The new comparison uses DeepSeek-V4.1-Flash on8H20 GPUs, TP8, same MXFP4 weights, MarlinW4A16/BF16 versus HummingW4A8/tokenwiseFP8 activations. Across concurrency1-64, authors report output throughput+14.1to43.3%; at64,442.37to633.94outputtokens/s, TTFT5467.35to3882.94ms, TPOT123.25to85.70ms. Separate microbenchmarks use warmed kernels/coldL2 and powers-of-twoM1-8192; their speedups are not serving speedups.
+
+**Limitations:** Activation precision and backend change together; the end-to-end experiment is not an iso-numerics kernel-only comparison and no corresponding task-quality or long-context accuracy test is reported. Hardware/shape/format support is conditional, and quantization storage savings alone do not imply native low-bit arithmetic on older GPUs. Kernel and compilation results use different cases/baselines; do not generalize extreme microbenchmark ratios. Default tuning uses heuristics; autotuning and deeper EP integration are future work. Blog data is author/community reported, not independently reproduced. The October21 publication republishes prior source material; the October20 new end-to-end source update is explicitly preserved rather than resetting method/code age.
+
+**Update:** 2026-10-20: Humming source commit85495420c0e98f3708e7baf39ae6c0a6b2e123a5 adds the end-to-end DeepSeek-V4.1-Flash8H20 serving table and report preview to the existing kernel library (https://api.github.com/repos/vllm-project/humming/commits/85495420c0e98f3708e7baf39ae6c0a6b2e123a5; https://raw.githubusercontent.com/vllm-project/humming/85495420c0e98f3708e7baf39ae6c0a6b2e123a5/docs/humming-introduction.en.md). The October21 vLLM report republishes that material (https://vllm.ai/blog/2026-10-21-humming; https://api.github.com/repos/vllm-project/vllm-project.github.io/pulls/389). This is delayed editorial discovery of a new measured report update, not newly released code; commit time documents source provenance without asserting an exact website-visibility timestamp.
+
 ## [2026-09-29 — Landscape baseline](../../../landscape/2026-09-29.md) — PARTIAL SEARCH
 
 ### [Towards Full Pipeline FP8 Reinforcement Learning for LLMs](<https://arxiv.org/abs/2609.22870>)

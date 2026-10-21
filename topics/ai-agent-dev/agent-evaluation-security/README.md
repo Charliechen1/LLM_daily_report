@@ -5,6 +5,68 @@ Task success, trajectory evaluation, cost/reliability, prompt injection and perm
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-20](../../../reports/2026/10/2026-10-20.md) — PARTIAL SEARCH
+
+### [MultiLangBench and behavior-preserving COBOL migration evaluation](<https://openai.com/index/low-resource-programming-languages/>)
+
+OpenAI introduced MultiLangBench, which tests whether coding models can implement a SQLite-compatible engine across 20 programming languages, alongside a separate COBOL migration evaluation requiring exact output preservation. The released tests give developers a concrete way to assess long coding sessions in less common languages, while the authors report substantial accuracy gains for their latest models under these specific settings. The migration suite remains hidden, and success on either evaluation does not establish production readiness or general superiority across software engineering tasks.
+
+**Published:** 2026-10-19 · **First seen:** 2026-10-21T10:00:22.905Z · **Novelty:** new · **Tags:** coding-agents, evaluation, low-resource-languages, behavior-preservation
+
+[Blog](<https://openai.com/index/low-resource-programming-languages/>) · [Code](<https://github.com/openai/MultiLangBench>)
+
+**Evidence:** technical-report; full-text. Read the complete October 19 technical blog and public benchmark README, inspected the repository tree and three-commit history, and compared the initial README. The contribution is an inspectable cross-language database I/O contract plus newly reported 20-language and COBOL-migration results: an initial database and user SQL produce a candidate database that real SQLite 3.40.1 checks with a validation query. Of roughly 51k upstream TCL tests, roughly 24k were converted; the README specifies a 272-test hash-prefix subset by default, a 60-second test timeout, and joint reporting of API cost and pass rate. Authors report 87.4% mean MultiLangBench test pass rate for GPT-6 Astra at maximum reasoning effort versus 26.8% for GPT-5.6 Sol; the separate hidden COBOL suite counts a migration only when all byte-parity tests pass. This report backfills the October 20 window using actual October 21 discovery. The dated blog is the public-release source; imported September 29/October 6 commits do not prove earlier public visibility, and the current repository was created October 19.
+
+**Limitations:** The public tests adapt a subset of SQLite semantics and do not establish full database compatibility; default 272-test scoring differs from running all converted tests. The blog does not expose the COBOL task set, task count, complete harness, sampling uncertainty or business-system dependencies; exact test success is narrower than real migration correctness. Model and reasoning-effort comparisons do not isolate a training recipe or architecture change, and estimated API cost depends on output usage and pricing. The current repository contains dated historical commits before its creation; their timestamps alone are not evidence of a prior public release. No independent reproduction was performed.
+
+## [2026-10-19](../../../reports/2026/10/2026-10-19.md) — PARTIAL SEARCH
+
+### [MS-Eval: Benchmarking Sub-Agent Delegation and Orchestration in MCP-Intensive Working Scenarios](<https://arxiv.org/abs/2610.22869>)
+
+MS-Eval pairs 166 tool-intensive work tasks with annotated delegation plans and a controlled harness, evaluating when subagents help as well as their success, critical-path steps and API-token cost. Its eight-model study shows that specialization and context offloading can help, while unnecessary delegation often adds cost; this gives agent builders a more informative comparison than assuming that adding subagents improves every model.
+
+**Published:** 2026-10-16 · **First seen:** 2026-10-21T10:02:45.538Z · **Novelty:** new · **Tags:** Multi-Agent Evaluation, Delegation, Cost
+
+**Public availability:** 2026-10-19T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.22869>)
+
+**Evidence:** research-paper; full-text. Full Sections 3–7, Table 1 and relevant Appendices A–D inspected. Tasks span eight Toolathlon-Gym scenarios, with 89 annotated as delegation-needed and 77 not-needed; four delegation variants share a Kimi-Code scaffold. A 166-task comparison evaluates eight models, while the variant comparison uses DeepSeek-V4-Flash-0731. Specialized roles score MSQ 20.8 versus 11.6 for general roles and 17.6 for plan-first in that setup. Critical steps count each parallel wave by its slowest subagent, not measured wall time; API billing is a fixed-price estimate. The full-benchmark Kimi-K3 Spec result improves success 10.2 percentage points at 0.4 USD lower mean token cost per task, whereas tested closed models incur higher cost with lower success. Original cs.AI October 19 batch and official schedule support inferred paper availability2026-10-19T00:00Z, separate from October 16 receipt. The announced author repository was checked by HTML and API and returns 404; it is omitted from publication.links.
+
+**Limitations:** One simulated tool environment and one harness; role prompts change the main agent even when it delegates nothing, and 305 of 625 categorized beneficial cases are main-agent-only. Delegation priors reflect the authors' parallelism/context-offloading assumptions; matching uses an LLM tagger and the custom MSQ weighting is not a universal quality score. Resource utilities condition on selected/successful subsets, and efficiency is critical steps rather than latency. No author implementation or independent reproduction verified.
+
+## [2026-10-18](../../../reports/2026/10/2026-10-18.md) — PARTIAL SEARCH
+
+### [GraphACM: Graph-based Action Consistency Measurement for Uncertainty Quantification in LLM Agents](<https://arxiv.org/abs/2610.22031>)
+
+GraphACM aligns repeated agent runs into a shared state-action graph and measures whether they choose the same actions in comparable decision contexts. This training-free signal localizes behavioral disagreement and distinguishes more reliably solved tasks in the tested environments, helping builders assess execution stability without treating consistency as a correctness guarantee.
+
+**Published:** 2026-10-15 · **First seen:** 2026-10-17T10:02:10.629Z · **Novelty:** newly-discovered · **Tags:** Agent Evaluation, Uncertainty, Behavioral Consistency
+
+**Public availability:** 2026-10-16T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.22031>)
+
+**Evidence:** research-paper; full-text. Sections 2-3, Tables 1-2 and Appendices A-D inspected using the full HTML and complete 13-page PDF. Ten temperature-1 rollouts per task/model pair cover 134 ALFWorld, 168 AppWorld and 200 WebShop tasks with Qwen3.8-27B, Gemma-4-31B-IT and GPT-5.4-mini. State-conditioned action agreement, visitor weighting and action-count normalization yield mean success-discrimination AUROC 0.811 versus 0.769 for verbalized confidence and 0.729 for the best consistency comparator. Success labels require at least 5/10 successful runs. Delayed editorial catch-up from the October 16 original cs.AI batch, already visible in our archived October 17 listing; this is not a late-indexing claim or an October 18 release. The archived retrieval timestamp is retained as first\_seen\_at, and full verification was completed October 18. Availability at 2026-10-16T00:00Z is inferred from the dated batch and official announcement schedule.
+
+**Limitations:** Uses ten repeated executions and benchmark-specific state/history abstractions; prospective single-execution deployment and calibrated failure probabilities are not established. The label and score derive from the same rollout set. Consistently wrong WebShop behavior remains possible and results there are weaker. No dedicated author implementation or earlier primary release was verified, and no independent reproduction was performed.
+
+## [2026-10-18](../../../reports/2026/10/2026-10-18.md) — PARTIAL SEARCH
+
+### [AgentPerturb: Evaluating LLM Agent Robustness under Controlled Interaction Perturbations](<https://arxiv.org/abs/2610.21624>)
+
+AgentPerturb builds matched clean and noisy agent tasks by varying user requests, procedures, inherited context and tool contracts across missing, distracting and incorrect information. Its two-environment study exposes different failure patterns and costly recovery tails, providing a practical test design for robustness that clean benchmark scores can miss.
+
+**Published:** 2026-10-15 · **First seen:** 2026-10-17T10:02:10.629Z · **Novelty:** newly-discovered · **Tags:** Agent Robustness, Tool Use, Recovery
+
+**Public availability:** 2026-10-16T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.21624>)
+
+**Evidence:** research-paper; full-text. Methods, results, limitations and relevant Appendices A/B/E/F.6 inspected. The pipeline creates 12 one-target perturbation families and checks goal preservation, a viable recovery path and executability with an LLM verifier plus native validators; missing information can add a clarification step. Each of ten models runs 25 clean and 300 perturbed episodes per benchmark under a common Codex CLI scaffold. Table 1 model-averaged APEX partial-credit scores fall 70.3 to 55.0, while Toolathlon binary success falls 25.0% to 18.4%; these are different metrics. A focused Hunyuan-3-High analysis reports 73% higher mean tokens per successful perturbed trajectory with little median change. Delayed editorial catch-up from the October 16 original cs.AI batch, already visible in our archived October 17 listing; this is not a late-indexing claim or an October 18 release. The archived retrieval timestamp is retained as first\_seen\_at, and full verification was completed October 18. Availability at 2026-10-16T00:00Z is inferred from the dated batch and official announcement schedule.
+
+**Limitations:** Only 25 tasks per benchmark; Toolathlon is a completion-selected 25/79 subset, not a random full-benchmark sample, and unscored runs are excluded. One trajectory per condition and provider-dependent decoding limit generalization; fine-grained family comparisons use only five models. The semantic-verifier gate has no measured human agreement or error rate. The linked GitHub repository is empty at verification, so code/data release and independent matched-edit audit are not established. No independent reproduction.
+
 ## [2026-10-15](../../../reports/2026/10/2026-10-15.md) — PARTIAL SEARCH
 
 ### [Into the Unknown: Benchmarking AI agents on open scientific research problems](<https://arxiv.org/abs/2610.19159>)

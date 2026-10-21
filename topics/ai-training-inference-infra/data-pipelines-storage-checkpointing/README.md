@@ -5,6 +5,22 @@ Data loading, storage throughput, distributed checkpoints, recovery and fault to
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-18](../../../reports/2026/10/2026-10-18.md) — PARTIAL SEARCH
+
+### [Coordination-Free Workload Regularization for Variable-Cost Distributed Training](<https://arxiv.org/abs/2610.21162>)
+
+Batch Cost Lookahead buffers a bounded window inside each training worker and regroups it into equal-record-count batches with similar estimated cost, without exchanging sample metadata across workers. This reduces synchronization waiting for variable-length training while retaining the existing batch-count interface, with explicit diagnostics for oversized records and persistent imbalance that local scheduling cannot fix.
+
+**Published:** 2026-10-15 · **First seen:** 2026-10-17T10:02:23.754Z · **Novelty:** newly-discovered · **Tags:** Data Loading, Load Balancing, Sequence Packing, Distributed Training
+
+**Public availability:** 2026-10-16T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.21162>)
+
+**Evidence:** research-paper; full-text. Editorial catch-up of an October16 arXiv announcement already screened as a reserve on October17; this is delayed selection, not an indexing-delay claim. Read Sections1-10, Algorithm1 and all evaluation tables. The fixed-cardinality contract conserves each window's records and uses classical longest-processing-time initialization plus bounded heavy/light swaps. On Llama3.2-1B NeMo-RL0.7.0 SFT with FSDP2/BF16/FA3 on eight H200 GPUs, lookahead32 versus1 in the same per-rank pipeline improves mean wall-clock step speed by0.4-30.5% across11 corpora, over three300-step repeats excluding20warmups. All arms use the same per-corpus p99 cap. The abstract's5.0-16.7% comparison against pooledMFFD includes input-path differences and is cross-campaign. Paper receipt is October15 03:22:50Z; public availability is inferred from the original cs.DC Friday16 batch and official Thursday20:00Eastern schedule.
+
+**Limitations:** The assignment heuristic is classical; the contribution is its bounded streaming deployment contract and measured boundary analysis, not a new global optimizer. Length-cost simulation is not GPU speedup. Two matched no-lookahead arms were not rerun after prior OOMs. The larger1.197-1.343x result uses an internal sequential recommender and weak scaling from8to32H200 ranks, not LLM scaling evidence. Local reordering cannot resolve a dominant infeasible record or different total cost across rank shards. It changes optimizer-step sample grouping; p99 truncation quality, held-out SFT quality and exact midstream restart are untested. No dedicated public implementation was verified; no independent reproduction.
+
 ## [2026-10-02](../../../reports/2026/10/2026-10-02.md) — PARTIAL SEARCH
 
 ### [Leto: Fast In-Place Recovery for LLM Training on Surviving Hardware](<https://arxiv.org/abs/2610.00687>)

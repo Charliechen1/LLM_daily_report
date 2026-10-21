@@ -5,6 +5,22 @@ Data filtering, deduplication, mixtures, synthetic data, quality and tokenizers.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-18](../../../reports/2026/10/2026-10-18.md) — PARTIAL SEARCH
+
+### [No Single Tokenizer Feature Reliably Predicts Downstream Language Model Performance](<https://arxiv.org/abs/2610.21679>)
+
+Across three small-model suites and nine languages, this study finds that popular tokenizer metrics correlate inconsistently with downstream quality, even when individual task correlations appear strong. The results support validating tokenizer choices on representative tasks and languages instead of treating compression or a single intrinsic score as a reliable accuracy proxy.
+
+**Published:** 2026-10-15 · **First seen:** 2026-10-17T10:02:15.889Z · **Novelty:** newly-discovered · **Tags:** Tokenizer Evaluation, Multilingual Models, Intrinsic Metrics
+
+**Public availability:** 2026-10-16T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.21679>) · [Code](<https://github.com/shikhar-srivastava/vista-training>) · [Project](<https://huggingface.co/collections/shikhar-srivastava/vista-130m>)
+
+**Evidence:** research-paper; full-text. Full Sections 3–10 and the model, evaluation, statistical and robustness appendices inspected again. Three suites cover 14 TokSuite 1B models, 45 usable TIMTC 350M models after nine OOV exclusions, and multilingual VISTA 130M/350M models; 29 intrinsic metrics and 48 distinct benchmark tasks span nine languages. The analysis z-scores accuracy within language and task, corrects multiple comparisons, controls parameter counts and repeats the analysis after excluding near-chance cases. The strongest aggregate correlations are only r=0.27, 0.24 and 0.22, while signs and rankings change across tasks, languages and suites. A metric explains at most an additional 0.021 R-squared beyond model size; pairs of intrinsic metrics reach at most 0.09 joint R-squared. Existing VISTA training code and model collections were verified both in the prior run and today. This was a reviewed but unpublished reserve on October 17, below that run’s selected contributions; fresh reassessment now includes its useful tokenizer-selection lesson within the remaining 72-hour lookback. Its original October 17 first-seen time is preserved. No indexing delay is claimed.
+
+**Limitations:** These observational correlations do not show that tokenizers do not matter or that a better metric cannot exist. Models are at most 1B parameters, some tasks are near chance, language coverage and suite training budgets differ, vocabulary sizes change embedding parameter counts, and annotated intrinsic resources are uneven across languages. Compression can still reduce cost without predicting accuracy. The VISTA link is training code, not the complete current paper-analysis pipeline. The main analysis repository, unavailable with 404 responses during the prior run, loaded today, but its sole observed code commit is October 18 at 21:13Z, after the report’s 10:00Z cutoff. That later artifact is not used as an in-window contribution or advertised as available by the cutoff; its exact first public visibility is not inferred from Git metadata. An undated author homepage lists the title without a paper link and does not establish an earlier full-method release.
+
 ## [2026-10-13](../../../reports/2026/10/2026-10-13.md) — PARTIAL SEARCH
 
 ### [MagicBeanStalk: Escaping the RLVR Zero Advantage Trap with Recursive Data Synthesis](<https://arxiv.org/abs/2610.12659>)

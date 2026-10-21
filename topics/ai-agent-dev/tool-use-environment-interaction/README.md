@@ -5,6 +5,22 @@ Tool selection/calling, APIs, code execution, browser/computer use and protocols
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-21](../../../reports/2026/10/2026-10-21.md) — PARTIAL SEARCH
+
+### [Evolving Agent Interfaces](<https://arxiv.org/abs/2610.28601>)
+
+Agent S4 evolves executable computer interfaces and usage knowledge from unlabeled synthetic-task trajectories, while a separate validation controller selects repositories and the task model and harness stay fixed. On 108 OSWorld V2 tasks, evolving a shared seed raises binary success from 19.44% to 21.30%, suggesting that reusable application interfaces can help a computer-use agent, although the reported aggregate includes 15 tasks used for repository selection.
+
+**Published:** 2026-10-20 · **First seen:** 2026-10-21T10:02:45.428Z · **Novelty:** new · **Tags:** Computer Use, Interface Evolution, Reusable Tools
+
+**Public availability:** 2026-10-21T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.28601>) · [Code](<https://github.com/simular-ai/agent-s>)
+
+**Evidence:** research-paper; full-text. Full Sections 2–7, Tables 1–4 and Appendices A/B plus mechanism prompts inspected. Population search alternates mutation/crossover for 30 descendants, with binary-tournament parent selection; the builder sees only 30 synthetic OSWorld training trajectories or 48 ScienceBoard synthetic trajectories and cannot access the 15 benchmark validation tasks/scores. Selection uses those validation scores, so the process is verifier-free only for construction evidence, not selection. Qwen3.8-27B and the Prime Agent harness remain fixed. Matched OSWorld results are 15.74% without a repository, 19.44% with the human seed and 21.30% with the best evolved no-scratch repository; full 108-task evaluation includes the 15 selection tasks. A separate ScienceBoard evolution reaches 58.58% versus 55.03% seed on 169 tasks, likewise including15 selection tasks. The 5.56% fixed-GUI comparison uses another harness/access surface and is not an isolated evolution gain. Original cs.AI October 21 batch and official schedule support inferred paper availability2026-10-21T00:00Z. The older Agent-S repository adds distinct S4 code in observed merge 58187e364e at October 21 at 05:32Z; no earlier S4-specific content release was established.
+
+**Limitations:** Validation overlaps the final aggregate; final repositories have small single-run gains over a strong manually authored seed and no reported repeated full-benchmark confidence interval. The method changes available interfaces versus the fixed-GUI baseline, so the headline 3.8 times comparison cannot isolate evolution. Cost estimates assume 80% input-cache hits and exclude repository construction/infrastructure. Qualitative traces and successful-task token/call subsets do not establish uniform task latency savings. No independent reproduction.
+
 ## [2026-10-17](../../../reports/2026/10/2026-10-17.md) — PARTIAL SEARCH
 
 ### [Claude reveals ECDSA curve origins](<https://www.anthropic.com/research/ecdsa-curve-origins>)

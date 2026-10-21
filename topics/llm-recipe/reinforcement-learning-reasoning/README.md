@@ -5,6 +5,22 @@ RLHF, RLVR, policy optimization, reasoning training, tool use and multi-turn age
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-18](../../../reports/2026/10/2026-10-18.md) — PARTIAL SEARCH
+
+### [Training Reasoning Models to Generate Diverse Scientific Ideas](<https://arxiv.org/abs/2610.22324>)
+
+After supervised warm-starting, this recipe trains an 8B model to generate three scientific ideas in one rollout and rewards each idea’s judged quality multiplied by its difference from earlier ideas. The resulting sets outperform quality-only RL on the authors’ document-grounded benchmark, suggesting a practical way to discourage duplicate proposals while leaving scientific validity and source grounding as separate checks.
+
+**Published:** 2026-10-15 · **First seen:** 2026-10-18T21:41:55.857Z · **Novelty:** newly-discovered · **Tags:** Set-level RL, Scientific Ideation, Quality-Diversity Rewards
+
+**Public availability:** 2026-10-16T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.22324>) · [Project](<https://github.com/ManyaWadhwa/diverge_ideation>)
+
+**Evidence:** research-paper; full-text. Full primary HTML, including the reward, training, judging, human-study and execution appendices, inspected. Sections 2–6, Equations 2 and 7, Tables 1, 3, 4 and 11, and Appendices B–F describe one K=3 rollout, a shared GRPO set advantage, a quality-times-nearest-prior-distance reward, schema gating and a capped length penalty. SFT and RL use 7,172 English NLP training instances; the main test has 1,740 instances across 16 scientific domains. In Table 1, the Qwen3-8B no-thinking model reaches judged Creative Utility 0.64 versus 0.21 after SFT and 0.38 with impact-only RL; idea distance is 0.88 versus 0.38 for impact-only RL. Grounding falls from 0.90 after no-thinking SFT to 0.61 after RL; the thinking variant trades lower utility (0.51) for higher grounding (0.81). The four-expert, 60-instance human pilot reports 2.17 promising ideas per set versus Claude’s 2.20. Appendix F’s execution pilot has 15 source instances (14 for the thinking variant), using a budgeted coding agent and its own experimental verdicts, not independently validated scientific discoveries. The author-linked repository currently contains only a coming-soon README. First inspected during this run; the paper is an unreported October 16 new-submission batch contribution inside the 72-hour lookback, so it is a delayed discovery rather than an October 18 release. Original October 15 receipt date is retained.
+
+**Limitations:** All results are author-reported. LLM judges define quality, distance, grounding and most benchmark outcomes; a 2026 test-year split alone does not prove absence of training contamination. The within-set reward does not ensure diversity across the population: IdeaSeed method-type entropy is 0.65 for no-thinking and 0.73 for thinking, below the reported human 0.87. The DARLING comparison also changes initialization, rollout grouping and clipping, so it does not isolate only where diversity is rewarded; the impact-only ablation is the cleaner comparison. Four experts and 15 execution instances are small pilots, and the execution agent’s self-reported support/refutation is not verified discovery. Training uses an external distance-judge API in addition to the local H200 allocation. Code, data and models are promised, not released in the verified project. No broad scientific-discovery or universal SoTA claim is supported.
+
 ## [2026-10-14](../../../reports/2026/10/2026-10-14.md) — PARTIAL SEARCH
 
 ### [Two Clocks: Why Larger Rollout Batches Learn Slower but Fail on Schedule in Reinforcement Learning with Verifiable Rewards](<https://arxiv.org/abs/2610.18853>)

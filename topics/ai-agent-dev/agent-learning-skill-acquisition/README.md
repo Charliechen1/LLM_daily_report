@@ -5,6 +5,36 @@ Learning from trajectories/feedback, skill generation/reuse, experience and self
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-20](../../../reports/2026/10/2026-10-20.md) — PARTIAL SEARCH
+
+### [CoworkEnv: Synthesizing Training Environments for Long-Horizon Cowork Agents](<https://arxiv.org/abs/2610.24960>)
+
+CoworkEnv synthesizes coordinated service records, tool interfaces and executable graders, validates their consistency, and turns teacher executions into training demonstrations for compact work agents. SFT raises Qwen3-VL-8B-Instruct's mean score from 46.6 to 64.1 on 199 Claw-Eval tasks and improves a separate ClawMark-trained checkpoint from 11.8 to 19.4 on 100 tasks, showing how executable workflow construction can supply useful agent-training data.
+
+**Published:** 2026-10-18 · **First seen:** 2026-10-21T10:02:45.248Z · **Novelty:** newly-discovered · **Tags:** Training Environments, Cowork Agents, Executable Grading
+
+[Paper](<https://arxiv.org/abs/2610.24960>) · [Code](<https://github.com/HKUST-KnowComp/CoworkEnv>)
+
+**Evidence:** research-paper; full-text. Full Methods 3, Experiments 4, Limitations and Appendices A–F inspected. Capability plans generate requests, initial records, tools and weighted completion/prohibited-action checks; programmatic gates test parsing, service references, answer-identifier leakage and synthetic grading consistency, allowing one repair retry. Teacher-success and structure/length filters prepare assistant-token SFT; the mixed-pool replay retains937/1,809 demonstrations, while other export branches have distinct thresholds. Claw-Eval base/SFT comparisons use 161 General plus 38 Multi-turn tasks with three trials/task; the metric is mean fractional score on0–100, not binary success. The 77.8 versus 45.9 Multi-turn gain is 31.9 points. Separate ClawMark SFT is evaluated on 100tasks. Original cs.AI October 20 batch plus official schedule supports inferred paper availability2026-10-20T00:00Z; Sunday October 18 receipt is preserved. Observed initial GitHub pipeline contentOctober 19 at 20:36Z, lessons contentOctober 19 at 20:07Z and model uploadsOctober 19 at 17:57Z are in this same daily window; repository creation onOctober 16 alone is not evidence of earlier substantive availability. Classified conservatively as newly-discovered using the preserved October 18 receipt date within the 72-hour discovery window; earlier October 19 model/code content is acknowledged rather than using the later paper announcement as the earliest release of the work. This is editorial catch-up, not delayed indexing.
+
+**Limitations:** Graders cover declared calls/records rather than all semantics: the documented ticket-update check does not verify resolution text. Teacher filtering can discard recovery behavior and favors a proprietary teacher. RL pipelines share supervised warm-up and vary multiple configuration choices, so their gains over the base cannot isolate RL or one credit-assignment mechanism. Public code is incremental: selected synthesis/adapters/SFT and RL-preprocessing components are present, while full distributed RL stack and task datasets are not bundled. Separate HF checkpoints are listed, but this review did not run or independently reproduce them.
+
+## [2026-10-19](../../../reports/2026/10/2026-10-19.md) — PARTIAL SEARCH
+
+### [Self-Evolving Coding Agents via Harness-Policy Optimization](<https://arxiv.org/abs/2610.22791>)
+
+Self-HPO alternates failure-guided harness revisions with reinforcement learning of the coding policy, using the updated policy and its unsolved training tasks to guide the next search round. With Qwen3.5-35B-A3B, average resolve rate across three SWE benchmarks rises from 57.8% to 64.8%, offering a practical recipe for improving the model and its execution scaffold together rather than optimizing either component in isolation.
+
+**Published:** 2026-10-16 · **First seen:** 2026-10-21T10:02:45.248Z · **Novelty:** new · **Tags:** Agent Learning, Harness Optimization, Coding Agents
+
+**Public availability:** 2026-10-19T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.22791>) · [Code](<https://github.com/MSR-Orchard/Self-HPO>)
+
+**Evidence:** research-paper; full-text. Full Sections 2–3, Table 1–3 and relevant Appendices A–E inspected. Two rounds alternate six harness candidates with 50 GRPO/BAR updates on 2,484 Python engineering training tasks. The self-proposer sees training failures and reference fixes but must not inject reference patches into solving context. Main evaluation averages three runs on 500 SWE-Verified,300 SWE-Multilingual and642 public V2 SWE-Pro tasks. Self-HPO scores 69.5/59.7/65.2 versus 61.0/54.2/58.3 for Base and 67.5/56.3/61.8 for matched policy-only RLVR. Cross-combinations retain some gains separately, with the final pair 69.5 exceeding 64.5 from evolved harness/base policy and 64.4 from seed harness/final policy. Original cs.CL October 19 batch plus official Eastern announcement schedule supports inferred paper availability2026-10-19T00:00Z; October 16 receipt is preserved. GitHub initial content commitOctober 19 at 01:39Z and HF model sole initial-release commitOctober 19 at 01:41Z corroborate the same window; earlier empty destination creation dates do not establish an earlier method release.
+
+**Limitations:** Only one backbone and coding domain; harness and policy receive different optimization operations, so the comparison does not establish universal compute-normalized superiority. Training uses executable reference outcomes and proposer-accessible training fixes, and policy training required eight B200 GPUs. Three-run means do not prove general deployment reliability; no independent reproduction. External-proposer HPO 71.6 is a separate Opus 4.8 setting and is not attributed to Self-HPO.
+
 ## [2026-10-16](../../../reports/2026/10/2026-10-16.md) — PARTIAL SEARCH
 
 ### [Mosaic: Multi-Session Agentic Reinforcement Learning](<https://arxiv.org/abs/2610.22174>)

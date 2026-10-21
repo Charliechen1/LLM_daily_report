@@ -5,6 +5,38 @@ Accelerators, interconnects, cluster scheduling, profiling, utilization, cost an
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-21](../../../reports/2026/10/2026-10-21.md) — PARTIAL SEARCH
+
+### [The Token-Energy Law of LLM Decode: Active Bytes and Realized Time Account for Joules per Token](<https://arxiv.org/abs/2610.28576>)
+
+This study models decode energy per useful output token using separately counted shared-weight traffic, private key-value history and elapsed time per token, with coefficients calibrated to each model and execution setting. It explains why batching, context length and runtime behavior affect energy differently, and offers a compact accounting tool for interpreting measured serving trade-offs rather than a hardware-independent energy constant.
+
+**Published:** 2026-10-20 · **First seen:** 2026-10-21T10:05:03.237Z · **Novelty:** new · **Tags:** Energy Measurement, Decode Accounting, Batching, Performance Modeling
+
+**Public availability:** 2026-10-21T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.28576>)
+
+**Evidence:** research-paper; full-text. Read Sections1-7, all energy/traffic methods and Tables2-8. Logical weights are amortized by realized useful outputs per iteration; KV bytes use output-weighted attended history plus one append, not allocated cache size. A fitted affine response combines those coordinates and observed decode duration. Tests use BF16 Qwen2.5-7B/14B and Mistral7B on GH200/GB300, including two-GPU GH200 tensor parallelism, fixed700W/1300W limits, full-history attention and vLLM graph/eager policy. NVML integration is synchronized; separate177Nsight profiles test logical reads. Across374held-out energy executions (270static across54cells plus104controlled departure traces), fixed per-setting coefficients yield maximum condition-mean absolute percentage error3.73%. This is condition-mean accuracy, not maximum individual-run error. Same-SKU GPU transfer is tested; cross-model/platform instances are separately calibrated. Receipt October20 17:32:08Z is preserved. Original cs.LG Wednesday21 batch plus official release schedule imply announcement October21T00Z.
+
+**Limitations:** The model uses observed duration; prospective planning needs an independently validated latency model. Energy boundary is GPU-board decode only, excluding prefill/CPU/network/datacenter and lifecycle/carbon costs; contributions in fitted stacked bars are not independently metered physical components. No universal coefficients or causal energy-per-byte constants are established. Quantization, prefix caching, speculation, chunked prefill, offload and preemption are disabled. Dynamic tests drain requests without new arrivals and run beyond the graph-capture cap, so they are not a full production continuous-batching trace. Multi-node/pipeline execution and MoE need new validation/accounting; dividing activated MoE parameter bytes by full batch is explicitly invalid. No dedicated public artifact/code release was verified and no independent reproduction was performed.
+
+## [2026-10-20](../../../reports/2026/10/2026-10-20.md) — PARTIAL SEARCH
+
+### [Koi: Evidence-Guided, Self-Calibrating Planning for Multi-Cloud, Heterogeneous LLM Inference Fleets](<https://arxiv.org/abs/2610.24355>)
+
+Koi uses language-model agents to propose cluster-wide inference deployments, then relies on deterministic prediction, constraint checks and telemetry to select and revise the plan. Its persistent graph of scoped hypotheses connects configuration choices to runtime bottlenecks, helping a heterogeneous fleet improve serving objectives while accounting for uncertainty, scarce capacity and migration cost.
+
+**Published:** 2026-10-17 · **First seen:** 2026-10-21T10:05:03.198Z · **Novelty:** material-update · **Tags:** Cluster Planning, Heterogeneous GPUs, Telemetry, SLO Goodput
+
+[Paper](<https://arxiv.org/abs/2610.24355>) · [Code](<https://github.com/Tandemn-Labs/tandemn-koi>)
+
+**Evidence:** research-paper; full-text. Read full Sections4-7 and AppendicesA/B, the code README, repository tree and pre-window history. Five-minute planning ticks combine a fixed decision-mediator-outcome DAG, Beta evidence, CUSUM residual tests, scoped mechanism proposals, deterministic AIConfigurator-derived predictions and capacity-constrained selection. The new paper reports a3-hour104-GPU GCP fleet across3regions with H100-80GB/A100-80GB/A100-40GB/RTXPRO6000. Against the strongest evaluated real-cluster baseline, Table2 reports4119.51 versus3497.43 SLO-honoring output tokens/s (17.79% higher) and0.24 versus0.30 times10^-4 dollars per SLO-honoring output token (20% lower). These are fleet-capacity accounting costs; planner LLM cost is separate. The larger45%goodput/31%cost gains belong to a400-GPU3-hour simulation, not the real fleet. The full paper is the original cs.DC Tuesday20 announcement (inferred October20T00Z with official schedule); receipt October17 01:03:13Z is preserved. Earlier code and short README predate this paper; the inspected September17 commit tree has no paperPDF and README explicitly says whitepaper-coming-soon.
+
+**Limitations:** Causal edges are fixed, observational and scoped; their evidence confidence is not proof of identified causal effects. Near-optimal candidate coverage and convergence under stationary conditions are assumptions; the12-hour experiment did not reach convergence. Real hardware omits most non-evolutionary baselines because of cost; main baseline implementations are ports with their own static candidate restrictions, and AppendixB notes registration/reproducibility gaps. Simulation uses a separate execution simulator and must not be presented as real cluster evidence. A model-backbone gap is dominated by one batch admission/configuration decision with different hardware and replication, not an isolated model comparison. Code was read, not run; no independent reproduction.
+
+**Update:** 2026-10-20: The newly announced full paper supplies formal scoring/evidence updates,104-GPU real-fleet evaluation, simulation and ablation accounting beyond the older Koi implementation and short preview (https://arxiv.org/html/2610.24355v1; https://github.com/Tandemn-Labs/tandemn-koi; https://raw.githubusercontent.com/Tandemn-Labs/tandemn-koi/4826bcee17104808793809a18031c9e3b5bbe028/README.md). The inspected repository was created March10 and has September17 implementation commits; dates document prior content, not exact public visibility. Original cs.DC Tuesday20 batch plus official schedule establish the inferred paper-update release (https://arxiv.org/list/cs.DC/recent?skip=0&amp;show=2000; https://info.arxiv.org/help/availability.html). No earliest-work availability is reset to the paper date.
+
 ## [2026-10-10](../../../reports/2026/10/2026-10-10.md) — PARTIAL SEARCH
 
 ### [Impactful scheduling for GPU clusters](<https://allenai.org/blog/impactful-scheduling>)

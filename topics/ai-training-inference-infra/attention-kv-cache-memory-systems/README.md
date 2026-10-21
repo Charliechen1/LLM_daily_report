@@ -5,6 +5,22 @@ Attention execution, KV management/reuse, offloading and long-context memory eff
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-18](../../../reports/2026/10/2026-10-18.md) — PARTIAL SEARCH
+
+### [LCT: Losslessly Compressed Tensors with GPU friendly execution for Training](<https://arxiv.org/abs/2610.22179>)
+
+LCT stores BF16 weights, saved activations and optimizer buffers in a lossless exponent-coded format, using parallel GPU encoding, fused updates and a shared overflow arena for repeated compression during training. The new paper quantifies a memory-versus-step-time trade-off and explains how the format adapts to changing tensor magnitudes, enabling longer tested sequences on a memory-constrained GPU without quantizing the stored BF16 values.
+
+**Published:** 2026-10-15 · **First seen:** 2026-10-18T21:44:21.869Z · **Novelty:** material-update · **Tags:** Lossless Compression, Training Memory, GPU Codecs, BF16
+
+[Paper](<https://arxiv.org/abs/2610.22179>) · [Code](<https://github.com/Maxzhu123/Losslessly_Compressed_Tensors>)
+
+**Evidence:** research-paper; full-text. Read methodology4.1-4.7, storage/scale analysis5, experiments6 and relevant AppendicesA-C, including timing/memory accounting and training integration. Bounded Huffman prefixes plus literal escapes compress exponents while preserving sign/fraction bytes; dense matrix products still require reconstruction. On one RTX3090 with PyTorch2.14/Triton3.8, activation compression in162M NanoGPT cuts peak allocated memory16058to12103MiB(24.6%) while optimizer-step time rises8.411to9.013s(7.2%). All-component compression yields11964.6MiB/9.136s, and a3400-step run has similar validation loss. Qwen3-4B-Base full-parameter BF16/Muon memory-time tests at batch1 fit3500tested tokens versus1000for the baseline; at1000, memory is21327.8to16262.4MiB with4.006to4.273s step time. This is a new detailed paper/analysis of older public code, not a new implementation release. The prior README says paper-coming-soon; the complete October12 tree contains only a graphical-abstractPDF, not the paper.
+
+**Limitations:** Storage is lossless for input BF16 bit patterns; converting FP32 to BF16 first still loses information, and this does not prove bitwise-identical whole training. Compression depends on exponent statistics, block padding and overflow; small or mismatched tensors can expand. Requires explicit custom-autograd/operator integration, and compressed weights are not ordinary registered nn.Parameters. Shared-arena sizing must include live replacements/fragmentation. Training time/peak memory use only five measured optimizer steps after three warmups; Qwen tests do not establish long-run fine-tuning quality. Reported memory is PyTorch allocated, not allocator-reserved or all device memory; training includes the entire shared arena. Only BF16 is supported here and GEMMs decode first. Code was inspected but not executed; no independent reproduction.
+
+**Update:** 2026-10-16: The newly announced detailed paper adds bounded-code/scale-shift/storage analysis and controlled codec, NanoGPT and Qwen memory-time evaluations to the earlier public LCT implementation (https://arxiv.org/html/2610.22179v1; https://arxiv.org/list/cs.LG/recent?skip=0&amp;show=2000; https://info.arxiv.org/help/availability.html). The repository was created October4 with code commits through October12; its README still marks the paper coming soon and its inspected pre-window tree has no paperPDF (https://github.com/Maxzhu123/Losslessly\_Compressed\_Tensors; https://api.github.com/repos/Maxzhu123/Losslessly\_Compressed\_Tensors/git/trees/396b9d6fb725956cb0735a83b5de368319d0b823?recursive=1). Commit dates document earlier content, not exact first-public visibility. Preserve October15 as this paper's receipt date; the paper update is inferred as October16T00Z from its original cs.LG batch and official schedule. This is delayed editorial review within the72-hour window, not a claim of newly released code.
+
 ## [2026-10-16](../../../reports/2026/10/2026-10-16.md) — PARTIAL SEARCH
 
 ### [When the KV Cache Is Slower Than the GPU: Scaling Remote KV Tiers for Context-Parallel Prefill](<https://arxiv.org/abs/2610.21500>)

@@ -1,0 +1,1088 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-20",
+  "timezone": "America/Los_Angeles",
+  "generated_at": "2026-10-21T10:21:19.459Z",
+  "coverage": {
+    "start": "2026-10-19T03:00:00-07:00",
+    "end": "2026-10-20T03:00:00-07:00"
+  },
+  "search": {
+    "status": "partial",
+    "notes": "Scheduled coverage is 2026-10-19T03:00:00-07:00 through 2026-10-20T03:00:00-07:00; actual retrieval occurred during the continuing October 18–21 catch-up, and generation/publication occurred on October 21. The original October 18 first-seen times are preserved. The total 72-hour discovery lookback starts 2026-10-17T10:00:00+00:00 and ends at the scheduled cutoff. The immutable September 29 baseline and complete 194-work registry were read before selection. Each later catch-up date also excludes all earlier selected catch-up items. Dated original-category announcements and the official release schedule support inferred arXiv availability only where earlier primary artifacts do not contradict it. Original submission dates are retained; repository creation and commit dates alone do not prove historical public visibility. Earlier previews and new detailed studies are distinguished. Six contributions cover gold-conditioned fine-tuning, native recurrent memory, executable cowork environments, heterogeneous serving planning, compiler-control tuning and a public cross-language coding benchmark. Earlier GCD/Koi/Helion/CompileIQ implementations are disclosed and only the new controlled studies are selected as updates. MemT/CoworkEnv model and repository histories are checked; rollout-free GCD is not confused with zero extra compute. Imported historical MultiLangBench commits do not prove earlier public release. All selected sources were read in full text for the claims summarized, and all empirical results are author-reported without independent reproduction. Search is partial; bounded organization and conference screening is not exhaustive. arXiv dated primary cs.DC/cs.LG/cs.AR batches, vLLM/PyTorch/NVIDIA indexes and SGLang archive were retrieved successfully; these scans are not exhaustive of all systems venues or papers. LMSYS main archive returned only its dynamic shell to the text extractor and its attempted RSS URL was404; SGLang current archive was recovered separately. OpenReview forum/PDF direct access was browser-challenged and API notes returned403 for NVFP4 history; an indexed primary PDF excerpt was visible, but earlier-version timing/detail could not be fully certified, so it was excluded. Official SC26 program recovered via web after local TLS-certificate failure; only the program abstract was present, and its exact first-public date was not established. Unselected retrieved reserves were not all full-text audited; no universal no-findings claim is made. Organization and conference screening is bounded and retrospective; no exhaustive venue search or absence-of-research claim is made. OpenReview exposed a client-side shell, and an exact-title search did not establish earlier workshop visibility for the unselected optimizer-switching reserve. Raw HTTPS retrieval of OpenAI and Anthropic pages encountered 403/certificate errors, but the selected OpenAI technical blog and Anthropic index were read through the primary web retriever; these errors did not block the selected contribution.",
+    "sources_checked": [
+      {
+        "name": "bcl",
+        "url": "https://arxiv.org/html/2610.21162v1",
+        "status": "ok"
+      },
+      {
+        "name": "bcl-abs",
+        "url": "https://arxiv.org/abs/2610.21162",
+        "status": "ok"
+      },
+      {
+        "name": "lct",
+        "url": "https://arxiv.org/html/2610.22179v1",
+        "status": "ok"
+      },
+      {
+        "name": "lct-abs",
+        "url": "https://arxiv.org/abs/2610.22179",
+        "status": "ok"
+      },
+      {
+        "name": "lct-code",
+        "url": "https://github.com/Maxzhu123/Losslessly_Compressed_Tensors",
+        "status": "ok"
+      },
+      {
+        "name": "lct-old-tree",
+        "url": "https://api.github.com/repos/Maxzhu123/Losslessly_Compressed_Tensors/git/trees/396b9d6fb725956cb0735a83b5de368319d0b823?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "lct-old-readme",
+        "url": "https://raw.githubusercontent.com/Maxzhu123/Losslessly_Compressed_Tensors/396b9d6fb725956cb0735a83b5de368319d0b823/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "dc",
+        "url": "https://arxiv.org/list/cs.DC/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "cl-recent",
+        "url": "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "lg",
+        "url": "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "schedule",
+        "url": "https://info.arxiv.org/help/availability.html",
+        "status": "ok"
+      },
+      {
+        "name": "tml",
+        "url": "https://thinkingmachines.ai/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "hf19",
+        "url": "https://huggingface.co/papers/date/2026-10-19",
+        "status": "ok"
+      },
+      {
+        "name": "hf20",
+        "url": "https://huggingface.co/papers/date/2026-10-20",
+        "status": "ok"
+      },
+      {
+        "name": "hf21",
+        "url": "https://huggingface.co/papers/date/2026-10-21",
+        "status": "ok"
+      },
+      {
+        "name": "moe",
+        "url": "https://arxiv.org/html/2610.23185v1",
+        "status": "ok"
+      },
+      {
+        "name": "moe-abs",
+        "url": "https://arxiv.org/abs/2610.23185",
+        "status": "ok"
+      },
+      {
+        "name": "switch",
+        "url": "https://arxiv.org/html/2610.22650v1",
+        "status": "ok"
+      },
+      {
+        "name": "switch-abs",
+        "url": "https://arxiv.org/abs/2610.22650",
+        "status": "ok"
+      },
+      {
+        "name": "sdsft",
+        "url": "https://arxiv.org/html/2610.25497v1",
+        "status": "ok"
+      },
+      {
+        "name": "sdsft-abs",
+        "url": "https://arxiv.org/abs/2610.25497",
+        "status": "ok"
+      },
+      {
+        "name": "rare",
+        "url": "https://arxiv.org/html/2610.25434v1",
+        "status": "ok"
+      },
+      {
+        "name": "rare-abs",
+        "url": "https://arxiv.org/abs/2610.25434",
+        "status": "ok"
+      },
+      {
+        "name": "repair",
+        "url": "https://arxiv.org/html/2610.28586v1",
+        "status": "ok"
+      },
+      {
+        "name": "repair-abs",
+        "url": "https://arxiv.org/abs/2610.28586",
+        "status": "ok"
+      },
+      {
+        "name": "flow",
+        "url": "https://arxiv.org/html/2610.28559v1",
+        "status": "ok"
+      },
+      {
+        "name": "flow-abs",
+        "url": "https://arxiv.org/abs/2610.28559",
+        "status": "ok"
+      },
+      {
+        "name": "monitor",
+        "url": "https://arxiv.org/html/2610.28303v1",
+        "status": "ok"
+      },
+      {
+        "name": "monitor-abs",
+        "url": "https://arxiv.org/abs/2610.28303",
+        "status": "ok"
+      },
+      {
+        "name": "tokenizer-v2",
+        "url": "https://arxiv.org/html/2610.21679v2",
+        "status": "ok"
+      },
+      {
+        "name": "tokenizer-current-abs",
+        "url": "https://arxiv.org/abs/2610.21679",
+        "status": "ok"
+      },
+      {
+        "name": "switch-code",
+        "url": "https://anonymous.4open.science/r/sft-optimizer-BB44",
+        "status": "ok"
+      },
+      {
+        "name": "gcd-code",
+        "url": "https://github.com/WenxuanZhu1103/gcd",
+        "status": "ok"
+      },
+      {
+        "name": "gcd-meta",
+        "url": "https://api.github.com/repos/WenxuanZhu1103/gcd",
+        "status": "ok"
+      },
+      {
+        "name": "gcd-history",
+        "url": "https://api.github.com/repos/WenxuanZhu1103/gcd/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "gcd-tree",
+        "url": "https://api.github.com/repos/WenxuanZhu1103/gcd/git/trees/main?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "gcd-readme",
+        "url": "https://raw.githubusercontent.com/WenxuanZhu1103/gcd/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "rare-code",
+        "url": "https://github.com/Eureka-Maggie/RARE",
+        "status": "ok"
+      },
+      {
+        "name": "rare-meta",
+        "url": "https://api.github.com/repos/Eureka-Maggie/RARE",
+        "status": "ok"
+      },
+      {
+        "name": "rare-history",
+        "url": "https://api.github.com/repos/Eureka-Maggie/RARE/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "rare-tree",
+        "url": "https://api.github.com/repos/Eureka-Maggie/RARE/git/trees/main?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "rare-readme",
+        "url": "https://raw.githubusercontent.com/Eureka-Maggie/RARE/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "rare-project",
+        "url": "https://eureka-maggie.github.io/RARE/",
+        "status": "ok"
+      },
+      {
+        "name": "repair-project",
+        "url": "https://tree-shu-zhao.github.io/r2s/",
+        "status": "ok"
+      },
+      {
+        "name": "repair-code",
+        "url": "https://github.com/Tree-Shu-Zhao/miles-agent",
+        "status": "ok"
+      },
+      {
+        "name": "repair-meta",
+        "url": "https://api.github.com/repos/Tree-Shu-Zhao/miles-agent",
+        "status": "ok"
+      },
+      {
+        "name": "repair-history",
+        "url": "https://api.github.com/repos/Tree-Shu-Zhao/miles-agent/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "repair-tree",
+        "url": "https://api.github.com/repos/Tree-Shu-Zhao/miles-agent/git/trees/main?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "repair-readme",
+        "url": "https://raw.githubusercontent.com/Tree-Shu-Zhao/miles-agent/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "flow-code",
+        "url": "https://github.com/lafa-gh/large-flow-lms",
+        "status": "ok"
+      },
+      {
+        "name": "flow-meta",
+        "url": "https://api.github.com/repos/lafa-gh/large-flow-lms",
+        "status": "ok"
+      },
+      {
+        "name": "flow-history",
+        "url": "https://api.github.com/repos/lafa-gh/large-flow-lms/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "flow-tree",
+        "url": "https://api.github.com/repos/lafa-gh/large-flow-lms/git/trees/main?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "flow-readme",
+        "url": "https://raw.githubusercontent.com/lafa-gh/large-flow-lms/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "flow-models",
+        "url": "https://huggingface.co/lafa-hf/models",
+        "status": "ok"
+      },
+      {
+        "name": "monitor-code",
+        "url": "https://github.com/Lorenayannnnn/reward-misspecification-degrades-cot-monitorability",
+        "status": "ok"
+      },
+      {
+        "name": "monitor-meta",
+        "url": "https://api.github.com/repos/Lorenayannnnn/reward-misspecification-degrades-cot-monitorability",
+        "status": "ok"
+      },
+      {
+        "name": "monitor-history",
+        "url": "https://api.github.com/repos/Lorenayannnnn/reward-misspecification-degrades-cot-monitorability/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "monitor-tree",
+        "url": "https://api.github.com/repos/Lorenayannnnn/reward-misspecification-degrades-cot-monitorability/git/trees/main?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "monitor-readme",
+        "url": "https://raw.githubusercontent.com/Lorenayannnnn/reward-misspecification-degrades-cot-monitorability/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "flow-old-readme",
+        "url": "https://raw.githubusercontent.com/lafa-gh/large-flow-lms/a30d07bea8e45cf2ca723880ec4e4fe7b9798201/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "rare-old-readme",
+        "url": "https://raw.githubusercontent.com/Eureka-Maggie/RARE/7c284f37e48b5ddc0df4c62840cd9c8e2ee2f92e/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "rare-old-project",
+        "url": "https://raw.githubusercontent.com/Eureka-Maggie/RARE/7c284f37e48b5ddc0df4c62840cd9c8e2ee2f92e/docs/index.html",
+        "status": "ok"
+      },
+      {
+        "name": "2610.26825-full",
+        "url": "https://arxiv.org/html/2610.26825v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.26825-abs",
+        "url": "https://arxiv.org/abs/2610.26825",
+        "status": "ok"
+      },
+      {
+        "name": "memt-code",
+        "url": "https://github.com/MemTensor/MemT-1.0",
+        "status": "ok"
+      },
+      {
+        "name": "memt-meta",
+        "url": "https://api.github.com/repos/MemTensor/MemT-1.0",
+        "status": "ok"
+      },
+      {
+        "name": "memt-history",
+        "url": "https://api.github.com/repos/MemTensor/MemT-1.0/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "memt-tree",
+        "url": "https://api.github.com/repos/MemTensor/MemT-1.0/git/trees/main?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "memt-readme",
+        "url": "https://raw.githubusercontent.com/MemTensor/MemT-1.0/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "memt-models",
+        "url": "https://huggingface.co/collections/MemTensor/memt-1",
+        "status": "ok"
+      },
+      {
+        "name": "ai-recent",
+        "url": "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "langchain",
+        "url": "https://www.langchain.com/blog",
+        "status": "ok"
+      },
+      {
+        "name": "parallel",
+        "url": "https://parallel.ai/blog",
+        "status": "ok"
+      },
+      {
+        "name": "langchain-context",
+        "url": "https://www.langchain.com/blog/context-engineering-deep-agents-remember",
+        "status": "ok"
+      },
+      {
+        "name": "2610.24960-abs",
+        "url": "https://arxiv.org/abs/2610.24960",
+        "status": "ok"
+      },
+      {
+        "name": "2610.24960-full",
+        "url": "https://arxiv.org/html/2610.24960v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.26860-abs",
+        "url": "https://arxiv.org/abs/2610.26860",
+        "status": "ok"
+      },
+      {
+        "name": "2610.26860-full",
+        "url": "https://arxiv.org/html/2610.26860v1",
+        "status": "ok"
+      },
+      {
+        "name": "cowork-repo",
+        "url": "https://api.github.com/repos/HKUST-KnowComp/CoworkEnv",
+        "status": "ok"
+      },
+      {
+        "name": "cowork-commits",
+        "url": "https://api.github.com/repos/HKUST-KnowComp/CoworkEnv/commits?per_page=20",
+        "status": "ok"
+      },
+      {
+        "name": "cowork-readme",
+        "url": "https://raw.githubusercontent.com/HKUST-KnowComp/CoworkEnv/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "cowork-tree",
+        "url": "https://api.github.com/repos/HKUST-KnowComp/CoworkEnv/git/trees/main?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "cowork-code",
+        "url": "https://github.com/HKUST-KnowComp/CoworkEnv",
+        "status": "ok"
+      },
+      {
+        "name": "cowork-models",
+        "url": "https://huggingface.co/collections/zhongweixie/pocketworker",
+        "status": "ok"
+      },
+      {
+        "name": "cowork-model-api",
+        "url": "https://huggingface.co/api/models/zhongweixie/PocketWorker-8B-ClawEval-SFT",
+        "status": "ok"
+      },
+      {
+        "name": "cowork-model-history",
+        "url": "https://huggingface.co/api/models/zhongweixie/PocketWorker-8B-ClawEval-SFT/commits/main",
+        "status": "ok"
+      },
+      {
+        "name": "cowork-model-card",
+        "url": "https://huggingface.co/zhongweixie/PocketWorker-8B-ClawEval-SFT/raw/main/README.md",
+        "status": "unavailable"
+      },
+      {
+        "name": "cowork-lessons",
+        "url": "https://github.com/zhongweixie/CoworkEnv-Lessons",
+        "status": "ok"
+      },
+      {
+        "name": "lessons-repo",
+        "url": "https://api.github.com/repos/zhongweixie/CoworkEnv-Lessons",
+        "status": "ok"
+      },
+      {
+        "name": "lessons-commits",
+        "url": "https://api.github.com/repos/zhongweixie/CoworkEnv-Lessons/commits?per_page=10",
+        "status": "ok"
+      },
+      {
+        "name": "lessons-readme",
+        "url": "https://raw.githubusercontent.com/zhongweixie/CoworkEnv-Lessons/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "openvl-repo",
+        "url": "https://api.github.com/repos/uclanlp/OpenVLHarness",
+        "status": "ok"
+      },
+      {
+        "name": "openvl-commits",
+        "url": "https://api.github.com/repos/uclanlp/OpenVLHarness/commits?per_page=20",
+        "status": "ok"
+      },
+      {
+        "name": "openvl-readme",
+        "url": "https://raw.githubusercontent.com/uclanlp/OpenVLHarness/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "openvl-oldreadme",
+        "url": "https://raw.githubusercontent.com/uclanlp/OpenVLHarness/2d13818bc2/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "openvl-oldtree",
+        "url": "https://api.github.com/repos/uclanlp/OpenVLHarness/git/trees/2d13818bc2?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "openvl-project",
+        "url": "https://openvlharness.github.io",
+        "status": "ok"
+      },
+      {
+        "name": "ar",
+        "url": "https://arxiv.org/list/cs.AR/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "vllm-index",
+        "url": "https://vllm.ai/blog",
+        "status": "ok"
+      },
+      {
+        "name": "lmsys-index",
+        "url": "https://www.lmsys.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "pytorch-index",
+        "url": "https://pytorch.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "nvidia-index",
+        "url": "https://developer.nvidia.com/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "bagualu",
+        "url": "https://arxiv.org/html/2610.23064v1",
+        "status": "ok"
+      },
+      {
+        "name": "koi",
+        "url": "https://arxiv.org/html/2610.24355v1",
+        "status": "ok"
+      },
+      {
+        "name": "planezip",
+        "url": "https://arxiv.org/html/2610.25033v1",
+        "status": "ok"
+      },
+      {
+        "name": "kpage",
+        "url": "https://arxiv.org/html/2610.28096v1",
+        "status": "ok"
+      },
+      {
+        "name": "energy",
+        "url": "https://arxiv.org/html/2610.28576v1",
+        "status": "ok"
+      },
+      {
+        "name": "bitmtp",
+        "url": "https://arxiv.org/html/2610.28500v1",
+        "status": "ok"
+      },
+      {
+        "name": "nvfp4",
+        "url": "https://arxiv.org/html/2610.24343v1",
+        "status": "ok"
+      },
+      {
+        "name": "conjugate",
+        "url": "https://arxiv.org/html/2610.25012v1",
+        "status": "ok"
+      },
+      {
+        "name": "humming",
+        "url": "https://vllm.ai/blog/2026-10-21-humming",
+        "status": "ok"
+      },
+      {
+        "name": "torchtpu-vllm",
+        "url": "https://vllm.ai/blog/2026-10-20-vllm-torchtpu",
+        "status": "ok"
+      },
+      {
+        "name": "elastic-ep",
+        "url": "https://vllm.ai/blog/2026-10-19-elastic-ep-near-zero-downtime",
+        "status": "ok"
+      },
+      {
+        "name": "compileiq",
+        "url": "https://pytorch.org/blog/one-search-two-layers-compiler-controls-inside-pytorch-helion-using-nvidia-compileiq/",
+        "status": "ok"
+      },
+      {
+        "name": "torchneuron",
+        "url": "https://pytorch.org/blog/introducing-torchneuron-native-pytorch-backend-for-aws-trainium/",
+        "status": "ok"
+      },
+      {
+        "name": "torchtpu",
+        "url": "https://pytorch.org/blog/introducing-torchtpu/",
+        "status": "ok"
+      },
+      {
+        "name": "bagualu-abs",
+        "url": "https://arxiv.org/abs/2610.23064",
+        "status": "ok"
+      },
+      {
+        "name": "koi-abs",
+        "url": "https://arxiv.org/abs/2610.24355",
+        "status": "ok"
+      },
+      {
+        "name": "energy-abs",
+        "url": "https://arxiv.org/abs/2610.28576",
+        "status": "ok"
+      },
+      {
+        "name": "nvfp4-abs",
+        "url": "https://arxiv.org/abs/2610.24343",
+        "status": "ok"
+      },
+      {
+        "name": "humming-repo",
+        "url": "https://api.github.com/repos/vllm-project/humming",
+        "status": "ok"
+      },
+      {
+        "name": "humming-post-history",
+        "url": "https://api.github.com/repos/vllm-project/vllm-project.github.io/commits?path=_posts/2026-10-21-humming.md&per_page=20",
+        "status": "ok"
+      },
+      {
+        "name": "elastic-post-history",
+        "url": "https://api.github.com/repos/vllm-project/vllm-project.github.io/commits?path=_posts/2026-10-19-elastic-ep-near-zero-downtime.md&per_page=20",
+        "status": "ok"
+      },
+      {
+        "name": "torchtpu-post-history",
+        "url": "https://api.github.com/repos/vllm-project/vllm-project.github.io/commits?path=_posts/2026-10-20-vllm-torchtpu.md&per_page=20",
+        "status": "ok"
+      },
+      {
+        "name": "elastic-pr47288",
+        "url": "https://api.github.com/repos/vllm-project/vllm/pulls/47288",
+        "status": "ok"
+      },
+      {
+        "name": "elastic-pr51885",
+        "url": "https://api.github.com/repos/vllm-project/vllm/pulls/51885",
+        "status": "ok"
+      },
+      {
+        "name": "elastic-pr54985",
+        "url": "https://api.github.com/repos/vllm-project/vllm/pulls/54985",
+        "status": "ok"
+      },
+      {
+        "name": "koi-repo",
+        "url": "https://api.github.com/repos/Tandemn-Labs/tandemn-koi",
+        "status": "ok"
+      },
+      {
+        "name": "koi-code",
+        "url": "https://github.com/Tandemn-Labs/tandemn-koi",
+        "status": "ok"
+      },
+      {
+        "name": "torchtpu-code",
+        "url": "https://github.com/google-pytorch/torch_tpu",
+        "status": "ok"
+      },
+      {
+        "name": "torchtpu-vllm-code",
+        "url": "https://github.com/vllm-project/vllm-torchtpu",
+        "status": "ok"
+      },
+      {
+        "name": "torchtpu-google",
+        "url": "https://developers.googleblog.com/torchtpu-running-pytorch-natively-on-tpus-at-google-scale/",
+        "status": "ok"
+      },
+      {
+        "name": "nvfp4-openreview",
+        "url": "https://api2.openreview.net/notes?forum=yTbNYYcopd",
+        "status": "unavailable"
+      },
+      {
+        "name": "elastic-post-commit",
+        "url": "https://api.github.com/repos/vllm-project/vllm-project.github.io/commits/c4fa4eee56ed2c097a4e078c33955253db123018",
+        "status": "ok"
+      },
+      {
+        "name": "humming-pr389",
+        "url": "https://api.github.com/repos/vllm-project/vllm-project.github.io/pulls/389",
+        "status": "ok"
+      },
+      {
+        "name": "koi-history",
+        "url": "https://api.github.com/repos/Tandemn-Labs/tandemn-koi/commits?per_page=20",
+        "status": "ok"
+      },
+      {
+        "name": "koi-readme",
+        "url": "https://raw.githubusercontent.com/Tandemn-Labs/tandemn-koi/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "humming-code",
+        "url": "https://github.com/vllm-project/humming",
+        "status": "ok"
+      },
+      {
+        "name": "humming-readme-history",
+        "url": "https://api.github.com/repos/vllm-project/humming/commits?path=README.md&per_page=20",
+        "status": "ok"
+      },
+      {
+        "name": "bagualu-sc-recovered",
+        "url": "https://sc26.conference-program.com/presentation/?id=pap287&sess=sess211",
+        "status": "ok"
+      },
+      {
+        "name": "nvfp4-oldforum",
+        "url": "https://openreview.net/forum?id=jlkIyaG32w",
+        "status": "ok"
+      },
+      {
+        "name": "nvfp4-oldapi",
+        "url": "https://api2.openreview.net/notes?forum=jlkIyaG32w",
+        "status": "unavailable"
+      },
+      {
+        "name": "torchtpu-md",
+        "url": "https://raw.githubusercontent.com/vllm-project/vllm-project.github.io/main/_posts/2026-10-20-vllm-torchtpu.md",
+        "status": "ok"
+      },
+      {
+        "name": "humming-md",
+        "url": "https://raw.githubusercontent.com/vllm-project/vllm-project.github.io/main/_posts/2026-10-21-humming.md",
+        "status": "ok"
+      },
+      {
+        "name": "torchtpu-repo",
+        "url": "https://api.github.com/repos/google-pytorch/torch_tpu",
+        "status": "ok"
+      },
+      {
+        "name": "torchtpu-vllm-repo",
+        "url": "https://api.github.com/repos/vllm-project/vllm-torchtpu",
+        "status": "ok"
+      },
+      {
+        "name": "elastic-oldhistory",
+        "url": "https://api.github.com/repos/vllm-project/vllm-project.github.io/commits?path=_posts/2026-10-15-elastic-ep-near-zero-downtime.md&per_page=20",
+        "status": "ok"
+      },
+      {
+        "name": "humming-doc-history",
+        "url": "https://api.github.com/repos/vllm-project/humming/commits?path=docs/humming-introduction.en.md&per_page=20",
+        "status": "ok"
+      },
+      {
+        "name": "koi-tree",
+        "url": "https://api.github.com/repos/Tandemn-Labs/tandemn-koi/git/trees/main?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "torchtpu-readme",
+        "url": "https://raw.githubusercontent.com/google-pytorch/torch_tpu/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "torchtpu-support",
+        "url": "https://raw.githubusercontent.com/vllm-project/vllm-torchtpu/main/docs/user_guide/supported_models.md",
+        "status": "ok"
+      },
+      {
+        "name": "compileiq-repo",
+        "url": "https://github.com/NVIDIA/CompileIQ",
+        "status": "ok"
+      },
+      {
+        "name": "helion-repo",
+        "url": "https://github.com/pytorch/helion",
+        "status": "ok"
+      },
+      {
+        "name": "humming-prior-commit",
+        "url": "https://api.github.com/repos/vllm-project/humming/commits/85495420c0e98f3708e7baf39ae6c0a6b2e123a5",
+        "status": "ok"
+      },
+      {
+        "name": "humming-prior-doc",
+        "url": "https://raw.githubusercontent.com/vllm-project/humming/85495420c0e98f3708e7baf39ae6c0a6b2e123a5/docs/humming-introduction.en.md",
+        "status": "ok"
+      },
+      {
+        "name": "elastic-pr356",
+        "url": "https://api.github.com/repos/vllm-project/vllm-project.github.io/pulls/356",
+        "status": "ok"
+      },
+      {
+        "name": "bagualu-sc-web",
+        "url": "https://sc26.supercomputing.org/presentation/?id=pap287&sess=sess211",
+        "status": "unavailable"
+      },
+      {
+        "name": "cutile-mamba",
+        "url": "https://developer.nvidia.com/blog/accelerating-mamba-2-with-high-performance-forward-pass-kernels-in-nvidia-cuda-tile/",
+        "status": "ok"
+      },
+      {
+        "name": "lmsys-feed",
+        "url": "https://www.lmsys.org/blog/rss.xml",
+        "status": "unavailable"
+      },
+      {
+        "name": "sglang-blog",
+        "url": "https://sglang.io/blog",
+        "status": "ok"
+      },
+      {
+        "name": "koi-old-readme",
+        "url": "https://raw.githubusercontent.com/Tandemn-Labs/tandemn-koi/4826bcee17104808793809a18031c9e3b5bbe028/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "compileiq-release",
+        "url": "https://api.github.com/repos/NVIDIA/CompileIQ/releases?per_page=10",
+        "status": "ok"
+      },
+      {
+        "name": "helion-acf-history",
+        "url": "https://api.github.com/repos/pytorch/helion/commits?path=examples/acfs&per_page=10",
+        "status": "ok"
+      },
+      {
+        "name": "OpenAI research index, retrospective bounded screening",
+        "url": "https://openai.com/research/index/",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic research index, recovered through primary web retrieval",
+        "url": "https://www.anthropic.com/research",
+        "status": "ok"
+      },
+      {
+        "name": "Ai2 research blog index",
+        "url": "https://allenai.org/blog",
+        "status": "ok"
+      },
+      {
+        "name": "Google Research blog index",
+        "url": "https://research.google/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "Google DeepMind news index",
+        "url": "https://deepmind.google/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "ICLR 2027 OpenReview client shell only",
+        "url": "https://openreview.net/group?id=ICLR.cc/2027/Conference",
+        "status": "ok"
+      },
+      {
+        "name": "ACL Anthology landing/index screening only",
+        "url": "https://aclanthology.org/",
+        "status": "ok"
+      },
+      {
+        "name": "MultiLangBench technical blog",
+        "url": "https://openai.com/index/low-resource-programming-languages/",
+        "status": "ok"
+      },
+      {
+        "name": "MultiLangBench public repository",
+        "url": "https://github.com/openai/MultiLangBench",
+        "status": "ok"
+      },
+      {
+        "name": "MultiLangBench README",
+        "url": "https://raw.githubusercontent.com/openai/MultiLangBench/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "MultiLangBench initial README",
+        "url": "https://raw.githubusercontent.com/openai/MultiLangBench/93598e64f23f/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "MultiLangBench repository metadata",
+        "url": "https://api.github.com/repos/openai/MultiLangBench",
+        "status": "ok"
+      },
+      {
+        "name": "MultiLangBench imported commit chronology",
+        "url": "https://api.github.com/repos/openai/MultiLangBench/commits?per_page=20",
+        "status": "ok"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": "arxiv:2610.26825",
+      "title": "MemT-1.0: Towards Memory-Native Evolution",
+      "category": "1.2",
+      "tags": [
+        "Native Memory",
+        "Recurrent State",
+        "Mixture of Storage",
+        "Continued Pretraining"
+      ],
+      "published_on": "2026-10-19",
+      "first_seen_at": "2026-10-21T10:08:20.059Z",
+      "canonical_url": "https://arxiv.org/abs/2610.26825",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.26825v1",
+        "code": "https://github.com/MemTensor/MemT-1.0",
+        "project": "https://huggingface.co/collections/MemTensor/memt-1"
+      },
+      "summary": [
+        "MemT-1.0 adds trainable memory modules to frozen language-model backbones with stable token-level state updates, and studies densely routed memory experts as a way to expand capacity.",
+        "Its released models turn growing interaction histories into bounded persistent states, offering predictable session storage while exposing a clear trade-off between compact memory and precise historical recall."
+      ],
+      "evidence": {
+        "type": "technical-report",
+        "access": "full-text",
+        "rationale": "Pinned v1 architecture/training Sections2–3, memory evaluation Section6, limitations Section8 and relevant configuration/evaluation appendices inspected. Gated DeltaNet-2 writes token-level information at turn/segment boundaries, while generation reads the incoming state. The explored Mixture-of-Storage expansion routes densely across all memory experts, not sparse top-k experts; both released Nano and Flash configurations use one memory expert per selected layer (Appendix B, Table6), while expanded MoS is studied separately. The34B-token pipeline uses current-segment CE followed by off-policy full-context-teacher distillation with Top64 forward-KL targets. Only memory parameters are optimized during native-memory training. Nano uses Qwen3.6-35B-A3B and451M trainable memory parameters; Flash uses a separately prepared DeepSeek-V4-Flash backbone and3.61B memory parameters. Across11 memory benchmarks their reported macro-averages are47.0 and50.6, ahead of tested parametric-memory baselines but below strong textual-memory methods. At128K history, Nano reports1.86x end-to-end inference speed and66x less logical per-trajectory state than full-context KV. The speed test uses HF inference on two GPUs, batch/concurrency1,35 histories, a fixed512-token query and forced128-token response, including history preparation/state restoration but excluding loading/tokenization/scoring. The original CL October20 batch/schedule gives an inferred October20T00Z paper announcement; the observed release commit (authored October20T02:48:07Z, committed05:27:44Z) contains code and a complete tech_report.pdf. These Git timestamps document content history, not exact first public visibility. Code/project links were verified, not executed.",
+        "limitations": "Fixed state cannot retain unlimited detail: exact recall deteriorates and retrieval/text-memory systems remain stronger on aggregate. The66x figure excludes shared backbone weights, embedders/hyper-memory parameters and is logical persistent session state, not total GPU-memory savings. The1.86x speedup is one specific HF workload and is mainly history-preparation savings; short histories are slower, and heterogeneous baseline backbones/runtimes limit broad efficiency rankings. Dense expert expansion increases memory computation. General-capability preservation is evaluated under specified noise conditions, not a guarantee of unchanged behavior. Application-specific experience training/retrieval adds costs; online state updates are not autonomous weight-level self-improvement. The October20v2 revision is not used for this report’s cutoff."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-20T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.25497",
+      "title": "Self-Distillation for Supervised Fine-Tuning",
+      "category": "1.5",
+      "tags": [
+        "Gold-Conditioned Distillation",
+        "Soft Targets",
+        "Capability Retention"
+      ],
+      "published_on": "2026-10-18",
+      "first_seen_at": "2026-10-21T10:02:45.546Z",
+      "canonical_url": "https://arxiv.org/abs/2610.25497",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.25497v1",
+        "code": "https://github.com/WenxuanZhu1103/gcd"
+      },
+      "summary": [
+        "Gold-Conditioned Distillation replaces one-hot fine-tuning targets with soft predictions from an exponentially averaged copy of the model that can see the correct response in its prompt.",
+        "Both models follow the fixed gold response without generating training rollouts, and the new study finds better target-task learning with modest average retention gains, suggesting a practical alternative to ordinary supervised fine-tuning."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Pinned v1 Sections 3–5 and Appendices A–F inspected. A gold-revealed EMA teacher (update rate0.01) supplies forward-KL targets on exactly the same gold-response prefixes seen by the student; neither model samples completions during training. Four backbones span Qwen2.5-3B-Instruct, Qwen3-4B-Base, Llama3.1-8B-Instruct and Qwen3-8B-Base, with full tuning at3–4B and rank64 LoRA at8B. Table8’s five-seed Tooluse study reports GCD66.7±0.6 versus SFT61.1±0.7 on Qwen2.5-3B and69.6±0.5 versus63.2±0.6 on Qwen3-4B; Llama gains are smaller. Main tasks also cover scientific MCQ and LiveNews; previous capability is measured on five general benchmarks. Shared four-epoch A10080GB pipelines, label-smoothing/base-KL comparisons and EMA/KL-direction ablations provide controls. This new detailed paper and controlled evaluation were announced in the October20 CL batch; the compact author implementation existed earlier, so the entry is a material paper update rather than a new-code release.",
+        "limitations": "Retention gains are modest and individual metrics can regress, including instruction following. LiveNews trains on paraphrased versions of the same facts tested with original questions; this is phrasing transfer after knowledge injection, not generalization to unseen facts. Main comparisons use matched settings but not exhaustive per-method tuning; SDFT is reproduced with a forward-KL modification, and its learning-rate sweep covers only selected cases. Multi-seed results cover Tooluse and three models, not every task/backbone. Soft targets add a teacher forward and EMA storage even though they avoid autoregressive rollouts; no universal wall-time saving is measured. Released compact code covers Tooluse/LiveNews on the two smaller Qwen models, not the full paper experiment suite. All models are at most8B; no independent reproduction."
+      },
+      "novelty": "material-update",
+      "update_note": "2026-10-20: The newly announced full paper adds four-backbone target-task/retention comparisons, a five-seed Tooluse study and EMA/KL/soft-label ablations to the earlier compact GCD implementation (https://arxiv.org/html/2610.25497v1; https://arxiv.org/list/cs.CL/recent?skip=0&show=2000; https://info.arxiv.org/help/availability.html). The author repository’s single October18 commit contains a compact training implementation and data rather than these controlled study results (https://github.com/WenxuanZhu1103/gcd; https://api.github.com/repos/WenxuanZhu1103/gcd/git/trees/main?recursive=1; https://raw.githubusercontent.com/WenxuanZhu1103/gcd/main/README.md). Git creation/commit dates do not establish exact first public visibility. Preserve October18 as the paper’s receipt date; October20T00Z refers only to its schedule-inferred paper announcement, not a reset of method/code age."
+    },
+    {
+      "id": "arxiv:2610.24960",
+      "title": "CoworkEnv: Synthesizing Training Environments for Long-Horizon Cowork Agents",
+      "category": "2.5",
+      "tags": [
+        "Training Environments",
+        "Cowork Agents",
+        "Executable Grading"
+      ],
+      "published_on": "2026-10-18",
+      "first_seen_at": "2026-10-21T10:02:45.248Z",
+      "canonical_url": "https://arxiv.org/abs/2610.24960",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.24960",
+        "code": "https://github.com/HKUST-KnowComp/CoworkEnv"
+      },
+      "summary": [
+        "CoworkEnv synthesizes coordinated service records, tool interfaces and executable graders, validates their consistency, and turns teacher executions into training demonstrations for compact work agents.",
+        "SFT raises Qwen3-VL-8B-Instruct's mean score from 46.6 to 64.1 on 199 Claw-Eval tasks and improves a separate ClawMark-trained checkpoint from 11.8 to 19.4 on 100 tasks, showing how executable workflow construction can supply useful agent-training data."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Full Methods 3, Experiments 4, Limitations and Appendices A–F inspected. Capability plans generate requests, initial records, tools and weighted completion/prohibited-action checks; programmatic gates test parsing, service references, answer-identifier leakage and synthetic grading consistency, allowing one repair retry. Teacher-success and structure/length filters prepare assistant-token SFT; the mixed-pool replay retains937/1,809 demonstrations, while other export branches have distinct thresholds. Claw-Eval base/SFT comparisons use 161 General plus 38 Multi-turn tasks with three trials/task; the metric is mean fractional score on0–100, not binary success. The 77.8 versus 45.9 Multi-turn gain is 31.9 points. Separate ClawMark SFT is evaluated on 100tasks. Original cs.AI October 20 batch plus official schedule supports inferred paper availability2026-10-20T00:00Z; Sunday October 18 receipt is preserved. Observed initial GitHub pipeline contentOctober 19 at 20:36Z, lessons contentOctober 19 at 20:07Z and model uploadsOctober 19 at 17:57Z are in this same daily window; repository creation onOctober 16 alone is not evidence of earlier substantive availability. Classified conservatively as newly-discovered using the preserved October 18 receipt date within the 72-hour discovery window; earlier October 19 model/code content is acknowledged rather than using the later paper announcement as the earliest release of the work. This is editorial catch-up, not delayed indexing.",
+        "limitations": "Graders cover declared calls/records rather than all semantics: the documented ticket-update check does not verify resolution text. Teacher filtering can discard recovery behavior and favors a proprietary teacher. RL pipelines share supervised warm-up and vary multiple configuration choices, so their gains over the base cannot isolate RL or one credit-assignment mechanism. Public code is incremental: selected synthesis/adapters/SFT and RL-preprocessing components are present, while full distributed RL stack and task datasets are not bundled. Separate HF checkpoints are listed, but this review did not run or independently reproduce them."
+      },
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "https://openai.com/index/low-resource-programming-languages/",
+      "title": "MultiLangBench and behavior-preserving COBOL migration evaluation",
+      "category": "2.8",
+      "tags": [
+        "coding-agents",
+        "evaluation",
+        "low-resource-languages",
+        "behavior-preservation"
+      ],
+      "published_on": "2026-10-19",
+      "first_seen_at": "2026-10-21T10:00:22.905Z",
+      "canonical_url": "https://openai.com/index/low-resource-programming-languages/",
+      "links": {
+        "blog": "https://openai.com/index/low-resource-programming-languages/",
+        "code": "https://github.com/openai/MultiLangBench"
+      },
+      "summary": [
+        "OpenAI introduced MultiLangBench, which tests whether coding models can implement a SQLite-compatible engine across 20 programming languages, alongside a separate COBOL migration evaluation requiring exact output preservation. The released tests give developers a concrete way to assess long coding sessions in less common languages, while the authors report substantial accuracy gains for their latest models under these specific settings.",
+        "The migration suite remains hidden, and success on either evaluation does not establish production readiness or general superiority across software engineering tasks."
+      ],
+      "evidence": {
+        "access": "full-text",
+        "limitations": "The public tests adapt a subset of SQLite semantics and do not establish full database compatibility; default 272-test scoring differs from running all converted tests. The blog does not expose the COBOL task set, task count, complete harness, sampling uncertainty or business-system dependencies; exact test success is narrower than real migration correctness. Model and reasoning-effort comparisons do not isolate a training recipe or architecture change, and estimated API cost depends on output usage and pricing. The current repository contains dated historical commits before its creation; their timestamps alone are not evidence of a prior public release. No independent reproduction was performed.",
+        "type": "technical-report",
+        "rationale": "Read the complete October 19 technical blog and public benchmark README, inspected the repository tree and three-commit history, and compared the initial README. The contribution is an inspectable cross-language database I/O contract plus newly reported 20-language and COBOL-migration results: an initial database and user SQL produce a candidate database that real SQLite 3.40.1 checks with a validation query. Of roughly 51k upstream TCL tests, roughly 24k were converted; the README specifies a 272-test hash-prefix subset by default, a 60-second test timeout, and joint reporting of API cost and pass rate. Authors report 87.4% mean MultiLangBench test pass rate for GPT-6 Astra at maximum reasoning effort versus 26.8% for GPT-5.6 Sol; the separate hidden COBOL suite counts a migration only when all byte-parity tests pass. This report backfills the October 20 window using actual October 21 discovery. The dated blog is the public-release source; imported September 29/October 6 commits do not prove earlier public visibility, and the current repository was created October 19."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "https://pytorch.org/blog/one-search-two-layers-compiler-controls-inside-pytorch-helion-using-nvidia-compileiq/",
+      "title": "One Search, Two Layers: Compiler Controls Inside PyTorch Helion using NVIDIA CompileIQ",
+      "category": "3.5",
+      "published_on": "2026-10-19",
+      "first_seen_at": "2026-10-21T10:05:03.422Z",
+      "canonical_url": "https://pytorch.org/blog/one-search-two-layers-compiler-controls-inside-pytorch-helion-using-nvidia-compileiq/",
+      "links": {
+        "blog": "https://pytorch.org/blog/one-search-two-layers-compiler-controls-inside-pytorch-helion-using-nvidia-compileiq/",
+        "code": "https://github.com/pytorch/helion",
+        "project": "https://github.com/NVIDIA/CompileIQ"
+      },
+      "summary": [
+        "This engineering study treats compiler control files as another tuning dimension alongside a kernel’s tile shapes, warp counts and pipeline settings, rather than stopping optimization at the kernel source.",
+        "It demonstrates a measured workflow for finding and pinning small additional gains in already tuned kernels, while validating numerical outputs and matching each control file to its hardware and compiler version."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "Read the complete report including fixed/joint search, runtime/occupancy/multi-objective experiments and caveats. Article metadata gives publication October19 15:45:05Z, after the October19 cutoff and before October20 cutoff. The new experimental case uses a pre-tuned Helion NVFP4 decode GEMV on GB200/sm100, ptxas13.3.73, CUDA13.3, CompileIQ1.0.3 and Triton3.8.0, locked clocks and PyTorch-reference output checks. For N8192/K28672, fixed-kernel compiler-control search remeasures about0.0975to0.0930ms (1.048x); the joint runtime/L1TEX objective reports1.0689x with L1TEX throughput81.51to85.96%. Two-shape search reports about1.05x and1.01x on the respective validated shapes. Welch tests and effect-size filters are author-side repeated-timing checks. Helion ACF support existed March6, CompileIQ1.0 released May26, and booster packs existed May/August; this is selected as a new scoped experiment/workflow report, not a new compiler or integration release.",
+        "limitations": "Kernel microbenchmark improvements do not establish end-to-end LLM speedup, broad model coverage or universal2-7% gains. Search multiplies compilation/measurement trials and is intended offline; no amortized whole-workload savings are measured. Compiler-control files are architecture/toolkit specific, and mismatched controls can cause wrong results or runtime errors. Correctness checks cover the supplied reference cases, not all shapes or full training convergence. CompileIQ is distributed under a proprietary NVIDIA EULA even though Helion is open source and generated ACFs are redistributable. Code was inspected, not executed; no independent reproduction."
+      },
+      "tags": [
+        "Compiler Tuning",
+        "GPU Kernels",
+        "NVFP4",
+        "Numerical Validation"
+      ],
+      "novelty": "material-update",
+      "update_note": "2026-10-19: The new PyTorch report publishes controlled Helion NVFP4 GEMV compiler-control tuning experiments, including repeated validation, two-shape and multi-objective cases (https://pytorch.org/blog/one-search-two-layers-compiler-controls-inside-pytorch-helion-using-nvidia-compileiq/). It builds on earlier Helion ACF integration and CompileIQ releases (https://api.github.com/repos/pytorch/helion/commits?path=examples/acfs&per_page=10; https://api.github.com/repos/NVIDIA/CompileIQ/releases?per_page=10), rather than introducing either project for the first time."
+    },
+    {
+      "id": "arxiv:2610.24355",
+      "title": "Koi: Evidence-Guided, Self-Calibrating Planning for Multi-Cloud, Heterogeneous LLM Inference Fleets",
+      "category": "3.8",
+      "published_on": "2026-10-17",
+      "first_seen_at": "2026-10-21T10:05:03.198Z",
+      "canonical_url": "https://arxiv.org/abs/2610.24355",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.24355",
+        "code": "https://github.com/Tandemn-Labs/tandemn-koi"
+      },
+      "summary": [
+        "Koi uses language-model agents to propose cluster-wide inference deployments, then relies on deterministic prediction, constraint checks and telemetry to select and revise the plan.",
+        "Its persistent graph of scoped hypotheses connects configuration choices to runtime bottlenecks, helping a heterogeneous fleet improve serving objectives while accounting for uncertainty, scarce capacity and migration cost."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read full Sections4-7 and AppendicesA/B, the code README, repository tree and pre-window history. Five-minute planning ticks combine a fixed decision-mediator-outcome DAG, Beta evidence, CUSUM residual tests, scoped mechanism proposals, deterministic AIConfigurator-derived predictions and capacity-constrained selection. The new paper reports a3-hour104-GPU GCP fleet across3regions with H100-80GB/A100-80GB/A100-40GB/RTXPRO6000. Against the strongest evaluated real-cluster baseline, Table2 reports4119.51 versus3497.43 SLO-honoring output tokens/s (17.79% higher) and0.24 versus0.30 times10^-4 dollars per SLO-honoring output token (20% lower). These are fleet-capacity accounting costs; planner LLM cost is separate. The larger45%goodput/31%cost gains belong to a400-GPU3-hour simulation, not the real fleet. The full paper is the original cs.DC Tuesday20 announcement (inferred October20T00Z with official schedule); receipt October17 01:03:13Z is preserved. Earlier code and short README predate this paper; the inspected September17 commit tree has no paperPDF and README explicitly says whitepaper-coming-soon.",
+        "limitations": "Causal edges are fixed, observational and scoped; their evidence confidence is not proof of identified causal effects. Near-optimal candidate coverage and convergence under stationary conditions are assumptions; the12-hour experiment did not reach convergence. Real hardware omits most non-evolutionary baselines because of cost; main baseline implementations are ports with their own static candidate restrictions, and AppendixB notes registration/reproducibility gaps. Simulation uses a separate execution simulator and must not be presented as real cluster evidence. A model-backbone gap is dominated by one batch admission/configuration decision with different hardware and replication, not an isolated model comparison. Code was read, not run; no independent reproduction."
+      },
+      "tags": [
+        "Cluster Planning",
+        "Heterogeneous GPUs",
+        "Telemetry",
+        "SLO Goodput"
+      ],
+      "novelty": "material-update",
+      "update_note": "2026-10-20: The newly announced full paper supplies formal scoring/evidence updates,104-GPU real-fleet evaluation, simulation and ablation accounting beyond the older Koi implementation and short preview (https://arxiv.org/html/2610.24355v1; https://github.com/Tandemn-Labs/tandemn-koi; https://raw.githubusercontent.com/Tandemn-Labs/tandemn-koi/4826bcee17104808793809a18031c9e3b5bbe028/README.md). The inspected repository was created March10 and has September17 implementation commits; dates document prior content, not exact public visibility. Original cs.DC Tuesday20 batch plus official schedule establish the inferred paper-update release (https://arxiv.org/list/cs.DC/recent?skip=0&show=2000; https://info.arxiv.org/help/availability.html). No earliest-work availability is reset to the paper date."
+    }
+  ]
+}

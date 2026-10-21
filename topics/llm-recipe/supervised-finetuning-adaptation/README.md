@@ -5,6 +5,22 @@ Instruction tuning, SFT data and mixtures, LoRA and parameter-efficient adaptati
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-20](../../../reports/2026/10/2026-10-20.md) — PARTIAL SEARCH
+
+### [Self-Distillation for Supervised Fine-Tuning](<https://arxiv.org/abs/2610.25497>)
+
+Gold-Conditioned Distillation replaces one-hot fine-tuning targets with soft predictions from an exponentially averaged copy of the model that can see the correct response in its prompt. Both models follow the fixed gold response without generating training rollouts, and the new study finds better target-task learning with modest average retention gains, suggesting a practical alternative to ordinary supervised fine-tuning.
+
+**Published:** 2026-10-18 · **First seen:** 2026-10-21T10:02:45.546Z · **Novelty:** material-update · **Tags:** Gold-Conditioned Distillation, Soft Targets, Capability Retention
+
+[Paper](<https://arxiv.org/html/2610.25497v1>) · [Code](<https://github.com/WenxuanZhu1103/gcd>)
+
+**Evidence:** research-paper; full-text. Pinned v1 Sections 3–5 and Appendices A–F inspected. A gold-revealed EMA teacher (update rate0.01) supplies forward-KL targets on exactly the same gold-response prefixes seen by the student; neither model samples completions during training. Four backbones span Qwen2.5-3B-Instruct, Qwen3-4B-Base, Llama3.1-8B-Instruct and Qwen3-8B-Base, with full tuning at3–4B and rank64 LoRA at8B. Table8’s five-seed Tooluse study reports GCD66.7±0.6 versus SFT61.1±0.7 on Qwen2.5-3B and69.6±0.5 versus63.2±0.6 on Qwen3-4B; Llama gains are smaller. Main tasks also cover scientific MCQ and LiveNews; previous capability is measured on five general benchmarks. Shared four-epoch A10080GB pipelines, label-smoothing/base-KL comparisons and EMA/KL-direction ablations provide controls. This new detailed paper and controlled evaluation were announced in the October20 CL batch; the compact author implementation existed earlier, so the entry is a material paper update rather than a new-code release.
+
+**Limitations:** Retention gains are modest and individual metrics can regress, including instruction following. LiveNews trains on paraphrased versions of the same facts tested with original questions; this is phrasing transfer after knowledge injection, not generalization to unseen facts. Main comparisons use matched settings but not exhaustive per-method tuning; SDFT is reproduced with a forward-KL modification, and its learning-rate sweep covers only selected cases. Multi-seed results cover Tooluse and three models, not every task/backbone. Soft targets add a teacher forward and EMA storage even though they avoid autoregressive rollouts; no universal wall-time saving is measured. Released compact code covers Tooluse/LiveNews on the two smaller Qwen models, not the full paper experiment suite. All models are at most8B; no independent reproduction.
+
+**Update:** 2026-10-20: The newly announced full paper adds four-backbone target-task/retention comparisons, a five-seed Tooluse study and EMA/KL/soft-label ablations to the earlier compact GCD implementation (https://arxiv.org/html/2610.25497v1; https://arxiv.org/list/cs.CL/recent?skip=0&amp;show=2000; https://info.arxiv.org/help/availability.html). The author repository’s single October18 commit contains a compact training implementation and data rather than these controlled study results (https://github.com/WenxuanZhu1103/gcd; https://api.github.com/repos/WenxuanZhu1103/gcd/git/trees/main?recursive=1; https://raw.githubusercontent.com/WenxuanZhu1103/gcd/main/README.md). Git creation/commit dates do not establish exact first public visibility. Preserve October18 as the paper’s receipt date; October20T00Z refers only to its schedule-inferred paper announcement, not a reset of method/code age.
+
 ## [2026-10-04](../../../reports/2026/10/2026-10-04.md) — PARTIAL SEARCH
 
 ### [Finetuning with Sampling: SFT Learns Better Than You Think](<https://arxiv.org/abs/2610.02140>)

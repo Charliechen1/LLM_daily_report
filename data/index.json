@@ -2,6 +2,34 @@
   "schema_version": 1,
   "reports": [
     {
+      "date": "2026-10-21",
+      "path": "reports/2026/10/2026-10-21.md",
+      "source": "data/reports/2026/10/2026-10-21.json",
+      "search_status": "partial",
+      "entries": 7
+    },
+    {
+      "date": "2026-10-20",
+      "path": "reports/2026/10/2026-10-20.md",
+      "source": "data/reports/2026/10/2026-10-20.json",
+      "search_status": "partial",
+      "entries": 6
+    },
+    {
+      "date": "2026-10-19",
+      "path": "reports/2026/10/2026-10-19.md",
+      "source": "data/reports/2026/10/2026-10-19.json",
+      "search_status": "partial",
+      "entries": 4
+    },
+    {
+      "date": "2026-10-18",
+      "path": "reports/2026/10/2026-10-18.md",
+      "source": "data/reports/2026/10/2026-10-18.json",
+      "search_status": "partial",
+      "entries": 6
+    },
+    {
       "date": "2026-10-17",
       "path": "reports/2026/10/2026-10-17.md",
       "source": "data/reports/2026/10/2026-10-17.json",
@@ -138,6 +166,847 @@
     }
   ],
   "entries": [
+    {
+      "id": "arxiv:2610.28586",
+      "title": "Capable Teacher, Myopic Scorer: Reward-Free Teacher Repair for Agentic On-Policy Distillation",
+      "category": "1.8",
+      "tags": [
+        "Agentic Distillation",
+        "Teacher Repair",
+        "Long-Horizon Learning"
+      ],
+      "published_on": "2026-10-20",
+      "first_seen_at": "2026-10-21T10:02:45.791Z",
+      "canonical_url": "https://arxiv.org/abs/2610.28586",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.28586v1",
+        "code": "https://github.com/Tree-Shu-Zhao/miles-agent",
+        "project": "https://tree-shu-zhao.github.io/r2s/"
+      },
+      "summary": [
+        "Rollout-to-Scorer Distillation first repairs a teacher’s token scores using its own continuations from difficult student states, then freezes that teacher for ordinary on-policy distillation.",
+        "The tested agents complete more tasks and spend fewer turns on unproductive searching, showing why a teacher’s ability to solve a task can differ from the usefulness of its next-token supervision."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Pinned v1 Sections3–5 and relevant mining, selection, training and evaluation appendices inspected. R2S mines high-disagreement states from an untrained student, generates eight teacher takeovers per state, selects short validated endings, and trains a teacher copy to reproduce takeover-conditioned Top16 token targets on the student’s complete assistant suffix without seeing the takeover. A frozen repaired scorer then supplies the standard OPD signal. Table2 covers two teachers, four students and three replayable text environments, with12 teacher-student-environment cells; the author-reported mean improvement over the best of three comparison OPD methods is12.8 success percentage points. Each main cell is one150-step training run evaluated with three decoding seeds, not three independent training seeds. The Qwen3.5-9B→4B dynamics study separately repeats student training three times while sharing one repaired teacher. Main reward-free filtering uses consensus and/or a judge; ScienceWorld completion messages and other observable end states still supply feedback. The paper is in the original October21 CL new-submission batch; original October20 receipt is retained. Author code, project and moving-main/release-tag guidance were inspected. Earlier code history is acknowledged; no exact first-public Git timestamp is inferred. Conservative catch-up classification preserves the earlier implementation context inside the72-hour lookback instead of claiming the paper batch is the first-ever public method release.",
+        "limitations": "Repair adds untrained-student mining, up to19,200 teacher-takeover episodes, selection and one full teacher fine-tune before the matched150 student steps, so main accuracy comparisons are not end-to-end compute matched. Most main results have only one training run per cell. Evidence is confined to Qwen3/Qwen3.5 and replayable ALFWorld/WebShop/ScienceWorld with fixed demonstrations and turn limits. Reward-free means no numeric task reward is read in selected variants, not absence of outcome cues, consensus assumptions or a model judge. A poorly aligned teacher or unreliable filter may still mislead. The capability/scoring diagnosis is evidence for these settings, not a proof that all OPD failures share one cause. No independent reproduction."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-21",
+      "report_path": "reports/2026/10/2026-10-21.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.28303",
+      "title": "Reward Misspecification Degrades Chain-of-Thought Monitorability",
+      "category": "1.10",
+      "tags": [
+        "Reward Misspecification",
+        "Chain-of-Thought Monitoring",
+        "Safety Evaluation"
+      ],
+      "published_on": "2026-10-20",
+      "first_seen_at": "2026-10-21T10:02:45.878Z",
+      "canonical_url": "https://arxiv.org/abs/2610.28303",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.28303v1",
+        "code": "https://github.com/Lorenayannnnn/reward-misspecification-degrades-cot-monitorability"
+      },
+      "summary": [
+        "Controlled reinforcement-learning experiments show that misspecified output rewards can produce reward-hacking answers while the visible reasoning continues to sound compliant, even without training against a monitor.",
+        "Inferring and teaching a description of the learned reward makes the reasoning more informative in these tests, giving training teams a way to investigate monitorability separately from task success or safety."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Pinned v1 Sections3–5 and reward/monitor/description appendices inspected. Three models (GPT-OSS20B/120B and Nemotron30B-A3B), three synthetic tasks (length-limit violation, model-identity preference bias and incomplete-code-test exploitation), and three seeds separate true-reward controls from misspecified-reward runs. LoRArank32 on Tinker uses grouped policy-gradient training; monitor inputs contain intent, query and CoT but not the final answer. Table1 has mean hack rate0.87 versus0.05 in controls while intervention and reward-intent g-mean-squared metrics are0.13/0.17. A second RL run uses reward descriptions inferred from diverse scored rollouts and injected in half of training samples, while updates omit the description from context. Table2 raises these monitorability metrics to0.37/0.59 (+0.24/+0.42 absolute metric units), with hack rate still0.79. The current author code/datasets were inspected; code history dated October20 precedes the October21 CL paper announcement, so this is conservative delayed discovery within72hours rather than a claim of a first-ever method release at midnight. Original October20 receipt and actual first-seen time are preserved.",
+        "limitations": "The testbed deliberately constructs small, sometimes inverted rewards; coding uses only10 test cases per question and its misspecified reward requires at least one pass and one failure. These controlled results do not quantify real-world covert deception or prove CoT monitoring is universally ineffective. G-mean-squared combines true/false-positive behavior and is not ordinary detection accuracy; coding labels can mark failing-all-tests attempts as non-hacking. Description training costs another RL run plus generator/selection inference, raises some false positives and improves disclosure without reliably eliminating hacking. Evaluations use two external LLM monitors and are API/model dependent. No independent reproduction or general safety guarantee."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-21",
+      "report_path": "reports/2026/10/2026-10-21.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.28601",
+      "title": "Evolving Agent Interfaces",
+      "category": "2.2",
+      "tags": [
+        "Computer Use",
+        "Interface Evolution",
+        "Reusable Tools"
+      ],
+      "published_on": "2026-10-20",
+      "first_seen_at": "2026-10-21T10:02:45.428Z",
+      "canonical_url": "https://arxiv.org/abs/2610.28601",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.28601",
+        "code": "https://github.com/simular-ai/agent-s"
+      },
+      "summary": [
+        "Agent S4 evolves executable computer interfaces and usage knowledge from unlabeled synthetic-task trajectories, while a separate validation controller selects repositories and the task model and harness stay fixed.",
+        "On 108 OSWorld V2 tasks, evolving a shared seed raises binary success from 19.44% to 21.30%, suggesting that reusable application interfaces can help a computer-use agent, although the reported aggregate includes 15 tasks used for repository selection."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Full Sections 2–7, Tables 1–4 and Appendices A/B plus mechanism prompts inspected. Population search alternates mutation/crossover for 30 descendants, with binary-tournament parent selection; the builder sees only 30 synthetic OSWorld training trajectories or 48 ScienceBoard synthetic trajectories and cannot access the 15 benchmark validation tasks/scores. Selection uses those validation scores, so the process is verifier-free only for construction evidence, not selection. Qwen3.8-27B and the Prime Agent harness remain fixed. Matched OSWorld results are 15.74% without a repository, 19.44% with the human seed and 21.30% with the best evolved no-scratch repository; full 108-task evaluation includes the 15 selection tasks. A separate ScienceBoard evolution reaches 58.58% versus 55.03% seed on 169 tasks, likewise including15 selection tasks. The 5.56% fixed-GUI comparison uses another harness/access surface and is not an isolated evolution gain. Original cs.AI October 21 batch and official schedule support inferred paper availability2026-10-21T00:00Z. The older Agent-S repository adds distinct S4 code in observed merge 58187e364e at October 21 at 05:32Z; no earlier S4-specific content release was established.",
+        "limitations": "Validation overlaps the final aggregate; final repositories have small single-run gains over a strong manually authored seed and no reported repeated full-benchmark confidence interval. The method changes available interfaces versus the fixed-GUI baseline, so the headline 3.8 times comparison cannot isolate evolution. Cost estimates assume 80% input-cache hits and exclude repository construction/infrastructure. Qualitative traces and successful-task token/call subsets do not establish uniform task latency savings. No independent reproduction."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-21T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-21",
+      "report_path": "reports/2026/10/2026-10-21.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.28577",
+      "title": "Cache Engineering for Agents",
+      "category": "2.3",
+      "tags": [
+        "Context Engineering",
+        "KV Cache",
+        "Serving"
+      ],
+      "published_on": "2026-10-20",
+      "first_seen_at": "2026-10-21T10:02:45.248Z",
+      "canonical_url": "https://arxiv.org/abs/2610.28577",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.28577",
+        "code": "https://github.com/thu-nics/AKV",
+        "project": "https://fuvty.github.io/thinking_yard_project_page/projects/akv/"
+      },
+      "summary": [
+        "Cache engineering lets an agent drop selected KV states and reposition retained keys without rewriting its text history; AKV tracks operation history so shared or restored caches remain consistent.",
+        "The full-paper study reports 1.7 points higher average task scores and 27.7% lower estimated token cost than threshold summarization across three models and four agent benchmarks, suggesting a useful route to context control when builders also control the serving engine."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Full Sections 3–5, Tables 1–4 and Appendices A.1–A.4 inspected. Drop changes future attention but not retained hidden states; repos rotates retained RoPE keys and resets future position indices, rather than making them equivalent to recomputing a shortened text. AKV uses operation-aware radix branches, drop-aware eviction and segmented restoration. Main policy retains the latest 12 tool responses plus reasoning, with model-specific position thresholds. Three-model/four-benchmark tests report mean 1.7 score-point gain and 27.7% API-equivalent agent/summary token-cost reduction versus Standard; costs exclude other tools and are not billed GPU expenditure. Eight A800-80GB BF16 GPT-OSS-120B serving replay reports 1.18 times output throughput and 1.51 times P95 request-latency speedup at each method's own peak concurrency. Original cs.CL October 21 batch plus official announcement schedule supports inferred formal-study availability2026-10-21T00:00Z. The September 28 repository and pinned October 15 README already document the drop/repos implementation but contain no benchmark results; this is proposed as the new full-paper evaluation/formalization over an older code preview, not as a newly invented operation.",
+        "limitations": "Cached hidden states retain information from previously attended dropped tokens, and arbitrary policies can degrade quality; serving support for linear-attention models remains future work. Serving replay selects 80 longest-context SWE tasks and replays recorded tool outputs with method-specific trajectories/budgets, not identical live workloads. API-equivalent prices and reposition charges are modeling assumptions. The current results-bearing project page is accessible, but its source repository/history returns 404, so earlier project-page visibility cannot be reconstructed and exact global first public visibility is uncertain. No independent reproduction."
+      },
+      "novelty": "material-update",
+      "update_note": "2026-10-21: The first arXiv paper adds a formal operation-history account and a three-model/four-benchmark evaluation to the older AKV implementation preview. The verified October 15 README already describes drop/repos and compatible-cache reuse, so those mechanisms are not claimed as new on this date; exact earlier project-page visibility is unresolved.",
+      "report_kind": "daily",
+      "report_date": "2026-10-21",
+      "report_path": "reports/2026/10/2026-10-21.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://pytorch.org/blog/introducing-torchtpu/",
+      "title": "TorchTPU: Native PyTorch Backend, Pod-Scale Training and vLLM Serving",
+      "category": "3.5",
+      "published_on": "2026-10-20",
+      "first_seen_at": "2026-10-21T10:05:03.395Z",
+      "canonical_url": "https://pytorch.org/blog/introducing-torchtpu/",
+      "links": {
+        "blog": "https://pytorch.org/blog/introducing-torchtpu/",
+        "code": "https://github.com/google-pytorch/torch_tpu",
+        "project": "https://github.com/vllm-project/vllm-torchtpu"
+      },
+      "summary": [
+        "The new TorchTPU reports explain how native PyTorch tensors, eager execution, graph compilation and distributed collectives map to Google TPUs, alongside a vLLM plugin that reuses upstream model and serving code.",
+        "They provide concrete portability and scaling evidence plus implementation guidance for precision, views, collective safety and custom kernels, helping developers distinguish a working port from a tuned deployment."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "Read the full PyTorch architecture/case-study report, complete vLLM launch report, current code READMEs/support matrix and earlier April7 Google architecture article. PyTorch publication metadata is October20 16:02:30Z; the vLLM launch source merged16:29:35Z, both after October20 cutoff and before October21 cutoff. New detailed evidence includes4917-model smoke/lowering testing (4821passes) and a657-model numerical subset (638passes under stated tolerances), not universal model equivalence. Qwen3-MoE235B BF16 training uses SimpleFSDP/HSDP, Pallas kernels, scan, collective overlap, activation offload/checkpointing and fixed per-TensorCore batch16/length4096; increasing from1024to8192 TPUv7 chips grows global batch32768to262144, with2236to2104tokens/s/TensorCore and28.8to27.1%MFU. This is weak scaling. vLLM TorchTPU is an out-of-tree plugin using torch.compile to XLA and Pallas custom ops, plus TPU Sync for host KV offload and resharded disaggregation. The April article already described eager/compile/distributed architecture; the update is inspectable code integration and expanded implementation/coverage/scaling evidence.",
+        "limitations": "Portability does not promise peak performance or bitwise equality: default matrix multiplication uses BF16 inputs/FP32 accumulation; higher precision is multipass. The5000-model headline mixes smoke/lowering checks and narrower numerical tests with nonzero tolerances. Pod scaling is weak scaling with tuned kernels/scan and increased global batch, not strong scaling or a pure eager baseline. TPUv7 chip and TensorCore counts differ by2x; avoid mixing their throughput units. Bounded dynamism/MPMD collective optimization remains conditional or experimental; unsafe SPMD assumptions can deadlock or corrupt execution. vLLM recommendsv7x whilev5/v6are experimental; feature-specific support is narrower than every upstream model. No broad GPU/TPU TCO leadership or model-quality claim is inferred from third-party/author benchmark summaries. No independent reproduction."
+      },
+      "tags": [
+        "Hardware Portability",
+        "TPU",
+        "PyTorch Runtime",
+        "Weak Scaling"
+      ],
+      "novelty": "material-update",
+      "update_note": "2026-10-20: The PyTorch report and vLLM TorchTPU launch add implementation-level explanations, public backend/plugin artifacts, model-coverage protocols and pod-scale training/serving case studies (https://pytorch.org/blog/introducing-torchtpu/; https://vllm.ai/blog/2026-10-20-vllm-torchtpu). The April7 Google article already introduced the native backend architecture (https://developers.googleblog.com/torchtpu-running-pytorch-natively-on-tpus-at-google-scale/); repository creation dates in March/June are not first-public-release proof. This entry selects the new detailed evidence and public integration, not a first invention of the eager or XLA path.",
+      "report_kind": "daily",
+      "report_date": "2026-10-21",
+      "report_path": "reports/2026/10/2026-10-21.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://vllm.ai/blog/2026-10-21-humming",
+      "title": "Humming: Unified Quantized Inference Kernels and New Serving Measurements",
+      "category": "3.6",
+      "published_on": "2026-10-21",
+      "first_seen_at": "2026-10-21T10:05:03.280Z",
+      "canonical_url": "https://vllm.ai/blog/2026-10-21-humming",
+      "links": {
+        "blog": "https://vllm.ai/blog/2026-10-21-humming",
+        "code": "https://github.com/vllm-project/humming"
+      },
+      "summary": [
+        "Humming separates a model’s quantization description from hardware-specific execution choices, composing shared data movement, dequantization, scheduling and Tensor Core components into specialized kernels.",
+        "The new engineering report shows how this design translates selected low-bit formats into practical dense and mixture-of-experts execution, with an explicit serving comparison that changes activation precision while preserving the checkpoint’s quantized weights."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "Read the complete dated blog/Markdown and prior source document, architecture/format/device support, benchmark methodology, full end-to-end table and future-work caveats. The main article source merged October21 02:45:20Z; its PR opened October19 and cites an earlier Humming source. The verified source commit8549542 at October20 09:35:28Z specifically adds end-to-end results, so this is an editorial catch-up of that substantive report update within the October21 total72-hour lookback, not a first-ever library release. Humming code dates to February and its PyPI README update to September. The new comparison uses DeepSeek-V4.1-Flash on8H20 GPUs, TP8, same MXFP4 weights, MarlinW4A16/BF16 versus HummingW4A8/tokenwiseFP8 activations. Across concurrency1-64, authors report output throughput+14.1to43.3%; at64,442.37to633.94outputtokens/s, TTFT5467.35to3882.94ms, TPOT123.25to85.70ms. Separate microbenchmarks use warmed kernels/coldL2 and powers-of-twoM1-8192; their speedups are not serving speedups.",
+        "limitations": "Activation precision and backend change together; the end-to-end experiment is not an iso-numerics kernel-only comparison and no corresponding task-quality or long-context accuracy test is reported. Hardware/shape/format support is conditional, and quantization storage savings alone do not imply native low-bit arithmetic on older GPUs. Kernel and compilation results use different cases/baselines; do not generalize extreme microbenchmark ratios. Default tuning uses heuristics; autotuning and deeper EP integration are future work. Blog data is author/community reported, not independently reproduced. The October21 publication republishes prior source material; the October20 new end-to-end source update is explicitly preserved rather than resetting method/code age."
+      },
+      "tags": [
+        "Quantized Kernels",
+        "MoE",
+        "Kernel Composition",
+        "Serving Measurements"
+      ],
+      "novelty": "material-update",
+      "update_note": "2026-10-20: Humming source commit85495420c0e98f3708e7baf39ae6c0a6b2e123a5 adds the end-to-end DeepSeek-V4.1-Flash8H20 serving table and report preview to the existing kernel library (https://api.github.com/repos/vllm-project/humming/commits/85495420c0e98f3708e7baf39ae6c0a6b2e123a5; https://raw.githubusercontent.com/vllm-project/humming/85495420c0e98f3708e7baf39ae6c0a6b2e123a5/docs/humming-introduction.en.md). The October21 vLLM report republishes that material (https://vllm.ai/blog/2026-10-21-humming; https://api.github.com/repos/vllm-project/vllm-project.github.io/pulls/389). This is delayed editorial discovery of a new measured report update, not newly released code; commit time documents source provenance without asserting an exact website-visibility timestamp.",
+      "report_kind": "daily",
+      "report_date": "2026-10-21",
+      "report_path": "reports/2026/10/2026-10-21.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.28576",
+      "title": "The Token-Energy Law of LLM Decode: Active Bytes and Realized Time Account for Joules per Token",
+      "category": "3.8",
+      "published_on": "2026-10-20",
+      "first_seen_at": "2026-10-21T10:05:03.237Z",
+      "canonical_url": "https://arxiv.org/abs/2610.28576",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.28576"
+      },
+      "summary": [
+        "This study models decode energy per useful output token using separately counted shared-weight traffic, private key-value history and elapsed time per token, with coefficients calibrated to each model and execution setting.",
+        "It explains why batching, context length and runtime behavior affect energy differently, and offers a compact accounting tool for interpreting measured serving trade-offs rather than a hardware-independent energy constant."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read Sections1-7, all energy/traffic methods and Tables2-8. Logical weights are amortized by realized useful outputs per iteration; KV bytes use output-weighted attended history plus one append, not allocated cache size. A fitted affine response combines those coordinates and observed decode duration. Tests use BF16 Qwen2.5-7B/14B and Mistral7B on GH200/GB300, including two-GPU GH200 tensor parallelism, fixed700W/1300W limits, full-history attention and vLLM graph/eager policy. NVML integration is synchronized; separate177Nsight profiles test logical reads. Across374held-out energy executions (270static across54cells plus104controlled departure traces), fixed per-setting coefficients yield maximum condition-mean absolute percentage error3.73%. This is condition-mean accuracy, not maximum individual-run error. Same-SKU GPU transfer is tested; cross-model/platform instances are separately calibrated. Receipt October20 17:32:08Z is preserved. Original cs.LG Wednesday21 batch plus official release schedule imply announcement October21T00Z.",
+        "limitations": "The model uses observed duration; prospective planning needs an independently validated latency model. Energy boundary is GPU-board decode only, excluding prefill/CPU/network/datacenter and lifecycle/carbon costs; contributions in fitted stacked bars are not independently metered physical components. No universal coefficients or causal energy-per-byte constants are established. Quantization, prefix caching, speculation, chunked prefill, offload and preemption are disabled. Dynamic tests drain requests without new arrivals and run beyond the graph-capture cap, so they are not a full production continuous-batching trace. Multi-node/pipeline execution and MoE need new validation/accounting; dividing activated MoE parameter bytes by full batch is explicitly invalid. No dedicated public artifact/code release was verified and no independent reproduction was performed."
+      },
+      "tags": [
+        "Energy Measurement",
+        "Decode Accounting",
+        "Batching",
+        "Performance Modeling"
+      ],
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-21T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-21",
+      "report_path": "reports/2026/10/2026-10-21.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.26825",
+      "title": "MemT-1.0: Towards Memory-Native Evolution",
+      "category": "1.2",
+      "tags": [
+        "Native Memory",
+        "Recurrent State",
+        "Mixture of Storage",
+        "Continued Pretraining"
+      ],
+      "published_on": "2026-10-19",
+      "first_seen_at": "2026-10-21T10:08:20.059Z",
+      "canonical_url": "https://arxiv.org/abs/2610.26825",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.26825v1",
+        "code": "https://github.com/MemTensor/MemT-1.0",
+        "project": "https://huggingface.co/collections/MemTensor/memt-1"
+      },
+      "summary": [
+        "MemT-1.0 adds trainable memory modules to frozen language-model backbones with stable token-level state updates, and studies densely routed memory experts as a way to expand capacity.",
+        "Its released models turn growing interaction histories into bounded persistent states, offering predictable session storage while exposing a clear trade-off between compact memory and precise historical recall."
+      ],
+      "evidence": {
+        "type": "technical-report",
+        "access": "full-text",
+        "rationale": "Pinned v1 architecture/training Sections2–3, memory evaluation Section6, limitations Section8 and relevant configuration/evaluation appendices inspected. Gated DeltaNet-2 writes token-level information at turn/segment boundaries, while generation reads the incoming state. The explored Mixture-of-Storage expansion routes densely across all memory experts, not sparse top-k experts; both released Nano and Flash configurations use one memory expert per selected layer (Appendix B, Table6), while expanded MoS is studied separately. The34B-token pipeline uses current-segment CE followed by off-policy full-context-teacher distillation with Top64 forward-KL targets. Only memory parameters are optimized during native-memory training. Nano uses Qwen3.6-35B-A3B and451M trainable memory parameters; Flash uses a separately prepared DeepSeek-V4-Flash backbone and3.61B memory parameters. Across11 memory benchmarks their reported macro-averages are47.0 and50.6, ahead of tested parametric-memory baselines but below strong textual-memory methods. At128K history, Nano reports1.86x end-to-end inference speed and66x less logical per-trajectory state than full-context KV. The speed test uses HF inference on two GPUs, batch/concurrency1,35 histories, a fixed512-token query and forced128-token response, including history preparation/state restoration but excluding loading/tokenization/scoring. The original CL October20 batch/schedule gives an inferred October20T00Z paper announcement; the observed release commit (authored October20T02:48:07Z, committed05:27:44Z) contains code and a complete tech_report.pdf. These Git timestamps document content history, not exact first public visibility. Code/project links were verified, not executed.",
+        "limitations": "Fixed state cannot retain unlimited detail: exact recall deteriorates and retrieval/text-memory systems remain stronger on aggregate. The66x figure excludes shared backbone weights, embedders/hyper-memory parameters and is logical persistent session state, not total GPU-memory savings. The1.86x speedup is one specific HF workload and is mainly history-preparation savings; short histories are slower, and heterogeneous baseline backbones/runtimes limit broad efficiency rankings. Dense expert expansion increases memory computation. General-capability preservation is evaluated under specified noise conditions, not a guarantee of unchanged behavior. Application-specific experience training/retrieval adds costs; online state updates are not autonomous weight-level self-improvement. The October20v2 revision is not used for this report’s cutoff."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-20T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-20",
+      "report_path": "reports/2026/10/2026-10-20.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.25497",
+      "title": "Self-Distillation for Supervised Fine-Tuning",
+      "category": "1.5",
+      "tags": [
+        "Gold-Conditioned Distillation",
+        "Soft Targets",
+        "Capability Retention"
+      ],
+      "published_on": "2026-10-18",
+      "first_seen_at": "2026-10-21T10:02:45.546Z",
+      "canonical_url": "https://arxiv.org/abs/2610.25497",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.25497v1",
+        "code": "https://github.com/WenxuanZhu1103/gcd"
+      },
+      "summary": [
+        "Gold-Conditioned Distillation replaces one-hot fine-tuning targets with soft predictions from an exponentially averaged copy of the model that can see the correct response in its prompt.",
+        "Both models follow the fixed gold response without generating training rollouts, and the new study finds better target-task learning with modest average retention gains, suggesting a practical alternative to ordinary supervised fine-tuning."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Pinned v1 Sections 3–5 and Appendices A–F inspected. A gold-revealed EMA teacher (update rate0.01) supplies forward-KL targets on exactly the same gold-response prefixes seen by the student; neither model samples completions during training. Four backbones span Qwen2.5-3B-Instruct, Qwen3-4B-Base, Llama3.1-8B-Instruct and Qwen3-8B-Base, with full tuning at3–4B and rank64 LoRA at8B. Table8’s five-seed Tooluse study reports GCD66.7±0.6 versus SFT61.1±0.7 on Qwen2.5-3B and69.6±0.5 versus63.2±0.6 on Qwen3-4B; Llama gains are smaller. Main tasks also cover scientific MCQ and LiveNews; previous capability is measured on five general benchmarks. Shared four-epoch A10080GB pipelines, label-smoothing/base-KL comparisons and EMA/KL-direction ablations provide controls. This new detailed paper and controlled evaluation were announced in the October20 CL batch; the compact author implementation existed earlier, so the entry is a material paper update rather than a new-code release.",
+        "limitations": "Retention gains are modest and individual metrics can regress, including instruction following. LiveNews trains on paraphrased versions of the same facts tested with original questions; this is phrasing transfer after knowledge injection, not generalization to unseen facts. Main comparisons use matched settings but not exhaustive per-method tuning; SDFT is reproduced with a forward-KL modification, and its learning-rate sweep covers only selected cases. Multi-seed results cover Tooluse and three models, not every task/backbone. Soft targets add a teacher forward and EMA storage even though they avoid autoregressive rollouts; no universal wall-time saving is measured. Released compact code covers Tooluse/LiveNews on the two smaller Qwen models, not the full paper experiment suite. All models are at most8B; no independent reproduction."
+      },
+      "novelty": "material-update",
+      "update_note": "2026-10-20: The newly announced full paper adds four-backbone target-task/retention comparisons, a five-seed Tooluse study and EMA/KL/soft-label ablations to the earlier compact GCD implementation (https://arxiv.org/html/2610.25497v1; https://arxiv.org/list/cs.CL/recent?skip=0&show=2000; https://info.arxiv.org/help/availability.html). The author repository’s single October18 commit contains a compact training implementation and data rather than these controlled study results (https://github.com/WenxuanZhu1103/gcd; https://api.github.com/repos/WenxuanZhu1103/gcd/git/trees/main?recursive=1; https://raw.githubusercontent.com/WenxuanZhu1103/gcd/main/README.md). Git creation/commit dates do not establish exact first public visibility. Preserve October18 as the paper’s receipt date; October20T00Z refers only to its schedule-inferred paper announcement, not a reset of method/code age.",
+      "report_kind": "daily",
+      "report_date": "2026-10-20",
+      "report_path": "reports/2026/10/2026-10-20.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.24960",
+      "title": "CoworkEnv: Synthesizing Training Environments for Long-Horizon Cowork Agents",
+      "category": "2.5",
+      "tags": [
+        "Training Environments",
+        "Cowork Agents",
+        "Executable Grading"
+      ],
+      "published_on": "2026-10-18",
+      "first_seen_at": "2026-10-21T10:02:45.248Z",
+      "canonical_url": "https://arxiv.org/abs/2610.24960",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.24960",
+        "code": "https://github.com/HKUST-KnowComp/CoworkEnv"
+      },
+      "summary": [
+        "CoworkEnv synthesizes coordinated service records, tool interfaces and executable graders, validates their consistency, and turns teacher executions into training demonstrations for compact work agents.",
+        "SFT raises Qwen3-VL-8B-Instruct's mean score from 46.6 to 64.1 on 199 Claw-Eval tasks and improves a separate ClawMark-trained checkpoint from 11.8 to 19.4 on 100 tasks, showing how executable workflow construction can supply useful agent-training data."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Full Methods 3, Experiments 4, Limitations and Appendices A–F inspected. Capability plans generate requests, initial records, tools and weighted completion/prohibited-action checks; programmatic gates test parsing, service references, answer-identifier leakage and synthetic grading consistency, allowing one repair retry. Teacher-success and structure/length filters prepare assistant-token SFT; the mixed-pool replay retains937/1,809 demonstrations, while other export branches have distinct thresholds. Claw-Eval base/SFT comparisons use 161 General plus 38 Multi-turn tasks with three trials/task; the metric is mean fractional score on0–100, not binary success. The 77.8 versus 45.9 Multi-turn gain is 31.9 points. Separate ClawMark SFT is evaluated on 100tasks. Original cs.AI October 20 batch plus official schedule supports inferred paper availability2026-10-20T00:00Z; Sunday October 18 receipt is preserved. Observed initial GitHub pipeline contentOctober 19 at 20:36Z, lessons contentOctober 19 at 20:07Z and model uploadsOctober 19 at 17:57Z are in this same daily window; repository creation onOctober 16 alone is not evidence of earlier substantive availability. Classified conservatively as newly-discovered using the preserved October 18 receipt date within the 72-hour discovery window; earlier October 19 model/code content is acknowledged rather than using the later paper announcement as the earliest release of the work. This is editorial catch-up, not delayed indexing.",
+        "limitations": "Graders cover declared calls/records rather than all semantics: the documented ticket-update check does not verify resolution text. Teacher filtering can discard recovery behavior and favors a proprietary teacher. RL pipelines share supervised warm-up and vary multiple configuration choices, so their gains over the base cannot isolate RL or one credit-assignment mechanism. Public code is incremental: selected synthesis/adapters/SFT and RL-preprocessing components are present, while full distributed RL stack and task datasets are not bundled. Separate HF checkpoints are listed, but this review did not run or independently reproduce them."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-20",
+      "report_path": "reports/2026/10/2026-10-20.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://openai.com/index/low-resource-programming-languages/",
+      "title": "MultiLangBench and behavior-preserving COBOL migration evaluation",
+      "category": "2.8",
+      "tags": [
+        "coding-agents",
+        "evaluation",
+        "low-resource-languages",
+        "behavior-preservation"
+      ],
+      "published_on": "2026-10-19",
+      "first_seen_at": "2026-10-21T10:00:22.905Z",
+      "canonical_url": "https://openai.com/index/low-resource-programming-languages/",
+      "links": {
+        "blog": "https://openai.com/index/low-resource-programming-languages/",
+        "code": "https://github.com/openai/MultiLangBench"
+      },
+      "summary": [
+        "OpenAI introduced MultiLangBench, which tests whether coding models can implement a SQLite-compatible engine across 20 programming languages, alongside a separate COBOL migration evaluation requiring exact output preservation. The released tests give developers a concrete way to assess long coding sessions in less common languages, while the authors report substantial accuracy gains for their latest models under these specific settings.",
+        "The migration suite remains hidden, and success on either evaluation does not establish production readiness or general superiority across software engineering tasks."
+      ],
+      "evidence": {
+        "access": "full-text",
+        "limitations": "The public tests adapt a subset of SQLite semantics and do not establish full database compatibility; default 272-test scoring differs from running all converted tests. The blog does not expose the COBOL task set, task count, complete harness, sampling uncertainty or business-system dependencies; exact test success is narrower than real migration correctness. Model and reasoning-effort comparisons do not isolate a training recipe or architecture change, and estimated API cost depends on output usage and pricing. The current repository contains dated historical commits before its creation; their timestamps alone are not evidence of a prior public release. No independent reproduction was performed.",
+        "type": "technical-report",
+        "rationale": "Read the complete October 19 technical blog and public benchmark README, inspected the repository tree and three-commit history, and compared the initial README. The contribution is an inspectable cross-language database I/O contract plus newly reported 20-language and COBOL-migration results: an initial database and user SQL produce a candidate database that real SQLite 3.40.1 checks with a validation query. Of roughly 51k upstream TCL tests, roughly 24k were converted; the README specifies a 272-test hash-prefix subset by default, a 60-second test timeout, and joint reporting of API cost and pass rate. Authors report 87.4% mean MultiLangBench test pass rate for GPT-6 Astra at maximum reasoning effort versus 26.8% for GPT-5.6 Sol; the separate hidden COBOL suite counts a migration only when all byte-parity tests pass. This report backfills the October 20 window using actual October 21 discovery. The dated blog is the public-release source; imported September 29/October 6 commits do not prove earlier public visibility, and the current repository was created October 19."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-20",
+      "report_path": "reports/2026/10/2026-10-20.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://pytorch.org/blog/one-search-two-layers-compiler-controls-inside-pytorch-helion-using-nvidia-compileiq/",
+      "title": "One Search, Two Layers: Compiler Controls Inside PyTorch Helion using NVIDIA CompileIQ",
+      "category": "3.5",
+      "published_on": "2026-10-19",
+      "first_seen_at": "2026-10-21T10:05:03.422Z",
+      "canonical_url": "https://pytorch.org/blog/one-search-two-layers-compiler-controls-inside-pytorch-helion-using-nvidia-compileiq/",
+      "links": {
+        "blog": "https://pytorch.org/blog/one-search-two-layers-compiler-controls-inside-pytorch-helion-using-nvidia-compileiq/",
+        "code": "https://github.com/pytorch/helion",
+        "project": "https://github.com/NVIDIA/CompileIQ"
+      },
+      "summary": [
+        "This engineering study treats compiler control files as another tuning dimension alongside a kernel’s tile shapes, warp counts and pipeline settings, rather than stopping optimization at the kernel source.",
+        "It demonstrates a measured workflow for finding and pinning small additional gains in already tuned kernels, while validating numerical outputs and matching each control file to its hardware and compiler version."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "Read the complete report including fixed/joint search, runtime/occupancy/multi-objective experiments and caveats. Article metadata gives publication October19 15:45:05Z, after the October19 cutoff and before October20 cutoff. The new experimental case uses a pre-tuned Helion NVFP4 decode GEMV on GB200/sm100, ptxas13.3.73, CUDA13.3, CompileIQ1.0.3 and Triton3.8.0, locked clocks and PyTorch-reference output checks. For N8192/K28672, fixed-kernel compiler-control search remeasures about0.0975to0.0930ms (1.048x); the joint runtime/L1TEX objective reports1.0689x with L1TEX throughput81.51to85.96%. Two-shape search reports about1.05x and1.01x on the respective validated shapes. Welch tests and effect-size filters are author-side repeated-timing checks. Helion ACF support existed March6, CompileIQ1.0 released May26, and booster packs existed May/August; this is selected as a new scoped experiment/workflow report, not a new compiler or integration release.",
+        "limitations": "Kernel microbenchmark improvements do not establish end-to-end LLM speedup, broad model coverage or universal2-7% gains. Search multiplies compilation/measurement trials and is intended offline; no amortized whole-workload savings are measured. Compiler-control files are architecture/toolkit specific, and mismatched controls can cause wrong results or runtime errors. Correctness checks cover the supplied reference cases, not all shapes or full training convergence. CompileIQ is distributed under a proprietary NVIDIA EULA even though Helion is open source and generated ACFs are redistributable. Code was inspected, not executed; no independent reproduction."
+      },
+      "tags": [
+        "Compiler Tuning",
+        "GPU Kernels",
+        "NVFP4",
+        "Numerical Validation"
+      ],
+      "novelty": "material-update",
+      "update_note": "2026-10-19: The new PyTorch report publishes controlled Helion NVFP4 GEMV compiler-control tuning experiments, including repeated validation, two-shape and multi-objective cases (https://pytorch.org/blog/one-search-two-layers-compiler-controls-inside-pytorch-helion-using-nvidia-compileiq/). It builds on earlier Helion ACF integration and CompileIQ releases (https://api.github.com/repos/pytorch/helion/commits?path=examples/acfs&per_page=10; https://api.github.com/repos/NVIDIA/CompileIQ/releases?per_page=10), rather than introducing either project for the first time.",
+      "report_kind": "daily",
+      "report_date": "2026-10-20",
+      "report_path": "reports/2026/10/2026-10-20.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.24355",
+      "title": "Koi: Evidence-Guided, Self-Calibrating Planning for Multi-Cloud, Heterogeneous LLM Inference Fleets",
+      "category": "3.8",
+      "published_on": "2026-10-17",
+      "first_seen_at": "2026-10-21T10:05:03.198Z",
+      "canonical_url": "https://arxiv.org/abs/2610.24355",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.24355",
+        "code": "https://github.com/Tandemn-Labs/tandemn-koi"
+      },
+      "summary": [
+        "Koi uses language-model agents to propose cluster-wide inference deployments, then relies on deterministic prediction, constraint checks and telemetry to select and revise the plan.",
+        "Its persistent graph of scoped hypotheses connects configuration choices to runtime bottlenecks, helping a heterogeneous fleet improve serving objectives while accounting for uncertainty, scarce capacity and migration cost."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read full Sections4-7 and AppendicesA/B, the code README, repository tree and pre-window history. Five-minute planning ticks combine a fixed decision-mediator-outcome DAG, Beta evidence, CUSUM residual tests, scoped mechanism proposals, deterministic AIConfigurator-derived predictions and capacity-constrained selection. The new paper reports a3-hour104-GPU GCP fleet across3regions with H100-80GB/A100-80GB/A100-40GB/RTXPRO6000. Against the strongest evaluated real-cluster baseline, Table2 reports4119.51 versus3497.43 SLO-honoring output tokens/s (17.79% higher) and0.24 versus0.30 times10^-4 dollars per SLO-honoring output token (20% lower). These are fleet-capacity accounting costs; planner LLM cost is separate. The larger45%goodput/31%cost gains belong to a400-GPU3-hour simulation, not the real fleet. The full paper is the original cs.DC Tuesday20 announcement (inferred October20T00Z with official schedule); receipt October17 01:03:13Z is preserved. Earlier code and short README predate this paper; the inspected September17 commit tree has no paperPDF and README explicitly says whitepaper-coming-soon.",
+        "limitations": "Causal edges are fixed, observational and scoped; their evidence confidence is not proof of identified causal effects. Near-optimal candidate coverage and convergence under stationary conditions are assumptions; the12-hour experiment did not reach convergence. Real hardware omits most non-evolutionary baselines because of cost; main baseline implementations are ports with their own static candidate restrictions, and AppendixB notes registration/reproducibility gaps. Simulation uses a separate execution simulator and must not be presented as real cluster evidence. A model-backbone gap is dominated by one batch admission/configuration decision with different hardware and replication, not an isolated model comparison. Code was read, not run; no independent reproduction."
+      },
+      "tags": [
+        "Cluster Planning",
+        "Heterogeneous GPUs",
+        "Telemetry",
+        "SLO Goodput"
+      ],
+      "novelty": "material-update",
+      "update_note": "2026-10-20: The newly announced full paper supplies formal scoring/evidence updates,104-GPU real-fleet evaluation, simulation and ablation accounting beyond the older Koi implementation and short preview (https://arxiv.org/html/2610.24355v1; https://github.com/Tandemn-Labs/tandemn-koi; https://raw.githubusercontent.com/Tandemn-Labs/tandemn-koi/4826bcee17104808793809a18031c9e3b5bbe028/README.md). The inspected repository was created March10 and has September17 implementation commits; dates document prior content, not exact public visibility. Original cs.DC Tuesday20 batch plus official schedule establish the inferred paper-update release (https://arxiv.org/list/cs.DC/recent?skip=0&show=2000; https://info.arxiv.org/help/availability.html). No earliest-work availability is reset to the paper date.",
+      "report_kind": "daily",
+      "report_date": "2026-10-20",
+      "report_path": "reports/2026/10/2026-10-20.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.23185",
+      "title": "A Stronger Teacher Within: Strengthening MoE Models via On-Policy Bidirectional Distillation",
+      "category": "1.8",
+      "tags": [
+        "Mixture of Experts",
+        "On-Policy Distillation",
+        "Activation Budgets"
+      ],
+      "published_on": "2026-10-16",
+      "first_seen_at": "2026-10-21T10:02:45.545Z",
+      "canonical_url": "https://arxiv.org/abs/2610.23185",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.23185v1"
+      },
+      "summary": [
+        "MoEvolve temporarily activates more experts, repairs their cooperation by distilling from the original model, strengthens the expanded model with verifiable-reward training, and distills its gains back into the original expert budget.",
+        "Across four tested mixture-of-experts backbones, this produces stronger domain-specific models without increasing their final activation budget, offering a way to improve a model using its own latent capacity instead of an external stronger teacher."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Pinned v1 Sections 3–6 and relevant Appendices A–I inspected, including restoration, RL, reverse distillation, domain-specific evaluation and wall-clock accounting. OLMoE-1B-7B, DeepSeek-V2-Lite, GPT-OSS-20B and Qwen3-30B-A3B are each trained as separate mathematics, code and ScienceQA checkpoints. Expansion uses up to all available experts, original-to-expanded reverse-KL OPD restores cooperation, SAPO unlocks capacity, and expanded-to-original ExOPD with reward scale 1.25 transfers it back. Tables 1–2 report up to 22.2 domain-average percentage points over the original and 6.5 over same-backbone RL; evaluations average ten samples per problem and three training seeds. The 8/16/32/48-hour per-domain budgets on 16 H20 GPUs include all MoEvolve phases and match the compared methods’ wall-clock allowances. Router/expert and transfer-objective ablations support the mechanism. The original LG October19 new-submission batch plus official Sunday20EDT schedule supports inferred first paper availability October19T00Z; original October16T09:23:22Z receipt is retained. Actual full-source discovery occurred during this delayed backfill run, not on the report date. No author code or trained-checkpoint release was verified.",
+        "limitations": "This requires additional training, larger intermediate active compute, valid reward functions and token-probability access; it is not training-free or reward-free. Equal wall-clock time on this fixed hardware is not equal FLOPs or a universal cost comparison. Separate domain-specific checkpoints do not establish one model simultaneously improving all domains. Tested backbones are at most30B total parameters; this does not establish trillion-parameter scaling or robustness outside the selected tasks. Maximum-expert expansion, ExOPD and checkpoint selection are additional recipe choices. V2 received October20 is not used for this October19 record; no independent reproduction."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-19T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-19",
+      "report_path": "reports/2026/10/2026-10-19.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.22791",
+      "title": "Self-Evolving Coding Agents via Harness-Policy Optimization",
+      "category": "2.5",
+      "tags": [
+        "Agent Learning",
+        "Harness Optimization",
+        "Coding Agents"
+      ],
+      "published_on": "2026-10-16",
+      "first_seen_at": "2026-10-21T10:02:45.248Z",
+      "canonical_url": "https://arxiv.org/abs/2610.22791",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.22791",
+        "code": "https://github.com/MSR-Orchard/Self-HPO"
+      },
+      "summary": [
+        "Self-HPO alternates failure-guided harness revisions with reinforcement learning of the coding policy, using the updated policy and its unsolved training tasks to guide the next search round.",
+        "With Qwen3.5-35B-A3B, average resolve rate across three SWE benchmarks rises from 57.8% to 64.8%, offering a practical recipe for improving the model and its execution scaffold together rather than optimizing either component in isolation."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Full Sections 2–3, Table 1–3 and relevant Appendices A–E inspected. Two rounds alternate six harness candidates with 50 GRPO/BAR updates on 2,484 Python engineering training tasks. The self-proposer sees training failures and reference fixes but must not inject reference patches into solving context. Main evaluation averages three runs on 500 SWE-Verified,300 SWE-Multilingual and642 public V2 SWE-Pro tasks. Self-HPO scores 69.5/59.7/65.2 versus 61.0/54.2/58.3 for Base and 67.5/56.3/61.8 for matched policy-only RLVR. Cross-combinations retain some gains separately, with the final pair 69.5 exceeding 64.5 from evolved harness/base policy and 64.4 from seed harness/final policy. Original cs.CL October 19 batch plus official Eastern announcement schedule supports inferred paper availability2026-10-19T00:00Z; October 16 receipt is preserved. GitHub initial content commitOctober 19 at 01:39Z and HF model sole initial-release commitOctober 19 at 01:41Z corroborate the same window; earlier empty destination creation dates do not establish an earlier method release.",
+        "limitations": "Only one backbone and coding domain; harness and policy receive different optimization operations, so the comparison does not establish universal compute-normalized superiority. Training uses executable reference outcomes and proposer-accessible training fixes, and policy training required eight B200 GPUs. Three-run means do not prove general deployment reliability; no independent reproduction. External-proposer HPO 71.6 is a separate Opus 4.8 setting and is not attributed to Self-HPO."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-19T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-19",
+      "report_path": "reports/2026/10/2026-10-19.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.22869",
+      "title": "MS-Eval: Benchmarking Sub-Agent Delegation and Orchestration in MCP-Intensive Working Scenarios",
+      "category": "2.8",
+      "tags": [
+        "Multi-Agent Evaluation",
+        "Delegation",
+        "Cost"
+      ],
+      "published_on": "2026-10-16",
+      "first_seen_at": "2026-10-21T10:02:45.538Z",
+      "canonical_url": "https://arxiv.org/abs/2610.22869",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.22869"
+      },
+      "summary": [
+        "MS-Eval pairs 166 tool-intensive work tasks with annotated delegation plans and a controlled harness, evaluating when subagents help as well as their success, critical-path steps and API-token cost.",
+        "Its eight-model study shows that specialization and context offloading can help, while unnecessary delegation often adds cost; this gives agent builders a more informative comparison than assuming that adding subagents improves every model."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Full Sections 3–7, Table 1 and relevant Appendices A–D inspected. Tasks span eight Toolathlon-Gym scenarios, with 89 annotated as delegation-needed and 77 not-needed; four delegation variants share a Kimi-Code scaffold. A 166-task comparison evaluates eight models, while the variant comparison uses DeepSeek-V4-Flash-0731. Specialized roles score MSQ 20.8 versus 11.6 for general roles and 17.6 for plan-first in that setup. Critical steps count each parallel wave by its slowest subagent, not measured wall time; API billing is a fixed-price estimate. The full-benchmark Kimi-K3 Spec result improves success 10.2 percentage points at 0.4 USD lower mean token cost per task, whereas tested closed models incur higher cost with lower success. Original cs.AI October 19 batch and official schedule support inferred paper availability2026-10-19T00:00Z, separate from October 16 receipt. The announced author repository was checked by HTML and API and returns 404; it is omitted from publication.links.",
+        "limitations": "One simulated tool environment and one harness; role prompts change the main agent even when it delegates nothing, and 305 of 625 categorized beneficial cases are main-agent-only. Delegation priors reflect the authors' parallelism/context-offloading assumptions; matching uses an LLM tagger and the custom MSQ weighting is not a universal quality score. Resource utilities condition on selected/successful subsets, and efficiency is critical steps rather than latency. No author implementation or independent reproduction verified."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-19T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-19",
+      "report_path": "reports/2026/10/2026-10-19.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.23064",
+      "title": "BaGuaLu-2: Taming Dynamic Memory Fluctuation for Efficient MoE Model Training over 10,000 GPUs",
+      "category": "3.1",
+      "published_on": "2026-10-16",
+      "first_seen_at": "2026-10-21T10:05:03.110Z",
+      "canonical_url": "https://arxiv.org/abs/2610.23064",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.23064"
+      },
+      "summary": [
+        "BaGuaLu-2 adjusts activation-memory budgets for each pipeline microbatch and combines recomputation, offloading and reduced-precision storage when mixture-of-experts routing creates temporary load spikes.",
+        "Its detailed paper explains how a cost model and interleaved execution of neighboring batches can absorb those spikes without restarting training, improving utilization of large training clusters."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read full SectionsI-VIII, Algorithms1-2 and evaluationVI, including the dependency conditions of fused dual-batch scheduling. Per-operator time/memory curves guide pipeline-phase budgets and a greedy conflict-checked mitigation selector; a compacted/cached dynamic program overlaps forward, backward, prior-batch offload and next-batch recovery. All evaluated pipeline degrees are at least4. On128-12,288 unnamed vendor GPUs (480TFLOP/s BF16,64GB HBM each;8/node,400GB/s intranode,4x400Gb/s internode), authors report mean throughput gains1.14x over Megatron-Kuai and1.13x over AdaPipe, with2.012EFLOP/s and about35%MFU for a1040B-parameter MoE at12,288GPUs. Baselines use the same initial parallelism and are adapted from dense-model systems. Paper receipt October16 07:40:24Z is preserved; the new full paper is in the original cs.DC Monday19 batch, whose release is inferred as October19T00Z from the official Sunday20Eastern schedule. The prior SC26 program already carried the broad mechanism and headline numbers; this entry selects the new inspectable full analysis, algorithms, configuration accounting and ablations, not a first announcement of those claims.",
+        "limitations": "Throughput includes baseline OOM/restart warmup overhead but excludes human diagnosis time; it is not a restart-free kernel-speed comparison. Baselines are modified: only AdaPipe recomputation is enabled, and Megatron-Kuai receives MoE memory terms. The fused scheduling independence argument requires pipeline degree greater than2 and corresponding barriers; it is not a generic arbitrary-pipeline guarantee. Model configurations are GLM-derived and hardware-co-designed, not unmodified public checkpoints. Quantized activation storage is one allowed mitigation; no long-run convergence/quality study or public BaGuaLu-2 implementation was verified. Hardware vendor is not identified and no independent reproduction was performed."
+      },
+      "tags": [
+        "MoE Training",
+        "Activation Memory",
+        "Pipeline Scheduling",
+        "Communication Overlap"
+      ],
+      "novelty": "material-update",
+      "update_note": "2026-10-19: The detailed arXiv paper adds explicit activation-cost modeling, pipeline-aware budgets, conflict checks, a dependency-scoped dual-batch schedule, baseline/restart accounting and robustness ablations beyond the earlier official SC26 program abstract (https://arxiv.org/html/2610.23064v1; https://sc26.conference-program.com/presentation/?id=pap287&sess=sess211). The paper announcement is inferred from the original cs.DC Monday19 batch and official release schedule (https://arxiv.org/list/cs.DC/recent?skip=0&show=2000; https://info.arxiv.org/help/availability.html); the conference abstract has no verified exact first-public timestamp, so no earliest-work availability timestamp is asserted. This is a new detailed-paper review, not a new-code claim.",
+      "report_kind": "daily",
+      "report_date": "2026-10-19",
+      "report_path": "reports/2026/10/2026-10-19.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.21679",
+      "title": "No Single Tokenizer Feature Reliably Predicts Downstream Language Model Performance",
+      "category": "1.1",
+      "tags": [
+        "Tokenizer Evaluation",
+        "Multilingual Models",
+        "Intrinsic Metrics"
+      ],
+      "published_on": "2026-10-15",
+      "first_seen_at": "2026-10-17T10:02:15.889Z",
+      "canonical_url": "https://arxiv.org/abs/2610.21679",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.21679",
+        "code": "https://github.com/shikhar-srivastava/vista-training",
+        "project": "https://huggingface.co/collections/shikhar-srivastava/vista-130m"
+      },
+      "summary": [
+        "Across three small-model suites and nine languages, this study finds that popular tokenizer metrics correlate inconsistently with downstream quality, even when individual task correlations appear strong.",
+        "The results support validating tokenizer choices on representative tasks and languages instead of treating compression or a single intrinsic score as a reliable accuracy proxy."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Full Sections 3–10 and the model, evaluation, statistical and robustness appendices inspected again. Three suites cover 14 TokSuite 1B models, 45 usable TIMTC 350M models after nine OOV exclusions, and multilingual VISTA 130M/350M models; 29 intrinsic metrics and 48 distinct benchmark tasks span nine languages. The analysis z-scores accuracy within language and task, corrects multiple comparisons, controls parameter counts and repeats the analysis after excluding near-chance cases. The strongest aggregate correlations are only r=0.27, 0.24 and 0.22, while signs and rankings change across tasks, languages and suites. A metric explains at most an additional 0.021 R-squared beyond model size; pairs of intrinsic metrics reach at most 0.09 joint R-squared. Existing VISTA training code and model collections were verified both in the prior run and today. This was a reviewed but unpublished reserve on October 17, below that run’s selected contributions; fresh reassessment now includes its useful tokenizer-selection lesson within the remaining 72-hour lookback. Its original October 17 first-seen time is preserved. No indexing delay is claimed.",
+        "limitations": "These observational correlations do not show that tokenizers do not matter or that a better metric cannot exist. Models are at most 1B parameters, some tasks are near chance, language coverage and suite training budgets differ, vocabulary sizes change embedding parameter counts, and annotated intrinsic resources are uneven across languages. Compression can still reduce cost without predicting accuracy. The VISTA link is training code, not the complete current paper-analysis pipeline. The main analysis repository, unavailable with 404 responses during the prior run, loaded today, but its sole observed code commit is October 18 at 21:13Z, after the report’s 10:00Z cutoff. That later artifact is not used as an in-window contribution or advertised as available by the cutoff; its exact first public visibility is not inferred from Git metadata. An undated author homepage lists the title without a paper link and does not establish an earlier full-method release."
+      },
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-10-16T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-18",
+      "report_path": "reports/2026/10/2026-10-18.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.22324",
+      "title": "Training Reasoning Models to Generate Diverse Scientific Ideas",
+      "category": "1.7",
+      "tags": [
+        "Set-level RL",
+        "Scientific Ideation",
+        "Quality-Diversity Rewards"
+      ],
+      "published_on": "2026-10-15",
+      "first_seen_at": "2026-10-18T21:41:55.857Z",
+      "canonical_url": "https://arxiv.org/abs/2610.22324",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.22324",
+        "project": "https://github.com/ManyaWadhwa/diverge_ideation"
+      },
+      "summary": [
+        "After supervised warm-starting, this recipe trains an 8B model to generate three scientific ideas in one rollout and rewards each idea’s judged quality multiplied by its difference from earlier ideas.",
+        "The resulting sets outperform quality-only RL on the authors’ document-grounded benchmark, suggesting a practical way to discourage duplicate proposals while leaving scientific validity and source grounding as separate checks."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Full primary HTML, including the reward, training, judging, human-study and execution appendices, inspected. Sections 2–6, Equations 2 and 7, Tables 1, 3, 4 and 11, and Appendices B–F describe one K=3 rollout, a shared GRPO set advantage, a quality-times-nearest-prior-distance reward, schema gating and a capped length penalty. SFT and RL use 7,172 English NLP training instances; the main test has 1,740 instances across 16 scientific domains. In Table 1, the Qwen3-8B no-thinking model reaches judged Creative Utility 0.64 versus 0.21 after SFT and 0.38 with impact-only RL; idea distance is 0.88 versus 0.38 for impact-only RL. Grounding falls from 0.90 after no-thinking SFT to 0.61 after RL; the thinking variant trades lower utility (0.51) for higher grounding (0.81). The four-expert, 60-instance human pilot reports 2.17 promising ideas per set versus Claude’s 2.20. Appendix F’s execution pilot has 15 source instances (14 for the thinking variant), using a budgeted coding agent and its own experimental verdicts, not independently validated scientific discoveries. The author-linked repository currently contains only a coming-soon README. First inspected during this run; the paper is an unreported October 16 new-submission batch contribution inside the 72-hour lookback, so it is a delayed discovery rather than an October 18 release. Original October 15 receipt date is retained.",
+        "limitations": "All results are author-reported. LLM judges define quality, distance, grounding and most benchmark outcomes; a 2026 test-year split alone does not prove absence of training contamination. The within-set reward does not ensure diversity across the population: IdeaSeed method-type entropy is 0.65 for no-thinking and 0.73 for thinking, below the reported human 0.87. The DARLING comparison also changes initialization, rollout grouping and clipping, so it does not isolate only where diversity is rewarded; the impact-only ablation is the cleaner comparison. Four experts and 15 execution instances are small pilots, and the execution agent’s self-reported support/refutation is not verified discovery. Training uses an external distance-judge API in addition to the local H200 allocation. Code, data and models are promised, not released in the verified project. No broad scientific-discovery or universal SoTA claim is supported."
+      },
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-10-16T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-18",
+      "report_path": "reports/2026/10/2026-10-18.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.22031",
+      "title": "GraphACM: Graph-based Action Consistency Measurement for Uncertainty Quantification in LLM Agents",
+      "category": "2.8",
+      "tags": [
+        "Agent Evaluation",
+        "Uncertainty",
+        "Behavioral Consistency"
+      ],
+      "published_on": "2026-10-15",
+      "first_seen_at": "2026-10-17T10:02:10.629Z",
+      "canonical_url": "https://arxiv.org/abs/2610.22031",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.22031"
+      },
+      "summary": [
+        "GraphACM aligns repeated agent runs into a shared state-action graph and measures whether they choose the same actions in comparable decision contexts.",
+        "This training-free signal localizes behavioral disagreement and distinguishes more reliably solved tasks in the tested environments, helping builders assess execution stability without treating consistency as a correctness guarantee."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 2-3, Tables 1-2 and Appendices A-D inspected using the full HTML and complete 13-page PDF. Ten temperature-1 rollouts per task/model pair cover 134 ALFWorld, 168 AppWorld and 200 WebShop tasks with Qwen3.8-27B, Gemma-4-31B-IT and GPT-5.4-mini. State-conditioned action agreement, visitor weighting and action-count normalization yield mean success-discrimination AUROC 0.811 versus 0.769 for verbalized confidence and 0.729 for the best consistency comparator. Success labels require at least 5/10 successful runs. Delayed editorial catch-up from the October 16 original cs.AI batch, already visible in our archived October 17 listing; this is not a late-indexing claim or an October 18 release. The archived retrieval timestamp is retained as first_seen_at, and full verification was completed October 18. Availability at 2026-10-16T00:00Z is inferred from the dated batch and official announcement schedule.",
+        "limitations": "Uses ten repeated executions and benchmark-specific state/history abstractions; prospective single-execution deployment and calibrated failure probabilities are not established. The label and score derive from the same rollout set. Consistently wrong WebShop behavior remains possible and results there are weaker. No dedicated author implementation or earlier primary release was verified, and no independent reproduction was performed."
+      },
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-10-16T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-18",
+      "report_path": "reports/2026/10/2026-10-18.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.21624",
+      "title": "AgentPerturb: Evaluating LLM Agent Robustness under Controlled Interaction Perturbations",
+      "category": "2.8",
+      "tags": [
+        "Agent Robustness",
+        "Tool Use",
+        "Recovery"
+      ],
+      "published_on": "2026-10-15",
+      "first_seen_at": "2026-10-17T10:02:10.629Z",
+      "canonical_url": "https://arxiv.org/abs/2610.21624",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.21624"
+      },
+      "summary": [
+        "AgentPerturb builds matched clean and noisy agent tasks by varying user requests, procedures, inherited context and tool contracts across missing, distracting and incorrect information.",
+        "Its two-environment study exposes different failure patterns and costly recovery tails, providing a practical test design for robustness that clean benchmark scores can miss."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Methods, results, limitations and relevant Appendices A/B/E/F.6 inspected. The pipeline creates 12 one-target perturbation families and checks goal preservation, a viable recovery path and executability with an LLM verifier plus native validators; missing information can add a clarification step. Each of ten models runs 25 clean and 300 perturbed episodes per benchmark under a common Codex CLI scaffold. Table 1 model-averaged APEX partial-credit scores fall 70.3 to 55.0, while Toolathlon binary success falls 25.0% to 18.4%; these are different metrics. A focused Hunyuan-3-High analysis reports 73% higher mean tokens per successful perturbed trajectory with little median change. Delayed editorial catch-up from the October 16 original cs.AI batch, already visible in our archived October 17 listing; this is not a late-indexing claim or an October 18 release. The archived retrieval timestamp is retained as first_seen_at, and full verification was completed October 18. Availability at 2026-10-16T00:00Z is inferred from the dated batch and official announcement schedule.",
+        "limitations": "Only 25 tasks per benchmark; Toolathlon is a completion-selected 25/79 subset, not a random full-benchmark sample, and unscored runs are excluded. One trajectory per condition and provider-dependent decoding limit generalization; fine-grained family comparisons use only five models. The semantic-verifier gate has no measured human agreement or error rate. The linked GitHub repository is empty at verification, so code/data release and independent matched-edit audit are not established. No independent reproduction."
+      },
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-10-16T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-18",
+      "report_path": "reports/2026/10/2026-10-18.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.22179",
+      "title": "LCT: Losslessly Compressed Tensors with GPU friendly execution for Training",
+      "category": "3.4",
+      "tags": [
+        "Lossless Compression",
+        "Training Memory",
+        "GPU Codecs",
+        "BF16"
+      ],
+      "published_on": "2026-10-15",
+      "first_seen_at": "2026-10-18T21:44:21.869Z",
+      "canonical_url": "https://arxiv.org/abs/2610.22179",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.22179",
+        "code": "https://github.com/Maxzhu123/Losslessly_Compressed_Tensors"
+      },
+      "summary": [
+        "LCT stores BF16 weights, saved activations and optimizer buffers in a lossless exponent-coded format, using parallel GPU encoding, fused updates and a shared overflow arena for repeated compression during training.",
+        "The new paper quantifies a memory-versus-step-time trade-off and explains how the format adapts to changing tensor magnitudes, enabling longer tested sequences on a memory-constrained GPU without quantizing the stored BF16 values."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read methodology4.1-4.7, storage/scale analysis5, experiments6 and relevant AppendicesA-C, including timing/memory accounting and training integration. Bounded Huffman prefixes plus literal escapes compress exponents while preserving sign/fraction bytes; dense matrix products still require reconstruction. On one RTX3090 with PyTorch2.14/Triton3.8, activation compression in162M NanoGPT cuts peak allocated memory16058to12103MiB(24.6%) while optimizer-step time rises8.411to9.013s(7.2%). All-component compression yields11964.6MiB/9.136s, and a3400-step run has similar validation loss. Qwen3-4B-Base full-parameter BF16/Muon memory-time tests at batch1 fit3500tested tokens versus1000for the baseline; at1000, memory is21327.8to16262.4MiB with4.006to4.273s step time. This is a new detailed paper/analysis of older public code, not a new implementation release. The prior README says paper-coming-soon; the complete October12 tree contains only a graphical-abstractPDF, not the paper.",
+        "limitations": "Storage is lossless for input BF16 bit patterns; converting FP32 to BF16 first still loses information, and this does not prove bitwise-identical whole training. Compression depends on exponent statistics, block padding and overflow; small or mismatched tensors can expand. Requires explicit custom-autograd/operator integration, and compressed weights are not ordinary registered nn.Parameters. Shared-arena sizing must include live replacements/fragmentation. Training time/peak memory use only five measured optimizer steps after three warmups; Qwen tests do not establish long-run fine-tuning quality. Reported memory is PyTorch allocated, not allocator-reserved or all device memory; training includes the entire shared arena. Only BF16 is supported here and GEMMs decode first. Code was inspected but not executed; no independent reproduction."
+      },
+      "novelty": "material-update",
+      "update_note": "2026-10-16: The newly announced detailed paper adds bounded-code/scale-shift/storage analysis and controlled codec, NanoGPT and Qwen memory-time evaluations to the earlier public LCT implementation (https://arxiv.org/html/2610.22179v1; https://arxiv.org/list/cs.LG/recent?skip=0&show=2000; https://info.arxiv.org/help/availability.html). The repository was created October4 with code commits through October12; its README still marks the paper coming soon and its inspected pre-window tree has no paperPDF (https://github.com/Maxzhu123/Losslessly_Compressed_Tensors; https://api.github.com/repos/Maxzhu123/Losslessly_Compressed_Tensors/git/trees/396b9d6fb725956cb0735a83b5de368319d0b823?recursive=1). Commit dates document earlier content, not exact first-public visibility. Preserve October15 as this paper's receipt date; the paper update is inferred as October16T00Z from its original cs.LG batch and official schedule. This is delayed editorial review within the72-hour window, not a claim of newly released code.",
+      "report_kind": "daily",
+      "report_date": "2026-10-18",
+      "report_path": "reports/2026/10/2026-10-18.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.21162",
+      "title": "Coordination-Free Workload Regularization for Variable-Cost Distributed Training",
+      "category": "3.7",
+      "tags": [
+        "Data Loading",
+        "Load Balancing",
+        "Sequence Packing",
+        "Distributed Training"
+      ],
+      "published_on": "2026-10-15",
+      "first_seen_at": "2026-10-17T10:02:23.754Z",
+      "canonical_url": "https://arxiv.org/abs/2610.21162",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.21162"
+      },
+      "public_availability": {
+        "at": "2026-10-16T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "summary": [
+        "Batch Cost Lookahead buffers a bounded window inside each training worker and regroups it into equal-record-count batches with similar estimated cost, without exchanging sample metadata across workers.",
+        "This reduces synchronization waiting for variable-length training while retaining the existing batch-count interface, with explicit diagnostics for oversized records and persistent imbalance that local scheduling cannot fix."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Editorial catch-up of an October16 arXiv announcement already screened as a reserve on October17; this is delayed selection, not an indexing-delay claim. Read Sections1-10, Algorithm1 and all evaluation tables. The fixed-cardinality contract conserves each window's records and uses classical longest-processing-time initialization plus bounded heavy/light swaps. On Llama3.2-1B NeMo-RL0.7.0 SFT with FSDP2/BF16/FA3 on eight H200 GPUs, lookahead32 versus1 in the same per-rank pipeline improves mean wall-clock step speed by0.4-30.5% across11 corpora, over three300-step repeats excluding20warmups. All arms use the same per-corpus p99 cap. The abstract's5.0-16.7% comparison against pooledMFFD includes input-path differences and is cross-campaign. Paper receipt is October15 03:22:50Z; public availability is inferred from the original cs.DC Friday16 batch and official Thursday20:00Eastern schedule.",
+        "limitations": "The assignment heuristic is classical; the contribution is its bounded streaming deployment contract and measured boundary analysis, not a new global optimizer. Length-cost simulation is not GPU speedup. Two matched no-lookahead arms were not rerun after prior OOMs. The larger1.197-1.343x result uses an internal sequential recommender and weak scaling from8to32H200 ranks, not LLM scaling evidence. Local reordering cannot resolve a dominant infeasible record or different total cost across rank shards. It changes optimizer-step sample grouping; p99 truncation quality, held-out SFT quality and exact midstream restart are untested. No dedicated public implementation was verified; no independent reproduction."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-18",
+      "report_path": "reports/2026/10/2026-10-18.md",
+      "search_status": "partial"
+    },
     {
       "id": "https://www.anthropic.com/research/ecdsa-curve-origins",
       "title": "Claude reveals ECDSA curve origins",
@@ -6997,14 +7866,14 @@
       "group": "llm-recipe",
       "title": "Data Curation & Tokenization",
       "path": "topics/llm-recipe/data-curation-tokenization/README.md",
-      "count": 7
+      "count": 8
     },
     {
       "id": "1.2",
       "group": "llm-recipe",
       "title": "Model Architecture & Scaling Laws",
       "path": "topics/llm-recipe/model-architecture-scaling-laws/README.md",
-      "count": 11
+      "count": 12
     },
     {
       "id": "1.3",
@@ -7025,7 +7894,7 @@
       "group": "llm-recipe",
       "title": "Supervised Fine-tuning & Adaptation",
       "path": "topics/llm-recipe/supervised-finetuning-adaptation/README.md",
-      "count": 3
+      "count": 4
     },
     {
       "id": "1.6",
@@ -7039,14 +7908,14 @@
       "group": "llm-recipe",
       "title": "Reinforcement Learning & Reasoning",
       "path": "topics/llm-recipe/reinforcement-learning-reasoning/README.md",
-      "count": 9
+      "count": 10
     },
     {
       "id": "1.8",
       "group": "llm-recipe",
       "title": "Distillation & Model Compression",
       "path": "topics/llm-recipe/distillation-model-compression/README.md",
-      "count": 12
+      "count": 14
     },
     {
       "id": "1.9",
@@ -7060,7 +7929,7 @@
       "group": "llm-recipe",
       "title": "Model Evaluation, Safety & Interpretability",
       "path": "topics/llm-recipe/model-evaluation-safety-interpretability/README.md",
-      "count": 7
+      "count": 8
     },
     {
       "id": "2.1",
@@ -7074,14 +7943,14 @@
       "group": "ai-agent-dev",
       "title": "Tool Use & Environment Interaction",
       "path": "topics/ai-agent-dev/tool-use-environment-interaction/README.md",
-      "count": 5
+      "count": 6
     },
     {
       "id": "2.3",
       "group": "ai-agent-dev",
       "title": "Context Engineering & Memory",
       "path": "topics/ai-agent-dev/context-engineering-memory/README.md",
-      "count": 9
+      "count": 10
     },
     {
       "id": "2.4",
@@ -7095,7 +7964,7 @@
       "group": "ai-agent-dev",
       "title": "Agent Learning & Skill Acquisition",
       "path": "topics/ai-agent-dev/agent-learning-skill-acquisition/README.md",
-      "count": 11
+      "count": 13
     },
     {
       "id": "2.6",
@@ -7116,14 +7985,14 @@
       "group": "ai-agent-dev",
       "title": "Agent Evaluation & Security",
       "path": "topics/ai-agent-dev/agent-evaluation-security/README.md",
-      "count": 14
+      "count": 18
     },
     {
       "id": "3.1",
       "group": "ai-training-inference-infra",
       "title": "Distributed Training Systems",
       "path": "topics/ai-training-inference-infra/distributed-training-systems/README.md",
-      "count": 7
+      "count": 8
     },
     {
       "id": "3.2",
@@ -7144,35 +8013,35 @@
       "group": "ai-training-inference-infra",
       "title": "Attention, KV Cache & Memory Systems",
       "path": "topics/ai-training-inference-infra/attention-kv-cache-memory-systems/README.md",
-      "count": 12
+      "count": 13
     },
     {
       "id": "3.5",
       "group": "ai-training-inference-infra",
       "title": "Kernels, Compilers & Runtimes",
       "path": "topics/ai-training-inference-infra/kernels-compilers-runtimes/README.md",
-      "count": 14
+      "count": 16
     },
     {
       "id": "3.6",
       "group": "ai-training-inference-infra",
       "title": "Low-Precision & Efficient Execution",
       "path": "topics/ai-training-inference-infra/low-precision-efficient-execution/README.md",
-      "count": 1
+      "count": 2
     },
     {
       "id": "3.7",
       "group": "ai-training-inference-infra",
       "title": "Data Pipelines, Storage & Checkpointing",
       "path": "topics/ai-training-inference-infra/data-pipelines-storage-checkpointing/README.md",
-      "count": 2
+      "count": 3
     },
     {
       "id": "3.8",
       "group": "ai-training-inference-infra",
       "title": "Hardware, Networking & Cluster Efficiency",
       "path": "topics/ai-training-inference-infra/hardware-networking-cluster-efficiency/README.md",
-      "count": 9
+      "count": 11
     }
   ]
 }

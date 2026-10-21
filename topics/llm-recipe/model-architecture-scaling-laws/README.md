@@ -5,6 +5,22 @@ Transformers, MoE, SSM/hybrid architectures and model/data/compute allocation.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-20](../../../reports/2026/10/2026-10-20.md) — PARTIAL SEARCH
+
+### [MemT-1.0: Towards Memory-Native Evolution](<https://arxiv.org/abs/2610.26825>)
+
+MemT-1.0 adds trainable memory modules to frozen language-model backbones with stable token-level state updates, and studies densely routed memory experts as a way to expand capacity. Its released models turn growing interaction histories into bounded persistent states, offering predictable session storage while exposing a clear trade-off between compact memory and precise historical recall.
+
+**Published:** 2026-10-19 · **First seen:** 2026-10-21T10:08:20.059Z · **Novelty:** new · **Tags:** Native Memory, Recurrent State, Mixture of Storage, Continued Pretraining
+
+**Public availability:** 2026-10-20T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.26825v1>) · [Code](<https://github.com/MemTensor/MemT-1.0>) · [Project](<https://huggingface.co/collections/MemTensor/memt-1>)
+
+**Evidence:** technical-report; full-text. Pinned v1 architecture/training Sections2–3, memory evaluation Section6, limitations Section8 and relevant configuration/evaluation appendices inspected. Gated DeltaNet-2 writes token-level information at turn/segment boundaries, while generation reads the incoming state. The explored Mixture-of-Storage expansion routes densely across all memory experts, not sparse top-k experts; both released Nano and Flash configurations use one memory expert per selected layer (Appendix B, Table6), while expanded MoS is studied separately. The34B-token pipeline uses current-segment CE followed by off-policy full-context-teacher distillation with Top64 forward-KL targets. Only memory parameters are optimized during native-memory training. Nano uses Qwen3.6-35B-A3B and451M trainable memory parameters; Flash uses a separately prepared DeepSeek-V4-Flash backbone and3.61B memory parameters. Across11 memory benchmarks their reported macro-averages are47.0 and50.6, ahead of tested parametric-memory baselines but below strong textual-memory methods. At128K history, Nano reports1.86x end-to-end inference speed and66x less logical per-trajectory state than full-context KV. The speed test uses HF inference on two GPUs, batch/concurrency1,35 histories, a fixed512-token query and forced128-token response, including history preparation/state restoration but excluding loading/tokenization/scoring. The original CL October20 batch/schedule gives an inferred October20T00Z paper announcement; the observed release commit (authored October20T02:48:07Z, committed05:27:44Z) contains code and a complete tech\_report.pdf. These Git timestamps document content history, not exact first public visibility. Code/project links were verified, not executed.
+
+**Limitations:** Fixed state cannot retain unlimited detail: exact recall deteriorates and retrieval/text-memory systems remain stronger on aggregate. The66x figure excludes shared backbone weights, embedders/hyper-memory parameters and is logical persistent session state, not total GPU-memory savings. The1.86x speedup is one specific HF workload and is mainly history-preparation savings; short histories are slower, and heterogeneous baseline backbones/runtimes limit broad efficiency rankings. Dense expert expansion increases memory computation. General-capability preservation is evaluated under specified noise conditions, not a guarantee of unchanged behavior. Application-specific experience training/retrieval adds costs; online state updates are not autonomous weight-level self-improvement. The October20v2 revision is not used for this report’s cutoff.
+
 ## [2026-10-15](../../../reports/2026/10/2026-10-15.md) — PARTIAL SEARCH
 
 ### [The COUNT: Counting N-grams Unlocks Scaling on Host Memory and Training-Free Adaptation](<https://arxiv.org/abs/2610.20456>)

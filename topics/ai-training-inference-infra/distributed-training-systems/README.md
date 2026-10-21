@@ -5,6 +5,22 @@ Data/tensor/pipeline/expert/context parallelism, sharding and communication over
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-19](../../../reports/2026/10/2026-10-19.md) — PARTIAL SEARCH
+
+### [BaGuaLu-2: Taming Dynamic Memory Fluctuation for Efficient MoE Model Training over 10,000 GPUs](<https://arxiv.org/abs/2610.23064>)
+
+BaGuaLu-2 adjusts activation-memory budgets for each pipeline microbatch and combines recomputation, offloading and reduced-precision storage when mixture-of-experts routing creates temporary load spikes. Its detailed paper explains how a cost model and interleaved execution of neighboring batches can absorb those spikes without restarting training, improving utilization of large training clusters.
+
+**Published:** 2026-10-16 · **First seen:** 2026-10-21T10:05:03.110Z · **Novelty:** material-update · **Tags:** MoE Training, Activation Memory, Pipeline Scheduling, Communication Overlap
+
+[Paper](<https://arxiv.org/abs/2610.23064>)
+
+**Evidence:** research-paper; full-text. Read full SectionsI-VIII, Algorithms1-2 and evaluationVI, including the dependency conditions of fused dual-batch scheduling. Per-operator time/memory curves guide pipeline-phase budgets and a greedy conflict-checked mitigation selector; a compacted/cached dynamic program overlaps forward, backward, prior-batch offload and next-batch recovery. All evaluated pipeline degrees are at least4. On128-12,288 unnamed vendor GPUs (480TFLOP/s BF16,64GB HBM each;8/node,400GB/s intranode,4x400Gb/s internode), authors report mean throughput gains1.14x over Megatron-Kuai and1.13x over AdaPipe, with2.012EFLOP/s and about35%MFU for a1040B-parameter MoE at12,288GPUs. Baselines use the same initial parallelism and are adapted from dense-model systems. Paper receipt October16 07:40:24Z is preserved; the new full paper is in the original cs.DC Monday19 batch, whose release is inferred as October19T00Z from the official Sunday20Eastern schedule. The prior SC26 program already carried the broad mechanism and headline numbers; this entry selects the new inspectable full analysis, algorithms, configuration accounting and ablations, not a first announcement of those claims.
+
+**Limitations:** Throughput includes baseline OOM/restart warmup overhead but excludes human diagnosis time; it is not a restart-free kernel-speed comparison. Baselines are modified: only AdaPipe recomputation is enabled, and Megatron-Kuai receives MoE memory terms. The fused scheduling independence argument requires pipeline degree greater than2 and corresponding barriers; it is not a generic arbitrary-pipeline guarantee. Model configurations are GLM-derived and hardware-co-designed, not unmodified public checkpoints. Quantized activation storage is one allowed mitigation; no long-run convergence/quality study or public BaGuaLu-2 implementation was verified. Hardware vendor is not identified and no independent reproduction was performed.
+
+**Update:** 2026-10-19: The detailed arXiv paper adds explicit activation-cost modeling, pipeline-aware budgets, conflict checks, a dependency-scoped dual-batch schedule, baseline/restart accounting and robustness ablations beyond the earlier official SC26 program abstract (https://arxiv.org/html/2610.23064v1; https://sc26.conference-program.com/presentation/?id=pap287&amp;sess=sess211). The paper announcement is inferred from the original cs.DC Monday19 batch and official release schedule (https://arxiv.org/list/cs.DC/recent?skip=0&amp;show=2000; https://info.arxiv.org/help/availability.html); the conference abstract has no verified exact first-public timestamp, so no earliest-work availability timestamp is asserted. This is a new detailed-paper review, not a new-code claim.
+
 ## [2026-10-16](../../../reports/2026/10/2026-10-16.md) — PARTIAL SEARCH
 
 ### [ETH: Data-Balanced Heterogeneous Pipeline Parallelism for Training Large Models](<https://arxiv.org/abs/2610.22035>)

@@ -5,6 +5,22 @@ Context organization/compression, working memory, long-term memory and state.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-21](../../../reports/2026/10/2026-10-21.md) — PARTIAL SEARCH
+
+### [Cache Engineering for Agents](<https://arxiv.org/abs/2610.28577>)
+
+Cache engineering lets an agent drop selected KV states and reposition retained keys without rewriting its text history; AKV tracks operation history so shared or restored caches remain consistent. The full-paper study reports 1.7 points higher average task scores and 27.7% lower estimated token cost than threshold summarization across three models and four agent benchmarks, suggesting a useful route to context control when builders also control the serving engine.
+
+**Published:** 2026-10-20 · **First seen:** 2026-10-21T10:02:45.248Z · **Novelty:** material-update · **Tags:** Context Engineering, KV Cache, Serving
+
+[Paper](<https://arxiv.org/abs/2610.28577>) · [Code](<https://github.com/thu-nics/AKV>) · [Project](<https://fuvty.github.io/thinking_yard_project_page/projects/akv/>)
+
+**Evidence:** research-paper; full-text. Full Sections 3–5, Tables 1–4 and Appendices A.1–A.4 inspected. Drop changes future attention but not retained hidden states; repos rotates retained RoPE keys and resets future position indices, rather than making them equivalent to recomputing a shortened text. AKV uses operation-aware radix branches, drop-aware eviction and segmented restoration. Main policy retains the latest 12 tool responses plus reasoning, with model-specific position thresholds. Three-model/four-benchmark tests report mean 1.7 score-point gain and 27.7% API-equivalent agent/summary token-cost reduction versus Standard; costs exclude other tools and are not billed GPU expenditure. Eight A800-80GB BF16 GPT-OSS-120B serving replay reports 1.18 times output throughput and 1.51 times P95 request-latency speedup at each method's own peak concurrency. Original cs.CL October 21 batch plus official announcement schedule supports inferred formal-study availability2026-10-21T00:00Z. The September 28 repository and pinned October 15 README already document the drop/repos implementation but contain no benchmark results; this is proposed as the new full-paper evaluation/formalization over an older code preview, not as a newly invented operation.
+
+**Limitations:** Cached hidden states retain information from previously attended dropped tokens, and arbitrary policies can degrade quality; serving support for linear-attention models remains future work. Serving replay selects 80 longest-context SWE tasks and replays recorded tool outputs with method-specific trajectories/budgets, not identical live workloads. API-equivalent prices and reposition charges are modeling assumptions. The current results-bearing project page is accessible, but its source repository/history returns 404, so earlier project-page visibility cannot be reconstructed and exact global first public visibility is uncertain. No independent reproduction.
+
+**Update:** 2026-10-21: The first arXiv paper adds a formal operation-history account and a three-model/four-benchmark evaluation to the older AKV implementation preview. The verified October 15 README already describes drop/repos and compatible-cache reuse, so those mechanisms are not claimed as new on this date; exact earlier project-page visibility is unresolved.
+
 ## [2026-10-15](../../../reports/2026/10/2026-10-15.md) — PARTIAL SEARCH
 
 ### [Scaling Discovery Requires Forgetting](<https://arxiv.org/abs/2610.20563>)

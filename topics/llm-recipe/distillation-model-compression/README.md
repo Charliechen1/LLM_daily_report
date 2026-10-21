@@ -5,6 +5,36 @@ Knowledge/reasoning distillation, pruning, quantization algorithms and model mer
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-21](../../../reports/2026/10/2026-10-21.md) — PARTIAL SEARCH
+
+### [Capable Teacher, Myopic Scorer: Reward-Free Teacher Repair for Agentic On-Policy Distillation](<https://arxiv.org/abs/2610.28586>)
+
+Rollout-to-Scorer Distillation first repairs a teacher’s token scores using its own continuations from difficult student states, then freezes that teacher for ordinary on-policy distillation. The tested agents complete more tasks and spend fewer turns on unproductive searching, showing why a teacher’s ability to solve a task can differ from the usefulness of its next-token supervision.
+
+**Published:** 2026-10-20 · **First seen:** 2026-10-21T10:02:45.791Z · **Novelty:** newly-discovered · **Tags:** Agentic Distillation, Teacher Repair, Long-Horizon Learning
+
+[Paper](<https://arxiv.org/html/2610.28586v1>) · [Code](<https://github.com/Tree-Shu-Zhao/miles-agent>) · [Project](<https://tree-shu-zhao.github.io/r2s/>)
+
+**Evidence:** research-paper; full-text. Pinned v1 Sections3–5 and relevant mining, selection, training and evaluation appendices inspected. R2S mines high-disagreement states from an untrained student, generates eight teacher takeovers per state, selects short validated endings, and trains a teacher copy to reproduce takeover-conditioned Top16 token targets on the student’s complete assistant suffix without seeing the takeover. A frozen repaired scorer then supplies the standard OPD signal. Table2 covers two teachers, four students and three replayable text environments, with12 teacher-student-environment cells; the author-reported mean improvement over the best of three comparison OPD methods is12.8 success percentage points. Each main cell is one150-step training run evaluated with three decoding seeds, not three independent training seeds. The Qwen3.5-9B→4B dynamics study separately repeats student training three times while sharing one repaired teacher. Main reward-free filtering uses consensus and/or a judge; ScienceWorld completion messages and other observable end states still supply feedback. The paper is in the original October21 CL new-submission batch; original October20 receipt is retained. Author code, project and moving-main/release-tag guidance were inspected. Earlier code history is acknowledged; no exact first-public Git timestamp is inferred. Conservative catch-up classification preserves the earlier implementation context inside the72-hour lookback instead of claiming the paper batch is the first-ever public method release.
+
+**Limitations:** Repair adds untrained-student mining, up to19,200 teacher-takeover episodes, selection and one full teacher fine-tune before the matched150 student steps, so main accuracy comparisons are not end-to-end compute matched. Most main results have only one training run per cell. Evidence is confined to Qwen3/Qwen3.5 and replayable ALFWorld/WebShop/ScienceWorld with fixed demonstrations and turn limits. Reward-free means no numeric task reward is read in selected variants, not absence of outcome cues, consensus assumptions or a model judge. A poorly aligned teacher or unreliable filter may still mislead. The capability/scoring diagnosis is evidence for these settings, not a proof that all OPD failures share one cause. No independent reproduction.
+
+## [2026-10-19](../../../reports/2026/10/2026-10-19.md) — PARTIAL SEARCH
+
+### [A Stronger Teacher Within: Strengthening MoE Models via On-Policy Bidirectional Distillation](<https://arxiv.org/abs/2610.23185>)
+
+MoEvolve temporarily activates more experts, repairs their cooperation by distilling from the original model, strengthens the expanded model with verifiable-reward training, and distills its gains back into the original expert budget. Across four tested mixture-of-experts backbones, this produces stronger domain-specific models without increasing their final activation budget, offering a way to improve a model using its own latent capacity instead of an external stronger teacher.
+
+**Published:** 2026-10-16 · **First seen:** 2026-10-21T10:02:45.545Z · **Novelty:** new · **Tags:** Mixture of Experts, On-Policy Distillation, Activation Budgets
+
+**Public availability:** 2026-10-19T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.23185v1>)
+
+**Evidence:** research-paper; full-text. Pinned v1 Sections 3–6 and relevant Appendices A–I inspected, including restoration, RL, reverse distillation, domain-specific evaluation and wall-clock accounting. OLMoE-1B-7B, DeepSeek-V2-Lite, GPT-OSS-20B and Qwen3-30B-A3B are each trained as separate mathematics, code and ScienceQA checkpoints. Expansion uses up to all available experts, original-to-expanded reverse-KL OPD restores cooperation, SAPO unlocks capacity, and expanded-to-original ExOPD with reward scale 1.25 transfers it back. Tables 1–2 report up to 22.2 domain-average percentage points over the original and 6.5 over same-backbone RL; evaluations average ten samples per problem and three training seeds. The 8/16/32/48-hour per-domain budgets on 16 H20 GPUs include all MoEvolve phases and match the compared methods’ wall-clock allowances. Router/expert and transfer-objective ablations support the mechanism. The original LG October19 new-submission batch plus official Sunday20EDT schedule supports inferred first paper availability October19T00Z; original October16T09:23:22Z receipt is retained. Actual full-source discovery occurred during this delayed backfill run, not on the report date. No author code or trained-checkpoint release was verified.
+
+**Limitations:** This requires additional training, larger intermediate active compute, valid reward functions and token-probability access; it is not training-free or reward-free. Equal wall-clock time on this fixed hardware is not equal FLOPs or a universal cost comparison. Separate domain-specific checkpoints do not establish one model simultaneously improving all domains. Tested backbones are at most30B total parameters; this does not establish trillion-parameter scaling or robustness outside the selected tasks. Maximum-expert expansion, ExOPD and checkpoint selection are additional recipe choices. V2 received October20 is not used for this October19 record; no independent reproduction.
+
 ## [2026-10-16](../../../reports/2026/10/2026-10-16.md) — PARTIAL SEARCH
 
 ### [Does On-Policy Distillation Need to Complete Every Rollout?](<https://arxiv.org/abs/2610.21337>)
