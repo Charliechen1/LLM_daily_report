@@ -5,6 +5,22 @@ Attention execution, KV management/reuse, offloading and long-context memory eff
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-22](../../../reports/2026/10/2026-10-22.md) — PARTIAL SEARCH
+
+### [UlaCache: Unified Logical Addressing for Sparse LLM Serving](<https://arxiv.org/abs/2610.29820>)
+
+UlaCache gives sparse-attention histories stable logical addresses across GPU and CPU memory, reducing redundant copies while sharing GPU cache capacity across requests. Its parallel replacement and transfer scheduling let GLM-5.3 sustain larger decode batches under matched memory budgets, reaching up to 2.51× HiSparse’s peak decoding throughput on eight B300 GPUs with speculative decoding enabled.
+
+**Published:** 2026-10-21 · **First seen:** 2026-10-22T10:04:20.486Z · **Novelty:** new · **Tags:** Sparse Attention, KV Cache, GPU CPU Memory
+
+**Public availability:** 2026-10-22T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/recent?show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/abs/2610.29820>)
+
+**Evidence:** research-paper; full-text. Full pinned v1 PDF (12 pages) and HTML methods, evaluation and related work inspected. Stable logical IDs resolve to GPU/CPU storage slots; TP distributes retained history across ranks and uses separate local buffers for selected copies, whereas DP keeps rank-local pools. PB-LRU uses shared recency buckets and hierarchical bitmaps; transfer plans protect current readers, exchange incoming/outgoing KV, and commit address mappings only after transfers finish. Selection-plan reuse and cross-layer prefetch apply when layers share sparse selections. GLM-5.3 uses FP8 weights/KV and BF16 activations on eight H200 or eight B300 GPUs; CPU budgets are128GB or192GB per GPU, respectively, and the B300 persistent model/cache budget is272GB per GPU. Multi-LexSum inputs contain64K–128K tokens and generate2048 greedy output tokens. Under matched memory budgets, peak decode-throughput ratios versus HiSparse with two-step MTP are H200 DP1.16×/TP1.70× and B300 DP1.73×/TP2.51×. This differs from prior RemoteKV (prefill transfer scaling), CacheSmith (RAG reuse selection) and PageWeaver (sparse query unions): the central contribution is active sparse-history placement and replacement. Timing: v1 received2026-10-21T14:46:11Z; the original cs.DC Thursday22 batch and official20:00US/Eastern schedule imply announcement2026-10-22T00:00Z, within this daily window. No verified author implementation link was found in the paper or exact-name public repository lookup.
+
+**Limitations:** One sparse-attention model and two eight-GPU platforms were measured; examples of other architectures are motivation, not their evaluation. All requests finish prefill before measured decoding, and each system’s observed maximum is taken over its own measured batch sizes, so these are decode-only peak-throughput comparisons, not fixed-batch or online end-to-end SLO speedups. At batch1 UlaCache is slower than fully GPU-resident SGLang in all eight configurations, though faster than HiSparse. Bucketed LRU is approximate; its scheduling ablation excludes data transfer and can lose to naive LRU when replacement pressure is low. TP score all-gather, local copied buffers, transfer bandwidth, metadata and workspaces remain costs. No downstream quality study, distributed fault-recovery study or independently reproduced result is claimed; a public UlaCache code release was not verified.
+
 ## [2026-10-18](../../../reports/2026/10/2026-10-18.md) — PARTIAL SEARCH
 
 ### [LCT: Losslessly Compressed Tensors with GPU friendly execution for Training](<https://arxiv.org/abs/2610.22179>)

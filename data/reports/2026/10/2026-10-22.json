@@ -1,0 +1,1096 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-22",
+  "timezone": "America/Los_Angeles",
+  "generated_at": "2026-10-22T10:25:35.904+00:00",
+  "coverage": {
+    "start": "2026-10-21T03:00:00-07:00",
+    "end": "2026-10-22T03:00:00-07:00"
+  },
+  "search": {
+    "status": "partial",
+    "notes": "Ten contributions selected after inspecting primary methods, results and relevant appendices across all three areas; no experiments were independently reproduced. Coverage is the consecutive local03:00 window and the total72-hour discovery interval ends at the scheduled cutoff. Original submission/publication dates are retained; arXiv announcement times are explicitly inferred only from original dated batches and the official schedule. EPIC and the2:4 comparison are conservative delayed editorial discoveries with earlier artifact context, not claims that today's paper batch was their first-ever release. FlyDSL is the genuinely newOct21 primary measurement report, with the older backend/PR chronology stated explicitly. Search is partial: OpenReview venue discovery was limited by a client shell and403API, ACL and organization indexes were bounded rather than exhaustive, and an earlier-venue reserve was excluded over unresolved chronology. LAW and ToM2Vec announced code endpoints returned404; UserSWE's public benchmark release could not be verified, and other absent implementation links are not invented. An Oct21 biological-agent blog was excluded because authoritative metadata dates its original paperOct16, outside the discovery interval, with no substantive new research change established; that unselected full-paper retrieval was rate-limited. Recovered transport and certificate errors are logged locally and are not treated as continuing selected-source outages.",
+    "sources_checked": [
+      {
+        "name": "cl-recent.html",
+        "url": "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "lg-index",
+        "url": "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "hf22.html",
+        "url": "https://huggingface.co/papers/date/2026-10-22",
+        "status": "ok"
+      },
+      {
+        "name": "thinking-machines",
+        "url": "https://thinkingmachines.ai/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "Official arXiv public announcement schedule",
+        "url": "https://info.arxiv.org/help/availability.html",
+        "status": "ok"
+      },
+      {
+        "name": "2610.29999-abs",
+        "url": "https://arxiv.org/abs/2610.29999",
+        "status": "ok"
+      },
+      {
+        "name": "2610.29999-full",
+        "url": "https://arxiv.org/html/2610.29999v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.30068-abs",
+        "url": "https://arxiv.org/abs/2610.30068",
+        "status": "ok"
+      },
+      {
+        "name": "2610.30068-full",
+        "url": "https://arxiv.org/html/2610.30068v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.29965-abs",
+        "url": "https://arxiv.org/abs/2610.29965",
+        "status": "ok"
+      },
+      {
+        "name": "2610.29965-full",
+        "url": "https://arxiv.org/html/2610.29965v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.30132-abs",
+        "url": "https://arxiv.org/abs/2610.30132",
+        "status": "ok"
+      },
+      {
+        "name": "2610.30132-full",
+        "url": "https://arxiv.org/html/2610.30132v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.29348-abs",
+        "url": "https://arxiv.org/abs/2610.29348",
+        "status": "ok"
+      },
+      {
+        "name": "2610.29348-full",
+        "url": "https://arxiv.org/html/2610.29348v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.29352-abs",
+        "url": "https://arxiv.org/abs/2610.29352",
+        "status": "ok"
+      },
+      {
+        "name": "2610.29352-full",
+        "url": "https://arxiv.org/html/2610.29352v1",
+        "status": "ok"
+      },
+      {
+        "name": "Monitorability original arXiv record",
+        "url": "https://arxiv.org/abs/2610.29734",
+        "status": "ok"
+      },
+      {
+        "name": "Monitorability full v1 paper, binary cache and primary PDF recovered",
+        "url": "https://arxiv.org/pdf/2610.29734v1",
+        "status": "ok"
+      },
+      {
+        "name": "epic-code",
+        "url": "https://github.com/LiChengxi666/EPIC",
+        "status": "ok"
+      },
+      {
+        "name": "epic-meta",
+        "url": "https://api.github.com/repos/LiChengxi666/EPIC",
+        "status": "ok"
+      },
+      {
+        "name": "epic-commits",
+        "url": "https://api.github.com/repos/LiChengxi666/EPIC/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "law-code",
+        "url": "https://github.com/ilievanadezhda/law",
+        "status": "unavailable"
+      },
+      {
+        "name": "law-meta",
+        "url": "https://api.github.com/repos/ilievanadezhda/law",
+        "status": "unavailable"
+      },
+      {
+        "name": "law-commits",
+        "url": "https://api.github.com/repos/ilievanadezhda/law/commits?per_page=100",
+        "status": "unavailable"
+      },
+      {
+        "name": "longzero-code",
+        "url": "https://github.com/zhennan1/LongZero",
+        "status": "ok"
+      },
+      {
+        "name": "longzero-meta",
+        "url": "https://api.github.com/repos/zhennan1/LongZero",
+        "status": "ok"
+      },
+      {
+        "name": "longzero-commits",
+        "url": "https://api.github.com/repos/zhennan1/LongZero/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "cord-code",
+        "url": "https://github.com/LvAoAo/CORD-release",
+        "status": "ok"
+      },
+      {
+        "name": "cord-meta",
+        "url": "https://api.github.com/repos/LvAoAo/CORD-release",
+        "status": "ok"
+      },
+      {
+        "name": "cord-commits",
+        "url": "https://api.github.com/repos/LvAoAo/CORD-release/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "lccp-code",
+        "url": "https://github.com/thunlp/dont-stop-lccp",
+        "status": "ok"
+      },
+      {
+        "name": "lccp-meta",
+        "url": "https://api.github.com/repos/thunlp/dont-stop-lccp",
+        "status": "ok"
+      },
+      {
+        "name": "lccp-commits",
+        "url": "https://api.github.com/repos/thunlp/dont-stop-lccp/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "epic-initial-readme",
+        "url": "https://raw.githubusercontent.com/LiChengxi666/EPIC/eb9f0a1ad5816d8d0c8d223a79c62df352a90f9c/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "epic-implementation",
+        "url": "https://raw.githubusercontent.com/LiChengxi666/EPIC/df29253b9d63f498dcbfb24c44c5fe914cfe4fb8/IMPLEMENTATION.md",
+        "status": "ok"
+      },
+      {
+        "name": "cord-initial-tree",
+        "url": "https://api.github.com/repos/LvAoAo/CORD-release/git/trees/ba09683e4440c67ab607c6c7ce7276350174fc55?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "tom-repo.json",
+        "url": "https://api.github.com/repos/nsivaku/tom2vec",
+        "status": "unavailable"
+      },
+      {
+        "name": "tom-history.json",
+        "url": "https://api.github.com/repos/nsivaku/tom2vec/commits?per_page=100",
+        "status": "unavailable"
+      },
+      {
+        "name": "tom-readme.md",
+        "url": "https://raw.githubusercontent.com/nsivaku/tom2vec/main/README.md",
+        "status": "unavailable"
+      },
+      {
+        "name": "tom-tree.json",
+        "url": "https://api.github.com/repos/nsivaku/tom2vec/git/trees/main?recursive=1",
+        "status": "unavailable"
+      },
+      {
+        "name": "tom-project.html",
+        "url": "https://github.com/nsivaku/tom2vec",
+        "status": "unavailable"
+      },
+      {
+        "name": "ai-recent.html",
+        "url": "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "schedule.html",
+        "url": "https://info.arxiv.org/help/submit.html#availability",
+        "status": "unavailable"
+      },
+      {
+        "name": "Anthropic engineering index, primary web retrieval recovered",
+        "url": "https://www.anthropic.com/engineering",
+        "status": "ok"
+      },
+      {
+        "name": "langchain-blog.html",
+        "url": "https://www.langchain.com/blog",
+        "status": "ok"
+      },
+      {
+        "name": "parallel-blog.html",
+        "url": "https://parallel.ai/blog",
+        "status": "ok"
+      },
+      {
+        "name": "permit-source.tar",
+        "url": "https://arxiv.org/src/2610.28987v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.28987.html",
+        "url": "https://arxiv.org/html/2610.28987v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.29934.html",
+        "url": "https://arxiv.org/html/2610.29934v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.29822.html",
+        "url": "https://arxiv.org/html/2610.29822v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.29995.html",
+        "url": "https://arxiv.org/html/2610.29995v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.30026.html",
+        "url": "https://arxiv.org/html/2610.30026v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.28810.html",
+        "url": "https://arxiv.org/html/2610.28810v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.28987.pdf",
+        "url": "https://arxiv.org/pdf/2610.28987v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.29934.pdf",
+        "url": "https://arxiv.org/pdf/2610.29934v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.29822.pdf",
+        "url": "https://arxiv.org/pdf/2610.29822v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.29995.pdf",
+        "url": "https://arxiv.org/pdf/2610.29995v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.30026.pdf",
+        "url": "https://arxiv.org/pdf/2610.30026v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.28810.pdf",
+        "url": "https://arxiv.org/pdf/2610.28810v1",
+        "status": "ok"
+      },
+      {
+        "name": "permit-README.txt",
+        "url": "https://arxiv.org/src/2610.28987v1/anc/README.txt",
+        "status": "ok"
+      },
+      {
+        "name": "permit-permit_formal-README.md",
+        "url": "https://arxiv.org/src/2610.28987v1/anc/permit_formal/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "permit-permit_formal-CORRESPONDENCE.md",
+        "url": "https://arxiv.org/src/2610.28987v1/anc/permit_formal/CORRESPONDENCE.md",
+        "status": "ok"
+      },
+      {
+        "name": "permit-permit_formal-SHA256SUMS.txt",
+        "url": "https://arxiv.org/src/2610.28987v1/anc/permit_formal/SHA256SUMS.txt",
+        "status": "ok"
+      },
+      {
+        "name": "permit-permit_formal-build.log",
+        "url": "https://arxiv.org/src/2610.28987v1/anc/permit_formal/build.log",
+        "status": "unavailable"
+      },
+      {
+        "name": "permit-permit_formal-lean-toolchain",
+        "url": "https://arxiv.org/src/2610.28987v1/anc/permit_formal/lean-toolchain",
+        "status": "ok"
+      },
+      {
+        "name": "permit-permit_formal-PermitFormal-ActionIntegrity.lean",
+        "url": "https://arxiv.org/src/2610.28987v1/anc/permit_formal/PermitFormal/ActionIntegrity.lean",
+        "status": "ok"
+      },
+      {
+        "name": "permit-permit_formal-PermitFormal-ReasoningIntegrity.lean",
+        "url": "https://arxiv.org/src/2610.28987v1/anc/permit_formal/PermitFormal/ReasoningIntegrity.lean",
+        "status": "ok"
+      },
+      {
+        "name": "permit-permit_formal-PermitFormal-Interface.lean",
+        "url": "https://arxiv.org/src/2610.28987v1/anc/permit_formal/PermitFormal/Interface.lean",
+        "status": "ok"
+      },
+      {
+        "name": "permit-permit_formal-PermitFormal-Basic.lean",
+        "url": "https://arxiv.org/src/2610.28987v1/anc/permit_formal/PermitFormal/Basic.lean",
+        "status": "ok"
+      },
+      {
+        "name": "2610.29823-abs.html",
+        "url": "https://arxiv.org/abs/2610.29823",
+        "status": "ok"
+      },
+      {
+        "name": "2610.29671-abs.html",
+        "url": "https://arxiv.org/abs/2610.29671",
+        "status": "ok"
+      },
+      {
+        "name": "2610.28987-abs.html",
+        "url": "https://arxiv.org/abs/2610.28987",
+        "status": "ok"
+      },
+      {
+        "name": "2610.29822-abs.html",
+        "url": "https://arxiv.org/abs/2610.29822",
+        "status": "ok"
+      },
+      {
+        "name": "2610.30047-abs.html",
+        "url": "https://arxiv.org/abs/2610.30047",
+        "status": "ok"
+      },
+      {
+        "name": "2610.28810-abs.html",
+        "url": "https://arxiv.org/abs/2610.28810",
+        "status": "ok"
+      },
+      {
+        "name": "2610.29934-abs.html",
+        "url": "https://arxiv.org/abs/2610.29934",
+        "status": "ok"
+      },
+      {
+        "name": "2610.29995-abs.html",
+        "url": "https://arxiv.org/abs/2610.29995",
+        "status": "ok"
+      },
+      {
+        "name": "2610.30026-abs.html",
+        "url": "https://arxiv.org/abs/2610.30026",
+        "status": "ok"
+      },
+      {
+        "name": "2610.30042-abs.html",
+        "url": "https://arxiv.org/abs/2610.30042",
+        "status": "ok"
+      },
+      {
+        "name": "2610.29326-abs.html",
+        "url": "https://arxiv.org/abs/2610.29326",
+        "status": "ok"
+      },
+      {
+        "name": "2610.29250-abs.html",
+        "url": "https://arxiv.org/abs/2610.29250",
+        "status": "ok"
+      },
+      {
+        "name": "2610.28834-abs.html",
+        "url": "https://arxiv.org/abs/2610.28834",
+        "status": "ok"
+      },
+      {
+        "name": "dc-list.html",
+        "url": "https://arxiv.org/list/cs.DC/recent?show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "lg-list.html",
+        "url": "https://arxiv.org/list/cs.LG/recent?show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "vllm.html",
+        "url": "https://vllm.ai/blog",
+        "status": "ok"
+      },
+      {
+        "name": "pytorch.html",
+        "url": "https://pytorch.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "nvidia.html",
+        "url": "https://developer.nvidia.com/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "lmsys.html",
+        "url": "https://www.lmsys.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "ula.html",
+        "url": "https://arxiv.org/html/2610.29820v1",
+        "status": "ok"
+      },
+      {
+        "name": "hawk.html",
+        "url": "https://arxiv.org/html/2610.29873v1",
+        "status": "ok"
+      },
+      {
+        "name": "flydsl.html",
+        "url": "https://pytorch.org/blog/accelerating-pytorch-on-amd-gpus-with-flydsl/",
+        "status": "ok"
+      },
+      {
+        "name": "titan.html",
+        "url": "https://pytorch.org/blog/torchtitan-update-new-sota-models-performance-at-scale-titanrl/",
+        "status": "ok"
+      },
+      {
+        "name": "ula-abs.html",
+        "url": "https://arxiv.org/abs/2610.29820",
+        "status": "ok"
+      },
+      {
+        "name": "hawk-abs.html",
+        "url": "https://arxiv.org/abs/2610.29873",
+        "status": "ok"
+      },
+      {
+        "name": "sparsity.html",
+        "url": "https://arxiv.org/html/2610.28947v1",
+        "status": "ok"
+      },
+      {
+        "name": "sparsity-abs.html",
+        "url": "https://arxiv.org/abs/2610.28947",
+        "status": "ok"
+      },
+      {
+        "name": "ula.pdf",
+        "url": "https://arxiv.org/pdf/2610.29820v1",
+        "status": "ok"
+      },
+      {
+        "name": "hawk.pdf",
+        "url": "https://arxiv.org/pdf/2610.29873v1",
+        "status": "ok"
+      },
+      {
+        "name": "sparsity.pdf",
+        "url": "https://arxiv.org/pdf/2610.28947v1",
+        "status": "ok"
+      },
+      {
+        "name": "flydsl-repo.json",
+        "url": "https://api.github.com/repos/ROCm/FlyDSL",
+        "status": "ok"
+      },
+      {
+        "name": "flydsl-readme.md",
+        "url": "https://raw.githubusercontent.com/ROCm/FlyDSL/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "fly-dense-pr.json",
+        "url": "https://api.github.com/repos/pytorch/pytorch/pulls/194981",
+        "status": "ok"
+      },
+      {
+        "name": "fly-mxfp-pr.json",
+        "url": "https://api.github.com/repos/pytorch/pytorch/pulls/196719",
+        "status": "ok"
+      },
+      {
+        "name": "fly-grouped-pr.json",
+        "url": "https://api.github.com/repos/pytorch/pytorch/pulls/194032",
+        "status": "ok"
+      },
+      {
+        "name": "fly-rms-pr.json",
+        "url": "https://api.github.com/repos/pytorch/pytorch/pulls/191447",
+        "status": "ok"
+      },
+      {
+        "name": "fly-topk-pr.json",
+        "url": "https://api.github.com/repos/pytorch/pytorch/pulls/193548",
+        "status": "ok"
+      },
+      {
+        "name": "fly-aot-pr.json",
+        "url": "https://api.github.com/repos/pytorch/pytorch/pulls/197747",
+        "status": "ok"
+      },
+      {
+        "name": "fly-aot-release.json",
+        "url": "https://api.github.com/repos/ROCm/aotriton/releases/tags/0.14.2b",
+        "status": "ok"
+      },
+      {
+        "name": "titan-readme.md",
+        "url": "https://raw.githubusercontent.com/pytorch/torchtitan/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "titan-rl-readme.md",
+        "url": "https://raw.githubusercontent.com/pytorch/torchtitan/main/torchtitan/rl/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "titan-rl-history.json",
+        "url": "https://api.github.com/repos/pytorch/torchtitan/commits?path=torchtitan/rl&per_page=20",
+        "status": "ok"
+      },
+      {
+        "name": "checkpoint-repo.json",
+        "url": "https://api.github.com/repos/meta-pytorch/torch_checkpointing",
+        "status": "ok"
+      },
+      {
+        "name": "ar-list.html",
+        "url": "https://arxiv.org/list/cs.AR/recent?show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "sparse-repo.json",
+        "url": "https://api.github.com/repos/PuppyQ08/24_quant_compare",
+        "status": "ok"
+      },
+      {
+        "name": "sparse-readme.md",
+        "url": "https://raw.githubusercontent.com/PuppyQ08/24_quant_compare/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "sparse-commits.json",
+        "url": "https://api.github.com/repos/PuppyQ08/24_quant_compare/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "sparse-tree.json",
+        "url": "https://api.github.com/repos/PuppyQ08/24_quant_compare/git/trees/main?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "risk.html",
+        "url": "https://arxiv.org/html/2610.29544v1",
+        "status": "ok"
+      },
+      {
+        "name": "kvlearn-abs.html",
+        "url": "https://arxiv.org/abs/2610.28637",
+        "status": "ok"
+      },
+      {
+        "name": "ula-code-search.json",
+        "url": "https://api.github.com/search/repositories?q=UlaCache",
+        "status": "ok"
+      },
+      {
+        "name": "sparse-repo-page.html",
+        "url": "https://github.com/PuppyQ08/24_quant_compare",
+        "status": "ok"
+      },
+      {
+        "name": "fly-repo-page.html",
+        "url": "https://github.com/ROCm/FlyDSL",
+        "status": "ok"
+      },
+      {
+        "name": "lmsys-eep.html",
+        "url": "https://www.lmsys.org/blog/2026-10-21-elastic-ep-scaling-nixl",
+        "status": "ok"
+      },
+      {
+        "name": "sparse-initial-tree.json",
+        "url": "https://api.github.com/repos/PuppyQ08/24_quant_compare/git/trees/696a110797edcb0a4aa35c57ed198a731893e08c?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "fly-rms-pr-page.html",
+        "url": "https://github.com/pytorch/pytorch/pull/191447",
+        "status": "ok"
+      },
+      {
+        "name": "fly-mxfp-pr-page.html",
+        "url": "https://github.com/pytorch/pytorch/pull/196719",
+        "status": "ok"
+      },
+      {
+        "name": "fly-aot-release-page.html",
+        "url": "https://github.com/ROCm/aotriton/releases/tag/0.14.2b",
+        "status": "ok"
+      },
+      {
+        "name": "OpenAI research index, bounded current listing",
+        "url": "https://openai.com/research/index/",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic research index, primary web retrieval recovered",
+        "url": "https://www.anthropic.com/research",
+        "status": "ok"
+      },
+      {
+        "name": "Ai2 latest research index",
+        "url": "https://allenai.org/blog",
+        "status": "ok"
+      },
+      {
+        "name": "Google Research current blog index",
+        "url": "https://research.google/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "Google DeepMind current news index",
+        "url": "https://deepmind.google/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "ICLR 2027 venue landing, client shell only",
+        "url": "https://openreview.net/group?id=ICLR.cc/2027/Conference",
+        "status": "ok"
+      },
+      {
+        "name": "OpenReview venue API, discovery incomplete",
+        "url": "https://api2.openreview.net/notes?content.venueid=ICLR.cc/2027/Conference/Submission&limit=20",
+        "status": "unavailable"
+      },
+      {
+        "name": "ACL Anthology landing/index screening, not exhaustive new-paper chronology",
+        "url": "https://aclanthology.org/",
+        "status": "ok"
+      },
+      {
+        "name": "Distributed biological reasoning technical blog",
+        "url": "https://openai.com/index/scaling-ai-research-for-complex-biological-data/",
+        "status": "ok"
+      },
+      {
+        "name": "Distributed biological reasoning authoritative first-posted metadata",
+        "url": "https://api.biorxiv.org/details/biorxiv/10.64898/2026.10.15.759436",
+        "status": "ok"
+      },
+      {
+        "name": "Distributed biological reasoning linked paper full HTML, request rate limited",
+        "url": "https://www.biorxiv.org/content/10.64898/2026.10.15.759436v1.full",
+        "status": "unavailable"
+      },
+      {
+        "name": "Distributed biological reasoning linked paper PDF, request rate limited",
+        "url": "https://www.biorxiv.org/content/10.64898/2026.10.15.759436v1.full.pdf",
+        "status": "unavailable"
+      },
+      {
+        "name": "Distributed biological reasoning public code and manuscript tooling",
+        "url": "https://github.com/jinlabneurogenomics/distributed_agent",
+        "status": "ok"
+      },
+      {
+        "name": "Distributed biological reasoning repository chronology",
+        "url": "https://api.github.com/repos/jinlabneurogenomics/distributed_agent/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "Agentic advertising stack engineering report",
+        "url": "https://openai.com/index/building-chatgpt-ad-stack/",
+        "status": "ok"
+      },
+      {
+        "name": "Gemini 4 Argon release dated October13, outside discovery lookback",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+        "status": "ok"
+      },
+      {
+        "name": "Antimicrobial-search case dated October15, outside discovery lookback",
+        "url": "https://deepmind.google/blog/accelerating-antimicrobial-discovery/",
+        "status": "ok"
+      },
+      {
+        "name": "On-device scam model case dated October14, outside discovery lookback",
+        "url": "https://deepmind.google/blog/on-device-ai-scam-detection-mddi/",
+        "status": "ok"
+      },
+      {
+        "name": "October22 LG original new-submission batch",
+        "url": "https://arxiv.org/list/cs.LG/new",
+        "status": "ok"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": "arxiv:2610.30068",
+      "title": "Loopholing All the Way: Language Modeling with pure Self-Conditioning",
+      "category": "1.2",
+      "tags": [
+        "Diffusion Language Models",
+        "Self-conditioning",
+        "Continuous Generation"
+      ],
+      "published_on": "2026-10-21",
+      "first_seen_at": "2026-10-22T10:05:15.328Z",
+      "canonical_url": "https://arxiv.org/abs/2610.30068",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.30068v1"
+      },
+      "summary": [
+        "LAW repeatedly refines continuous expected token embeddings and samples discrete tokens only at the end, making self-conditioning the complete generative state rather than an auxiliary hint.",
+        "Matched-training-compute experiments improve constraint solving and small-scale mathematical reasoning, suggesting an alternative to interleaving discrete token resampling with denoising.",
+        "The evidence does not yet establish frontier-scale quality or wall-clock speedups."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Pinned v1 Sections 3–5 and relevant task, compute, training and generation appendices inspected. LAW initializes token embeddings from uniformly sampled tokens, feeds a noncausal denoiser only the continuous self-conditioning state, and updates that state with the probability-weighted expected token embedding. Prompt positions remain fixed clean embeddings, and a categorical token projection is deferred to the end. Training still uses a discrete-diffusion-corrupted initialization and task-specific cross-entropy or negative-ELBO objectives; pure self-conditioning describes sampling, not absence of a diffusion-derived training objective. Default training uses two passes with probability 0.9, stop-gradient between passes and loss only on the final pass, with randomized self-conditioning temperature; OpenWebText also uses a learned mode embedding. Estimated training FLOPs count a backward pass as twice a forward pass, so these settings cost 3.9 forward-pass equivalents per update versus 3 for the comparison, and LAW uses about 77% as many steps. Academic 8-layer and 12-layer DiT experiments cover Sudoku, mazes, TinyGSM-to-GSM8K and OpenWebText. The reported hard Sudoku score is 96.5% versus 91.0% for the retrained LDDM-U comparison at 180 function evaluations. The matched-FLOP 12-layer TinyGSM study reports 42.2% GSM8K accuracy versus 34.5% for LDDM-U at temperature 1 and 1,024 function evaluations. The Maze metric accepts any valid shortest path, rather than reference-path exact match. OpenWebText evidence uses external-model generative perplexity alongside unigram entropy, with a quality/diversity tradeoff as iterations increase; it is not a measured wall-clock speed comparison. The original October 21 receipt (17:25:08 UTC) is retained. The original October 22 new-submission batch and official Eastern-time schedule imply October 22 00:00 UTC availability; no earlier primary artifact was verified in the bounded search. The paper-announced author code URL and GitHub API both return 404, so no available-code link is claimed.",
+        "limitations": "The tested models and contexts are small academic setups, with task-specific objectives and tuned sampling settings; no frontier-scale language or chat capability result is established. Matched estimated training FLOPs do not mean matched wall-clock time, and numbers of function evaluations are not end-to-end latency. The paper mixes retrained comparisons and prior reported puzzle results, so the evidence should not be generalized into universal benchmark leadership. Main reported results do not provide a broad multi-training-seed uncertainty study. OpenWebText external-model perplexity and unigram entropy are incomplete quality/diversity proxies. Training still uses diffusion corruption and, for some tasks, a diffusion-derived bound. The announced author repository was unavailable (404), limiting artifact verification. No independent reproduction."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-22T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.29348",
+      "title": "Data Schedules and Learning Rate Schedules Should Be Designed Together",
+      "category": "1.3",
+      "tags": [
+        "Data Mixtures",
+        "Learning Rate Schedules",
+        "Mid-training",
+        "Mixture of Experts"
+      ],
+      "published_on": "2026-10-21",
+      "first_seen_at": "2026-10-22T10:07:41.810Z",
+      "canonical_url": "https://arxiv.org/abs/2610.29348",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.29348v1"
+      },
+      "summary": [
+        "Controlled experiments show that a data-mixture schedule can help or hurt mid-training depending on when the learning rate decays, even when total compute and target-data tokens are fixed.",
+        "Dense and mixture-of-experts experiments favor keeping the rate high after target data first appears and using a short final cooldown to lower target-domain validation loss, giving recipe designers a reason to tune the two schedules together."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Pinned v1 Sections 2–4 and relevant setup, repeat-run, data-schedule and cooldown appendices inspected. The study holds continuation compute and mid-training token budget fixed while varying the target-data fraction over time and the learning-rate schedule, across over 250 runs with a 630M dense model and a 2.99B-total-parameter MoE model (454M active non-embedding parameters plus embeddings). The dense model continues for 20.97152B tokens after 200B DCLM pretraining; the MoE main study uses 4B or 10B continuation tokens after 40B pretraining. FineMath is the principal target corpus, with code-data checks as well. Two-stage jumps and zero-then-linear ramps interact differently with constant learning rates and full- or matching-window decay: earlier mixing can help under full decay but lose its advantage under a constant rate. Across 19 tested cooldown sweeps, the best tested decay spans 10–40% of the mid-training window, rather than necessarily beginning when target data first appears. A ramp can have twice the mid-training window at the same target-token budget, so fractional cooldowns must also be compared in absolute steps. For example, the dense 25%-budget two-stage configuration reaches target validation cross-entropy 1.4275 with a 40% cooldown versus 1.4717 with constant learning rate and 1.4475 with decay over the matching mid-training range. These are configured-tokenizer loss units, not downstream accuracy. Selected configurations are repeated with three data-stream/order replicates sharing the same pretrained checkpoint; most sweeps have one run. Fresh optimizer state, no continuation warmup, and the within-family optimizer settings are held fixed. The original October 21 receipt (07:42:20 UTC) is retained. The paper appears in the original October 22 new-submission batch; October 22 00:00 UTC availability is inferred from that dated batch and the official Eastern-time announcement schedule. No earlier primary release was found in the bounded title/artifact search, which does not prove absence of one. The paper cites prior curriculum and schedule studies; the contribution is its controlled budget comparisons and recipe evidence, not the first observation that data and optimization interact.",
+        "limitations": "Evidence concerns target-domain validation loss at these model/data scales, not established downstream capability gains or a universal optimum. Pretraining loss can trade off against target loss. Only a few configurations have data-order repeats, and they share one pretrained checkpoint; close loss differences are not automatically statistically significant. The dense and MoE families have different tokenizers and optimizer details, so absolute losses are not directly comparable across families. The noisy-quadratic/SGD analysis explains the interaction under assumptions rather than proving the best schedule for Transformers. The 10–40% cooldown range is the best among tested choices, not a universal rule. No author implementation/project release was verified from the inspected primary source, and no independent reproduction was performed."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-22T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.29999",
+      "title": "EPIC: Rethinking Trust Regions for Autoregressive LLM Policies via Exact-KL Prefix Importance-Ratio Clipping",
+      "category": "1.7",
+      "tags": [
+        "Off-policy Reinforcement Learning",
+        "Prefix Trust Regions",
+        "Mixture of Experts"
+      ],
+      "published_on": "2026-10-21",
+      "first_seen_at": "2026-10-22T10:05:14.945Z",
+      "canonical_url": "https://arxiv.org/abs/2610.29999",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.29999v1",
+        "code": "https://github.com/LiChengxi666/EPIC"
+      },
+      "summary": [
+        "EPIC limits policy drift over generated prefixes instead of clipping each token independently or treating a whole response as one unit.",
+        "Its probability-calibrated prefix objective improves benchmark-selected mathematical reasoning in the tested off-policy mixture-of-experts setup without storing expert-routing decisions, offering an alternative to routing replay."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Pinned v1 Section 3 (prefix change of measure, exact-KL coordinates and practical objective), the main experiments and relevant implementation/ablation appendices inspected, together with the author repository, pinned initial README and current IMPLEMENTATION.md. EPIC starts from cumulative prefix importance ratios and the reverse-KL coordinate r - 1 - log(r); practical clipping budgets depend on prefix length and geometric mean behavior probability. It uses a geometric-mean ratio, detached prefix weights with current-token-only gradients, sign-aware clipping and implementation log-weight caps. The exact identity does not make the resulting optimization surrogate a hard distribution-level KL constraint. Main experiments train Qwen3-30B-A3B-Base on 17,917 processed DAPO-Math entries with 32 A100 GPUs, 300 steps, 64 prompts times 8 responses per rollout, eight minibatches and one PPO epoch, comparing six methods over three independent training runs. Evaluation uses 130 distinct questions across AIME 2024/2025, AMC 2023 and HMMT February 2025, with eight responses per question. Mean@8 averages binary correctness over the samples; it is not pass@8. Table 1 reports a four-benchmark average of 39.34% for EPIC versus 35.45% for DAPO, the strongest comparison average, and 32.84% for GSPO. Each run selects its best checkpoint using this same four-benchmark average, so these are benchmark-selected results. The separate routing-replay study reports 77.5% and 93.0% lower driver-process CPU resident memory than its R2 and R3 implementations, respectively; these are not GPU-memory or whole-cluster reductions. The original paper receipt is October 21 16:37:09 UTC and its original new-submission announcement is October 22. An inspected initial implementation commit, authored and committed October 20 07:41:35 UTC, already contains the core method/configurations, within the 72-hour lookback. Repository dates do not establish when it became public. This is conservatively newly-discovered catch-up on first inspection today rather than a claim that the paper announcement was the first public release; there is no evidence for an indexing-delay explanation.",
+        "limitations": "Evidence is one MoE model family, a mathematical-verifier training corpus and one off-policy update configuration. Best checkpoints are selected on the same small benchmark set used for reporting, without a separate held-out checkpoint-selection set, which can bias the reported comparison upward. Main results average three runs but do not establish broad task or model generalization. The practical clipping surrogate and gradient approximations do not guarantee exact distribution-level KL control or monotonic policy improvement. CPU RSS savings depend on routing-index types and the compared implementation, and do not imply a measured end-to-end throughput gain. Comparison clipping settings are not an exhaustive per-method tuning study. No independent reproduction."
+      },
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "arxiv:2610.29734",
+      "title": "Monitorability Is Trainable: Post-Training for Chain-of-Thought Monitorability",
+      "category": "1.10",
+      "tags": [
+        "Chain-of-Thought Monitoring",
+        "Post-Training",
+        "Information Theory"
+      ],
+      "published_on": "2026-10-21",
+      "first_seen_at": "2026-10-22T10:07:41.811+00:00",
+      "canonical_url": "https://arxiv.org/abs/2610.29734",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2610.29734v1"
+      },
+      "summary": [
+        "Monitorability post-training rewards reasoning traces for retaining information about the eventual output, while a conditional divergence penalty discourages arbitrary changes in what those traces mean.",
+        "Across controlled compression and obfuscation settings, it restores useful monitoring signals without training against a particular monitor, suggesting a repair stage for reasoning models rather than a guarantee of faithful reasoning."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Full v1 methods and main experiments, plus MBPP Appendix B and synthetic-document setup, inspected. The lower-tail mutual-information objective caps rewards above a within-prompt quantile and applies its gradient only to reasoning tokens; conditional chi-square regularization acts on output tokens. On192 held-out MBPP prompts with four completions per prompt, the regularized Qwen2.5-7B recovery setting reports true-pass11.2%→48.6%, hack-monitor recall1.4%→37.4% and false-positive rate2.9%→3.9%; recovery statistics average five independent runs at the preselected divergence budget0.4 against one shared obfuscating checkpoint. The original Oct22 LG new-submission batch and official announcement schedule support an inferred Oct22 00:00UTC public release, preserving the Oct21 receipt date. No verified dedicated code release was found.",
+        "limitations": "The shared starting policy was selected from three training runs for high hacking; controlled model organisms do not establish recovery of naturally arising failures in stronger agents. Post-training changes which reasoning/output modes are sampled and may lengthen reasoning, so gains are not solely a more transparent description of unchanged behavior. Conditional regularization discourages a private code but does not prove non-manipulability, full faithfulness, or persistence under later training. Format rewards remain active in MBPP despite absence of task/monitor rewards. No independent reproduction."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-22T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.29934",
+      "title": "ToM2Vec: Continuous Theory-of-Mind Tokens for Multi-Agent Coordination",
+      "category": "2.6",
+      "published_on": "2026-10-21",
+      "first_seen_at": "2026-10-22T10:05:06.447Z",
+      "canonical_url": "https://arxiv.org/abs/2610.29934",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.29934v1"
+      },
+      "summary": [
+        "ToM2Vec trains an agent to predict continuous vectors summarizing a partner’s likely reasoning, using partner hidden states as self-play supervision.",
+        "The vectors condition later actions without requiring private partner context at inference, improving coordination in the tested games and transferring to unseen partner families in Overcooked."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 2–4 and Appendices A–D specify ten autoregressive latent tokens, cosine-alignment supervision and Qwen3-8B experiments without direct task-reward training. Across three Overcooked layouts and 30 seeds, mean episode score rises from 94.7 to 106.7; a separate 20-seed partner test includes GPT-5.4 and Gemma-4. English game tasks also cover negotiation, Decrypto, Hanabi and capture/escape, with partner-state probes. Receipt 2026-10-21T16:05:54Z and the original cs.AI October 22 batch plus official schedule imply 2026-10-22T00:00Z release.",
+        "limitations": "Training requires accessible partner reasoning and a shared representation space; workplace-team transfer is untested. Most evaluation uses one backbone and task-specific training; capture/escape have only 6/12 seeds. Appendix C reports no significant negotiation comparisons, contrary to broader main-text wording, and several other comparisons are nonsignificant. Ten latent steps add inference latency. Stated GitHub code, API and raw endpoints return 404 and are omitted."
+      },
+      "tags": [
+        "Multi-Agent Coordination",
+        "Latent Reasoning",
+        "Partner Modeling"
+      ],
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-22T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.28987",
+      "title": "PerMIT: Securing Persistent Memory for LLM Agents via Machine-Checked Integrity Theorems and Scalable Community Trust",
+      "category": "2.8",
+      "published_on": "2026-10-20",
+      "first_seen_at": "2026-10-22T10:05:06.225Z",
+      "canonical_url": "https://arxiv.org/abs/2610.28987",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.28987v1",
+        "code": "https://arxiv.org/src/2610.28987v1/anc/permit_formal/README.md"
+      },
+      "summary": [
+        "PerMIT isolates untrusted persistent memory behind a reader and an exact-content confirmation gate, then accumulates endorsements for sharing approved knowledge.",
+        "Machine-checked guarantees for its single-user model make the trust boundary explicit, while safety still depends on faithful enforcement and sound approval decisions."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 3–5 and Appendices A/B/D/E describe opaque handles, exact-value/tool-scoped endorsements, Trojan Hippo containment and shared-memory construction. Automated gates show zero observed attacks over 20 cases per main configuration; telecom utility uses 24 held-out tasks with two trials, with pooled gains for Sonnet/Kimi but not GLM-5. Attached Lean source, correspondence and author build log were inspected; all 17 manifest hashes match, without rerunning Lean. Receipt 2026-10-20T23:31:06Z is preserved; the original cs.AI October 22 batch and official schedule support inferred 2026-10-22T00:00Z availability.",
+        "limitations": "Theorems cover a specified single-user interpreter, not deployed-harness correctness, sound verifier judgments or federated probability bounds. Approval authorizes exact bytes and a tool, not task context or whole transactions; correlated approval errors and harmful reuse remain risks. Live cases do not replace adaptive payload search. The verified artifact is formal-model code, not the experimental harness."
+      },
+      "tags": [
+        "Memory Security",
+        "Information Flow",
+        "Formal Verification",
+        "Shared Memory"
+      ],
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-22T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.29822",
+      "title": "UserSWE: Evaluating Coding Agents in Multi-Turn Conversations with Dynamic Users",
+      "category": "2.8",
+      "published_on": "2026-10-21",
+      "first_seen_at": "2026-10-22T10:05:06.225Z",
+      "canonical_url": "https://arxiv.org/abs/2610.29822",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.29822v1"
+      },
+      "summary": [
+        "UserSWE evaluates repository bug fixing through conversations whose simulated users reveal bounded information and change speaking styles across turns.",
+        "By combining tests after each turn with cross-family judgment review, it measures interactive progress and shows why a single-turn coding score can miss differences in collaboration efficiency."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 4–5 and Appendices A–D detail information pools, frozen per-task persona chains, executed-test verdicts and behavior-equivalent test rewrites that must fail on the base and pass on the candidate. Eleven model–scaffold agents run 72 tasks from 42 repositories: 50 single-issue tasks with five-turn budgets and 22 two-issue tasks with eight. Persona frequencies derive from 20,859 proprietary sessions, filtered to 13,530 code-changing sessions. Rankings vary by budget; length-discounted scores include task-bootstrap intervals and paired comparisons. Receipt 2026-10-21T14:46:22Z plus original cs.AI October 22 batch/schedule imply 2026-10-22T00:00Z availability.",
+        "limitations": "Only 72 tasks and one/two-issue maintenance episodes are evaluated; this is not a universal model ranking or a human-user trial. Simulator labels and equivalence approvals still depend on model judgments, and scaffolds differ across agents. Proprietary sessions are not released, task-bootstrap intervals do not establish repeated-run stability, and a public benchmark/code URL was not verified; release is promised."
+      },
+      "tags": [
+        "Interactive Coding",
+        "Agent Evaluation",
+        "User Simulation",
+        "Reliability"
+      ],
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-22T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.29820",
+      "title": "UlaCache: Unified Logical Addressing for Sparse LLM Serving",
+      "category": "3.4",
+      "published_on": "2026-10-21",
+      "canonical_url": "https://arxiv.org/abs/2610.29820",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.29820"
+      },
+      "summary": [
+        "UlaCache gives sparse-attention histories stable logical addresses across GPU and CPU memory, reducing redundant copies while sharing GPU cache capacity across requests.",
+        "Its parallel replacement and transfer scheduling let GLM-5.3 sustain larger decode batches under matched memory budgets, reaching up to 2.51× HiSparse’s peak decoding throughput on eight B300 GPUs with speculative decoding enabled."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Full pinned v1 PDF (12 pages) and HTML methods, evaluation and related work inspected. Stable logical IDs resolve to GPU/CPU storage slots; TP distributes retained history across ranks and uses separate local buffers for selected copies, whereas DP keeps rank-local pools. PB-LRU uses shared recency buckets and hierarchical bitmaps; transfer plans protect current readers, exchange incoming/outgoing KV, and commit address mappings only after transfers finish. Selection-plan reuse and cross-layer prefetch apply when layers share sparse selections. GLM-5.3 uses FP8 weights/KV and BF16 activations on eight H200 or eight B300 GPUs; CPU budgets are128GB or192GB per GPU, respectively, and the B300 persistent model/cache budget is272GB per GPU. Multi-LexSum inputs contain64K–128K tokens and generate2048 greedy output tokens. Under matched memory budgets, peak decode-throughput ratios versus HiSparse with two-step MTP are H200 DP1.16×/TP1.70× and B300 DP1.73×/TP2.51×. This differs from prior RemoteKV (prefill transfer scaling), CacheSmith (RAG reuse selection) and PageWeaver (sparse query unions): the central contribution is active sparse-history placement and replacement. Timing: v1 received2026-10-21T14:46:11Z; the original cs.DC Thursday22 batch and official20:00US/Eastern schedule imply announcement2026-10-22T00:00Z, within this daily window. No verified author implementation link was found in the paper or exact-name public repository lookup.",
+        "limitations": "One sparse-attention model and two eight-GPU platforms were measured; examples of other architectures are motivation, not their evaluation. All requests finish prefill before measured decoding, and each system’s observed maximum is taken over its own measured batch sizes, so these are decode-only peak-throughput comparisons, not fixed-batch or online end-to-end SLO speedups. At batch1 UlaCache is slower than fully GPU-resident SGLang in all eight configurations, though faster than HiSparse. Bucketed LRU is approximate; its scheduling ablation excludes data transfer and can lose to naive LRU when replacement pressure is low. TP score all-gather, local copied buffers, transfer bandwidth, metadata and workspaces remain costs. No downstream quality study, distributed fault-recovery study or independently reproduced result is claimed; a public UlaCache code release was not verified."
+      },
+      "tags": [
+        "Sparse Attention",
+        "KV Cache",
+        "GPU CPU Memory"
+      ],
+      "first_seen_at": "2026-10-22T10:04:20.486Z",
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-22T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/recent?show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "https://pytorch.org/blog/accelerating-pytorch-on-amd-gpus-with-flydsl/",
+      "title": "Accelerating PyTorch on AMD GPUs with FlyDSL",
+      "category": "3.5",
+      "published_on": "2026-10-21",
+      "canonical_url": "https://pytorch.org/blog/accelerating-pytorch-on-amd-gpus-with-flydsl/",
+      "links": {
+        "blog": "https://pytorch.org/blog/accelerating-pytorch-on-amd-gpus-with-flydsl/",
+        "code": "https://github.com/ROCm/FlyDSL"
+      },
+      "summary": [
+        "AMD and Meta document how PyTorch can select FlyDSL kernels through ordinary eager, compiled matrix-multiplication and attention APIs, with explicit hardware layouts and scheduling for MI350-series GPUs.",
+        "The report connects kernel-level optimizations to controlled vLLM serving comparisons on one MI355X, helping developers distinguish modest BF16 gains from larger workload-dependent improvements in MXFP8 and MXFP4 execution."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "Complete technical blog, official README, linked PyTorch PR descriptions and AOTriton release inspected. The Oct21 report explains half-tile interleaving and staged LDS/MFMA scheduling, persistent grouped-GEMM expert scheduling, scale lifetimes for MXFP formats, eager RMSNorm/TopK overrides, and AOTriton attention selection. Inductor benchmarks eligible FlyDSL GEMMs beside other enabled backends; it can retain ATen/Triton, and unsupported cases fall back. Operator benchmarks on MI355X are kept separate from whole-request vLLM A/B tests on TP1 Llama-3.1-8B-Instruct, Qwen3-32B and Llama-3.3-70B-Instruct (256input/512fixed-output tokens, concurrency8–256). The serving experiment changes only the GEMM candidate list under matched per-model cache/configuration: BF16 peaks1.13× against ATen+Triton, MXFP8 peaks2.04× against ATen, and MXFP4 peaks3.01× against ATen. BF16 has at least two ABBA-interleaved repetitions; MXFP8/4 have one run per cell. This is a substantive new detailed integration/serving measurement report, while the backend and most operator measurements were public earlier. Repo creation is2025-11-23; RMSNorm PR191447 openedJul29, TopK193548 Aug14, grouped194032 Aug19, dense-layout194981 Aug27, MXFP196719 Sep11, and AOTriton0.14.2b was releasedSep25. These dates prevent treating the kernels themselves as a newOct21 invention. Blog metadata gives publication2026-10-21T17:45:40Z, inside the current daily window.",
+        "limitations": "The reviewed update is the newOct21 report and end-to-end evaluation, not first release of FlyDSL or a blanket new feature claim. Main integration targets gfx950/MI350; static layout, dtype, alignment and shape restrictions apply. MXFP kernel timing starts with already quantized operands and excludes input quantization, compilation and autotuning. The attention release comparison also changes Triton, AITER and tuning databases and is not an isolated FlyDSL causal comparison. Eager RMSNorm backward retains the old implementation; SDPA via AOTriton differs from FlexAttention, whose FlyDSL backend is future work. BF16 serving gains are small or within the1.79% noise floor for70B; low-precision cells have no repeated-run uncertainty and compare ATen rather than the BF16 ATen/Triton baseline. Quantization/model-quality equivalence is not evaluated here, TopK tied indices/NaN choices can differ across implementations, and no general training or fleet-wide speedup follows. No author code or benchmark was executed."
+      },
+      "tags": [
+        "AMD GPUs",
+        "GPU Kernels",
+        "PyTorch",
+        "Serving Benchmarks"
+      ],
+      "first_seen_at": "2026-10-22T10:04:20.672Z",
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-21T17:45:40Z",
+        "basis": "dated-source",
+        "sources": [
+          "https://pytorch.org/blog/accelerating-pytorch-on-amd-gpus-with-flydsl/"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.28947",
+      "title": "Is 2:4 Sparsity Still Worth It? Semi-Structured Sparsity versus Quantization in LLM Inference",
+      "category": "3.6",
+      "published_on": "2026-10-20",
+      "canonical_url": "https://arxiv.org/abs/2610.28947",
+      "links": {
+        "paper": "https://arxiv.org/abs/2610.28947",
+        "code": "https://github.com/PuppyQ08/24_quant_compare"
+      },
+      "summary": [
+        "This study compares structured 2:4 sparsity with lower-precision dense inference while counting index metadata, dynamic preprocessing and the hardware’s actual sparse operand constraints.",
+        "Across the tested models and GPUs, it finds that quantizing further is usually the better next step when a lower supported precision remains, while sparsity at the tested precision floor can raise throughput but needs retraining to recover usable model quality."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Full21-page v1 paper inspected, including Sections3–6, all comparison/evaluation tables and AppendicesA–I, plus the author README and initial artifact tree/history. Metadata-inclusive bit accounting pairs 2:4 INT8 with dense INT5 (both5.125bits/original element with group128 FP16 scales), rather than incorrectly with INT4. Per-layer operator comparisons cover Llama-3.1-8B-Instruct and Qwen3-8B across W/X/Q/K/V/attention probabilities; measured kernels use L40S, H100 and RTX PRO6000, including online pruning/quantization for dynamic operands. The strongest dense rival at a hardware tier dominates the tested sparse alternatives above the deployment precision floor; some sparse cases beat weaker quantizers or improve retrieval/perplexity, so this is not a universal all-metric ranking. On one H100, historical vLLM0.11.2 serves Llama-3.1-8B versus externally retrained13B-token Sparse-Llama; sparse FP8 prefill is74.6k versus58.9k tokens/s (64×2048-token prompts), with batch1 decode234 versus198 and batch64 decode9914 versus8556 tokens/s. The same sparse weights served densely remove the throughput benefit within3%, separating kernel gain from model differences. Original source date isOct20 receipt21:48:45Z; code repo created18:50:58Z and initial696a1107 commit19:59:45Z onOct20 already contains implementation and measurements. Although the original cs.LG paper batch isOct22, this unreported work is conservatively an editorial delayed discovery inside the72-hour lookback, not a new optimization first released in theOct22 main window. Commit timestamps do not prove exact historical public visibility; optional earliest-work public_availability is therefore omitted.",
+        "limitations": "Two8B models, a finite quantizer/pruner menu and specific shapes/hardware support the conclusions; the precision floor is defined by the tested inference stack, explicitly excluding unused Ada INT4 tensor-core paths. Operator error is an imperfect whole-model proxy; GSM8K uses the first250 problems with8-shot greedy chain-of-thought and broad confidence intervals, and some retrieval/perplexity results favor sparsity. Sparse library algorithms receive exhaustive tuning while dense libraries use default heuristics. Accuracy-winning dynamic correction is omitted from sparse timing, and some low-bit comparisons are simulated rather than hardware kernels. The27% prefill result uses historical vLLM0.11.2, not current serving releases (Sparse24 was removed in0.19); no GSM8K difference in that serving table is significant. The author’s two1B-token retraining runs are single, untuned recipes on fourH100 each; the13B-token Sparse-Llama reference uses different training data, so recovery cost is not a controlled token-scaling law. Blackwell sparse FP4 requires pairwise4:8, distinct from element-wise2:4, and the limited retraining budget failed to recover reasoning. No independent reproduction was performed."
+      },
+      "tags": [
+        "Structured Sparsity",
+        "Quantization",
+        "Hardware Evaluation",
+        "Quality Recovery"
+      ],
+      "first_seen_at": "2026-10-22T10:07:28.843Z",
+      "novelty": "newly-discovered"
+    }
+  ]
+}

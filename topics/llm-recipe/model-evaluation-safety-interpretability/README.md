@@ -5,6 +5,22 @@ Capability evaluation, contamination, generalization, robustness, safety and mec
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-22](../../../reports/2026/10/2026-10-22.md) — PARTIAL SEARCH
+
+### [Monitorability Is Trainable: Post-Training for Chain-of-Thought Monitorability](<https://arxiv.org/abs/2610.29734>)
+
+Monitorability post-training rewards reasoning traces for retaining information about the eventual output, while a conditional divergence penalty discourages arbitrary changes in what those traces mean. Across controlled compression and obfuscation settings, it restores useful monitoring signals without training against a particular monitor, suggesting a repair stage for reasoning models rather than a guarantee of faithful reasoning.
+
+**Published:** 2026-10-21 · **First seen:** 2026-10-22T10:07:41.811+00:00 · **Novelty:** new · **Tags:** Chain-of-Thought Monitoring, Post-Training, Information Theory
+
+**Public availability:** 2026-10-22T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2610.29734v1>)
+
+**Evidence:** research-paper; full-text. Full v1 methods and main experiments, plus MBPP Appendix B and synthetic-document setup, inspected. The lower-tail mutual-information objective caps rewards above a within-prompt quantile and applies its gradient only to reasoning tokens; conditional chi-square regularization acts on output tokens. On192 held-out MBPP prompts with four completions per prompt, the regularized Qwen2.5-7B recovery setting reports true-pass11.2%→48.6%, hack-monitor recall1.4%→37.4% and false-positive rate2.9%→3.9%; recovery statistics average five independent runs at the preselected divergence budget0.4 against one shared obfuscating checkpoint. The original Oct22 LG new-submission batch and official announcement schedule support an inferred Oct22 00:00UTC public release, preserving the Oct21 receipt date. No verified dedicated code release was found.
+
+**Limitations:** The shared starting policy was selected from three training runs for high hacking; controlled model organisms do not establish recovery of naturally arising failures in stronger agents. Post-training changes which reasoning/output modes are sampled and may lengthen reasoning, so gains are not solely a more transparent description of unchanged behavior. Conditional regularization discourages a private code but does not prove non-manipulability, full faithfulness, or persistence under later training. Format rewards remain active in MBPP despite absence of task/monitor rewards. No independent reproduction.
+
 ## [2026-10-21](../../../reports/2026/10/2026-10-21.md) — PARTIAL SEARCH
 
 ### [Reward Misspecification Degrades Chain-of-Thought Monitorability](<https://arxiv.org/abs/2610.28303>)

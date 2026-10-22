@@ -5,6 +5,38 @@ Task success, trajectory evaluation, cost/reliability, prompt injection and perm
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-22](../../../reports/2026/10/2026-10-22.md) — PARTIAL SEARCH
+
+### [PerMIT: Securing Persistent Memory for LLM Agents via Machine-Checked Integrity Theorems and Scalable Community Trust](<https://arxiv.org/abs/2610.28987>)
+
+PerMIT isolates untrusted persistent memory behind a reader and an exact-content confirmation gate, then accumulates endorsements for sharing approved knowledge. Machine-checked guarantees for its single-user model make the trust boundary explicit, while safety still depends on faithful enforcement and sound approval decisions.
+
+**Published:** 2026-10-20 · **First seen:** 2026-10-22T10:05:06.225Z · **Novelty:** new · **Tags:** Memory Security, Information Flow, Formal Verification, Shared Memory
+
+**Public availability:** 2026-10-22T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.28987v1>) · [Code](<https://arxiv.org/src/2610.28987v1/anc/permit_formal/README.md>)
+
+**Evidence:** research-paper; full-text. Sections 3–5 and Appendices A/B/D/E describe opaque handles, exact-value/tool-scoped endorsements, Trojan Hippo containment and shared-memory construction. Automated gates show zero observed attacks over 20 cases per main configuration; telecom utility uses 24 held-out tasks with two trials, with pooled gains for Sonnet/Kimi but not GLM-5. Attached Lean source, correspondence and author build log were inspected; all 17 manifest hashes match, without rerunning Lean. Receipt 2026-10-20T23:31:06Z is preserved; the original cs.AI October 22 batch and official schedule support inferred 2026-10-22T00:00Z availability.
+
+**Limitations:** Theorems cover a specified single-user interpreter, not deployed-harness correctness, sound verifier judgments or federated probability bounds. Approval authorizes exact bytes and a tool, not task context or whole transactions; correlated approval errors and harmful reuse remain risks. Live cases do not replace adaptive payload search. The verified artifact is formal-model code, not the experimental harness.
+
+## [2026-10-22](../../../reports/2026/10/2026-10-22.md) — PARTIAL SEARCH
+
+### [UserSWE: Evaluating Coding Agents in Multi-Turn Conversations with Dynamic Users](<https://arxiv.org/abs/2610.29822>)
+
+UserSWE evaluates repository bug fixing through conversations whose simulated users reveal bounded information and change speaking styles across turns. By combining tests after each turn with cross-family judgment review, it measures interactive progress and shows why a single-turn coding score can miss differences in collaboration efficiency.
+
+**Published:** 2026-10-21 · **First seen:** 2026-10-22T10:05:06.225Z · **Novelty:** new · **Tags:** Interactive Coding, Agent Evaluation, User Simulation, Reliability
+
+**Public availability:** 2026-10-22T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.29822v1>)
+
+**Evidence:** research-paper; full-text. Sections 4–5 and Appendices A–D detail information pools, frozen per-task persona chains, executed-test verdicts and behavior-equivalent test rewrites that must fail on the base and pass on the candidate. Eleven model–scaffold agents run 72 tasks from 42 repositories: 50 single-issue tasks with five-turn budgets and 22 two-issue tasks with eight. Persona frequencies derive from 20,859 proprietary sessions, filtered to 13,530 code-changing sessions. Rankings vary by budget; length-discounted scores include task-bootstrap intervals and paired comparisons. Receipt 2026-10-21T14:46:22Z plus original cs.AI October 22 batch/schedule imply 2026-10-22T00:00Z availability.
+
+**Limitations:** Only 72 tasks and one/two-issue maintenance episodes are evaluated; this is not a universal model ranking or a human-user trial. Simulator labels and equivalence approvals still depend on model judgments, and scaffolds differ across agents. Proprietary sessions are not released, task-bootstrap intervals do not establish repeated-run stability, and a public benchmark/code URL was not verified; release is promised.
+
 ## [2026-10-20](../../../reports/2026/10/2026-10-20.md) — PARTIAL SEARCH
 
 ### [MultiLangBench and behavior-preserving COBOL migration evaluation](<https://openai.com/index/low-resource-programming-languages/>)

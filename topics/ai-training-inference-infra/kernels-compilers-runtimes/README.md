@@ -5,6 +5,22 @@ GPU kernels, operator fusion, compilation, execution graphs and hardware adaptat
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-22](../../../reports/2026/10/2026-10-22.md) — PARTIAL SEARCH
+
+### [Accelerating PyTorch on AMD GPUs with FlyDSL](<https://pytorch.org/blog/accelerating-pytorch-on-amd-gpus-with-flydsl/>)
+
+AMD and Meta document how PyTorch can select FlyDSL kernels through ordinary eager, compiled matrix-multiplication and attention APIs, with explicit hardware layouts and scheduling for MI350-series GPUs. The report connects kernel-level optimizations to controlled vLLM serving comparisons on one MI355X, helping developers distinguish modest BF16 gains from larger workload-dependent improvements in MXFP8 and MXFP4 execution.
+
+**Published:** 2026-10-21 · **First seen:** 2026-10-22T10:04:20.672Z · **Novelty:** new · **Tags:** AMD GPUs, GPU Kernels, PyTorch, Serving Benchmarks
+
+**Public availability:** 2026-10-21T17:45:40Z (dated primary source). [Timing source](<https://pytorch.org/blog/accelerating-pytorch-on-amd-gpus-with-flydsl/>)
+
+[Blog](<https://pytorch.org/blog/accelerating-pytorch-on-amd-gpus-with-flydsl/>) · [Code](<https://github.com/ROCm/FlyDSL>)
+
+**Evidence:** engineering-report; full-text. Complete technical blog, official README, linked PyTorch PR descriptions and AOTriton release inspected. The Oct21 report explains half-tile interleaving and staged LDS/MFMA scheduling, persistent grouped-GEMM expert scheduling, scale lifetimes for MXFP formats, eager RMSNorm/TopK overrides, and AOTriton attention selection. Inductor benchmarks eligible FlyDSL GEMMs beside other enabled backends; it can retain ATen/Triton, and unsupported cases fall back. Operator benchmarks on MI355X are kept separate from whole-request vLLM A/B tests on TP1 Llama-3.1-8B-Instruct, Qwen3-32B and Llama-3.3-70B-Instruct (256input/512fixed-output tokens, concurrency8–256). The serving experiment changes only the GEMM candidate list under matched per-model cache/configuration: BF16 peaks1.13× against ATen+Triton, MXFP8 peaks2.04× against ATen, and MXFP4 peaks3.01× against ATen. BF16 has at least two ABBA-interleaved repetitions; MXFP8/4 have one run per cell. This is a substantive new detailed integration/serving measurement report, while the backend and most operator measurements were public earlier. Repo creation is2025-11-23; RMSNorm PR191447 openedJul29, TopK193548 Aug14, grouped194032 Aug19, dense-layout194981 Aug27, MXFP196719 Sep11, and AOTriton0.14.2b was releasedSep25. These dates prevent treating the kernels themselves as a newOct21 invention. Blog metadata gives publication2026-10-21T17:45:40Z, inside the current daily window.
+
+**Limitations:** The reviewed update is the newOct21 report and end-to-end evaluation, not first release of FlyDSL or a blanket new feature claim. Main integration targets gfx950/MI350; static layout, dtype, alignment and shape restrictions apply. MXFP kernel timing starts with already quantized operands and excludes input quantization, compilation and autotuning. The attention release comparison also changes Triton, AITER and tuning databases and is not an isolated FlyDSL causal comparison. Eager RMSNorm backward retains the old implementation; SDPA via AOTriton differs from FlexAttention, whose FlyDSL backend is future work. BF16 serving gains are small or within the1.79% noise floor for70B; low-precision cells have no repeated-run uncertainty and compare ATen rather than the BF16 ATen/Triton baseline. Quantization/model-quality equivalence is not evaluated here, TopK tied indices/NaN choices can differ across implementations, and no general training or fleet-wide speedup follows. No author code or benchmark was executed.
+
 ## [2026-10-21](../../../reports/2026/10/2026-10-21.md) — PARTIAL SEARCH
 
 ### [TorchTPU: Native PyTorch Backend, Pod-Scale Training and vLLM Serving](<https://pytorch.org/blog/introducing-torchtpu/>)

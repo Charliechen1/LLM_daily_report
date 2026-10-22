@@ -5,6 +5,22 @@ Transformers, MoE, SSM/hybrid architectures and model/data/compute allocation.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-22](../../../reports/2026/10/2026-10-22.md) — PARTIAL SEARCH
+
+### [Loopholing All the Way: Language Modeling with pure Self-Conditioning](<https://arxiv.org/abs/2610.30068>)
+
+LAW repeatedly refines continuous expected token embeddings and samples discrete tokens only at the end, making self-conditioning the complete generative state rather than an auxiliary hint. Matched-training-compute experiments improve constraint solving and small-scale mathematical reasoning, suggesting an alternative to interleaving discrete token resampling with denoising. The evidence does not yet establish frontier-scale quality or wall-clock speedups.
+
+**Published:** 2026-10-21 · **First seen:** 2026-10-22T10:05:15.328Z · **Novelty:** new · **Tags:** Diffusion Language Models, Self-conditioning, Continuous Generation
+
+**Public availability:** 2026-10-22T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.30068v1>)
+
+**Evidence:** research-paper; full-text. Pinned v1 Sections 3–5 and relevant task, compute, training and generation appendices inspected. LAW initializes token embeddings from uniformly sampled tokens, feeds a noncausal denoiser only the continuous self-conditioning state, and updates that state with the probability-weighted expected token embedding. Prompt positions remain fixed clean embeddings, and a categorical token projection is deferred to the end. Training still uses a discrete-diffusion-corrupted initialization and task-specific cross-entropy or negative-ELBO objectives; pure self-conditioning describes sampling, not absence of a diffusion-derived training objective. Default training uses two passes with probability 0.9, stop-gradient between passes and loss only on the final pass, with randomized self-conditioning temperature; OpenWebText also uses a learned mode embedding. Estimated training FLOPs count a backward pass as twice a forward pass, so these settings cost 3.9 forward-pass equivalents per update versus 3 for the comparison, and LAW uses about 77% as many steps. Academic 8-layer and 12-layer DiT experiments cover Sudoku, mazes, TinyGSM-to-GSM8K and OpenWebText. The reported hard Sudoku score is 96.5% versus 91.0% for the retrained LDDM-U comparison at 180 function evaluations. The matched-FLOP 12-layer TinyGSM study reports 42.2% GSM8K accuracy versus 34.5% for LDDM-U at temperature 1 and 1,024 function evaluations. The Maze metric accepts any valid shortest path, rather than reference-path exact match. OpenWebText evidence uses external-model generative perplexity alongside unigram entropy, with a quality/diversity tradeoff as iterations increase; it is not a measured wall-clock speed comparison. The original October 21 receipt (17:25:08 UTC) is retained. The original October 22 new-submission batch and official Eastern-time schedule imply October 22 00:00 UTC availability; no earlier primary artifact was verified in the bounded search. The paper-announced author code URL and GitHub API both return 404, so no available-code link is claimed.
+
+**Limitations:** The tested models and contexts are small academic setups, with task-specific objectives and tuned sampling settings; no frontier-scale language or chat capability result is established. Matched estimated training FLOPs do not mean matched wall-clock time, and numbers of function evaluations are not end-to-end latency. The paper mixes retrained comparisons and prior reported puzzle results, so the evidence should not be generalized into universal benchmark leadership. Main reported results do not provide a broad multi-training-seed uncertainty study. OpenWebText external-model perplexity and unigram entropy are incomplete quality/diversity proxies. Training still uses diffusion corruption and, for some tasks, a diffusion-derived bound. The announced author repository was unavailable (404), limiting artifact verification. No independent reproduction.
+
 ## [2026-10-20](../../../reports/2026/10/2026-10-20.md) — PARTIAL SEARCH
 
 ### [MemT-1.0: Towards Memory-Native Evolution](<https://arxiv.org/abs/2610.26825>)

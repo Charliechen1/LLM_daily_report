@@ -5,6 +5,22 @@ Division of work, communication, delegation, collaboration topology and shared m
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-22](../../../reports/2026/10/2026-10-22.md) — PARTIAL SEARCH
+
+### [ToM2Vec: Continuous Theory-of-Mind Tokens for Multi-Agent Coordination](<https://arxiv.org/abs/2610.29934>)
+
+ToM2Vec trains an agent to predict continuous vectors summarizing a partner’s likely reasoning, using partner hidden states as self-play supervision. The vectors condition later actions without requiring private partner context at inference, improving coordination in the tested games and transferring to unseen partner families in Overcooked.
+
+**Published:** 2026-10-21 · **First seen:** 2026-10-22T10:05:06.447Z · **Novelty:** new · **Tags:** Multi-Agent Coordination, Latent Reasoning, Partner Modeling
+
+**Public availability:** 2026-10-22T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.29934v1>)
+
+**Evidence:** research-paper; full-text. Sections 2–4 and Appendices A–D specify ten autoregressive latent tokens, cosine-alignment supervision and Qwen3-8B experiments without direct task-reward training. Across three Overcooked layouts and 30 seeds, mean episode score rises from 94.7 to 106.7; a separate 20-seed partner test includes GPT-5.4 and Gemma-4. English game tasks also cover negotiation, Decrypto, Hanabi and capture/escape, with partner-state probes. Receipt 2026-10-21T16:05:54Z and the original cs.AI October 22 batch plus official schedule imply 2026-10-22T00:00Z release.
+
+**Limitations:** Training requires accessible partner reasoning and a shared representation space; workplace-team transfer is untested. Most evaluation uses one backbone and task-specific training; capture/escape have only 6/12 seeds. Appendix C reports no significant negotiation comparisons, contrary to broader main-text wording, and several other comparisons are nonsignificant. Ten latent steps add inference latency. Stated GitHub code, API and raw endpoints return 404 and are omitted.
+
 ## [2026-10-15](../../../reports/2026/10/2026-10-15.md) — PARTIAL SEARCH
 
 ### [The Wealth of Agents: Scaling Agentic AI Across Developers](<https://arxiv.org/abs/2610.20518>)
