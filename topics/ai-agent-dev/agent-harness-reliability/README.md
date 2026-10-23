@@ -5,6 +5,22 @@ Long-running execution, failure recovery, retries, persistence and human collabo
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-23](../../../reports/2026/10/2026-10-23.md) — PARTIAL SEARCH
+
+### [SWE-VERIFIER: Selective Verification for Cost-Efficient Coding Agents](<https://arxiv.org/abs/2610.30284>)
+
+SWE-VERIFIER trains a small model to inspect proposed coding-agent actions and requests alternative candidates only when the original action receives a low score. On 500 SWE-bench Verified tasks it raises MiniMax-M2.7 resolution from 75.47% to 77.20% while verifying 3.43% of steps, suggesting that selective checking can control policy-API spending; the reported 1.09× cost excludes local verifier inference.
+
+**Published:** 2026-10-21 · **First seen:** 2026-10-23T10:04:56.906Z · **Novelty:** new · **Tags:** Coding Agents, Selective Verification, Reliability, API Cost
+
+**Public availability:** 2026-10-23T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.30284v1>)
+
+**Evidence:** research-paper; full-text. Sections 2–4, Tables 1–3 and Appendices A–D describe Qwen3.5-4B verification, action-conditioned rubric generation followed by scoring, threshold gating and reranking before executing an action. Training uses 500 successful SWE-Smith trajectories, sampled alternative actions and immediate tool feedback, with a stronger teacher labeling 30,000 actions across 6,000 states; the deployed student sees task/history/proposed action, not that action’s future execution result. On all 500 SWE-bench Verified tasks in mini-swe-agent, Table 1 reports MiniMax-M2.7 75.47±1.40 to 77.20±0.87 and DeepSeek-V4-Flash-correct-high 72.60±0.53 to 74.27±1.01. Their verified-step shares are 3.43%/3.59% and policy-API cost factors 1.09×/1.13×, under an explicit zero-cost assumption for local verifier inference. The 202-task threshold-selection subset overlaps the full 500-task evaluation. Receipt 2026-10-21T18:02:33Z is preserved; the original cs.LG October 23 new-submission listing, not just a cs.AI cross-list, and the official schedule support inferred 2026-10-23T00:00Z availability.
+
+**Limitations:** API cost accounting treats the local 4B verifier as free and does not establish total serving cost, latency, energy or training savings. Threshold selection overlaps evaluated tasks, and the main Table 1 does not fully define the reported variation or repetition count, so no significance claim is made. Labels are derived from successful trajectories and teacher rubrics; sampled-action distribution shift remains relevant. The paper-linked GitHub repository and API/README/tree/history endpoints returned 404 during this run, so no released-code link is published and reproducibility could not be checked.
+
 ## [2026-10-16](../../../reports/2026/10/2026-10-16.md) — PARTIAL SEARCH
 
 ### [LEASH: Uncertainty-Aware Weak-to-Strong Escalation and Oversight for Computer-Use Agents](<https://arxiv.org/abs/2610.22280>)

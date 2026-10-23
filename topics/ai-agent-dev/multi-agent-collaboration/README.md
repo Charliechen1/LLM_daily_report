@@ -5,6 +5,22 @@ Division of work, communication, delegation, collaboration topology and shared m
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-23](../../../reports/2026/10/2026-10-23.md) — PARTIAL SEARCH
+
+### [RoleFlow: Self-Evolving Multi-Role Agentic Collaboration via Structural Adaptation](<https://arxiv.org/abs/2610.30429>)
+
+RoleFlow learns to revise a team of specialist agents one structural edit at a time, using paired training executions with and without each edit to assign credit to the change. Its trained router improves multi-hop question answering with a frozen executor and transfers to two unseen QA benchmarks, offering a concrete approach to learning adaptive collaboration rather than choosing a fixed workflow.
+
+**Published:** 2026-10-21 · **First seen:** 2026-10-23T10:04:56.359Z · **Novelty:** new · **Tags:** Multi-Agent Collaboration, Counterfactual Credit, Adaptive Workflows, Role Synthesis
+
+**Public availability:** 2026-10-23T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.30429v1>)
+
+**Evidence:** research-paper; full-text. Sections 3–4, Tables 1–3 and Appendices A–C specify a Qwen2.5-7B router, frozen gpt-4o-mini executor, validator feedback, on-demand role synthesis and ADD/PRUNE/SWAP/REROUTE edits. SECPO executes edited and unchanged chains at the same state during training, adds their reward difference only to edit tokens on top of GRPO credit, and retains an edit above a 0.005 advantage threshold; rejected edits still train the router. With three training runs, Table 2 reports HotpotQA/2Wiki/MuSiQue F1 of 55.6/43.5/42.1 versus 53.5/41.0/39.5 for GRPO. The latter two use the HotpotQA-trained router without retraining. QA uses one chain per question; each chain allows three adaptation cycles after its initial execution. MATH uses 20 chains and coding 10 chains with final selection, so those reported results are not single-sample inference. Appendix A.3/B states WebShop uses the MBPP-trained router, overriding the looser main-text wording. Receipt 2026-10-21T20:37:32Z is preserved; original cs.AI October 23 new-submission listing plus the official schedule supports inferred 2026-10-23T00:00Z availability. No earlier matching author artifact was established in bounded checks.
+
+**Limitations:** Results depend on task-specific validation and the tested router/executor. Counterfactual training increases realized executions per QA task from 9.1 to 13.5; unequal baseline training and inference budgets limit broad ranking claims. Coding/math use multiple samples, and the WebShop validator can replace invalid or purchase-blocking actions. SECPO slightly trails GRPO on MBPP and ties it on HumanEval. Inference starts from seed roles rather than the training-grown library. No matching author code repository was verified; this is a primary-paper assessment, not an independent reproduction.
+
 ## [2026-10-22](../../../reports/2026/10/2026-10-22.md) — PARTIAL SEARCH
 
 ### [ToM2Vec: Continuous Theory-of-Mind Tokens for Multi-Agent Coordination](<https://arxiv.org/abs/2610.29934>)

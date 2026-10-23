@@ -1,0 +1,911 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-23",
+  "timezone": "America/Los_Angeles",
+  "generated_at": "2026-10-23T10:22:09.040+00:00",
+  "coverage": {
+    "start": "2026-10-22T03:00:00-07:00",
+    "end": "2026-10-23T03:00:00-07:00"
+  },
+  "search": {
+    "status": "partial",
+    "notes": "Eight contributions selected after screening all26 topics across LLM Recipe, AI Agent Dev and AI Training & Inference Infra, against the immutable September29 landscape and complete227-work registry. Coverage is October22 03:00 through October23 03:00 America/Los_Angeles; the total72h discovery interval begins October20 03:00. Original receipt/publication dates are retained, and original arXiv batches plus the verified Eastern-time posting schedule are used only for explicitly inferred public-availability timestamps. AOPD is conservatively newly-discovered because an earlier substantive project implementation falls inside the lookback; commit dates are not asserted to prove exact first public visibility. Older Raw-RAG, TTR-Compressor, uGDS, Apple Silicon and FairStress artifacts were not relabeled as new, while unresolved low-bit n-gram chronology was left out. Search remains partial: OpenReview API returned403 and venue/ACL/organization screening is bounded rather than exhaustive; the Low-Bit N-Gram antecedent could not be retrieved. The paper-linked SWE-VERIFIER repository returned404. Other selected methods without a verified dedicated author release expose only their primary papers; no code release is invented. Source transport failures recovered via primary web or PDF readers do not mean selected work was abstract-only. All selected items were read in full relevant methods/results/limitations; no independent experiments or proof checking were performed. Numerical fixes have small-model evidence, BeNice serving results use proxies, Gandalf endurance/latency results are projections, SWE costs exclude local verifier inference, memory preference prediction uses a screened participant-held-out subset, and formal proofs have statement-specific trusted-model limits. Earlier partial windows remain partial; this run does not certify historical exhaustive coverage.",
+    "sources_checked": [
+      {
+        "name": "cl-index",
+        "url": "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "lg.html",
+        "url": "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "schedule.html",
+        "url": "https://info.arxiv.org/help/availability.html",
+        "status": "ok"
+      },
+      {
+        "name": "hf23.html — retrieved",
+        "url": "https://huggingface.co/papers/date/2026-10-23",
+        "status": "ok"
+      },
+      {
+        "name": "thinking-machines",
+        "url": "https://thinkingmachines.ai/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31642-abs",
+        "url": "https://arxiv.org/abs/2610.31642",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31642-full",
+        "url": "https://arxiv.org/html/2610.31642v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31563-abs",
+        "url": "https://arxiv.org/abs/2610.31563",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31563-full",
+        "url": "https://arxiv.org/html/2610.31563v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31639-abs",
+        "url": "https://arxiv.org/abs/2610.31639",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31639-full",
+        "url": "https://arxiv.org/html/2610.31639v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31574-abs",
+        "url": "https://arxiv.org/abs/2610.31574",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31574-full",
+        "url": "https://arxiv.org/html/2610.31574v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31305-abs",
+        "url": "https://arxiv.org/abs/2610.31305",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31305-full",
+        "url": "https://arxiv.org/html/2610.31305v1",
+        "status": "unavailable"
+      },
+      {
+        "name": "aopd-code",
+        "url": "https://github.com/Helloworld10011/AOPD",
+        "status": "ok"
+      },
+      {
+        "name": "aopd-meta",
+        "url": "https://api.github.com/repos/Helloworld10011/AOPD",
+        "status": "ok"
+      },
+      {
+        "name": "aopd-commits",
+        "url": "https://api.github.com/repos/Helloworld10011/AOPD/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "ttr-project",
+        "url": "https://spherelab.ai/ttr-compressor/",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31642-pdf",
+        "url": "https://arxiv.org/pdf/2610.31642v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31563-pdf",
+        "url": "https://arxiv.org/pdf/2610.31563v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31574-pdf",
+        "url": "https://arxiv.org/pdf/2610.31574v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31305-pdf",
+        "url": "https://arxiv.org/pdf/2610.31305v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31646-abs",
+        "url": "https://arxiv.org/abs/2610.31646",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31646-full",
+        "url": "https://arxiv.org/html/2610.31646v1",
+        "status": "ok"
+      },
+      {
+        "name": "aopd-commits-page2",
+        "url": "https://api.github.com/repos/Helloworld10011/AOPD/commits?per_page=100&page=2",
+        "status": "ok"
+      },
+      {
+        "name": "aopd-commits-page3",
+        "url": "https://api.github.com/repos/Helloworld10011/AOPD/commits?per_page=100&page=3",
+        "status": "ok"
+      },
+      {
+        "name": "aopd-readme",
+        "url": "https://raw.githubusercontent.com/Helloworld10011/AOPD/3f205368f225bfc4ed4ad007ccbae7879d1b38f2/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "ttr-code",
+        "url": "https://github.com/Sphere-AI-Lab/ttr-compressor",
+        "status": "ok"
+      },
+      {
+        "name": "ttr-meta",
+        "url": "https://api.github.com/repos/Sphere-AI-Lab/ttr-compressor",
+        "status": "ok"
+      },
+      {
+        "name": "ttr-commits",
+        "url": "https://api.github.com/repos/Sphere-AI-Lab/ttr-compressor/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "ttr-models",
+        "url": "https://huggingface.co/collections/SphereLab/ttr-compressor",
+        "status": "ok"
+      },
+      {
+        "name": "lowbit-code",
+        "url": "https://github.com/dualverse-ai/lowbit-ngram",
+        "status": "ok"
+      },
+      {
+        "name": "lowbit-meta",
+        "url": "https://api.github.com/repos/dualverse-ai/lowbit-ngram",
+        "status": "ok"
+      },
+      {
+        "name": "lowbit-commits",
+        "url": "https://api.github.com/repos/dualverse-ai/lowbit-ngram/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "aopd-initial-tree",
+        "url": "https://api.github.com/repos/Helloworld10011/AOPD/git/trees/788daaf4b850da1a2c56f0a792a1006fb1538fc7?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "aopd-old-readme",
+        "url": "https://raw.githubusercontent.com/Helloworld10011/AOPD/8300a02262e3e5bfc881f82150839b759baf23e2/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "aopd-source-notes",
+        "url": "https://raw.githubusercontent.com/Helloworld10011/AOPD/3f205368f225bfc4ed4ad007ccbae7879d1b38f2/SOURCE_NOTES.md",
+        "status": "unavailable"
+      },
+      {
+        "name": "ttr-old-readme",
+        "url": "https://raw.githubusercontent.com/Sphere-AI-Lab/ttr-compressor/88fb3471299e58830840b05e4faaf583c73679d8/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "ttr-initial-tree",
+        "url": "https://api.github.com/repos/Sphere-AI-Lab/ttr-compressor/git/trees/8554ce408e972721ef3bd66cf99d6907b9d0524c?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "rstation-finding",
+        "url": "https://rstation.ai/problems/general_pretraining/papers/6/v4",
+        "status": "unavailable"
+      },
+      {
+        "name": "lowbit-readme",
+        "url": "https://raw.githubusercontent.com/dualverse-ai/lowbit-ngram/a1d5f4d5ecc7e1a82d86de5f355e5e9c4831506d/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "raw-repo.json — retrieved",
+        "url": "https://api.github.com/repos/Litmeb/RAW-RAG",
+        "status": "ok"
+      },
+      {
+        "name": "raw-readme.md — retrieved",
+        "url": "https://raw.githubusercontent.com/Litmeb/RAW-RAG/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "raw-history.json — retrieved",
+        "url": "https://api.github.com/repos/Litmeb/RAW-RAG/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "raw-tree.json — retrieved",
+        "url": "https://api.github.com/repos/Litmeb/RAW-RAG/git/trees/main?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "raw-repo-page.html — retrieved",
+        "url": "https://github.com/Litmeb/RAW-RAG",
+        "status": "ok"
+      },
+      {
+        "name": "swe-repo.json — retrieval unavailable",
+        "url": "https://api.github.com/repos/zkjzou/SWE-Verifier",
+        "status": "unavailable"
+      },
+      {
+        "name": "swe-readme.md — retrieval unavailable",
+        "url": "https://raw.githubusercontent.com/zkjzou/SWE-Verifier/main/README.md",
+        "status": "unavailable"
+      },
+      {
+        "name": "swe-history.json — retrieval unavailable",
+        "url": "https://api.github.com/repos/zkjzou/SWE-Verifier/commits?per_page=100",
+        "status": "unavailable"
+      },
+      {
+        "name": "swe-tree.json — retrieval unavailable",
+        "url": "https://api.github.com/repos/zkjzou/SWE-Verifier/git/trees/main?recursive=1",
+        "status": "unavailable"
+      },
+      {
+        "name": "swe-repo-page.html — retrieval unavailable",
+        "url": "https://github.com/zkjzou/SWE-Verifier",
+        "status": "unavailable"
+      },
+      {
+        "name": "roleflow-code-search.json — retrieved",
+        "url": "https://api.github.com/search/repositories?q=RoleFlow",
+        "status": "ok"
+      },
+      {
+        "name": "memory-reward-code-search.json — retrieved",
+        "url": "https://api.github.com/search/repositories?q=%22Memory-Aware+Reward%22",
+        "status": "ok"
+      },
+      {
+        "name": "parallel-eu.html — retrieved",
+        "url": "https://parallel.ai/blog/eu-data-residency",
+        "status": "ok"
+      },
+      {
+        "name": "raw-earliest-readme.md — retrieved",
+        "url": "https://raw.githubusercontent.com/Litmeb/RAW-RAG/4a5e0d5c3a977fe3498d219c308e82cb7563ef95/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "raw-earliest-tree.json — retrieved",
+        "url": "https://api.github.com/repos/Litmeb/RAW-RAG/git/trees/4a5e0d5c3a977fe3498d219c308e82cb7563ef95?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "raw-earliest-commit.json — retrieved",
+        "url": "https://api.github.com/repos/Litmeb/RAW-RAG/commits/4a5e0d5c3a977fe3498d219c308e82cb7563ef95",
+        "status": "ok"
+      },
+      {
+        "name": "raw-later-readme.md — retrieved",
+        "url": "https://raw.githubusercontent.com/Litmeb/RAW-RAG/fa58270e9b9f2347642f3cf8e1fb0e9dabae7c08/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "raw-later-tree.json — retrieved",
+        "url": "https://api.github.com/repos/Litmeb/RAW-RAG/git/trees/fa58270e9b9f2347642f3cf8e1fb0e9dabae7c08?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "raw-later-commit.json — retrieved",
+        "url": "https://api.github.com/repos/Litmeb/RAW-RAG/commits/fa58270e9b9f2347642f3cf8e1fb0e9dabae7c08",
+        "status": "ok"
+      },
+      {
+        "name": "ai-new.html — retrieved",
+        "url": "https://arxiv.org/list/cs.AI/new",
+        "status": "ok"
+      },
+      {
+        "name": "cl-new.html — retrieved",
+        "url": "https://arxiv.org/list/cs.CL/new",
+        "status": "ok"
+      },
+      {
+        "name": "ai-recent.html — retrieved",
+        "url": "https://arxiv.org/list/cs.AI/recent?show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "cl-recent.html — retrieved",
+        "url": "https://arxiv.org/list/cs.CL/recent?show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "langchain.html — retrieved",
+        "url": "https://blog.langchain.com/",
+        "status": "ok"
+      },
+      {
+        "name": "parallel.html — retrieved",
+        "url": "https://parallel.ai/blog",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic engineering index, primary web retrieval recovered",
+        "url": "https://www.anthropic.com/engineering",
+        "status": "ok"
+      },
+      {
+        "name": "2610.30755.pdf — retrieved",
+        "url": "https://arxiv.org/pdf/2610.30755v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.30755.html — retrieved",
+        "url": "https://arxiv.org/html/2610.30755v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.30755-abs.html — retrieved",
+        "url": "https://arxiv.org/abs/2610.30755",
+        "status": "ok"
+      },
+      {
+        "name": "2610.30429.pdf — retrieved",
+        "url": "https://arxiv.org/pdf/2610.30429v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.30429.html — retrieved",
+        "url": "https://arxiv.org/html/2610.30429v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.30429-abs.html — retrieved",
+        "url": "https://arxiv.org/abs/2610.30429",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31404.pdf — retrieved",
+        "url": "https://arxiv.org/pdf/2610.31404v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31404.html — retrieved",
+        "url": "https://arxiv.org/html/2610.31404v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31404-abs.html — retrieved",
+        "url": "https://arxiv.org/abs/2610.31404",
+        "status": "ok"
+      },
+      {
+        "name": "2610.30284.pdf — retrieved",
+        "url": "https://arxiv.org/pdf/2610.30284v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.30284.html — retrieved",
+        "url": "https://arxiv.org/html/2610.30284v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.30284-abs.html — retrieved",
+        "url": "https://arxiv.org/abs/2610.30284",
+        "status": "ok"
+      },
+      {
+        "name": "2610.30151.pdf — retrieved",
+        "url": "https://arxiv.org/pdf/2610.30151v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.30151.html — retrieved",
+        "url": "https://arxiv.org/html/2610.30151v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.30151-abs.html — retrieved",
+        "url": "https://arxiv.org/abs/2610.30151",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31272.pdf — retrieved",
+        "url": "https://arxiv.org/pdf/2610.31272v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31272.html — retrieved",
+        "url": "https://arxiv.org/html/2610.31272v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31272-abs.html — retrieved",
+        "url": "https://arxiv.org/abs/2610.31272",
+        "status": "ok"
+      },
+      {
+        "name": "lg-new.html — retrieved",
+        "url": "https://arxiv.org/list/cs.LG/new",
+        "status": "ok"
+      },
+      {
+        "name": "dc.html",
+        "url": "https://arxiv.org/list/cs.DC/recent?show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "ar.html",
+        "url": "https://arxiv.org/list/cs.AR/recent?show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "vllm.html",
+        "url": "https://vllm.ai/blog",
+        "status": "ok"
+      },
+      {
+        "name": "pytorch.html",
+        "url": "https://pytorch.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "nvidia.html",
+        "url": "https://developer.nvidia.com/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "lmsys.html",
+        "url": "https://www.lmsys.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "benice-abs.html",
+        "url": "https://arxiv.org/abs/2610.31633",
+        "status": "ok"
+      },
+      {
+        "name": "benice.html",
+        "url": "https://arxiv.org/html/2610.31633v1",
+        "status": "ok"
+      },
+      {
+        "name": "benice.pdf",
+        "url": "https://arxiv.org/pdf/2610.31633v1",
+        "status": "ok"
+      },
+      {
+        "name": "ugds-abs.html",
+        "url": "https://arxiv.org/abs/2610.30868",
+        "status": "ok"
+      },
+      {
+        "name": "ugds.html",
+        "url": "https://arxiv.org/html/2610.30868v1",
+        "status": "ok"
+      },
+      {
+        "name": "ugds.pdf",
+        "url": "https://arxiv.org/pdf/2610.30868v1",
+        "status": "ok"
+      },
+      {
+        "name": "gandalf-abs.html",
+        "url": "https://arxiv.org/abs/2610.30791",
+        "status": "ok"
+      },
+      {
+        "name": "gandalf.html",
+        "url": "https://arxiv.org/html/2610.30791v1",
+        "status": "ok"
+      },
+      {
+        "name": "gandalf.pdf",
+        "url": "https://arxiv.org/pdf/2610.30791v1",
+        "status": "ok"
+      },
+      {
+        "name": "apple-abs.html",
+        "url": "https://arxiv.org/abs/2610.31479",
+        "status": "ok"
+      },
+      {
+        "name": "apple.html",
+        "url": "https://arxiv.org/html/2610.31479v1",
+        "status": "unavailable"
+      },
+      {
+        "name": "apple.pdf",
+        "url": "https://arxiv.org/pdf/2610.31479v1",
+        "status": "ok"
+      },
+      {
+        "name": "apple-earlier.html",
+        "url": "https://research.macpaw.com/publications/llm-optimizations-apple-silicon",
+        "status": "ok"
+      },
+      {
+        "name": "ugds-pr.html",
+        "url": "https://github.com/LMCache/LMCache/pull/4420",
+        "status": "ok"
+      },
+      {
+        "name": "ugds-repo.html",
+        "url": "https://github.com/ScaleX-IO/uGDS",
+        "status": "ok"
+      },
+      {
+        "name": "trainium.html",
+        "url": "https://www.lmsys.org/blog/2026-10-22-sglang-trainium-beta",
+        "status": "ok"
+      },
+      {
+        "name": "nvidia-gds.html",
+        "url": "https://developer.nvidia.com/blog/how-to-read-data-into-gpu-memory-in-python-with-nvidia-gpudirect-storage/",
+        "status": "ok"
+      },
+      {
+        "name": "nvidia-spark.html",
+        "url": "https://developer.nvidia.com/blog/running-frontier-class-ai-models-across-8-nvidia-dgx-spark-nodes/",
+        "status": "ok"
+      },
+      {
+        "name": "OpenAI research index, bounded web retrieval recovered",
+        "url": "https://openai.com/research/index/",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic research index, primary web retrieval recovered",
+        "url": "https://www.anthropic.com/research",
+        "status": "ok"
+      },
+      {
+        "name": "Ai2 latest research index",
+        "url": "https://allenai.org/research",
+        "status": "ok"
+      },
+      {
+        "name": "Google Research current blog index",
+        "url": "https://research.google/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "Google DeepMind current blog index",
+        "url": "https://deepmind.google/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "ICLR2027 venue landing, client-rendered listing",
+        "url": "https://openreview.net/group?id=ICLR.cc/2027/Conference",
+        "status": "ok"
+      },
+      {
+        "name": "OpenReview ICLR2027 API, discovery incomplete",
+        "url": "https://api2.openreview.net/notes?content.venueid=ICLR.cc/2027/Conference/Submission&limit=20",
+        "status": "unavailable"
+      },
+      {
+        "name": "ACL Anthology current landing, bounded chronology screening",
+        "url": "https://aclanthology.org/",
+        "status": "ok"
+      },
+      {
+        "name": "Decisions API primary product announcement, web retrieval recovered",
+        "url": "https://openai.com/index/decisions-api/",
+        "status": "ok"
+      },
+      {
+        "name": "Formal software verification complete research article",
+        "url": "https://www.anthropic.com/research/formal-verification",
+        "status": "ok"
+      },
+      {
+        "name": "Formal verification six-page appendix, primary PDF web retrieval recovered",
+        "url": "https://www-cdn.anthropic.com/files/4zrzovbb/website/6867eadf760258fa8b42a504600cd3c036d16358.pdf",
+        "status": "ok"
+      },
+      {
+        "name": "Formal verification public proof artifact",
+        "url": "https://github.com/theorem-labs/oss-verify-proofs",
+        "status": "ok"
+      },
+      {
+        "name": "RISC-V and Linux process semantics artifact",
+        "url": "https://github.com/theorem-labs/rocq-linux-process-semantics",
+        "status": "ok"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": "arxiv:2610.31642",
+      "title": "A Fix for Softmax and Cross-Entropy",
+      "category": "1.3",
+      "tags": [
+        "Numerical Precision",
+        "Training Stability",
+        "Cross-Entropy",
+        "Distillation"
+      ],
+      "published_on": "2026-10-22",
+      "first_seen_at": "2026-10-23T10:02:54.788Z",
+      "canonical_url": "https://arxiv.org/abs/2610.31642",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.31642v1"
+      },
+      "summary": [
+        "The paper rewrites softmax and cross-entropy computations to preserve small gradients that ordinary floating-point formulations can erase or corrupt.",
+        "Correcting high-confidence rounding and near-identical teacher–student cancellation prevents training spikes and distillation drift in controlled small-model experiments, providing a diagnostic and implementation fix for sensitive optimization regimes."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Pinned v1 full ten-page PDF and HTML, Sections 1–8, Equations 1–11, Table 1, all experimental figures and inline JAX implementations inspected. Standard overflow-safe softmax can still round the confident target probability to one while leaving positive non-target gradients, breaking the exact zero-sum gradient identity; the paper reformulates the target/non-target computation using a stable margin and softplus. A separate logits-aware distillation construction uses log1p/expm1 and a projected custom gradient to preserve small teacher–student differences instead of subtracting independently rounded probabilities. This second construction requires teacher logits, not only already-rounded target probabilities. The hard-target precision cliffs are approximately margin 5.5 in bfloat16, 16.6 in float32 and 36.7 in float64; casting up delays the cliff. Controlled grokking experiments include one-layer Transformers and two-layer MLPs on modular arithmetic. The principal modular-addition experiment uses a one-layer width-64 Transformer, modulus 31, a 50% training split and 10,000 full-batch AdamW epochs. Table 1 sweeps three precisions and three Adam epsilon values over five seeds; at float32 and epsilon 1e-8, the fixed formulation reports 100.0% mean test accuracy versus 94.3% for standard cross-entropy. The distillation diagnostic begins with a student identical to an already-correct modular-arithmetic teacher, uses temperature 4, 2,000 Adam steps and three seeds, and demonstrates drift from numerical cancellation rather than useful learning from a stronger teacher. Prior work already identified collapse/slingshot behavior and proposed mitigations; the contribution is the direct stable formulation and joint numerical/optimization analysis, not the first observation of all such failures. Original receipt October 22 17:54:56 UTC retained. The original Friday October 23 cs.LG new-submission batch and official Eastern-time schedule imply paper announcement October 23 00:00 UTC. No earlier release of this complete paper/formulation was found in the bounded exact-title/author-artifact search; negative search is not proof of absence. The inspected primary paper includes implementations, but no separate author code/project release was verified.",
+        "limitations": "Evidence is controlled small-model arithmetic/grokking and near-identical-network distillation, not a demonstrated improvement in ordinary large-scale LLM training or downstream language capability. The authors explicitly note that the extreme confidence and near-zero teacher–student gaps may be uncommon in standard large-scale regimes. Results across precisions and optimizer epsilon settings do not establish a universal accuracy gain or an optimizer-independent training guarantee. The distillation fix needs logits and custom gradient handling, so it is not automatically a drop-in change for every fused kernel or probability-only interface. No LLM-scale throughput/latency benchmark or independent reproduction was verified."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-23T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.31633",
+      "title": "BeNice! Closing Looping's Inference-Memory Gap via KV-Sharing",
+      "category": "1.5",
+      "published_on": "2026-10-22",
+      "first_seen_at": "2026-10-23T10:03:45.396Z",
+      "canonical_url": "https://arxiv.org/abs/2610.31633",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.31633v1"
+      },
+      "summary": [
+        "BeNice adds an auxiliary fine-tuning objective that makes a looped language model’s early pass compatible with the final pass’s cached keys and values, enabling the recurrences to share one history cache.",
+        "On the tested Parcae models, it largely preserves the quality of ordinary fine-tuning while removing the recurrence-dependent cache duplication, offering a way to increase inference depth without proportional growth in cache memory."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Pinned v1 PDF (37 pages), HTML main methods/results and relevant evaluation, convergence, LoRA and training appendices inspected. The primary novelty is supervised adaptation, hence category1.5 rather than the application category3.4. Stochastic-depth pretraining uses per-sequence Poisson recurrence depth; the new objective combines ordinary final-recurrence cross-entropy with an auxiliary hybrid predictor using first-recurrence queries/residuals and final-recurrence KV. This avoids training through complete sequential shared-cache rollouts. The diagnosis localizes failures in released770M/1.3B Parcae models to a low-rank first-layer/first-recurrence residual shift; stochastic-depth convergence alone does not ensure the same shared/unshared fixed point. Full fine-tuning uses140M tokens; a rank8 first-layer key/value LoRA variant uses65M tokens and41K/49K trainable parameters. Table5 compares independently tuned standard fine-tuning and BeNice over three seeds: released770M shared validation perplexity21.61→11.86 while unshared remains11.86 versus11.85; the1.3B shared result18.52→10.78 accompanies unshared10.79 for both. Newly pretrained140M–1.3B models and22-task Core/46-task Core-Extended suites support the mechanism; the new370M shared Core score rises15.16→23.51. Section5.3 separately reports1.3B Parcae global HBM63.82→21.60GB at batch64/context2048 (weights, cache, graphs and buffers included), and proxy looped-model Mooncake/AIPerf workload experiments: at2requests/s cache hits rise8.1percentage points, throughput23.6%, and p90 time to first token139.2→23.2seconds. These serving proxies are distinct from the quality-tested BeNice models. Receipt is2026-10-22T17:49:44Z; the original FridayOct23 cs.LG batch plus official Thursday20:00US/Eastern posting schedule imply announcement2026-10-23T00:00Z, within this daily window. Earlier looped KV sharing and Parcae checkpoints are background, not claimed as new. No earlier BeNice release or author implementation/project destination was verified in the inspected primary text and exact-title search.",
+        "limitations": "The empirical adaptation results concern140M–1.3B Parcae-family models, finite task suites and mostly2048-token training contexts; they do not establish quality preservation for arbitrary looped architectures, frontier models or all context lengths. The convergence theorem assumes a contractive recurrent block and Lipschitz KV projections; stochastic-depth training is not proven to make every model contractive. First-layer localization/mean patching is not universal across all newly trained models, and Kimi delta-attention variants already share state well without extra adaptation. Prelude/coda caches remain, so total KV is not reduced by exactly1/T, and recurrences still consume computation. Low-precision composition is a quality study, not an independently measured FP4 kernel speedup. The serving section explicitly simulates the memory-constrained regime with proxies constructed by looping existing weights such as GLM4.7-FP8; their downstream quality is not shown to match BeNice-trained models, and serving GPU type/count is not specified in the inspected setup. Low-load workloads show little latency/throughput gain. No general production or quality-preserving frontier serving speedup, public BeNice code release, or independent reproduction is claimed."
+      },
+      "tags": [
+        "Looped Models",
+        "KV Sharing",
+        "Auxiliary Loss",
+        "LoRA"
+      ],
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-23T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.31563",
+      "title": "When to Follow the Teacher: Advantage-Based On-Policy Distillation",
+      "category": "1.8",
+      "tags": [
+        "On-Policy Distillation",
+        "Advantage Weighting",
+        "Outcome Rewards"
+      ],
+      "published_on": "2026-10-22",
+      "first_seen_at": "2026-10-23T10:02:55.075Z",
+      "canonical_url": "https://arxiv.org/abs/2610.31563",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.31563v1",
+        "code": "https://github.com/Helloworld10011/AOPD"
+      },
+      "summary": [
+        "AOPD weights teacher guidance by whether the suggested action helps the current student succeed, rather than treating every teacher-preferred token as beneficial.",
+        "An estimator built from rewarded student rollouts improves several tested math and coding distillation results without extra teacher rollouts or a learned value model, although it requires outcome rewards and does not win every benchmark."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Pinned v1 full 22-page PDF and HTML, method Section 3, experiments Section 4 and Tables 1–4, policy-space analysis Section 5 and relevant proof, setup, sampling, group-size, clipping and implementation appendices inspected. The objective favors teacher actions with positive advantage under student continuations. A change-of-measure estimator combines a sampled teacher/student probability ratio and a dense teacher expectation with a leave-one-out terminal-reward baseline from the same response group. It does not require explicit teacher-action continuation rollouts. Ratio clipping at c=4 caps the teacher measure in both terms without renormalizing it, estimating a modified clipped objective rather than preserving exact unbiasedness for the original unclipped objective. Main comparisons use LoRA rank 64, batch size 32 and non-thinking Qwen models. External math distills Qwen3-4B-Instruct into Qwen3-1.7B for 450 updates; external coding uses a Qwen3-8B teacher and 350 updates. Table 1 reports AIME24 pass@1 of 35.0% versus 32.6% for the strongest listed alternative on that metric, OPD with reverse KL, and AMC 65.1% versus 61.8%. This is not uniform dominance: HMMT is 15.8% versus 16.0% for forward-KL OPD, and other coding metrics also favor alternatives. Self-distillation conditions the same base student on a reference solution; Qwen3-8B reaches AIME24 52.1% versus 41.7% for OPSD in Table 2. Tables 3–4 include mixed domain/model outcomes, including a Qwen3-4B biology regression. Paper reward-improvement results concern exact, sufficiently small KL-proximal policy-space updates under their assumptions, not arbitrary finite-sample neural SGD. The verified author repository and pinned first substantive/current READMEs disclose a residual correction beyond the paper clipped objective and an optional forward-KL term only for all-zero-reward groups; external math uses mu=0.08. Those release additions and paper/source setting differences must not be erased in a reproduction. Original arXiv receipt October 22 17:05:21 UTC retained; original paper announcement is in the October 23 batch. Repository creation October 13 does not establish an earlier method release: the inspected complete 154-commit history starts with a LICENSE-only October 21 23:21:44 UTC commit, followed by substantive README/code from October 21 23:27:24 onward, within the 72-hour lookback. Commit dates do not prove the precise moment a repository became public. This is conservatively newly-discovered catch-up first inspected today, without claiming an indexing delay or resetting the method age to its paper announcement.",
+        "limitations": "AOPD requires terminal outcome rewards and teacher probabilities on student prefixes; unlike pure distillation it is not reward-free. No extra reward evaluations means reuse of already-rewarded RL rollouts, not zero scoring cost versus OPD. Main comparisons have method-specific sampling/tuning and different response-group sizes for some RL baselines, so equal update counts do not establish matched total compute or rollout budgets. No broad independent-training-seed uncertainty study is reported for the main benchmark comparisons. Results vary by task, model and metric, with explicit regressions; no general superiority to every teacher/distillation/RL baseline is established. Clipping modifies the objective, and the exact proximal theoretical guarantee does not directly cover the released residual correction or practical LoRA updates. Repository READMEs document differences between paper-default launchers and retained experiment-source settings. No training code was executed and no independent reproduction was performed."
+      },
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "arxiv:2610.30429",
+      "title": "RoleFlow: Self-Evolving Multi-Role Agentic Collaboration via Structural Adaptation",
+      "category": "2.6",
+      "published_on": "2026-10-21",
+      "first_seen_at": "2026-10-23T10:04:56.359Z",
+      "canonical_url": "https://arxiv.org/abs/2610.30429",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.30429v1"
+      },
+      "summary": [
+        "RoleFlow learns to revise a team of specialist agents one structural edit at a time, using paired training executions with and without each edit to assign credit to the change.",
+        "Its trained router improves multi-hop question answering with a frozen executor and transfers to two unseen QA benchmarks, offering a concrete approach to learning adaptive collaboration rather than choosing a fixed workflow."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 3–4, Tables 1–3 and Appendices A–C specify a Qwen2.5-7B router, frozen gpt-4o-mini executor, validator feedback, on-demand role synthesis and ADD/PRUNE/SWAP/REROUTE edits. SECPO executes edited and unchanged chains at the same state during training, adds their reward difference only to edit tokens on top of GRPO credit, and retains an edit above a 0.005 advantage threshold; rejected edits still train the router. With three training runs, Table 2 reports HotpotQA/2Wiki/MuSiQue F1 of 55.6/43.5/42.1 versus 53.5/41.0/39.5 for GRPO. The latter two use the HotpotQA-trained router without retraining. QA uses one chain per question; each chain allows three adaptation cycles after its initial execution. MATH uses 20 chains and coding 10 chains with final selection, so those reported results are not single-sample inference. Appendix A.3/B states WebShop uses the MBPP-trained router, overriding the looser main-text wording. Receipt 2026-10-21T20:37:32Z is preserved; original cs.AI October 23 new-submission listing plus the official schedule supports inferred 2026-10-23T00:00Z availability. No earlier matching author artifact was established in bounded checks.",
+        "limitations": "Results depend on task-specific validation and the tested router/executor. Counterfactual training increases realized executions per QA task from 9.1 to 13.5; unequal baseline training and inference budgets limit broad ranking claims. Coding/math use multiple samples, and the WebShop validator can replace invalid or purchase-blocking actions. SECPO slightly trails GRPO on MBPP and ties it on HumanEval. Inference starts from seed roles rather than the training-grown library. No matching author code repository was verified; this is a primary-paper assessment, not an independent reproduction."
+      },
+      "tags": [
+        "Multi-Agent Collaboration",
+        "Counterfactual Credit",
+        "Adaptive Workflows",
+        "Role Synthesis"
+      ],
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-23T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.30284",
+      "title": "SWE-VERIFIER: Selective Verification for Cost-Efficient Coding Agents",
+      "category": "2.7",
+      "published_on": "2026-10-21",
+      "first_seen_at": "2026-10-23T10:04:56.906Z",
+      "canonical_url": "https://arxiv.org/abs/2610.30284",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.30284v1"
+      },
+      "summary": [
+        "SWE-VERIFIER trains a small model to inspect proposed coding-agent actions and requests alternative candidates only when the original action receives a low score.",
+        "On 500 SWE-bench Verified tasks it raises MiniMax-M2.7 resolution from 75.47% to 77.20% while verifying 3.43% of steps, suggesting that selective checking can control policy-API spending; the reported 1.09× cost excludes local verifier inference."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 2–4, Tables 1–3 and Appendices A–D describe Qwen3.5-4B verification, action-conditioned rubric generation followed by scoring, threshold gating and reranking before executing an action. Training uses 500 successful SWE-Smith trajectories, sampled alternative actions and immediate tool feedback, with a stronger teacher labeling 30,000 actions across 6,000 states; the deployed student sees task/history/proposed action, not that action’s future execution result. On all 500 SWE-bench Verified tasks in mini-swe-agent, Table 1 reports MiniMax-M2.7 75.47±1.40 to 77.20±0.87 and DeepSeek-V4-Flash-correct-high 72.60±0.53 to 74.27±1.01. Their verified-step shares are 3.43%/3.59% and policy-API cost factors 1.09×/1.13×, under an explicit zero-cost assumption for local verifier inference. The 202-task threshold-selection subset overlaps the full 500-task evaluation. Receipt 2026-10-21T18:02:33Z is preserved; the original cs.LG October 23 new-submission listing, not just a cs.AI cross-list, and the official schedule support inferred 2026-10-23T00:00Z availability.",
+        "limitations": "API cost accounting treats the local 4B verifier as free and does not establish total serving cost, latency, energy or training savings. Threshold selection overlaps evaluated tasks, and the main Table 1 does not fully define the reported variation or repetition count, so no significance claim is made. Labels are derived from successful trajectories and teacher rubrics; sampled-action distribution shift remains relevant. The paper-linked GitHub repository and API/README/tree/history endpoints returned 404 during this run, so no released-code link is published and reproducibility could not be checked."
+      },
+      "tags": [
+        "Coding Agents",
+        "Selective Verification",
+        "Reliability",
+        "API Cost"
+      ],
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-23T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.31272",
+      "title": "Memory-Aware Reward Modeling: Learning Human Preferences for LLM Memory Use",
+      "category": "2.8",
+      "published_on": "2026-10-22",
+      "first_seen_at": "2026-10-23T10:04:57.196Z",
+      "canonical_url": "https://arxiv.org/abs/2610.31272",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.31272v1"
+      },
+      "summary": [
+        "This study asks whether personal memories actually make an assistant’s answers more useful to the person who supplied them, combining user judgments with an interpretable rubric-based preference model.",
+        "On 291 strong-preference pairs, participant-held-out evaluation reaches 72.8% prediction accuracy versus a 55.0% majority baseline, giving developers a way to evaluate appropriate memory use beyond factual recall."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 3–6 and Appendices A–F report 821 quality-filtered judgments from 87 participants, comparing responses generated with and without nine retrieved personal-memory entries. Candidate pairs were screened for substantial memory-grounded differences before annotation. Under ordinary prompting, memory/no-memory/tie preferences are 38.7%/41.9%/19.4%; direction differs by response generator. The learned model uses rubric features and L2 logistic regression on the 291 clear “much better” pairs. Rubric induction, standardization and nested regularization selection use training participants only; five participant-separated folds are repeated across ten shuffles, with predictions averaged before accuracy. Table 3 reports 72.8% overall accuracy against a 55.0% majority baseline; response-only features achieve 67.0%. Receipt 2026-10-22T13:43:33Z is preserved; original cs.CL October 23 new-submission listing plus the official schedule supports inferred 2026-10-23T00:00Z availability. No earlier matching author release was established.",
+        "limitations": "This is a small, screened offline preference study, not representative evidence for all assistant queries or a trained memory-management policy. Only 291 strong-preference pairs enter the learned-model evaluation; aggregate prompting differences are descriptive and vary by generator. Length and heading features are influential, so gains cannot be attributed solely to memory-specific judgment. It does not measure longitudinal agent behavior or downstream RL improvements. Some baseline-label wording and collection-prompt counts differ between main text and appendices; claims here use the stable table values and avoid the disputed labels/counts. No public author code or dataset artifact was verified."
+      },
+      "tags": [
+        "Memory Evaluation",
+        "Human Preferences",
+        "Personalization",
+        "Rubric Models"
+      ],
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-23T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "https://www.anthropic.com/research/formal-verification",
+      "title": "LLMs are making formal software verification feasible at a much larger scale",
+      "category": "2.8",
+      "tags": [
+        "Formal Verification",
+        "Coding Agents",
+        "Proof Checking"
+      ],
+      "published_on": "2026-10-22",
+      "first_seen_at": "2026-10-23T10:07:33.188+00:00",
+      "canonical_url": "https://www.anthropic.com/research/formal-verification",
+      "links": {
+        "blog": "https://www.anthropic.com/research/formal-verification",
+        "code": "https://github.com/theorem-labs/oss-verify-proofs",
+        "project": "https://github.com/theorem-labs/rocq-linux-process-semantics"
+      },
+      "summary": [
+        "Anthropic and Theorem use Claude to turn existing fuzz-test entry points into specifications for compiled programs, then generate proofs that Rocq checks against modeled execution semantics.",
+        "This makes proof-producing coding agents a concrete software-hardening workflow, while the guarantees remain conditional on the particular binaries, specifications and trusted models."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "The complete blog and six-page appendix describe the workflow and report proofs for 239 entry points across 123 libraries, with an input bound of 64 MiB; the inspected public release contains proofs for 60 entry points in 25 libraries. The release README and origin documentation specify exact binaries, statement checking and allowed assumptions. This is a new dated research disclosure with inspectable proof artifacts; no proof checker was executed here.",
+        "limitations": "The public statements concern fixed-budget, static RISC-V/Linux binaries and reachable harness behavior, rather than whole-library correctness or deployed x86/ARM systems. The released agreement proofs do not establish termination. Patches regenerate specifications, creating a potential shortcut that the authors report auditing; semantics, theorem statements, checker and tooling remain trusted. Reported research scale exceeds the released subset."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "arxiv:2610.30791",
+      "title": "Gandalf: Flash Shall Not Die! Increasing Flash Storage Lifetime for KV Cache Offloading in LLM Serving",
+      "category": "3.7",
+      "published_on": "2026-10-22",
+      "first_seen_at": "2026-10-23T10:06:01.348Z",
+      "canonical_url": "https://arxiv.org/abs/2610.30791",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.30791v1"
+      },
+      "summary": [
+        "Gandalf manages offloaded attention caches across host memory and solid-state drives, using attention type, expected reuse and write wear to decide which states to retain, move or recompute.",
+        "Its trace-based evaluation shows how avoiding low-value writes can extend projected drive endurance, giving serving-system designers an explicit way to trade cache misses against storage wear rather than optimizing hit rate alone."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Full14-page pinned v1 PDF and HTML methods/results inspected. The central contribution is a storage admission/placement policy, category3.7. Full-attention prefixes can be reused across successive turns, whereas recurrent/linear states are often reused only at the next turn and then superseded. Each admitted state first enters DRAM; under pressure Gandalf compares a leaf-drop cost with moving a root-side candidate to SSD, counting estimated next-reuse recomputation benefit, object size, idle age, SSD purchase price per rated write byte and the loss from replacing an SSD victim. An optional target-lifetime multiplier prices writes more aggressively when the write budget is overspent. Lazy heaps over prefix-tree leaf/frontier candidates reduce scoring work. The online rule approximates an offline objective; it is not a proved optimal replacement algorithm. Main evaluation uses three traces (Qwen Bailian TraceA, ClaudeCode WEKA SemiAnalysis, and a400K-request/100-turn AIPerf workload), a Kimi-K3 hybrid configuration with72% linear-attention layers,100GB host DRAM and1TB/4TB SSD capacities, and six policies adapted to the same two-tier capacity. At the minimum-miss setting in Section5.2, ClaudeCode has Gandalf miss ratio0.052 versus0.045 for Marconi/0.047 for LRU, while the latter write3.3× more SSD bytes; projected rated-endurance lifetime follows the write-volume reduction. The paper separately models a practical tradeoff at alpha1:17.0 versus4.0 months projected life at0.78 versus0.66seconds modeled cache-load latency, assuming10GB/s SSD,50GB/s host-to-GPU transfer and60Ktokens/s recomputation. This is not measured end-to-end GPU latency. Receipt is2026-10-22T06:10:08Z; the original FridayOct23 cs.LG batch and official Thursday20:00US/Eastern schedule imply announcement2026-10-23T00:00Z. Exact-title screening did not establish an earlier public Gandalf method. No author implementation/project release destination was verified; background LMCache/vLLM links are not presented as Gandalf source code.",
+        "limitations": "Principal comparative results are trace-based simulation, with small-scale FEMU emulator calibration and an author-stated LMCache/vLLM integration; the paper does not provide measured physical drive wear-out or deployment throughput demonstrating the policy. Lifetime means time to consume rated TBW under indefinitely repeated traces, a1DWPD/five-year rating and write-amplification factor1. SSD garbage collection, internal wear leveling, changing production mixes and physical failure uncertainty are not modeled, so lifetime is a projection and can be optimistic. The headline7.3× average does not describe every matched miss-rate setting; alpha can incur large miss penalties (TraceA0.818 versus LRU0.697 at alpha1), and the paper’s separate analyses use different settings. Cache-load latency assumes transfer/recomputation overlap and fixed rates; it is not whole-request TTFT or a hardware benchmark. Next-turn reuse/type assumptions fit append-only hybrid workloads, not arbitrary cache branching or all architectures. Heap candidate pruning is validated on two traces, not universally lossless. No independent reproduction or verified public Gandalf code release; extension to high-bandwidth flash is future work."
+      },
+      "tags": [
+        "KV Offloading",
+        "SSD Endurance",
+        "Tiered Storage",
+        "Hybrid Attention"
+      ],
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-23T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    }
+  ]
+}

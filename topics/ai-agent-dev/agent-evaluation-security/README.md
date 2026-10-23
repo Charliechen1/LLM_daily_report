@@ -5,6 +5,36 @@ Task success, trajectory evaluation, cost/reliability, prompt injection and perm
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-23](../../../reports/2026/10/2026-10-23.md) — PARTIAL SEARCH
+
+### [Memory-Aware Reward Modeling: Learning Human Preferences for LLM Memory Use](<https://arxiv.org/abs/2610.31272>)
+
+This study asks whether personal memories actually make an assistant’s answers more useful to the person who supplied them, combining user judgments with an interpretable rubric-based preference model. On 291 strong-preference pairs, participant-held-out evaluation reaches 72.8% prediction accuracy versus a 55.0% majority baseline, giving developers a way to evaluate appropriate memory use beyond factual recall.
+
+**Published:** 2026-10-22 · **First seen:** 2026-10-23T10:04:57.196Z · **Novelty:** new · **Tags:** Memory Evaluation, Human Preferences, Personalization, Rubric Models
+
+**Public availability:** 2026-10-23T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.31272v1>)
+
+**Evidence:** research-paper; full-text. Sections 3–6 and Appendices A–F report 821 quality-filtered judgments from 87 participants, comparing responses generated with and without nine retrieved personal-memory entries. Candidate pairs were screened for substantial memory-grounded differences before annotation. Under ordinary prompting, memory/no-memory/tie preferences are 38.7%/41.9%/19.4%; direction differs by response generator. The learned model uses rubric features and L2 logistic regression on the 291 clear “much better” pairs. Rubric induction, standardization and nested regularization selection use training participants only; five participant-separated folds are repeated across ten shuffles, with predictions averaged before accuracy. Table 3 reports 72.8% overall accuracy against a 55.0% majority baseline; response-only features achieve 67.0%. Receipt 2026-10-22T13:43:33Z is preserved; original cs.CL October 23 new-submission listing plus the official schedule supports inferred 2026-10-23T00:00Z availability. No earlier matching author release was established.
+
+**Limitations:** This is a small, screened offline preference study, not representative evidence for all assistant queries or a trained memory-management policy. Only 291 strong-preference pairs enter the learned-model evaluation; aggregate prompting differences are descriptive and vary by generator. Length and heading features are influential, so gains cannot be attributed solely to memory-specific judgment. It does not measure longitudinal agent behavior or downstream RL improvements. Some baseline-label wording and collection-prompt counts differ between main text and appendices; claims here use the stable table values and avoid the disputed labels/counts. No public author code or dataset artifact was verified.
+
+## [2026-10-23](../../../reports/2026/10/2026-10-23.md) — PARTIAL SEARCH
+
+### [LLMs are making formal software verification feasible at a much larger scale](<https://www.anthropic.com/research/formal-verification>)
+
+Anthropic and Theorem use Claude to turn existing fuzz-test entry points into specifications for compiled programs, then generate proofs that Rocq checks against modeled execution semantics. This makes proof-producing coding agents a concrete software-hardening workflow, while the guarantees remain conditional on the particular binaries, specifications and trusted models.
+
+**Published:** 2026-10-22 · **First seen:** 2026-10-23T10:07:33.188+00:00 · **Novelty:** new · **Tags:** Formal Verification, Coding Agents, Proof Checking
+
+[Blog](<https://www.anthropic.com/research/formal-verification>) · [Code](<https://github.com/theorem-labs/oss-verify-proofs>) · [Project](<https://github.com/theorem-labs/rocq-linux-process-semantics>)
+
+**Evidence:** engineering-report; full-text. The complete blog and six-page appendix describe the workflow and report proofs for 239 entry points across 123 libraries, with an input bound of 64 MiB; the inspected public release contains proofs for 60 entry points in 25 libraries. The release README and origin documentation specify exact binaries, statement checking and allowed assumptions. This is a new dated research disclosure with inspectable proof artifacts; no proof checker was executed here.
+
+**Limitations:** The public statements concern fixed-budget, static RISC-V/Linux binaries and reachable harness behavior, rather than whole-library correctness or deployed x86/ARM systems. The released agreement proofs do not establish termination. Patches regenerate specifications, creating a potential shortcut that the authors report auditing; semantics, theorem statements, checker and tooling remain trusted. Reported research scale exceeds the released subset.
+
 ## [2026-10-22](../../../reports/2026/10/2026-10-22.md) — PARTIAL SEARCH
 
 ### [PerMIT: Securing Persistent Memory for LLM Agents via Machine-Checked Integrity Theorems and Scalable Community Trust](<https://arxiv.org/abs/2610.28987>)

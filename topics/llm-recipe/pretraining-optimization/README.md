@@ -5,6 +5,22 @@ Objectives, optimizers, learning rates, batch sizes and training stability.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-23](../../../reports/2026/10/2026-10-23.md) — PARTIAL SEARCH
+
+### [A Fix for Softmax and Cross-Entropy](<https://arxiv.org/abs/2610.31642>)
+
+The paper rewrites softmax and cross-entropy computations to preserve small gradients that ordinary floating-point formulations can erase or corrupt. Correcting high-confidence rounding and near-identical teacher–student cancellation prevents training spikes and distillation drift in controlled small-model experiments, providing a diagnostic and implementation fix for sensitive optimization regimes.
+
+**Published:** 2026-10-22 · **First seen:** 2026-10-23T10:02:54.788Z · **Novelty:** new · **Tags:** Numerical Precision, Training Stability, Cross-Entropy, Distillation
+
+**Public availability:** 2026-10-23T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.31642v1>)
+
+**Evidence:** research-paper; full-text. Pinned v1 full ten-page PDF and HTML, Sections 1–8, Equations 1–11, Table 1, all experimental figures and inline JAX implementations inspected. Standard overflow-safe softmax can still round the confident target probability to one while leaving positive non-target gradients, breaking the exact zero-sum gradient identity; the paper reformulates the target/non-target computation using a stable margin and softplus. A separate logits-aware distillation construction uses log1p/expm1 and a projected custom gradient to preserve small teacher–student differences instead of subtracting independently rounded probabilities. This second construction requires teacher logits, not only already-rounded target probabilities. The hard-target precision cliffs are approximately margin 5.5 in bfloat16, 16.6 in float32 and 36.7 in float64; casting up delays the cliff. Controlled grokking experiments include one-layer Transformers and two-layer MLPs on modular arithmetic. The principal modular-addition experiment uses a one-layer width-64 Transformer, modulus 31, a 50% training split and 10,000 full-batch AdamW epochs. Table 1 sweeps three precisions and three Adam epsilon values over five seeds; at float32 and epsilon 1e-8, the fixed formulation reports 100.0% mean test accuracy versus 94.3% for standard cross-entropy. The distillation diagnostic begins with a student identical to an already-correct modular-arithmetic teacher, uses temperature 4, 2,000 Adam steps and three seeds, and demonstrates drift from numerical cancellation rather than useful learning from a stronger teacher. Prior work already identified collapse/slingshot behavior and proposed mitigations; the contribution is the direct stable formulation and joint numerical/optimization analysis, not the first observation of all such failures. Original receipt October 22 17:54:56 UTC retained. The original Friday October 23 cs.LG new-submission batch and official Eastern-time schedule imply paper announcement October 23 00:00 UTC. No earlier release of this complete paper/formulation was found in the bounded exact-title/author-artifact search; negative search is not proof of absence. The inspected primary paper includes implementations, but no separate author code/project release was verified.
+
+**Limitations:** Evidence is controlled small-model arithmetic/grokking and near-identical-network distillation, not a demonstrated improvement in ordinary large-scale LLM training or downstream language capability. The authors explicitly note that the extreme confidence and near-zero teacher–student gaps may be uncommon in standard large-scale regimes. Results across precisions and optimizer epsilon settings do not establish a universal accuracy gain or an optimizer-independent training guarantee. The distillation fix needs logits and custom gradient handling, so it is not automatically a drop-in change for every fused kernel or probability-only interface. No LLM-scale throughput/latency benchmark or independent reproduction was verified.
+
 ## [2026-10-22](../../../reports/2026/10/2026-10-22.md) — PARTIAL SEARCH
 
 ### [Data Schedules and Learning Rate Schedules Should Be Designed Together](<https://arxiv.org/abs/2610.29348>)
