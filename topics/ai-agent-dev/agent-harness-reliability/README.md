@@ -5,6 +5,22 @@ Long-running execution, failure recovery, retries, persistence and human collabo
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-24](../../../reports/2026/10/2026-10-24.md) — PARTIAL SEARCH
+
+### [From Prose to Properties: Testing Research Claims with ARATest for Agent-Native Science](<https://arxiv.org/abs/2610.30495>)
+
+ARATest turns explicitly scoped research claims into typed property checks that reuse fixed decision rules across reported tables and agent-run experiments, retaining replayable counterexamples. The new evaluation of the existing library shows that deterministic checking can catch numerical contradictions that language-model judges miss, while leaving ambiguous or insufficiently supported claims undecided.
+
+**Published:** 2026-10-21 · **First seen:** 2026-10-25T10:02:00.150Z · **Novelty:** newly-discovered · **Tags:** Research Agents, Executable Claims, Property Testing, Replayable Evidence
+
+**Public availability:** 2026-10-23T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.30495v1>) · [Code](<https://github.com/ARA-Labs/aratest>)
+
+**Evidence:** research-paper; full-text. Delayed editorial discovery of a new empirical paper about an existing implementation. Sections3–5 and relevant appendices define scope, statistical units, numeric policies, fixed checking and replay. On243claims from33artifacts,54were faithful and fully bound and40decided(32held/eightviolated); two numerical paper errors were confirmed by source authors. The checker detected553seededtablefaults with0/19controlfalsealarms; fresh author-code tests gave four holds/two inconclusive outcomes. The original cs.AI October23 batch plus official schedule supports inferred00Z announcement, preserving the October21 receipt. Pinned October18 repository documentation describes the software but did not establish the same243-claim/553-fault evaluation; this bounded check does not prove no earlier study existed.
+
+**Limitations:** The catalog was developed on the same corpus; mutation holdout covers new mutations of two papers, not new papers. Declaration fidelity was reviewed by AI agents, with no independent human agreement study. A pass does not certify a research claim, and fresh-run failures are feedback pending scope review. The calculator comparison suffered input-limit failures; no general arithmetic-tool disadvantage follows. Most continuous-campaign runs did not complete. This is new paper evidence, not a first software release or independent reproduction.
+
 ## [2026-10-23](../../../reports/2026/10/2026-10-23.md) — PARTIAL SEARCH
 
 ### [SWE-VERIFIER: Selective Verification for Cost-Efficient Coding Agents](<https://arxiv.org/abs/2610.30284>)

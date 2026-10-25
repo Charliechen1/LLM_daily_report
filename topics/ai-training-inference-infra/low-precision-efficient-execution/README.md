@@ -5,6 +5,20 @@ FP8/FP4/INT execution, quantized kernels, sparse compute and speculative decodin
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-24](../../../reports/2026/10/2026-10-24.md) — PARTIAL SEARCH
+
+### [vLLM Delivers Day-0 Support for MiniMax-M3.1-Flash](<https://vllm.ai/blog/2026-10-23-minimax-m31-flash>)
+
+vLLM adapts MiniMax-M3.1-Flash’s native four-bit cache and expert weights to NVIDIA and AMD GPUs using fused dequantization, sparse-attention kernels and context-parallel indexing. The report shows how low-precision storage must be paired with hardware-specific data movement and execution changes to turn smaller tensors into useful serving gains, and provides checkpoints, kernels and deployment recipes.
+
+**Published:** 2026-10-23 · **First seen:** 2026-10-23T10:03:45.102Z · **Novelty:** newly-discovered · **Tags:** NVFP4, Sparse Attention, GPU Kernels, Serving Recipes
+
+[Blog](<https://vllm.ai/blog/2026-10-23-minimax-m31-flash>) · [Code](<https://github.com/vllm-project/MSA>) · [Project](<https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash>)
+
+**Evidence:** engineering-report; full-text. Delayed editorial catch-up of the October 23 report; its title was observed October 23, then fully reviewed today. Older MSA kernels predate this report. Native NVFP4 KV/expert storage is paired with fused dequantization, cache insertion and context-parallel indexing. Blackwell converts NVFP4 KV to FP8 for attention arithmetic. On GB300, QKV/norm/RoPE/cache-insert fusion reports 1.1–1.6× operator prefill speed and about 19% lower P50 time to first token at TP4. AgentX throughput counts cached input, uncached input and output, with synthetic speculative acceptance.
+
+**Limitations:** Kernel and end-to-end gains are separate; cross-checkpoint cache capacity is not an equal-quality ablation. Hardware/workloads vary across NVIDIA/AMD. Vendor containers precede upstream/nightly-wheel merging. Neither independent reproduction nor universal quality preservation is established.
+
 ## [2026-10-22](../../../reports/2026/10/2026-10-22.md) — PARTIAL SEARCH
 
 ### [Is 2:4 Sparsity Still Worth It? Semi-Structured Sparsity versus Quantization in LLM Inference](<https://arxiv.org/abs/2610.28947>)

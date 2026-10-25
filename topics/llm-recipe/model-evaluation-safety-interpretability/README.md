@@ -5,6 +5,34 @@ Capability evaluation, contamination, generalization, robustness, safety and mec
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-25](../../../reports/2026/10/2026-10-25.md) — PARTIAL SEARCH
+
+### [Kimi K3.1 Pro Tech Blog: Advancing Open Intelligence](<https://www.kimi.com/en/blog/kimi-k3-1-pro>)
+
+Moonshot describes Kimi K3.1 Pro post-training and tests filtering cyber-related material from both mid-training data and reinforcement-learning environments. Its internal vulnerability benchmark falls from 90.5% without filtering to 81.0% with filtering, while substantial capability remains.
+
+**Published:** 2026-10-23 · **First seen:** 2026-10-25T10:02:00.935Z · **Novelty:** newly-discovered · **Tags:** Post-training, Training Data Filters, Safety Evaluation
+
+[Blog](<https://www.kimi.com/en/blog/kimi-k3-1-pro>)
+
+**Evidence:** engineering-report; full-text. The official Kimi Code announcement dates launch to October 23. This distinct K3.1 contribution was discovered October 25 within the 72-hour lookback; the current technical page is inspected as retrieved today, not backdated into October 24. The xdev-bench-hard test supplies hints, source, binaries and mitigations, scoring automated secret retrieval as pass@3 over sampled runs without hard time or output-token caps.
+
+**Limitations:** Internal results lack sample counts, uncertainty and matched-compute controls. Joint filtering does not isolate mid-training versus RL effects; general coding remains. Current page metadata says modified October 24, but earlier paragraph history is unverified. Filtered data and full recipe are unreleased; weights are promised by November 4, not available.
+
+## [2026-10-24](../../../reports/2026/10/2026-10-24.md) — PARTIAL SEARCH
+
+### [Causal Chain of Thought: Mitigating Attention Leakage via Context Isolation](<https://arxiv.org/abs/2610.31639>)
+
+CausalCoT plans a graph of subquestions and evaluates its nodes in separate contexts, passing explicit parent findings onward instead of letting every step reread the whole question. This makes final answers more responsive to targeted edits of intermediate reasoning in the tested tasks, offering an auditable inference workflow with an accuracy and computation trade-off rather than a guarantee about a model's internal reasoning.
+
+**Published:** 2026-10-22 · **First seen:** 2026-10-23T10:02:55.475Z · **Novelty:** newly-discovered · **Tags:** Reasoning Faithfulness, Context Isolation, Test-time Interventions
+
+[Paper](<https://arxiv.org/html/2610.31639v1>)
+
+**Evidence:** research-paper; full-text. Pinned v1 full primary HTML and38-page PDF retrieved; main Sections3–5/7 and Tables1–2, formal-scoping AppendixD, experimental/implementation AppendicesF–G, relevant isolation/variability/evaluator/failure/cost analyses H.5–H.11 and prompt interfaces inspected. A model first proposes a directed acyclic graph; roots receive the original question, while descendant calls receive their local subquestion and direct-parent question/FINDING summaries. The final node does not concatenate the full question and global trace. An implementation fallback can reclassify an insufficient-context internal node as a root and then give it the original question; this is not an immutable no-global-input guarantee at every originally internal node. The paper specifies200 sampled items each fromMedQA,GPQA andCounterfactuals, with three independently regenerated plans/generations per item, seven model variants spanning Gemma3,GPT-5.4 andClaude4.5/4.6, and CoT/factored-decomposition baselines. GPT-5.4 provides step edits, predicted implications and simulated expert corrections. Table2 GPT-5.4 average answer-change rate is48.43% versus27.24% for factored decomposition and26.82% forCoT, while predictable-change is70.52% versus57.60%/54.27%. Table1 its average unedited accuracy is72.18%, belowCoT74.36%; sensitivity is not itself correctness. Reusing stored DAGs in NoTrim controls helps separate isolation from decomposition: onGPT-5.4Mini, aggregate answer-change drops from58.72 to37.07 when original context is reintroduced (a separate stored-DAG analysis, not the main table value). AppendixH.8 finds only roughly73–82% of sampled automatic step edits valid across raters, despite higher expected-label validity. The50-itemMedQA/GPT-5.4Mini overhead check reports237 generation calls and3.43minutes forCausalCoT versus50calls/1.31minutes forCoT, without establishing deployment-wide latency. Original receiptOctober22T17:52:56UTC retained; originalFridayOctober23 cs.LG batch plus official schedule supports inferred paper announcementOctober23T00:00UTC. This was an abstract/full-text-access reserve first encounteredOctober23 and not selected then; its full method/result review is completed now as a deliberate missingOctober24-window catch-up. The first-seen timestamp is preserved; no indexing delay is claimed. No earlier matching author release was verified in bounded exact-title searches; similarly named older Causal-CoT papers are different methods. Author code is described as a future release, with no actual author implementation URL verified.
+
+**Limitations:** Causal means procedural input routing, not structural-causal identification, mechanistic faithfulness, accurate real-world reasoning or guaranteed safe decisions. Parametric knowledge, information encoded by the planner and bad/missing dependencies remain; roots see the original input and fallback changes the graph. Empirical faithfulness relies on model-generated perturbations and judges with imperfect edit validity, and the displayed standard errors mostly summarize three generation resamples rather than dataset or training-seed uncertainty. Stronger compliance with a wrong intermediate premise can reduce accuracy rather than improve reasoning. Main evidence is multiple-choice QA; open-ended use is discussed but not experimentally established. Simulated GPT corrections are not a human intervention trial. Runtime figures come from50MedQA items with provider-dependent API concurrency, not matched hardware throughput; the method costs more thanCoT in that check. No verified author code release or independent reproduction.
+
 ## [2026-10-22](../../../reports/2026/10/2026-10-22.md) — PARTIAL SEARCH
 
 ### [Monitorability Is Trainable: Post-Training for Chain-of-Thought Monitorability](<https://arxiv.org/abs/2610.29734>)

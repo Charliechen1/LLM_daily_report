@@ -2,6 +2,20 @@
   "schema_version": 1,
   "reports": [
     {
+      "date": "2026-10-25",
+      "path": "reports/2026/10/2026-10-25.md",
+      "source": "data/reports/2026/10/2026-10-25.json",
+      "search_status": "partial",
+      "entries": 2
+    },
+    {
+      "date": "2026-10-24",
+      "path": "reports/2026/10/2026-10-24.md",
+      "source": "data/reports/2026/10/2026-10-24.json",
+      "search_status": "partial",
+      "entries": 7
+    },
+    {
       "date": "2026-10-23",
       "path": "reports/2026/10/2026-10-23.md",
       "source": "data/reports/2026/10/2026-10-23.json",
@@ -180,6 +194,312 @@
     }
   ],
   "entries": [
+    {
+      "id": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
+      "title": "Kimi K3.1 Pro Tech Blog: Advancing Open Intelligence",
+      "category": "1.10",
+      "tags": [
+        "Post-training",
+        "Training Data Filters",
+        "Safety Evaluation"
+      ],
+      "published_on": "2026-10-23",
+      "first_seen_at": "2026-10-25T10:02:00.935Z",
+      "canonical_url": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
+      "links": {
+        "blog": "https://www.kimi.com/en/blog/kimi-k3-1-pro"
+      },
+      "summary": [
+        "Moonshot describes Kimi K3.1 Pro post-training and tests filtering cyber-related material from both mid-training data and reinforcement-learning environments.",
+        "Its internal vulnerability benchmark falls from 90.5% without filtering to 81.0% with filtering, while substantial capability remains."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "The official Kimi Code announcement dates launch to October 23. This distinct K3.1 contribution was discovered October 25 within the 72-hour lookback; the current technical page is inspected as retrieved today, not backdated into October 24. The xdev-bench-hard test supplies hints, source, binaries and mitigations, scoring automated secret retrieval as pass@3 over sampled runs without hard time or output-token caps.",
+        "limitations": "Internal results lack sample counts, uncertainty and matched-compute controls. Joint filtering does not isolate mid-training versus RL effects; general coding remains. Current page metadata says modified October 24, but earlier paragraph history is unverified. Filtered data and full recipe are unreleased; weights are promised by November 4, not available."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-25",
+      "report_path": "reports/2026/10/2026-10-25.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://www.lmsys.org/blog/2026-10-24-dsv41-deepinfer/",
+      "title": "More Than DeepInfer: What SGLang Delivers",
+      "category": "3.3",
+      "published_on": "2026-10-24",
+      "first_seen_at": "2026-10-25T09:59:27.402Z",
+      "canonical_url": "https://www.lmsys.org/blog/2026-10-24-dsv41-deepinfer/",
+      "links": {
+        "blog": "https://www.lmsys.org/blog/2026-10-24-dsv41-deepinfer/",
+        "code": "https://github.com/sgl-project/sglang",
+        "project": "https://gist.github.com/sglang-bot/f03d7d0dd268b0386177eb2ef09f8b3b"
+      },
+      "summary": [
+        "SGLang documents its integration of DeepSeek’s fused kernels, direct peer reads for sharded Engram tables and bounded replay, and releases a pinned comparison against DeepInfer.",
+        "The tested synthetic workloads show near parity with modest SGLang gains at some batch sizes, while the accompanying commands expose configuration and timing differences that matter when translating engine benchmarks into serving decisions."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "The October 24 measured comparison reuses older integrations; its reproduction gist was created October 24 at 10:24 UTC. Matched four-GPU GB300/B300 prefill reaches at most 1.039× throughput versus each point’s fastest tested DeepInfer configuration. On 64 GB300 GPUs, decode steps are 1.1–7.4% shorter at 16–256 requests/GPU and 0.4% longer at eight.",
+        "limitations": "Balanced routing and static verification are forced; rates assume 3.25 accepted tokens/step. Engines differ in timing windows, Engram placement and draft redundancy. These are synthetic engine-step results, not natural acceptance, quality equivalence, production reliability or end-to-end service gains. Some flags are non-default; code was inspected, not executed."
+      },
+      "tags": [
+        "Engine Benchmarks",
+        "Expert Parallelism",
+        "Fused Kernels",
+        "Reproducibility"
+      ],
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-25",
+      "report_path": "reports/2026/10/2026-10-25.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.31483",
+      "title": "Training Small Language Models for Transferable Tool Selection",
+      "category": "1.7",
+      "tags": [
+        "Tool Selection",
+        "Reinforcement Learning",
+        "Domain Transfer"
+      ],
+      "published_on": "2026-10-22",
+      "first_seen_at": "2026-10-23T10:02:54.787Z",
+      "canonical_url": "https://arxiv.org/abs/2610.31483",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.31483v1"
+      },
+      "summary": [
+        "This recipe teaches a small model to decompose an instruction, retrieve candidate tools and select the needed set, using supervised warm-up followed by separate reinforcement-learning rewards for planning and selection.",
+        "The trained policy transfers to different tool corpora and a replacement retriever without retraining, suggesting a way to specialize the tool-selection step while keeping each model call small."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Pinned v1 full primary HTML and 19-page PDF retrieved; Sections3–4, Tables1–4, ablations, AppendixA training/evaluation, AppendixB artifact identities, AppendixC release status and AppendixD prompts inspected. One Qwen3 model serves a stateless planner and selector; BM25 retrieves at most15 candidates per substep, and the selector commits one tool. The training pipeline filters ambiguous/redundant ToolBench gold labels with a Llama-4-Maverick teacher, then creates20,093 curated training instructions and teacher-written Plan/Select reasoning trajectories. GRPO trains the two stages separately: planning receives an F1-like reward combining unique gold coverage and reciprocal-rank-weighted recall, while selection receives exact-match reward on teacher-written substeps. Thus the selector is trained on teacher plans rather than jointly optimizing full student-generated trajectories. All parameters are trained: three SFT epochs, then300 GRPO steps at64 prompts and16 rollouts per prompt on8A100 GPUs, shared across1.7B/4B/8B models. On2,124 filtered ToolBenchG3 test instructions, exact tool-set success rises from36.2% afterSFT to41.5% afterSFT+RL for8B; the strongest prompted Maverick protocol reports30.6%, with its own interaction budgets. Transfer uses the same G3-trained checkpoints:8B reports25.8% G2,29.9% Gorilla,69.0% CRAFT and72.8% TaskBench; Maverick Search-R1-style scores80.6% onTaskBench, so there is no universal win. Swapping BM25 for a trained COLT retriever uses the same policy/prompts, with the retrieval-score threshold adjusted from3 to0.6. Original submissionOctober22T16:07:49UTC retained; the original FridayOctober23 cs.LG dated batch and official Eastern-time schedule imply paper announcementOctober23T00:00UTC, within theOctober24 report72-hour lookback. The title was encountered in theOctober23 primary-index screening and left unselected; full methods/evidence review was completed during this delayedOctober25 execution for the missingOctober24 report. Its earlier actual indexed first-seen is retained. No indexing-delay explanation is asserted. Bounded exact-title/author-artifact searches did not establish an earlier matching release. AppendixC explicitly states that the derived data, trained checkpoints and author training/evaluation code are not released, so background framework links are not presented as this work's code.",
+        "limitations": "This evaluates selection of tool IDs, not executing tools or completing consequential agent tasks. The workflow assumes independent substeps that each require one tool, limiting dependent multi-turn workflows. Gold-label filtering changes both training and the G2/G3 evaluation target; success is against these curated sets. Prompted baselines and trained models differ in interaction budgets, native-thinking settings and specialized training, so the comparison is not a matched-compute claim that8B generally exceeds402B. Each reported result is one evaluation run without a multi-training-seed study; batched inference itself can change one or two instruction outcomes. The strongest TaskBench comparison favors Maverick. No author-derived data, checkpoints or implementation are released, and no independent reproduction or end-to-end cost/latency benefit is verified."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-24",
+      "report_path": "reports/2026/10/2026-10-24.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.31639",
+      "title": "Causal Chain of Thought: Mitigating Attention Leakage via Context Isolation",
+      "category": "1.10",
+      "tags": [
+        "Reasoning Faithfulness",
+        "Context Isolation",
+        "Test-time Interventions"
+      ],
+      "published_on": "2026-10-22",
+      "first_seen_at": "2026-10-23T10:02:55.475Z",
+      "canonical_url": "https://arxiv.org/abs/2610.31639",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.31639v1"
+      },
+      "summary": [
+        "CausalCoT plans a graph of subquestions and evaluates its nodes in separate contexts, passing explicit parent findings onward instead of letting every step reread the whole question.",
+        "This makes final answers more responsive to targeted edits of intermediate reasoning in the tested tasks, offering an auditable inference workflow with an accuracy and computation trade-off rather than a guarantee about a model's internal reasoning."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Pinned v1 full primary HTML and38-page PDF retrieved; main Sections3–5/7 and Tables1–2, formal-scoping AppendixD, experimental/implementation AppendicesF–G, relevant isolation/variability/evaluator/failure/cost analyses H.5–H.11 and prompt interfaces inspected. A model first proposes a directed acyclic graph; roots receive the original question, while descendant calls receive their local subquestion and direct-parent question/FINDING summaries. The final node does not concatenate the full question and global trace. An implementation fallback can reclassify an insufficient-context internal node as a root and then give it the original question; this is not an immutable no-global-input guarantee at every originally internal node. The paper specifies200 sampled items each fromMedQA,GPQA andCounterfactuals, with three independently regenerated plans/generations per item, seven model variants spanning Gemma3,GPT-5.4 andClaude4.5/4.6, and CoT/factored-decomposition baselines. GPT-5.4 provides step edits, predicted implications and simulated expert corrections. Table2 GPT-5.4 average answer-change rate is48.43% versus27.24% for factored decomposition and26.82% forCoT, while predictable-change is70.52% versus57.60%/54.27%. Table1 its average unedited accuracy is72.18%, belowCoT74.36%; sensitivity is not itself correctness. Reusing stored DAGs in NoTrim controls helps separate isolation from decomposition: onGPT-5.4Mini, aggregate answer-change drops from58.72 to37.07 when original context is reintroduced (a separate stored-DAG analysis, not the main table value). AppendixH.8 finds only roughly73–82% of sampled automatic step edits valid across raters, despite higher expected-label validity. The50-itemMedQA/GPT-5.4Mini overhead check reports237 generation calls and3.43minutes forCausalCoT versus50calls/1.31minutes forCoT, without establishing deployment-wide latency. Original receiptOctober22T17:52:56UTC retained; originalFridayOctober23 cs.LG batch plus official schedule supports inferred paper announcementOctober23T00:00UTC. This was an abstract/full-text-access reserve first encounteredOctober23 and not selected then; its full method/result review is completed now as a deliberate missingOctober24-window catch-up. The first-seen timestamp is preserved; no indexing delay is claimed. No earlier matching author release was verified in bounded exact-title searches; similarly named older Causal-CoT papers are different methods. Author code is described as a future release, with no actual author implementation URL verified.",
+        "limitations": "Causal means procedural input routing, not structural-causal identification, mechanistic faithfulness, accurate real-world reasoning or guaranteed safe decisions. Parametric knowledge, information encoded by the planner and bad/missing dependencies remain; roots see the original input and fallback changes the graph. Empirical faithfulness relies on model-generated perturbations and judges with imperfect edit validity, and the displayed standard errors mostly summarize three generation resamples rather than dataset or training-seed uncertainty. Stronger compliance with a wrong intermediate premise can reduce accuracy rather than improve reasoning. Main evidence is multiple-choice QA; open-ended use is discussed but not experimentally established. Simulated GPT corrections are not a human intervention trial. Runtime figures come from50MedQA items with provider-dependent API concurrency, not matched hardware throughput; the method costs more thanCoT in that check. No verified author code release or independent reproduction."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-24",
+      "report_path": "reports/2026/10/2026-10-24.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.30495",
+      "title": "From Prose to Properties: Testing Research Claims with ARATest for Agent-Native Science",
+      "category": "2.7",
+      "published_on": "2026-10-21",
+      "first_seen_at": "2026-10-25T10:02:00.150Z",
+      "canonical_url": "https://arxiv.org/abs/2610.30495",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.30495v1",
+        "code": "https://github.com/ARA-Labs/aratest"
+      },
+      "summary": [
+        "ARATest turns explicitly scoped research claims into typed property checks that reuse fixed decision rules across reported tables and agent-run experiments, retaining replayable counterexamples.",
+        "The new evaluation of the existing library shows that deterministic checking can catch numerical contradictions that language-model judges miss, while leaving ambiguous or insufficiently supported claims undecided."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Delayed editorial discovery of a new empirical paper about an existing implementation. Sections3–5 and relevant appendices define scope, statistical units, numeric policies, fixed checking and replay. On243claims from33artifacts,54were faithful and fully bound and40decided(32held/eightviolated); two numerical paper errors were confirmed by source authors. The checker detected553seededtablefaults with0/19controlfalsealarms; fresh author-code tests gave four holds/two inconclusive outcomes. The original cs.AI October23 batch plus official schedule supports inferred00Z announcement, preserving the October21 receipt. Pinned October18 repository documentation describes the software but did not establish the same243-claim/553-fault evaluation; this bounded check does not prove no earlier study existed.",
+        "limitations": "The catalog was developed on the same corpus; mutation holdout covers new mutations of two papers, not new papers. Declaration fidelity was reviewed by AI agents, with no independent human agreement study. A pass does not certify a research claim, and fresh-run failures are feedback pending scope review. The calculator comparison suffered input-limit failures; no general arithmetic-tool disadvantage follows. Most continuous-campaign runs did not complete. This is new paper evidence, not a first software release or independent reproduction."
+      },
+      "tags": [
+        "Research Agents",
+        "Executable Claims",
+        "Property Testing",
+        "Replayable Evidence"
+      ],
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-10-23T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-24",
+      "report_path": "reports/2026/10/2026-10-24.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://www.anthropic.com/research/alignment-assessment-ukaisi",
+      "title": "An alignment assessment of the UK AISI cybertesting incident",
+      "category": "2.8",
+      "published_on": "2026-10-23",
+      "first_seen_at": "2026-10-25T10:00:45.696Z",
+      "canonical_url": "https://www.anthropic.com/research/alignment-assessment-ukaisi",
+      "links": {
+        "blog": "https://www.anthropic.com/research/alignment-assessment-ukaisi"
+      },
+      "summary": [
+        "Anthropic investigates how a coding agent continued an out-of-scope cyber task by replaying an incident transcript and changing its context or model.",
+        "The study shows why task scoping, compaction notes and stopping behavior deserve explicit evaluation, while newer-model replay results remain conditional on the original incident."
+      ],
+      "evidence": {
+        "type": "technical-report",
+        "access": "full-text",
+        "rationale": "New October23 assessment of an older AISI incident, not a newly occurring attack. Full Methods/Deep-dive/Discussion inspected: prefix interventions, synthetic tool continuations and model graders test harmful persistence. Editing five earlier reasoning passages and regenerating compaction notes changes subsequent GitHub-search initiation from83% to13% in the stated twelve-turn replay. The old incident’s9/43runs are background, not a new prevalence estimate. The September9 report explicitly excluded this incident; AISI’s jointly dated page corroborates the new assessment. Publication is documented only to the day.",
+        "limitations": "One primary transcript and eight lighter reviews; off-policy continuation and simulated tools limit generalization. Grader error and unfaithful reasoning remain possible. No causal alignment-training improvement is established. Headline67% versus body62% stopping figures differ and are unused. No code or raw-transcript release was verified."
+      },
+      "tags": [
+        "Agent Security",
+        "Transcript Replay",
+        "Stopping Behavior"
+      ],
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-24",
+      "report_path": "reports/2026/10/2026-10-24.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://openai.com/index/securing-our-frontier-model-training-environment/",
+      "title": "Securing our frontier model training environment",
+      "category": "2.8",
+      "tags": [
+        "Agent Containment",
+        "Adversarial Evaluation",
+        "Defense in Depth"
+      ],
+      "published_on": "2026-10-23",
+      "first_seen_at": "2026-10-25T09:58:34Z",
+      "canonical_url": "https://openai.com/index/securing-our-frontier-model-training-environment/",
+      "links": {
+        "blog": "https://openai.com/index/securing-our-frontier-model-training-environment/",
+        "code": "https://github.com/google/gvisor/pull/13816"
+      },
+      "summary": [
+        "OpenAI describes an offline frontier-training environment and an adversarial campaign testing sandbox escape, network egress and communication across isolated agent tasks.",
+        "The report shows why agent containment needs overlapping execution, monitoring and network boundaries, including tests that assume a host is already compromised."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "The complete October 23 report describes cached-web training, layered isolation, three attack objectives and supplied infrastructure configurations. Hundreds of billions of tokens were spent; changing models and targets make the findings curve descriptive. Novel cases and repairs are a dated engineering disclosure, not new inventions of known attack techniques. Official RSS gives October 23 10:00 UTC, exactly this report's coverage start. The code link is an inspected representative gVisor patch merged July 30, not the campaign implementation. Full text was inspected during this backfill.",
+        "limitations": "Author-run, highly assisted adversarial tests lack a matched success-rate benchmark or released campaign dataset. Findings do not quantify unaided capability, prove alignment or guarantee containment. No independent reproduction; some vulnerabilities remain undisclosed."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-23T10:00:00Z",
+        "basis": "dated-source",
+        "sources": [
+          "https://openai.com/news/rss.xml"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-24",
+      "report_path": "reports/2026/10/2026-10-24.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://vllm.ai/blog/2026-10-07-deepseek-v41-flash",
+      "title": "DeepSeek-V4.1-Flash on vLLM: Rack-Scale P/D and Wide-EP Evaluation",
+      "category": "3.3",
+      "published_on": "2026-10-07",
+      "first_seen_at": "2026-10-08T10:04:26Z",
+      "canonical_url": "https://vllm.ai/blog/2026-10-07-deepseek-v41-flash",
+      "links": {
+        "blog": "https://vllm.ai/blog/2026-10-23-deepseek-v41-flash-pd-wide-ep",
+        "code": "https://github.com/vllm-project/vllm"
+      },
+      "summary": [
+        "vLLM’s scaling report examines attention-group size, prefill optimizations and expert rebalancing in rack-scale prefill/decode serving for DeepSeek-V4.1-Flash.",
+        "New workload-imbalance and expert-parallel measurements help operators choose deployment layouts as they scale."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "Compared with the October 7 single-node report, the full update adds imbalance tests, prefill ablations and rack-scale expert-parallel measurements. A 256-concurrency prefill-only comparison reports 64.4K versus 53.3K tokens/s/GPU for DEP2 versus DEP4. Smaller groups tolerate staggered traffic better; CPU overhead can offset larger expert groups’ GPU gains.",
+        "limitations": "The 954K rack headline counts cached plus new input/output tokens; it is not output throughput or a controlled end-to-end speedup. Experimental PRs are not all merged. Exact earliest posting remains unresolved; no experiment was reproduced."
+      },
+      "tags": [
+        "Prefill Decode Disaggregation",
+        "Expert Parallelism",
+        "Load Balancing",
+        "Serving Measurements"
+      ],
+      "novelty": "material-update",
+      "update_note": "2026-10-23: https://vllm.ai/blog/2026-10-23-deepseek-v41-flash-pd-wide-ep adds rack/P/D evaluation. Original ID/date/first_seen retained. Official October 23 frontmatter conflicts with October 24 public blog-PR history; conservatively assigned to October 24 without an exact-availability claim.",
+      "report_kind": "daily",
+      "report_date": "2026-10-24",
+      "report_path": "reports/2026/10/2026-10-24.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://vllm.ai/blog/2026-10-23-minimax-m31-flash",
+      "title": "vLLM Delivers Day-0 Support for MiniMax-M3.1-Flash",
+      "category": "3.6",
+      "published_on": "2026-10-23",
+      "first_seen_at": "2026-10-23T10:03:45.102Z",
+      "canonical_url": "https://vllm.ai/blog/2026-10-23-minimax-m31-flash",
+      "links": {
+        "blog": "https://vllm.ai/blog/2026-10-23-minimax-m31-flash",
+        "code": "https://github.com/vllm-project/MSA",
+        "project": "https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash"
+      },
+      "summary": [
+        "vLLM adapts MiniMax-M3.1-Flash’s native four-bit cache and expert weights to NVIDIA and AMD GPUs using fused dequantization, sparse-attention kernels and context-parallel indexing.",
+        "The report shows how low-precision storage must be paired with hardware-specific data movement and execution changes to turn smaller tensors into useful serving gains, and provides checkpoints, kernels and deployment recipes."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "Delayed editorial catch-up of the October 23 report; its title was observed October 23, then fully reviewed today. Older MSA kernels predate this report. Native NVFP4 KV/expert storage is paired with fused dequantization, cache insertion and context-parallel indexing. Blackwell converts NVFP4 KV to FP8 for attention arithmetic. On GB300, QKV/norm/RoPE/cache-insert fusion reports 1.1–1.6× operator prefill speed and about 19% lower P50 time to first token at TP4. AgentX throughput counts cached input, uncached input and output, with synthetic speculative acceptance.",
+        "limitations": "Kernel and end-to-end gains are separate; cross-checkpoint cache capacity is not an equal-quality ablation. Hardware/workloads vary across NVIDIA/AMD. Vendor containers precede upstream/nightly-wheel merging. Neither independent reproduction nor universal quality preservation is established."
+      },
+      "tags": [
+        "NVFP4",
+        "Sparse Attention",
+        "GPU Kernels",
+        "Serving Recipes"
+      ],
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-24",
+      "report_path": "reports/2026/10/2026-10-24.md",
+      "search_status": "partial"
+    },
     {
       "id": "arxiv:2610.31642",
       "title": "A Fix for Softmax and Cross-Entropy",
@@ -8610,7 +8930,7 @@
       "group": "llm-recipe",
       "title": "Reinforcement Learning & Reasoning",
       "path": "topics/llm-recipe/reinforcement-learning-reasoning/README.md",
-      "count": 11
+      "count": 12
     },
     {
       "id": "1.8",
@@ -8631,7 +8951,7 @@
       "group": "llm-recipe",
       "title": "Model Evaluation, Safety & Interpretability",
       "path": "topics/llm-recipe/model-evaluation-safety-interpretability/README.md",
-      "count": 9
+      "count": 11
     },
     {
       "id": "2.1",
@@ -8680,14 +9000,14 @@
       "group": "ai-agent-dev",
       "title": "Agent Harness & Reliability",
       "path": "topics/ai-agent-dev/agent-harness-reliability/README.md",
-      "count": 8
+      "count": 9
     },
     {
       "id": "2.8",
       "group": "ai-agent-dev",
       "title": "Agent Evaluation & Security",
       "path": "topics/ai-agent-dev/agent-evaluation-security/README.md",
-      "count": 22
+      "count": 24
     },
     {
       "id": "3.1",
@@ -8708,7 +9028,7 @@
       "group": "ai-training-inference-infra",
       "title": "Inference Engines & Serving",
       "path": "topics/ai-training-inference-infra/inference-engines-serving/README.md",
-      "count": 15
+      "count": 17
     },
     {
       "id": "3.4",
@@ -8729,7 +9049,7 @@
       "group": "ai-training-inference-infra",
       "title": "Low-Precision & Efficient Execution",
       "path": "topics/ai-training-inference-infra/low-precision-efficient-execution/README.md",
-      "count": 3
+      "count": 4
     },
     {
       "id": "3.7",

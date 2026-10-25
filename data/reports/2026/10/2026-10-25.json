@@ -1,0 +1,825 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-25",
+  "timezone": "America/Los_Angeles",
+  "generated_at": "2026-10-25T10:20:35.248+00:00",
+  "coverage": {
+    "start": "2026-10-24T03:00:00-07:00",
+    "end": "2026-10-25T03:00:00-07:00"
+  },
+  "search": {
+    "status": "partial",
+    "notes": "Two supported contributions selected after the same three-area, 26-topic screen and deduplication against the baseline, all prior records and the separate October 24 report. Coverage is October 24 03:00 to October 25 03:00 America/Los_Angeles; the total 72-hour discovery interval starts October 22 03:00. Primary arXiv listings still end at Friday October 23, and Hugging Face October 24/25 URLs redirect to that earlier page; redirects do not establish new weekend releases. Kimi K3.1 Pro is a delayed editorial discovery retaining the official October 23 launch date: the currently inspected article is modified October 24, but its exact earlier paragraph history and launch time are not verified. The modification field is not a new-revision claim, and announced November 4 weights are not an available release. SGLang supplies a new October 24 pinned measured comparison and a reproduction gist public by October 24 10:24 UTC; older kernels and service features are background. Its synthetic, forced-balanced engine-step results do not establish production latency, quality equivalence or a general engine lead. No extra agent item was selected to fill space. Search remains partial because OpenReview API returned 403, the low-bit antecedent remained inaccessible and venue/ACL/organizational coverage is bounded, rather than because useful primary retrieval failed. All selected sources were read in full; no code was executed or result reproduced. This report does not certify exhaustive absence of other research.",
+    "sources_checked": [
+      {
+        "name": "cl-recent",
+        "url": "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "lg.html",
+        "url": "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "schedule.html",
+        "url": "https://info.arxiv.org/help/availability.html",
+        "status": "ok"
+      },
+      {
+        "name": "thinking-machines",
+        "url": "https://thinkingmachines.ai/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "hf24.html",
+        "url": "https://huggingface.co/papers/date/2026-10-24",
+        "status": "ok"
+      },
+      {
+        "name": "hf25.html",
+        "url": "https://huggingface.co/papers/date/2026-10-25",
+        "status": "ok"
+      },
+      {
+        "name": "lowbit-prior",
+        "url": "https://rstation.ai/problems/general_pretraining/papers/6/v4",
+        "status": "unavailable"
+      },
+      {
+        "name": "2610.31639-abs",
+        "url": "https://arxiv.org/abs/2610.31639",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31639-full",
+        "url": "https://arxiv.org/html/2610.31639v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31401-abs",
+        "url": "https://arxiv.org/abs/2610.31401",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31401-full",
+        "url": "https://arxiv.org/html/2610.31401v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31624-abs",
+        "url": "https://arxiv.org/abs/2610.31624",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31624-full",
+        "url": "https://arxiv.org/html/2610.31624v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.30949-abs",
+        "url": "https://arxiv.org/abs/2610.30949",
+        "status": "ok"
+      },
+      {
+        "name": "2610.30949-full",
+        "url": "https://arxiv.org/html/2610.30949v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31483-abs",
+        "url": "https://arxiv.org/abs/2610.31483",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31483-full",
+        "url": "https://arxiv.org/html/2610.31483v1",
+        "status": "ok"
+      },
+      {
+        "name": "herd-code",
+        "url": "https://github.com/a1exsun/HERD",
+        "status": "ok"
+      },
+      {
+        "name": "herd-project",
+        "url": "https://a1exsun.github.io/HERD",
+        "status": "ok"
+      },
+      {
+        "name": "herd-meta",
+        "url": "https://api.github.com/repos/a1exsun/HERD",
+        "status": "ok"
+      },
+      {
+        "name": "herd-commits",
+        "url": "https://api.github.com/repos/a1exsun/HERD/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "iquest-card",
+        "url": "https://huggingface.co/IQuestLab/IQuest-Q1/raw/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "iquest-meta",
+        "url": "https://huggingface.co/api/models/IQuestLab/IQuest-Q1",
+        "status": "ok"
+      },
+      {
+        "name": "iquest-commits",
+        "url": "https://huggingface.co/api/models/IQuestLab/IQuest-Q1/commits/main",
+        "status": "ok"
+      },
+      {
+        "name": "causal-pdf",
+        "url": "https://arxiv.org/pdf/2610.31639v1",
+        "status": "ok"
+      },
+      {
+        "name": "herd-pdf",
+        "url": "https://arxiv.org/pdf/2610.31401v1",
+        "status": "ok"
+      },
+      {
+        "name": "toolselect-pdf",
+        "url": "https://arxiv.org/pdf/2610.31483v1",
+        "status": "ok"
+      },
+      {
+        "name": "herd-initial-tree",
+        "url": "https://api.github.com/repos/a1exsun/HERD/git/trees/02f4c4545f02a59fb5fac031f9f7bdc2ab03510d?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "herd-old-readme",
+        "url": "https://raw.githubusercontent.com/a1exsun/HERD/7ca820494368d5ef1154ba25ba0601afac028233/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "herd-old-tree",
+        "url": "https://api.github.com/repos/a1exsun/HERD/git/trees/c2c12e8b6bf195644af8da7e85b2b8919e701cb3?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "herd-branches",
+        "url": "https://api.github.com/repos/a1exsun/HERD/branches?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "iquest-old-card",
+        "url": "https://huggingface.co/IQuestLab/IQuest-Q1/raw/5c21b0630586ef77d38cff1094b8cf37a417fcd8/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "kimi31-blog",
+        "url": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
+        "status": "ok"
+      },
+      {
+        "name": "kimi31-api",
+        "url": "https://platform.kimi.ai/docs/guide/kimi-k3-1-pro-quickstart",
+        "status": "ok"
+      },
+      {
+        "name": "kimi-blog-index",
+        "url": "https://www.kimi.com/blog",
+        "status": "ok"
+      },
+      {
+        "name": "herd-old-pdf",
+        "url": "https://raw.githubusercontent.com/a1exsun/HERD/7ca820494368d5ef1154ba25ba0601afac028233/docs/paper/herd.pdf",
+        "status": "unavailable"
+      },
+      {
+        "name": "kimi31-dated-release",
+        "url": "https://www.kimi.com/code/docs/en/kimi-code/whats-new.html",
+        "status": "ok"
+      },
+      {
+        "name": "aratest-repo.json",
+        "url": "https://api.github.com/repos/ARA-Labs/aratest",
+        "status": "ok"
+      },
+      {
+        "name": "aratest-history.json",
+        "url": "https://api.github.com/repos/ARA-Labs/aratest/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "aratest-readme.md",
+        "url": "https://raw.githubusercontent.com/ARA-Labs/aratest/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "aratest-tree.json",
+        "url": "https://api.github.com/repos/ARA-Labs/aratest/git/trees/main?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "aratest-project.html",
+        "url": "https://github.com/ARA-Labs/aratest",
+        "status": "ok"
+      },
+      {
+        "name": "aisi-report.pdf",
+        "url": "https://cdn.prod.website-files.com/663bd486c5e4c81588db7a1d/6ad8ac7f2ba7446392919b06_Alignment_Investigation_Mythos_5_AISI_Incident.pdf",
+        "status": "ok"
+      },
+      {
+        "name": "aratest-CHANGELOG.md",
+        "url": "https://raw.githubusercontent.com/ARA-Labs/aratest/047647c68976bfbdab3b3edd706f765d771c198f/CHANGELOG.md",
+        "status": "ok"
+      },
+      {
+        "name": "aratest-docs-concepts.md",
+        "url": "https://raw.githubusercontent.com/ARA-Labs/aratest/047647c68976bfbdab3b3edd706f765d771c198f/docs/concepts.md",
+        "status": "ok"
+      },
+      {
+        "name": "aratest-docs-guide-relations.md",
+        "url": "https://raw.githubusercontent.com/ARA-Labs/aratest/047647c68976bfbdab3b3edd706f765d771c198f/docs/guide/relations.md",
+        "status": "ok"
+      },
+      {
+        "name": "aratest-docs-dissclaimer-continuous.md",
+        "url": "https://raw.githubusercontent.com/ARA-Labs/aratest/047647c68976bfbdab3b3edd706f765d771c198f/docs/dissclaimer/continuous.md",
+        "status": "ok"
+      },
+      {
+        "name": "aratest-docs-changelog.md",
+        "url": "https://raw.githubusercontent.com/ARA-Labs/aratest/047647c68976bfbdab3b3edd706f765d771c198f/docs/changelog.md",
+        "status": "ok"
+      },
+      {
+        "name": "aratest-release.json",
+        "url": "https://api.github.com/repos/ARA-Labs/aratest/releases",
+        "status": "ok"
+      },
+      {
+        "name": "ai-new.html",
+        "url": "https://arxiv.org/list/cs.AI/new",
+        "status": "ok"
+      },
+      {
+        "name": "cl-new.html",
+        "url": "https://arxiv.org/list/cs.CL/new",
+        "status": "ok"
+      },
+      {
+        "name": "ai-recent.html",
+        "url": "https://arxiv.org/list/cs.AI/recent?show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "cl-recent.html",
+        "url": "https://arxiv.org/list/cs.CL/recent?show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "langchain.html",
+        "url": "https://www.langchain.com/blog",
+        "status": "ok"
+      },
+      {
+        "name": "parallel.html",
+        "url": "https://parallel.ai/blog",
+        "status": "ok"
+      },
+      {
+        "name": "Primary full engineering index recovered with web reader after direct TLS failure.",
+        "url": "https://www.anthropic.com/engineering",
+        "status": "ok"
+      },
+      {
+        "name": "2610.30495-abs.html",
+        "url": "https://arxiv.org/abs/2610.30495",
+        "status": "ok"
+      },
+      {
+        "name": "2610.30495.html",
+        "url": "https://arxiv.org/html/2610.30495v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.30495.pdf",
+        "url": "https://arxiv.org/pdf/2610.30495v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31276-abs.html",
+        "url": "https://arxiv.org/abs/2610.31276",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31276.html",
+        "url": "https://arxiv.org/html/2610.31276v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31276.pdf",
+        "url": "https://arxiv.org/pdf/2610.31276v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.30485-abs.html",
+        "url": "https://arxiv.org/abs/2610.30485",
+        "status": "ok"
+      },
+      {
+        "name": "2610.30485.html",
+        "url": "https://arxiv.org/html/2610.30485v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.30485.pdf",
+        "url": "https://arxiv.org/pdf/2610.30485v1",
+        "status": "ok"
+      },
+      {
+        "name": "langchain-retrieval.html",
+        "url": "https://www.langchain.com/blog/context-engineering-starts-with-retrieval",
+        "status": "ok"
+      },
+      {
+        "name": "aisi-alignment.html",
+        "url": "https://www.aisi.gov.uk/blog/investigating-alignment-failures-in-aisis-incident",
+        "status": "ok"
+      },
+      {
+        "name": "aisi-incident.html",
+        "url": "https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing",
+        "status": "ok"
+      },
+      {
+        "name": "Full primary blog, all Methods, primary-transcript analyses, newer-model/off-policy controls, other-transcript review and Discussion; web-reader recovery after direct TLS failure.",
+        "url": "https://www.anthropic.com/research/alignment-assessment-ukaisi",
+        "status": "ok"
+      },
+      {
+        "name": "Prior September9 introduction and UK-AISI references checked with primary web reader; explicitly says this incident is not covered.",
+        "url": "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
+        "status": "ok"
+      },
+      {
+        "name": "Primary research index read with web reader.",
+        "url": "https://www.anthropic.com/research",
+        "status": "ok"
+      },
+      {
+        "name": "dc-after-cutoff.html",
+        "url": "https://arxiv.org/list/cs.DC/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "ar.html",
+        "url": "https://arxiv.org/list/cs.AR/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "vllm-after-cutoff.html",
+        "url": "https://vllm.ai/blog",
+        "status": "ok"
+      },
+      {
+        "name": "lmsys.html",
+        "url": "https://www.lmsys.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "pytorch.html",
+        "url": "https://pytorch.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "nvidia.html",
+        "url": "https://developer.nvidia.com/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "deepseek.html",
+        "url": "https://vllm.ai/blog/2026-10-23-deepseek-v41-flash-pd-wide-ep",
+        "status": "ok"
+      },
+      {
+        "name": "glm.html",
+        "url": "https://vllm.ai/blog/2026-10-23-glm53-part2-pcp-dcp-hisparse",
+        "status": "ok"
+      },
+      {
+        "name": "minimax.html",
+        "url": "https://vllm.ai/blog/2026-10-23-minimax-m31-flash",
+        "status": "ok"
+      },
+      {
+        "name": "titan.html",
+        "url": "https://pytorch.org/blog/torchtitan-update-new-sota-models-performance-at-scale-titanrl/",
+        "status": "ok"
+      },
+      {
+        "name": "deepseek.md",
+        "url": "https://raw.githubusercontent.com/vllm-project/vllm-project.github.io/main/_posts/2026-10-23-deepseek-v41-flash-pd-wide-ep.md",
+        "status": "ok"
+      },
+      {
+        "name": "glm.md",
+        "url": "https://raw.githubusercontent.com/vllm-project/vllm-project.github.io/main/_posts/2026-10-23-glm53-part2-pcp-dcp-hisparse.md",
+        "status": "ok"
+      },
+      {
+        "name": "minimax.md",
+        "url": "https://raw.githubusercontent.com/vllm-project/vllm-project.github.io/main/_posts/2026-10-23-minimax-m31-flash.md",
+        "status": "ok"
+      },
+      {
+        "name": "pr62009.json",
+        "url": "https://api.github.com/repos/vllm-project/vllm/pulls/62009",
+        "status": "ok"
+      },
+      {
+        "name": "pr59894.json",
+        "url": "https://api.github.com/repos/vllm-project/vllm/pulls/59894",
+        "status": "ok"
+      },
+      {
+        "name": "pr62359.json",
+        "url": "https://api.github.com/repos/vllm-project/vllm/pulls/62359",
+        "status": "ok"
+      },
+      {
+        "name": "pr62240.json",
+        "url": "https://api.github.com/repos/vllm-project/vllm/pulls/62240",
+        "status": "ok"
+      },
+      {
+        "name": "glm-gist.json",
+        "url": "https://api.github.com/gists/b39792adeea1cc2b1505fb6b7a2a2654",
+        "status": "ok"
+      },
+      {
+        "name": "glm-gist.html",
+        "url": "https://gist.github.com/LucasWilkinson/b39792adeea1cc2b1505fb6b7a2a2654",
+        "status": "ok"
+      },
+      {
+        "name": "vllm-code.html",
+        "url": "https://github.com/vllm-project/vllm",
+        "status": "ok"
+      },
+      {
+        "name": "msa-code.html",
+        "url": "https://github.com/vllm-project/MSA",
+        "status": "ok"
+      },
+      {
+        "name": "msa-meta.json",
+        "url": "https://api.github.com/repos/vllm-project/MSA",
+        "status": "ok"
+      },
+      {
+        "name": "msa-commits.json",
+        "url": "https://api.github.com/repos/vllm-project/MSA/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "minimax-model.html",
+        "url": "https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash",
+        "status": "ok"
+      },
+      {
+        "name": "minimax-model.json",
+        "url": "https://huggingface.co/api/models/MiniMaxAI/MiniMax-M3.1-Flash",
+        "status": "ok"
+      },
+      {
+        "name": "deepseek-pr62009.html",
+        "url": "https://github.com/vllm-project/vllm/pull/62009",
+        "status": "ok"
+      },
+      {
+        "name": "deepseek-pr59894.html",
+        "url": "https://github.com/vllm-project/vllm/pull/59894",
+        "status": "ok"
+      },
+      {
+        "name": "deepseek-old.html",
+        "url": "https://vllm.ai/blog/2026-10-07-deepseek-v41-flash",
+        "status": "ok"
+      },
+      {
+        "name": "deepgemm-code.html",
+        "url": "https://github.com/vllm-project/DeepGEMM",
+        "status": "ok"
+      },
+      {
+        "name": "msa-branches.json",
+        "url": "https://api.github.com/repos/vllm-project/MSA/branches?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "minimax-commits.json",
+        "url": "https://huggingface.co/api/models/MiniMaxAI/MiniMax-M3.1-Flash/commits/main",
+        "status": "ok"
+      },
+      {
+        "name": "minimax-readme.md",
+        "url": "https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash/raw/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "glm-blog-history.json",
+        "url": "https://api.github.com/repos/vllm-project/vllm-project.github.io/commits?path=_posts/2026-10-23-glm53-part2-pcp-dcp-hisparse.md&per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "minimax-blog-history.json",
+        "url": "https://api.github.com/repos/vllm-project/vllm-project.github.io/commits?path=_posts/2026-10-23-minimax-m31-flash.md&per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "deepseek-blog-history.json",
+        "url": "https://api.github.com/repos/vllm-project/vllm-project.github.io/commits?path=_posts/2026-10-23-deepseek-v41-flash-pd-wide-ep.md&per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "tensorrt1.html",
+        "url": "https://developer.nvidia.com/blog/scaling-nvidia-tensorrt-performance-optimization-beyond-a-single-build-route-with-the-global-performance-tuner-part-1/",
+        "status": "ok"
+      },
+      {
+        "name": "tensorrt2.html",
+        "url": "https://developer.nvidia.com/blog/scaling-nvidia-tensorrt-performance-optimization-beyond-a-single-build-route-with-the-global-performance-tuner-part-2/",
+        "status": "ok"
+      },
+      {
+        "name": "blog-pr397.json",
+        "url": "https://api.github.com/repos/vllm-project/vllm-project.github.io/pulls/397",
+        "status": "ok"
+      },
+      {
+        "name": "blog-pr397.html",
+        "url": "https://github.com/vllm-project/vllm-project.github.io/pull/397",
+        "status": "ok"
+      },
+      {
+        "name": "blog-pr397-commits.json",
+        "url": "https://api.github.com/repos/vllm-project/vllm-project.github.io/pulls/397/commits",
+        "status": "ok"
+      },
+      {
+        "name": "blog-pr392.json",
+        "url": "https://api.github.com/repos/vllm-project/vllm-project.github.io/pulls/392",
+        "status": "ok"
+      },
+      {
+        "name": "blog-pr395.json",
+        "url": "https://api.github.com/repos/vllm-project/vllm-project.github.io/pulls/395",
+        "status": "ok"
+      },
+      {
+        "name": "msa-dev-readme.md",
+        "url": "https://raw.githubusercontent.com/vllm-project/MSA/dev/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "msa-dev-commits.json",
+        "url": "https://api.github.com/repos/vllm-project/MSA/commits?sha=dev&per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "glm-earlier.html",
+        "url": "https://vllm.ai/blog/2026-09-08-glm53-part1-hybrid-sparse-offloading",
+        "status": "ok"
+      },
+      {
+        "name": "glm-blog-pr392.html",
+        "url": "https://github.com/vllm-project/vllm-project.github.io/pull/392",
+        "status": "ok"
+      },
+      {
+        "name": "minimax-blog-pr395.html",
+        "url": "https://github.com/vllm-project/vllm-project.github.io/pull/395",
+        "status": "ok"
+      },
+      {
+        "name": "blog-pr392-commits.json",
+        "url": "https://api.github.com/repos/vllm-project/vllm-project.github.io/pulls/392/commits",
+        "status": "ok"
+      },
+      {
+        "name": "blog-pr392-files.json",
+        "url": "https://api.github.com/repos/vllm-project/vllm-project.github.io/pulls/392/files?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "deepseek-md-date.html",
+        "url": "https://github.com/vllm-project/vllm-project.github.io/blob/main/_posts/2026-10-23-deepseek-v41-flash-pd-wide-ep.md",
+        "status": "ok"
+      },
+      {
+        "name": "minimax-md-date.html",
+        "url": "https://github.com/vllm-project/vllm-project.github.io/blob/main/_posts/2026-10-23-minimax-m31-flash.md",
+        "status": "ok"
+      },
+      {
+        "name": "glm-md-date.html",
+        "url": "https://github.com/vllm-project/vllm-project.github.io/blob/main/_posts/2026-10-23-glm53-part2-pcp-dcp-hisparse.md",
+        "status": "ok"
+      },
+      {
+        "name": "glm-initial-commit.json",
+        "url": "https://api.github.com/repos/vllm-project/vllm-project.github.io/commits/faeeb4ca90df58b67a7a77f53734c13dbc91fdeb",
+        "status": "ok"
+      },
+      {
+        "name": "glm-redate-commit.json",
+        "url": "https://api.github.com/repos/vllm-project/vllm-project.github.io/commits/4cb878b2d20e488d9f0cfbf2a27e94e3f7647248",
+        "status": "ok"
+      },
+      {
+        "name": "sglang24.html",
+        "url": "https://www.lmsys.org/blog/2026-10-24-dsv41-deepinfer/",
+        "status": "ok"
+      },
+      {
+        "name": "lmsys-code.html",
+        "url": "https://github.com/sgl-project/sgl-project.github.io",
+        "status": "ok"
+      },
+      {
+        "name": "lmsys-tree.json",
+        "url": "https://api.github.com/repos/sgl-project/sgl-project.github.io/git/trees/main?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "sglang-gist.json",
+        "url": "https://api.github.com/gists/f03d7d0dd268b0386177eb2ef09f8b3b",
+        "status": "ok"
+      },
+      {
+        "name": "sglang-gist.html",
+        "url": "https://gist.github.com/sglang-bot/f03d7d0dd268b0386177eb2ef09f8b3b",
+        "status": "ok"
+      },
+      {
+        "name": "sglang-cookbook.html",
+        "url": "https://docs.sglang.ai/cookbook/autoregressive/DeepSeek/DeepSeek-V4_1",
+        "status": "ok"
+      },
+      {
+        "name": "sglang-code.html",
+        "url": "https://github.com/sgl-project/sglang",
+        "status": "ok"
+      },
+      {
+        "name": "sglang-prefill-commit.json",
+        "url": "https://api.github.com/repos/sgl-project/sglang/commits/7d996300b98e3f74a7e79adefbac4d95de0da508",
+        "status": "ok"
+      },
+      {
+        "name": "sglang-decode-commit.json",
+        "url": "https://api.github.com/repos/sgl-project/sglang/commits/3b95120f000cbd787a2832ca22dde4b4801f7260",
+        "status": "ok"
+      },
+      {
+        "name": "deepinfer-commit.json",
+        "url": "https://api.github.com/repos/deepseek-ai/DeepInfer/commits/774ce244b87cc0eb8d4b94ab9f5de2ab22049f01",
+        "status": "ok"
+      },
+      {
+        "name": "OpenAI research index",
+        "url": "https://openai.com/research/index/",
+        "status": "ok"
+      },
+      {
+        "name": "OpenAI frontier training containment report",
+        "url": "https://openai.com/index/securing-our-frontier-model-training-environment/",
+        "status": "ok"
+      },
+      {
+        "name": "OpenAI NASK partnership announcement",
+        "url": "https://openai.com/index/openai-nask-ai-safety-security-partnership/",
+        "status": "ok"
+      },
+      {
+        "name": "Ai2 research index",
+        "url": "https://allenai.org/research",
+        "status": "ok"
+      },
+      {
+        "name": "Ai2 blog index",
+        "url": "https://allenai.org/blog",
+        "status": "ok"
+      },
+      {
+        "name": "DeepMind blog index",
+        "url": "https://deepmind.google/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "Google Research blog index",
+        "url": "https://research.google/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "OpenReview ICLR2027 venue landing",
+        "url": "https://openreview.net/group?id=ICLR.cc/2027/Conference",
+        "status": "ok"
+      },
+      {
+        "name": "OpenReview ICLR2027 submission API",
+        "url": "https://api2.openreview.net/notes?content.venueid=ICLR.cc/2027/Conference/Submission&limit=20",
+        "status": "unavailable"
+      },
+      {
+        "name": "ACL Anthology index",
+        "url": "https://aclanthology.org/",
+        "status": "ok"
+      },
+      {
+        "name": "OpenAI official RSS: exact publication time",
+        "url": "https://openai.com/news/rss.xml",
+        "status": "ok"
+      },
+      {
+        "name": "Representative existing gVisor patch metadata",
+        "url": "https://api.github.com/repos/google/gvisor/pulls/13816",
+        "status": "ok"
+      },
+      {
+        "name": "LitPivot dated primary blog, full article",
+        "url": "https://allenai.org/blog/litpivot",
+        "status": "ok"
+      },
+      {
+        "name": "LitPivot original paper history: April3, revisedSeptember22",
+        "url": "https://arxiv.org/abs/2604.02600",
+        "status": "ok"
+      },
+      {
+        "name": "Gemini current primary model page, bounded research-delta screen",
+        "url": "https://deepmind.google/models/gemini/",
+        "status": "ok"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
+      "title": "Kimi K3.1 Pro Tech Blog: Advancing Open Intelligence",
+      "category": "1.10",
+      "tags": [
+        "Post-training",
+        "Training Data Filters",
+        "Safety Evaluation"
+      ],
+      "published_on": "2026-10-23",
+      "first_seen_at": "2026-10-25T10:02:00.935Z",
+      "canonical_url": "https://www.kimi.com/en/blog/kimi-k3-1-pro",
+      "links": {
+        "blog": "https://www.kimi.com/en/blog/kimi-k3-1-pro"
+      },
+      "summary": [
+        "Moonshot describes Kimi K3.1 Pro post-training and tests filtering cyber-related material from both mid-training data and reinforcement-learning environments.",
+        "Its internal vulnerability benchmark falls from 90.5% without filtering to 81.0% with filtering, while substantial capability remains."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "The official Kimi Code announcement dates launch to October 23. This distinct K3.1 contribution was discovered October 25 within the 72-hour lookback; the current technical page is inspected as retrieved today, not backdated into October 24. The xdev-bench-hard test supplies hints, source, binaries and mitigations, scoring automated secret retrieval as pass@3 over sampled runs without hard time or output-token caps.",
+        "limitations": "Internal results lack sample counts, uncertainty and matched-compute controls. Joint filtering does not isolate mid-training versus RL effects; general coding remains. Current page metadata says modified October 24, but earlier paragraph history is unverified. Filtered data and full recipe are unreleased; weights are promised by November 4, not available."
+      },
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "https://www.lmsys.org/blog/2026-10-24-dsv41-deepinfer/",
+      "title": "More Than DeepInfer: What SGLang Delivers",
+      "category": "3.3",
+      "published_on": "2026-10-24",
+      "first_seen_at": "2026-10-25T09:59:27.402Z",
+      "canonical_url": "https://www.lmsys.org/blog/2026-10-24-dsv41-deepinfer/",
+      "links": {
+        "blog": "https://www.lmsys.org/blog/2026-10-24-dsv41-deepinfer/",
+        "code": "https://github.com/sgl-project/sglang",
+        "project": "https://gist.github.com/sglang-bot/f03d7d0dd268b0386177eb2ef09f8b3b"
+      },
+      "summary": [
+        "SGLang documents its integration of DeepSeek’s fused kernels, direct peer reads for sharded Engram tables and bounded replay, and releases a pinned comparison against DeepInfer.",
+        "The tested synthetic workloads show near parity with modest SGLang gains at some batch sizes, while the accompanying commands expose configuration and timing differences that matter when translating engine benchmarks into serving decisions."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "The October 24 measured comparison reuses older integrations; its reproduction gist was created October 24 at 10:24 UTC. Matched four-GPU GB300/B300 prefill reaches at most 1.039× throughput versus each point’s fastest tested DeepInfer configuration. On 64 GB300 GPUs, decode steps are 1.1–7.4% shorter at 16–256 requests/GPU and 0.4% longer at eight.",
+        "limitations": "Balanced routing and static verification are forced; rates assume 3.25 accepted tokens/step. Engines differ in timing windows, Engram placement and draft redundancy. These are synthetic engine-step results, not natural acceptance, quality equivalence, production reliability or end-to-end service gains. Some flags are non-default; code was inspected, not executed."
+      },
+      "tags": [
+        "Engine Benchmarks",
+        "Expert Parallelism",
+        "Fused Kernels",
+        "Reproducibility"
+      ],
+      "novelty": "new"
+    }
+  ]
+}

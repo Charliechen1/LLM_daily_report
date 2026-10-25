@@ -5,6 +5,36 @@ Request scheduling, continuous batching, prefill/decode disaggregation and elast
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-25](../../../reports/2026/10/2026-10-25.md) — PARTIAL SEARCH
+
+### [More Than DeepInfer: What SGLang Delivers](<https://www.lmsys.org/blog/2026-10-24-dsv41-deepinfer/>)
+
+SGLang documents its integration of DeepSeek’s fused kernels, direct peer reads for sharded Engram tables and bounded replay, and releases a pinned comparison against DeepInfer. The tested synthetic workloads show near parity with modest SGLang gains at some batch sizes, while the accompanying commands expose configuration and timing differences that matter when translating engine benchmarks into serving decisions.
+
+**Published:** 2026-10-24 · **First seen:** 2026-10-25T09:59:27.402Z · **Novelty:** new · **Tags:** Engine Benchmarks, Expert Parallelism, Fused Kernels, Reproducibility
+
+[Blog](<https://www.lmsys.org/blog/2026-10-24-dsv41-deepinfer/>) · [Code](<https://github.com/sgl-project/sglang>) · [Project](<https://gist.github.com/sglang-bot/f03d7d0dd268b0386177eb2ef09f8b3b>)
+
+**Evidence:** engineering-report; full-text. The October 24 measured comparison reuses older integrations; its reproduction gist was created October 24 at 10:24 UTC. Matched four-GPU GB300/B300 prefill reaches at most 1.039× throughput versus each point’s fastest tested DeepInfer configuration. On 64 GB300 GPUs, decode steps are 1.1–7.4% shorter at 16–256 requests/GPU and 0.4% longer at eight.
+
+**Limitations:** Balanced routing and static verification are forced; rates assume 3.25 accepted tokens/step. Engines differ in timing windows, Engram placement and draft redundancy. These are synthetic engine-step results, not natural acceptance, quality equivalence, production reliability or end-to-end service gains. Some flags are non-default; code was inspected, not executed.
+
+## [2026-10-24](../../../reports/2026/10/2026-10-24.md) — PARTIAL SEARCH
+
+### [DeepSeek-V4.1-Flash on vLLM: Rack-Scale P/D and Wide-EP Evaluation](<https://vllm.ai/blog/2026-10-07-deepseek-v41-flash>)
+
+vLLM’s scaling report examines attention-group size, prefill optimizations and expert rebalancing in rack-scale prefill/decode serving for DeepSeek-V4.1-Flash. New workload-imbalance and expert-parallel measurements help operators choose deployment layouts as they scale.
+
+**Published:** 2026-10-07 · **First seen:** 2026-10-08T10:04:26Z · **Novelty:** material-update · **Tags:** Prefill Decode Disaggregation, Expert Parallelism, Load Balancing, Serving Measurements
+
+[Blog](<https://vllm.ai/blog/2026-10-23-deepseek-v41-flash-pd-wide-ep>) · [Code](<https://github.com/vllm-project/vllm>)
+
+**Evidence:** engineering-report; full-text. Compared with the October 7 single-node report, the full update adds imbalance tests, prefill ablations and rack-scale expert-parallel measurements. A 256-concurrency prefill-only comparison reports 64.4K versus 53.3K tokens/s/GPU for DEP2 versus DEP4. Smaller groups tolerate staggered traffic better; CPU overhead can offset larger expert groups’ GPU gains.
+
+**Limitations:** The 954K rack headline counts cached plus new input/output tokens; it is not output throughput or a controlled end-to-end speedup. Experimental PRs are not all merged. Exact earliest posting remains unresolved; no experiment was reproduced.
+
+**Update:** 2026-10-23: https://vllm.ai/blog/2026-10-23-deepseek-v41-flash-pd-wide-ep adds rack/P/D evaluation. Original ID/date/first\_seen retained. Official October 23 frontmatter conflicts with October 24 public blog-PR history; conservatively assigned to October 24 without an exact-availability claim.
+
 ## [2026-10-17](../../../reports/2026/10/2026-10-17.md) — PARTIAL SEARCH
 
 ### [SGLang Powers Beam in Production](<https://www.lmsys.org/blog/2026-10-16-beam>)
