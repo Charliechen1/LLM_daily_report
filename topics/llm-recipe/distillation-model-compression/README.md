@@ -5,6 +5,38 @@ Knowledge/reasoning distillation, pruning, quantization algorithms and model mer
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-26](../../../reports/2026/10/2026-10-26.md) — PARTIAL SEARCH
+
+### [On-Policy Self-Training: Data-Free Self-Improvement in Large Language Models](<https://arxiv.org/abs/2610.32770>)
+
+On-Policy Self-Training generates problems and candidate solutions from topic descriptions, filters them with self-consistency checks, and distills an answer-privileged moving-average teacher along student rollouts. It offers a way to improve pretrained capabilities without collecting a task-specific prompt-and-answer set, although self-consistency does not guarantee correctness.
+
+**Published:** 2026-10-23 · **First seen:** 2026-10-26T10:03:31.589+00:00 · **Novelty:** new · **Tags:** Self-Distillation, Synthetic Data, Privileged Information
+
+**Public availability:** 2026-10-26T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.32770v1>)
+
+**Evidence:** research-paper; full-text. Complete 20-page v1 inspected, including synthetic-data comparisons and evaluation/seed appendices. The final evaluated model is the EMA teacher. Gemma 4 E2B without thinking improves MMLU 37.5% to 47.7% and averages 45.6% versus 40.0% for SFT on the same generated data; Appendix A.3 reports three OPST seeds. Candidate answers are teacher context, not gold targets. Monday October 26 batch/schedule supports inferred 00:00 UTC publication, preserving October 23 submission. No author code/checkpoint link was verified.
+
+**Limitations:** Topics are hand-chosen; self-consistency can preserve shared errors and amplify only existing knowledge. Three-domain training loses 4.9 points on MATH-500 despite improved aggregate retention. Visual training requires unlabeled images. Small models, incompletely specified optimization/compute budget and no independent reproduction limit conclusions.
+
+## [2026-10-26](../../../reports/2026/10/2026-10-26.md) — PARTIAL SEARCH
+
+### [Frontier-OPD: Discovering the Edge of Agent Capability and Teaching Agents to Go Beyond](<https://arxiv.org/abs/2610.32802>)
+
+Frontier-OPD groups repeated agent states, averages student-teacher disagreement across trajectories and tests brief teacher interventions before adding them to distillation. This targets limited supervision at difficult situations the student may be able to use, improving autonomous benchmark performance while relying on replayable environments and teacher probabilities.
+
+**Published:** 2026-10-23 · **First seen:** 2026-10-26T10:03:31.509+00:00 · **Novelty:** new · **Tags:** Agentic Distillation, Teacher Intervention, Curriculum Learning
+
+**Public availability:** 2026-10-26T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.32802v1>)
+
+**Evidence:** research-paper; full-text. Full 17-page v1 methods, ablations and protocol inspected. A trajectory-balanced shared-state score selects replay candidates; matched joint bridge-plus-student windows filter guidance, and only accepted teacher responses augment ordinary OPD. With Qwen3-32B teaching 1.7B, three-seed mean success is 45.5% versus 40.0% FutureBridge-OPD on ALFWorld and 14.5% versus 10.2% on ScienceWorld. Monday October 26 batch/schedule supports inferred 00:00 UTC announcement; October 23 receipt retained. Advertised author repository returns 404, so no available code is claimed.
+
+**Limitations:** Agreement is a proxy: acceptance proves neither better continuation alone nor acquired skill. Observation keys can merge different histories; graph adjacency is not ranked, and random ablation changes both score and allocation unit. Three-seed differences lack significance testing; timing advantage is one target/hardware setting.
+
 ## [2026-10-23](../../../reports/2026/10/2026-10-23.md) — PARTIAL SEARCH
 
 ### [When to Follow the Teacher: Advantage-Based On-Policy Distillation](<https://arxiv.org/abs/2610.31563>)

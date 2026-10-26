@@ -5,6 +5,22 @@ RAG, agentic search, query rewriting, knowledge bases and external grounding.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-26](../../../reports/2026/10/2026-10-26.md) — PARTIAL SEARCH
+
+### [ActionRAG: Evidence-Refining Graph Diffusion for Long-Term Memory in LLM Agents](<https://arxiv.org/abs/2610.32752>)
+
+ActionRAG reconciles a memory graph during indexing, then combines entity and triple retrieval with local graph diffusion to revise evidence relevance. Protecting strong direct matches while adding useful connecting facts improves the tested memory aggregate without a retrieval-time language-model call.
+
+**Published:** 2026-10-23 · **First seen:** 2026-10-26T10:04:55.007Z · **Novelty:** new · **Tags:** Graph Retrieval, Agent Memory, Evidence Refinement
+
+**Public availability:** 2026-10-26T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.32752v1>)
+
+**Evidence:** research-paper; full-text. Three MemoryAgentBench runs use Haiku4.5 indexing, BGE-M3 embeddings and gpt-4o-mini answers. The unweighted eight-column score is 55.1 versus historical HippoRAG-v2’s 49.7; component ablations favor combining indexing reconciliation and retrieval refinement. The aggregate mixes accuracy and recommendation Recall@5. Original Monday cs.AI new-submission listing and schedule imply October26 00:00UTC announcement, preserving the October23 receipt.
+
+**Limitations:** Most baselines are inherited rather than rerun; ActionRAG trails HippoRAG-v2 on multihop and narrative questions. Query costs exclude graph construction, storage and local embeddings. Latency compares different hardware; summing separate component p99 values is not an end-to-end p99. Larger-graph tests lose accuracy and take seconds. No author implementation or independent reproduction was verified.
+
 ## [2026-10-14](../../../reports/2026/10/2026-10-14.md) — PARTIAL SEARCH
 
 ### [Using specialized data to improve research agent accuracy](<https://parallel.ai/blog/specialized-data-labbench2>)

@@ -5,6 +5,22 @@ Learning from trajectories/feedback, skill generation/reuse, experience and self
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-26](../../../reports/2026/10/2026-10-26.md) — PARTIAL SEARCH
+
+### [POSEIDON: Scaling Training Environments for Scientific Agents from Code Repositories](<https://arxiv.org/abs/2610.32448>)
+
+POSEIDON turns executable scientific workflows into reproduction, subflow, completion and correction tasks, repairing rejected candidates through a generator–validator loop. The resulting Pearl collection improves the tested scientific agents, suggesting that extracting complementary tasks and broader repository coverage can make environment generation more useful.
+
+**Published:** 2026-10-23 · **First seen:** 2026-10-26T10:04:55.008Z · **Novelty:** new · **Tags:** Training Environments, Scientific Agents, Synthetic Tasks
+
+**Public availability:** 2026-10-26T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.32448v1>)
+
+**Evidence:** research-paper; full-text. The authors construct 97,659 environments from 7,110 repositories and train Qwen3.5 models on 64,477 successful teacher trajectories. The 27B model’s eight-column average rises from 44.3% to 51.5%; matched-size and task-removal ablations support diversity benefits. Three independent auditors approve 573 of 600 sampled environments. Original Monday cs.AI new-submission listing and schedule imply October26 00:00UTC announcement; the October23 receipt is retained.
+
+**Limitations:** Repository selection deliberately favors biology; generated validators and reference solutions remain fallible. Evaluation filters tasks and mixes rule-based with model judging. Repository-based decontamination does not prove absence of leakage; seed uncertainty and total construction cost are not established. No author code, dataset or checkpoint release was verified, and no results were reproduced.
+
 ## [2026-10-20](../../../reports/2026/10/2026-10-20.md) — PARTIAL SEARCH
 
 ### [CoworkEnv: Synthesizing Training Environments for Long-Horizon Cowork Agents](<https://arxiv.org/abs/2610.24960>)

@@ -5,6 +5,22 @@ Objectives, optimizers, learning rates, batch sizes and training stability.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-26](../../../reports/2026/10/2026-10-26.md) — PARTIAL SEARCH
+
+### [Where Rounding Happens Matters: Rounding-Location Alignment Stabilizes LLM Reinforcement Learning](<https://arxiv.org/abs/2610.32951>)
+
+This study traces some reinforcement-learning instability to when inference and training implementations round intermediate values, then aligns selected training operations while retaining BF16 model tensors. The tested Qwen-family runs remain stable without bitwise agreement across the whole stack, offering a targeted alternative to rebuilding the entire training and inference pipeline.
+
+**Published:** 2026-10-23 · **First seen:** 2026-10-26T10:03:32.681+00:00 · **Novelty:** new · **Tags:** Numerical Stability, BF16, Reinforcement Learning
+
+**Public availability:** 2026-10-26T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2610.32951v1>)
+
+**Evidence:** research-paper; full-text. Sections 3-9 and Appendices A-D inspect fused/eager rounding, fixed-objective controls and four Qwen-family models on math RL. Keeping training RoPE-path intermediates in FP32 until BF16 outputs prevents observed collapse; all-three-region alignment also works. Table 4 reports 0.90-2.04% RoPE-only forward/backward overhead on three models, excluding rollout and optimizer updates. Monday October 26 batch plus official schedule support inferred 00:00 UTC announcement; original Friday submission date retained. No separate author code was verified.
+
+**Limitations:** Two math datasets and one architectural family; no multi-seed confidence claim or universal stability guarantee. Other kernels/objective stay fixed; remaining numerical mismatch is nonzero. The overhead microbenchmark excludes major RL costs and cannot establish end-to-end speedup.
+
 ## [2026-10-23](../../../reports/2026/10/2026-10-23.md) — PARTIAL SEARCH
 
 ### [A Fix for Softmax and Cross-Entropy](<https://arxiv.org/abs/2610.31642>)

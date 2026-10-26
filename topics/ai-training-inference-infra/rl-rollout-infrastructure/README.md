@@ -5,6 +5,22 @@ Distributed rollouts, asynchronous RL, generation/training coordination and weig
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-26](../../../reports/2026/10/2026-10-26.md) — PARTIAL SEARCH
+
+### [KnitTrans: Coordinated Trajectory Transfer for Effective and Efficient LLM Reinforcement Learning](<https://arxiv.org/abs/2610.32389>)
+
+KnitTrans admits rollout trajectories in smaller batches while reserving enough capacity to satisfy final training quotas, then aligns data transfer with each training consumer. It also reuses multimodal encodings while aggregating their gradients correctly, reducing pipeline-induced data staleness and repeated transfer without abandoning the specified batch constraints.
+
+**Published:** 2026-10-23 · **First seen:** 2026-10-26T10:03:21.065Z · **Novelty:** new · **Tags:** RL Pipelines, Trajectory Transfer, Batch Constraints, Multimodal Training
+
+**Public availability:** 2026-10-26T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.32389v1>)
+
+**Evidence:** research-paper; full-text. Full 14-page v1 inspected. Atomic storage units, micro-batch prefetch and gradient-preserving encoder dedup complement quota-feasibility guards. Tests use 256 Hopper GPUs, three large models, FP8 training/inference and disaggregated GRPO. Authors report up to 93% lower additional parameter-version gap versus train-batch admission, and up to 5.8× faster transfer plus training on multimodal workloads. Receipt: October 23 09:15UTC; the original October 26 cs.DC batch and official Sunday schedule imply October 26 00:00UTC announcement. Earlier TransferQueue/slime are background; no KnitTrans code destination was verified.
+
+**Limitations:** The 5.8× excludes rollout time and depends on the tested multimodal reuse. Staleness measures extra version age versus colocated execution, not all policy lag. Quality evidence is a short MiMo reward curve, not final multi-seed convergence. Private grounding datasets, unspecified Hopper SKU and application-specific quota assumptions limit generalization.
+
 ## [2026-10-16](../../../reports/2026/10/2026-10-16.md) — PARTIAL SEARCH
 
 ### [ReFlow: Replay-Driven Decoupling for Efficient RL Post-Training](<https://arxiv.org/abs/2610.21640>)

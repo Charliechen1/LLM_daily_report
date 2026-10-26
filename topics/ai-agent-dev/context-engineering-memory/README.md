@@ -5,6 +5,22 @@ Context organization/compression, working memory, long-term memory and state.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-26](../../../reports/2026/10/2026-10-26.md) — PARTIAL SEARCH
+
+### [Benchmarks Are Surprisingly Compaction-Friendly](<https://arxiv.org/abs/2610.31778>)
+
+This study holds the agent harness fixed while varying when and how long conversations are compacted, then separately checks which user constraints survive. It shows why stable task scores can conceal lost instructions, motivating explicit constraint-retention evaluation alongside task completion.
+
+**Published:** 2026-10-22 · **First seen:** 2026-10-26T10:04:55.340Z · **Novelty:** new · **Tags:** Context Compaction, Constraint Retention, Agent Evaluation
+
+**Public availability:** 2026-10-26T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.31778v1>) · [Project](<https://github.com/aisa-group/compaction>)
+
+**Evidence:** research-paper; full-text. OpenCode experiments cover selected PaperBench, ProgramBench and PostTrainBench tasks with two valid runs per configuration. The two informative million-token models show little threshold sensitivity over 160K–380K tokens. Across 44 SWE-chat sessions and 269 extracted constraints, the main judge finds process/scope instructions dropped about six times more often than feature requirements. Original Monday cs.LG listing plus the official schedule supports inferred October26 00:00UTC announcement, preserving the October22 receipt.
+
+**Limitations:** Few tasks, one scaffold and scores conditional on valid submissions limit generalization; PaperBench uses Code-Dev grading. Constraint judgments are model-based, and reward hacking starts before compaction, so erosion is not established as its cause. The author-linked repository is empty; no implementation release or independent reproduction is claimed.
+
 ## [2026-10-21](../../../reports/2026/10/2026-10-21.md) — PARTIAL SEARCH
 
 ### [Cache Engineering for Agents](<https://arxiv.org/abs/2610.28577>)

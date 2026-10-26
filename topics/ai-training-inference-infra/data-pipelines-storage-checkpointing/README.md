@@ -5,6 +5,22 @@ Data loading, storage throughput, distributed checkpoints, recovery and fault to
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-26](../../../reports/2026/10/2026-10-26.md) — PARTIAL SEARCH
+
+### [KVStream: Adaptive Parallel Storage Management for KV Caching in Large-Scale LLM Serving](<https://arxiv.org/abs/2610.31827>)
+
+KVStream accelerates prefix-cache retrieval by replicating chunks across local and shared storage, batching reads and letting each available storage path claim unfinished work. For workloads that spill beyond memory, this can reduce both retrieval time and the queues behind it, while making the cost of extra writes and low cache reuse explicit.
+
+**Published:** 2026-10-22 · **First seen:** 2026-10-26T10:03:21.065Z · **Novelty:** new · **Tags:** Prefix Caching, Parallel Storage, Completion-Driven I/O, Serving Queues
+
+**Public availability:** 2026-10-26T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.31827v1>)
+
+**Evidence:** research-paper; full-text. Full 17-page v1, including Appendix A, inspected. The LMCache backend defers writes behind computation and routes reads by completion rather than a fixed split. On four-H100 nodes, offline throughput reaches 1.49× LMCache; a separate four-A100 burst experiment reaches 6.07× lower mean time to first token. Scaling reaches 128 A100s. Receipt: October 22 19:05UTC; the original October 26 cs.DC batch and official Sunday schedule imply October 26 00:00UTC announcement. No earlier author release or verifiable KVStream/kvsim repository was found.
+
+**Limitations:** Two-tier replication doubles writes; at 4% prefix reuse the measured speedup is 0.81×. Memory-resident workloads gain little. Large latency ratios include queueing under particular arrival patterns, not universal per-request acceleration. Storage paths must supply independent bandwidth. The SGLang adapter lacks deferred writes; no cross-node sharing or recovery guarantee is established.
+
 ## [2026-10-23](../../../reports/2026/10/2026-10-23.md) — PARTIAL SEARCH
 
 ### [Gandalf: Flash Shall Not Die! Increasing Flash Storage Lifetime for KV Cache Offloading in LLM Serving](<https://arxiv.org/abs/2610.30791>)

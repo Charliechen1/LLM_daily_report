@@ -5,6 +5,22 @@ Data/tensor/pipeline/expert/context parallelism, sharding and communication over
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-26](../../../reports/2026/10/2026-10-26.md) — PARTIAL SEARCH
+
+### [HyScale: Scaling Long-Context Training for Learned Sparse Attention](<https://arxiv.org/abs/2610.32057>)
+
+HyScale accelerates learned sparse-attention training by selecting exact token indices without materializing every attention score, then replaying those indices during recomputation. It combines this with communication overlap and locality-aware kernels, showing how treating selection as reusable state can make million-token training substantially cheaper in the tested setup.
+
+**Published:** 2026-10-23 · **First seen:** 2026-10-26T10:03:21.065Z · **Novelty:** new · **Tags:** Long-Context Training, Exact Top-k, Context Parallelism, Activation Recomputation
+
+**Public availability:** 2026-10-26T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.32057v1>)
+
+**Evidence:** research-paper; full-text. Full 14-page v1, including Appendix A, inspected. HyTopK uses sampled thresholds with detected-failure recovery to preserve exact selection; replay avoids repeating dense selection. On 512 H20 GPUs, BF16 GLM-5.1 with full recomputation reaches 2.07× step speed at 1M tokens versus the same Megatron/cuDNN baseline. Receipt: October 23 01:54UTC; the original October 26 cs.AI batch and official Sunday 20:00 Eastern schedule imply October 26 00:00UTC announcement. No earlier HyScale release was verified; the linked August Hy4-preview repository is background, not verified HyScale code.
+
+**Limitations:** The full-model timing averages steps 4–10 with forced-balanced expert routing and momentum-free SGD; it does not establish convergence, quality or time-to-quality. Other architecture results are single-layer tests on 32 H800s. Exact top-k selection does not guarantee bitwise-equivalent complete training. No author HyScale implementation destination was verified.
+
 ## [2026-10-19](../../../reports/2026/10/2026-10-19.md) — PARTIAL SEARCH
 
 ### [BaGuaLu-2: Taming Dynamic Memory Fluctuation for Efficient MoE Model Training over 10,000 GPUs](<https://arxiv.org/abs/2610.23064>)

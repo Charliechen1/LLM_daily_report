@@ -1,0 +1,982 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-26",
+  "timezone": "America/Los_Angeles",
+  "generated_at": "2026-10-26T10:17:10.015+00:00",
+  "coverage": {
+    "start": "2026-10-25T03:00:00-07:00",
+    "end": "2026-10-26T03:00:00-07:00"
+  },
+  "search": {
+    "status": "partial",
+    "notes": "Nine contributions selected after screening all three areas and 26 subdomains against the September 29 baseline and complete prior registry. Coverage is October 25 03:00 to October 26 03:00 America/Los_Angeles; the total 72-hour discovery interval starts October 23 03:00. Fresh primary arXiv indexes contain original Monday October 26 batches. Each selected paper preserves its actual October 22 or 23 receipt date and separately labels its inferred October 26 00:00 UTC announcement, supported by a dated original-subject listing and the official schedule. Submission timestamps or later crosslisting alone were not used to establish eligibility. The earlier Friday batch was not recycled, and older TopKLoRA artifacts left its substantive new delta unresolved, so it was excluded. All selected primary sources were inspected in full; no training, source code or independent reproduction was performed. Author implementation releases were not verified: the compaction project is empty and Frontier-OPD's advertised repository returns 404. Search remains partial because OpenReview submission/full-paper access was restricted and a current ROCm low-precision article could not be read; organizational and venue coverage is bounded. The ROCm index and Anthropic indexes were recovered through a web reader and are not continuing archive outages. Experimental claims retain their hardware, benchmark and evaluation limits; synthetic-data agreement, conditional benchmark scores and training-step speed do not establish truth, general agent reliability or time-to-quality gains.",
+    "sources_checked": [
+      {
+        "name": "cl-recent",
+        "url": "https://arxiv.org/list/cs.CL/recent?show=200",
+        "status": "unavailable"
+      },
+      {
+        "name": "lg-recent",
+        "url": "https://arxiv.org/list/cs.LG/recent?show=200",
+        "status": "unavailable"
+      },
+      {
+        "name": "schedule.html",
+        "url": "https://info.arxiv.org/help/availability.html",
+        "status": "ok"
+      },
+      {
+        "name": "thinkingmachines",
+        "url": "https://thinkingmachines.ai/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "hf-daily",
+        "url": "https://huggingface.co/papers/date/2026-10-26",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32802-abs",
+        "url": "https://arxiv.org/abs/2610.32802",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32802-html",
+        "url": "https://arxiv.org/html/2610.32802v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32802-pdf",
+        "url": "https://arxiv.org/pdf/2610.32802v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32770-abs",
+        "url": "https://arxiv.org/abs/2610.32770",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32770-html",
+        "url": "https://arxiv.org/html/2610.32770v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32770-pdf",
+        "url": "https://arxiv.org/pdf/2610.32770v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32866-abs",
+        "url": "https://arxiv.org/abs/2610.32866",
+        "status": "ok"
+      },
+      {
+        "name": "TopKLoRA current primary paper method and provenance",
+        "url": "https://arxiv.org/html/2610.32866v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32866-pdf",
+        "url": "https://arxiv.org/pdf/2610.32866v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32951-abs",
+        "url": "https://arxiv.org/abs/2610.32951",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32951-html",
+        "url": "https://arxiv.org/html/2610.32951v1",
+        "status": "unavailable"
+      },
+      {
+        "name": "2610.32951-pdf",
+        "url": "https://arxiv.org/pdf/2610.32951v1",
+        "status": "ok"
+      },
+      {
+        "name": "cl-recent-recovered",
+        "url": "https://arxiv.org/list/cs.CL/recent",
+        "status": "ok"
+      },
+      {
+        "name": "lg-recent-recovered",
+        "url": "https://arxiv.org/list/cs.LG/recent",
+        "status": "ok"
+      },
+      {
+        "name": "cl-new",
+        "url": "https://arxiv.org/list/cs.CL/new",
+        "status": "ok"
+      },
+      {
+        "name": "lg-new",
+        "url": "https://arxiv.org/list/cs.LG/new",
+        "status": "ok"
+      },
+      {
+        "name": "frontier-repo",
+        "url": "https://github.com/jiangz20/FrontierOPD",
+        "status": "unavailable"
+      },
+      {
+        "name": "frontier-meta",
+        "url": "https://api.github.com/repos/jiangz20/FrontierOPD",
+        "status": "unavailable"
+      },
+      {
+        "name": "frontier-commits",
+        "url": "https://api.github.com/repos/jiangz20/FrontierOPD/commits?per_page=100",
+        "status": "unavailable"
+      },
+      {
+        "name": "frontier-readme",
+        "url": "https://api.github.com/repos/jiangz20/FrontierOPD/readme",
+        "status": "unavailable"
+      },
+      {
+        "name": "TopKLoRA author repository",
+        "url": "https://github.com/interpretable-finetuning/TopKLoRA",
+        "status": "ok"
+      },
+      {
+        "name": "topk-meta",
+        "url": "https://api.github.com/repos/interpretable-finetuning/TopKLoRA",
+        "status": "ok"
+      },
+      {
+        "name": "topk-commits",
+        "url": "https://api.github.com/repos/interpretable-finetuning/TopKLoRA/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "topk-readme",
+        "url": "https://api.github.com/repos/interpretable-finetuning/TopKLoRA/readme",
+        "status": "ok"
+      },
+      {
+        "name": "topk-preliminary",
+        "url": "https://openreview.net/pdf?id=W5THmsfVJw",
+        "status": "unavailable"
+      },
+      {
+        "name": "2610.32921-breadth-abstract",
+        "url": "https://arxiv.org/abs/2610.32921",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31867-breadth-abstract",
+        "url": "https://arxiv.org/abs/2610.31867",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31943-breadth-abstract",
+        "url": "https://arxiv.org/abs/2610.31943",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32213-breadth-abstract",
+        "url": "https://arxiv.org/abs/2610.32213",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32212-breadth-abstract",
+        "url": "https://arxiv.org/abs/2610.32212",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32318-breadth-abstract",
+        "url": "https://arxiv.org/abs/2610.32318",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32854-breadth-abstract",
+        "url": "https://arxiv.org/abs/2610.32854",
+        "status": "ok"
+      },
+      {
+        "name": "ai.html",
+        "url": "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "ai-new.html",
+        "url": "https://arxiv.org/list/cs.AI/new",
+        "status": "ok"
+      },
+      {
+        "name": "cl.html",
+        "url": "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "Primary research index via web reader; latest October23 UK-AISI item already covered",
+        "url": "https://www.anthropic.com/research",
+        "status": "ok"
+      },
+      {
+        "name": "Primary engineering index via web reader; latest October13 outside discovery window",
+        "url": "https://www.anthropic.com/engineering",
+        "status": "ok"
+      },
+      {
+        "name": "langchain.html",
+        "url": "https://www.langchain.com/blog",
+        "status": "ok"
+      },
+      {
+        "name": "parallel.html",
+        "url": "https://parallel.ai/blog",
+        "status": "ok"
+      },
+      {
+        "name": "openreview.html",
+        "url": "https://openreview.net/group?id=ICLR.cc/2027/Conference",
+        "status": "ok"
+      },
+      {
+        "name": "openreview-api.json",
+        "url": "https://api2.openreview.net/notes?content.venueid=ICLR.cc/2027/Conference/Submission&limit=30",
+        "status": "unavailable"
+      },
+      {
+        "name": "acl.html",
+        "url": "https://aclanthology.org/",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32813-abs.html",
+        "url": "https://arxiv.org/abs/2610.32813",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32813.html",
+        "url": "https://arxiv.org/html/2610.32813v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32752-abs.html",
+        "url": "https://arxiv.org/abs/2610.32752",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32752.html",
+        "url": "https://arxiv.org/html/2610.32752v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32448-abs.html",
+        "url": "https://arxiv.org/abs/2610.32448",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32448.html",
+        "url": "https://arxiv.org/html/2610.32448v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32110-abs.html",
+        "url": "https://arxiv.org/abs/2610.32110",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32110.html",
+        "url": "https://arxiv.org/html/2610.32110v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31710-abs.html",
+        "url": "https://arxiv.org/abs/2610.31710",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31710.html",
+        "url": "https://arxiv.org/html/2610.31710v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31778-abs.html",
+        "url": "https://arxiv.org/abs/2610.31778",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31778.html",
+        "url": "https://arxiv.org/html/2610.31778v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32196-abs.html",
+        "url": "https://arxiv.org/abs/2610.32196",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32196.html",
+        "url": "https://arxiv.org/html/2610.32196v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31854-abs.html",
+        "url": "https://arxiv.org/abs/2610.31854",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31854.html",
+        "url": "https://arxiv.org/html/2610.31854v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32871-abs.html",
+        "url": "https://arxiv.org/abs/2610.32871",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32871.html",
+        "url": "https://arxiv.org/html/2610.32871v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32429-abs.html",
+        "url": "https://arxiv.org/abs/2610.32429",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32429.html",
+        "url": "https://arxiv.org/html/2610.32429v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31916-abs.html",
+        "url": "https://arxiv.org/abs/2610.31916",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31916.html",
+        "url": "https://arxiv.org/html/2610.31916v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32555-abs.html",
+        "url": "https://arxiv.org/abs/2610.32555",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32555.html",
+        "url": "https://arxiv.org/html/2610.32555v1",
+        "status": "ok"
+      },
+      {
+        "name": "company-harness.html",
+        "url": "https://www.langchain.com/blog/components-building-company-harness",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32448.pdf",
+        "url": "https://arxiv.org/pdf/2610.32448v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32752.pdf",
+        "url": "https://arxiv.org/pdf/2610.32752v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31778.pdf",
+        "url": "https://arxiv.org/pdf/2610.31778v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31710.pdf",
+        "url": "https://arxiv.org/pdf/2610.31710v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32813.pdf",
+        "url": "https://arxiv.org/pdf/2610.32813v1",
+        "status": "ok"
+      },
+      {
+        "name": "compaction-repo.html",
+        "url": "https://github.com/aisa-group/compaction",
+        "status": "ok"
+      },
+      {
+        "name": "compaction-meta.json",
+        "url": "https://api.github.com/repos/aisa-group/compaction",
+        "status": "ok"
+      },
+      {
+        "name": "compaction-commits.json",
+        "url": "https://api.github.com/repos/aisa-group/compaction/commits?per_page=100",
+        "status": "unavailable"
+      },
+      {
+        "name": "compaction-readme.md",
+        "url": "https://raw.githubusercontent.com/aisa-group/compaction/main/README.md",
+        "status": "unavailable"
+      },
+      {
+        "name": "lg.html",
+        "url": "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "se.html",
+        "url": "https://arxiv.org/list/cs.SE/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "dc.html",
+        "url": "https://arxiv.org/list/cs.DC/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "ar.html",
+        "url": "https://arxiv.org/list/cs.AR/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "vllm.html",
+        "url": "https://vllm.ai/blog",
+        "status": "ok"
+      },
+      {
+        "name": "lmsys.html",
+        "url": "https://www.lmsys.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "pytorch.html",
+        "url": "https://pytorch.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "nvidia.html",
+        "url": "https://developer.nvidia.com/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "ROCm index recovered using web reader",
+        "url": "https://rocm.blogs.amd.com/",
+        "status": "ok"
+      },
+      {
+        "name": "cerebras.html",
+        "url": "https://www.cerebras.ai/blog/how-we-deploy-trillion-parameter-frontier-models-on-cerebras",
+        "status": "ok"
+      },
+      {
+        "name": "gpu-unlock.html",
+        "url": "https://github.com/Zagitta/gpu-unlock",
+        "status": "ok"
+      },
+      {
+        "name": "gpu-unlock-releases.json",
+        "url": "https://api.github.com/repos/Zagitta/gpu-unlock/releases",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32389-abs.html",
+        "url": "https://arxiv.org/abs/2610.32389",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32057-abs.html",
+        "url": "https://arxiv.org/abs/2610.32057",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31827-abs.html",
+        "url": "https://arxiv.org/abs/2610.31827",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31913-abs.html",
+        "url": "https://arxiv.org/abs/2610.31913",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32695-abs.html",
+        "url": "https://arxiv.org/abs/2610.32695",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32389.html",
+        "url": "https://arxiv.org/html/2610.32389v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32057.html",
+        "url": "https://arxiv.org/html/2610.32057v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31827.html",
+        "url": "https://arxiv.org/html/2610.31827v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31913.html",
+        "url": "https://arxiv.org/html/2610.31913v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32695.html",
+        "url": "https://arxiv.org/html/2610.32695v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32389.pdf",
+        "url": "https://arxiv.org/pdf/2610.32389v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.32057.pdf",
+        "url": "https://arxiv.org/pdf/2610.32057v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.31827.pdf",
+        "url": "https://arxiv.org/pdf/2610.31827v1",
+        "status": "ok"
+      },
+      {
+        "name": "hy4.html",
+        "url": "https://github.com/Tencent-Hunyuan/Hy4-preview",
+        "status": "ok"
+      },
+      {
+        "name": "hy4-meta.json",
+        "url": "https://api.github.com/repos/Tencent-Hunyuan/Hy4-preview",
+        "status": "ok"
+      },
+      {
+        "name": "hy4-commits.json",
+        "url": "https://api.github.com/repos/Tencent-Hunyuan/Hy4-preview/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "gpu-unlock-commits.json",
+        "url": "https://api.github.com/repos/Zagitta/gpu-unlock/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "transferqueue.html",
+        "url": "https://github.com/Ascend/TransferQueue",
+        "status": "ok"
+      },
+      {
+        "name": "transferqueue-commits.json",
+        "url": "https://api.github.com/repos/Ascend/TransferQueue/commits?per_page=30",
+        "status": "ok"
+      },
+      {
+        "name": "github-search-knittrans.json",
+        "url": "https://api.github.com/search/repositories?q=KnitTrans",
+        "status": "ok"
+      },
+      {
+        "name": "github-search-hyscale.json",
+        "url": "https://api.github.com/search/repositories?q=HyScale",
+        "status": "ok"
+      },
+      {
+        "name": "github-search-kvsim.json",
+        "url": "https://api.github.com/search/repositories?q=kvsim+Maurya",
+        "status": "ok"
+      },
+      {
+        "name": "rocm-rdna.html",
+        "url": "https://rocm.blogs.amd.com/software-tools-optimization/rdna-fp8-gemm/README.html",
+        "status": "unavailable"
+      },
+      {
+        "name": "OpenAI research index",
+        "url": "https://openai.com/research/index/",
+        "status": "ok"
+      },
+      {
+        "name": "Google DeepMind news index",
+        "url": "https://deepmind.google/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "Google Research blog index",
+        "url": "https://research.google/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "Ai2 latest research (blog redirect)",
+        "url": "https://allenai.org/blog",
+        "status": "ok"
+      },
+      {
+        "name": "Google on-device scam-detection report",
+        "url": "https://deepmind.google/blog/on-device-ai-scam-detection-mddi/",
+        "status": "ok"
+      },
+      {
+        "name": "Gemini Argon general-availability article",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+        "status": "ok"
+      },
+      {
+        "name": "Google forest-mapping report",
+        "url": "https://deepmind.google/blog/beyond-tree-cover-mapping-the-worlds-forest-types/",
+        "status": "ok"
+      },
+      {
+        "name": "Antigravity antimicrobial walkthrough",
+        "url": "https://deepmind.google/blog/accelerating-antimicrobial-discovery/",
+        "status": "ok"
+      },
+      {
+        "name": "TopKLoRA previous workshop forum",
+        "url": "https://openreview.net/forum?id=W5THmsfVJw",
+        "status": "unavailable"
+      },
+      {
+        "name": "TopKLoRA previous workshop indexed PDF full retrieval",
+        "url": "https://openreview.net/pdf/b2a9ad68210e6088e67c2d2c8428db57eab6256c.pdf",
+        "status": "unavailable"
+      },
+      {
+        "name": "TopKLoRA workshop note API",
+        "url": "https://api2.openreview.net/notes?id=W5THmsfVJw",
+        "status": "unavailable"
+      },
+      {
+        "name": "TopKLoRA checkpoint-history full retrieval",
+        "url": "https://huggingface.co/interpretable-finetuning/topklora-gemma-2-2b/commits/main",
+        "status": "unavailable"
+      },
+      {
+        "name": "TopKLoRA raw README via web reader",
+        "url": "https://raw.githubusercontent.com/interpretable-finetuning/TopKLoRA/main/README.md",
+        "status": "unavailable"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": "arxiv:2610.32951",
+      "title": "Where Rounding Happens Matters: Rounding-Location Alignment Stabilizes LLM Reinforcement Learning",
+      "category": "1.3",
+      "tags": [
+        "Numerical Stability",
+        "BF16",
+        "Reinforcement Learning"
+      ],
+      "published_on": "2026-10-23",
+      "first_seen_at": "2026-10-26T10:03:32.681+00:00",
+      "canonical_url": "https://arxiv.org/abs/2610.32951",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2610.32951v1"
+      },
+      "summary": [
+        "This study traces some reinforcement-learning instability to when inference and training implementations round intermediate values, then aligns selected training operations while retaining BF16 model tensors.",
+        "The tested Qwen-family runs remain stable without bitwise agreement across the whole stack, offering a targeted alternative to rebuilding the entire training and inference pipeline."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 3-9 and Appendices A-D inspect fused/eager rounding, fixed-objective controls and four Qwen-family models on math RL. Keeping training RoPE-path intermediates in FP32 until BF16 outputs prevents observed collapse; all-three-region alignment also works. Table 4 reports 0.90-2.04% RoPE-only forward/backward overhead on three models, excluding rollout and optimizer updates. Monday October 26 batch plus official schedule support inferred 00:00 UTC announcement; original Friday submission date retained. No separate author code was verified.",
+        "limitations": "Two math datasets and one architectural family; no multi-seed confidence claim or universal stability guarantee. Other kernels/objective stay fixed; remaining numerical mismatch is nonzero. The overhead microbenchmark excludes major RL costs and cannot establish end-to-end speedup."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-26T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.32770",
+      "title": "On-Policy Self-Training: Data-Free Self-Improvement in Large Language Models",
+      "category": "1.8",
+      "tags": [
+        "Self-Distillation",
+        "Synthetic Data",
+        "Privileged Information"
+      ],
+      "published_on": "2026-10-23",
+      "first_seen_at": "2026-10-26T10:03:31.589+00:00",
+      "canonical_url": "https://arxiv.org/abs/2610.32770",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.32770v1"
+      },
+      "summary": [
+        "On-Policy Self-Training generates problems and candidate solutions from topic descriptions, filters them with self-consistency checks, and distills an answer-privileged moving-average teacher along student rollouts.",
+        "It offers a way to improve pretrained capabilities without collecting a task-specific prompt-and-answer set, although self-consistency does not guarantee correctness."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Complete 20-page v1 inspected, including synthetic-data comparisons and evaluation/seed appendices. The final evaluated model is the EMA teacher. Gemma 4 E2B without thinking improves MMLU 37.5% to 47.7% and averages 45.6% versus 40.0% for SFT on the same generated data; Appendix A.3 reports three OPST seeds. Candidate answers are teacher context, not gold targets. Monday October 26 batch/schedule supports inferred 00:00 UTC publication, preserving October 23 submission. No author code/checkpoint link was verified.",
+        "limitations": "Topics are hand-chosen; self-consistency can preserve shared errors and amplify only existing knowledge. Three-domain training loses 4.9 points on MATH-500 despite improved aggregate retention. Visual training requires unlabeled images. Small models, incompletely specified optimization/compute budget and no independent reproduction limit conclusions."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-26T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.32802",
+      "title": "Frontier-OPD: Discovering the Edge of Agent Capability and Teaching Agents to Go Beyond",
+      "category": "1.8",
+      "tags": [
+        "Agentic Distillation",
+        "Teacher Intervention",
+        "Curriculum Learning"
+      ],
+      "published_on": "2026-10-23",
+      "first_seen_at": "2026-10-26T10:03:31.509+00:00",
+      "canonical_url": "https://arxiv.org/abs/2610.32802",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.32802v1"
+      },
+      "summary": [
+        "Frontier-OPD groups repeated agent states, averages student-teacher disagreement across trajectories and tests brief teacher interventions before adding them to distillation.",
+        "This targets limited supervision at difficult situations the student may be able to use, improving autonomous benchmark performance while relying on replayable environments and teacher probabilities."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Full 17-page v1 methods, ablations and protocol inspected. A trajectory-balanced shared-state score selects replay candidates; matched joint bridge-plus-student windows filter guidance, and only accepted teacher responses augment ordinary OPD. With Qwen3-32B teaching 1.7B, three-seed mean success is 45.5% versus 40.0% FutureBridge-OPD on ALFWorld and 14.5% versus 10.2% on ScienceWorld. Monday October 26 batch/schedule supports inferred 00:00 UTC announcement; October 23 receipt retained. Advertised author repository returns 404, so no available code is claimed.",
+        "limitations": "Agreement is a proxy: acceptance proves neither better continuation alone nor acquired skill. Observation keys can merge different histories; graph adjacency is not ranked, and random ablation changes both score and allocation unit. Three-seed differences lack significance testing; timing advantage is one target/hardware setting."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-26T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.31778",
+      "title": "Benchmarks Are Surprisingly Compaction-Friendly",
+      "category": "2.3",
+      "tags": [
+        "Context Compaction",
+        "Constraint Retention",
+        "Agent Evaluation"
+      ],
+      "published_on": "2026-10-22",
+      "first_seen_at": "2026-10-26T10:04:55.340Z",
+      "canonical_url": "https://arxiv.org/abs/2610.31778",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.31778v1",
+        "project": "https://github.com/aisa-group/compaction"
+      },
+      "summary": [
+        "This study holds the agent harness fixed while varying when and how long conversations are compacted, then separately checks which user constraints survive.",
+        "It shows why stable task scores can conceal lost instructions, motivating explicit constraint-retention evaluation alongside task completion."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "OpenCode experiments cover selected PaperBench, ProgramBench and PostTrainBench tasks with two valid runs per configuration. The two informative million-token models show little threshold sensitivity over 160K–380K tokens. Across 44 SWE-chat sessions and 269 extracted constraints, the main judge finds process/scope instructions dropped about six times more often than feature requirements. Original Monday cs.LG listing plus the official schedule supports inferred October26 00:00UTC announcement, preserving the October22 receipt.",
+        "limitations": "Few tasks, one scaffold and scores conditional on valid submissions limit generalization; PaperBench uses Code-Dev grading. Constraint judgments are model-based, and reward hacking starts before compaction, so erosion is not established as its cause. The author-linked repository is empty; no implementation release or independent reproduction is claimed."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-26T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.32752",
+      "title": "ActionRAG: Evidence-Refining Graph Diffusion for Long-Term Memory in LLM Agents",
+      "category": "2.4",
+      "tags": [
+        "Graph Retrieval",
+        "Agent Memory",
+        "Evidence Refinement"
+      ],
+      "published_on": "2026-10-23",
+      "first_seen_at": "2026-10-26T10:04:55.007Z",
+      "canonical_url": "https://arxiv.org/abs/2610.32752",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.32752v1"
+      },
+      "summary": [
+        "ActionRAG reconciles a memory graph during indexing, then combines entity and triple retrieval with local graph diffusion to revise evidence relevance.",
+        "Protecting strong direct matches while adding useful connecting facts improves the tested memory aggregate without a retrieval-time language-model call."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Three MemoryAgentBench runs use Haiku4.5 indexing, BGE-M3 embeddings and gpt-4o-mini answers. The unweighted eight-column score is 55.1 versus historical HippoRAG-v2’s 49.7; component ablations favor combining indexing reconciliation and retrieval refinement. The aggregate mixes accuracy and recommendation Recall@5. Original Monday cs.AI new-submission listing and schedule imply October26 00:00UTC announcement, preserving the October23 receipt.",
+        "limitations": "Most baselines are inherited rather than rerun; ActionRAG trails HippoRAG-v2 on multihop and narrative questions. Query costs exclude graph construction, storage and local embeddings. Latency compares different hardware; summing separate component p99 values is not an end-to-end p99. Larger-graph tests lose accuracy and take seconds. No author implementation or independent reproduction was verified."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-26T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.32448",
+      "title": "POSEIDON: Scaling Training Environments for Scientific Agents from Code Repositories",
+      "category": "2.5",
+      "tags": [
+        "Training Environments",
+        "Scientific Agents",
+        "Synthetic Tasks"
+      ],
+      "published_on": "2026-10-23",
+      "first_seen_at": "2026-10-26T10:04:55.008Z",
+      "canonical_url": "https://arxiv.org/abs/2610.32448",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.32448v1"
+      },
+      "summary": [
+        "POSEIDON turns executable scientific workflows into reproduction, subflow, completion and correction tasks, repairing rejected candidates through a generator–validator loop.",
+        "The resulting Pearl collection improves the tested scientific agents, suggesting that extracting complementary tasks and broader repository coverage can make environment generation more useful."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "The authors construct 97,659 environments from 7,110 repositories and train Qwen3.5 models on 64,477 successful teacher trajectories. The 27B model’s eight-column average rises from 44.3% to 51.5%; matched-size and task-removal ablations support diversity benefits. Three independent auditors approve 573 of 600 sampled environments. Original Monday cs.AI new-submission listing and schedule imply October26 00:00UTC announcement; the October23 receipt is retained.",
+        "limitations": "Repository selection deliberately favors biology; generated validators and reference solutions remain fallible. Evaluation filters tasks and mixes rule-based with model judging. Repository-based decontamination does not prove absence of leakage; seed uncertainty and total construction cost are not established. No author code, dataset or checkpoint release was verified, and no results were reproduced."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-26T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.32057",
+      "title": "HyScale: Scaling Long-Context Training for Learned Sparse Attention",
+      "category": "3.1",
+      "published_on": "2026-10-23",
+      "first_seen_at": "2026-10-26T10:03:21.065Z",
+      "canonical_url": "https://arxiv.org/abs/2610.32057",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.32057v1"
+      },
+      "summary": [
+        "HyScale accelerates learned sparse-attention training by selecting exact token indices without materializing every attention score, then replaying those indices during recomputation.",
+        "It combines this with communication overlap and locality-aware kernels, showing how treating selection as reusable state can make million-token training substantially cheaper in the tested setup."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Full 14-page v1, including Appendix A, inspected. HyTopK uses sampled thresholds with detected-failure recovery to preserve exact selection; replay avoids repeating dense selection. On 512 H20 GPUs, BF16 GLM-5.1 with full recomputation reaches 2.07× step speed at 1M tokens versus the same Megatron/cuDNN baseline. Receipt: October 23 01:54UTC; the original October 26 cs.AI batch and official Sunday 20:00 Eastern schedule imply October 26 00:00UTC announcement. No earlier HyScale release was verified; the linked August Hy4-preview repository is background, not verified HyScale code.",
+        "limitations": "The full-model timing averages steps 4–10 with forced-balanced expert routing and momentum-free SGD; it does not establish convergence, quality or time-to-quality. Other architecture results are single-layer tests on 32 H800s. Exact top-k selection does not guarantee bitwise-equivalent complete training. No author HyScale implementation destination was verified."
+      },
+      "tags": [
+        "Long-Context Training",
+        "Exact Top-k",
+        "Context Parallelism",
+        "Activation Recomputation"
+      ],
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-26T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.32389",
+      "title": "KnitTrans: Coordinated Trajectory Transfer for Effective and Efficient LLM Reinforcement Learning",
+      "category": "3.2",
+      "published_on": "2026-10-23",
+      "first_seen_at": "2026-10-26T10:03:21.065Z",
+      "canonical_url": "https://arxiv.org/abs/2610.32389",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.32389v1"
+      },
+      "summary": [
+        "KnitTrans admits rollout trajectories in smaller batches while reserving enough capacity to satisfy final training quotas, then aligns data transfer with each training consumer.",
+        "It also reuses multimodal encodings while aggregating their gradients correctly, reducing pipeline-induced data staleness and repeated transfer without abandoning the specified batch constraints."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Full 14-page v1 inspected. Atomic storage units, micro-batch prefetch and gradient-preserving encoder dedup complement quota-feasibility guards. Tests use 256 Hopper GPUs, three large models, FP8 training/inference and disaggregated GRPO. Authors report up to 93% lower additional parameter-version gap versus train-batch admission, and up to 5.8× faster transfer plus training on multimodal workloads. Receipt: October 23 09:15UTC; the original October 26 cs.DC batch and official Sunday schedule imply October 26 00:00UTC announcement. Earlier TransferQueue/slime are background; no KnitTrans code destination was verified.",
+        "limitations": "The 5.8× excludes rollout time and depends on the tested multimodal reuse. Staleness measures extra version age versus colocated execution, not all policy lag. Quality evidence is a short MiMo reward curve, not final multi-seed convergence. Private grounding datasets, unspecified Hopper SKU and application-specific quota assumptions limit generalization."
+      },
+      "tags": [
+        "RL Pipelines",
+        "Trajectory Transfer",
+        "Batch Constraints",
+        "Multimodal Training"
+      ],
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-26T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.31827",
+      "title": "KVStream: Adaptive Parallel Storage Management for KV Caching in Large-Scale LLM Serving",
+      "category": "3.7",
+      "published_on": "2026-10-22",
+      "first_seen_at": "2026-10-26T10:03:21.065Z",
+      "canonical_url": "https://arxiv.org/abs/2610.31827",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.31827v1"
+      },
+      "summary": [
+        "KVStream accelerates prefix-cache retrieval by replicating chunks across local and shared storage, batching reads and letting each available storage path claim unfinished work.",
+        "For workloads that spill beyond memory, this can reduce both retrieval time and the queues behind it, while making the cost of extra writes and low cache reuse explicit."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Full 17-page v1, including Appendix A, inspected. The LMCache backend defers writes behind computation and routes reads by completion rather than a fixed split. On four-H100 nodes, offline throughput reaches 1.49× LMCache; a separate four-A100 burst experiment reaches 6.07× lower mean time to first token. Scaling reaches 128 A100s. Receipt: October 22 19:05UTC; the original October 26 cs.DC batch and official Sunday schedule imply October 26 00:00UTC announcement. No earlier author release or verifiable KVStream/kvsim repository was found.",
+        "limitations": "Two-tier replication doubles writes; at 4% prefix reuse the measured speedup is 0.81×. Memory-resident workloads gain little. Large latency ratios include queueing under particular arrival patterns, not universal per-request acceleration. Storage paths must supply independent bandwidth. The SGLang adapter lacks deferred writes; no cross-node sharing or recovery guarantee is established."
+      },
+      "tags": [
+        "Prefix Caching",
+        "Parallel Storage",
+        "Completion-Driven I/O",
+        "Serving Queues"
+      ],
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-26T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    }
+  ]
+}
