@@ -5,6 +5,20 @@ Learning from trajectories/feedback, skill generation/reuse, experience and self
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-27](../../../reports/2026/10/2026-10-27.md) — PARTIAL SEARCH
+
+### [MiRL: Error-Targeted Reinforcement Learning for Correcting Terminal Agent Misbehaviors](<https://arxiv.org/abs/2610.35697>)
+
+MiRL profiles recurring terminal-agent mistakes, resumes reinforcement-learning rollouts immediately before those mistakes, and rewards continuations only when tests pass and a behavior judge approves. This targeted practice reduces several measured misbehaviors and improves the tested compact agent while avoiding repeated generation of earlier task steps.
+
+**Published:** 2026-10-26 · **First seen:** 2026-10-27T10:06:15.694+00:00 · **Novelty:** newly-discovered · **Tags:** Agent Learning, Targeted RL, Terminal Agents
+
+[Paper](<https://arxiv.org/html/2610.35697v1>) · [Code](<https://github.com/runchu-tian/MiRL>)
+
+**Evidence:** research-paper; full-text. Sections 3–5 and Appendices A–D inspect 219 reproducible prefixes from 189 environments, Qwen3.5-4B, and a judge checking five continuation steps. Three-run means are 51.8 versus 47.4 for TMax-4B on TB-Lite and 21.3 versus 20.6 on TB-2.1; 16-seed TB-2.1 means remain close. Newly-discovered editorial catch-up: the pinned October 25 repository already contains method/results before the October 26 paper receipt; exact historical public visibility is unproven, so no later paper-announcement timestamp is asserted as earliest work release.
+
+**Limitations:** One backbone and one training run; checkpoint selection uses TB-Lite. Judge dependence and deterministic replay filtering constrain generality. Reported 35% rollout usage includes profiling but estimates the TMax denominator; it is not a measured universal compute saving. Code was inspected, not executed.
+
 ## [2026-10-26](../../../reports/2026/10/2026-10-26.md) — PARTIAL SEARCH
 
 ### [POSEIDON: Scaling Training Environments for Scientific Agents from Code Repositories](<https://arxiv.org/abs/2610.32448>)

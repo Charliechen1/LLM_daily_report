@@ -5,6 +5,20 @@ Request scheduling, continuous batching, prefill/decode disaggregation and elast
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-27](../../../reports/2026/10/2026-10-27.md) — PARTIAL SEARCH
+
+### [SGLang Security Update: Improving Request Isolation](<https://www.lmsys.org/blog/2026-10-26-cf-security>)
+
+SGLang and Cloudflare disclose how rejected requests and asynchronous KV transfers could break request isolation in disaggregated serving, and explain admission checks and deferred cache release. The operational lesson is that request termination does not end remote memory access: safe reuse needs trustworthy drain accounting, with explicit limits on timeout-based release.
+
+**Published:** 2026-10-26 · **First seen:** 2026-10-27T10:07:17.407Z · **Novelty:** new · **Tags:** Disaggregated Serving, KV Lifetime, Request Isolation, Failure Handling
+
+[Blog](<https://www.lmsys.org/blog/2026-10-26-cf-security>) · [Code](<https://github.com/sgl-project/sglang/pull/35049>)
+
+**Evidence:** engineering-report; full-text. Complete coordinated October26 reports, reproduction README and relevant implementation changes inspected. Cloudflare identifies155 affected GLM-5.3 responses during August27–September9; the immediate rejection bug is distinct from the related abort-transfer race. SGLang retains cache slots, request rows and metadata until all required drain acknowledgements or timeout. Across21 two-H100 runs, throughput deltas were within±2% with confidence intervals spanning zero. This is a new disclosure and integrated analysis; patches and the October11–12 reproducer were public earlier.
+
+**Limitations:** Timeout expiry does not prove outstanding writes stopped; failed sends must not acknowledge drain. The controlled harness deliberately widens a race and does not estimate production frequency. Optional transfer checksums cover a particular handoff, not all future reads or model architectures. Neither small performance tests nor reproduced cases establish universal tenant isolation. No new October26 implementation release is claimed.
+
 ## [2026-10-25](../../../reports/2026/10/2026-10-25.md) — PARTIAL SEARCH
 
 ### [More Than DeepInfer: What SGLang Delivers](<https://www.lmsys.org/blog/2026-10-24-dsv41-deepinfer/>)

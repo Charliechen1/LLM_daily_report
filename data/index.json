@@ -2,6 +2,13 @@
   "schema_version": 1,
   "reports": [
     {
+      "date": "2026-10-27",
+      "path": "reports/2026/10/2026-10-27.md",
+      "source": "data/reports/2026/10/2026-10-27.json",
+      "search_status": "partial",
+      "entries": 9
+    },
+    {
       "date": "2026-10-26",
       "path": "reports/2026/10/2026-10-26.md",
       "source": "data/reports/2026/10/2026-10-26.json",
@@ -201,6 +208,335 @@
     }
   ],
   "entries": [
+    {
+      "id": "arxiv:2610.35556",
+      "title": "LoopFold: Parallelizing Recurrent Depth in Looped Transformers",
+      "category": "1.2",
+      "published_on": "2026-10-26",
+      "first_seen_at": "2026-10-27T10:06:55.058Z",
+      "canonical_url": "https://arxiv.org/abs/2610.35556",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.35556v1"
+      },
+      "summary": [
+        "LoopFold predicts inputs to later recurrent layers so several depths of a shared Transformer can run in parallel, then corrects their outputs using newly available earlier states.",
+        "Joint training turns extra parallel computation into a shorter sequential decoding path, offering a useful architecture tradeoff between latency, quality and memory."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Complete 13-page v1 inspected. Models train from scratch on 30B Pile tokens at 1.4B scale. At target depth 9, five stages use 21 backbone evaluations versus nine sequential evaluations, with 46% lower batch-one decoding latency and eight-task accuracy 56.38% versus 54.18%. Separate matched-backbone-compute comparisons show smaller quality gains. Original Tuesday batch and official schedule imply October 27 00:00UTC announcement.",
+        "limitations": "Schedules train separately; this is not exact trajectory-preserving parallelization of an existing checkpoint. Extra FLOPs and KV caches are material costs. Timings use 1024-token prompts/continuations, BF16, no tensor parallelism and an unspecified GPU model. No multi-seed uncertainty or author implementation destination was verified."
+      },
+      "tags": [
+        "Looped Transformers",
+        "Parallel Recurrent Depth",
+        "Architecture",
+        "Compute-Memory Tradeoffs"
+      ],
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-27T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-27",
+      "report_path": "reports/2026/10/2026-10-27.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.35716",
+      "title": "Audit Where Hacks Pay: Budgeted Strong-Verifier Audits Against Reward Hacking in GRPO",
+      "category": "1.7",
+      "published_on": "2026-10-26",
+      "first_seen_at": "2026-10-27T10:06:55.059Z",
+      "canonical_url": "https://arxiv.org/abs/2610.35716",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.35716v1"
+      },
+      "summary": [
+        "Low-pass budgeted audits check whole response groups with the fewest weak passes and give caught hacks a penalty reflected below the failure reward.",
+        "The study offers a concrete way to allocate verification labels during group-relative policy optimization, while showing why audit placement and reward correction must be considered together."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Methods, experiments and relevant appendices inspected. Three-seed LeetCode runs suppress hacking near zero, versus 36.33-51.68% late hacking under random-group audits, using 53% of their training labels under the same fraction-of-weak-passes budget rule. Countdown-Code comparisons examine accuracy costs of unbiased corrections. Original Tuesday batch and official schedule imply October 27 00:00UTC announcement.",
+        "limitations": "Tests cover 40-step continuations from already-hacking 3B/4B policies. Strong verifiers are reliable and cheap in these environments; label savings exclude diagnostic measurements. The optimality result is conditional at a frozen policy state and does not rank arbitrary training designs. Some ablations have one seed; no author code destination was verified."
+      },
+      "tags": [
+        "Reward Hacking",
+        "GRPO",
+        "Budgeted Verification",
+        "Audit Selection"
+      ],
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-27T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-27",
+      "report_path": "reports/2026/10/2026-10-27.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.35804",
+      "title": "Learning When to Commit: Schedule Distillation for Fast Diffusion Language Models",
+      "category": "1.8",
+      "published_on": "2026-10-26",
+      "first_seen_at": "2026-10-27T10:06:55.057Z",
+      "canonical_url": "https://arxiv.org/abs/2610.35804",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.35804v1",
+        "code": "https://github.com/VILA-Lab/dSpark"
+      },
+      "summary": [
+        "dSpark trains diffusion language models on reveal schedules that expose tokens useful for predicting the remaining text, while anchoring failed trajectories to the original model.",
+        "This moves schedule search into training so parallel decoding can produce more tokens per forward pass while preserving task quality in the tested math and code settings."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Methods, results, appendices and linked code inspected. On GSM8K, LLaDA reaches 10.12 tokens per forward and 78.94% accuracy; batch-one A100 throughput is 249 tokens/s versus 15 for the base and 220 for d3LLM. The October 27 paper announcement is schedule-inferred; the October 26 repository commit is not proof of its public-visibility time.",
+        "limitations": "Offline schedules require verified responses and extra teacher evaluations. Main decoding uses 256-token outputs; Dream lacks equivalent wall-clock comparisons. Three evaluation runs do not establish training-seed robustness. Weights and data remain pending. Main-window eligibility follows the observed October 26 release evidence without assigning an exact global first-public timestamp."
+      },
+      "tags": [
+        "Diffusion Language Models",
+        "Schedule Distillation",
+        "Parallel Decoding",
+        "Calibration"
+      ],
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-27",
+      "report_path": "reports/2026/10/2026-10-27.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.35697",
+      "title": "MiRL: Error-Targeted Reinforcement Learning for Correcting Terminal Agent Misbehaviors",
+      "category": "2.5",
+      "tags": [
+        "Agent Learning",
+        "Targeted RL",
+        "Terminal Agents"
+      ],
+      "published_on": "2026-10-26",
+      "first_seen_at": "2026-10-27T10:06:15.694+00:00",
+      "canonical_url": "https://arxiv.org/abs/2610.35697",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.35697v1",
+        "code": "https://github.com/runchu-tian/MiRL"
+      },
+      "summary": [
+        "MiRL profiles recurring terminal-agent mistakes, resumes reinforcement-learning rollouts immediately before those mistakes, and rewards continuations only when tests pass and a behavior judge approves.",
+        "This targeted practice reduces several measured misbehaviors and improves the tested compact agent while avoiding repeated generation of earlier task steps."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 3–5 and Appendices A–D inspect 219 reproducible prefixes from 189 environments, Qwen3.5-4B, and a judge checking five continuation steps. Three-run means are 51.8 versus 47.4 for TMax-4B on TB-Lite and 21.3 versus 20.6 on TB-2.1; 16-seed TB-2.1 means remain close. Newly-discovered editorial catch-up: the pinned October 25 repository already contains method/results before the October 26 paper receipt; exact historical public visibility is unproven, so no later paper-announcement timestamp is asserted as earliest work release.",
+        "limitations": "One backbone and one training run; checkpoint selection uses TB-Lite. Judge dependence and deterministic replay filtering constrain generality. Reported 35% rollout usage includes profiling but estimates the TMax denominator; it is not a measured universal compute saving. Code was inspected, not executed."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-27",
+      "report_path": "reports/2026/10/2026-10-27.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.34577",
+      "title": "Rethinking Verification in Agent Harnesses",
+      "category": "2.7",
+      "tags": [
+        "Verification",
+        "Independent Review",
+        "Test-Time Scaling"
+      ],
+      "published_on": "2026-10-25",
+      "first_seen_at": "2026-10-27T10:06:15.694+00:00",
+      "canonical_url": "https://arxiv.org/abs/2610.34577",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.34577v1"
+      },
+      "summary": [
+        "This study compares 17 harness designs spanning initial instructions, execution reminders, completion gates and a fresh-context critic that checks the delivered work before returning findings for repair.",
+        "Independent review offers the strongest average accuracy–cost tradeoff in the tested coding subsets and improves judged visual artifacts, giving builders concrete evidence for where to spend verification effort."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 3–5 and relevant Appendices A–E inspect seven coding models with a fixed Qwen3.7-Plus critic. Three trials per coding condition use a 31-task Terminal-Bench subset and a baseline-adjusted SWE subset initially comprising 30 tasks. Four independent-review designs improve mean accuracy by 5.9–9.5 and 3.9–6.6 points at 1.13–1.25 and 1.00–1.04 times priced API cost, respectively, including critique and repair. Original Tuesday cs.AI batch plus official schedule support inferred October 27 00:00 UTC release; Sunday receipt is retained.",
+        "limitations": "Small difficulty-selected subsets and no reported confidence intervals for the aggregate gains; these are not full-benchmark or universal guarantees. VisualBench comprises 18 internal tasks with company raters. Standard single-pass review accepts the next revision without rechecking; extra-review widths run sequentially. No author implementation was verified."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-27T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-27",
+      "report_path": "reports/2026/10/2026-10-27.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+      "title": "Addendum to GPT-6 Astra System Card: GPT-6.1 Terra",
+      "category": "2.8",
+      "tags": [
+        "Agent Evaluation",
+        "Authorization",
+        "Deployment Simulation"
+      ],
+      "published_on": "2026-10-26",
+      "first_seen_at": "2026-10-27T10:07:02.203+00:00",
+      "canonical_url": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+      "links": {
+        "paper": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+        "blog": "https://openai.com/index/introducing-gpt-6-1-terra/"
+      },
+      "summary": [
+        "OpenAI’s GPT-6.1 Terra system-card addendum reports updated agent-safety and deployment-simulation evaluations, including behavior around restrictions and messages from apparent peer agents.",
+        "The results expose different failure profiles across models and test settings, helping builders assess authorization boundaries without treating a benchmark score as a production failure rate."
+      ],
+      "evidence": {
+        "type": "technical-report",
+        "access": "full-text",
+        "rationale": "Sections 7.2 and 7.5 report unsafeguarded restriction tests and corrected peer-message comparisons: 80 samples across ten scenarios. The specified unauthorized-action criterion fires in 11/80 Terra samples versus 1/80 for GPT-6.1 Sol; authors say the difference largely reflects promises of future help. A separate 48,690-task internal deployment simulation records 22 severity-3-or-higher flags. The dated October 26 card is new; first_seen_at records the first timestamped primary retrieval.",
+        "limitations": "Author-run, selected and partly internal evaluations; no independent reproduction or released evaluation implementation verified. Peer engagement includes refusals and failed attempts. System prompts, reasoning settings, grading, safeguards and evaluation awareness affect comparisons; figures are not production incidence estimates."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-27",
+      "report_path": "reports/2026/10/2026-10-27.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://www.lmsys.org/blog/2026-10-26-cf-security",
+      "title": "SGLang Security Update: Improving Request Isolation",
+      "category": "3.3",
+      "published_on": "2026-10-26",
+      "first_seen_at": "2026-10-27T10:07:17.407Z",
+      "canonical_url": "https://www.lmsys.org/blog/2026-10-26-cf-security",
+      "links": {
+        "blog": "https://www.lmsys.org/blog/2026-10-26-cf-security",
+        "code": "https://github.com/sgl-project/sglang/pull/35049"
+      },
+      "summary": [
+        "SGLang and Cloudflare disclose how rejected requests and asynchronous KV transfers could break request isolation in disaggregated serving, and explain admission checks and deferred cache release.",
+        "The operational lesson is that request termination does not end remote memory access: safe reuse needs trustworthy drain accounting, with explicit limits on timeout-based release."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "Complete coordinated October26 reports, reproduction README and relevant implementation changes inspected. Cloudflare identifies155 affected GLM-5.3 responses during August27–September9; the immediate rejection bug is distinct from the related abort-transfer race. SGLang retains cache slots, request rows and metadata until all required drain acknowledgements or timeout. Across21 two-H100 runs, throughput deltas were within±2% with confidence intervals spanning zero. This is a new disclosure and integrated analysis; patches and the October11–12 reproducer were public earlier.",
+        "limitations": "Timeout expiry does not prove outstanding writes stopped; failed sends must not acknowledge drain. The controlled harness deliberately widens a race and does not estimate production frequency. Optional transfer checksums cover a particular handoff, not all future reads or model architectures. Neither small performance tests nor reproduced cases establish universal tenant isolation. No new October26 implementation release is claimed."
+      },
+      "tags": [
+        "Disaggregated Serving",
+        "KV Lifetime",
+        "Request Isolation",
+        "Failure Handling"
+      ],
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-27",
+      "report_path": "reports/2026/10/2026-10-27.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.33719",
+      "title": "ZipFusion: Fusing Lossless KV Decompression with Attention for Efficient LLM Decoding",
+      "category": "3.4",
+      "published_on": "2026-10-24",
+      "first_seen_at": "2026-10-27T10:05:20.809Z",
+      "canonical_url": "https://arxiv.org/abs/2610.33719",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.33719v1"
+      },
+      "summary": [
+        "ZipFusion keeps compressible KV blocks losslessly encoded in GPU memory and reconstructs their original BF16 values inside attention registers, avoiding a separate decompression pass.",
+        "Its format, attention kernel and cross-layer memory pool reduce repeated cache traffic and permit larger decode batches under the same memory budget."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Full seven-page v1 inspected. A 12-bit representation plus metadata falls back to raw blocks when exponent ranges do not fit. On one H100 80GB, Llama-3.1-8B/Qwen3-8B attention reaches 1.23–1.25× FlashInfer; at 8K context, own-maximum-batch decode throughput improves 26.3%/25.8% versus raw SGLang at equal memory fraction. Receipt: October24 15:07UTC; original October27 cs.AR new-submission listing plus Monday20:00 Eastern schedule imply October27 00:00UTC announcement. No earlier author release or verified ZipFusion code destination was found.",
+        "limitations": "Framework timing excludes prefill and initial compression; all newly generated KV remains raw. Peak throughput compares each method’s largest supported batch, separately from fixed-batch gains. Bitwise reconstruction of stored values does not establish identical complete model outputs. Only two small models, one GPU and controlled fixed-length decoding were evaluated; no online latency, quality or recovery guarantee."
+      },
+      "tags": [
+        "Lossless KV Compression",
+        "Fused Decompression",
+        "Decode Attention",
+        "Memory Management"
+      ],
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-27T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AR/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-27",
+      "report_path": "reports/2026/10/2026-10-27.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.35336",
+      "title": "One Megakernel is Not Enough: Predicting Where to Cut for Streaming Inference",
+      "category": "3.5",
+      "published_on": "2026-10-26",
+      "first_seen_at": "2026-10-27T10:05:20.818Z",
+      "canonical_url": "https://arxiv.org/abs/2610.35336",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.35336v1"
+      },
+      "summary": [
+        "This planner uses conventional execution profiles and implementation contracts to rank where a streaming model should be split into specialized megakernels and how their GPU resources should overlap.",
+        "Preserving useful boundaries can beat one large kernel: independent scheduling and earlier publication sometimes outweigh the extra launches, while larger batches can favor conventional execution."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Full eight-page v1 inspected. Tile/event simulation models readiness, lookahead and occupied thread blocks. Frozen planning inputs select the measured winner in 13/13 implemented validation pools across NH-TTS, Qwen3-TTS and Llama-1B on H100 NVL94GB. At NH-TTS batch32, three megakernels reduce engine-level mean batch-p95 first-audio time 21.4% versus the monolith and 4.05× versus conventional TensorRT execution. Receipt: October26 12:32UTC; original October27 cs.PF batch and official Monday schedule imply October27 00:00UTC announcement.",
+        "limitations": "The ranking proxy requires standalone costs and supported implementation records; it is not calibrated absolute latency or a global optimum over unimplemented designs. One GPU, fixed fixtures and an unreleased NH-TTS model limit transfer. Correctness gates cover tested tokens and numerical tolerances, not broad speech quality. No author planner implementation destination was verified."
+      },
+      "tags": [
+        "Megakernels",
+        "Streaming Inference",
+        "Fusion Boundaries",
+        "GPU Scheduling"
+      ],
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-27T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.PF/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-27",
+      "report_path": "reports/2026/10/2026-10-27.md",
+      "search_status": "partial"
+    },
     {
       "id": "arxiv:2610.32951",
       "title": "Where Rounding Happens Matters: Rounding-Location Alignment Stabilizes LLM Reinforcement Learning",
@@ -9257,7 +9593,7 @@
       "group": "llm-recipe",
       "title": "Model Architecture & Scaling Laws",
       "path": "topics/llm-recipe/model-architecture-scaling-laws/README.md",
-      "count": 13
+      "count": 14
     },
     {
       "id": "1.3",
@@ -9292,14 +9628,14 @@
       "group": "llm-recipe",
       "title": "Reinforcement Learning & Reasoning",
       "path": "topics/llm-recipe/reinforcement-learning-reasoning/README.md",
-      "count": 12
+      "count": 13
     },
     {
       "id": "1.8",
       "group": "llm-recipe",
       "title": "Distillation & Model Compression",
       "path": "topics/llm-recipe/distillation-model-compression/README.md",
-      "count": 17
+      "count": 18
     },
     {
       "id": "1.9",
@@ -9348,7 +9684,7 @@
       "group": "ai-agent-dev",
       "title": "Agent Learning & Skill Acquisition",
       "path": "topics/ai-agent-dev/agent-learning-skill-acquisition/README.md",
-      "count": 14
+      "count": 15
     },
     {
       "id": "2.6",
@@ -9362,14 +9698,14 @@
       "group": "ai-agent-dev",
       "title": "Agent Harness & Reliability",
       "path": "topics/ai-agent-dev/agent-harness-reliability/README.md",
-      "count": 9
+      "count": 10
     },
     {
       "id": "2.8",
       "group": "ai-agent-dev",
       "title": "Agent Evaluation & Security",
       "path": "topics/ai-agent-dev/agent-evaluation-security/README.md",
-      "count": 24
+      "count": 25
     },
     {
       "id": "3.1",
@@ -9390,21 +9726,21 @@
       "group": "ai-training-inference-infra",
       "title": "Inference Engines & Serving",
       "path": "topics/ai-training-inference-infra/inference-engines-serving/README.md",
-      "count": 17
+      "count": 18
     },
     {
       "id": "3.4",
       "group": "ai-training-inference-infra",
       "title": "Attention, KV Cache & Memory Systems",
       "path": "topics/ai-training-inference-infra/attention-kv-cache-memory-systems/README.md",
-      "count": 14
+      "count": 15
     },
     {
       "id": "3.5",
       "group": "ai-training-inference-infra",
       "title": "Kernels, Compilers & Runtimes",
       "path": "topics/ai-training-inference-infra/kernels-compilers-runtimes/README.md",
-      "count": 17
+      "count": 18
     },
     {
       "id": "3.6",

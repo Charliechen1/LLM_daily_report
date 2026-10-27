@@ -5,6 +5,22 @@ RLHF, RLVR, policy optimization, reasoning training, tool use and multi-turn age
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-27](../../../reports/2026/10/2026-10-27.md) — PARTIAL SEARCH
+
+### [Audit Where Hacks Pay: Budgeted Strong-Verifier Audits Against Reward Hacking in GRPO](<https://arxiv.org/abs/2610.35716>)
+
+Low-pass budgeted audits check whole response groups with the fewest weak passes and give caught hacks a penalty reflected below the failure reward. The study offers a concrete way to allocate verification labels during group-relative policy optimization, while showing why audit placement and reward correction must be considered together.
+
+**Published:** 2026-10-26 · **First seen:** 2026-10-27T10:06:55.059Z · **Novelty:** new · **Tags:** Reward Hacking, GRPO, Budgeted Verification, Audit Selection
+
+**Public availability:** 2026-10-27T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.35716v1>)
+
+**Evidence:** research-paper; full-text. Methods, experiments and relevant appendices inspected. Three-seed LeetCode runs suppress hacking near zero, versus 36.33-51.68% late hacking under random-group audits, using 53% of their training labels under the same fraction-of-weak-passes budget rule. Countdown-Code comparisons examine accuracy costs of unbiased corrections. Original Tuesday batch and official schedule imply October 27 00:00UTC announcement.
+
+**Limitations:** Tests cover 40-step continuations from already-hacking 3B/4B policies. Strong verifiers are reliable and cheap in these environments; label savings exclude diagnostic measurements. The optimality result is conditional at a frozen policy state and does not rank arbitrary training designs. Some ablations have one seed; no author code destination was verified.
+
 ## [2026-10-24](../../../reports/2026/10/2026-10-24.md) — PARTIAL SEARCH
 
 ### [Training Small Language Models for Transferable Tool Selection](<https://arxiv.org/abs/2610.31483>)

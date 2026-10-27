@@ -5,6 +5,22 @@ Transformers, MoE, SSM/hybrid architectures and model/data/compute allocation.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-27](../../../reports/2026/10/2026-10-27.md) — PARTIAL SEARCH
+
+### [LoopFold: Parallelizing Recurrent Depth in Looped Transformers](<https://arxiv.org/abs/2610.35556>)
+
+LoopFold predicts inputs to later recurrent layers so several depths of a shared Transformer can run in parallel, then corrects their outputs using newly available earlier states. Joint training turns extra parallel computation into a shorter sequential decoding path, offering a useful architecture tradeoff between latency, quality and memory.
+
+**Published:** 2026-10-26 · **First seen:** 2026-10-27T10:06:55.058Z · **Novelty:** new · **Tags:** Looped Transformers, Parallel Recurrent Depth, Architecture, Compute-Memory Tradeoffs
+
+**Public availability:** 2026-10-27T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.35556v1>)
+
+**Evidence:** research-paper; full-text. Complete 13-page v1 inspected. Models train from scratch on 30B Pile tokens at 1.4B scale. At target depth 9, five stages use 21 backbone evaluations versus nine sequential evaluations, with 46% lower batch-one decoding latency and eight-task accuracy 56.38% versus 54.18%. Separate matched-backbone-compute comparisons show smaller quality gains. Original Tuesday batch and official schedule imply October 27 00:00UTC announcement.
+
+**Limitations:** Schedules train separately; this is not exact trajectory-preserving parallelization of an existing checkpoint. Extra FLOPs and KV caches are material costs. Timings use 1024-token prompts/continuations, BF16, no tensor parallelism and an unspecified GPU model. No multi-seed uncertainty or author implementation destination was verified.
+
 ## [2026-10-22](../../../reports/2026/10/2026-10-22.md) — PARTIAL SEARCH
 
 ### [Loopholing All the Way: Language Modeling with pure Self-Conditioning](<https://arxiv.org/abs/2610.30068>)

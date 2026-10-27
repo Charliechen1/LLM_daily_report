@@ -5,6 +5,22 @@ GPU kernels, operator fusion, compilation, execution graphs and hardware adaptat
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-27](../../../reports/2026/10/2026-10-27.md) — PARTIAL SEARCH
+
+### [One Megakernel is Not Enough: Predicting Where to Cut for Streaming Inference](<https://arxiv.org/abs/2610.35336>)
+
+This planner uses conventional execution profiles and implementation contracts to rank where a streaming model should be split into specialized megakernels and how their GPU resources should overlap. Preserving useful boundaries can beat one large kernel: independent scheduling and earlier publication sometimes outweigh the extra launches, while larger batches can favor conventional execution.
+
+**Published:** 2026-10-26 · **First seen:** 2026-10-27T10:05:20.818Z · **Novelty:** new · **Tags:** Megakernels, Streaming Inference, Fusion Boundaries, GPU Scheduling
+
+**Public availability:** 2026-10-27T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.PF/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.35336v1>)
+
+**Evidence:** research-paper; full-text. Full eight-page v1 inspected. Tile/event simulation models readiness, lookahead and occupied thread blocks. Frozen planning inputs select the measured winner in 13/13 implemented validation pools across NH-TTS, Qwen3-TTS and Llama-1B on H100 NVL94GB. At NH-TTS batch32, three megakernels reduce engine-level mean batch-p95 first-audio time 21.4% versus the monolith and 4.05× versus conventional TensorRT execution. Receipt: October26 12:32UTC; original October27 cs.PF batch and official Monday schedule imply October27 00:00UTC announcement.
+
+**Limitations:** The ranking proxy requires standalone costs and supported implementation records; it is not calibrated absolute latency or a global optimum over unimplemented designs. One GPU, fixed fixtures and an unreleased NH-TTS model limit transfer. Correctness gates cover tested tokens and numerical tolerances, not broad speech quality. No author planner implementation destination was verified.
+
 ## [2026-10-22](../../../reports/2026/10/2026-10-22.md) — PARTIAL SEARCH
 
 ### [Accelerating PyTorch on AMD GPUs with FlyDSL](<https://pytorch.org/blog/accelerating-pytorch-on-amd-gpus-with-flydsl/>)

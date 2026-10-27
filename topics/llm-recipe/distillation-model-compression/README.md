@@ -5,6 +5,20 @@ Knowledge/reasoning distillation, pruning, quantization algorithms and model mer
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-27](../../../reports/2026/10/2026-10-27.md) — PARTIAL SEARCH
+
+### [Learning When to Commit: Schedule Distillation for Fast Diffusion Language Models](<https://arxiv.org/abs/2610.35804>)
+
+dSpark trains diffusion language models on reveal schedules that expose tokens useful for predicting the remaining text, while anchoring failed trajectories to the original model. This moves schedule search into training so parallel decoding can produce more tokens per forward pass while preserving task quality in the tested math and code settings.
+
+**Published:** 2026-10-26 · **First seen:** 2026-10-27T10:06:55.057Z · **Novelty:** new · **Tags:** Diffusion Language Models, Schedule Distillation, Parallel Decoding, Calibration
+
+[Paper](<https://arxiv.org/html/2610.35804v1>) · [Code](<https://github.com/VILA-Lab/dSpark>)
+
+**Evidence:** research-paper; full-text. Methods, results, appendices and linked code inspected. On GSM8K, LLaDA reaches 10.12 tokens per forward and 78.94% accuracy; batch-one A100 throughput is 249 tokens/s versus 15 for the base and 220 for d3LLM. The October 27 paper announcement is schedule-inferred; the October 26 repository commit is not proof of its public-visibility time.
+
+**Limitations:** Offline schedules require verified responses and extra teacher evaluations. Main decoding uses 256-token outputs; Dream lacks equivalent wall-clock comparisons. Three evaluation runs do not establish training-seed robustness. Weights and data remain pending. Main-window eligibility follows the observed October 26 release evidence without assigning an exact global first-public timestamp.
+
 ## [2026-10-26](../../../reports/2026/10/2026-10-26.md) — PARTIAL SEARCH
 
 ### [On-Policy Self-Training: Data-Free Self-Improvement in Large Language Models](<https://arxiv.org/abs/2610.32770>)

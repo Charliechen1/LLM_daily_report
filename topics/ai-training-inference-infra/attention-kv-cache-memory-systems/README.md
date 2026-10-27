@@ -5,6 +5,22 @@ Attention execution, KV management/reuse, offloading and long-context memory eff
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-27](../../../reports/2026/10/2026-10-27.md) — PARTIAL SEARCH
+
+### [ZipFusion: Fusing Lossless KV Decompression with Attention for Efficient LLM Decoding](<https://arxiv.org/abs/2610.33719>)
+
+ZipFusion keeps compressible KV blocks losslessly encoded in GPU memory and reconstructs their original BF16 values inside attention registers, avoiding a separate decompression pass. Its format, attention kernel and cross-layer memory pool reduce repeated cache traffic and permit larger decode batches under the same memory budget.
+
+**Published:** 2026-10-24 · **First seen:** 2026-10-27T10:05:20.809Z · **Novelty:** new · **Tags:** Lossless KV Compression, Fused Decompression, Decode Attention, Memory Management
+
+**Public availability:** 2026-10-27T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AR/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.33719v1>)
+
+**Evidence:** research-paper; full-text. Full seven-page v1 inspected. A 12-bit representation plus metadata falls back to raw blocks when exponent ranges do not fit. On one H100 80GB, Llama-3.1-8B/Qwen3-8B attention reaches 1.23–1.25× FlashInfer; at 8K context, own-maximum-batch decode throughput improves 26.3%/25.8% versus raw SGLang at equal memory fraction. Receipt: October24 15:07UTC; original October27 cs.AR new-submission listing plus Monday20:00 Eastern schedule imply October27 00:00UTC announcement. No earlier author release or verified ZipFusion code destination was found.
+
+**Limitations:** Framework timing excludes prefill and initial compression; all newly generated KV remains raw. Peak throughput compares each method’s largest supported batch, separately from fixed-batch gains. Bitwise reconstruction of stored values does not establish identical complete model outputs. Only two small models, one GPU and controlled fixed-length decoding were evaluated; no online latency, quality or recovery guarantee.
+
 ## [2026-10-22](../../../reports/2026/10/2026-10-22.md) — PARTIAL SEARCH
 
 ### [UlaCache: Unified Logical Addressing for Sparse LLM Serving](<https://arxiv.org/abs/2610.29820>)

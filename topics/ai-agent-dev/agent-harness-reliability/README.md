@@ -5,6 +5,22 @@ Long-running execution, failure recovery, retries, persistence and human collabo
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-27](../../../reports/2026/10/2026-10-27.md) — PARTIAL SEARCH
+
+### [Rethinking Verification in Agent Harnesses](<https://arxiv.org/abs/2610.34577>)
+
+This study compares 17 harness designs spanning initial instructions, execution reminders, completion gates and a fresh-context critic that checks the delivered work before returning findings for repair. Independent review offers the strongest average accuracy–cost tradeoff in the tested coding subsets and improves judged visual artifacts, giving builders concrete evidence for where to spend verification effort.
+
+**Published:** 2026-10-25 · **First seen:** 2026-10-27T10:06:15.694+00:00 · **Novelty:** new · **Tags:** Verification, Independent Review, Test-Time Scaling
+
+**Public availability:** 2026-10-27T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.34577v1>)
+
+**Evidence:** research-paper; full-text. Sections 3–5 and relevant Appendices A–E inspect seven coding models with a fixed Qwen3.7-Plus critic. Three trials per coding condition use a 31-task Terminal-Bench subset and a baseline-adjusted SWE subset initially comprising 30 tasks. Four independent-review designs improve mean accuracy by 5.9–9.5 and 3.9–6.6 points at 1.13–1.25 and 1.00–1.04 times priced API cost, respectively, including critique and repair. Original Tuesday cs.AI batch plus official schedule support inferred October 27 00:00 UTC release; Sunday receipt is retained.
+
+**Limitations:** Small difficulty-selected subsets and no reported confidence intervals for the aggregate gains; these are not full-benchmark or universal guarantees. VisualBench comprises 18 internal tasks with company raters. Standard single-pass review accepts the next revision without rechecking; extra-review widths run sequentially. No author implementation was verified.
+
 ## [2026-10-24](../../../reports/2026/10/2026-10-24.md) — PARTIAL SEARCH
 
 ### [From Prose to Properties: Testing Research Claims with ARATest for Agent-Native Science](<https://arxiv.org/abs/2610.30495>)

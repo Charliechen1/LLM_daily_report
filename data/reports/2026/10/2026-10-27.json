@@ -1,0 +1,1031 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-27",
+  "timezone": "America/Los_Angeles",
+  "generated_at": "2026-10-27T10:25:25.811+00:00",
+  "coverage": {
+    "start": "2026-10-26T03:00:00-07:00",
+    "end": "2026-10-27T03:00:00-07:00"
+  },
+  "search": {
+    "status": "partial",
+    "notes": "Nine contributions selected after screening all three areas and 26 subdomains against the September 29 baseline and complete 253-record registry. Coverage is October 26 03:00 to October 27 03:00 America/Los_Angeles; the total 72-hour discovery interval starts October 24 03:00. Fresh original Tuesday October 27 arXiv batches and the official schedule support explicitly inferred paper-announcement times where recorded; original October 24–26 receipt dates are retained. Later crosslisting alone does not establish novelty. MiRL is conservatively labeled newly-discovered because an October 25 repository artifact already contains its method/results, while exact historical public visibility remains unproven; its original October 26 paper receipt is retained without asserting a later announcement as the first work release. dSpark likewise separates observed October 26 code content and paper chronology without inventing an exact earliest-public timestamp. The October 26 SGLang/Cloudflare disclosure is new integrated incident analysis, not a new release of its older fixes or reproducer. Older MXFP8RL PR results, Selective Tie/FORK artifacts and SABench material were not reset to new publication dates. FlashScript remains a narrow preliminary reserve rather than padding the report. All selected sources were inspected in full; author code and experiments were not executed or independently reproduced. Search remains partial because the OpenReview submission API is restricted and venue/organization discovery is bounded. OpenAI and Anthropic pages and the ROCm index were recovered through the web reader and are not continuing outages; the fresh ROCm Group-GEMM tutorial remains an explicitly uncompleted reserve. Reported speed, audit savings, benchmark gains and isolation results retain their measurement, hardware and evaluation limits.",
+    "sources_checked": [
+      {
+        "name": "2610.35804-abs.html",
+        "url": "https://arxiv.org/abs/2610.35804",
+        "status": "ok"
+      },
+      {
+        "name": "2610.35556-abs.html",
+        "url": "https://arxiv.org/abs/2610.35556",
+        "status": "ok"
+      },
+      {
+        "name": "2610.35544-abs.html",
+        "url": "https://arxiv.org/abs/2610.35544",
+        "status": "ok"
+      },
+      {
+        "name": "2610.35787-abs.html",
+        "url": "https://arxiv.org/abs/2610.35787",
+        "status": "ok"
+      },
+      {
+        "name": "2610.35716-abs.html",
+        "url": "https://arxiv.org/abs/2610.35716",
+        "status": "ok"
+      },
+      {
+        "name": "2610.33512-abs.html",
+        "url": "https://arxiv.org/abs/2610.33512",
+        "status": "ok"
+      },
+      {
+        "name": "2610.35130-abs.html",
+        "url": "https://arxiv.org/abs/2610.35130",
+        "status": "ok"
+      },
+      {
+        "name": "2610.34005-abs.html",
+        "url": "https://arxiv.org/abs/2610.34005",
+        "status": "ok"
+      },
+      {
+        "name": "2610.34894-abs.html",
+        "url": "https://arxiv.org/abs/2610.34894",
+        "status": "ok"
+      },
+      {
+        "name": "2610.33969-abs.html",
+        "url": "https://arxiv.org/abs/2610.33969",
+        "status": "ok"
+      },
+      {
+        "name": "2610.33517-abs.html",
+        "url": "https://arxiv.org/abs/2610.33517",
+        "status": "ok"
+      },
+      {
+        "name": "2610.33360-abs.html",
+        "url": "https://arxiv.org/abs/2610.33360",
+        "status": "ok"
+      },
+      {
+        "name": "2610.35201-abs.html",
+        "url": "https://arxiv.org/abs/2610.35201",
+        "status": "ok"
+      },
+      {
+        "name": "2610.34242-abs.html",
+        "url": "https://arxiv.org/abs/2610.34242",
+        "status": "ok"
+      },
+      {
+        "name": "dspark-repo.json",
+        "url": "https://api.github.com/repos/VILA-Lab/dSpark",
+        "status": "ok"
+      },
+      {
+        "name": "dspark-commits.json",
+        "url": "https://api.github.com/repos/VILA-Lab/dSpark/commits?per_page=30",
+        "status": "ok"
+      },
+      {
+        "name": "dspark-readme.json",
+        "url": "https://api.github.com/repos/VILA-Lab/dSpark/readme",
+        "status": "ok"
+      },
+      {
+        "name": "dspark-github.html",
+        "url": "https://github.com/VILA-Lab/dSpark",
+        "status": "ok"
+      },
+      {
+        "name": "fork-repo.json",
+        "url": "https://api.github.com/repos/JHKim631/FORK",
+        "status": "ok"
+      },
+      {
+        "name": "fork-commits.json",
+        "url": "https://api.github.com/repos/JHKim631/FORK/commits?per_page=30",
+        "status": "ok"
+      },
+      {
+        "name": "fork-readme.json",
+        "url": "https://api.github.com/repos/JHKim631/FORK/readme",
+        "status": "ok"
+      },
+      {
+        "name": "fork-github.html",
+        "url": "https://github.com/JHKim631/FORK",
+        "status": "ok"
+      },
+      {
+        "name": "ties-repo.json",
+        "url": "https://api.github.com/repos/purav-0000/selective-tie-learning",
+        "status": "ok"
+      },
+      {
+        "name": "ties-commits.json",
+        "url": "https://api.github.com/repos/purav-0000/selective-tie-learning/commits?per_page=30",
+        "status": "ok"
+      },
+      {
+        "name": "ties-readme.json",
+        "url": "https://api.github.com/repos/purav-0000/selective-tie-learning/readme",
+        "status": "ok"
+      },
+      {
+        "name": "ties-github.html",
+        "url": "https://github.com/purav-0000/selective-tie-learning",
+        "status": "ok"
+      },
+      {
+        "name": "dspark-tree.json",
+        "url": "https://api.github.com/repos/VILA-Lab/dSpark/git/trees/2ac9c9bdd40e0fdb6abdeff5ef28e5e5103eda14?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "fork-initial-readme.md",
+        "url": "https://raw.githubusercontent.com/JHKim631/FORK/455cb4cbd78f76ff1ffb09b46132af84e1a7400b/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "fork-initial-tree.json",
+        "url": "https://api.github.com/repos/JHKim631/FORK/git/trees/455cb4cbd78f76ff1ffb09b46132af84e1a7400b?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "ties-initial-readme.md",
+        "url": "https://raw.githubusercontent.com/purav-0000/selective-tie-learning/a07086c4a633ed496fddc8042178a37831c8f9e3/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "dspark-train.py",
+        "url": "https://raw.githubusercontent.com/VILA-Lab/dSpark/2ac9c9bdd40e0fdb6abdeff5ef28e5e5103eda14/LLaDA/llada_train.py",
+        "status": "ok"
+      },
+      {
+        "name": "dspark-config.yaml",
+        "url": "https://raw.githubusercontent.com/VILA-Lab/dSpark/2ac9c9bdd40e0fdb6abdeff5ef28e5e5103eda14/LLaDA/configs/config_lora_llada.yaml",
+        "status": "ok"
+      },
+      {
+        "name": "dspark-generate.py",
+        "url": "https://raw.githubusercontent.com/VILA-Lab/dSpark/2ac9c9bdd40e0fdb6abdeff5ef28e5e5103eda14/LLaDA/generate.py",
+        "status": "ok"
+      },
+      {
+        "name": "cl-recent.html",
+        "url": "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "lg.html",
+        "url": "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "cl-new",
+        "url": "https://arxiv.org/list/cs.CL/new",
+        "status": "ok"
+      },
+      {
+        "name": "lg-new.html",
+        "url": "https://arxiv.org/list/cs.LG/new",
+        "status": "ok"
+      },
+      {
+        "name": "schedule.html",
+        "url": "https://info.arxiv.org/help/availability.html",
+        "status": "ok"
+      },
+      {
+        "name": "thinkingmachines.html",
+        "url": "https://thinkingmachines.ai/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "hf-daily.html",
+        "url": "https://huggingface.co/papers/date/2026-10-27",
+        "status": "ok"
+      },
+      {
+        "name": "2610.35804.pdf",
+        "url": "https://arxiv.org/pdf/2610.35804v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.35804.html",
+        "url": "https://arxiv.org/html/2610.35804v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.35556.pdf",
+        "url": "https://arxiv.org/pdf/2610.35556v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.35556.html",
+        "url": "https://arxiv.org/html/2610.35556v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.33512.pdf",
+        "url": "https://arxiv.org/pdf/2610.33512v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.33512.html",
+        "url": "https://arxiv.org/html/2610.33512v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.35716.pdf",
+        "url": "https://arxiv.org/pdf/2610.35716v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.35716.html",
+        "url": "https://arxiv.org/html/2610.35716v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.35787.pdf",
+        "url": "https://arxiv.org/pdf/2610.35787v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.35787.html",
+        "url": "https://arxiv.org/html/2610.35787v1",
+        "status": "ok"
+      },
+      {
+        "name": "ai-new",
+        "url": "https://arxiv.org/list/cs.AI/new",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic Research via primary web reader",
+        "url": "https://www.anthropic.com/research",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic Engineering via primary web reader",
+        "url": "https://www.anthropic.com/engineering",
+        "status": "ok"
+      },
+      {
+        "name": "langchain",
+        "url": "https://www.blog.langchain.com/",
+        "status": "ok"
+      },
+      {
+        "name": "34577-abs",
+        "url": "https://arxiv.org/abs/2610.34577",
+        "status": "ok"
+      },
+      {
+        "name": "34577-paper",
+        "url": "https://arxiv.org/html/2610.34577v1",
+        "status": "ok"
+      },
+      {
+        "name": "35697-abs",
+        "url": "https://arxiv.org/abs/2610.35697",
+        "status": "ok"
+      },
+      {
+        "name": "35697-paper",
+        "url": "https://arxiv.org/html/2610.35697v1",
+        "status": "ok"
+      },
+      {
+        "name": "33876-abs",
+        "url": "https://arxiv.org/abs/2610.33876",
+        "status": "ok"
+      },
+      {
+        "name": "33876-paper",
+        "url": "https://arxiv.org/html/2610.33876v1",
+        "status": "ok"
+      },
+      {
+        "name": "34167-abs",
+        "url": "https://arxiv.org/abs/2610.34167",
+        "status": "ok"
+      },
+      {
+        "name": "34167-paper",
+        "url": "https://arxiv.org/html/2610.34167v1",
+        "status": "ok"
+      },
+      {
+        "name": "35793-abs",
+        "url": "https://arxiv.org/abs/2610.35793",
+        "status": "ok"
+      },
+      {
+        "name": "35793-paper",
+        "url": "https://arxiv.org/html/2610.35793v1",
+        "status": "ok"
+      },
+      {
+        "name": "35801-abs",
+        "url": "https://arxiv.org/abs/2610.35801",
+        "status": "ok"
+      },
+      {
+        "name": "35866-abs",
+        "url": "https://arxiv.org/abs/2610.35866",
+        "status": "ok"
+      },
+      {
+        "name": "hc-recent",
+        "url": "https://arxiv.org/list/cs.HC/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "mirl-code",
+        "url": "https://github.com/runchu-tian/MiRL",
+        "status": "ok"
+      },
+      {
+        "name": "mirl-repo",
+        "url": "https://api.github.com/repos/runchu-tian/MiRL",
+        "status": "ok"
+      },
+      {
+        "name": "mirl-history",
+        "url": "https://api.github.com/repos/runchu-tian/MiRL/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "sabench-repo",
+        "url": "https://api.github.com/repos/hjj194/sabench-artifact",
+        "status": "ok"
+      },
+      {
+        "name": "sabench-history",
+        "url": "https://api.github.com/repos/hjj194/sabench-artifact/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "mirl-initial-readme",
+        "url": "https://raw.githubusercontent.com/runchu-tian/MiRL/82b9beb937cf743e2d9385d8a3a8cf4bd43e5419/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "mirl-current-readme",
+        "url": "https://raw.githubusercontent.com/runchu-tian/MiRL/3eee94789e9d4805cb487be1b2d69f88bf80c1d7/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "mirl-tree",
+        "url": "https://api.github.com/repos/runchu-tian/MiRL/git/trees/3eee94789e9d4805cb487be1b2d69f88bf80c1d7?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "sabench-initial-readme",
+        "url": "https://raw.githubusercontent.com/hjj194/sabench-artifact/299e8a99e7edfb007efeeb1c969936599f11201f/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "flash-supplement",
+        "url": "https://figshare.com/s/c812d719d2d43bae034c",
+        "status": "unavailable"
+      },
+      {
+        "name": "flash-pdf",
+        "url": "https://arxiv.org/pdf/2610.33876v1",
+        "status": "ok"
+      },
+      {
+        "name": "mirl-pdf",
+        "url": "https://arxiv.org/pdf/2610.35697v1",
+        "status": "ok"
+      },
+      {
+        "name": "verification-pdf",
+        "url": "https://arxiv.org/pdf/2610.34577v1",
+        "status": "ok"
+      },
+      {
+        "name": "autoresearch-paper",
+        "url": "https://arxiv.org/html/2610.35866v1",
+        "status": "ok"
+      },
+      {
+        "name": "mirl-replay-code",
+        "url": "https://raw.githubusercontent.com/runchu-tian/MiRL/3eee94789e9d4805cb487be1b2d69f88bf80c1d7/mirl/prefixes/rerun.py",
+        "status": "ok"
+      },
+      {
+        "name": "mirl-judge-code",
+        "url": "https://raw.githubusercontent.com/runchu-tian/MiRL/3eee94789e9d4805cb487be1b2d69f88bf80c1d7/mirl/train/prefix_judge.py",
+        "status": "ok"
+      },
+      {
+        "name": "mirl-reward-patch",
+        "url": "https://raw.githubusercontent.com/runchu-tian/MiRL/3eee94789e9d4805cb487be1b2d69f88bf80c1d7/mirl/train/patches/tmax_env.patch",
+        "status": "ok"
+      },
+      {
+        "name": "openreview-index",
+        "url": "https://openreview.net/",
+        "status": "ok"
+      },
+      {
+        "name": "acl-index",
+        "url": "https://aclanthology.org/",
+        "status": "ok"
+      },
+      {
+        "name": "dc.html",
+        "url": "https://arxiv.org/list/cs.DC/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "ar.html",
+        "url": "https://arxiv.org/list/cs.AR/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "vllm.html",
+        "url": "https://vllm.ai/blog",
+        "status": "ok"
+      },
+      {
+        "name": "lmsys.html",
+        "url": "https://www.lmsys.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "pytorch.html",
+        "url": "https://pytorch.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "nvidia.html",
+        "url": "https://developer.nvidia.com/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "rocm-web-recovery.json",
+        "url": "https://rocm.blogs.amd.com/",
+        "status": "ok"
+      },
+      {
+        "name": "2610.33719-abs.html",
+        "url": "https://arxiv.org/abs/2610.33719",
+        "status": "ok"
+      },
+      {
+        "name": "2610.33719.html",
+        "url": "https://arxiv.org/html/2610.33719v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.33501-abs.html",
+        "url": "https://arxiv.org/abs/2610.33501",
+        "status": "ok"
+      },
+      {
+        "name": "2610.33501.html",
+        "url": "https://arxiv.org/html/2610.33501v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.35336-abs.html",
+        "url": "https://arxiv.org/abs/2610.35336",
+        "status": "ok"
+      },
+      {
+        "name": "2610.35336.html",
+        "url": "https://arxiv.org/html/2610.35336v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.34440-abs.html",
+        "url": "https://arxiv.org/abs/2610.34440",
+        "status": "ok"
+      },
+      {
+        "name": "2610.34440.html",
+        "url": "https://arxiv.org/html/2610.34440v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.34427-abs.html",
+        "url": "https://arxiv.org/abs/2610.34427",
+        "status": "ok"
+      },
+      {
+        "name": "2610.34427.html",
+        "url": "https://arxiv.org/html/2610.34427v1",
+        "status": "ok"
+      },
+      {
+        "name": "sglang-security.html",
+        "url": "https://www.lmsys.org/blog/2026-10-26-cf-security",
+        "status": "ok"
+      },
+      {
+        "name": "cloudflare-kv.html",
+        "url": "https://blog.cloudflare.com/kv-cache-exposure-remediation/",
+        "status": "ok"
+      },
+      {
+        "name": "2610.33719.pdf",
+        "url": "https://arxiv.org/pdf/2610.33719v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.33501.pdf",
+        "url": "https://arxiv.org/pdf/2610.33501v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.34427.pdf",
+        "url": "https://arxiv.org/pdf/2610.34427v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.35336.pdf",
+        "url": "https://arxiv.org/pdf/2610.35336v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.34440.pdf",
+        "url": "https://arxiv.org/pdf/2610.34440v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.34915.pdf",
+        "url": "https://arxiv.org/pdf/2610.34915v1",
+        "status": "ok"
+      },
+      {
+        "name": "2610.34915-abs.html",
+        "url": "https://arxiv.org/abs/2610.34915",
+        "status": "ok"
+      },
+      {
+        "name": "2610.34915.html",
+        "url": "https://arxiv.org/html/2610.34915v1",
+        "status": "ok"
+      },
+      {
+        "name": "pf.html",
+        "url": "https://arxiv.org/list/cs.PF/new",
+        "status": "ok"
+      },
+      {
+        "name": "ar-new.html",
+        "url": "https://arxiv.org/list/cs.AR/new",
+        "status": "ok"
+      },
+      {
+        "name": "34915-source.tar",
+        "url": "https://arxiv.org/src/2610.34915v1",
+        "status": "ok"
+      },
+      {
+        "name": "sglang-pr-35049.json",
+        "url": "https://api.github.com/repos/sgl-project/sglang/pulls/35049",
+        "status": "ok"
+      },
+      {
+        "name": "sglang-pr-35049.diff",
+        "url": "https://github.com/sgl-project/sglang/pull/35049.diff",
+        "status": "ok"
+      },
+      {
+        "name": "sglang-pr-43719.json",
+        "url": "https://api.github.com/repos/sgl-project/sglang/pulls/43719",
+        "status": "ok"
+      },
+      {
+        "name": "sglang-pr-43719.diff",
+        "url": "https://github.com/sgl-project/sglang/pull/43719.diff",
+        "status": "ok"
+      },
+      {
+        "name": "sglang-pr-45973.json",
+        "url": "https://api.github.com/repos/sgl-project/sglang/pulls/45973",
+        "status": "ok"
+      },
+      {
+        "name": "sglang-pr-45973.diff",
+        "url": "https://github.com/sgl-project/sglang/pull/45973.diff",
+        "status": "ok"
+      },
+      {
+        "name": "sglang-pr-38935.json",
+        "url": "https://api.github.com/repos/sgl-project/sglang/pulls/38935",
+        "status": "ok"
+      },
+      {
+        "name": "sglang-pr-38935.diff",
+        "url": "https://github.com/sgl-project/sglang/pull/38935.diff",
+        "status": "ok"
+      },
+      {
+        "name": "verl-pr-7986.json",
+        "url": "https://api.github.com/repos/verl-project/verl/pulls/7986",
+        "status": "ok"
+      },
+      {
+        "name": "verl-pr-7987.json",
+        "url": "https://api.github.com/repos/verl-project/verl/pulls/7987",
+        "status": "ok"
+      },
+      {
+        "name": "verl-pr-8062.json",
+        "url": "https://api.github.com/repos/verl-project/verl/pulls/8062",
+        "status": "ok"
+      },
+      {
+        "name": "verl-pr-7519.json",
+        "url": "https://api.github.com/repos/verl-project/verl/pulls/7519",
+        "status": "ok"
+      },
+      {
+        "name": "verl-pr-7519.diff",
+        "url": "https://github.com/verl-project/verl/pull/7519.diff",
+        "status": "ok"
+      },
+      {
+        "name": "sglang-pr-35049.html",
+        "url": "https://github.com/sgl-project/sglang/pull/35049",
+        "status": "ok"
+      },
+      {
+        "name": "sglang-repro-gist.json",
+        "url": "https://api.github.com/gists/bdcfb3131b000a17810b4dca256d40cf",
+        "status": "ok"
+      },
+      {
+        "name": "gh-zip-search.json",
+        "url": "https://api.github.com/search/repositories?q=ZipFusion",
+        "status": "ok"
+      },
+      {
+        "name": "gh-mega-search.json",
+        "url": "https://api.github.com/search/repositories?q=%22One+Megakernel%22",
+        "status": "ok"
+      },
+      {
+        "name": "rocm-groupgemm-web.json",
+        "url": "https://rocm.blogs.amd.com/software-tools-optimization/openxla-group-gemm/README.html",
+        "status": "ok"
+      },
+      {
+        "name": "OpenAI research index web recovery",
+        "url": "https://openai.com/research/index/",
+        "status": "ok"
+      },
+      {
+        "name": "openai-terra-card",
+        "url": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+        "status": "ok"
+      },
+      {
+        "name": "Terra launch blog web recovery",
+        "url": "https://openai.com/index/introducing-gpt-6-1-terra/",
+        "status": "ok"
+      },
+      {
+        "name": "OpenAI scientific collaboration primary article web recovery",
+        "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities/",
+        "status": "ok"
+      },
+      {
+        "name": "ai2-index",
+        "url": "https://allenai.org/blog",
+        "status": "ok"
+      },
+      {
+        "name": "deepmind-index",
+        "url": "https://deepmind.google/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "openreview-api",
+        "url": "https://api2.openreview.net/notes?content.venueid=ICLR.cc/2027/Conference/Submission&limit=5",
+        "status": "unavailable"
+      },
+      {
+        "name": "OpenAI research overview web recovery",
+        "url": "https://openai.com/research/",
+        "status": "ok"
+      },
+      {
+        "name": "DeepMind forest date verification",
+        "url": "https://deepmind.google/blog/beyond-tree-cover-mapping-the-worlds-forest-types/",
+        "status": "ok"
+      },
+      {
+        "name": "DeepMind scam-model date verification",
+        "url": "https://deepmind.google/blog/on-device-ai-scam-detection-mddi/",
+        "status": "ok"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": "arxiv:2610.35556",
+      "title": "LoopFold: Parallelizing Recurrent Depth in Looped Transformers",
+      "category": "1.2",
+      "published_on": "2026-10-26",
+      "first_seen_at": "2026-10-27T10:06:55.058Z",
+      "canonical_url": "https://arxiv.org/abs/2610.35556",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.35556v1"
+      },
+      "summary": [
+        "LoopFold predicts inputs to later recurrent layers so several depths of a shared Transformer can run in parallel, then corrects their outputs using newly available earlier states.",
+        "Joint training turns extra parallel computation into a shorter sequential decoding path, offering a useful architecture tradeoff between latency, quality and memory."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Complete 13-page v1 inspected. Models train from scratch on 30B Pile tokens at 1.4B scale. At target depth 9, five stages use 21 backbone evaluations versus nine sequential evaluations, with 46% lower batch-one decoding latency and eight-task accuracy 56.38% versus 54.18%. Separate matched-backbone-compute comparisons show smaller quality gains. Original Tuesday batch and official schedule imply October 27 00:00UTC announcement.",
+        "limitations": "Schedules train separately; this is not exact trajectory-preserving parallelization of an existing checkpoint. Extra FLOPs and KV caches are material costs. Timings use 1024-token prompts/continuations, BF16, no tensor parallelism and an unspecified GPU model. No multi-seed uncertainty or author implementation destination was verified."
+      },
+      "tags": [
+        "Looped Transformers",
+        "Parallel Recurrent Depth",
+        "Architecture",
+        "Compute-Memory Tradeoffs"
+      ],
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-27T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.35716",
+      "title": "Audit Where Hacks Pay: Budgeted Strong-Verifier Audits Against Reward Hacking in GRPO",
+      "category": "1.7",
+      "published_on": "2026-10-26",
+      "first_seen_at": "2026-10-27T10:06:55.059Z",
+      "canonical_url": "https://arxiv.org/abs/2610.35716",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.35716v1"
+      },
+      "summary": [
+        "Low-pass budgeted audits check whole response groups with the fewest weak passes and give caught hacks a penalty reflected below the failure reward.",
+        "The study offers a concrete way to allocate verification labels during group-relative policy optimization, while showing why audit placement and reward correction must be considered together."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Methods, experiments and relevant appendices inspected. Three-seed LeetCode runs suppress hacking near zero, versus 36.33-51.68% late hacking under random-group audits, using 53% of their training labels under the same fraction-of-weak-passes budget rule. Countdown-Code comparisons examine accuracy costs of unbiased corrections. Original Tuesday batch and official schedule imply October 27 00:00UTC announcement.",
+        "limitations": "Tests cover 40-step continuations from already-hacking 3B/4B policies. Strong verifiers are reliable and cheap in these environments; label savings exclude diagnostic measurements. The optimality result is conditional at a frozen policy state and does not rank arbitrary training designs. Some ablations have one seed; no author code destination was verified."
+      },
+      "tags": [
+        "Reward Hacking",
+        "GRPO",
+        "Budgeted Verification",
+        "Audit Selection"
+      ],
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-27T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.35804",
+      "title": "Learning When to Commit: Schedule Distillation for Fast Diffusion Language Models",
+      "category": "1.8",
+      "published_on": "2026-10-26",
+      "first_seen_at": "2026-10-27T10:06:55.057Z",
+      "canonical_url": "https://arxiv.org/abs/2610.35804",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.35804v1",
+        "code": "https://github.com/VILA-Lab/dSpark"
+      },
+      "summary": [
+        "dSpark trains diffusion language models on reveal schedules that expose tokens useful for predicting the remaining text, while anchoring failed trajectories to the original model.",
+        "This moves schedule search into training so parallel decoding can produce more tokens per forward pass while preserving task quality in the tested math and code settings."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Methods, results, appendices and linked code inspected. On GSM8K, LLaDA reaches 10.12 tokens per forward and 78.94% accuracy; batch-one A100 throughput is 249 tokens/s versus 15 for the base and 220 for d3LLM. The October 27 paper announcement is schedule-inferred; the October 26 repository commit is not proof of its public-visibility time.",
+        "limitations": "Offline schedules require verified responses and extra teacher evaluations. Main decoding uses 256-token outputs; Dream lacks equivalent wall-clock comparisons. Three evaluation runs do not establish training-seed robustness. Weights and data remain pending. Main-window eligibility follows the observed October 26 release evidence without assigning an exact global first-public timestamp."
+      },
+      "tags": [
+        "Diffusion Language Models",
+        "Schedule Distillation",
+        "Parallel Decoding",
+        "Calibration"
+      ],
+      "novelty": "new"
+    },
+    {
+      "id": "arxiv:2610.35697",
+      "title": "MiRL: Error-Targeted Reinforcement Learning for Correcting Terminal Agent Misbehaviors",
+      "category": "2.5",
+      "tags": [
+        "Agent Learning",
+        "Targeted RL",
+        "Terminal Agents"
+      ],
+      "published_on": "2026-10-26",
+      "first_seen_at": "2026-10-27T10:06:15.694+00:00",
+      "canonical_url": "https://arxiv.org/abs/2610.35697",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.35697v1",
+        "code": "https://github.com/runchu-tian/MiRL"
+      },
+      "summary": [
+        "MiRL profiles recurring terminal-agent mistakes, resumes reinforcement-learning rollouts immediately before those mistakes, and rewards continuations only when tests pass and a behavior judge approves.",
+        "This targeted practice reduces several measured misbehaviors and improves the tested compact agent while avoiding repeated generation of earlier task steps."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 3–5 and Appendices A–D inspect 219 reproducible prefixes from 189 environments, Qwen3.5-4B, and a judge checking five continuation steps. Three-run means are 51.8 versus 47.4 for TMax-4B on TB-Lite and 21.3 versus 20.6 on TB-2.1; 16-seed TB-2.1 means remain close. Newly-discovered editorial catch-up: the pinned October 25 repository already contains method/results before the October 26 paper receipt; exact historical public visibility is unproven, so no later paper-announcement timestamp is asserted as earliest work release.",
+        "limitations": "One backbone and one training run; checkpoint selection uses TB-Lite. Judge dependence and deterministic replay filtering constrain generality. Reported 35% rollout usage includes profiling but estimates the TMax denominator; it is not a measured universal compute saving. Code was inspected, not executed."
+      },
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "arxiv:2610.34577",
+      "title": "Rethinking Verification in Agent Harnesses",
+      "category": "2.7",
+      "tags": [
+        "Verification",
+        "Independent Review",
+        "Test-Time Scaling"
+      ],
+      "published_on": "2026-10-25",
+      "first_seen_at": "2026-10-27T10:06:15.694+00:00",
+      "canonical_url": "https://arxiv.org/abs/2610.34577",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.34577v1"
+      },
+      "summary": [
+        "This study compares 17 harness designs spanning initial instructions, execution reminders, completion gates and a fresh-context critic that checks the delivered work before returning findings for repair.",
+        "Independent review offers the strongest average accuracy–cost tradeoff in the tested coding subsets and improves judged visual artifacts, giving builders concrete evidence for where to spend verification effort."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 3–5 and relevant Appendices A–E inspect seven coding models with a fixed Qwen3.7-Plus critic. Three trials per coding condition use a 31-task Terminal-Bench subset and a baseline-adjusted SWE subset initially comprising 30 tasks. Four independent-review designs improve mean accuracy by 5.9–9.5 and 3.9–6.6 points at 1.13–1.25 and 1.00–1.04 times priced API cost, respectively, including critique and repair. Original Tuesday cs.AI batch plus official schedule support inferred October 27 00:00 UTC release; Sunday receipt is retained.",
+        "limitations": "Small difficulty-selected subsets and no reported confidence intervals for the aggregate gains; these are not full-benchmark or universal guarantees. VisualBench comprises 18 internal tasks with company raters. Standard single-pass review accepts the next revision without rechecking; extra-review widths run sequentially. No author implementation was verified."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-27T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+      "title": "Addendum to GPT-6 Astra System Card: GPT-6.1 Terra",
+      "category": "2.8",
+      "tags": [
+        "Agent Evaluation",
+        "Authorization",
+        "Deployment Simulation"
+      ],
+      "published_on": "2026-10-26",
+      "first_seen_at": "2026-10-27T10:07:02.203+00:00",
+      "canonical_url": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+      "links": {
+        "paper": "https://deploymentsafety.openai.com/gpt-6-1-terra",
+        "blog": "https://openai.com/index/introducing-gpt-6-1-terra/"
+      },
+      "summary": [
+        "OpenAI’s GPT-6.1 Terra system-card addendum reports updated agent-safety and deployment-simulation evaluations, including behavior around restrictions and messages from apparent peer agents.",
+        "The results expose different failure profiles across models and test settings, helping builders assess authorization boundaries without treating a benchmark score as a production failure rate."
+      ],
+      "evidence": {
+        "type": "technical-report",
+        "access": "full-text",
+        "rationale": "Sections 7.2 and 7.5 report unsafeguarded restriction tests and corrected peer-message comparisons: 80 samples across ten scenarios. The specified unauthorized-action criterion fires in 11/80 Terra samples versus 1/80 for GPT-6.1 Sol; authors say the difference largely reflects promises of future help. A separate 48,690-task internal deployment simulation records 22 severity-3-or-higher flags. The dated October 26 card is new; first_seen_at records the first timestamped primary retrieval.",
+        "limitations": "Author-run, selected and partly internal evaluations; no independent reproduction or released evaluation implementation verified. Peer engagement includes refusals and failed attempts. System prompts, reasoning settings, grading, safeguards and evaluation awareness affect comparisons; figures are not production incidence estimates."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "https://www.lmsys.org/blog/2026-10-26-cf-security",
+      "title": "SGLang Security Update: Improving Request Isolation",
+      "category": "3.3",
+      "published_on": "2026-10-26",
+      "first_seen_at": "2026-10-27T10:07:17.407Z",
+      "canonical_url": "https://www.lmsys.org/blog/2026-10-26-cf-security",
+      "links": {
+        "blog": "https://www.lmsys.org/blog/2026-10-26-cf-security",
+        "code": "https://github.com/sgl-project/sglang/pull/35049"
+      },
+      "summary": [
+        "SGLang and Cloudflare disclose how rejected requests and asynchronous KV transfers could break request isolation in disaggregated serving, and explain admission checks and deferred cache release.",
+        "The operational lesson is that request termination does not end remote memory access: safe reuse needs trustworthy drain accounting, with explicit limits on timeout-based release."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "Complete coordinated October26 reports, reproduction README and relevant implementation changes inspected. Cloudflare identifies155 affected GLM-5.3 responses during August27–September9; the immediate rejection bug is distinct from the related abort-transfer race. SGLang retains cache slots, request rows and metadata until all required drain acknowledgements or timeout. Across21 two-H100 runs, throughput deltas were within±2% with confidence intervals spanning zero. This is a new disclosure and integrated analysis; patches and the October11–12 reproducer were public earlier.",
+        "limitations": "Timeout expiry does not prove outstanding writes stopped; failed sends must not acknowledge drain. The controlled harness deliberately widens a race and does not estimate production frequency. Optional transfer checksums cover a particular handoff, not all future reads or model architectures. Neither small performance tests nor reproduced cases establish universal tenant isolation. No new October26 implementation release is claimed."
+      },
+      "tags": [
+        "Disaggregated Serving",
+        "KV Lifetime",
+        "Request Isolation",
+        "Failure Handling"
+      ],
+      "novelty": "new"
+    },
+    {
+      "id": "arxiv:2610.33719",
+      "title": "ZipFusion: Fusing Lossless KV Decompression with Attention for Efficient LLM Decoding",
+      "category": "3.4",
+      "published_on": "2026-10-24",
+      "first_seen_at": "2026-10-27T10:05:20.809Z",
+      "canonical_url": "https://arxiv.org/abs/2610.33719",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.33719v1"
+      },
+      "summary": [
+        "ZipFusion keeps compressible KV blocks losslessly encoded in GPU memory and reconstructs their original BF16 values inside attention registers, avoiding a separate decompression pass.",
+        "Its format, attention kernel and cross-layer memory pool reduce repeated cache traffic and permit larger decode batches under the same memory budget."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Full seven-page v1 inspected. A 12-bit representation plus metadata falls back to raw blocks when exponent ranges do not fit. On one H100 80GB, Llama-3.1-8B/Qwen3-8B attention reaches 1.23–1.25× FlashInfer; at 8K context, own-maximum-batch decode throughput improves 26.3%/25.8% versus raw SGLang at equal memory fraction. Receipt: October24 15:07UTC; original October27 cs.AR new-submission listing plus Monday20:00 Eastern schedule imply October27 00:00UTC announcement. No earlier author release or verified ZipFusion code destination was found.",
+        "limitations": "Framework timing excludes prefill and initial compression; all newly generated KV remains raw. Peak throughput compares each method’s largest supported batch, separately from fixed-batch gains. Bitwise reconstruction of stored values does not establish identical complete model outputs. Only two small models, one GPU and controlled fixed-length decoding were evaluated; no online latency, quality or recovery guarantee."
+      },
+      "tags": [
+        "Lossless KV Compression",
+        "Fused Decompression",
+        "Decode Attention",
+        "Memory Management"
+      ],
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-27T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AR/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.35336",
+      "title": "One Megakernel is Not Enough: Predicting Where to Cut for Streaming Inference",
+      "category": "3.5",
+      "published_on": "2026-10-26",
+      "first_seen_at": "2026-10-27T10:05:20.818Z",
+      "canonical_url": "https://arxiv.org/abs/2610.35336",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.35336v1"
+      },
+      "summary": [
+        "This planner uses conventional execution profiles and implementation contracts to rank where a streaming model should be split into specialized megakernels and how their GPU resources should overlap.",
+        "Preserving useful boundaries can beat one large kernel: independent scheduling and earlier publication sometimes outweigh the extra launches, while larger batches can favor conventional execution."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Full eight-page v1 inspected. Tile/event simulation models readiness, lookahead and occupied thread blocks. Frozen planning inputs select the measured winner in 13/13 implemented validation pools across NH-TTS, Qwen3-TTS and Llama-1B on H100 NVL94GB. At NH-TTS batch32, three megakernels reduce engine-level mean batch-p95 first-audio time 21.4% versus the monolith and 4.05× versus conventional TensorRT execution. Receipt: October26 12:32UTC; original October27 cs.PF batch and official Monday schedule imply October27 00:00UTC announcement.",
+        "limitations": "The ranking proxy requires standalone costs and supported implementation records; it is not calibrated absolute latency or a global optimum over unimplemented designs. One GPU, fixed fixtures and an unreleased NH-TTS model limit transfer. Correctness gates cover tested tokens and numerical tolerances, not broad speech quality. No author planner implementation destination was verified."
+      },
+      "tags": [
+        "Megakernels",
+        "Streaming Inference",
+        "Fusion Boundaries",
+        "GPU Scheduling"
+      ],
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-27T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.PF/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    }
+  ]
+}
