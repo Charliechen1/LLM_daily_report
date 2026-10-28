@@ -2,6 +2,13 @@
   "schema_version": 1,
   "reports": [
     {
+      "date": "2026-10-28",
+      "path": "reports/2026/10/2026-10-28.md",
+      "source": "data/reports/2026/10/2026-10-28.json",
+      "search_status": "partial",
+      "entries": 10
+    },
+    {
       "date": "2026-10-27",
       "path": "reports/2026/10/2026-10-27.md",
       "source": "data/reports/2026/10/2026-10-27.json",
@@ -208,6 +215,368 @@
     }
   ],
   "entries": [
+    {
+      "id": "arxiv:2610.36983",
+      "title": "Advancement or Acceleration? How Data Curation Improves LLM Training",
+      "category": "1.1",
+      "published_on": "2026-10-27",
+      "first_seen_at": "2026-10-28T10:02:23.983Z",
+      "canonical_url": "https://arxiv.org/abs/2610.36983",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.36983v1"
+      },
+      "summary": [
+        "This study separates data curation that reaches an existing solution sooner from curation that improves attainable target performance, and tests a baseline training-target loss-gap diagnostic.",
+        "Controlled small-model experiments show why target alignment and training budget should be examined before interpreting a fixed-budget gain as a lasting capability improvement."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Main methods/results and relevant appendices inspected. Five-run SlimPajama experiments at 160M show near-matched-target perplexities 19.71 for Uniform and 19.66 for TANDEM, versus 28.60/26.02 with repeated scarce-domain data; 1.1B tests retain the contrast. Selection separately varies target distributions. Delta is measured halfway through baseline training. Original October 28 cs.LG batch and official Tuesday schedule imply 00:00 UTC announcement. Author code remains pending internal approval.",
+        "limitations": "The endpoint theorem assumes global population-risk minimization; finite LLM budgets do not verify infinite-budget optimality. Delta compares seen-training and target losses, not distributions, so equal losses can hide mismatch. Selection uses target-aware reference data and unequal retained tokens versus full-pool training. Models stop at 1.1B; no complete end-to-end curation-cost benefit was demonstrated."
+      },
+      "tags": [
+        "Data Curation",
+        "Target Distribution",
+        "Training Budgets",
+        "Scaling Diagnostics"
+      ],
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-28T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/new?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-28",
+      "report_path": "reports/2026/10/2026-10-28.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.37645",
+      "title": "Multi-State Linear Attention with Generalized Second-Order Routing",
+      "category": "1.2",
+      "published_on": "2026-10-27",
+      "first_seen_at": "2026-10-28T10:02:23.982Z",
+      "canonical_url": "https://arxiv.org/abs/2610.37645",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.37645v1"
+      },
+      "summary": [
+        "MERLIN stores compact first and second moments of each segment’s keys and uses query-dependent alignment means and variances to combine recurrent-memory readouts.",
+        "Mid-training improves long-context retrieval in two small recurrent backbones, offering a more informative alternative to routing from mean keys alone while retaining an explicit memory-quality trade-off."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Complete 20-page v1 inspected. Uniform 256-token segments and RULER-style augmented mid-training convert Gated DeltaNet-1.3B/Mamba-2-780M to multi-state models. At 16K, LongBench averages reach 21.9/20.6 versus mean-routing 19.3/18.4; RULER averages 62.7/76.2 versus 57.9/71.2. These are benchmark scores, not percentage-point gains from the abstract’s relative percentages. Original October 28 cs.CL new listing and official Tuesday schedule imply 00:00 UTC announcement. No author implementation destination was verified.",
+        "limitations": "One recorded seed and two backbones at 16K; some individual tasks regress. The state bank grows with segment count, and second-moment storage adds overhead; no measured serving speedup is established. The softmax connection motivates rather than exactly reproduces attention. Main text adds 60M second-stage tokens while appendix summarizes 2B, leaving budget accounting imperfect."
+      },
+      "tags": [
+        "Recurrent Memory",
+        "Linear Attention",
+        "Moment Routing",
+        "Long Context"
+      ],
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-28T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/new?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-28",
+      "report_path": "reports/2026/10/2026-10-28.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.37062",
+      "title": "EnergyCal: Taming Loss Spikes in Muon-Family Optimizers for Sparse MoE Training",
+      "category": "1.3",
+      "published_on": "2026-10-27",
+      "first_seen_at": "2026-10-28T10:02:23.982Z",
+      "canonical_url": "https://arxiv.org/abs/2610.37062",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.37062v1"
+      },
+      "summary": [
+        "EnergyCal attenuates routed-expert updates using their energy after Muon’s matrix transform, leaving that transform unchanged and adding no persistent optimizer state.",
+        "Three-initialization tests on one 4B mixture-of-experts model reduce observed loss-spike burden, suggesting a lightweight stability intervention while leaving its causal mechanism and generality unresolved."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Methods, cohorts and diagnostic appendices inspected. With plain Muon at matched nominal learning rate and decay, thresholded spike burden falls 94.99%/96.97% for exponents 0.5/1 across three paired initializations. Runs use 1.31B tokens and eight H100s. The separate MuonH comparison changes learning rate and loses 1.62% throughput. Original October 28 cs.LG new listing and official Tuesday schedule imply 00:00 UTC announcement. No available author implementation was verified.",
+        "limitations": "All runs finish; burden is not failure probability. A missing routed-only uniform-scaling control leaves energy-specific benefit unresolved. Local interventions fail to rescue two spikes. Endpoint quality gains with plain Muon are small, its timing is unmeasured, and differing validation banks prohibit cross-cohort ranking. One short-budget architecture cannot establish general optimizer superiority."
+      },
+      "tags": [
+        "Muon",
+        "Mixture of Experts",
+        "Training Stability",
+        "Update Scaling"
+      ],
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-28T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/new?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-28",
+      "report_path": "reports/2026/10/2026-10-28.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.37461",
+      "title": "Concordat: Typed Sessions for LLM Agents",
+      "category": "2.2",
+      "tags": [
+        "Tool Protocols",
+        "Authorization",
+        "Runtime Enforcement"
+      ],
+      "published_on": "2026-10-27",
+      "first_seen_at": "2026-10-28T10:04:45.988+00:00",
+      "canonical_url": "https://arxiv.org/abs/2610.37461",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.37461v1",
+        "code": "https://github.com/miladsikaroudi/concordat"
+      },
+      "summary": [
+        "This full-paper study evaluates an existing library that derives finite-state tool protocols from agent classes, exposes only currently legal tools and blocks illegal calls before execution.",
+        "Its pressured airline experiments show why authorization should be checked separately from task success, while making the limits of keyword-based confirmation explicit."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 3–5 and AppendicesA–C: the standard agent violates confirmation in 13/50 gpt-4.1 tasks and 29/128 Haiku task-runs, versus zero under the gate. Task success differs nonsignificantly. Newly-discovered catch-up: October 22 library and October 23–24 Haiku results precede the paper; October 26 repository history adds the gpt-4.1 study. Commit dates do not establish exact public visibility.",
+        "limitations": "The metric and gate share the same yes/yep/yeah test, so zero violations is conditional on that syntactic definition, not semantic consent. One simulated domain, quota losses, few trials and a between-model prompt revision limit generalization. Code was inspected, not executed."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-28",
+      "report_path": "reports/2026/10/2026-10-28.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+      "title": "Genie 4: A new generation of world simulation",
+      "category": "2.2",
+      "tags": [
+        "World Models",
+        "Agent Environments",
+        "Interactive Simulation"
+      ],
+      "published_on": "2026-10-27",
+      "first_seen_at": "2026-10-28T10:07:19.756+00:00",
+      "canonical_url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+      "links": {
+        "blog": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+        "project": "https://deepmind.google/models/genie/"
+      },
+      "summary": [
+        "DeepMind’s Genie 4 research preview combines real-time audiovisual world generation with Gemini-based scene grounding and a guiding agent that observes frames, plans steps, and checks their execution.",
+        "This provides a concrete design for controllable simulated agent environments, while evidence for reliable training transfer or physical accuracy remains to be established."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "The October 27 announcement’s “Simulating complex events” section describes Gemini 3.8 Flash as an observe–plan–verify loop around Genie; an Argon/robotics demonstration interleaves task-step captions with rendering. Native audio, interactive dialogue and natural-language scene edits are demonstrated. The full announcement and official model page were inspected; neither discloses training details, quantitative agent-learning evaluations, code or weights.",
+        "limitations": "Author-selected demonstrations and trusted-tester preview, not an independently evaluated simulator. Object permanence, spatial accuracy, complex physics, audio accuracy and long-session consistency remain limitations; no general simulation-fidelity or sim-to-real claim is supported."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-10-28",
+      "report_path": "reports/2026/10/2026-10-28.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.36511",
+      "title": "Do AI Scientists Know What's New?",
+      "category": "2.8",
+      "tags": [
+        "AI Scientists",
+        "Novelty Evaluation",
+        "Claim Evidence"
+      ],
+      "published_on": "2026-10-27",
+      "first_seen_at": "2026-10-28T10:04:45.988+00:00",
+      "canonical_url": "https://arxiv.org/abs/2610.36511",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.36511v1",
+        "code": "https://github.com/emmatliu/claimnov"
+      },
+      "summary": [
+        "ClaimNov extracts typed research claims, compares them with evidence from a supplied prior-work pool and gives a final judge the resulting claim-level profile.",
+        "This helps a scientific agent reject repackaged work while preserving proposals that combine established components with new contributions."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 3–5, Tables 1–3 and AppendicesF/J: Sonnet 4.6 checks catch 367/380 disguised proposals and reject 6/400 labeled later-realized ideas; a judge without the profile rejects 11.8%. Hybrid retention is 91/100 versus 76/100 for CoI-Agent. Newly-discovered: the initial repository is authored October 24 but committed October 27; historical public visibility is unproven, so paper announcement is not asserted as earliest work release.",
+        "limitations": "AI-only, English, fixed literature pools and largely LLM-derived labels constrain the results: a human audit confirms only 28/45 sampled later-realized ideas as novel. Clustered comparisons do not establish superiority over CoI-Agent. End-to-end discovery benefits remain unproven; code was inspected, not executed."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-28",
+      "report_path": "reports/2026/10/2026-10-28.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://www.anthropic.com/research/agents-judgment-calls",
+      "title": "How AI agents shape experts’ judgment calls",
+      "category": "2.8",
+      "tags": [
+        "Human Oversight",
+        "Randomized Trial",
+        "Expert Judgment"
+      ],
+      "published_on": "2026-10-27",
+      "first_seen_at": "2026-10-28T10:05:47.006+00:00",
+      "canonical_url": "https://www.anthropic.com/research/agents-judgment-calls",
+      "links": {
+        "blog": "https://www.anthropic.com/research/agents-judgment-calls",
+        "paper": "https://www-cdn.anthropic.com/519c17a5d23a794e8b6d50a854048d0b61e0d73a.pdf"
+      },
+      "summary": [
+        "Anthropic randomly assigned a coding agent’s preferences while 50 professional analysts made defensible choices in one statistical-analysis task.",
+        "The experiment shows how agent framing can shape expert judgment, motivating oversight evaluations that measure decision independence as well as correct execution."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "The 29-page paper, Sections 3–4 and Table 2, reports 86% agreement with assigned leans across 195 analytical decisions. The adjusted between-arm contrast is 72 percentage points (95%CI 60–83); the adjusted final-policy shift is not significant. Claude Code with Opus 4.8 is fixed throughout. Newly-discovered editorial catch-up within the 72-hour window; the official article supplies October 27 as its publication date, without reliable hour-level release evidence.",
+        "limitations": "Preferences were deliberately amplified, and participants were experts in analysis but new to the fictional farming domain. Registration followed 17 task starts, with disclosures. Switching subsets are self-selected; the 11-person no-AI comparison is nonrandomized. The study does not establish deception or production influence rates."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-28",
+      "report_path": "reports/2026/10/2026-10-28.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.37230",
+      "title": "TAO: Tool-Aware Joint Scheduling for LLM-Based Agentic Serving",
+      "category": "3.3",
+      "published_on": "2026-10-27",
+      "first_seen_at": "2026-10-28T10:02:23.371Z",
+      "canonical_url": "https://arxiv.org/abs/2610.37230",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.37230v1"
+      },
+      "summary": [
+        "TAO jointly admits and places agent sessions using decayed node-specific cache credit, predicted tool-return readiness and token footprint.",
+        "A snapshot dynamic program coordinates competing sessions, while live revalidation keeps stale plans within current admission limits; this can reduce waiting and recover useful cache locality."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Full main text and Appendices A–J inspected. With DeepSeek-V4 Flash on two four-H100 nodes, SWE-Lite at 64 workers reduces mean task latency 253.228→185.410 seconds and raises aggregate decode 1561.307→2021.523 tokens/s versus the best respective baseline. Original October 28 cs.DC listing and Tuesday 20:00 Eastern schedule imply October 28 00:00 UTC announcement; October 27 is the submission date. No author artifact destination was verified.",
+        "limitations": "Natural-live runs generate differing trajectories; repeated-run uncertainty and equal task success are not established. Some settings regress, including mixed AutomationBench at 128 workers. Optimality covers a quantized snapshot surrogate, not global online latency; fallback and failed-search costs are excluded from the reported scheduler-work fraction. CPU tools retain separate resource budgets."
+      },
+      "tags": [
+        "Agentic Serving",
+        "Joint Placement",
+        "Cache Locality",
+        "Tool Readiness"
+      ],
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-28T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-28",
+      "report_path": "reports/2026/10/2026-10-28.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.36520",
+      "title": "Folding Attention Biases into Keys Makes Compacted KV Caches Run on Standard Kernels",
+      "category": "3.4",
+      "published_on": "2026-10-27",
+      "first_seen_at": "2026-10-28T10:02:23.494Z",
+      "canonical_url": "https://arxiv.org/abs/2610.36520",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.36520v1"
+      },
+      "summary": [
+        "This method approximately folds static per-key attention biases into existing key dimensions using a context-fitted direction, then refits values.",
+        "The resulting compacted cache uses ordinary attention kernels and an unchanged query path, making biased compaction easier to serve without adding a head coordinate."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "All 30 pages, including serving and budget ablations, inspected. Unmodified vLLM matches Hugging Face answer letters on 51 Qwen3-4 B questions and complete greedy outputs on 180/200 Qwen3-14 B LongBench samples from the same folded cache. These test integration, not preservation of full-cache quality. Original October 28 cs.LG listing plus Tuesday 20:00 Eastern schedule imply October 28 00:00 UTC announcement; receipt is October 27. No author implementation destination was verified.",
+        "limitations": "Exactness requires each query’s fitted projection to equal 1; drift and value refitting can cause losses. Small QA comparisons lack equivalence power; a Llama/LongHealth setting loses 4.5 percentage points to biased Attention Matching. Advantages over dropping bias depend on per-head budgets. Larger-model capacity/peak-decode tests use random weights and exclude fitting cost; they establish neither end-to-end speed nor answer quality."
+      },
+      "tags": [
+        "KV Compaction",
+        "Attention Bias",
+        "Serving Compatibility",
+        "Query Drift"
+      ],
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-28T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-28",
+      "report_path": "reports/2026/10/2026-10-28.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://github.com/pku-dair/pipelink",
+      "title": "PipeLink: new contract interfaces and GEMM–SwiGLU composition evaluation",
+      "category": "3.5",
+      "published_on": "2026-10-09",
+      "first_seen_at": "2026-10-28T10:02:23.371Z",
+      "canonical_url": "https://github.com/PKU-DAIR/PipeLink",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.37200v1",
+        "code": "https://github.com/PKU-DAIR/PipeLink"
+      },
+      "summary": [
+        "PipeLink packages separately compiled GPU components with resource and synchronization contracts, then checks, places and links them into a fused kernel.",
+        "Its new GEMM–SwiGLU study shows how CUDA and TileLang consumers can reuse architecture-specific producers without their source, approaching equivalent single-compilation performance."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 3–5 and pinned code inspected. The new Qwen3-32 B MLP study uses B300, H200 and RTX 5090; at M=16,384 its B300 composition reaches 1.20× cuBLAS plus compiled activation, but only 0.98–0.99× hand fusion. Across 51 tested configurations, linked performance stays within 0.2% of equivalent single-unit controls.",
+        "limitations": "Contracts are checked against declarations, not opaque component bodies; sanitizers and numerical tests remain necessary. Packages target one architecture/toolkit, and transfers do not synthesize arithmetic or collectives. Published reports omit raw timing receipts and executable bundles; no experiments were reproduced."
+      },
+      "tags": [
+        "GPU Component Linking",
+        "Contract Checking",
+        "Operator Fusion",
+        "CUDA and TileLang"
+      ],
+      "novelty": "material-update",
+      "update_note": "2026-10-28: the new arXiv report and repository revision4d8ebab add the CODA evaluation, interface/frontend changes and qualified-clock reruns. The initial-release commit is dated October9, retained above; core linking and earlier showcase results already existed. Commit time is not asserted as exact public visibility. Sources: https://arxiv.org/list/cs.DC/new ; https://info.arxiv.org/help/availability.html ; https://github.com/PKU-DAIR/PipeLink .",
+      "report_kind": "daily",
+      "report_date": "2026-10-28",
+      "report_path": "reports/2026/10/2026-10-28.md",
+      "search_status": "partial"
+    },
     {
       "id": "arxiv:2610.35556",
       "title": "LoopFold: Parallelizing Recurrent Depth in Looped Transformers",
@@ -9586,21 +9955,21 @@
       "group": "llm-recipe",
       "title": "Data Curation & Tokenization",
       "path": "topics/llm-recipe/data-curation-tokenization/README.md",
-      "count": 8
+      "count": 9
     },
     {
       "id": "1.2",
       "group": "llm-recipe",
       "title": "Model Architecture & Scaling Laws",
       "path": "topics/llm-recipe/model-architecture-scaling-laws/README.md",
-      "count": 14
+      "count": 15
     },
     {
       "id": "1.3",
       "group": "llm-recipe",
       "title": "Pretraining & Optimization",
       "path": "topics/llm-recipe/pretraining-optimization/README.md",
-      "count": 7
+      "count": 8
     },
     {
       "id": "1.4",
@@ -9663,7 +10032,7 @@
       "group": "ai-agent-dev",
       "title": "Tool Use & Environment Interaction",
       "path": "topics/ai-agent-dev/tool-use-environment-interaction/README.md",
-      "count": 6
+      "count": 8
     },
     {
       "id": "2.3",
@@ -9705,7 +10074,7 @@
       "group": "ai-agent-dev",
       "title": "Agent Evaluation & Security",
       "path": "topics/ai-agent-dev/agent-evaluation-security/README.md",
-      "count": 25
+      "count": 27
     },
     {
       "id": "3.1",
@@ -9726,21 +10095,21 @@
       "group": "ai-training-inference-infra",
       "title": "Inference Engines & Serving",
       "path": "topics/ai-training-inference-infra/inference-engines-serving/README.md",
-      "count": 18
+      "count": 19
     },
     {
       "id": "3.4",
       "group": "ai-training-inference-infra",
       "title": "Attention, KV Cache & Memory Systems",
       "path": "topics/ai-training-inference-infra/attention-kv-cache-memory-systems/README.md",
-      "count": 15
+      "count": 16
     },
     {
       "id": "3.5",
       "group": "ai-training-inference-infra",
       "title": "Kernels, Compilers & Runtimes",
       "path": "topics/ai-training-inference-infra/kernels-compilers-runtimes/README.md",
-      "count": 18
+      "count": 19
     },
     {
       "id": "3.6",

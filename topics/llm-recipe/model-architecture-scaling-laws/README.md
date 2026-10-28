@@ -5,6 +5,22 @@ Transformers, MoE, SSM/hybrid architectures and model/data/compute allocation.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-28](../../../reports/2026/10/2026-10-28.md) — PARTIAL SEARCH
+
+### [Multi-State Linear Attention with Generalized Second-Order Routing](<https://arxiv.org/abs/2610.37645>)
+
+MERLIN stores compact first and second moments of each segment’s keys and uses query-dependent alignment means and variances to combine recurrent-memory readouts. Mid-training improves long-context retrieval in two small recurrent backbones, offering a more informative alternative to routing from mean keys alone while retaining an explicit memory-quality trade-off.
+
+**Published:** 2026-10-27 · **First seen:** 2026-10-28T10:02:23.982Z · **Novelty:** new · **Tags:** Recurrent Memory, Linear Attention, Moment Routing, Long Context
+
+**Public availability:** 2026-10-28T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/new?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.37645v1>)
+
+**Evidence:** research-paper; full-text. Complete 20-page v1 inspected. Uniform 256-token segments and RULER-style augmented mid-training convert Gated DeltaNet-1.3B/Mamba-2-780M to multi-state models. At 16K, LongBench averages reach 21.9/20.6 versus mean-routing 19.3/18.4; RULER averages 62.7/76.2 versus 57.9/71.2. These are benchmark scores, not percentage-point gains from the abstract’s relative percentages. Original October 28 cs.CL new listing and official Tuesday schedule imply 00:00 UTC announcement. No author implementation destination was verified.
+
+**Limitations:** One recorded seed and two backbones at 16K; some individual tasks regress. The state bank grows with segment count, and second-moment storage adds overhead; no measured serving speedup is established. The softmax connection motivates rather than exactly reproduces attention. Main text adds 60M second-stage tokens while appendix summarizes 2B, leaving budget accounting imperfect.
+
 ## [2026-10-27](../../../reports/2026/10/2026-10-27.md) — PARTIAL SEARCH
 
 ### [LoopFold: Parallelizing Recurrent Depth in Looped Transformers](<https://arxiv.org/abs/2610.35556>)

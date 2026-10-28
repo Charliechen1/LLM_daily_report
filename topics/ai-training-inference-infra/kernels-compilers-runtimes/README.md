@@ -5,6 +5,22 @@ GPU kernels, operator fusion, compilation, execution graphs and hardware adaptat
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-28](../../../reports/2026/10/2026-10-28.md) — PARTIAL SEARCH
+
+### [PipeLink: new contract interfaces and GEMM–SwiGLU composition evaluation](<https://github.com/PKU-DAIR/PipeLink>)
+
+PipeLink packages separately compiled GPU components with resource and synchronization contracts, then checks, places and links them into a fused kernel. Its new GEMM–SwiGLU study shows how CUDA and TileLang consumers can reuse architecture-specific producers without their source, approaching equivalent single-compilation performance.
+
+**Published:** 2026-10-09 · **First seen:** 2026-10-28T10:02:23.371Z · **Novelty:** material-update · **Tags:** GPU Component Linking, Contract Checking, Operator Fusion, CUDA and TileLang
+
+[Paper](<https://arxiv.org/html/2610.37200v1>) · [Code](<https://github.com/PKU-DAIR/PipeLink>)
+
+**Evidence:** research-paper; full-text. Sections 3–5 and pinned code inspected. The new Qwen3-32 B MLP study uses B300, H200 and RTX 5090; at M=16,384 its B300 composition reaches 1.20× cuBLAS plus compiled activation, but only 0.98–0.99× hand fusion. Across 51 tested configurations, linked performance stays within 0.2% of equivalent single-unit controls.
+
+**Limitations:** Contracts are checked against declarations, not opaque component bodies; sanitizers and numerical tests remain necessary. Packages target one architecture/toolkit, and transfers do not synthesize arithmetic or collectives. Published reports omit raw timing receipts and executable bundles; no experiments were reproduced.
+
+**Update:** 2026-10-28: the new arXiv report and repository revision4d8ebab add the CODA evaluation, interface/frontend changes and qualified-clock reruns. The initial-release commit is dated October9, retained above; core linking and earlier showcase results already existed. Commit time is not asserted as exact public visibility. Sources: https://arxiv.org/list/cs.DC/new ; https://info.arxiv.org/help/availability.html ; https://github.com/PKU-DAIR/PipeLink .
+
 ## [2026-10-27](../../../reports/2026/10/2026-10-27.md) — PARTIAL SEARCH
 
 ### [One Megakernel is Not Enough: Predicting Where to Cut for Streaming Inference](<https://arxiv.org/abs/2610.35336>)

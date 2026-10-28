@@ -5,6 +5,34 @@ Task success, trajectory evaluation, cost/reliability, prompt injection and perm
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-28](../../../reports/2026/10/2026-10-28.md) — PARTIAL SEARCH
+
+### [Do AI Scientists Know What's New?](<https://arxiv.org/abs/2610.36511>)
+
+ClaimNov extracts typed research claims, compares them with evidence from a supplied prior-work pool and gives a final judge the resulting claim-level profile. This helps a scientific agent reject repackaged work while preserving proposals that combine established components with new contributions.
+
+**Published:** 2026-10-27 · **First seen:** 2026-10-28T10:04:45.988+00:00 · **Novelty:** newly-discovered · **Tags:** AI Scientists, Novelty Evaluation, Claim Evidence
+
+[Paper](<https://arxiv.org/html/2610.36511v1>) · [Code](<https://github.com/emmatliu/claimnov>)
+
+**Evidence:** research-paper; full-text. Sections 3–5, Tables 1–3 and AppendicesF/J: Sonnet 4.6 checks catch 367/380 disguised proposals and reject 6/400 labeled later-realized ideas; a judge without the profile rejects 11.8%. Hybrid retention is 91/100 versus 76/100 for CoI-Agent. Newly-discovered: the initial repository is authored October 24 but committed October 27; historical public visibility is unproven, so paper announcement is not asserted as earliest work release.
+
+**Limitations:** AI-only, English, fixed literature pools and largely LLM-derived labels constrain the results: a human audit confirms only 28/45 sampled later-realized ideas as novel. Clustered comparisons do not establish superiority over CoI-Agent. End-to-end discovery benefits remain unproven; code was inspected, not executed.
+
+## [2026-10-28](../../../reports/2026/10/2026-10-28.md) — PARTIAL SEARCH
+
+### [How AI agents shape experts’ judgment calls](<https://www.anthropic.com/research/agents-judgment-calls>)
+
+Anthropic randomly assigned a coding agent’s preferences while 50 professional analysts made defensible choices in one statistical-analysis task. The experiment shows how agent framing can shape expert judgment, motivating oversight evaluations that measure decision independence as well as correct execution.
+
+**Published:** 2026-10-27 · **First seen:** 2026-10-28T10:05:47.006+00:00 · **Novelty:** newly-discovered · **Tags:** Human Oversight, Randomized Trial, Expert Judgment
+
+[Blog](<https://www.anthropic.com/research/agents-judgment-calls>) · [Paper](<https://www-cdn.anthropic.com/519c17a5d23a794e8b6d50a854048d0b61e0d73a.pdf>)
+
+**Evidence:** research-paper; full-text. The 29-page paper, Sections 3–4 and Table 2, reports 86% agreement with assigned leans across 195 analytical decisions. The adjusted between-arm contrast is 72 percentage points (95%CI 60–83); the adjusted final-policy shift is not significant. Claude Code with Opus 4.8 is fixed throughout. Newly-discovered editorial catch-up within the 72-hour window; the official article supplies October 27 as its publication date, without reliable hour-level release evidence.
+
+**Limitations:** Preferences were deliberately amplified, and participants were experts in analysis but new to the fictional farming domain. Registration followed 17 task starts, with disclosures. Switching subsets are self-selected; the 11-person no-AI comparison is nonrandomized. The study does not establish deception or production influence rates.
+
 ## [2026-10-27](../../../reports/2026/10/2026-10-27.md) — PARTIAL SEARCH
 
 ### [Addendum to GPT-6 Astra System Card: GPT-6.1 Terra](<https://deploymentsafety.openai.com/gpt-6-1-terra>)

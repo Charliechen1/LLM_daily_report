@@ -5,6 +5,22 @@ Attention execution, KV management/reuse, offloading and long-context memory eff
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-28](../../../reports/2026/10/2026-10-28.md) — PARTIAL SEARCH
+
+### [Folding Attention Biases into Keys Makes Compacted KV Caches Run on Standard Kernels](<https://arxiv.org/abs/2610.36520>)
+
+This method approximately folds static per-key attention biases into existing key dimensions using a context-fitted direction, then refits values. The resulting compacted cache uses ordinary attention kernels and an unchanged query path, making biased compaction easier to serve without adding a head coordinate.
+
+**Published:** 2026-10-27 · **First seen:** 2026-10-28T10:02:23.494Z · **Novelty:** new · **Tags:** KV Compaction, Attention Bias, Serving Compatibility, Query Drift
+
+**Public availability:** 2026-10-28T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.36520v1>)
+
+**Evidence:** research-paper; full-text. All 30 pages, including serving and budget ablations, inspected. Unmodified vLLM matches Hugging Face answer letters on 51 Qwen3-4 B questions and complete greedy outputs on 180/200 Qwen3-14 B LongBench samples from the same folded cache. These test integration, not preservation of full-cache quality. Original October 28 cs.LG listing plus Tuesday 20:00 Eastern schedule imply October 28 00:00 UTC announcement; receipt is October 27. No author implementation destination was verified.
+
+**Limitations:** Exactness requires each query’s fitted projection to equal 1; drift and value refitting can cause losses. Small QA comparisons lack equivalence power; a Llama/LongHealth setting loses 4.5 percentage points to biased Attention Matching. Advantages over dropping bias depend on per-head budgets. Larger-model capacity/peak-decode tests use random weights and exclude fitting cost; they establish neither end-to-end speed nor answer quality.
+
 ## [2026-10-27](../../../reports/2026/10/2026-10-27.md) — PARTIAL SEARCH
 
 ### [ZipFusion: Fusing Lossless KV Decompression with Attention for Efficient LLM Decoding](<https://arxiv.org/abs/2610.33719>)

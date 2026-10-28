@@ -5,6 +5,22 @@ Data filtering, deduplication, mixtures, synthetic data, quality and tokenizers.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-28](../../../reports/2026/10/2026-10-28.md) — PARTIAL SEARCH
+
+### [Advancement or Acceleration? How Data Curation Improves LLM Training](<https://arxiv.org/abs/2610.36983>)
+
+This study separates data curation that reaches an existing solution sooner from curation that improves attainable target performance, and tests a baseline training-target loss-gap diagnostic. Controlled small-model experiments show why target alignment and training budget should be examined before interpreting a fixed-budget gain as a lasting capability improvement.
+
+**Published:** 2026-10-27 · **First seen:** 2026-10-28T10:02:23.983Z · **Novelty:** new · **Tags:** Data Curation, Target Distribution, Training Budgets, Scaling Diagnostics
+
+**Public availability:** 2026-10-28T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/new?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.36983v1>)
+
+**Evidence:** research-paper; full-text. Main methods/results and relevant appendices inspected. Five-run SlimPajama experiments at 160M show near-matched-target perplexities 19.71 for Uniform and 19.66 for TANDEM, versus 28.60/26.02 with repeated scarce-domain data; 1.1B tests retain the contrast. Selection separately varies target distributions. Delta is measured halfway through baseline training. Original October 28 cs.LG batch and official Tuesday schedule imply 00:00 UTC announcement. Author code remains pending internal approval.
+
+**Limitations:** The endpoint theorem assumes global population-risk minimization; finite LLM budgets do not verify infinite-budget optimality. Delta compares seen-training and target losses, not distributions, so equal losses can hide mismatch. Selection uses target-aware reference data and unequal retained tokens versus full-pool training. Models stop at 1.1B; no complete end-to-end curation-cost benefit was demonstrated.
+
 ## [2026-10-18](../../../reports/2026/10/2026-10-18.md) — PARTIAL SEARCH
 
 ### [No Single Tokenizer Feature Reliably Predicts Downstream Language Model Performance](<https://arxiv.org/abs/2610.21679>)

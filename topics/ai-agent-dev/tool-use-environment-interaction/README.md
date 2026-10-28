@@ -5,6 +5,34 @@ Tool selection/calling, APIs, code execution, browser/computer use and protocols
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-28](../../../reports/2026/10/2026-10-28.md) — PARTIAL SEARCH
+
+### [Concordat: Typed Sessions for LLM Agents](<https://arxiv.org/abs/2610.37461>)
+
+This full-paper study evaluates an existing library that derives finite-state tool protocols from agent classes, exposes only currently legal tools and blocks illegal calls before execution. Its pressured airline experiments show why authorization should be checked separately from task success, while making the limits of keyword-based confirmation explicit.
+
+**Published:** 2026-10-27 · **First seen:** 2026-10-28T10:04:45.988+00:00 · **Novelty:** newly-discovered · **Tags:** Tool Protocols, Authorization, Runtime Enforcement
+
+[Paper](<https://arxiv.org/html/2610.37461v1>) · [Code](<https://github.com/miladsikaroudi/concordat>)
+
+**Evidence:** research-paper; full-text. Sections 3–5 and AppendicesA–C: the standard agent violates confirmation in 13/50 gpt-4.1 tasks and 29/128 Haiku task-runs, versus zero under the gate. Task success differs nonsignificantly. Newly-discovered catch-up: October 22 library and October 23–24 Haiku results precede the paper; October 26 repository history adds the gpt-4.1 study. Commit dates do not establish exact public visibility.
+
+**Limitations:** The metric and gate share the same yes/yep/yeah test, so zero violations is conditional on that syntactic definition, not semantic consent. One simulated domain, quota losses, few trials and a between-model prompt revision limit generalization. Code was inspected, not executed.
+
+## [2026-10-28](../../../reports/2026/10/2026-10-28.md) — PARTIAL SEARCH
+
+### [Genie 4: A new generation of world simulation](<https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/>)
+
+DeepMind’s Genie 4 research preview combines real-time audiovisual world generation with Gemini-based scene grounding and a guiding agent that observes frames, plans steps, and checks their execution. This provides a concrete design for controllable simulated agent environments, while evidence for reliable training transfer or physical accuracy remains to be established.
+
+**Published:** 2026-10-27 · **First seen:** 2026-10-28T10:07:19.756+00:00 · **Novelty:** new · **Tags:** World Models, Agent Environments, Interactive Simulation
+
+[Blog](<https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/>) · [Project](<https://deepmind.google/models/genie/>)
+
+**Evidence:** engineering-report; full-text. The October 27 announcement’s “Simulating complex events” section describes Gemini 3.8 Flash as an observe–plan–verify loop around Genie; an Argon/robotics demonstration interleaves task-step captions with rendering. Native audio, interactive dialogue and natural-language scene edits are demonstrated. The full announcement and official model page were inspected; neither discloses training details, quantitative agent-learning evaluations, code or weights.
+
+**Limitations:** Author-selected demonstrations and trusted-tester preview, not an independently evaluated simulator. Object permanence, spatial accuracy, complex physics, audio accuracy and long-session consistency remain limitations; no general simulation-fidelity or sim-to-real claim is supported.
+
 ## [2026-10-21](../../../reports/2026/10/2026-10-21.md) — PARTIAL SEARCH
 
 ### [Evolving Agent Interfaces](<https://arxiv.org/abs/2610.28601>)

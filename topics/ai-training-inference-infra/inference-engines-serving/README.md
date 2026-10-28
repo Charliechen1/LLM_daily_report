@@ -5,6 +5,22 @@ Request scheduling, continuous batching, prefill/decode disaggregation and elast
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-28](../../../reports/2026/10/2026-10-28.md) — PARTIAL SEARCH
+
+### [TAO: Tool-Aware Joint Scheduling for LLM-Based Agentic Serving](<https://arxiv.org/abs/2610.37230>)
+
+TAO jointly admits and places agent sessions using decayed node-specific cache credit, predicted tool-return readiness and token footprint. A snapshot dynamic program coordinates competing sessions, while live revalidation keeps stale plans within current admission limits; this can reduce waiting and recover useful cache locality.
+
+**Published:** 2026-10-27 · **First seen:** 2026-10-28T10:02:23.371Z · **Novelty:** new · **Tags:** Agentic Serving, Joint Placement, Cache Locality, Tool Readiness
+
+**Public availability:** 2026-10-28T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.37230v1>)
+
+**Evidence:** research-paper; full-text. Full main text and Appendices A–J inspected. With DeepSeek-V4 Flash on two four-H100 nodes, SWE-Lite at 64 workers reduces mean task latency 253.228→185.410 seconds and raises aggregate decode 1561.307→2021.523 tokens/s versus the best respective baseline. Original October 28 cs.DC listing and Tuesday 20:00 Eastern schedule imply October 28 00:00 UTC announcement; October 27 is the submission date. No author artifact destination was verified.
+
+**Limitations:** Natural-live runs generate differing trajectories; repeated-run uncertainty and equal task success are not established. Some settings regress, including mixed AutomationBench at 128 workers. Optimality covers a quantized snapshot surrogate, not global online latency; fallback and failed-search costs are excluded from the reported scheduler-work fraction. CPU tools retain separate resource budgets.
+
 ## [2026-10-27](../../../reports/2026/10/2026-10-27.md) — PARTIAL SEARCH
 
 ### [SGLang Security Update: Improving Request Isolation](<https://www.lmsys.org/blog/2026-10-26-cf-security>)

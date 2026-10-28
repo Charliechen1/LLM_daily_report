@@ -5,6 +5,22 @@ Objectives, optimizers, learning rates, batch sizes and training stability.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-28](../../../reports/2026/10/2026-10-28.md) — PARTIAL SEARCH
+
+### [EnergyCal: Taming Loss Spikes in Muon-Family Optimizers for Sparse MoE Training](<https://arxiv.org/abs/2610.37062>)
+
+EnergyCal attenuates routed-expert updates using their energy after Muon’s matrix transform, leaving that transform unchanged and adding no persistent optimizer state. Three-initialization tests on one 4B mixture-of-experts model reduce observed loss-spike burden, suggesting a lightweight stability intervention while leaving its causal mechanism and generality unresolved.
+
+**Published:** 2026-10-27 · **First seen:** 2026-10-28T10:02:23.982Z · **Novelty:** new · **Tags:** Muon, Mixture of Experts, Training Stability, Update Scaling
+
+**Public availability:** 2026-10-28T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/new?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2610.37062v1>)
+
+**Evidence:** research-paper; full-text. Methods, cohorts and diagnostic appendices inspected. With plain Muon at matched nominal learning rate and decay, thresholded spike burden falls 94.99%/96.97% for exponents 0.5/1 across three paired initializations. Runs use 1.31B tokens and eight H100s. The separate MuonH comparison changes learning rate and loses 1.62% throughput. Original October 28 cs.LG new listing and official Tuesday schedule imply 00:00 UTC announcement. No available author implementation was verified.
+
+**Limitations:** All runs finish; burden is not failure probability. A missing routed-only uniform-scaling control leaves energy-specific benefit unresolved. Local interventions fail to rescue two spikes. Endpoint quality gains with plain Muon are small, its timing is unmeasured, and differing validation banks prohibit cross-cohort ranking. One short-budget architecture cannot establish general optimizer superiority.
+
 ## [2026-10-26](../../../reports/2026/10/2026-10-26.md) — PARTIAL SEARCH
 
 ### [Where Rounding Happens Matters: Rounding-Location Alignment Stabilizes LLM Reinforcement Learning](<https://arxiv.org/abs/2610.32951>)
