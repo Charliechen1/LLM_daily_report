@@ -1,0 +1,762 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-29",
+  "timezone": "America/Los_Angeles",
+  "generated_at": "2026-10-30T10:27:52.228+00:00",
+  "coverage": {
+    "start": "2026-10-28T03:00:00-07:00",
+    "end": "2026-10-29T03:00:00-07:00"
+  },
+  "search": {
+    "status": "partial",
+    "notes": "Coverage is October 28 03:00 through October 29 03:00 America/Los_Angeles; total discovery lookback begins October 26 03:00. This missed window is backfilled without borrowing Friday’s deferred arXiv batch. The two selections are explicitly delayed editorial discoveries: ProactMem was screened on October 28 and retains that first-seen record; the date-only October 28 Carbon announcement was retrieved today and receives no invented hour-level release timestamp. No qualifying Recipe or Infra selection was added after successful screening; there is no per-area quota. This bounded retrospective search was performed on October 30, 2026, after reading the immutable September 29 landscape and all 272 prior registry records. All 26 subdomains were screened across primary arXiv original/recent subject listings, author papers and artifacts, and technical-blog/venue indexes. Every selected scientific contribution was checked against its full primary methods, measured results and limitations; these are author-reported findings, not reproduced benchmarks. Original receipt/publication dates and earliest documented first-seen timestamps are preserved. No work is repeated across the two reports. Official arXiv status and the linked maintenance announcement confirm there was no October 28 evening announcement: the deferred original batch appeared October 30 at 00:00 UTC. Receipt dates and Git/Hugging Face creation times alone do not establish public availability. Older complete WebAnything/ReCoF studies and CATT artifacts with unresolved substantive novelty were excluded rather than reannounced. Source-check lists record actual retrievals for the joint two-window investigation; they do not imply that every retrieved source was eligible for each date. Remaining gaps: the OpenReview submission API returned 403, LMSYS exposed navigation without a usable current archive, and anonymous ProactMem implementation contents were inaccessible (401). ACL and author/artifact searches are bounded, and unselected abstract-only triage is not represented as a full technical audit. Direct TLS/HTTP failures recovered through a full web-reader source are not unresolved full-text failures.",
+    "sources_checked": [
+      {
+        "name": "cl-new",
+        "url": "https://arxiv.org/list/cs.CL/new",
+        "status": "ok"
+      },
+      {
+        "name": "cl-recent.html",
+        "url": "https://arxiv.org/list/cs.CL/recent?show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "lg-new.html",
+        "url": "https://arxiv.org/list/cs.LG/new",
+        "status": "ok"
+      },
+      {
+        "name": "lg-recent.html",
+        "url": "https://arxiv.org/list/cs.LG/recent?show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "hf29.html",
+        "url": "https://huggingface.co/papers/date/2026-10-29",
+        "status": "ok"
+      },
+      {
+        "name": "hf30.html",
+        "url": "https://huggingface.co/papers/date/2026-10-30",
+        "status": "ok"
+      },
+      {
+        "name": "schedule.html",
+        "url": "https://info.arxiv.org/help/availability.html",
+        "status": "ok"
+      },
+      {
+        "name": "tm.html",
+        "url": "https://thinkingmachines.ai/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "40655-abs.html",
+        "url": "https://arxiv.org/abs/2610.40655",
+        "status": "ok"
+      },
+      {
+        "name": "40655-paper.html",
+        "url": "https://arxiv.org/html/2610.40655v1",
+        "status": "ok"
+      },
+      {
+        "name": "40655.pdf",
+        "url": "https://arxiv.org/pdf/2610.40655v1",
+        "status": "ok"
+      },
+      {
+        "name": "40577-abs.html",
+        "url": "https://arxiv.org/abs/2610.40577",
+        "status": "ok"
+      },
+      {
+        "name": "40577-paper.html",
+        "url": "https://arxiv.org/html/2610.40577v1",
+        "status": "ok"
+      },
+      {
+        "name": "40577.pdf",
+        "url": "https://arxiv.org/pdf/2610.40577v1",
+        "status": "ok"
+      },
+      {
+        "name": "40051-abs.html",
+        "url": "https://arxiv.org/abs/2610.40051",
+        "status": "ok"
+      },
+      {
+        "name": "40051-paper.html",
+        "url": "https://arxiv.org/html/2610.40051v1",
+        "status": "ok"
+      },
+      {
+        "name": "40051.pdf",
+        "url": "https://arxiv.org/pdf/2610.40051v1",
+        "status": "ok"
+      },
+      {
+        "name": "38277-abs.html",
+        "url": "https://arxiv.org/abs/2610.38277",
+        "status": "ok"
+      },
+      {
+        "name": "38277-paper.html",
+        "url": "https://arxiv.org/html/2610.38277v1",
+        "status": "ok"
+      },
+      {
+        "name": "38277.pdf",
+        "url": "https://arxiv.org/pdf/2610.38277v1",
+        "status": "ok"
+      },
+      {
+        "name": "38331-abs.html",
+        "url": "https://arxiv.org/abs/2610.38331",
+        "status": "ok"
+      },
+      {
+        "name": "38331-paper.html",
+        "url": "https://arxiv.org/html/2610.38331v1",
+        "status": "ok"
+      },
+      {
+        "name": "38331.pdf",
+        "url": "https://arxiv.org/pdf/2610.38331v1",
+        "status": "ok"
+      },
+      {
+        "name": "40564-abs.html",
+        "url": "https://arxiv.org/abs/2610.40564",
+        "status": "ok"
+      },
+      {
+        "name": "40564-paper.html",
+        "url": "https://arxiv.org/html/2610.40564v1",
+        "status": "ok"
+      },
+      {
+        "name": "40564.pdf",
+        "url": "https://arxiv.org/pdf/2610.40564v1",
+        "status": "ok"
+      },
+      {
+        "name": "arxiv-status",
+        "url": "https://status.arxiv.org/",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv maintenance announcement full web recovery",
+        "url": "https://blog.arxiv.org/2026/10/21/scheduled-database-maintenance/",
+        "status": "ok"
+      },
+      {
+        "name": "softmtp-repo.json",
+        "url": "https://api.github.com/repos/JaydenTeoh/Soft-MTP",
+        "status": "ok"
+      },
+      {
+        "name": "softmtp-commits.json",
+        "url": "https://api.github.com/repos/JaydenTeoh/Soft-MTP/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "softmtp-readme.json",
+        "url": "https://api.github.com/repos/JaydenTeoh/Soft-MTP/readme",
+        "status": "ok"
+      },
+      {
+        "name": "spikes-repo.json",
+        "url": "https://api.github.com/repos/tingtang2/quantization-loss-spikes",
+        "status": "ok"
+      },
+      {
+        "name": "spikes-commits.json",
+        "url": "https://api.github.com/repos/tingtang2/quantization-loss-spikes/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "spikes-readme.json",
+        "url": "https://api.github.com/repos/tingtang2/quantization-loss-spikes/readme",
+        "status": "ok"
+      },
+      {
+        "name": "catt-repo.json",
+        "url": "https://api.github.com/repos/Lamsheeper/catt",
+        "status": "ok"
+      },
+      {
+        "name": "catt-commits.json",
+        "url": "https://api.github.com/repos/Lamsheeper/catt/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "catt-readme.json",
+        "url": "https://api.github.com/repos/Lamsheeper/catt/readme",
+        "status": "ok"
+      },
+      {
+        "name": "ppt-repo.json",
+        "url": "https://api.github.com/repos/alexkstern/rethinking-ppt",
+        "status": "ok"
+      },
+      {
+        "name": "ppt-commits.json",
+        "url": "https://api.github.com/repos/alexkstern/rethinking-ppt/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "ppt-readme.json",
+        "url": "https://api.github.com/repos/alexkstern/rethinking-ppt/readme",
+        "status": "ok"
+      },
+      {
+        "name": "softmtp-tree.json",
+        "url": "https://api.github.com/repos/JaydenTeoh/Soft-MTP/git/trees/4e1cf66172199ee08ec1291db9664828fe48826e?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "spikes-tree.json",
+        "url": "https://api.github.com/repos/tingtang2/quantization-loss-spikes/git/trees/71f48081de8941fda0256b58680eb12d81a8c368?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "softmtp-loss.py",
+        "url": "https://raw.githubusercontent.com/JaydenTeoh/Soft-MTP/4e1cf66172199ee08ec1291db9664828fe48826e/src/models/loss.py",
+        "status": "ok"
+      },
+      {
+        "name": "softmtp-test_kl_recovery.py",
+        "url": "https://raw.githubusercontent.com/JaydenTeoh/Soft-MTP/4e1cf66172199ee08ec1291db9664828fe48826e/tests/test_kl_recovery.py",
+        "status": "ok"
+      },
+      {
+        "name": "softmtp-1p2b_fineweb.yaml",
+        "url": "https://raw.githubusercontent.com/JaydenTeoh/Soft-MTP/4e1cf66172199ee08ec1291db9664828fe48826e/configs/1p2b_fineweb.yaml",
+        "status": "ok"
+      },
+      {
+        "name": "spikes-analysis_records.py",
+        "url": "https://raw.githubusercontent.com/tingtang2/quantization-loss-spikes/71f48081de8941fda0256b58680eb12d81a8c368/analysis_records.py",
+        "status": "ok"
+      },
+      {
+        "name": "spikes-experiments.md",
+        "url": "https://raw.githubusercontent.com/tingtang2/quantization-loss-spikes/71f48081de8941fda0256b58680eb12d81a8c368/docs/experiments.md",
+        "status": "ok"
+      },
+      {
+        "name": "spikes-optimizers.py",
+        "url": "https://raw.githubusercontent.com/tingtang2/quantization-loss-spikes/71f48081de8941fda0256b58680eb12d81a8c368/training/optimizers.py",
+        "status": "ok"
+      },
+      {
+        "name": "spikes-quantization.py",
+        "url": "https://raw.githubusercontent.com/tingtang2/quantization-loss-spikes/71f48081de8941fda0256b58680eb12d81a8c368/diagnostics/quantization.py",
+        "status": "ok"
+      },
+      {
+        "name": "softmtp-code.html",
+        "url": "https://github.com/JaydenTeoh/Soft-MTP",
+        "status": "ok"
+      },
+      {
+        "name": "spikes-code.html",
+        "url": "https://github.com/tingtang2/quantization-loss-spikes",
+        "status": "ok"
+      },
+      {
+        "name": "catt-code.html",
+        "url": "https://github.com/Lamsheeper/catt",
+        "status": "ok"
+      },
+      {
+        "name": "catt-project.html",
+        "url": "https://catt.baulab.info",
+        "status": "ok"
+      },
+      {
+        "name": "catt-hf-models.json",
+        "url": "https://huggingface.co/api/models?author=catt-bench",
+        "status": "ok"
+      },
+      {
+        "name": "catt-hf-datasets.json",
+        "url": "https://huggingface.co/api/datasets?author=catt-bench",
+        "status": "ok"
+      },
+      {
+        "name": "softmtp-hf.html",
+        "url": "https://huggingface.co/collections/JaydenTeoh/soft-multi-token-prediction",
+        "status": "ok"
+      },
+      {
+        "name": "catt-tree.json",
+        "url": "https://api.github.com/repos/Lamsheeper/catt/git/trees/87b504860e405b4270f2e1b9a316350daa6d1574?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "softmtp-hf-models.json",
+        "url": "https://huggingface.co/api/models?author=JaydenTeoh&search=mtp&full=true",
+        "status": "ok"
+      },
+      {
+        "name": "softmtp-hf-one.json",
+        "url": "https://huggingface.co/api/models/JaydenTeoh/soft-mtp-1p2b-model",
+        "status": "ok"
+      },
+      {
+        "name": "ai-recent",
+        "url": "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "cl-recent",
+        "url": "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "lg.html",
+        "url": "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "ai-new",
+        "url": "https://arxiv.org/list/cs.AI/new",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic engineering index (normal-TLS curl recovery)",
+        "url": "https://www.anthropic.com/engineering",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic research index (normal-TLS curl recovery)",
+        "url": "https://www.anthropic.com/research",
+        "status": "ok"
+      },
+      {
+        "name": "37786-abs",
+        "url": "https://arxiv.org/abs/2610.37786",
+        "status": "ok"
+      },
+      {
+        "name": "37786-full",
+        "url": "https://arxiv.org/html/2610.37786v1",
+        "status": "ok"
+      },
+      {
+        "name": "40578-abs",
+        "url": "https://arxiv.org/abs/2610.40578",
+        "status": "ok"
+      },
+      {
+        "name": "40578-full",
+        "url": "https://arxiv.org/html/2610.40578v1",
+        "status": "ok"
+      },
+      {
+        "name": "40588-abs",
+        "url": "https://arxiv.org/abs/2610.40588",
+        "status": "ok"
+      },
+      {
+        "name": "40588-full",
+        "url": "https://arxiv.org/html/2610.40588v1",
+        "status": "ok"
+      },
+      {
+        "name": "36967-abs",
+        "url": "https://arxiv.org/abs/2610.36967",
+        "status": "ok"
+      },
+      {
+        "name": "36967-full",
+        "url": "https://arxiv.org/html/2610.36967v1",
+        "status": "ok"
+      },
+      {
+        "name": "36471-abs",
+        "url": "https://arxiv.org/abs/2610.36471",
+        "status": "ok"
+      },
+      {
+        "name": "36471-full",
+        "url": "https://arxiv.org/html/2610.36471v1",
+        "status": "ok"
+      },
+      {
+        "name": "proactmem-code",
+        "url": "https://anonymous.4open.science/r/ProactMem-5351/",
+        "status": "ok"
+      },
+      {
+        "name": "recof-project",
+        "url": "https://method-notes.github.io/ReCoF/",
+        "status": "ok"
+      },
+      {
+        "name": "webanything-code",
+        "url": "https://github.com/china-qijizhifeng/Web-Anything",
+        "status": "ok"
+      },
+      {
+        "name": "webanything-api",
+        "url": "https://api.github.com/repos/china-qijizhifeng/Web-Anything",
+        "status": "ok"
+      },
+      {
+        "name": "webanything-history",
+        "url": "https://api.github.com/repos/china-qijizhifeng/Web-Anything/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "recof-earlier-batch",
+        "url": "https://arxiv.org/list/cs.AI/pastweek?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "webanything-old-readme",
+        "url": "https://raw.githubusercontent.com/china-qijizhifeng/Web-Anything/2fbcafa1/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "webanything-old-project",
+        "url": "https://raw.githubusercontent.com/china-qijizhifeng/Web-Anything/2fbcafa1/docs/index.html",
+        "status": "ok"
+      },
+      {
+        "name": "webanything-tree",
+        "url": "https://api.github.com/repos/china-qijizhifeng/Web-Anything/git/trees/2fbcafa1?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "recof-code",
+        "url": "https://anonymous.4open.science/r/ReCoF-3AC9/",
+        "status": "ok"
+      },
+      {
+        "name": "recof-data",
+        "url": "https://huggingface.co/datasets/dcm552/ReInBench",
+        "status": "ok"
+      },
+      {
+        "name": "proactmem-api",
+        "url": "https://anonymous.4open.science/api/repo/ProactMem-5351",
+        "status": "unavailable"
+      },
+      {
+        "name": "recof-api",
+        "url": "https://anonymous.4open.science/api/repo/ReCoF-3AC9",
+        "status": "unavailable"
+      },
+      {
+        "name": "webanything-old-paper",
+        "url": "https://raw.githubusercontent.com/china-qijizhifeng/Web-Anything/2fbcafa1/docs/project-page-assets/webanything-paper.pdf",
+        "status": "ok"
+      },
+      {
+        "name": "recof-data-api",
+        "url": "https://huggingface.co/api/datasets/dcm552/ReInBench",
+        "status": "ok"
+      },
+      {
+        "name": "recof-project-history",
+        "url": "https://api.github.com/repos/method-notes/ReCoF/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "recof-data-history",
+        "url": "https://huggingface.co/api/datasets/dcm552/ReInBench/commits/main",
+        "status": "ok"
+      },
+      {
+        "name": "39276-abs",
+        "url": "https://arxiv.org/abs/2610.39276",
+        "status": "ok"
+      },
+      {
+        "name": "39276-full",
+        "url": "https://arxiv.org/html/2610.39276v1",
+        "status": "ok"
+      },
+      {
+        "name": "recof-old-project",
+        "url": "https://raw.githubusercontent.com/method-notes/ReCoF/1490d3b8b0fbe211132ad104a9bc7c500811ef6e/index.html",
+        "status": "ok"
+      },
+      {
+        "name": "dc.html",
+        "url": "https://arxiv.org/list/cs.DC/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "ar.html",
+        "url": "https://arxiv.org/list/cs.AR/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "dc-new.html",
+        "url": "https://arxiv.org/list/cs.DC/new",
+        "status": "ok"
+      },
+      {
+        "name": "vllm.html",
+        "url": "https://vllm.ai/blog",
+        "status": "ok"
+      },
+      {
+        "name": "LMSYS rendered archive",
+        "url": "https://www.lmsys.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "pytorch.html",
+        "url": "https://pytorch.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "nvidia.html",
+        "url": "https://developer.nvidia.com/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "39711-abs.html",
+        "url": "https://arxiv.org/abs/2610.39711",
+        "status": "ok"
+      },
+      {
+        "name": "39711-paper.html",
+        "url": "https://arxiv.org/html/2610.39711v1",
+        "status": "ok"
+      },
+      {
+        "name": "39711-pdf",
+        "url": "https://arxiv.org/pdf/2610.39711v1",
+        "status": "ok"
+      },
+      {
+        "name": "38228-abs.html",
+        "url": "https://arxiv.org/abs/2610.38228",
+        "status": "ok"
+      },
+      {
+        "name": "38228-paper.html",
+        "url": "https://arxiv.org/html/2610.38228v1",
+        "status": "ok"
+      },
+      {
+        "name": "38228-pdf",
+        "url": "https://arxiv.org/pdf/2610.38228v1",
+        "status": "ok"
+      },
+      {
+        "name": "38355-abs.html",
+        "url": "https://arxiv.org/abs/2610.38355",
+        "status": "ok"
+      },
+      {
+        "name": "38355-paper.html",
+        "url": "https://arxiv.org/html/2610.38355v1",
+        "status": "ok"
+      },
+      {
+        "name": "38355-pdf",
+        "url": "https://arxiv.org/pdf/2610.38355v1",
+        "status": "ok"
+      },
+      {
+        "name": "39999-abs.html",
+        "url": "https://arxiv.org/abs/2610.39999",
+        "status": "ok"
+      },
+      {
+        "name": "39999-paper.html",
+        "url": "https://arxiv.org/html/2610.39999v1",
+        "status": "ok"
+      },
+      {
+        "name": "39999-pdf",
+        "url": "https://arxiv.org/pdf/2610.39999v1",
+        "status": "ok"
+      },
+      {
+        "name": "39216-abs.html",
+        "url": "https://arxiv.org/abs/2610.39216",
+        "status": "ok"
+      },
+      {
+        "name": "39216-paper.html",
+        "url": "https://arxiv.org/html/2610.39216v1",
+        "status": "ok"
+      },
+      {
+        "name": "39216-pdf",
+        "url": "https://arxiv.org/pdf/2610.39216v1",
+        "status": "ok"
+      },
+      {
+        "name": "mamba.html",
+        "url": "https://developer.nvidia.com/blog/accelerating-mamba-2-with-high-performance-forward-pass-kernels-in-nvidia-cuda-tile/",
+        "status": "ok"
+      },
+      {
+        "name": "deterministic.html",
+        "url": "https://developer.nvidia.com/blog/scale-bitwise-deterministic-pretraining-with-nvidia-megatron-core/",
+        "status": "ok"
+      },
+      {
+        "name": "mistral.html",
+        "url": "https://vllm.ai/blog/2026-10-29-mistral-large-4",
+        "status": "ok"
+      },
+      {
+        "name": "aiperf.html",
+        "url": "https://developer.nvidia.com/blog/benchmarking-llm-inference-at-scale-with-aiperf/",
+        "status": "ok"
+      },
+      {
+        "name": "phos-repo.json",
+        "url": "https://api.github.com/repos/blitz-serving/PhoenixOSv1",
+        "status": "ok"
+      },
+      {
+        "name": "phos-commits.json",
+        "url": "https://api.github.com/repos/blitz-serving/PhoenixOSv1/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "phos.html",
+        "url": "https://github.com/blitz-serving/PhoenixOSv1",
+        "status": "ok"
+      },
+      {
+        "name": "pdscope-repo.json",
+        "url": "https://api.github.com/repos/nezha-Anonymous/PDScope",
+        "status": "ok"
+      },
+      {
+        "name": "pdscope-commits.json",
+        "url": "https://api.github.com/repos/nezha-Anonymous/PDScope/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "pdscope.html",
+        "url": "https://github.com/nezha-Anonymous/PDScope",
+        "status": "ok"
+      },
+      {
+        "name": "ROCm archive recovery",
+        "url": "https://rocm.blogs.amd.com/",
+        "status": "ok"
+      },
+      {
+        "name": "ROCm MI308X RL deployment report",
+        "url": "https://rocm.blogs.amd.com/ecosystems-and-partners/deepseek-v4-mi308-aiter-backed-rl/README.html",
+        "status": "ok"
+      },
+      {
+        "name": "OpenAI current index full web recovery",
+        "url": "https://openai.com/research/index/",
+        "status": "ok"
+      },
+      {
+        "name": "ai2-index",
+        "url": "https://allenai.org/blog",
+        "status": "ok"
+      },
+      {
+        "name": "deepmind-index",
+        "url": "https://deepmind.google/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "openreview-index",
+        "url": "https://openreview.net/",
+        "status": "ok"
+      },
+      {
+        "name": "openreview-api",
+        "url": "https://api2.openreview.net/notes?content.venueid=ICLR.cc/2027/Conference/Submission&limit=5",
+        "status": "unavailable"
+      },
+      {
+        "name": "acl-index",
+        "url": "https://aclanthology.org/",
+        "status": "ok"
+      },
+      {
+        "name": "OpenAI monitoring disclosure full web recovery",
+        "url": "https://openai.com/index/how-we-detect-frontier-model-misalignment/",
+        "status": "ok"
+      },
+      {
+        "name": "google-carbon",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+        "status": "ok"
+      },
+      {
+        "name": "METR historical monitoring pilot full web recovery",
+        "url": "https://metr.org/blog/2026-10-22-red-teaming-openai-agent-monitoring/",
+        "status": "ok"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": "arxiv:2610.36967",
+      "title": "Proactive Memory for Event-Driven LLM Agents",
+      "category": "2.3",
+      "tags": [
+        "Proactive Agents",
+        "Temporal Memory",
+        "Evidence Validation"
+      ],
+      "published_on": "2026-10-27",
+      "first_seen_at": "2026-10-28T10:04:45.988+00:00",
+      "canonical_url": "https://arxiv.org/abs/2610.36967",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.36967v1"
+      },
+      "summary": [
+        "ProactMem organizes an event stream into recent observations, source-checked activity trajectories and behavioral regularities admitted through historical replay.",
+        "Matching those regularities to current conditions helps an agent decide when to offer assistance while suppressing redundant proposals."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 3–5 and Appendices B–D: on 4,539 events from 17 isolated Sports/Home/Code streams, pooled F1 is 52.6%, 21.4% relatively above the strongest of five external baselines with GPT-5.6 Luna. Source-validation and replay ablations lower F1. Editorial catch-up from the October 28 screened reserve; the original paper announcement was October 28, not a new October 29 release.",
+        "limitations": "Method and benchmark were jointly developed without independent held-out evaluation. Separate-team labels lower Home/Code diagnostic scores, and controllers differ with memory representations. Offline opportunity detection does not measure recipient benefit, interruption cost or safety. Anonymous implementation contents and their earlier visibility could not be verified."
+      },
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+      "title": "Gemini 4 Carbon: model-specific cyberdefense and agent-reliability evaluations",
+      "category": "2.8",
+      "tags": [
+        "Agent Evaluation",
+        "Cyberdefense",
+        "Model Reliability"
+      ],
+      "published_on": "2026-10-28",
+      "first_seen_at": "2026-10-30T10:12:27.877+00:00",
+      "canonical_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+      "links": {
+        "blog": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/"
+      },
+      "summary": [
+        "Google’s Gemini 4 Carbon announcement reports new cyberdefense and agent-reliability evaluations for a model aimed at sustained coding workflows.",
+        "The disclosure gives builders an early view of its measured capabilities and deployment boundaries, while leaving independent reproducibility and broad reliability unresolved."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "The full October 28 announcement reports unguarded scores of 88.2% on SEC-bench Pro, 54.8% on ExploitGym and 71.0% on CWE-bench. It separately reports 0.4% cheating attempts and 0.0% successful cheating on Terminal-Bench 4.0. Newly-discovered editorial catch-up for the October 29 window: the dated primary announcement was retrieved retrospectively on October 30; no hour-level release time is inferred.",
+        "limitations": "Author-run comparisons without a complete Carbon technical report, sample counts or released evaluation implementation verified here. Internal alert reductions and selected task scores do not establish production incidence or universal safety. Access starts with selected cyber defenders; no generally available weights or implementation were verified."
+      },
+      "novelty": "newly-discovered"
+    }
+  ]
+}

@@ -1,0 +1,986 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-30",
+  "timezone": "America/Los_Angeles",
+  "generated_at": "2026-10-30T10:27:52.238+00:00",
+  "coverage": {
+    "start": "2026-10-29T03:00:00-07:00",
+    "end": "2026-10-30T03:00:00-07:00"
+  },
+  "search": {
+    "status": "partial",
+    "notes": "Coverage is October 29 03:00 through October 30 03:00 America/Los_Angeles; total discovery lookback begins October 27 03:00. The report uses the original maintenance-deferred October 30 arXiv batch, with receipt dates retained. Exact schedule-based availability is used only where supported by original subject-list membership and the official exception notice; Soft-MTP’s original batch announcement is supported by the official maintenance schedule and checked later model/code artifacts; the date-only monitoring blog is conservatively labeled a delayed discovery without an invented release hour. The quantization study is a dated manuscript evidence update over earlier code, not a new implementation. This bounded retrospective search was performed on October 30, 2026, after reading the immutable September 29 landscape and all 272 prior registry records. All 26 subdomains were screened across primary arXiv original/recent subject listings, author papers and artifacts, and technical-blog/venue indexes. Every selected scientific contribution was checked against its full primary methods, measured results and limitations; these are author-reported findings, not reproduced benchmarks. Original receipt/publication dates and earliest documented first-seen timestamps are preserved. No work is repeated across the two reports. Official arXiv status and the linked maintenance announcement confirm there was no October 28 evening announcement: the deferred original batch appeared October 30 at 00:00 UTC. Receipt dates and Git/Hugging Face creation times alone do not establish public availability. Older complete WebAnything/ReCoF studies and CATT artifacts with unresolved substantive novelty were excluded rather than reannounced. Source-check lists record actual retrievals for the joint two-window investigation; they do not imply that every retrieved source was eligible for each date. Remaining gaps: the OpenReview submission API returned 403, LMSYS exposed navigation without a usable current archive, and anonymous ProactMem implementation contents were inaccessible (401). ACL and author/artifact searches are bounded, and unselected abstract-only triage is not represented as a full technical audit. Direct TLS/HTTP failures recovered through a full web-reader source are not unresolved full-text failures.",
+    "sources_checked": [
+      {
+        "name": "cl-new",
+        "url": "https://arxiv.org/list/cs.CL/new",
+        "status": "ok"
+      },
+      {
+        "name": "cl-recent.html",
+        "url": "https://arxiv.org/list/cs.CL/recent?show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "lg-new.html",
+        "url": "https://arxiv.org/list/cs.LG/new",
+        "status": "ok"
+      },
+      {
+        "name": "lg-recent.html",
+        "url": "https://arxiv.org/list/cs.LG/recent?show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "hf29.html",
+        "url": "https://huggingface.co/papers/date/2026-10-29",
+        "status": "ok"
+      },
+      {
+        "name": "hf30.html",
+        "url": "https://huggingface.co/papers/date/2026-10-30",
+        "status": "ok"
+      },
+      {
+        "name": "schedule.html",
+        "url": "https://info.arxiv.org/help/availability.html",
+        "status": "ok"
+      },
+      {
+        "name": "tm.html",
+        "url": "https://thinkingmachines.ai/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "40655-abs.html",
+        "url": "https://arxiv.org/abs/2610.40655",
+        "status": "ok"
+      },
+      {
+        "name": "40655-paper.html",
+        "url": "https://arxiv.org/html/2610.40655v1",
+        "status": "ok"
+      },
+      {
+        "name": "40655.pdf",
+        "url": "https://arxiv.org/pdf/2610.40655v1",
+        "status": "ok"
+      },
+      {
+        "name": "40577-abs.html",
+        "url": "https://arxiv.org/abs/2610.40577",
+        "status": "ok"
+      },
+      {
+        "name": "40577-paper.html",
+        "url": "https://arxiv.org/html/2610.40577v1",
+        "status": "ok"
+      },
+      {
+        "name": "40577.pdf",
+        "url": "https://arxiv.org/pdf/2610.40577v1",
+        "status": "ok"
+      },
+      {
+        "name": "40051-abs.html",
+        "url": "https://arxiv.org/abs/2610.40051",
+        "status": "ok"
+      },
+      {
+        "name": "40051-paper.html",
+        "url": "https://arxiv.org/html/2610.40051v1",
+        "status": "ok"
+      },
+      {
+        "name": "40051.pdf",
+        "url": "https://arxiv.org/pdf/2610.40051v1",
+        "status": "ok"
+      },
+      {
+        "name": "38277-abs.html",
+        "url": "https://arxiv.org/abs/2610.38277",
+        "status": "ok"
+      },
+      {
+        "name": "38277-paper.html",
+        "url": "https://arxiv.org/html/2610.38277v1",
+        "status": "ok"
+      },
+      {
+        "name": "38277.pdf",
+        "url": "https://arxiv.org/pdf/2610.38277v1",
+        "status": "ok"
+      },
+      {
+        "name": "38331-abs.html",
+        "url": "https://arxiv.org/abs/2610.38331",
+        "status": "ok"
+      },
+      {
+        "name": "38331-paper.html",
+        "url": "https://arxiv.org/html/2610.38331v1",
+        "status": "ok"
+      },
+      {
+        "name": "38331.pdf",
+        "url": "https://arxiv.org/pdf/2610.38331v1",
+        "status": "ok"
+      },
+      {
+        "name": "40564-abs.html",
+        "url": "https://arxiv.org/abs/2610.40564",
+        "status": "ok"
+      },
+      {
+        "name": "40564-paper.html",
+        "url": "https://arxiv.org/html/2610.40564v1",
+        "status": "ok"
+      },
+      {
+        "name": "40564.pdf",
+        "url": "https://arxiv.org/pdf/2610.40564v1",
+        "status": "ok"
+      },
+      {
+        "name": "arxiv-status",
+        "url": "https://status.arxiv.org/",
+        "status": "ok"
+      },
+      {
+        "name": "arXiv maintenance announcement full web recovery",
+        "url": "https://blog.arxiv.org/2026/10/21/scheduled-database-maintenance/",
+        "status": "ok"
+      },
+      {
+        "name": "softmtp-repo.json",
+        "url": "https://api.github.com/repos/JaydenTeoh/Soft-MTP",
+        "status": "ok"
+      },
+      {
+        "name": "softmtp-commits.json",
+        "url": "https://api.github.com/repos/JaydenTeoh/Soft-MTP/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "softmtp-readme.json",
+        "url": "https://api.github.com/repos/JaydenTeoh/Soft-MTP/readme",
+        "status": "ok"
+      },
+      {
+        "name": "spikes-repo.json",
+        "url": "https://api.github.com/repos/tingtang2/quantization-loss-spikes",
+        "status": "ok"
+      },
+      {
+        "name": "spikes-commits.json",
+        "url": "https://api.github.com/repos/tingtang2/quantization-loss-spikes/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "spikes-readme.json",
+        "url": "https://api.github.com/repos/tingtang2/quantization-loss-spikes/readme",
+        "status": "ok"
+      },
+      {
+        "name": "catt-repo.json",
+        "url": "https://api.github.com/repos/Lamsheeper/catt",
+        "status": "ok"
+      },
+      {
+        "name": "catt-commits.json",
+        "url": "https://api.github.com/repos/Lamsheeper/catt/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "catt-readme.json",
+        "url": "https://api.github.com/repos/Lamsheeper/catt/readme",
+        "status": "ok"
+      },
+      {
+        "name": "ppt-repo.json",
+        "url": "https://api.github.com/repos/alexkstern/rethinking-ppt",
+        "status": "ok"
+      },
+      {
+        "name": "ppt-commits.json",
+        "url": "https://api.github.com/repos/alexkstern/rethinking-ppt/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "ppt-readme.json",
+        "url": "https://api.github.com/repos/alexkstern/rethinking-ppt/readme",
+        "status": "ok"
+      },
+      {
+        "name": "softmtp-tree.json",
+        "url": "https://api.github.com/repos/JaydenTeoh/Soft-MTP/git/trees/4e1cf66172199ee08ec1291db9664828fe48826e?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "spikes-tree.json",
+        "url": "https://api.github.com/repos/tingtang2/quantization-loss-spikes/git/trees/71f48081de8941fda0256b58680eb12d81a8c368?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "softmtp-loss.py",
+        "url": "https://raw.githubusercontent.com/JaydenTeoh/Soft-MTP/4e1cf66172199ee08ec1291db9664828fe48826e/src/models/loss.py",
+        "status": "ok"
+      },
+      {
+        "name": "softmtp-test_kl_recovery.py",
+        "url": "https://raw.githubusercontent.com/JaydenTeoh/Soft-MTP/4e1cf66172199ee08ec1291db9664828fe48826e/tests/test_kl_recovery.py",
+        "status": "ok"
+      },
+      {
+        "name": "softmtp-1p2b_fineweb.yaml",
+        "url": "https://raw.githubusercontent.com/JaydenTeoh/Soft-MTP/4e1cf66172199ee08ec1291db9664828fe48826e/configs/1p2b_fineweb.yaml",
+        "status": "ok"
+      },
+      {
+        "name": "spikes-analysis_records.py",
+        "url": "https://raw.githubusercontent.com/tingtang2/quantization-loss-spikes/71f48081de8941fda0256b58680eb12d81a8c368/analysis_records.py",
+        "status": "ok"
+      },
+      {
+        "name": "spikes-experiments.md",
+        "url": "https://raw.githubusercontent.com/tingtang2/quantization-loss-spikes/71f48081de8941fda0256b58680eb12d81a8c368/docs/experiments.md",
+        "status": "ok"
+      },
+      {
+        "name": "spikes-optimizers.py",
+        "url": "https://raw.githubusercontent.com/tingtang2/quantization-loss-spikes/71f48081de8941fda0256b58680eb12d81a8c368/training/optimizers.py",
+        "status": "ok"
+      },
+      {
+        "name": "spikes-quantization.py",
+        "url": "https://raw.githubusercontent.com/tingtang2/quantization-loss-spikes/71f48081de8941fda0256b58680eb12d81a8c368/diagnostics/quantization.py",
+        "status": "ok"
+      },
+      {
+        "name": "softmtp-code.html",
+        "url": "https://github.com/JaydenTeoh/Soft-MTP",
+        "status": "ok"
+      },
+      {
+        "name": "spikes-code.html",
+        "url": "https://github.com/tingtang2/quantization-loss-spikes",
+        "status": "ok"
+      },
+      {
+        "name": "catt-code.html",
+        "url": "https://github.com/Lamsheeper/catt",
+        "status": "ok"
+      },
+      {
+        "name": "catt-project.html",
+        "url": "https://catt.baulab.info",
+        "status": "ok"
+      },
+      {
+        "name": "catt-hf-models.json",
+        "url": "https://huggingface.co/api/models?author=catt-bench",
+        "status": "ok"
+      },
+      {
+        "name": "catt-hf-datasets.json",
+        "url": "https://huggingface.co/api/datasets?author=catt-bench",
+        "status": "ok"
+      },
+      {
+        "name": "softmtp-hf.html",
+        "url": "https://huggingface.co/collections/JaydenTeoh/soft-multi-token-prediction",
+        "status": "ok"
+      },
+      {
+        "name": "catt-tree.json",
+        "url": "https://api.github.com/repos/Lamsheeper/catt/git/trees/87b504860e405b4270f2e1b9a316350daa6d1574?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "softmtp-hf-models.json",
+        "url": "https://huggingface.co/api/models?author=JaydenTeoh&search=mtp&full=true",
+        "status": "ok"
+      },
+      {
+        "name": "softmtp-hf-one.json",
+        "url": "https://huggingface.co/api/models/JaydenTeoh/soft-mtp-1p2b-model",
+        "status": "ok"
+      },
+      {
+        "name": "ai-recent",
+        "url": "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "cl-recent",
+        "url": "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "lg.html",
+        "url": "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "ai-new",
+        "url": "https://arxiv.org/list/cs.AI/new",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic engineering index (normal-TLS curl recovery)",
+        "url": "https://www.anthropic.com/engineering",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic research index (normal-TLS curl recovery)",
+        "url": "https://www.anthropic.com/research",
+        "status": "ok"
+      },
+      {
+        "name": "37786-abs",
+        "url": "https://arxiv.org/abs/2610.37786",
+        "status": "ok"
+      },
+      {
+        "name": "37786-full",
+        "url": "https://arxiv.org/html/2610.37786v1",
+        "status": "ok"
+      },
+      {
+        "name": "40578-abs",
+        "url": "https://arxiv.org/abs/2610.40578",
+        "status": "ok"
+      },
+      {
+        "name": "40578-full",
+        "url": "https://arxiv.org/html/2610.40578v1",
+        "status": "ok"
+      },
+      {
+        "name": "40588-abs",
+        "url": "https://arxiv.org/abs/2610.40588",
+        "status": "ok"
+      },
+      {
+        "name": "40588-full",
+        "url": "https://arxiv.org/html/2610.40588v1",
+        "status": "ok"
+      },
+      {
+        "name": "36967-abs",
+        "url": "https://arxiv.org/abs/2610.36967",
+        "status": "ok"
+      },
+      {
+        "name": "36967-full",
+        "url": "https://arxiv.org/html/2610.36967v1",
+        "status": "ok"
+      },
+      {
+        "name": "36471-abs",
+        "url": "https://arxiv.org/abs/2610.36471",
+        "status": "ok"
+      },
+      {
+        "name": "36471-full",
+        "url": "https://arxiv.org/html/2610.36471v1",
+        "status": "ok"
+      },
+      {
+        "name": "proactmem-code",
+        "url": "https://anonymous.4open.science/r/ProactMem-5351/",
+        "status": "ok"
+      },
+      {
+        "name": "recof-project",
+        "url": "https://method-notes.github.io/ReCoF/",
+        "status": "ok"
+      },
+      {
+        "name": "webanything-code",
+        "url": "https://github.com/china-qijizhifeng/Web-Anything",
+        "status": "ok"
+      },
+      {
+        "name": "webanything-api",
+        "url": "https://api.github.com/repos/china-qijizhifeng/Web-Anything",
+        "status": "ok"
+      },
+      {
+        "name": "webanything-history",
+        "url": "https://api.github.com/repos/china-qijizhifeng/Web-Anything/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "recof-earlier-batch",
+        "url": "https://arxiv.org/list/cs.AI/pastweek?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "webanything-old-readme",
+        "url": "https://raw.githubusercontent.com/china-qijizhifeng/Web-Anything/2fbcafa1/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "webanything-old-project",
+        "url": "https://raw.githubusercontent.com/china-qijizhifeng/Web-Anything/2fbcafa1/docs/index.html",
+        "status": "ok"
+      },
+      {
+        "name": "webanything-tree",
+        "url": "https://api.github.com/repos/china-qijizhifeng/Web-Anything/git/trees/2fbcafa1?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "recof-code",
+        "url": "https://anonymous.4open.science/r/ReCoF-3AC9/",
+        "status": "ok"
+      },
+      {
+        "name": "recof-data",
+        "url": "https://huggingface.co/datasets/dcm552/ReInBench",
+        "status": "ok"
+      },
+      {
+        "name": "proactmem-api",
+        "url": "https://anonymous.4open.science/api/repo/ProactMem-5351",
+        "status": "unavailable"
+      },
+      {
+        "name": "recof-api",
+        "url": "https://anonymous.4open.science/api/repo/ReCoF-3AC9",
+        "status": "unavailable"
+      },
+      {
+        "name": "webanything-old-paper",
+        "url": "https://raw.githubusercontent.com/china-qijizhifeng/Web-Anything/2fbcafa1/docs/project-page-assets/webanything-paper.pdf",
+        "status": "ok"
+      },
+      {
+        "name": "recof-data-api",
+        "url": "https://huggingface.co/api/datasets/dcm552/ReInBench",
+        "status": "ok"
+      },
+      {
+        "name": "recof-project-history",
+        "url": "https://api.github.com/repos/method-notes/ReCoF/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "recof-data-history",
+        "url": "https://huggingface.co/api/datasets/dcm552/ReInBench/commits/main",
+        "status": "ok"
+      },
+      {
+        "name": "39276-abs",
+        "url": "https://arxiv.org/abs/2610.39276",
+        "status": "ok"
+      },
+      {
+        "name": "39276-full",
+        "url": "https://arxiv.org/html/2610.39276v1",
+        "status": "ok"
+      },
+      {
+        "name": "recof-old-project",
+        "url": "https://raw.githubusercontent.com/method-notes/ReCoF/1490d3b8b0fbe211132ad104a9bc7c500811ef6e/index.html",
+        "status": "ok"
+      },
+      {
+        "name": "dc.html",
+        "url": "https://arxiv.org/list/cs.DC/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "ar.html",
+        "url": "https://arxiv.org/list/cs.AR/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "dc-new.html",
+        "url": "https://arxiv.org/list/cs.DC/new",
+        "status": "ok"
+      },
+      {
+        "name": "vllm.html",
+        "url": "https://vllm.ai/blog",
+        "status": "ok"
+      },
+      {
+        "name": "LMSYS rendered archive",
+        "url": "https://www.lmsys.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "pytorch.html",
+        "url": "https://pytorch.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "nvidia.html",
+        "url": "https://developer.nvidia.com/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "39711-abs.html",
+        "url": "https://arxiv.org/abs/2610.39711",
+        "status": "ok"
+      },
+      {
+        "name": "39711-paper.html",
+        "url": "https://arxiv.org/html/2610.39711v1",
+        "status": "ok"
+      },
+      {
+        "name": "39711-pdf",
+        "url": "https://arxiv.org/pdf/2610.39711v1",
+        "status": "ok"
+      },
+      {
+        "name": "38228-abs.html",
+        "url": "https://arxiv.org/abs/2610.38228",
+        "status": "ok"
+      },
+      {
+        "name": "38228-paper.html",
+        "url": "https://arxiv.org/html/2610.38228v1",
+        "status": "ok"
+      },
+      {
+        "name": "38228-pdf",
+        "url": "https://arxiv.org/pdf/2610.38228v1",
+        "status": "ok"
+      },
+      {
+        "name": "38355-abs.html",
+        "url": "https://arxiv.org/abs/2610.38355",
+        "status": "ok"
+      },
+      {
+        "name": "38355-paper.html",
+        "url": "https://arxiv.org/html/2610.38355v1",
+        "status": "ok"
+      },
+      {
+        "name": "38355-pdf",
+        "url": "https://arxiv.org/pdf/2610.38355v1",
+        "status": "ok"
+      },
+      {
+        "name": "39999-abs.html",
+        "url": "https://arxiv.org/abs/2610.39999",
+        "status": "ok"
+      },
+      {
+        "name": "39999-paper.html",
+        "url": "https://arxiv.org/html/2610.39999v1",
+        "status": "ok"
+      },
+      {
+        "name": "39999-pdf",
+        "url": "https://arxiv.org/pdf/2610.39999v1",
+        "status": "ok"
+      },
+      {
+        "name": "39216-abs.html",
+        "url": "https://arxiv.org/abs/2610.39216",
+        "status": "ok"
+      },
+      {
+        "name": "39216-paper.html",
+        "url": "https://arxiv.org/html/2610.39216v1",
+        "status": "ok"
+      },
+      {
+        "name": "39216-pdf",
+        "url": "https://arxiv.org/pdf/2610.39216v1",
+        "status": "ok"
+      },
+      {
+        "name": "mamba.html",
+        "url": "https://developer.nvidia.com/blog/accelerating-mamba-2-with-high-performance-forward-pass-kernels-in-nvidia-cuda-tile/",
+        "status": "ok"
+      },
+      {
+        "name": "deterministic.html",
+        "url": "https://developer.nvidia.com/blog/scale-bitwise-deterministic-pretraining-with-nvidia-megatron-core/",
+        "status": "ok"
+      },
+      {
+        "name": "mistral.html",
+        "url": "https://vllm.ai/blog/2026-10-29-mistral-large-4",
+        "status": "ok"
+      },
+      {
+        "name": "aiperf.html",
+        "url": "https://developer.nvidia.com/blog/benchmarking-llm-inference-at-scale-with-aiperf/",
+        "status": "ok"
+      },
+      {
+        "name": "phos-repo.json",
+        "url": "https://api.github.com/repos/blitz-serving/PhoenixOSv1",
+        "status": "ok"
+      },
+      {
+        "name": "phos-commits.json",
+        "url": "https://api.github.com/repos/blitz-serving/PhoenixOSv1/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "phos.html",
+        "url": "https://github.com/blitz-serving/PhoenixOSv1",
+        "status": "ok"
+      },
+      {
+        "name": "pdscope-repo.json",
+        "url": "https://api.github.com/repos/nezha-Anonymous/PDScope",
+        "status": "ok"
+      },
+      {
+        "name": "pdscope-commits.json",
+        "url": "https://api.github.com/repos/nezha-Anonymous/PDScope/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "pdscope.html",
+        "url": "https://github.com/nezha-Anonymous/PDScope",
+        "status": "ok"
+      },
+      {
+        "name": "ROCm archive recovery",
+        "url": "https://rocm.blogs.amd.com/",
+        "status": "ok"
+      },
+      {
+        "name": "ROCm MI308X RL deployment report",
+        "url": "https://rocm.blogs.amd.com/ecosystems-and-partners/deepseek-v4-mi308-aiter-backed-rl/README.html",
+        "status": "ok"
+      },
+      {
+        "name": "OpenAI current index full web recovery",
+        "url": "https://openai.com/research/index/",
+        "status": "ok"
+      },
+      {
+        "name": "ai2-index",
+        "url": "https://allenai.org/blog",
+        "status": "ok"
+      },
+      {
+        "name": "deepmind-index",
+        "url": "https://deepmind.google/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "openreview-index",
+        "url": "https://openreview.net/",
+        "status": "ok"
+      },
+      {
+        "name": "openreview-api",
+        "url": "https://api2.openreview.net/notes?content.venueid=ICLR.cc/2027/Conference/Submission&limit=5",
+        "status": "unavailable"
+      },
+      {
+        "name": "acl-index",
+        "url": "https://aclanthology.org/",
+        "status": "ok"
+      },
+      {
+        "name": "OpenAI monitoring disclosure full web recovery",
+        "url": "https://openai.com/index/how-we-detect-frontier-model-misalignment/",
+        "status": "ok"
+      },
+      {
+        "name": "google-carbon",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+        "status": "ok"
+      },
+      {
+        "name": "METR historical monitoring pilot full web recovery",
+        "url": "https://metr.org/blog/2026-10-22-red-teaming-openai-agent-monitoring/",
+        "status": "ok"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": "arxiv:2610.38331",
+      "title": "Multi-Token Prediction Done Right (Soft-MTP)",
+      "category": "1.3",
+      "published_on": "2026-10-28",
+      "first_seen_at": "2026-10-30T10:08:26.631Z",
+      "canonical_url": "https://arxiv.org/abs/2610.38331",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.38331v1",
+        "code": "https://github.com/JaydenTeoh/Soft-MTP"
+      },
+      "summary": [
+        "Soft-MTP routes future-token heads toward the model’s aligned next-token distribution while retaining ordinary cross-entropy supervision on the shared output head.",
+        "It recovers this distillation gradient from existing losses without extra full-vocabulary tensors, improving the tested training-quality and self-speculative-decoding trade-off."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Methods, appendices and pinned implementation inspected. At the 1.2B next-token-path scale after 31.5B tokens, eight-task zero-shot average rises from 56.80 to 57.31; FineWeb perplexity falls from 10.891 to 10.741. Single-H200 fused-CE throughput is 49,748 versus 49,783 tokens/s for standard MTP, with 107 GB peak memory for both. Maintenance deferred the original paper announcement to October 30.",
+        "limitations": "The gradient identity applies to hidden/head-network paths, not all shared-output-head parameters. Experiments stop at 1.2B; training-seed uncertainty is unreported. Plain NTP still has better FineWeb perplexity. Incremental speculative speed gains over MTP average about 1.4–1.5%, and code evaluation selects temperature by pass@k."
+      },
+      "tags": [
+        "Multi-Token Prediction",
+        "Gradient Routing",
+        "Self-Distillation",
+        "Pretraining"
+      ],
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-30T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/new",
+          "https://info.arxiv.org/help/availability.html",
+          "https://status.arxiv.org/"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.38277",
+      "title": "The Role of Quantization in Loss Spikes: new precision-intervention evidence",
+      "category": "1.3",
+      "published_on": "2026-10-28",
+      "first_seen_at": "2026-10-30T10:08:26.631Z",
+      "canonical_url": "https://arxiv.org/abs/2610.38277",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.38277v1",
+        "code": "https://github.com/tingtang2/quantization-loss-spikes"
+      },
+      "summary": [
+        "This study connects delayed pretraining loss failures to low-precision output-head rounding: a growing common logit offset erases differences that softmax needs.",
+        "Keeping that head in FP32 or controlling its drift with tuned momentum SGD prevents the tested failures, offering targeted diagnostics and mitigations for long training runs."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Full methods, appendices and initial code inspected. In the 28M, 16B-token precision sweep at peak learning rate 0.1, all five BF16 mixed/true seeds develop time-bomb failures while FP32 stays stable; targeted mitigations suppress them. The paper also separates transient normalization-sensitive spikes from delayed failures.",
+        "limitations": "Elevated learning rates, no weight decay in delayed-failure tests and small proxies limit transfer to natural frontier runs. FP32 stability covers finite horizons. BF16-true SGD-M has worse final loss, and the 1.4B comparison uses one seed."
+      },
+      "tags": [
+        "Training Stability",
+        "Finite Precision",
+        "LM Head",
+        "Optimizer Design"
+      ],
+      "novelty": "material-update",
+      "update_note": "2026-10-30: the newly announced manuscript adds detailed precision interventions and seeded evaluation over an implementation whose initial-release commit is dated October28. Its complete initial tree contains configs and diagnostics, not the paper or result tables. Commit time does not establish exact public visibility."
+    },
+    {
+      "id": "arxiv:2610.39276",
+      "title": "MemSteer: Turning User Histories into Supervision for Agent Memory Optimization",
+      "category": "2.3",
+      "tags": [
+        "Agent Memory",
+        "Synthetic Supervision",
+        "Design Optimization"
+      ],
+      "published_on": "2026-10-29",
+      "first_seen_at": "2026-10-30T10:08:56.615+00:00",
+      "canonical_url": "https://arxiv.org/abs/2610.39276",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.39276v1"
+      },
+      "summary": [
+        "MemSteer generates evidence-backed questions and answers from user histories, checking answer plans through source audits and blind answer recovery.",
+        "This supervision guides revisions to memory storage, retrieval and answer context without updating model weights, reducing reliance on manually labeled QA."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 3–4 and Appendix A: twenty design-search iterations raise ATM-Bench Question Score from 54.9 to 68.3 over 1,013 questions with DeepSeek-V4-Flash answering/judging. With GPT-4.1-mini, RHELM accuracy increases from 22.3 to 26.4 without external records and 33.3 to 39.9 with them. Generated supervision also helps two other optimizers.",
+        "limitations": "LLM verification can share errors and does not prove every cited record is necessary. RHELM uses ten synthetic personas; cross-user transfer is mixed. Official-QA comparisons include their own training/validation questions, whereas MemSteer reserves official questions for evaluation. No author implementation was verified."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-30T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html",
+          "https://status.arxiv.org/"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.40578",
+      "title": "VeriCUA: Verification as Agentic Exploration for Computer-Using Agents",
+      "category": "2.8",
+      "tags": [
+        "Computer Use",
+        "Task Verification",
+        "Evidence Gathering"
+      ],
+      "published_on": "2026-10-29",
+      "first_seen_at": "2026-10-30T10:08:56.615+00:00",
+      "canonical_url": "https://arxiv.org/abs/2610.40578",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.40578v1"
+      },
+      "summary": [
+        "VeriCUA verifies completed computer-use attempts by inspecting context, constructing task requirements and actively gathering GUI or code evidence.",
+        "Source-aware rules distinguish observed effects from the agent’s claims, improving completion judgments while allowing unresolved online cases to abstain."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Tables 1–3 and Appendices A–C: on 116 AndroidWorld episodes, accuracy rises from the VLM judge’s 78.4% to 90.5% and false-positive rate falls from 15.4% to 7.7%, with 82% decided. OSReward-Hard accuracy is 70.4% versus 65.7% for the strongest compared baseline; matched-budget comparisons retain a smaller lead.",
+        "limitations": "Online abstentions count as failures; offline unresolved cases use an initial-judgment fallback. Baselines are reimplemented and some shortened; benchmark gold can be wrong. Verification is costly, including 345K–378K tokens per offline OSReward trajectory. No released author implementation or end-to-end training gain was verified."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-30T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html",
+          "https://status.arxiv.org/"
+        ]
+      }
+    },
+    {
+      "id": "https://openai.com/index/how-we-detect-frontier-model-misalignment/",
+      "title": "How we detect frontier model misalignment",
+      "category": "2.8",
+      "tags": [
+        "Agent Monitoring",
+        "Training Oversight",
+        "Incident Response"
+      ],
+      "published_on": "2026-10-29",
+      "first_seen_at": "2026-10-30T10:12:55.362+00:00",
+      "canonical_url": "https://openai.com/index/how-we-detect-frontier-model-misalignment/",
+      "links": {
+        "blog": "https://openai.com/index/how-we-detect-frontier-model-misalignment/"
+      },
+      "summary": [
+        "OpenAI describes a layered monitoring system that escalates agent behavior from inexpensive screening through model review, cross-context investigation and system-telemetry checks.",
+        "Asynchronous review leaves individual reinforcement-learning rewards unchanged, offering a practical design for detecting unauthorized behavior while reducing direct incentives to conceal it."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "The full October 29 disclosure distinguishes activation probes from later review: frontier RL and internal Codex bypass the probe stage. In a replay of one historical incident, security escalation occurs about 30 minutes after sandbox escape; a live example was flagged within 15 minutes. Newly-discovered catch-up uses the dated announcement without assuming an exact release hour. The linked independent red-team post was also inspected.",
+        "limitations": "Selected incidents do not estimate general recall or intervention success. Paging varies by workload and is disabled for internal Codex; some safeguards remain planned. Stopping whole training runs can still create selection pressure. The independent pilot assessed the July system, not current coverage, and did not independently verify subsequent remediation. No public monitor implementation was verified."
+      },
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "arxiv:2610.38228",
+      "title": "The Endgame of FSDP Communication: Layout-Aware Collectives on Copy Engines, RDMA, and NVSwitch",
+      "category": "3.1",
+      "published_on": "2026-10-28",
+      "first_seen_at": "2026-10-30T10:09:08.769Z",
+      "canonical_url": "https://arxiv.org/abs/2610.38228",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.38228v1"
+      },
+      "summary": [
+        "TIDE delivers all-gather results directly into FSDP2 parameter storage and reduces gradients without packing a full-group FP32 buffer.",
+        "Copy engines, RDMA and brief GPU accumulation work reduce layout-copy overhead and interference with training while preserving model compute kernels."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 3–8 and Appendices A–G inspected. On 64 GPUs across eight NVSwitch/RDMA nodes, Qwen3-30B-A3B at 16K tokens per GPU reduces step time 27.1% versus stock FSDP2 and 6.0% versus FSDP2+SymmMem. Other model/length gains are smaller. The peak-memory advantage reaches 4.7 GiB versus SymmMem, while one InPlace configuration uses more memory than stock. October 28 is receipt; the original October 30 batch and official maintenance exception establish later announcement.",
+        "limitations": "The paper omits the GPU SKU. Results require the tested topology and supported sharding; CUDA graph capture and asynchronous unshard are unsupported. Short loss checks do not establish equal final quality. Transport avoids resident SMs, but reduction, casting and optional staging still perform work. Author code release is planned; none was verified."
+      },
+      "tags": [
+        "FSDP2",
+        "Layout-Aware Collectives",
+        "Communication Overlap",
+        "NVSwitch and RDMA"
+      ],
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-30T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/new",
+          "https://info.arxiv.org/help/availability.html",
+          "https://status.arxiv.org/"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.39711",
+      "title": "Sandman: Building and Operating Sandboxes for Agentic Reinforcement Learning on Shared Kubernetes",
+      "category": "3.2",
+      "published_on": "2026-10-29",
+      "first_seen_at": "2026-10-30T10:09:08.769Z",
+      "canonical_url": "https://arxiv.org/abs/2610.39711",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.39711v1"
+      },
+      "summary": [
+        "Sandman provides persistent CPU execution environments for agentic RL through ordinary Kubernetes pods, a mounted command daemon and explicit ownership of creation and cleanup.",
+        "Its operational studies show why faster sandbox acquisition must be assessed together with idle resource cost, grading validity and progress on the actual training critical path."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Main text and relevant workload, reuse, cleanup, grading and critical-path appendices inspected. Three paired 16-B200 warm-grading experiments reduce acquisition medians 6.2→0.12 seconds but consume 2.46× sandbox vCPU-hours; a steady-state training benefit is not established. A separate 11,858-pod test uses tiny cached-image pods, not production SWE environments. The original announcement was October 30 under the maintenance exception, after the October 29 receipt.",
+        "limitations": "This is one shared EKS environment with small controlled samples. Historical production predates several current defaults. A bundled six-pair deployment comparison lowers held-out resolve rate by 2.33 percentage points, without isolating individual changes. Shared-kernel containers do not establish malicious-tenant isolation, and cleanup tests do not prove recovery from all failures. Open source is promised, not verified released."
+      },
+      "tags": [
+        "Agentic RL",
+        "Kubernetes Sandboxes",
+        "Lifecycle Ownership",
+        "Grading Reliability"
+      ],
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-30T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/new",
+          "https://info.arxiv.org/help/availability.html",
+          "https://status.arxiv.org/"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2610.38355",
+      "title": "FlatCake: A Flat KVCache Storage Architecture for LLM Serving",
+      "category": "3.7",
+      "published_on": "2026-10-28",
+      "first_seen_at": "2026-10-30T10:09:08.769Z",
+      "canonical_url": "https://arxiv.org/abs/2610.38355",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.38355v1"
+      },
+      "summary": [
+        "FlatCake treats host DRAM and SSD as peer storage, assigning immutable KV blocks to one medium at creation rather than migrating them through a cache hierarchy.",
+        "Session-oriented layout, separate media queues and coalesced GPUDirect Storage reads into bounded GPU buffers make long-context cache restoration more efficient."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Full main text and all evaluation tables inspected. Replaying 98,827 Claude Code requests with DeepSeek-V4-Flash-0731 on eight B200s, equal 1-TiB host and 4-TiB SSD budgets, peak-load mean TTFT falls 12.24→7.57 seconds versus Mooncake. Total token throughput rises 61.6K→98.3K tokens/s; the paper does not specify its exact token-counting definition or establish a decode-only speedup. Delivered cache hits are 94.16% versus 64.26%. October 28 receipt is preserved; maintenance deferred the original announcement to October 30.",
+        "limitations": "The main evidence is one model/trace; a four-A100 Llama sweep supplies limited secondary evidence. GDS still uses GPU staging and scatter. Placement depends on reuse heuristics. Durability, fault recovery, answer quality and SSD endurance are not established; some short-context GDS comparisons show no advantage. No author implementation destination was verified."
+      },
+      "tags": [
+        "KV Storage",
+        "Direct Placement",
+        "GPUDirect Storage",
+        "Session Locality"
+      ],
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-30T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/new",
+          "https://info.arxiv.org/help/availability.html",
+          "https://status.arxiv.org/"
+        ]
+      }
+    }
+  ]
+}

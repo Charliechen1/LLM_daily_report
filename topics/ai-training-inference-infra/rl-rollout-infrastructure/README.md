@@ -5,6 +5,22 @@ Distributed rollouts, asynchronous RL, generation/training coordination and weig
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-30](../../../reports/2026/10/2026-10-30.md) — PARTIAL SEARCH
+
+### [Sandman: Building and Operating Sandboxes for Agentic Reinforcement Learning on Shared Kubernetes](<https://arxiv.org/abs/2610.39711>)
+
+Sandman provides persistent CPU execution environments for agentic RL through ordinary Kubernetes pods, a mounted command daemon and explicit ownership of creation and cleanup. Its operational studies show why faster sandbox acquisition must be assessed together with idle resource cost, grading validity and progress on the actual training critical path.
+
+**Published:** 2026-10-29 · **First seen:** 2026-10-30T10:09:08.769Z · **Novelty:** new · **Tags:** Agentic RL, Kubernetes Sandboxes, Lifecycle Ownership, Grading Reliability
+
+**Public availability:** 2026-10-30T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>) · [Timing source](<https://status.arxiv.org/>)
+
+[Paper](<https://arxiv.org/html/2610.39711v1>)
+
+**Evidence:** research-paper; full-text. Main text and relevant workload, reuse, cleanup, grading and critical-path appendices inspected. Three paired 16-B200 warm-grading experiments reduce acquisition medians 6.2→0.12 seconds but consume 2.46× sandbox vCPU-hours; a steady-state training benefit is not established. A separate 11,858-pod test uses tiny cached-image pods, not production SWE environments. The original announcement was October 30 under the maintenance exception, after the October 29 receipt.
+
+**Limitations:** This is one shared EKS environment with small controlled samples. Historical production predates several current defaults. A bundled six-pair deployment comparison lowers held-out resolve rate by 2.33 percentage points, without isolating individual changes. Shared-kernel containers do not establish malicious-tenant isolation, and cleanup tests do not prove recovery from all failures. Open source is promised, not verified released.
+
 ## [2026-10-26](../../../reports/2026/10/2026-10-26.md) — PARTIAL SEARCH
 
 ### [KnitTrans: Coordinated Trajectory Transfer for Effective and Efficient LLM Reinforcement Learning](<https://arxiv.org/abs/2610.32389>)

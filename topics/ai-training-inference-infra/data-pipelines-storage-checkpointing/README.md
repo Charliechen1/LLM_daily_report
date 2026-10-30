@@ -5,6 +5,22 @@ Data loading, storage throughput, distributed checkpoints, recovery and fault to
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-30](../../../reports/2026/10/2026-10-30.md) — PARTIAL SEARCH
+
+### [FlatCake: A Flat KVCache Storage Architecture for LLM Serving](<https://arxiv.org/abs/2610.38355>)
+
+FlatCake treats host DRAM and SSD as peer storage, assigning immutable KV blocks to one medium at creation rather than migrating them through a cache hierarchy. Session-oriented layout, separate media queues and coalesced GPUDirect Storage reads into bounded GPU buffers make long-context cache restoration more efficient.
+
+**Published:** 2026-10-28 · **First seen:** 2026-10-30T10:09:08.769Z · **Novelty:** new · **Tags:** KV Storage, Direct Placement, GPUDirect Storage, Session Locality
+
+**Public availability:** 2026-10-30T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>) · [Timing source](<https://status.arxiv.org/>)
+
+[Paper](<https://arxiv.org/html/2610.38355v1>)
+
+**Evidence:** research-paper; full-text. Full main text and all evaluation tables inspected. Replaying 98,827 Claude Code requests with DeepSeek-V4-Flash-0731 on eight B200s, equal 1-TiB host and 4-TiB SSD budgets, peak-load mean TTFT falls 12.24→7.57 seconds versus Mooncake. Total token throughput rises 61.6K→98.3K tokens/s; the paper does not specify its exact token-counting definition or establish a decode-only speedup. Delivered cache hits are 94.16% versus 64.26%. October 28 receipt is preserved; maintenance deferred the original announcement to October 30.
+
+**Limitations:** The main evidence is one model/trace; a four-A100 Llama sweep supplies limited secondary evidence. GDS still uses GPU staging and scatter. Placement depends on reuse heuristics. Durability, fault recovery, answer quality and SSD endurance are not established; some short-context GDS comparisons show no advantage. No author implementation destination was verified.
+
 ## [2026-10-26](../../../reports/2026/10/2026-10-26.md) — PARTIAL SEARCH
 
 ### [KVStream: Adaptive Parallel Storage Management for KV Caching in Large-Scale LLM Serving](<https://arxiv.org/abs/2610.31827>)

@@ -5,6 +5,22 @@ Data/tensor/pipeline/expert/context parallelism, sharding and communication over
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-30](../../../reports/2026/10/2026-10-30.md) — PARTIAL SEARCH
+
+### [The Endgame of FSDP Communication: Layout-Aware Collectives on Copy Engines, RDMA, and NVSwitch](<https://arxiv.org/abs/2610.38228>)
+
+TIDE delivers all-gather results directly into FSDP2 parameter storage and reduces gradients without packing a full-group FP32 buffer. Copy engines, RDMA and brief GPU accumulation work reduce layout-copy overhead and interference with training while preserving model compute kernels.
+
+**Published:** 2026-10-28 · **First seen:** 2026-10-30T10:09:08.769Z · **Novelty:** new · **Tags:** FSDP2, Layout-Aware Collectives, Communication Overlap, NVSwitch and RDMA
+
+**Public availability:** 2026-10-30T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>) · [Timing source](<https://status.arxiv.org/>)
+
+[Paper](<https://arxiv.org/html/2610.38228v1>)
+
+**Evidence:** research-paper; full-text. Sections 3–8 and Appendices A–G inspected. On 64 GPUs across eight NVSwitch/RDMA nodes, Qwen3-30B-A3B at 16K tokens per GPU reduces step time 27.1% versus stock FSDP2 and 6.0% versus FSDP2+SymmMem. Other model/length gains are smaller. The peak-memory advantage reaches 4.7 GiB versus SymmMem, while one InPlace configuration uses more memory than stock. October 28 is receipt; the original October 30 batch and official maintenance exception establish later announcement.
+
+**Limitations:** The paper omits the GPU SKU. Results require the tested topology and supported sharding; CUDA graph capture and asynchronous unshard are unsupported. Short loss checks do not establish equal final quality. Transport avoids resident SMs, but reduction, casting and optional staging still perform work. Author code release is planned; none was verified.
+
 ## [2026-10-26](../../../reports/2026/10/2026-10-26.md) — PARTIAL SEARCH
 
 ### [HyScale: Scaling Long-Context Training for Learned Sparse Attention](<https://arxiv.org/abs/2610.32057>)

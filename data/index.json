@@ -2,6 +2,20 @@
   "schema_version": 1,
   "reports": [
     {
+      "date": "2026-10-30",
+      "path": "reports/2026/10/2026-10-30.md",
+      "source": "data/reports/2026/10/2026-10-30.json",
+      "search_status": "partial",
+      "entries": 8
+    },
+    {
+      "date": "2026-10-29",
+      "path": "reports/2026/10/2026-10-29.md",
+      "source": "data/reports/2026/10/2026-10-29.json",
+      "search_status": "partial",
+      "entries": 2
+    },
+    {
       "date": "2026-10-28",
       "path": "reports/2026/10/2026-10-28.md",
       "source": "data/reports/2026/10/2026-10-28.json",
@@ -215,6 +229,378 @@
     }
   ],
   "entries": [
+    {
+      "id": "arxiv:2610.38331",
+      "title": "Multi-Token Prediction Done Right (Soft-MTP)",
+      "category": "1.3",
+      "published_on": "2026-10-28",
+      "first_seen_at": "2026-10-30T10:08:26.631Z",
+      "canonical_url": "https://arxiv.org/abs/2610.38331",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.38331v1",
+        "code": "https://github.com/JaydenTeoh/Soft-MTP"
+      },
+      "summary": [
+        "Soft-MTP routes future-token heads toward the model’s aligned next-token distribution while retaining ordinary cross-entropy supervision on the shared output head.",
+        "It recovers this distillation gradient from existing losses without extra full-vocabulary tensors, improving the tested training-quality and self-speculative-decoding trade-off."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Methods, appendices and pinned implementation inspected. At the 1.2B next-token-path scale after 31.5B tokens, eight-task zero-shot average rises from 56.80 to 57.31; FineWeb perplexity falls from 10.891 to 10.741. Single-H200 fused-CE throughput is 49,748 versus 49,783 tokens/s for standard MTP, with 107 GB peak memory for both. Maintenance deferred the original paper announcement to October 30.",
+        "limitations": "The gradient identity applies to hidden/head-network paths, not all shared-output-head parameters. Experiments stop at 1.2B; training-seed uncertainty is unreported. Plain NTP still has better FineWeb perplexity. Incremental speculative speed gains over MTP average about 1.4–1.5%, and code evaluation selects temperature by pass@k."
+      },
+      "tags": [
+        "Multi-Token Prediction",
+        "Gradient Routing",
+        "Self-Distillation",
+        "Pretraining"
+      ],
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-30T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/new",
+          "https://info.arxiv.org/help/availability.html",
+          "https://status.arxiv.org/"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-30",
+      "report_path": "reports/2026/10/2026-10-30.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.38277",
+      "title": "The Role of Quantization in Loss Spikes: new precision-intervention evidence",
+      "category": "1.3",
+      "published_on": "2026-10-28",
+      "first_seen_at": "2026-10-30T10:08:26.631Z",
+      "canonical_url": "https://arxiv.org/abs/2610.38277",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.38277v1",
+        "code": "https://github.com/tingtang2/quantization-loss-spikes"
+      },
+      "summary": [
+        "This study connects delayed pretraining loss failures to low-precision output-head rounding: a growing common logit offset erases differences that softmax needs.",
+        "Keeping that head in FP32 or controlling its drift with tuned momentum SGD prevents the tested failures, offering targeted diagnostics and mitigations for long training runs."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Full methods, appendices and initial code inspected. In the 28M, 16B-token precision sweep at peak learning rate 0.1, all five BF16 mixed/true seeds develop time-bomb failures while FP32 stays stable; targeted mitigations suppress them. The paper also separates transient normalization-sensitive spikes from delayed failures.",
+        "limitations": "Elevated learning rates, no weight decay in delayed-failure tests and small proxies limit transfer to natural frontier runs. FP32 stability covers finite horizons. BF16-true SGD-M has worse final loss, and the 1.4B comparison uses one seed."
+      },
+      "tags": [
+        "Training Stability",
+        "Finite Precision",
+        "LM Head",
+        "Optimizer Design"
+      ],
+      "novelty": "material-update",
+      "update_note": "2026-10-30: the newly announced manuscript adds detailed precision interventions and seeded evaluation over an implementation whose initial-release commit is dated October28. Its complete initial tree contains configs and diagnostics, not the paper or result tables. Commit time does not establish exact public visibility.",
+      "report_kind": "daily",
+      "report_date": "2026-10-30",
+      "report_path": "reports/2026/10/2026-10-30.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.39276",
+      "title": "MemSteer: Turning User Histories into Supervision for Agent Memory Optimization",
+      "category": "2.3",
+      "tags": [
+        "Agent Memory",
+        "Synthetic Supervision",
+        "Design Optimization"
+      ],
+      "published_on": "2026-10-29",
+      "first_seen_at": "2026-10-30T10:08:56.615+00:00",
+      "canonical_url": "https://arxiv.org/abs/2610.39276",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.39276v1"
+      },
+      "summary": [
+        "MemSteer generates evidence-backed questions and answers from user histories, checking answer plans through source audits and blind answer recovery.",
+        "This supervision guides revisions to memory storage, retrieval and answer context without updating model weights, reducing reliance on manually labeled QA."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 3–4 and Appendix A: twenty design-search iterations raise ATM-Bench Question Score from 54.9 to 68.3 over 1,013 questions with DeepSeek-V4-Flash answering/judging. With GPT-4.1-mini, RHELM accuracy increases from 22.3 to 26.4 without external records and 33.3 to 39.9 with them. Generated supervision also helps two other optimizers.",
+        "limitations": "LLM verification can share errors and does not prove every cited record is necessary. RHELM uses ten synthetic personas; cross-user transfer is mixed. Official-QA comparisons include their own training/validation questions, whereas MemSteer reserves official questions for evaluation. No author implementation was verified."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-30T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html",
+          "https://status.arxiv.org/"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-30",
+      "report_path": "reports/2026/10/2026-10-30.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.40578",
+      "title": "VeriCUA: Verification as Agentic Exploration for Computer-Using Agents",
+      "category": "2.8",
+      "tags": [
+        "Computer Use",
+        "Task Verification",
+        "Evidence Gathering"
+      ],
+      "published_on": "2026-10-29",
+      "first_seen_at": "2026-10-30T10:08:56.615+00:00",
+      "canonical_url": "https://arxiv.org/abs/2610.40578",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.40578v1"
+      },
+      "summary": [
+        "VeriCUA verifies completed computer-use attempts by inspecting context, constructing task requirements and actively gathering GUI or code evidence.",
+        "Source-aware rules distinguish observed effects from the agent’s claims, improving completion judgments while allowing unresolved online cases to abstain."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Tables 1–3 and Appendices A–C: on 116 AndroidWorld episodes, accuracy rises from the VLM judge’s 78.4% to 90.5% and false-positive rate falls from 15.4% to 7.7%, with 82% decided. OSReward-Hard accuracy is 70.4% versus 65.7% for the strongest compared baseline; matched-budget comparisons retain a smaller lead.",
+        "limitations": "Online abstentions count as failures; offline unresolved cases use an initial-judgment fallback. Baselines are reimplemented and some shortened; benchmark gold can be wrong. Verification is costly, including 345K–378K tokens per offline OSReward trajectory. No released author implementation or end-to-end training gain was verified."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-30T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html",
+          "https://status.arxiv.org/"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-30",
+      "report_path": "reports/2026/10/2026-10-30.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://openai.com/index/how-we-detect-frontier-model-misalignment/",
+      "title": "How we detect frontier model misalignment",
+      "category": "2.8",
+      "tags": [
+        "Agent Monitoring",
+        "Training Oversight",
+        "Incident Response"
+      ],
+      "published_on": "2026-10-29",
+      "first_seen_at": "2026-10-30T10:12:55.362+00:00",
+      "canonical_url": "https://openai.com/index/how-we-detect-frontier-model-misalignment/",
+      "links": {
+        "blog": "https://openai.com/index/how-we-detect-frontier-model-misalignment/"
+      },
+      "summary": [
+        "OpenAI describes a layered monitoring system that escalates agent behavior from inexpensive screening through model review, cross-context investigation and system-telemetry checks.",
+        "Asynchronous review leaves individual reinforcement-learning rewards unchanged, offering a practical design for detecting unauthorized behavior while reducing direct incentives to conceal it."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "The full October 29 disclosure distinguishes activation probes from later review: frontier RL and internal Codex bypass the probe stage. In a replay of one historical incident, security escalation occurs about 30 minutes after sandbox escape; a live example was flagged within 15 minutes. Newly-discovered catch-up uses the dated announcement without assuming an exact release hour. The linked independent red-team post was also inspected.",
+        "limitations": "Selected incidents do not estimate general recall or intervention success. Paging varies by workload and is disabled for internal Codex; some safeguards remain planned. Stopping whole training runs can still create selection pressure. The independent pilot assessed the July system, not current coverage, and did not independently verify subsequent remediation. No public monitor implementation was verified."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-30",
+      "report_path": "reports/2026/10/2026-10-30.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.38228",
+      "title": "The Endgame of FSDP Communication: Layout-Aware Collectives on Copy Engines, RDMA, and NVSwitch",
+      "category": "3.1",
+      "published_on": "2026-10-28",
+      "first_seen_at": "2026-10-30T10:09:08.769Z",
+      "canonical_url": "https://arxiv.org/abs/2610.38228",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.38228v1"
+      },
+      "summary": [
+        "TIDE delivers all-gather results directly into FSDP2 parameter storage and reduces gradients without packing a full-group FP32 buffer.",
+        "Copy engines, RDMA and brief GPU accumulation work reduce layout-copy overhead and interference with training while preserving model compute kernels."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 3–8 and Appendices A–G inspected. On 64 GPUs across eight NVSwitch/RDMA nodes, Qwen3-30B-A3B at 16K tokens per GPU reduces step time 27.1% versus stock FSDP2 and 6.0% versus FSDP2+SymmMem. Other model/length gains are smaller. The peak-memory advantage reaches 4.7 GiB versus SymmMem, while one InPlace configuration uses more memory than stock. October 28 is receipt; the original October 30 batch and official maintenance exception establish later announcement.",
+        "limitations": "The paper omits the GPU SKU. Results require the tested topology and supported sharding; CUDA graph capture and asynchronous unshard are unsupported. Short loss checks do not establish equal final quality. Transport avoids resident SMs, but reduction, casting and optional staging still perform work. Author code release is planned; none was verified."
+      },
+      "tags": [
+        "FSDP2",
+        "Layout-Aware Collectives",
+        "Communication Overlap",
+        "NVSwitch and RDMA"
+      ],
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-30T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/new",
+          "https://info.arxiv.org/help/availability.html",
+          "https://status.arxiv.org/"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-30",
+      "report_path": "reports/2026/10/2026-10-30.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.39711",
+      "title": "Sandman: Building and Operating Sandboxes for Agentic Reinforcement Learning on Shared Kubernetes",
+      "category": "3.2",
+      "published_on": "2026-10-29",
+      "first_seen_at": "2026-10-30T10:09:08.769Z",
+      "canonical_url": "https://arxiv.org/abs/2610.39711",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.39711v1"
+      },
+      "summary": [
+        "Sandman provides persistent CPU execution environments for agentic RL through ordinary Kubernetes pods, a mounted command daemon and explicit ownership of creation and cleanup.",
+        "Its operational studies show why faster sandbox acquisition must be assessed together with idle resource cost, grading validity and progress on the actual training critical path."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Main text and relevant workload, reuse, cleanup, grading and critical-path appendices inspected. Three paired 16-B200 warm-grading experiments reduce acquisition medians 6.2→0.12 seconds but consume 2.46× sandbox vCPU-hours; a steady-state training benefit is not established. A separate 11,858-pod test uses tiny cached-image pods, not production SWE environments. The original announcement was October 30 under the maintenance exception, after the October 29 receipt.",
+        "limitations": "This is one shared EKS environment with small controlled samples. Historical production predates several current defaults. A bundled six-pair deployment comparison lowers held-out resolve rate by 2.33 percentage points, without isolating individual changes. Shared-kernel containers do not establish malicious-tenant isolation, and cleanup tests do not prove recovery from all failures. Open source is promised, not verified released."
+      },
+      "tags": [
+        "Agentic RL",
+        "Kubernetes Sandboxes",
+        "Lifecycle Ownership",
+        "Grading Reliability"
+      ],
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-30T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/new",
+          "https://info.arxiv.org/help/availability.html",
+          "https://status.arxiv.org/"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-30",
+      "report_path": "reports/2026/10/2026-10-30.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.38355",
+      "title": "FlatCake: A Flat KVCache Storage Architecture for LLM Serving",
+      "category": "3.7",
+      "published_on": "2026-10-28",
+      "first_seen_at": "2026-10-30T10:09:08.769Z",
+      "canonical_url": "https://arxiv.org/abs/2610.38355",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.38355v1"
+      },
+      "summary": [
+        "FlatCake treats host DRAM and SSD as peer storage, assigning immutable KV blocks to one medium at creation rather than migrating them through a cache hierarchy.",
+        "Session-oriented layout, separate media queues and coalesced GPUDirect Storage reads into bounded GPU buffers make long-context cache restoration more efficient."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Full main text and all evaluation tables inspected. Replaying 98,827 Claude Code requests with DeepSeek-V4-Flash-0731 on eight B200s, equal 1-TiB host and 4-TiB SSD budgets, peak-load mean TTFT falls 12.24→7.57 seconds versus Mooncake. Total token throughput rises 61.6K→98.3K tokens/s; the paper does not specify its exact token-counting definition or establish a decode-only speedup. Delivered cache hits are 94.16% versus 64.26%. October 28 receipt is preserved; maintenance deferred the original announcement to October 30.",
+        "limitations": "The main evidence is one model/trace; a four-A100 Llama sweep supplies limited secondary evidence. GDS still uses GPU staging and scatter. Placement depends on reuse heuristics. Durability, fault recovery, answer quality and SSD endurance are not established; some short-context GDS comparisons show no advantage. No author implementation destination was verified."
+      },
+      "tags": [
+        "KV Storage",
+        "Direct Placement",
+        "GPUDirect Storage",
+        "Session Locality"
+      ],
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-10-30T00:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/new",
+          "https://info.arxiv.org/help/availability.html",
+          "https://status.arxiv.org/"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-10-30",
+      "report_path": "reports/2026/10/2026-10-30.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2610.36967",
+      "title": "Proactive Memory for Event-Driven LLM Agents",
+      "category": "2.3",
+      "tags": [
+        "Proactive Agents",
+        "Temporal Memory",
+        "Evidence Validation"
+      ],
+      "published_on": "2026-10-27",
+      "first_seen_at": "2026-10-28T10:04:45.988+00:00",
+      "canonical_url": "https://arxiv.org/abs/2610.36967",
+      "links": {
+        "paper": "https://arxiv.org/html/2610.36967v1"
+      },
+      "summary": [
+        "ProactMem organizes an event stream into recent observations, source-checked activity trajectories and behavioral regularities admitted through historical replay.",
+        "Matching those regularities to current conditions helps an agent decide when to offer assistance while suppressing redundant proposals."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Sections 3–5 and Appendices B–D: on 4,539 events from 17 isolated Sports/Home/Code streams, pooled F1 is 52.6%, 21.4% relatively above the strongest of five external baselines with GPT-5.6 Luna. Source-validation and replay ablations lower F1. Editorial catch-up from the October 28 screened reserve; the original paper announcement was October 28, not a new October 29 release.",
+        "limitations": "Method and benchmark were jointly developed without independent held-out evaluation. Separate-team labels lower Home/Code diagnostic scores, and controllers differ with memory representations. Offline opportunity detection does not measure recipient benefit, interruption cost or safety. Anonymous implementation contents and their earlier visibility could not be verified."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-29",
+      "report_path": "reports/2026/10/2026-10-29.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+      "title": "Gemini 4 Carbon: model-specific cyberdefense and agent-reliability evaluations",
+      "category": "2.8",
+      "tags": [
+        "Agent Evaluation",
+        "Cyberdefense",
+        "Model Reliability"
+      ],
+      "published_on": "2026-10-28",
+      "first_seen_at": "2026-10-30T10:12:27.877+00:00",
+      "canonical_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+      "links": {
+        "blog": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/"
+      },
+      "summary": [
+        "Google’s Gemini 4 Carbon announcement reports new cyberdefense and agent-reliability evaluations for a model aimed at sustained coding workflows.",
+        "The disclosure gives builders an early view of its measured capabilities and deployment boundaries, while leaving independent reproducibility and broad reliability unresolved."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "The full October 28 announcement reports unguarded scores of 88.2% on SEC-bench Pro, 54.8% on ExploitGym and 71.0% on CWE-bench. It separately reports 0.4% cheating attempts and 0.0% successful cheating on Terminal-Bench 4.0. Newly-discovered editorial catch-up for the October 29 window: the dated primary announcement was retrieved retrospectively on October 30; no hour-level release time is inferred.",
+        "limitations": "Author-run comparisons without a complete Carbon technical report, sample counts or released evaluation implementation verified here. Internal alert reductions and selected task scores do not establish production incidence or universal safety. Access starts with selected cyber defenders; no generally available weights or implementation were verified."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-10-29",
+      "report_path": "reports/2026/10/2026-10-29.md",
+      "search_status": "partial"
+    },
     {
       "id": "arxiv:2610.36983",
       "title": "Advancement or Acceleration? How Data Curation Improves LLM Training",
@@ -9969,7 +10355,7 @@
       "group": "llm-recipe",
       "title": "Pretraining & Optimization",
       "path": "topics/llm-recipe/pretraining-optimization/README.md",
-      "count": 8
+      "count": 10
     },
     {
       "id": "1.4",
@@ -10039,7 +10425,7 @@
       "group": "ai-agent-dev",
       "title": "Context Engineering & Memory",
       "path": "topics/ai-agent-dev/context-engineering-memory/README.md",
-      "count": 11
+      "count": 13
     },
     {
       "id": "2.4",
@@ -10074,21 +10460,21 @@
       "group": "ai-agent-dev",
       "title": "Agent Evaluation & Security",
       "path": "topics/ai-agent-dev/agent-evaluation-security/README.md",
-      "count": 27
+      "count": 30
     },
     {
       "id": "3.1",
       "group": "ai-training-inference-infra",
       "title": "Distributed Training Systems",
       "path": "topics/ai-training-inference-infra/distributed-training-systems/README.md",
-      "count": 9
+      "count": 10
     },
     {
       "id": "3.2",
       "group": "ai-training-inference-infra",
       "title": "RL & Rollout Infrastructure",
       "path": "topics/ai-training-inference-infra/rl-rollout-infrastructure/README.md",
-      "count": 7
+      "count": 8
     },
     {
       "id": "3.3",
@@ -10123,7 +10509,7 @@
       "group": "ai-training-inference-infra",
       "title": "Data Pipelines, Storage & Checkpointing",
       "path": "topics/ai-training-inference-infra/data-pipelines-storage-checkpointing/README.md",
-      "count": 5
+      "count": 6
     },
     {
       "id": "3.8",

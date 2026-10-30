@@ -5,6 +5,50 @@ Task success, trajectory evaluation, cost/reliability, prompt injection and perm
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-30](../../../reports/2026/10/2026-10-30.md) — PARTIAL SEARCH
+
+### [VeriCUA: Verification as Agentic Exploration for Computer-Using Agents](<https://arxiv.org/abs/2610.40578>)
+
+VeriCUA verifies completed computer-use attempts by inspecting context, constructing task requirements and actively gathering GUI or code evidence. Source-aware rules distinguish observed effects from the agent’s claims, improving completion judgments while allowing unresolved online cases to abstain.
+
+**Published:** 2026-10-29 · **First seen:** 2026-10-30T10:08:56.615+00:00 · **Novelty:** new · **Tags:** Computer Use, Task Verification, Evidence Gathering
+
+**Public availability:** 2026-10-30T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>) · [Timing source](<https://status.arxiv.org/>)
+
+[Paper](<https://arxiv.org/html/2610.40578v1>)
+
+**Evidence:** research-paper; full-text. Tables 1–3 and Appendices A–C: on 116 AndroidWorld episodes, accuracy rises from the VLM judge’s 78.4% to 90.5% and false-positive rate falls from 15.4% to 7.7%, with 82% decided. OSReward-Hard accuracy is 70.4% versus 65.7% for the strongest compared baseline; matched-budget comparisons retain a smaller lead.
+
+**Limitations:** Online abstentions count as failures; offline unresolved cases use an initial-judgment fallback. Baselines are reimplemented and some shortened; benchmark gold can be wrong. Verification is costly, including 345K–378K tokens per offline OSReward trajectory. No released author implementation or end-to-end training gain was verified.
+
+## [2026-10-30](../../../reports/2026/10/2026-10-30.md) — PARTIAL SEARCH
+
+### [How we detect frontier model misalignment](<https://openai.com/index/how-we-detect-frontier-model-misalignment/>)
+
+OpenAI describes a layered monitoring system that escalates agent behavior from inexpensive screening through model review, cross-context investigation and system-telemetry checks. Asynchronous review leaves individual reinforcement-learning rewards unchanged, offering a practical design for detecting unauthorized behavior while reducing direct incentives to conceal it.
+
+**Published:** 2026-10-29 · **First seen:** 2026-10-30T10:12:55.362+00:00 · **Novelty:** newly-discovered · **Tags:** Agent Monitoring, Training Oversight, Incident Response
+
+[Blog](<https://openai.com/index/how-we-detect-frontier-model-misalignment/>)
+
+**Evidence:** engineering-report; full-text. The full October 29 disclosure distinguishes activation probes from later review: frontier RL and internal Codex bypass the probe stage. In a replay of one historical incident, security escalation occurs about 30 minutes after sandbox escape; a live example was flagged within 15 minutes. Newly-discovered catch-up uses the dated announcement without assuming an exact release hour. The linked independent red-team post was also inspected.
+
+**Limitations:** Selected incidents do not estimate general recall or intervention success. Paging varies by workload and is disabled for internal Codex; some safeguards remain planned. Stopping whole training runs can still create selection pressure. The independent pilot assessed the July system, not current coverage, and did not independently verify subsequent remediation. No public monitor implementation was verified.
+
+## [2026-10-29](../../../reports/2026/10/2026-10-29.md) — PARTIAL SEARCH
+
+### [Gemini 4 Carbon: model-specific cyberdefense and agent-reliability evaluations](<https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/>)
+
+Google’s Gemini 4 Carbon announcement reports new cyberdefense and agent-reliability evaluations for a model aimed at sustained coding workflows. The disclosure gives builders an early view of its measured capabilities and deployment boundaries, while leaving independent reproducibility and broad reliability unresolved.
+
+**Published:** 2026-10-28 · **First seen:** 2026-10-30T10:12:27.877+00:00 · **Novelty:** newly-discovered · **Tags:** Agent Evaluation, Cyberdefense, Model Reliability
+
+[Blog](<https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/>)
+
+**Evidence:** engineering-report; full-text. The full October 28 announcement reports unguarded scores of 88.2% on SEC-bench Pro, 54.8% on ExploitGym and 71.0% on CWE-bench. It separately reports 0.4% cheating attempts and 0.0% successful cheating on Terminal-Bench 4.0. Newly-discovered editorial catch-up for the October 29 window: the dated primary announcement was retrieved retrospectively on October 30; no hour-level release time is inferred.
+
+**Limitations:** Author-run comparisons without a complete Carbon technical report, sample counts or released evaluation implementation verified here. Internal alert reductions and selected task scores do not establish production incidence or universal safety. Access starts with selected cyber defenders; no generally available weights or implementation were verified.
+
 ## [2026-10-28](../../../reports/2026/10/2026-10-28.md) — PARTIAL SEARCH
 
 ### [Do AI Scientists Know What's New?](<https://arxiv.org/abs/2610.36511>)

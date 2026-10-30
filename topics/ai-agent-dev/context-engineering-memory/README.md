@@ -5,6 +5,36 @@ Context organization/compression, working memory, long-term memory and state.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-30](../../../reports/2026/10/2026-10-30.md) — PARTIAL SEARCH
+
+### [MemSteer: Turning User Histories into Supervision for Agent Memory Optimization](<https://arxiv.org/abs/2610.39276>)
+
+MemSteer generates evidence-backed questions and answers from user histories, checking answer plans through source audits and blind answer recovery. This supervision guides revisions to memory storage, retrieval and answer context without updating model weights, reducing reliance on manually labeled QA.
+
+**Published:** 2026-10-29 · **First seen:** 2026-10-30T10:08:56.615+00:00 · **Novelty:** new · **Tags:** Agent Memory, Synthetic Supervision, Design Optimization
+
+**Public availability:** 2026-10-30T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>) · [Timing source](<https://status.arxiv.org/>)
+
+[Paper](<https://arxiv.org/html/2610.39276v1>)
+
+**Evidence:** research-paper; full-text. Sections 3–4 and Appendix A: twenty design-search iterations raise ATM-Bench Question Score from 54.9 to 68.3 over 1,013 questions with DeepSeek-V4-Flash answering/judging. With GPT-4.1-mini, RHELM accuracy increases from 22.3 to 26.4 without external records and 33.3 to 39.9 with them. Generated supervision also helps two other optimizers.
+
+**Limitations:** LLM verification can share errors and does not prove every cited record is necessary. RHELM uses ten synthetic personas; cross-user transfer is mixed. Official-QA comparisons include their own training/validation questions, whereas MemSteer reserves official questions for evaluation. No author implementation was verified.
+
+## [2026-10-29](../../../reports/2026/10/2026-10-29.md) — PARTIAL SEARCH
+
+### [Proactive Memory for Event-Driven LLM Agents](<https://arxiv.org/abs/2610.36967>)
+
+ProactMem organizes an event stream into recent observations, source-checked activity trajectories and behavioral regularities admitted through historical replay. Matching those regularities to current conditions helps an agent decide when to offer assistance while suppressing redundant proposals.
+
+**Published:** 2026-10-27 · **First seen:** 2026-10-28T10:04:45.988+00:00 · **Novelty:** newly-discovered · **Tags:** Proactive Agents, Temporal Memory, Evidence Validation
+
+[Paper](<https://arxiv.org/html/2610.36967v1>)
+
+**Evidence:** research-paper; full-text. Sections 3–5 and Appendices B–D: on 4,539 events from 17 isolated Sports/Home/Code streams, pooled F1 is 52.6%, 21.4% relatively above the strongest of five external baselines with GPT-5.6 Luna. Source-validation and replay ablations lower F1. Editorial catch-up from the October 28 screened reserve; the original paper announcement was October 28, not a new October 29 release.
+
+**Limitations:** Method and benchmark were jointly developed without independent held-out evaluation. Separate-team labels lower Home/Code diagnostic scores, and controllers differ with memory representations. Offline opportunity detection does not measure recipient benefit, interruption cost or safety. Anonymous implementation contents and their earlier visibility could not be verified.
+
 ## [2026-10-26](../../../reports/2026/10/2026-10-26.md) — PARTIAL SEARCH
 
 ### [Benchmarks Are Surprisingly Compaction-Friendly](<https://arxiv.org/abs/2610.31778>)

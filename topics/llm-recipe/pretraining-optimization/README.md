@@ -5,6 +5,38 @@ Objectives, optimizers, learning rates, batch sizes and training stability.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-30](../../../reports/2026/10/2026-10-30.md) — PARTIAL SEARCH
+
+### [Multi-Token Prediction Done Right (Soft-MTP)](<https://arxiv.org/abs/2610.38331>)
+
+Soft-MTP routes future-token heads toward the model’s aligned next-token distribution while retaining ordinary cross-entropy supervision on the shared output head. It recovers this distillation gradient from existing losses without extra full-vocabulary tensors, improving the tested training-quality and self-speculative-decoding trade-off.
+
+**Published:** 2026-10-28 · **First seen:** 2026-10-30T10:08:26.631Z · **Novelty:** new · **Tags:** Multi-Token Prediction, Gradient Routing, Self-Distillation, Pretraining
+
+**Public availability:** 2026-10-30T00:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>) · [Timing source](<https://status.arxiv.org/>)
+
+[Paper](<https://arxiv.org/html/2610.38331v1>) · [Code](<https://github.com/JaydenTeoh/Soft-MTP>)
+
+**Evidence:** research-paper; full-text. Methods, appendices and pinned implementation inspected. At the 1.2B next-token-path scale after 31.5B tokens, eight-task zero-shot average rises from 56.80 to 57.31; FineWeb perplexity falls from 10.891 to 10.741. Single-H200 fused-CE throughput is 49,748 versus 49,783 tokens/s for standard MTP, with 107 GB peak memory for both. Maintenance deferred the original paper announcement to October 30.
+
+**Limitations:** The gradient identity applies to hidden/head-network paths, not all shared-output-head parameters. Experiments stop at 1.2B; training-seed uncertainty is unreported. Plain NTP still has better FineWeb perplexity. Incremental speculative speed gains over MTP average about 1.4–1.5%, and code evaluation selects temperature by pass@k.
+
+## [2026-10-30](../../../reports/2026/10/2026-10-30.md) — PARTIAL SEARCH
+
+### [The Role of Quantization in Loss Spikes: new precision-intervention evidence](<https://arxiv.org/abs/2610.38277>)
+
+This study connects delayed pretraining loss failures to low-precision output-head rounding: a growing common logit offset erases differences that softmax needs. Keeping that head in FP32 or controlling its drift with tuned momentum SGD prevents the tested failures, offering targeted diagnostics and mitigations for long training runs.
+
+**Published:** 2026-10-28 · **First seen:** 2026-10-30T10:08:26.631Z · **Novelty:** material-update · **Tags:** Training Stability, Finite Precision, LM Head, Optimizer Design
+
+[Paper](<https://arxiv.org/html/2610.38277v1>) · [Code](<https://github.com/tingtang2/quantization-loss-spikes>)
+
+**Evidence:** research-paper; full-text. Full methods, appendices and initial code inspected. In the 28M, 16B-token precision sweep at peak learning rate 0.1, all five BF16 mixed/true seeds develop time-bomb failures while FP32 stays stable; targeted mitigations suppress them. The paper also separates transient normalization-sensitive spikes from delayed failures.
+
+**Limitations:** Elevated learning rates, no weight decay in delayed-failure tests and small proxies limit transfer to natural frontier runs. FP32 stability covers finite horizons. BF16-true SGD-M has worse final loss, and the 1.4B comparison uses one seed.
+
+**Update:** 2026-10-30: the newly announced manuscript adds detailed precision interventions and seeded evaluation over an implementation whose initial-release commit is dated October28. Its complete initial tree contains configs and diagnostics, not the paper or result tables. Commit time does not establish exact public visibility.
+
 ## [2026-10-28](../../../reports/2026/10/2026-10-28.md) — PARTIAL SEARCH
 
 ### [EnergyCal: Taming Loss Spikes in Muon-Family Optimizers for Sparse MoE Training](<https://arxiv.org/abs/2610.37062>)
