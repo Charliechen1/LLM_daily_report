@@ -5,6 +5,20 @@ Learning from trajectories/feedback, skill generation/reuse, experience and self
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-31](../../../reports/2026/10/2026-10-31.md) — PARTIAL SEARCH
+
+### [Compile Away Uncertainty: Self-Evolving Agent Skills via Programmatic Compilation](<https://arxiv.org/abs/2610.39508>)
+
+SkillCompiler turns well-specified operations within evolving agent skills into locally validated programs while retaining language-model reasoning for context-dependent decisions. A persistent program bank reuses compatible implementations across skills, reducing repeated procedural generation without updating model weights.
+
+**Published:** 2026-10-29 · **First seen:** 2026-10-31T10:04:16.682+00:00 · **Novelty:** newly-discovered · **Tags:** Agent Skills, Program Compilation, Execution Reliability
+
+[Paper](<https://arxiv.org/html/2610.39508v1>)
+
+**Evidence:** research-paper; full-text. Sections III–V and the operational appendix: across three independently learned banks, DeepSeek-V4.1-Flash reaches 98.26% success on 134 ALFWorld tasks, versus 93.53% for the strongest reported baseline. A separate fixed-bank LiveMath experiment repeats 100 tasks three times: mixed success/failure outcomes fall from SkillOpt’s 32% to 11%. Persistent banks are frozen before testing, although task-local program synthesis remains allowed. This is an unreported October 30 original-batch paper discovered in the lookback, not an October 31 release.
+
+**Limitations:** Development included inspection of held-out failures. Local validation does not prove correctness for all inputs; evolution budgets differ and token/call savings are not uniform. No author code release was verified, and dynamic open-world robustness is unestablished.
+
 ## [2026-10-27](../../../reports/2026/10/2026-10-27.md) — PARTIAL SEARCH
 
 ### [MiRL: Error-Targeted Reinforcement Learning for Correcting Terminal Agent Misbehaviors](<https://arxiv.org/abs/2610.35697>)

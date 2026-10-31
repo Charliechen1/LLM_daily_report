@@ -5,6 +5,20 @@ Objectives, optimizers, learning rates, batch sizes and training stability.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-31](../../../reports/2026/10/2026-10-31.md) — PARTIAL SEARCH
+
+### [Your LR Schedule May Not Be Principled: Effective Learning Rate Scheduling in Weight-Normalized Training](<https://arxiv.org/abs/2610.40362>)
+
+This study links weight-normalized training gains to the learning rate relative to parameter norms, and proposes an affine inverse-square-root schedule called AIR. Matching effective learning-rate trajectories largely aligns the tested normalization and weight-decay loss curves, providing a practical way to compare training recipes and design their annealing schedules.
+
+**Published:** 2026-10-29 · **First seen:** 2026-10-30T10:08:26.631Z · **Novelty:** newly-discovered · **Tags:** Effective Learning Rate, Learning Rate Schedules, Weight Normalization, MoE Pretraining
+
+[Paper](<https://arxiv.org/pdf/2610.40362v1>)
+
+**Evidence:** research-paper; full-text. Complete 25-page v1 and proof assumptions inspected. With matched warmup, terminal and cumulative learning rates, AIR lowers evaluation loss 1.843→1.832 and raises the eleven-task average 56.22→57.78 on a 790M-active/35.7B-total MoE trained 500B tokens. A smaller 128B-token study and late-stage interventions support the mechanism. Editorial catch-up retains the actual October 30 first-seen time.
+
+**Limitations:** Terminal summaries are single trajectories, not seed confidence intervals; tuning budgets differ and some tasks regress. Theory assumes fixed-direction, tangential constant-statistics dynamics and does not prove global loss optimality. Norm replay is partly retrospective. No author implementation or independent reproduction was verified.
+
 ## [2026-10-30](../../../reports/2026/10/2026-10-30.md) — PARTIAL SEARCH
 
 ### [Multi-Token Prediction Done Right (Soft-MTP)](<https://arxiv.org/abs/2610.38331>)

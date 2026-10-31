@@ -5,6 +5,20 @@ Context organization/compression, working memory, long-term memory and state.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-31](../../../reports/2026/10/2026-10-31.md) — PARTIAL SEARCH
+
+### [CALM: Conflict-Aware Lifecycle Memory Governance for Long-Horizon Language Agents](<https://arxiv.org/abs/2610.38573>)
+
+CALM preserves superseded memories for historical questions while controlling which records enter an agent’s current reasoning context. Deterministic lifecycle rules track conflicts and dependencies, and a separate fixed or learned gate admits evidence according to the query, helping avoid stale but semantically relevant context.
+
+**Published:** 2026-10-28 · **First seen:** 2026-10-30T03:08:56.616-07:00 · **Novelty:** newly-discovered · **Tags:** Memory Governance, Temporal Reasoning, Evidence Selection
+
+[Paper](<https://arxiv.org/html/2610.38573v1>)
+
+**Evidence:** research-paper; full-text. Sections 3–4 and Appendices A–B: with Qwen3-30B-A3B on all 500 LongMemEval-S questions, accuracy is 79.60%, versus 77.20% for validity reranking and 76.60% for fixed gating. CALM variants share cached top-48 retrieval and nominal memory budgets; learned admission uses separate development supervision. Results also cover 1,540 non-adversarial LoCoMo questions with three answer models. Editorial catch-up from the October 30 abstract reserve, preserving the original October 28 paper date.
+
+**Limitations:** One fixed seed; external baselines retain different native pipelines. Development-set size and several gate-training hyperparameters are unspecified. Rule coverage, upstream retrieval and automatic judges constrain conclusions; no author implementation was verified. Appendix B.7 contains inconsistent robustness arithmetic, excluded from this summary.
+
 ## [2026-10-30](../../../reports/2026/10/2026-10-30.md) — PARTIAL SEARCH
 
 ### [MemSteer: Turning User Histories into Supervision for Agent Memory Optimization](<https://arxiv.org/abs/2610.39276>)

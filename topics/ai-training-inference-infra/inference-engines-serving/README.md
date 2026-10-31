@@ -5,6 +5,34 @@ Request scheduling, continuous batching, prefill/decode disaggregation and elast
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-31](../../../reports/2026/10/2026-10-31.md) — PARTIAL SEARCH
+
+### [PDScope: Breaking the Prefill-Decode Seesaw for Memory-Bound MoE Inference](<https://arxiv.org/abs/2610.39216>)
+
+PDScope uses different expert prediction and CPU/GPU placement policies for prefill and decode, coordinating the current layer with predicted demand in the next. Cost-guided prefetching and streamlined execution reduce the conflict between GPU compute utilization and PCIe traffic in memory-constrained local MoE inference.
+
+**Published:** 2026-10-29 · **First seen:** 2026-10-30T10:09:08.628Z · **Novelty:** newly-discovered · **Tags:** MoE Offloading, Phase-Aware Scheduling, CPU GPU Inference
+
+[Paper](<https://arxiv.org/html/2610.39216v1>) · [Code](<https://github.com/nezha-Anonymous/PDScope>)
+
+**Evidence:** research-paper; full-text. Read all 15 pages, Algorithm 1 and released reference implementation. Four BF16 MoEs run on A100/Intel 6230R and RTX 3090/EPYC 7452 systems with GPU memory capped at 24 GB, ShareGPT prompts of 128–4096 tokens and 64 outputs, averaging ten runs. Versus MoE-APEX, reported maxima are 2.5× prefill and 2.1× decode throughput. This is editorial catch-up after October 30 discovery; the original October 29 paper date is retained. Repository history also starts October 29, but commit clocks do not prove exact public visibility.
+
+**Limitations:** Gains are phase-throughput maxima, not universal end-to-end speedups. Profiling/training costs under 30 minutes per model are excluded from inference throughput; prefill/decode overlap is unsupported. No downstream-quality evaluation is supplied. Released code substitutes a gate-fallback predictor and covers one Qwen3 single-request setup on a different CPU, without the paper’s learned predictor or comparative baseline suite.
+
+## [2026-10-31](../../../reports/2026/10/2026-10-31.md) — PARTIAL SEARCH
+
+### [Day 0 support for Mistral Large 4 on vLLM](<https://vllm.ai/blog/2026-10-29-mistral-large-4>)
+
+vLLM’s Mistral Large 4 report explains how cross-layer KV sharing, context parallelism and sparse-attention communication compose with graph execution and speculation. Its measurements show when extra KV capacity helps long sessions and when communication overhead makes ordinary tensor parallelism faster.
+
+**Published:** 2026-10-29 · **First seen:** 2026-10-30T10:09:08.769Z · **Novelty:** newly-discovered · **Tags:** Context Parallelism, KV Sharing, Sparse Attention, Serving Tradeoffs
+
+[Blog](<https://vllm.ai/blog/2026-10-29-mistral-large-4>) · [Code](<https://github.com/vllm-project/vllm>) · [Project](<https://recipes.vllm.ai/mistralai/Mistral-Large-4-1T-A52B>)
+
+**Evidence:** engineering-report; full-text. Full publisher Markdown, linked recipe and relevant PR changes inspected. On eight GB300s, NVFP4 DCP8 expands KV capacity from 3.60M to 28.76M tokens. A separate TP8 DCP8 FP8 comparison with 60K-input/1K-output requests and no speculation combines communication changes and decode fusions: at concurrency 64, output throughput rises 139.1→204.0 tokens/s. October 29 is the report date; earlier October 12/26/27 PRs establish older implementation. October 30 discovery is preserved as catch-up, without an exact first-public timestamp.
+
+**Limitations:** DCP8 is 16–28% slower per token than ordinary TP8 when capacity does not bind. KV capacity is not validated million-token serving; the recipe validates up to 256K. Combined optimization gains do not isolate each change. Speculation consumes capacity; several components remain open PRs, and full model support requires dedicated images rather than a release/nightly wheel. No universal speedup or cross-hardware ranking is established.
+
 ## [2026-10-28](../../../reports/2026/10/2026-10-28.md) — PARTIAL SEARCH
 
 ### [TAO: Tool-Aware Joint Scheduling for LLM-Based Agentic Serving](<https://arxiv.org/abs/2610.37230>)

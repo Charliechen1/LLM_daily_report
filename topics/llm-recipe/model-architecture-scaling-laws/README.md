@@ -5,6 +5,20 @@ Transformers, MoE, SSM/hybrid architectures and model/data/compute allocation.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-10-31](../../../reports/2026/10/2026-10-31.md) — PARTIAL SEARCH
+
+### [Multi-View MoE: Letting Every Router Shape Expert Computation](<https://arxiv.org/abs/2610.40577>)
+
+Multi-View MoE combines several routers to choose experts, then reuses each expert’s router preferences to blend learned input representations before a single expert evaluation. This improves the tested latent-space mixture-of-experts model’s quality with a fixed active-expert budget, while adding routing and projection work.
+
+**Published:** 2026-10-29 · **First seen:** 2026-10-30T10:08:26.369Z · **Novelty:** newly-discovered · **Tags:** Mixture of Experts, Routing, Latent Representations
+
+[Paper](<https://arxiv.org/html/2610.40577v1>)
+
+**Evidence:** research-paper; full-text. Complete 20-page v1 inspected, including Algorithm 1 and Appendices A–B. In matched 708B-token training, the 10B-total/1B-active model’s nine-task mean rises from 33.07 to 34.25 with 0.19% extra parameters. Controlled mixing interventions support expert- and token-dependent input use. This unreported October 30 reserve received full review today; earlier discovery time is preserved.
+
+**Limitations:** Main comparisons share one training seed; some tasks regress. Output-norm correlation is a utility proxy. Expert FLOPs and dispatch volume stay fixed, but total compute does not; measured throughput covers other ablation variants. No author implementation or independent reproduction was verified.
+
 ## [2026-10-28](../../../reports/2026/10/2026-10-28.md) — PARTIAL SEARCH
 
 ### [Multi-State Linear Attention with Generalized Second-Order Routing](<https://arxiv.org/abs/2610.37645>)
