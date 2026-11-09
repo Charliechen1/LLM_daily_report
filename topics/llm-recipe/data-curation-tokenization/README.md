@@ -5,6 +5,22 @@ Data filtering, deduplication, mixtures, synthetic data, quality and tokenizers.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-04](../../../reports/2026/11/2026-11-04.md) — PARTIAL SEARCH
+
+### [Tokenizer Myths and Where To Find Them](<https://arxiv.org/abs/2611.04215>)
+
+This study separates text compression from downstream discrimination when comparing language models with different tokenizers. Uniform-model controls and released-model reanalysis show why bits per byte can rank tokenizer choices without reliably predicting task performance, helping researchers choose metrics that match their evaluation question.
+
+**Published:** 2026-11-03 · **First seen:** 2026-11-09T11:03:40.430+00:00 · **Novelty:** newly-discovered · **Tags:** Tokenization, Evaluation Metrics, Vocabulary Size
+
+**Public availability:** 2026-11-04T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2611.04215v1>)
+
+**Evidence:** research-paper; full-text. Main metric derivations, empirical sections and vocabulary-sweep controls inspected. On held-out FineWeb-Edu, uniform BPE models favor roughly 24K vocabulary despite having no learned model weights; the preferred size varies by corpus. Reanalysis of 49 released models separates format and decision terms, while four-task correlations use a different released-model subset. November 4 announcement is inferred from the dated original batch and official schedule; reviewed retrospectively on November 9.
+
+**Limitations:** Bits per byte remains a valid compression measure. The trilemma concerns stated reference-neutrality and unrestricted representation assumptions, not every finite model class. Released sweeps also change embedding parameters, tokens, context bytes and compute. No author implementation or independent reproduction was verified.
+
 ## [2026-10-28](../../../reports/2026/10/2026-10-28.md) — PARTIAL SEARCH
 
 ### [Advancement or Acceleration? How Data Curation Improves LLM Training](<https://arxiv.org/abs/2610.36983>)

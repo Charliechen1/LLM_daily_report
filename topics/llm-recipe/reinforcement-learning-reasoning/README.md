@@ -5,6 +5,22 @@ RLHF, RLVR, policy optimization, reasoning training, tool use and multi-turn age
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-09](../../../reports/2026/11/2026-11-09.md) — PARTIAL SEARCH
+
+### [Not All Entropy Is Equal: Reward-Conditioned Entropy Allocation in Reinforcement Learning with Verifiable Rewards](<https://arxiv.org/abs/2611.09448>)
+
+Reward-Conditioned Entropy Allocation distinguishes uncertainty in failed trajectories from diversity among valid successful solution strategies. The diagnostic framework helps explain why a falling global entropy curve can reflect either useful error removal or loss of reasoning diversity, rather than providing a universal training target.
+
+**Published:** 2026-11-06 · **First seen:** 2026-11-09T11:03:40.431+00:00 · **Novelty:** newly-discovered · **Tags:** RLVR Diagnostics, Entropy, Reasoning Diversity
+
+**Public availability:** 2026-11-09T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2611.09448v1>)
+
+**Evidence:** research-paper; full-text. Complete eight-page source inspected. Six objectives train Qwen2.5-3B/7B with LoRA for one epoch on the same 8,000 prompts and one seed. Failed/successful token-entropy ratios exceed one in all twelve paired endpoint comparisons; bootstrap intervals exclude equality in ten, on only 40–57 eligible questions each. November 9 original-batch membership and the official schedule support an inferred announcement, retaining the November 6 receipt.
+
+**Limitations:** This is diagnostic evidence, not a tested causal intervention. Process validity remains model-judged; semantic-mode audits and operational hyperparameters are incompletely specified. Restricted paired prompts and exploratory mode-retention/pass@64 correlations do not establish universal collapse or generalization laws. No author implementation or independent reproduction was verified.
+
 ## [2026-10-27](../../../reports/2026/10/2026-10-27.md) — PARTIAL SEARCH
 
 ### [Audit Where Hacks Pay: Budgeted Strong-Verifier Audits Against Reward Hacking in GRPO](<https://arxiv.org/abs/2610.35716>)

@@ -5,6 +5,22 @@ Learning from trajectories/feedback, skill generation/reuse, experience and self
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-03](../../../reports/2026/11/2026-11-03.md) — PARTIAL SEARCH
+
+### [Skill++: Towards Lifelong Agents via Routing-Aware Skill Refinement](<https://arxiv.org/abs/2611.00544>)
+
+Skill++ rewrites each incoming skill’s name and description to clarify its supported behavior and boundaries against similar earlier skills, while leaving the router and existing skills unchanged. This reduces interference as skill libraries grow, offering a practical way to preserve access to old skills without repeatedly training the router.
+
+**Published:** 2026-10-31 · **First seen:** 2026-11-09T11:06:58.498+00:00 · **Novelty:** newly-discovered · **Tags:** Skill Routing, Continual Learning, Metadata Refinement
+
+**Public availability:** 2026-11-03T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.00544v1>)
+
+**Evidence:** research-paper; full-text. V1 methods, results and Appendices A–C inspected. In the constructed high-interference SRA stream, complete top-five coverage of required skills reaches 76.3% versus 36.4% for original metadata at 731 skills; the strongest baseline reaches 67.8%. This is routing coverage, not execution success. A separate 87-skill execution test reports gains of 4.0 and 0.7 percentage points. Retrospective catch-up for November 3 retains the October 31 receipt; first announcement is schedule-inferred.
+
+**Limitations:** Synthetic skill additions and query construction emphasize confusability; random-stream gains are smaller. Bootstrap intervals resample queries rather than independent library generations. Text-only evaluations and model-specific rewriting limit transfer. No author implementation or independent reproduction was verified.
+
 ## [2026-10-31](../../../reports/2026/10/2026-10-31.md) — PARTIAL SEARCH
 
 ### [Compile Away Uncertainty: Self-Evolving Agent Skills via Programmatic Compilation](<https://arxiv.org/abs/2610.39508>)

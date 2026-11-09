@@ -5,6 +5,34 @@ Context organization/compression, working memory, long-term memory and state.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-07](../../../reports/2026/11/2026-11-07.md) — PARTIAL SEARCH
+
+### [The components of agent memory](<https://www.anthropic.com/research/components-of-agent-memory>)
+
+Anthropic evaluates a layered memory design in which agents keep transcripts and notes, then use offline consolidation to correct errors, build linked knowledge wikis and choose what future sessions receive. The engineering report shows where maintained representations can complement search, while emphasizing that stale notes, concurrent writes and consolidation cost require explicit design choices.
+
+**Published:** 2026-11-06 · **First seen:** 2026-11-09T11:17:44Z · **Novelty:** newly-discovered · **Tags:** Agent Memory, Offline Consolidation, Knowledge Wikis
+
+[Blog](<https://www.anthropic.com/research/components-of-agent-memory>) · [Code](<https://github.com/anthropics/claude-quickstarts/tree/main/managed-agents/knowledge-wiki>)
+
+**Evidence:** engineering-report; full-text. Full November 6 article and linked quickstart inspected. On 25 questions over a private 420M-token corpus, search alone scores 53% of criteria versus 61% with the mature wiki plus search; wiki-only reaches 48%. Building scales from two to 128 sessions. This is a dated experimental report on established dreaming ideas, not a claim that memory consolidation is newly invented. Date-only release is conservatively included in the November 7 catch-up.
+
+**Limitations:** Small private evaluations lack reported confidence intervals and repeat counts; Pokémon examples are individual runs. Reported query-token savings exclude offline construction. Some legal tasks show no gain or a wiki larger than its sources. The linked quickstart is an example, not the released private-corpus experiment. No independent reproduction.
+
+## [2026-11-05](../../../reports/2026/11/2026-11-05.md) — PARTIAL SEARCH
+
+### [Tools Need Not Speak in Text: Latent Context Compression for Agents](<https://arxiv.org/abs/2611.06500>)
+
+CocaCola compresses a tool observation into task- and reasoning-conditioned latent vectors, training the compressor to preserve a frozen agent’s next-action behavior rather than reconstruct the original text. This can shrink the agent’s context while retaining useful retrieval evidence, provided the deployment supports direct embedding inputs.
+
+**Published:** 2026-11-04 · **First seen:** 2026-11-09T11:06:58.728+00:00 · **Novelty:** newly-discovered · **Tags:** Latent Compression, Tool Observations, White-box Agents
+
+[Paper](<https://arxiv.org/pdf/2611.06500v1>) · [Code](<https://github.com/THU-Agent/Coca-cola>)
+
+**Evidence:** research-paper; full-text. V1 methods, four-dataset evaluation and training appendices inspected. Across two agent–encoder pairs, the authors report 70.01–89.24% fewer agent input/output tokens and 24.45–55.97% lower measured runtime than uncompressed retrieval, with improved exact match on all four QA datasets. Paper receipt and repository release are November 4; this is retrospective catch-up for November 5, without asserting an exact first-public hour.
+
+**Limitations:** Compression uses an additional encoder GPU and requires white-box embeddings. Pair-level train/validation splitting need not separate questions. Released compressed and baseline harnesses use different backends and limits, so the code does not verify a matched reproduction of headline latency; checkpoints were not verified. No independent reproduction.
+
 ## [2026-10-31](../../../reports/2026/10/2026-10-31.md) — PARTIAL SEARCH
 
 ### [CALM: Conflict-Aware Lifecycle Memory Governance for Long-Horizon Language Agents](<https://arxiv.org/abs/2610.38573>)

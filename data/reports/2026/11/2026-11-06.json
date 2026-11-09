@@ -1,0 +1,1322 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-06",
+  "timezone": "America/Los_Angeles",
+  "generated_at": "2026-11-09T11:29:47.761+00:00",
+  "coverage": {
+    "start": "2026-11-05T03:00:00-08:00",
+    "end": "2026-11-06T03:00:00-08:00"
+  },
+  "search": {
+    "status": "partial",
+    "notes": "Coverage is 2026-11-05T03:00:00-08:00 through 2026-11-06T03:00:00-08:00 America/Los_Angeles. The total 72-hour discovery lookback starts 2026-11-03T03:00:00-08:00. CoRD changes the rollout policy through geometric interpolation while retaining the per-state loss; minimal coupling is not a new coupling theorem. Multi-step SWE’s earlier November 4 public repository prevents treating the later arXiv batch as its first release. This retrospective investigation was performed on November 9 after reading the immutable September 29 landscape and all 288 prior registry records. All 26 subdomains across LLM Recipe, AI Agent Dev and AI Training & Inference Infra were screened using native original/recent/monthly arXiv listings, full primary methods and results, dated technical blogs, and author artifacts. Every selected entry has inspected full primary evidence; reported numbers are the authors’ findings, not independent reproductions. Actual November 9 discovery timestamps are retained, except that the returning vLLM work preserves its earlier documented first-seen time and separately records the new-source retrieval. Original publication/receipt dates are not rewritten. Successful source-check lists describe the joint nine-window investigation, rather than implying every checked source was eligible for every date. Announcement-schedule timestamps require original-category batch membership plus the official Eastern-time release table; replacements and cross-listings do not reset age. Older implementations/data and manuscript-specific new evidence are distinguished. OpenAI and Anthropic direct TLS failures were recovered through complete web-reader sources; malformed archive URLs and gzip responses were recovered where possible. Remaining gaps: the OpenReview ICLR 2027 submission API returned 403; the unsupported historical November 2 day URL did not recover a dated batch; absence from a current five-announcement-day recent view does not establish absence of research. Historical venue, blog and author-artifact searching is bounded, and some unselected reserves were only screened at abstract or chronology level. Parallel Agent Teams’ author-linked repository returns 404, Multi-step SWE’s recursive tree is truncated, and earlier GraphTrainer talk slides could not be retrieved; these limits are disclosed in relevant entries. No minimum item or domain quota was applied. Public discovery timestamps use schema-compatible millisecond precision; the pinned private acquisition receipts retain their original finer precision.",
+    "sources_checked": [
+      {
+        "name": "cl-nov",
+        "url": "https://arxiv.org/list/cs.CL/2026-11?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "lg-nov.html",
+        "url": "https://arxiv.org/list/cs.LG/2026-11?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "cl-recent",
+        "url": "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "lg-recent.html",
+        "url": "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "schedule",
+        "url": "https://info.arxiv.org/help/availability.html",
+        "status": "ok"
+      },
+      {
+        "name": "tm.html",
+        "url": "https://thinkingmachines.ai/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "ai2-index",
+        "url": "https://allenai.org/blog",
+        "status": "ok"
+      },
+      {
+        "name": "2611.03633-abs.html",
+        "url": "https://arxiv.org/abs/2611.03633",
+        "status": "ok"
+      },
+      {
+        "name": "2611.03590-abs.html",
+        "url": "https://arxiv.org/abs/2611.03590",
+        "status": "ok"
+      },
+      {
+        "name": "2611.03133-abs.html",
+        "url": "https://arxiv.org/abs/2611.03133",
+        "status": "ok"
+      },
+      {
+        "name": "2611.04215-abs.html",
+        "url": "https://arxiv.org/abs/2611.04215",
+        "status": "ok"
+      },
+      {
+        "name": "2611.04376-abs.html",
+        "url": "https://arxiv.org/abs/2611.04376",
+        "status": "ok"
+      },
+      {
+        "name": "2611.06206-abs.html",
+        "url": "https://arxiv.org/abs/2611.06206",
+        "status": "ok"
+      },
+      {
+        "name": "2611.05942-abs.html",
+        "url": "https://arxiv.org/abs/2611.05942",
+        "status": "ok"
+      },
+      {
+        "name": "2611.05609-abs.html",
+        "url": "https://arxiv.org/abs/2611.05609",
+        "status": "ok"
+      },
+      {
+        "name": "2611.08016-abs.html",
+        "url": "https://arxiv.org/abs/2611.08016",
+        "status": "ok"
+      },
+      {
+        "name": "2611.07959-abs.html",
+        "url": "https://arxiv.org/abs/2611.07959",
+        "status": "ok"
+      },
+      {
+        "name": "2611.08924-abs.html",
+        "url": "https://arxiv.org/abs/2611.08924",
+        "status": "ok"
+      },
+      {
+        "name": "2611.09448-abs.html",
+        "url": "https://arxiv.org/abs/2611.09448",
+        "status": "ok"
+      },
+      {
+        "name": "2611.08936-abs.html",
+        "url": "https://arxiv.org/abs/2611.08936",
+        "status": "ok"
+      },
+      {
+        "name": "2611.08495-abs.html",
+        "url": "https://arxiv.org/abs/2611.08495",
+        "status": "ok"
+      },
+      {
+        "name": "2611.09042-abs.html",
+        "url": "https://arxiv.org/abs/2611.09042",
+        "status": "ok"
+      },
+      {
+        "name": "arxiv-status",
+        "url": "https://status.arxiv.org/",
+        "status": "ok"
+      },
+      {
+        "name": "2611.03633-full.html",
+        "url": "https://arxiv.org/html/2611.03633v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.03633-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.03633v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.04215-full.html",
+        "url": "https://arxiv.org/html/2611.04215v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.04215-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.04215v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.06206-full.html",
+        "url": "https://arxiv.org/html/2611.06206v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.06206-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.06206v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.05942-full.html",
+        "url": "https://arxiv.org/html/2611.05942v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.05942-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.05942v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.08016-full.html",
+        "url": "https://arxiv.org/html/2611.08016v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.08016-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.08016v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.07959-full.html",
+        "url": "https://arxiv.org/html/2611.07959v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.07959-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.07959v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.08924-full.html",
+        "url": "https://arxiv.org/html/2611.08924v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.08924-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.08924v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.09448-full.html",
+        "url": "https://arxiv.org/html/2611.09448v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.09448-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.09448v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.00015-abs.html",
+        "url": "https://arxiv.org/abs/2611.00015",
+        "status": "ok"
+      },
+      {
+        "name": "cl-nov02.html",
+        "url": "https://arxiv.org/list/cs.CL/2026-11-02?skip=0&show=2000",
+        "status": "unavailable"
+      },
+      {
+        "name": "resq-repo.json",
+        "url": "https://api.github.com/repos/LiqunMa/ResQAdam",
+        "status": "ok"
+      },
+      {
+        "name": "resq-commits.json",
+        "url": "https://api.github.com/repos/LiqunMa/ResQAdam/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "resq-readme.md",
+        "url": "https://raw.githubusercontent.com/LiqunMa/ResQAdam/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "loop-dataset.json",
+        "url": "https://huggingface.co/api/datasets/daichi812/babyloop-mm-corpus",
+        "status": "ok"
+      },
+      {
+        "name": "cl-oct-late.html",
+        "url": "https://arxiv.org/list/cs.CL/2026-10?skip=2000&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "lg-oct-late.html",
+        "url": "https://arxiv.org/list/cs.LG/2026-10?skip=6000&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "loop-project.html",
+        "url": "https://huggingface.co/datasets/daichihotta/babyloop-mm-corpus",
+        "status": "ok"
+      },
+      {
+        "name": "ai-new",
+        "url": "https://arxiv.org/list/cs.AI/new",
+        "status": "ok"
+      },
+      {
+        "name": "ai-nov",
+        "url": "https://arxiv.org/list/cs.AI/2026-11?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "ai-oct",
+        "url": "https://arxiv.org/list/cs.AI/2026-10?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic research index, web recovery",
+        "url": "https://www.anthropic.com/research",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic engineering index, web recovery",
+        "url": "https://www.anthropic.com/engineering",
+        "status": "ok"
+      },
+      {
+        "name": "langchain",
+        "url": "https://blog.langchain.com/",
+        "status": "ok"
+      },
+      {
+        "name": "parallel",
+        "url": "https://parallel.ai/blog",
+        "status": "ok"
+      },
+      {
+        "name": "ai-recent",
+        "url": "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "ai-oct-tail",
+        "url": "https://arxiv.org/list/cs.AI/2026-10?skip=2000&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "ai-nov02",
+        "url": "https://arxiv.org/list/cs.AI/2026-11-02",
+        "status": "unavailable"
+      },
+      {
+        "name": "2611.00191-abs",
+        "url": "https://arxiv.org/abs/2611.00191",
+        "status": "ok"
+      },
+      {
+        "name": "2611.00544-abs",
+        "url": "https://arxiv.org/abs/2611.00544",
+        "status": "ok"
+      },
+      {
+        "name": "2611.00773-abs",
+        "url": "https://arxiv.org/abs/2611.00773",
+        "status": "ok"
+      },
+      {
+        "name": "2611.00779-abs",
+        "url": "https://arxiv.org/abs/2611.00779",
+        "status": "ok"
+      },
+      {
+        "name": "2611.01718-abs",
+        "url": "https://arxiv.org/abs/2611.01718",
+        "status": "ok"
+      },
+      {
+        "name": "2611.02017-abs",
+        "url": "https://arxiv.org/abs/2611.02017",
+        "status": "ok"
+      },
+      {
+        "name": "2611.02815-abs",
+        "url": "https://arxiv.org/abs/2611.02815",
+        "status": "ok"
+      },
+      {
+        "name": "2611.03723-abs",
+        "url": "https://arxiv.org/abs/2611.03723",
+        "status": "ok"
+      },
+      {
+        "name": "2611.04277-abs",
+        "url": "https://arxiv.org/abs/2611.04277",
+        "status": "ok"
+      },
+      {
+        "name": "2611.04399-abs",
+        "url": "https://arxiv.org/abs/2611.04399",
+        "status": "ok"
+      },
+      {
+        "name": "2611.05139-abs",
+        "url": "https://arxiv.org/abs/2611.05139",
+        "status": "ok"
+      },
+      {
+        "name": "2611.06500-abs",
+        "url": "https://arxiv.org/abs/2611.06500",
+        "status": "ok"
+      },
+      {
+        "name": "2611.06803-abs",
+        "url": "https://arxiv.org/abs/2611.06803",
+        "status": "ok"
+      },
+      {
+        "name": "2611.07166-abs",
+        "url": "https://arxiv.org/abs/2611.07166",
+        "status": "ok"
+      },
+      {
+        "name": "2611.09218-abs",
+        "url": "https://arxiv.org/abs/2611.09218",
+        "status": "ok"
+      },
+      {
+        "name": "2611.09798-abs",
+        "url": "https://arxiv.org/abs/2611.09798",
+        "status": "ok"
+      },
+      {
+        "name": "2611.00191-full",
+        "url": "https://arxiv.org/html/2611.00191v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.00191-pdf",
+        "url": "https://arxiv.org/pdf/2611.00191v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.00544-full",
+        "url": "https://arxiv.org/html/2611.00544v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.00544-pdf",
+        "url": "https://arxiv.org/pdf/2611.00544v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.00773-full",
+        "url": "https://arxiv.org/html/2611.00773v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.00773-pdf",
+        "url": "https://arxiv.org/pdf/2611.00773v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.00779-full",
+        "url": "https://arxiv.org/html/2611.00779v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.00779-pdf",
+        "url": "https://arxiv.org/pdf/2611.00779v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.01718-full",
+        "url": "https://arxiv.org/html/2611.01718v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.01718-pdf",
+        "url": "https://arxiv.org/pdf/2611.01718v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.02017-full",
+        "url": "https://arxiv.org/html/2611.02017v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.02017-pdf",
+        "url": "https://arxiv.org/pdf/2611.02017v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.02815-full",
+        "url": "https://arxiv.org/html/2611.02815v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.02815-pdf",
+        "url": "https://arxiv.org/pdf/2611.02815v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.03723-full",
+        "url": "https://arxiv.org/html/2611.03723v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.03723-pdf",
+        "url": "https://arxiv.org/pdf/2611.03723v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.04277-full",
+        "url": "https://arxiv.org/html/2611.04277v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.04277-pdf",
+        "url": "https://arxiv.org/pdf/2611.04277v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.04399-full",
+        "url": "https://arxiv.org/html/2611.04399v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.04399-pdf",
+        "url": "https://arxiv.org/pdf/2611.04399v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.05139-full",
+        "url": "https://arxiv.org/html/2611.05139v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.05139-pdf",
+        "url": "https://arxiv.org/pdf/2611.05139v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.06500-full",
+        "url": "https://arxiv.org/html/2611.06500v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.06500-pdf",
+        "url": "https://arxiv.org/pdf/2611.06500v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.06803-full",
+        "url": "https://arxiv.org/html/2611.06803v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.06803-pdf",
+        "url": "https://arxiv.org/pdf/2611.06803v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.07166-full",
+        "url": "https://arxiv.org/html/2611.07166v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.07166-pdf",
+        "url": "https://arxiv.org/pdf/2611.07166v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.09218-full",
+        "url": "https://arxiv.org/html/2611.09218v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.09218-pdf",
+        "url": "https://arxiv.org/pdf/2611.09218v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.09798-full",
+        "url": "https://arxiv.org/html/2611.09798v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.09798-pdf",
+        "url": "https://arxiv.org/pdf/2611.09798v1",
+        "status": "ok"
+      },
+      {
+        "name": "teams-repo",
+        "url": "https://api.github.com/repos/modal-projects/parallel-agent-teams-scaling",
+        "status": "unavailable"
+      },
+      {
+        "name": "teams-commits",
+        "url": "https://api.github.com/repos/modal-projects/parallel-agent-teams-scaling/commits?per_page=100",
+        "status": "unavailable"
+      },
+      {
+        "name": "teams-readme",
+        "url": "https://api.github.com/repos/modal-projects/parallel-agent-teams-scaling/readme",
+        "status": "unavailable"
+      },
+      {
+        "name": "multistep-repo",
+        "url": "https://api.github.com/repos/Klavis-AI/Multi-step-SWE",
+        "status": "ok"
+      },
+      {
+        "name": "multistep-commits",
+        "url": "https://api.github.com/repos/Klavis-AI/Multi-step-SWE/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "multistep-readme",
+        "url": "https://api.github.com/repos/Klavis-AI/Multi-step-SWE/readme",
+        "status": "ok"
+      },
+      {
+        "name": "cocacola-repo",
+        "url": "https://api.github.com/repos/THU-Agent/Coca-cola",
+        "status": "ok"
+      },
+      {
+        "name": "cocacola-commits",
+        "url": "https://api.github.com/repos/THU-Agent/Coca-cola/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "cocacola-readme",
+        "url": "https://api.github.com/repos/THU-Agent/Coca-cola/readme",
+        "status": "ok"
+      },
+      {
+        "name": "switch-repo",
+        "url": "https://api.github.com/repos/Miraclecsc/Switch-SWE",
+        "status": "ok"
+      },
+      {
+        "name": "switch-commits",
+        "url": "https://api.github.com/repos/Miraclecsc/Switch-SWE/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "switch-readme",
+        "url": "https://api.github.com/repos/Miraclecsc/Switch-SWE/readme",
+        "status": "ok"
+      },
+      {
+        "name": "instrument-repo",
+        "url": "https://api.github.com/repos/YangzeLiu/eval-instrument-disclosure",
+        "status": "ok"
+      },
+      {
+        "name": "instrument-commits",
+        "url": "https://api.github.com/repos/YangzeLiu/eval-instrument-disclosure/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "instrument-readme",
+        "url": "https://api.github.com/repos/YangzeLiu/eval-instrument-disclosure/readme",
+        "status": "ok"
+      },
+      {
+        "name": "cocacola-tree",
+        "url": "https://api.github.com/repos/THU-Agent/Coca-cola/git/trees/edad16f2fd3dc3ce67300361e5d540bf7192318b?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "cocacola-methods",
+        "url": "https://raw.githubusercontent.com/THU-Agent/Coca-cola/edad16f2fd3dc3ce67300361e5d540bf7192318b/docs/METHODS.md",
+        "status": "ok"
+      },
+      {
+        "name": "cocacola-training",
+        "url": "https://raw.githubusercontent.com/THU-Agent/Coca-cola/edad16f2fd3dc3ce67300361e5d540bf7192318b/docs/TRAINING.md",
+        "status": "ok"
+      },
+      {
+        "name": "switch-initial-readme",
+        "url": "https://raw.githubusercontent.com/Miraclecsc/Switch-SWE/e7d4db8b6b7886dabdaaab0732384cc163b0b502/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "switch-replace",
+        "url": "https://api.github.com/repos/Miraclecsc/Switch-SWE/commits/01f6f40931c07fc387954e717e8c055820ad1930",
+        "status": "ok"
+      },
+      {
+        "name": "teams-web",
+        "url": "https://github.com/modal-projects/parallel-agent-teams-scaling",
+        "status": "unavailable"
+      },
+      {
+        "name": "cocacola-train-model.py",
+        "url": "https://raw.githubusercontent.com/THU-Agent/Coca-cola/edad16f2fd3dc3ce67300361e5d540bf7192318b/train/model.py",
+        "status": "ok"
+      },
+      {
+        "name": "cocacola-train-trainer.py",
+        "url": "https://raw.githubusercontent.com/THU-Agent/Coca-cola/edad16f2fd3dc3ce67300361e5d540bf7192318b/train/trainer.py",
+        "status": "ok"
+      },
+      {
+        "name": "cocacola-train-config.yaml",
+        "url": "https://raw.githubusercontent.com/THU-Agent/Coca-cola/edad16f2fd3dc3ce67300361e5d540bf7192318b/train/config.yaml",
+        "status": "ok"
+      },
+      {
+        "name": "cocacola-configs-latte.example.yaml",
+        "url": "https://raw.githubusercontent.com/THU-Agent/Coca-cola/edad16f2fd3dc3ce67300361e5d540bf7192318b/configs/latte.example.yaml",
+        "status": "ok"
+      },
+      {
+        "name": "multistep-project",
+        "url": "https://multistepswe.com/",
+        "status": "ok"
+      },
+      {
+        "name": "multistep-tree",
+        "url": "https://api.github.com/repos/Klavis-AI/Multi-step-SWE/git/trees/346719bbb9eb9afaf16ac1eda038cff87ca9f343?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "knowledge-wiki-repo",
+        "url": "https://api.github.com/repos/anthropics/claude-quickstarts",
+        "status": "ok"
+      },
+      {
+        "name": "knowledge-wiki-history",
+        "url": "https://api.github.com/repos/anthropics/claude-quickstarts/commits?path=managed-agents/knowledge-wiki&per_page=25",
+        "status": "ok"
+      },
+      {
+        "name": "knowledge-wiki-readme",
+        "url": "https://raw.githubusercontent.com/anthropics/claude-quickstarts/main/managed-agents/knowledge-wiki/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "csse-recent",
+        "url": "https://arxiv.org/list/cs.SE/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "embers-package",
+        "url": "https://anonymous.4open.science/r/EMBERS-076E/",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic memory engineering report, full text",
+        "url": "https://www.anthropic.com/research/components-of-agent-memory",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic scientist-use report, inspected for relevance",
+        "url": "https://www.anthropic.com/research/how-researchers-use-claude",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic scientific-modeling perspective, screened",
+        "url": "https://www.anthropic.com/research/teaching-ai-to-build-scientific-models",
+        "status": "ok"
+      },
+      {
+        "name": "Knowledge-wiki example, linked from report",
+        "url": "https://github.com/anthropics/claude-quickstarts/tree/main/managed-agents/knowledge-wiki",
+        "status": "ok"
+      },
+      {
+        "name": "flashprove.pdf",
+        "url": "https://raw.githubusercontent.com/anthropics/FlashProve/main/paper/paper.pdf",
+        "status": "ok"
+      },
+      {
+        "name": "flashprove-readme.md",
+        "url": "https://raw.githubusercontent.com/anthropics/FlashProve/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "flashprove-repo.json",
+        "url": "https://api.github.com/repos/anthropics/FlashProve",
+        "status": "ok"
+      },
+      {
+        "name": "flashprove-commits.json",
+        "url": "https://api.github.com/repos/anthropics/FlashProve/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "flashprove-tree.json",
+        "url": "https://api.github.com/repos/anthropics/FlashProve/git/trees/main?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "nccl-m2n.html",
+        "url": "https://github.com/NVIDIA/nccl-extensions/tree/main/nccl_m2n",
+        "status": "ok"
+      },
+      {
+        "name": "nemo-refit.html",
+        "url": "https://docs.nvidia.com/nemo/rl/nightly/guides/refit.html",
+        "status": "ok"
+      },
+      {
+        "name": "nemo-design.html",
+        "url": "https://docs.nvidia.com/nemo/rl/nightly/design-docs/nccl-reshard-refit.html",
+        "status": "ok"
+      },
+      {
+        "name": "nemo-2971.json",
+        "url": "https://api.github.com/repos/NVIDIA-NeMo/RL/pulls/2971",
+        "status": "ok"
+      },
+      {
+        "name": "nccl-m2n-history.json",
+        "url": "https://api.github.com/repos/NVIDIA/nccl-extensions/commits?path=nccl_m2n&per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "zero-mismatch-repo.html",
+        "url": "https://github.com/Inferact/zero-mismatch-rl",
+        "status": "ok"
+      },
+      {
+        "name": "verl-8505.json",
+        "url": "https://api.github.com/repos/verl-project/verl/pulls/8505",
+        "status": "ok"
+      },
+      {
+        "name": "verl-8574.json",
+        "url": "https://api.github.com/repos/verl-project/verl/pulls/8574",
+        "status": "ok"
+      },
+      {
+        "name": "zero-blog-history.json",
+        "url": "https://api.github.com/repos/vllm-project/vllm-project.github.io/commits?path=_posts/2026-11-06-zero-mismatch-async-rl.md&per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "resserve-initial-readme.md",
+        "url": "https://raw.githubusercontent.com/ShawRong/resserve/51b906836a69fa43915040314df57bc9f23030ad/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "resserve-last-diff.json",
+        "url": "https://api.github.com/repos/ShawRong/resserve/commits/bd33dedfc08019db77a4c11655cce5a8d4ce6c0d",
+        "status": "ok"
+      },
+      {
+        "name": "dmuon-prior-abs.html",
+        "url": "https://arxiv.org/abs/2606.27153",
+        "status": "ok"
+      },
+      {
+        "name": "autoparallel-before-readme.md",
+        "url": "https://raw.githubusercontent.com/meta-pytorch/autoparallel/5e0ab948b6a9eaf8ce09da1ee0cf7b7250ba84cc/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "autoparallel-repo.json",
+        "url": "https://api.github.com/repos/meta-pytorch/autoparallel",
+        "status": "ok"
+      },
+      {
+        "name": "autoparallel-commits.json",
+        "url": "https://api.github.com/repos/meta-pytorch/autoparallel/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "autoparallel-readme.json",
+        "url": "https://api.github.com/repos/meta-pytorch/autoparallel/readme",
+        "status": "ok"
+      },
+      {
+        "name": "resserve-repo.json",
+        "url": "https://api.github.com/repos/ShawRong/resserve",
+        "status": "ok"
+      },
+      {
+        "name": "resserve-commits.json",
+        "url": "https://api.github.com/repos/ShawRong/resserve/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "resserve-readme.json",
+        "url": "https://api.github.com/repos/ShawRong/resserve/readme",
+        "status": "ok"
+      },
+      {
+        "name": "dmuon-repo.json",
+        "url": "https://api.github.com/repos/X-Square-Robot/dmuon",
+        "status": "ok"
+      },
+      {
+        "name": "dmuon-commits.json",
+        "url": "https://api.github.com/repos/X-Square-Robot/dmuon/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "dmuon-readme.json",
+        "url": "https://api.github.com/repos/X-Square-Robot/dmuon/readme",
+        "status": "ok"
+      },
+      {
+        "name": "dc-new.html",
+        "url": "https://arxiv.org/list/cs.DC/new",
+        "status": "ok"
+      },
+      {
+        "name": "dc-nov.html",
+        "url": "https://arxiv.org/list/cs.DC/2611?show=2000",
+        "status": "unavailable"
+      },
+      {
+        "name": "dc-oct.html",
+        "url": "https://arxiv.org/list/cs.DC/2610?skip=0&show=2000",
+        "status": "unavailable"
+      },
+      {
+        "name": "ar-nov.html",
+        "url": "https://arxiv.org/list/cs.AR/2611?show=2000",
+        "status": "unavailable"
+      },
+      {
+        "name": "lg-nov.html",
+        "url": "https://arxiv.org/list/cs.LG/2611?show=2000",
+        "status": "unavailable"
+      },
+      {
+        "name": "vllm.html",
+        "url": "https://vllm.ai/blog",
+        "status": "ok"
+      },
+      {
+        "name": "sglang.html",
+        "url": "https://www.sglang.io/blog",
+        "status": "ok"
+      },
+      {
+        "name": "pytorch.html",
+        "url": "https://pytorch.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "nvidia.html",
+        "url": "https://developer.nvidia.com/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "AMD full current technical blog index recovered through web reader",
+        "url": "https://rocm.blogs.amd.com/",
+        "status": "ok"
+      },
+      {
+        "name": "autoparallel-2025-poster.pdf",
+        "url": "https://static.sched.com/hosted_files/pytorchconference/c4/Automatic%20Parallelism%20in%20PyTorch%20-%20Will%20Constable%20%26%20Francisco%20Massa,%20Meta.pdf",
+        "status": "ok"
+      },
+      {
+        "name": "Earlier GraphTrainer conference abstract recovered through web reader",
+        "url": "https://events.linuxfoundation.org/pytorch-conference-north-america/program/schedule/?id=1257898",
+        "status": "ok"
+      },
+      {
+        "name": "2611.01735-abs.html",
+        "url": "https://arxiv.org/abs/2611.01735",
+        "status": "ok"
+      },
+      {
+        "name": "2611.01735-full.html",
+        "url": "https://arxiv.org/html/2611.01735v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.01735-pdf.pdf",
+        "url": "https://arxiv.org/pdf/2611.01735v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.00506-abs.html",
+        "url": "https://arxiv.org/abs/2611.00506",
+        "status": "ok"
+      },
+      {
+        "name": "2611.00506-full.html",
+        "url": "https://arxiv.org/html/2611.00506v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.00506-pdf.pdf",
+        "url": "https://arxiv.org/pdf/2611.00506v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.04897-abs.html",
+        "url": "https://arxiv.org/abs/2611.04897",
+        "status": "ok"
+      },
+      {
+        "name": "2611.04897-full.html",
+        "url": "https://arxiv.org/html/2611.04897v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.04897-pdf.pdf",
+        "url": "https://arxiv.org/pdf/2611.04897v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.04401-abs.html",
+        "url": "https://arxiv.org/abs/2611.04401",
+        "status": "ok"
+      },
+      {
+        "name": "2611.04401-full.html",
+        "url": "https://arxiv.org/html/2611.04401v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.04401-pdf.pdf",
+        "url": "https://arxiv.org/pdf/2611.04401v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.06634-abs.html",
+        "url": "https://arxiv.org/abs/2611.06634",
+        "status": "ok"
+      },
+      {
+        "name": "2611.06634-full.html",
+        "url": "https://arxiv.org/html/2611.06634v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.06634-pdf.pdf",
+        "url": "https://arxiv.org/pdf/2611.06634v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.06057-abs.html",
+        "url": "https://arxiv.org/abs/2611.06057",
+        "status": "ok"
+      },
+      {
+        "name": "2611.06057-full.html",
+        "url": "https://arxiv.org/html/2611.06057v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.06057-pdf.pdf",
+        "url": "https://arxiv.org/pdf/2611.06057v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.07084-abs.html",
+        "url": "https://arxiv.org/abs/2611.07084",
+        "status": "ok"
+      },
+      {
+        "name": "2611.07084-full.html",
+        "url": "https://arxiv.org/html/2611.07084v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.07084-pdf.pdf",
+        "url": "https://arxiv.org/pdf/2611.07084v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.07477-abs.html",
+        "url": "https://arxiv.org/abs/2611.07477",
+        "status": "ok"
+      },
+      {
+        "name": "2611.07477-full.html",
+        "url": "https://arxiv.org/html/2611.07477v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.07477-pdf.pdf",
+        "url": "https://arxiv.org/pdf/2611.07477v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.08660-abs.html",
+        "url": "https://arxiv.org/abs/2611.08660",
+        "status": "ok"
+      },
+      {
+        "name": "2611.08660-full.html",
+        "url": "https://arxiv.org/html/2611.08660v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.08660-pdf.pdf",
+        "url": "https://arxiv.org/pdf/2611.08660v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.08713-abs.html",
+        "url": "https://arxiv.org/abs/2611.08713",
+        "status": "ok"
+      },
+      {
+        "name": "2611.08713-full.html",
+        "url": "https://arxiv.org/html/2611.08713v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.08713-pdf.pdf",
+        "url": "https://arxiv.org/pdf/2611.08713v1",
+        "status": "ok"
+      },
+      {
+        "name": "Anthropic FlashProve full primary blog recovered through web reader",
+        "url": "https://www.anthropic.com/research/provable-inference",
+        "status": "ok"
+      },
+      {
+        "name": "zero-mismatch.html",
+        "url": "https://vllm.ai/blog/2026-11-06-zero-mismatch-async-rl",
+        "status": "ok"
+      },
+      {
+        "name": "kimi-vllm.html",
+        "url": "https://vllm.ai/blog/2026-11-04-kimi-k31-pro",
+        "status": "ok"
+      },
+      {
+        "name": "kimi-sglang.html",
+        "url": "https://www.sglang.io/blog/kimi-k3.1-pro-day0-support",
+        "status": "ok"
+      },
+      {
+        "name": "reshard.html",
+        "url": "https://developer.nvidia.com/blog/accelerating-reinforcement-learning-weight-refit-with-the-reshard-collective/",
+        "status": "ok"
+      },
+      {
+        "name": "stable-abi.html",
+        "url": "https://vllm.ai/blog/2026-11-06-stable-abi-cuda",
+        "status": "ok"
+      },
+      {
+        "name": "dc-recent.html",
+        "url": "https://arxiv.org/list/cs.DC/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "ar-recent.html",
+        "url": "https://arxiv.org/list/cs.AR/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "dc-month.html",
+        "url": "https://arxiv.org/list/cs.DC/2026-11?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "ar-month.html",
+        "url": "https://arxiv.org/list/cs.AR/2026-11?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "dc-oct-month.html",
+        "url": "https://arxiv.org/list/cs.DC/2026-10?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "graphtrainer-2026-slides.pdf",
+        "url": "https://cdn.sessionize.com/download/umgagme~ffnML7JtcR8wL2D3TCbTz9.pdf~graphtrainer-ptc.pdf",
+        "status": "unavailable"
+      },
+      {
+        "name": "old-zero-blog.html",
+        "url": "https://vllm.ai/blog/2026-10-14-train-inference-consistency",
+        "status": "ok"
+      },
+      {
+        "name": "zero-blog-pinned.md",
+        "url": "https://raw.githubusercontent.com/vllm-project/vllm-project.github.io/8cc9eecb09ec9f45cc65554f8b3e41ada92c0f36/_posts/2026-11-06-zero-mismatch-async-rl.md",
+        "status": "ok"
+      },
+      {
+        "name": "FlashProve official technical-report link through web reader",
+        "url": "https://www.anthropic.com/document/flashprove-technical-report",
+        "status": "ok"
+      },
+      {
+        "name": "OpenAI full index web recovery",
+        "url": "https://openai.com/research/index/",
+        "status": "ok"
+      },
+      {
+        "name": "deepmind-index",
+        "url": "https://deepmind.google/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "BioBasicsBench full disclosure web recovery",
+        "url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science/",
+        "status": "ok"
+      },
+      {
+        "name": "Kernel full disclosure web recovery",
+        "url": "https://openai.com/index/a-thousand-fewer-paths-to-root/",
+        "status": "ok"
+      },
+      {
+        "name": "LifeVal full announcement web recovery",
+        "url": "https://openai.com/index/lifeval/",
+        "status": "ok"
+      },
+      {
+        "name": "statebench",
+        "url": "https://allenai.org/blog/statebench",
+        "status": "ok"
+      },
+      {
+        "name": "cheminformatics",
+        "url": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity/",
+        "status": "ok"
+      },
+      {
+        "name": "planning",
+        "url": "https://deepmind.google/blog/speeding-up-planning-decisions-with-ai/",
+        "status": "ok"
+      },
+      {
+        "name": "openreview",
+        "url": "https://openreview.net/",
+        "status": "ok"
+      },
+      {
+        "name": "openreview-api",
+        "url": "https://api2.openreview.net/notes?content.venueid=ICLR.cc/2027/Conference/Submission&limit=5",
+        "status": "unavailable"
+      },
+      {
+        "name": "acl",
+        "url": "https://aclanthology.org/",
+        "status": "ok"
+      },
+      {
+        "name": "statebench-paper-page",
+        "url": "https://allenai.org/papers/statebench",
+        "status": "ok"
+      },
+      {
+        "name": "statebench-repo",
+        "url": "https://api.github.com/repos/allenai/state-bench",
+        "status": "ok"
+      },
+      {
+        "name": "statebench-readme",
+        "url": "https://raw.githubusercontent.com/allenai/state-bench/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "statebench-commits",
+        "url": "https://api.github.com/repos/allenai/state-bench/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "statebench-hf",
+        "url": "https://huggingface.co/api/datasets/allenai/state-bench",
+        "status": "ok"
+      },
+      {
+        "name": "statebench-paper",
+        "url": "https://arxiv.org/pdf/2611.03094v1",
+        "status": "ok"
+      },
+      {
+        "name": "lifeval-paper",
+        "url": "https://arxiv.org/pdf/2611.06687v1",
+        "status": "ok"
+      },
+      {
+        "name": "statebench-full",
+        "url": "https://arxiv.org/html/2611.03094v1",
+        "status": "ok"
+      },
+      {
+        "name": "lifeval-abs",
+        "url": "https://arxiv.org/abs/2611.06687",
+        "status": "ok"
+      },
+      {
+        "name": "lifeval-cdn-receipt.json",
+        "url": "https://cdn.openai.com/pdf/lifeval.pdf",
+        "status": "ok"
+      },
+      {
+        "name": "statebench-tree-receipt.json",
+        "url": "https://api.github.com/repos/allenai/state-bench/git/trees/5b333b8d426638d8825f40efe8a508c20eb85730?recursive=1",
+        "status": "ok"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": "arxiv:2611.07959",
+      "title": "CoRD: Coupled Rollouts Fill the Blind Spot of On-Policy Distillation",
+      "category": "1.8",
+      "tags": [
+        "On-Policy Distillation",
+        "Rollout Distribution",
+        "Coupled Sampling"
+      ],
+      "published_on": "2026-11-05",
+      "first_seen_at": "2026-11-09T11:03:40.430+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.07959",
+      "links": {
+        "paper": "https://arxiv.org/html/2611.07959v1"
+      },
+      "summary": [
+        "CoRD keeps the per-state distillation loss and uses exact coupled sampling from a geometric interpolation of student and teacher policies.",
+        "Replacing tokens only where the distributions disagree exposes useful training states the student seldom reaches, improving the tested small models’ mathematical reasoning."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Main methods/results, sampler proof, substitution controls and training appendix inspected. Across six 0.6B–4B Qwen3/Qwen3.5 students trained for 80 steps, five-benchmark mean pass@1 improves by 0.9–2.0 points and pass@8 by 1.2–3.4 over matched OPD. Fixed-state analyses isolate replacement direction. Original November 5 receipt is preserved; November 6 announcement is schedule-inferred and actual discovery occurred November 9.",
+        "limitations": "Teacher logits are required during generation; the baseline also steps its teacher serially, so matched step cost is not parity with optimized batched OPD. Tests use shared tokenizers, short math training and fixed runs without training-seed intervals. Some pass@16 results regress; one training/evaluation duplicate remains. No author implementation or independent reproduction was verified."
+      },
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-06T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2611.07166",
+      "title": "Multi-step SWE: Can Coding Agents Keep Building on Their Own Code Over Long Horizons?",
+      "category": "2.8",
+      "tags": [
+        "Long-horizon Coding",
+        "Sequential Evaluation",
+        "Verification"
+      ],
+      "published_on": "2026-11-04",
+      "first_seen_at": "2026-11-09T11:06:58.825+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.07166",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.07166v1",
+        "code": "https://github.com/Klavis-AI/Multi-step-SWE",
+        "project": "https://multistepswe.com/"
+      },
+      "summary": [
+        "Multi-step SWE chains substantial engineering requests on the agent’s own evolving code, grading each milestone against specifications, reference behavior or correctness-gated performance targets.",
+        "It tests whether agents can sustain progress across upgrades and migrations, and shows why passing individual steps can substantially overstate reliable completion of an entire project."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Full v1 methods, results and protocol/failure-analysis appendices inspected. The study contains 69 tasks and 574 steps across nine languages, with four rollouts per model–harness pair. The strongest evaluated configuration passes 56.8% of steps but solves 18.5% of complete rollouts; 38 tasks are unsolved across the evaluated configurations. The November 4 public repository already describes these results, so this November 6 catch-up does not treat Friday’s arXiv announcement as the first release.",
+        "limitations": "No isolated-step control separates accumulated errors from later-step difficulty. Results combine models and harnesses; tasks favor C/C++ and public projects may be memorized. Optimization success requires exceeding a reference speedup, rather than only correctness. The retrieved repository tree is truncated, and no independent execution was performed."
+      },
+      "novelty": "newly-discovered"
+    }
+  ]
+}

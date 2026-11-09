@@ -5,6 +5,22 @@ Transformers, MoE, SSM/hybrid architectures and model/data/compute allocation.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-05](../../../reports/2026/11/2026-11-05.md) — PARTIAL SEARCH
+
+### [Loop Before You Leap: What Recurrent Depth Can and Cannot Buy in Data-Limited Pretraining](<https://arxiv.org/abs/2611.06206>)
+
+A controlled BabyLM study compares repeated shared layers with deeper independent layers and tests whether recurrence mitigates the grammaticality drop associated with multimodal training. Its matched controls show why changing text composition and batching must be separated from the contribution of visual input.
+
+**Published:** 2026-11-04 · **First seen:** 2026-11-09T11:03:40.430+00:00 · **Novelty:** newly-discovered · **Tags:** Recurrent Depth, Multimodal Pretraining, Controlled Experiments
+
+**Public availability:** 2026-11-05T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2611.06206v1>) · [Project](<https://huggingface.co/datasets/daichihotta/babyloop-mm-corpus>)
+
+**Evidence:** research-paper; full-text. Methods, main results, limitations and reproducibility/seed/no-image controls inspected. At 100M unique words and 1B repeated-word exposure, the 97M-parameter text-only looped model exceeds the 48-layer model by 5.36 BLiMP points at matched inference compute, over three seeds. The primary multimodal interaction is −0.01 points, with pooled 95% interval \[−1.44, 1.41\]. This is a retrospectively reviewed November 5 paper announcement, not a new dataset release.
+
+**Limitations:** Recurrence is confounded with text-input injection; inference compute is not total training-cost matching. One frozen image vector and altered language sources limit generalization. Only the looped model has a batch-matched no-image decomposition, and several exploratory comparisons are unadjusted. The linked corpus predates this study; no author training-code release was verified.
+
 ## [2026-10-31](../../../reports/2026/10/2026-10-31.md) — PARTIAL SEARCH
 
 ### [Multi-View MoE: Letting Every Router Shape Expert Computation](<https://arxiv.org/abs/2610.40577>)

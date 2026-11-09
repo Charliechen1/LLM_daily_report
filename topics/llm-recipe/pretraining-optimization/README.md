@@ -5,6 +5,22 @@ Objectives, optimizers, learning rates, batch sizes and training stability.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-03](../../../reports/2026/11/2026-11-03.md) — PARTIAL SEARCH
+
+### [Pretraining Data Scale Reverses the Muon–AdamW Fine-Tuning Gap](<https://arxiv.org/abs/2611.03633>)
+
+Controlled small-model experiments show that Muon’s pretraining-loss advantage can reverse after fine-tuning as the pretraining data budget grows. Comparing adaptation and retained pretraining performance together exposes an optimizer trade-off that pretraining loss alone can miss.
+
+**Published:** 2026-11-02 · **First seen:** 2026-11-09T11:03:40.431+00:00 · **Novelty:** newly-discovered · **Tags:** Optimizer Selection, Fine-tuning, Forgetting
+
+**Public availability:** 2026-11-03T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2611.03633v1>)
+
+**Evidence:** research-paper; full-text. V1 Sections 2–3, 4.3 and protocol/regularization appendices inspected. OLMo-style 30M–600M models use DCLM pretraining and 20M-token adaptation on four datasets. On StackMathQA, the reported crossover falls from 320 to 10 pretraining tokens per parameter between 30M and 600M. This compares held-out cross-entropy frontiers, not task accuracy. Retrospective catch-up for the November 3 report retains the November 2 receipt; first announcement is schedule-inferred.
+
+**Limitations:** Finite hyperparameter sweeps and one corpus/model family constrain generalization; seed uncertainty is not reported for the language-model frontiers. The one-step linear-memory theory uses gradient descent rather than AdamW and does not prove frontier-scale behavior. No author implementation or independent reproduction was verified.
+
 ## [2026-10-31](../../../reports/2026/10/2026-10-31.md) — PARTIAL SEARCH
 
 ### [Your LR Schedule May Not Be Principled: Effective Learning Rate Scheduling in Weight-Normalized Training](<https://arxiv.org/abs/2610.40362>)

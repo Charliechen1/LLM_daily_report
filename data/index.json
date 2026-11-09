@@ -2,6 +2,69 @@
   "schema_version": 1,
   "reports": [
     {
+      "date": "2026-11-09",
+      "path": "reports/2026/11/2026-11-09.md",
+      "source": "data/reports/2026/11/2026-11-09.json",
+      "search_status": "partial",
+      "entries": 3
+    },
+    {
+      "date": "2026-11-08",
+      "path": "reports/2026/11/2026-11-08.md",
+      "source": "data/reports/2026/11/2026-11-08.json",
+      "search_status": "partial",
+      "entries": 0
+    },
+    {
+      "date": "2026-11-07",
+      "path": "reports/2026/11/2026-11-07.md",
+      "source": "data/reports/2026/11/2026-11-07.json",
+      "search_status": "partial",
+      "entries": 3
+    },
+    {
+      "date": "2026-11-06",
+      "path": "reports/2026/11/2026-11-06.md",
+      "source": "data/reports/2026/11/2026-11-06.json",
+      "search_status": "partial",
+      "entries": 2
+    },
+    {
+      "date": "2026-11-05",
+      "path": "reports/2026/11/2026-11-05.md",
+      "source": "data/reports/2026/11/2026-11-05.json",
+      "search_status": "partial",
+      "entries": 4
+    },
+    {
+      "date": "2026-11-04",
+      "path": "reports/2026/11/2026-11-04.md",
+      "source": "data/reports/2026/11/2026-11-04.json",
+      "search_status": "partial",
+      "entries": 3
+    },
+    {
+      "date": "2026-11-03",
+      "path": "reports/2026/11/2026-11-03.md",
+      "source": "data/reports/2026/11/2026-11-03.json",
+      "search_status": "partial",
+      "entries": 4
+    },
+    {
+      "date": "2026-11-02",
+      "path": "reports/2026/11/2026-11-02.md",
+      "source": "data/reports/2026/11/2026-11-02.json",
+      "search_status": "partial",
+      "entries": 1
+    },
+    {
+      "date": "2026-11-01",
+      "path": "reports/2026/11/2026-11-01.md",
+      "source": "data/reports/2026/11/2026-11-01.json",
+      "search_status": "partial",
+      "entries": 0
+    },
+    {
       "date": "2026-10-31",
       "path": "reports/2026/10/2026-10-31.md",
       "source": "data/reports/2026/10/2026-10-31.json",
@@ -236,6 +299,730 @@
     }
   ],
   "entries": [
+    {
+      "id": "arxiv:2611.09448",
+      "title": "Not All Entropy Is Equal: Reward-Conditioned Entropy Allocation in Reinforcement Learning with Verifiable Rewards",
+      "category": "1.7",
+      "tags": [
+        "RLVR Diagnostics",
+        "Entropy",
+        "Reasoning Diversity"
+      ],
+      "published_on": "2026-11-06",
+      "first_seen_at": "2026-11-09T11:03:40.431+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.09448",
+      "links": {
+        "paper": "https://arxiv.org/html/2611.09448v1"
+      },
+      "summary": [
+        "Reward-Conditioned Entropy Allocation distinguishes uncertainty in failed trajectories from diversity among valid successful solution strategies.",
+        "The diagnostic framework helps explain why a falling global entropy curve can reflect either useful error removal or loss of reasoning diversity, rather than providing a universal training target."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Complete eight-page source inspected. Six objectives train Qwen2.5-3B/7B with LoRA for one epoch on the same 8,000 prompts and one seed. Failed/successful token-entropy ratios exceed one in all twelve paired endpoint comparisons; bootstrap intervals exclude equality in ten, on only 40–57 eligible questions each. November 9 original-batch membership and the official schedule support an inferred announcement, retaining the November 6 receipt.",
+        "limitations": "This is diagnostic evidence, not a tested causal intervention. Process validity remains model-judged; semantic-mode audits and operational hyperparameters are incompletely specified. Restricted paired prompts and exploratory mode-retention/pass@64 correlations do not establish universal collapse or generalization laws. No author implementation or independent reproduction was verified."
+      },
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-09T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-09",
+      "report_path": "reports/2026/11/2026-11-09.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.09798",
+      "title": "Test-Time Compute Scales Better with Parallel Agent Teams",
+      "category": "2.6",
+      "tags": [
+        "Parallel Teams",
+        "Test-time Compute",
+        "Verifier-guided Search"
+      ],
+      "published_on": "2026-11-06",
+      "first_seen_at": "2026-11-09T11:06:58.830+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.09798",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.09798v1"
+      },
+      "summary": [
+        "Parallel agent teams run several small groups independently, let teammates share findings through a forum, and use a verifier to select the best result across groups.",
+        "The study explains how collaboration can improve each attempt while multiple teams preserve the benefit of sampling, providing a useful starting point for allocating inference compute."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Full v1 methods, results and relevant appendices inspected. For Qwen3.8-27B, ten teams of ten beat 100 solo agents on 10 of 12 verifier-scored tasks; intermediate teams beat one 100-agent team on four tested tasks. Curves estimate expected best scores from finite run pools. Retrospective November 9 catch-up retains the November 6 receipt; first announcement is schedule-inferred.",
+        "limitations": "Team pools are small, large-team cells have one to five runs, and one solo configuration has an 8-hour rather than 12-hour cap. Normal-score theory is explanatory and misses tails/ceilings. Dollar results depend on serving-cost accounting. The author-linked repository returns 404; no code release or independent reproduction was verified."
+      },
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-09T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-09",
+      "report_path": "reports/2026/11/2026-11-09.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.08660",
+      "title": "AutoParallel: Composable, PyTorch-Native Automatic Parallelism for Production Training",
+      "category": "3.1",
+      "published_on": "2026-11-05",
+      "first_seen_at": "2026-11-09T11:06:58.644+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.08660",
+      "links": {
+        "paper": "https://arxiv.org/html/2611.08660v1",
+        "code": "https://github.com/meta-pytorch/autoparallel"
+      },
+      "summary": [
+        "This new evaluation of the existing AutoParallel library jointly searches operator placements across a training graph and emits an ordinary distributed PyTorch module.",
+        "It shows how automatic planning can combine sharding strategies and adapt to changed workloads while leaving dynamic attention or expert-routing regions under explicit user control."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Complete 21-page v1, Sections 1–8 and Appendices A–D inspected. On 8–128 H100 GPUs, BF16 complete-step tests beat the expert TorchTitan baseline in 9 of 14 configurations by up to 18.3%; the other five are within 3.6%. The new selected evidence is the multi-model 14-configuration study and controlled plan-ranking, replanning and 1,000-step numerical tests. The library, a fully inspected 2025 64-GPU poster and an October 2026 talk describing 128-GPU support predate this manuscript. November 9 first original-category announcement is schedule-inferred; November 5 receipt and actual November 9 discovery are retained.",
+        "limitations": "MainTrainer versus GraphTrainer execution changes do not isolate placement search from compilation/overlap; tests exclude one-time tracing/planning/compilation. Approximate seeded search does not guarantee global optimality or search pipeline/dynamic-region internals. Seventeen-model appendix gains are cost-model-only. The earlier talk abstract was checked, but linked slides could not be retrieved, limiting historical comparison. No independent reproduction."
+      },
+      "tags": [
+        "Automatic Parallelism",
+        "DTensor",
+        "Distributed Training"
+      ],
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-09T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-09",
+      "report_path": "reports/2026/11/2026-11-09.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://www.anthropic.com/research/components-of-agent-memory",
+      "title": "The components of agent memory",
+      "category": "2.3",
+      "tags": [
+        "Agent Memory",
+        "Offline Consolidation",
+        "Knowledge Wikis"
+      ],
+      "published_on": "2026-11-06",
+      "first_seen_at": "2026-11-09T11:17:44Z",
+      "canonical_url": "https://www.anthropic.com/research/components-of-agent-memory",
+      "links": {
+        "blog": "https://www.anthropic.com/research/components-of-agent-memory",
+        "code": "https://github.com/anthropics/claude-quickstarts/tree/main/managed-agents/knowledge-wiki"
+      },
+      "summary": [
+        "Anthropic evaluates a layered memory design in which agents keep transcripts and notes, then use offline consolidation to correct errors, build linked knowledge wikis and choose what future sessions receive.",
+        "The engineering report shows where maintained representations can complement search, while emphasizing that stale notes, concurrent writes and consolidation cost require explicit design choices."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "Full November 6 article and linked quickstart inspected. On 25 questions over a private 420M-token corpus, search alone scores 53% of criteria versus 61% with the mature wiki plus search; wiki-only reaches 48%. Building scales from two to 128 sessions. This is a dated experimental report on established dreaming ideas, not a claim that memory consolidation is newly invented. Date-only release is conservatively included in the November 7 catch-up.",
+        "limitations": "Small private evaluations lack reported confidence intervals and repeat counts; Pokémon examples are individual runs. Reported query-token savings exclude offline construction. Some legal tasks show no gain or a wiki larger than its sources. The linked quickstart is an example, not the released private-corpus experiment. No independent reproduction."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-11-07",
+      "report_path": "reports/2026/11/2026-11-07.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science/",
+      "title": "BioBasicsBench: Measuring how AI agents handle everyday wet-lab science",
+      "category": "2.8",
+      "tags": [
+        "Scientific Agents",
+        "Multimodal Evaluation",
+        "Experimental Evidence"
+      ],
+      "published_on": "2026-11-06",
+      "first_seen_at": "2026-11-09T11:05:44.548+00:00",
+      "canonical_url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science/",
+      "links": {
+        "blog": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science/"
+      },
+      "summary": [
+        "BioBasicsBench tests agents on raw everyday laboratory evidence, including whether controls and ambiguous observations justify a conclusion.",
+        "Task-level rubric credit makes weaknesses in experimental reasoning visible beyond benchmarks built from polished scientific figures."
+      ],
+      "evidence": {
+        "type": "technical-report",
+        "access": "full-text",
+        "rationale": "The full November 6 report covers 100 tasks, seven models and 37 model/effort settings, with five attempts per task. At xhigh effort, GPT-6 Astra earns 66.7% mean rubric credit versus 43.8% for GPT-5.6 Sol; 95% intervals resample whole tasks with attempts grouped. Task construction, review stages and concrete failure cases were inspected. This is retrospective discovery, not a November 7 release.",
+        "limitations": "Rubric reward is not the fraction of independently completed experiments or a measure of physical laboratory execution. Model settings use unequal token budgets; selected examples do not estimate failure prevalence. No public benchmark/grader implementation or aggregate human-calibration rate was verified, and results were not independently reproduced."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-11-07",
+      "report_path": "reports/2026/11/2026-11-07.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://vllm.ai/blog/2026-10-14-train-inference-consistency",
+      "title": "Bitwise train–rollout consistency: new DeepSeek-V4.1, Kimi-K3.1 and AMD validations",
+      "category": "3.2",
+      "published_on": "2026-10-14",
+      "first_seen_at": "2026-10-15T15:09:52.031Z",
+      "canonical_url": "https://vllm.ai/blog/2026-10-14-train-inference-consistency",
+      "links": {
+        "blog": "https://vllm.ai/blog/2026-11-06-zero-mismatch-async-rl",
+        "code": "https://github.com/Inferact/zero-mismatch-rl",
+        "project": "https://github.com/verl-project/verl/pull/8574"
+      },
+      "summary": [
+        "The November update extends the previously covered bitwise train–rollout alignment to DeepSeek-V4.1, Kimi-K3.1 and AMD MI355X, including low-precision execution and stateful attention.",
+        "Its measured model and backend transfers show concrete ways to preserve identical same-weight token probabilities as kernels, caching and adapter execution change."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "Complete November 6 blog and linked AMD draft PR descriptions inspected; selection is limited to Sections 5–6 engineering extensions. Kimi-K3.1 LoRA retains bitwise equality for 100 DAPO steps on 4x4 GB300; DeepSeek-V4-Flash does so for 36 GRPO steps on 4x8 MI355X, including a resume. The AMD Kimi draft documents token-by-token checks and a bit-preserving MoE change reducing measured step time from about 2,300 to 1,350 seconds. This is a dated material update to the October 14 work, assigned conservatively to November 7 catch-up; actual new-source retrieval was November 9.",
+        "limitations": "These large-model experiments validate same-weight forward alignment, not long asynchronous learning stability or gradient correctness. The AMD Kimi comparison against the fastest baseline is unfinished; its rebased draft branch/image had not received a GPU run. AMD PRs are draft/open rather than upstream releases. The separate REINFORCE Zero paper was not fully audited, so its long-run and 2.40x asynchronous-throughput claims are not selected. No independent reproduction."
+      },
+      "tags": [
+        "Train-Rollout Consistency",
+        "Low Precision",
+        "AMD",
+        "vLLM"
+      ],
+      "novelty": "material-update",
+      "update_note": "2026-11-06: https://vllm.ai/blog/2026-11-06-zero-mismatch-async-rl adds measured DeepSeek-V4.1 and Kimi-K3.1 transfers plus AMD MI355X kernels/recipes beyond the October 14 DeepSeek-V4-Flash and Nemotron study. Original ID, publication date and earliest discovery are preserved. The blog front matter says November 6 09:00 UTC, while its first observed source commit is November 6 14:59:56 UTC; no exact historical visibility is inferred from the commit clock, and this entry uses conservative November 7 catch-up.",
+      "report_kind": "daily",
+      "report_date": "2026-11-07",
+      "report_path": "reports/2026/11/2026-11-07.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.07959",
+      "title": "CoRD: Coupled Rollouts Fill the Blind Spot of On-Policy Distillation",
+      "category": "1.8",
+      "tags": [
+        "On-Policy Distillation",
+        "Rollout Distribution",
+        "Coupled Sampling"
+      ],
+      "published_on": "2026-11-05",
+      "first_seen_at": "2026-11-09T11:03:40.430+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.07959",
+      "links": {
+        "paper": "https://arxiv.org/html/2611.07959v1"
+      },
+      "summary": [
+        "CoRD keeps the per-state distillation loss and uses exact coupled sampling from a geometric interpolation of student and teacher policies.",
+        "Replacing tokens only where the distributions disagree exposes useful training states the student seldom reaches, improving the tested small models’ mathematical reasoning."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Main methods/results, sampler proof, substitution controls and training appendix inspected. Across six 0.6B–4B Qwen3/Qwen3.5 students trained for 80 steps, five-benchmark mean pass@1 improves by 0.9–2.0 points and pass@8 by 1.2–3.4 over matched OPD. Fixed-state analyses isolate replacement direction. Original November 5 receipt is preserved; November 6 announcement is schedule-inferred and actual discovery occurred November 9.",
+        "limitations": "Teacher logits are required during generation; the baseline also steps its teacher serially, so matched step cost is not parity with optimized batched OPD. Tests use shared tokenizers, short math training and fixed runs without training-seed intervals. Some pass@16 results regress; one training/evaluation duplicate remains. No author implementation or independent reproduction was verified."
+      },
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-06T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-06",
+      "report_path": "reports/2026/11/2026-11-06.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.07166",
+      "title": "Multi-step SWE: Can Coding Agents Keep Building on Their Own Code Over Long Horizons?",
+      "category": "2.8",
+      "tags": [
+        "Long-horizon Coding",
+        "Sequential Evaluation",
+        "Verification"
+      ],
+      "published_on": "2026-11-04",
+      "first_seen_at": "2026-11-09T11:06:58.825+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.07166",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.07166v1",
+        "code": "https://github.com/Klavis-AI/Multi-step-SWE",
+        "project": "https://multistepswe.com/"
+      },
+      "summary": [
+        "Multi-step SWE chains substantial engineering requests on the agent’s own evolving code, grading each milestone against specifications, reference behavior or correctness-gated performance targets.",
+        "It tests whether agents can sustain progress across upgrades and migrations, and shows why passing individual steps can substantially overstate reliable completion of an entire project."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Full v1 methods, results and protocol/failure-analysis appendices inspected. The study contains 69 tasks and 574 steps across nine languages, with four rollouts per model–harness pair. The strongest evaluated configuration passes 56.8% of steps but solves 18.5% of complete rollouts; 38 tasks are unsolved across the evaluated configurations. The November 4 public repository already describes these results, so this November 6 catch-up does not treat Friday’s arXiv announcement as the first release.",
+        "limitations": "No isolated-step control separates accumulated errors from later-step difficulty. Results combine models and harnesses; tasks favor C/C++ and public projects may be memorized. Optimization success requires exceeding a reference speedup, rather than only correctness. The retrieved repository tree is truncated, and no independent execution was performed."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-11-06",
+      "report_path": "reports/2026/11/2026-11-06.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.06206",
+      "title": "Loop Before You Leap: What Recurrent Depth Can and Cannot Buy in Data-Limited Pretraining",
+      "category": "1.2",
+      "tags": [
+        "Recurrent Depth",
+        "Multimodal Pretraining",
+        "Controlled Experiments"
+      ],
+      "published_on": "2026-11-04",
+      "first_seen_at": "2026-11-09T11:03:40.430+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.06206",
+      "links": {
+        "paper": "https://arxiv.org/html/2611.06206v1",
+        "project": "https://huggingface.co/datasets/daichihotta/babyloop-mm-corpus"
+      },
+      "summary": [
+        "A controlled BabyLM study compares repeated shared layers with deeper independent layers and tests whether recurrence mitigates the grammaticality drop associated with multimodal training.",
+        "Its matched controls show why changing text composition and batching must be separated from the contribution of visual input."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Methods, main results, limitations and reproducibility/seed/no-image controls inspected. At 100M unique words and 1B repeated-word exposure, the 97M-parameter text-only looped model exceeds the 48-layer model by 5.36 BLiMP points at matched inference compute, over three seeds. The primary multimodal interaction is −0.01 points, with pooled 95% interval [−1.44, 1.41]. This is a retrospectively reviewed November 5 paper announcement, not a new dataset release.",
+        "limitations": "Recurrence is confounded with text-input injection; inference compute is not total training-cost matching. One frozen image vector and altered language sources limit generalization. Only the looped model has a batch-matched no-image decomposition, and several exploratory comparisons are unadjusted. The linked corpus predates this study; no author training-code release was verified."
+      },
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-05T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-05",
+      "report_path": "reports/2026/11/2026-11-05.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.06500",
+      "title": "Tools Need Not Speak in Text: Latent Context Compression for Agents",
+      "category": "2.3",
+      "tags": [
+        "Latent Compression",
+        "Tool Observations",
+        "White-box Agents"
+      ],
+      "published_on": "2026-11-04",
+      "first_seen_at": "2026-11-09T11:06:58.728+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.06500",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.06500v1",
+        "code": "https://github.com/THU-Agent/Coca-cola"
+      },
+      "summary": [
+        "CocaCola compresses a tool observation into task- and reasoning-conditioned latent vectors, training the compressor to preserve a frozen agent’s next-action behavior rather than reconstruct the original text.",
+        "This can shrink the agent’s context while retaining useful retrieval evidence, provided the deployment supports direct embedding inputs."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "V1 methods, four-dataset evaluation and training appendices inspected. Across two agent–encoder pairs, the authors report 70.01–89.24% fewer agent input/output tokens and 24.45–55.97% lower measured runtime than uncompressed retrieval, with improved exact match on all four QA datasets. Paper receipt and repository release are November 4; this is retrospective catch-up for November 5, without asserting an exact first-public hour.",
+        "limitations": "Compression uses an additional encoder GPU and requires white-box embeddings. Pair-level train/validation splitting need not separate questions. Released compressed and baseline harnesses use different backends and limits, so the code does not verify a matched reproduction of headline latency; checkpoints were not verified. No independent reproduction."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-11-05",
+      "report_path": "reports/2026/11/2026-11-05.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://openai.com/index/a-thousand-fewer-paths-to-root/",
+      "title": "A thousand fewer paths to root",
+      "category": "2.8",
+      "tags": [
+        "Security Agents",
+        "Runtime Validation",
+        "Agent Harnesses"
+      ],
+      "published_on": "2026-11-04",
+      "first_seen_at": "2026-11-09T11:05:44.548+00:00",
+      "canonical_url": "https://openai.com/index/a-thousand-fewer-paths-to-root/",
+      "links": {
+        "blog": "https://openai.com/index/a-thousand-fewer-paths-to-root/"
+      },
+      "summary": [
+        "OpenAI’s agent pipeline turns candidate kernel bugs into evidence-backed reports through separate discovery, reproduction, impact assessment, patching and human review.",
+        "The disclosure shows why agent evaluation must verify both an outcome and the path that produced it, and where automated triage can reduce review bottlenecks."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "The full November 4 disclosure reports 2,308 deduplicated candidates, 1,724 dynamically reproduced vulnerabilities and 948 distinct local-privilege-escalation patch groups from an October campaign costing about $1.21M in API credits. An early 200-success run contained 20 exploits using the wrong vulnerability, motivating an independent assigned-vulnerability check. Retrospective catch-up retains the disclosure date and older experiment timing.",
+        "limitations": "Author-run results with an unreleased cyber model and withheld implementation details. Some findings were already patched or public before campaign review ended. API credits exclude complete operational costs, and hypothetical bounties are not realized returns. The separate kernelCTF experiment dropped an incompatible mitigation; it is not identical to the public program."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-11-05",
+      "report_path": "reports/2026/11/2026-11-05.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.06634",
+      "title": "flash-comm: Self-Synchronizing Collective Communication for LLM Decoding",
+      "category": "3.8",
+      "published_on": "2026-11-04",
+      "first_seen_at": "2026-11-09T11:06:58.206+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.06634",
+      "links": {
+        "paper": "https://arxiv.org/html/2611.06634v1"
+      },
+      "summary": [
+        "flash-comm attaches readiness information to transferred data so decoding collectives can proceed without separate steady-state group barriers.",
+        "Hardware-calibrated protocol selection and consistent reduction ordering lower communication latency while keeping participating GPUs’ results aligned."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Complete 11-page v1, Sections 1–8, Appendix A and all tables inspected. Within one NVLink/NVSwitch domain, hardware/group/message-specific selection switches among sentinel and sequence-packet protocols. Eight-B300 all-reduce tests show a 28.8% median latency reduction versus SGLang custom all-reduce v2; one DeepSeek-V4-Flash-0731 tensor-parallel-8 decode workload reports 1.7–6.8% lower time per output token at concurrency 16–512. Retrospective November 5 catch-up preserves the November 4 receipt and schedule-inferred first announcement.",
+        "limitations": "Evaluation covers 2/4/8-GPU H100, H200 and B300 groups, supported aligned BF16/FP32 layouts and one end-to-end model. Multi-node and all-to-all are future work. Participating ranks must share call order, supported progress assumptions and calibrated protocol tables. Agreement within a collective does not imply numerical identity with every backend. No author implementation or independent reproduction was verified."
+      },
+      "tags": [
+        "Collective Communication",
+        "Decode Latency",
+        "NVLink"
+      ],
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-05T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-05",
+      "report_path": "reports/2026/11/2026-11-05.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.04215",
+      "title": "Tokenizer Myths and Where To Find Them",
+      "category": "1.1",
+      "tags": [
+        "Tokenization",
+        "Evaluation Metrics",
+        "Vocabulary Size"
+      ],
+      "published_on": "2026-11-03",
+      "first_seen_at": "2026-11-09T11:03:40.430+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.04215",
+      "links": {
+        "paper": "https://arxiv.org/html/2611.04215v1"
+      },
+      "summary": [
+        "This study separates text compression from downstream discrimination when comparing language models with different tokenizers.",
+        "Uniform-model controls and released-model reanalysis show why bits per byte can rank tokenizer choices without reliably predicting task performance, helping researchers choose metrics that match their evaluation question."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Main metric derivations, empirical sections and vocabulary-sweep controls inspected. On held-out FineWeb-Edu, uniform BPE models favor roughly 24K vocabulary despite having no learned model weights; the preferred size varies by corpus. Reanalysis of 49 released models separates format and decision terms, while four-task correlations use a different released-model subset. November 4 announcement is inferred from the dated original batch and official schedule; reviewed retrospectively on November 9.",
+        "limitations": "Bits per byte remains a valid compression measure. The trilemma concerns stated reference-neutrality and unrestricted representation assumptions, not every finite model class. Released sweeps also change embedding parameters, tokens, context bytes and compute. No author implementation or independent reproduction was verified."
+      },
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-04T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-04",
+      "report_path": "reports/2026/11/2026-11-04.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://openai.com/index/lifeval/",
+      "title": "LifeVal: Evaluating AI Model Performance on Personalized Agentic Consumer Tasks",
+      "category": "2.8",
+      "tags": [
+        "Personalized Agents",
+        "Agent Evaluation",
+        "Evidence-Based Grading"
+      ],
+      "published_on": "2026-11-02",
+      "first_seen_at": "2026-11-09T11:05:44.549+00:00",
+      "canonical_url": "https://openai.com/index/lifeval/",
+      "links": {
+        "paper": "https://cdn.openai.com/pdf/lifeval.pdf",
+        "blog": "https://openai.com/index/lifeval/"
+      },
+      "summary": [
+        "LifeVal evaluates personalized agents on consumer workflows using task-writer histories, executable environments and rubrics checked against artifacts and backend state.",
+        "Its survey-guided task mix offers a way to assess whether an assistant completes context-specific work rather than merely producing plausible advice."
+      ],
+      "evidence": {
+        "type": "technical-report",
+        "access": "full-text",
+        "rationale": "The complete November 3-dated publisher report describes 169 tasks, five evaluated models, eight-hour rollout limits, primary and hack graders, and a 30-rollout human-grader audit with correlation 0.864. It complements the November 2 announcement. Its text matches the later arXiv version apart from front-page dates, so that later posting is not claimed as new research. This is delayed editorial discovery.",
+        "limitations": "US/English self-reported value estimates use 1,826 retained survey respondents. Private environments, a drifting web cache and a small grader audit limit reproducibility. Successful conversation-related criteria could use duplicated facts or titles; benchmark reward does not prove retrieval from conversation contents. No public evaluation implementation was verified."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-11-04",
+      "report_path": "reports/2026/11/2026-11-04.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.04897",
+      "title": "TapeSAC: Automated, Pareto-Optimal Fine-Grained Memory Management for Large Model Training",
+      "category": "3.4",
+      "published_on": "2026-11-03",
+      "first_seen_at": "2026-11-09T11:06:58.011+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.04897",
+      "links": {
+        "paper": "https://arxiv.org/html/2611.04897v1"
+      },
+      "summary": [
+        "TapeSAC records an eager PyTorch forward pass and replays only the producers of values that backward actually consumes.",
+        "Its measured-cost planner chooses which tensors to retain under a step-memory limit, reducing redundant recomputation and replacing fixed hand-written checkpoint policies."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Complete 14-page v1, Algorithm 1, replay semantics and measured-cost planning/evaluation inspected. For a 35B MoE trained with FSDP2 on 16 GPUs, two counterbalanced 500-step node-pair runs reduce total time from 92.8 to 85.4 minutes and 92.4 to 82.1 minutes, including profiling/planning overhead. A 397B experiment on 64 GPUs improves step time by 2.7% while lowering rank-zero reserved memory by 13.6% versus its specified hand policy. Retrospective November 4 catch-up retains the November 3 receipt and schedule-inferred first announcement.",
+        "limitations": "The candidate frontier uses approximate beam search; the title does not establish global Pareto optimality. Random operations and leaf mutation are rejected, custom opaque kernels require registration, and model adapters are needed. Some speedups spend more memory than full checkpointing. GPU model is not disclosed, memory may differ across ranks, and tests center on Qwen-family models. No author implementation or independent reproduction was verified."
+      },
+      "tags": [
+        "Activation Checkpointing",
+        "PyTorch",
+        "Training Memory"
+      ],
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-04T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-04",
+      "report_path": "reports/2026/11/2026-11-04.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.03633",
+      "title": "Pretraining Data Scale Reverses the Muon–AdamW Fine-Tuning Gap",
+      "category": "1.3",
+      "tags": [
+        "Optimizer Selection",
+        "Fine-tuning",
+        "Forgetting"
+      ],
+      "published_on": "2026-11-02",
+      "first_seen_at": "2026-11-09T11:03:40.431+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.03633",
+      "links": {
+        "paper": "https://arxiv.org/html/2611.03633v1"
+      },
+      "summary": [
+        "Controlled small-model experiments show that Muon’s pretraining-loss advantage can reverse after fine-tuning as the pretraining data budget grows.",
+        "Comparing adaptation and retained pretraining performance together exposes an optimizer trade-off that pretraining loss alone can miss."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "V1 Sections 2–3, 4.3 and protocol/regularization appendices inspected. OLMo-style 30M–600M models use DCLM pretraining and 20M-token adaptation on four datasets. On StackMathQA, the reported crossover falls from 320 to 10 pretraining tokens per parameter between 30M and 600M. This compares held-out cross-entropy frontiers, not task accuracy. Retrospective catch-up for the November 3 report retains the November 2 receipt; first announcement is schedule-inferred.",
+        "limitations": "Finite hyperparameter sweeps and one corpus/model family constrain generalization; seed uncertainty is not reported for the language-model frontiers. The one-step linear-memory theory uses gradient descent rather than AdamW and does not prove frontier-scale behavior. No author implementation or independent reproduction was verified."
+      },
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-03T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-03",
+      "report_path": "reports/2026/11/2026-11-03.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.03094",
+      "title": "A Fine-Grained Hierarchy and Benchmark for State Tracking in Language Models",
+      "category": "1.10",
+      "tags": [
+        "State Tracking",
+        "Controlled Evaluation",
+        "Recurrent Models",
+        "Long Context"
+      ],
+      "published_on": "2026-11-02",
+      "first_seen_at": "2026-11-09T11:05:44.718+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.03094",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.03094v1",
+        "blog": "https://allenai.org/blog/statebench",
+        "code": "https://github.com/allenai/state-bench",
+        "project": "https://huggingface.co/datasets/allenai/state-bench"
+      },
+      "summary": [
+        "StateBench pairs the same finite-variable trace across four types of state updates, separating immutable lookup, last-write retrieval, self-updates and cross-variable dependencies.",
+        "Its theoretical analysis and direct-training versus pretrained-model comparisons help diagnose whether long-context failures come from architecture, training or task format."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "The November 2 manuscript adds formal expressivity results and controlled evaluations to an older generator and dataset. Six 275M architectures train on 8–256 assignments and test up to 64,000; recurrent and hybrid models generalize on the three easier levels, while general finite tracking remains harder. Sections 3–6 and Appendices A–D were inspected. Retrospective catch-up preserves the paper date; July–October artifacts are not a new release.",
+        "limitations": "Fixed entity sets and synthetic traces; precision, rounding and circuit assumptions matter. Pretrained results maximize over six formats, and sample-level Wilson intervals do not measure training-seed variation. Expressivity does not guarantee learning. The linked generator/data do not supply the complete training and evaluation implementation promised by the paper."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-11-03",
+      "report_path": "reports/2026/11/2026-11-03.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.00544",
+      "title": "Skill++: Towards Lifelong Agents via Routing-Aware Skill Refinement",
+      "category": "2.5",
+      "tags": [
+        "Skill Routing",
+        "Continual Learning",
+        "Metadata Refinement"
+      ],
+      "published_on": "2026-10-31",
+      "first_seen_at": "2026-11-09T11:06:58.498+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.00544",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.00544v1"
+      },
+      "summary": [
+        "Skill++ rewrites each incoming skill’s name and description to clarify its supported behavior and boundaries against similar earlier skills, while leaving the router and existing skills unchanged.",
+        "This reduces interference as skill libraries grow, offering a practical way to preserve access to old skills without repeatedly training the router."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "V1 methods, results and Appendices A–C inspected. In the constructed high-interference SRA stream, complete top-five coverage of required skills reaches 76.3% versus 36.4% for original metadata at 731 skills; the strongest baseline reaches 67.8%. This is routing coverage, not execution success. A separate 87-skill execution test reports gains of 4.0 and 0.7 percentage points. Retrospective catch-up for November 3 retains the October 31 receipt; first announcement is schedule-inferred.",
+        "limitations": "Synthetic skill additions and query construction emphasize confusability; random-stream gains are smaller. Bootstrap intervals resample queries rather than independent library generations. Text-only evaluations and model-specific rewriting limit transfer. No author implementation or independent reproduction was verified."
+      },
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-03T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-03",
+      "report_path": "reports/2026/11/2026-11-03.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.01735",
+      "title": "CacheWeave: Learning to Recompute for Efficient Position-Independent KV Caching",
+      "category": "3.4",
+      "published_on": "2026-11-01",
+      "first_seen_at": "2026-11-09T11:06:57.770+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.01735",
+      "links": {
+        "paper": "https://arxiv.org/html/2611.01735v1"
+      },
+      "summary": [
+        "CacheWeave adapts a model to independently cached context chunks, then learns which small, contiguous blocks to recompute for each question.",
+        "Coordinating that selector with cache layout recovers much of the tested cross-chunk reasoning quality while avoiding most full-prefill work."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Complete 14-page v1, Algorithm 1 and all evaluation sections inspected. Across 12 model-task pairs at a 5% token budget, the fine-grained selector gains a mean 7.2 percentage points over CacheBlend on the same adapted models; mean relative quality loss versus full prefill is 1.6%, with an 8.3% worst case. Single-request tests on one H200 with prepared warm caches report up to 16.1x lower time to first token at 24K context. Retrospective November 3 catch-up retains the November 1 receipt; first original-category announcement is schedule-inferred.",
+        "limitations": "Full-backbone adaptation and model/block-size-specific selector training are required; offline preparation cost is not amortized in serving gains. Quality tests cover three backbones and four retrieval/reasoning tasks, partly using an LLM judge. Warm-cache results do not establish cold-cache or arbitrary-agent performance. No author implementation or independent reproduction was verified."
+      },
+      "tags": [
+        "KV Reuse",
+        "Selective Recomputation",
+        "RAG Serving"
+      ],
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-03T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-03",
+      "report_path": "reports/2026/11/2026-11-03.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.02017",
+      "title": "Switch-SWE: Do Coding Agents Hold Focus When Switching Between Unfinished Tasks?",
+      "category": "2.8",
+      "tags": [
+        "Task Switching",
+        "Coding Agents",
+        "Context Management"
+      ],
+      "published_on": "2026-11-01",
+      "first_seen_at": "2026-11-09T11:06:58.499+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.02017",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.02017v1",
+        "code": "https://github.com/Miraclecsc/Switch-SWE"
+      },
+      "summary": [
+        "Switch-SWE pairs uninterrupted coding with sessions that repeatedly interleave five unfinished tasks in separate persistent workspaces, exposing failures when agents resume earlier work.",
+        "Its context manager restores task-relevant history and compact state, suggesting a concrete way to reduce resumption failures without changing the coding model."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "V1 study, resource accounting and RCM appendices inspected. On 200 paired focus tasks, seven model–harness configurations lose 6–15 percentage points under switching; OpenCode RCM raises switched resolution from 31.5% to 47.0% and from 43.0% to 48.5% for two models. The November 1 replacement adds the frozen same-repository 200-pair study and RCM to a May cross-repository draft. Retrospective November 2 catch-up retains that release date.",
+        "limitations": "One paired run per configuration and diagnostically selected tasks constrain inference. Focus budgets match, but switched sessions contain additional work; token multipliers are not pure switching overhead. Public code exposes 200 switched tasks and the plugin, rather than verified complete paired-control artifacts. No independent reproduction."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-11-02",
+      "report_path": "reports/2026/11/2026-11-02.md",
+      "search_status": "partial"
+    },
     {
       "id": "arxiv:2610.40577",
       "title": "Multi-View MoE: Letting Every Router Shape Expert Computation",
@@ -10539,21 +11326,21 @@
       "group": "llm-recipe",
       "title": "Data Curation & Tokenization",
       "path": "topics/llm-recipe/data-curation-tokenization/README.md",
-      "count": 9
+      "count": 10
     },
     {
       "id": "1.2",
       "group": "llm-recipe",
       "title": "Model Architecture & Scaling Laws",
       "path": "topics/llm-recipe/model-architecture-scaling-laws/README.md",
-      "count": 16
+      "count": 17
     },
     {
       "id": "1.3",
       "group": "llm-recipe",
       "title": "Pretraining & Optimization",
       "path": "topics/llm-recipe/pretraining-optimization/README.md",
-      "count": 11
+      "count": 12
     },
     {
       "id": "1.4",
@@ -10581,14 +11368,14 @@
       "group": "llm-recipe",
       "title": "Reinforcement Learning & Reasoning",
       "path": "topics/llm-recipe/reinforcement-learning-reasoning/README.md",
-      "count": 13
+      "count": 14
     },
     {
       "id": "1.8",
       "group": "llm-recipe",
       "title": "Distillation & Model Compression",
       "path": "topics/llm-recipe/distillation-model-compression/README.md",
-      "count": 18
+      "count": 19
     },
     {
       "id": "1.9",
@@ -10602,7 +11389,7 @@
       "group": "llm-recipe",
       "title": "Model Evaluation, Safety & Interpretability",
       "path": "topics/llm-recipe/model-evaluation-safety-interpretability/README.md",
-      "count": 11
+      "count": 12
     },
     {
       "id": "2.1",
@@ -10623,7 +11410,7 @@
       "group": "ai-agent-dev",
       "title": "Context Engineering & Memory",
       "path": "topics/ai-agent-dev/context-engineering-memory/README.md",
-      "count": 14
+      "count": 16
     },
     {
       "id": "2.4",
@@ -10637,14 +11424,14 @@
       "group": "ai-agent-dev",
       "title": "Agent Learning & Skill Acquisition",
       "path": "topics/ai-agent-dev/agent-learning-skill-acquisition/README.md",
-      "count": 16
+      "count": 17
     },
     {
       "id": "2.6",
       "group": "ai-agent-dev",
       "title": "Multi-Agent Collaboration",
       "path": "topics/ai-agent-dev/multi-agent-collaboration/README.md",
-      "count": 6
+      "count": 7
     },
     {
       "id": "2.7",
@@ -10658,21 +11445,21 @@
       "group": "ai-agent-dev",
       "title": "Agent Evaluation & Security",
       "path": "topics/ai-agent-dev/agent-evaluation-security/README.md",
-      "count": 30
+      "count": 35
     },
     {
       "id": "3.1",
       "group": "ai-training-inference-infra",
       "title": "Distributed Training Systems",
       "path": "topics/ai-training-inference-infra/distributed-training-systems/README.md",
-      "count": 10
+      "count": 11
     },
     {
       "id": "3.2",
       "group": "ai-training-inference-infra",
       "title": "RL & Rollout Infrastructure",
       "path": "topics/ai-training-inference-infra/rl-rollout-infrastructure/README.md",
-      "count": 8
+      "count": 9
     },
     {
       "id": "3.3",
@@ -10686,7 +11473,7 @@
       "group": "ai-training-inference-infra",
       "title": "Attention, KV Cache & Memory Systems",
       "path": "topics/ai-training-inference-infra/attention-kv-cache-memory-systems/README.md",
-      "count": 16
+      "count": 18
     },
     {
       "id": "3.5",
@@ -10714,7 +11501,7 @@
       "group": "ai-training-inference-infra",
       "title": "Hardware, Networking & Cluster Efficiency",
       "path": "topics/ai-training-inference-infra/hardware-networking-cluster-efficiency/README.md",
-      "count": 11
+      "count": 12
     }
   ]
 }

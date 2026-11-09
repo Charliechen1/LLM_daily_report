@@ -5,6 +5,38 @@ Attention execution, KV management/reuse, offloading and long-context memory eff
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-04](../../../reports/2026/11/2026-11-04.md) — PARTIAL SEARCH
+
+### [TapeSAC: Automated, Pareto-Optimal Fine-Grained Memory Management for Large Model Training](<https://arxiv.org/abs/2611.04897>)
+
+TapeSAC records an eager PyTorch forward pass and replays only the producers of values that backward actually consumes. Its measured-cost planner chooses which tensors to retain under a step-memory limit, reducing redundant recomputation and replacing fixed hand-written checkpoint policies.
+
+**Published:** 2026-11-03 · **First seen:** 2026-11-09T11:06:58.011+00:00 · **Novelty:** newly-discovered · **Tags:** Activation Checkpointing, PyTorch, Training Memory
+
+**Public availability:** 2026-11-04T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2611.04897v1>)
+
+**Evidence:** research-paper; full-text. Complete 14-page v1, Algorithm 1, replay semantics and measured-cost planning/evaluation inspected. For a 35B MoE trained with FSDP2 on 16 GPUs, two counterbalanced 500-step node-pair runs reduce total time from 92.8 to 85.4 minutes and 92.4 to 82.1 minutes, including profiling/planning overhead. A 397B experiment on 64 GPUs improves step time by 2.7% while lowering rank-zero reserved memory by 13.6% versus its specified hand policy. Retrospective November 4 catch-up retains the November 3 receipt and schedule-inferred first announcement.
+
+**Limitations:** The candidate frontier uses approximate beam search; the title does not establish global Pareto optimality. Random operations and leaf mutation are rejected, custom opaque kernels require registration, and model adapters are needed. Some speedups spend more memory than full checkpointing. GPU model is not disclosed, memory may differ across ranks, and tests center on Qwen-family models. No author implementation or independent reproduction was verified.
+
+## [2026-11-03](../../../reports/2026/11/2026-11-03.md) — PARTIAL SEARCH
+
+### [CacheWeave: Learning to Recompute for Efficient Position-Independent KV Caching](<https://arxiv.org/abs/2611.01735>)
+
+CacheWeave adapts a model to independently cached context chunks, then learns which small, contiguous blocks to recompute for each question. Coordinating that selector with cache layout recovers much of the tested cross-chunk reasoning quality while avoiding most full-prefill work.
+
+**Published:** 2026-11-01 · **First seen:** 2026-11-09T11:06:57.770+00:00 · **Novelty:** newly-discovered · **Tags:** KV Reuse, Selective Recomputation, RAG Serving
+
+**Public availability:** 2026-11-03T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2611.01735v1>)
+
+**Evidence:** research-paper; full-text. Complete 14-page v1, Algorithm 1 and all evaluation sections inspected. Across 12 model-task pairs at a 5% token budget, the fine-grained selector gains a mean 7.2 percentage points over CacheBlend on the same adapted models; mean relative quality loss versus full prefill is 1.6%, with an 8.3% worst case. Single-request tests on one H200 with prepared warm caches report up to 16.1x lower time to first token at 24K context. Retrospective November 3 catch-up retains the November 1 receipt; first original-category announcement is schedule-inferred.
+
+**Limitations:** Full-backbone adaptation and model/block-size-specific selector training are required; offline preparation cost is not amortized in serving gains. Quality tests cover three backbones and four retrieval/reasoning tasks, partly using an LLM judge. Warm-cache results do not establish cold-cache or arbitrary-agent performance. No author implementation or independent reproduction was verified.
+
 ## [2026-10-28](../../../reports/2026/10/2026-10-28.md) — PARTIAL SEARCH
 
 ### [Folding Attention Biases into Keys Makes Compacted KV Caches Run on Standard Kernels](<https://arxiv.org/abs/2610.36520>)

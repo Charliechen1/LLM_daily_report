@@ -5,6 +5,20 @@ Capability evaluation, contamination, generalization, robustness, safety and mec
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-03](../../../reports/2026/11/2026-11-03.md) — PARTIAL SEARCH
+
+### [A Fine-Grained Hierarchy and Benchmark for State Tracking in Language Models](<https://arxiv.org/abs/2611.03094>)
+
+StateBench pairs the same finite-variable trace across four types of state updates, separating immutable lookup, last-write retrieval, self-updates and cross-variable dependencies. Its theoretical analysis and direct-training versus pretrained-model comparisons help diagnose whether long-context failures come from architecture, training or task format.
+
+**Published:** 2026-11-02 · **First seen:** 2026-11-09T11:05:44.718+00:00 · **Novelty:** newly-discovered · **Tags:** State Tracking, Controlled Evaluation, Recurrent Models, Long Context
+
+[Paper](<https://arxiv.org/pdf/2611.03094v1>) · [Blog](<https://allenai.org/blog/statebench>) · [Code](<https://github.com/allenai/state-bench>) · [Project](<https://huggingface.co/datasets/allenai/state-bench>)
+
+**Evidence:** research-paper; full-text. The November 2 manuscript adds formal expressivity results and controlled evaluations to an older generator and dataset. Six 275M architectures train on 8–256 assignments and test up to 64,000; recurrent and hybrid models generalize on the three easier levels, while general finite tracking remains harder. Sections 3–6 and Appendices A–D were inspected. Retrospective catch-up preserves the paper date; July–October artifacts are not a new release.
+
+**Limitations:** Fixed entity sets and synthetic traces; precision, rounding and circuit assumptions matter. Pretrained results maximize over six formats, and sample-level Wilson intervals do not measure training-seed variation. Expressivity does not guarantee learning. The linked generator/data do not supply the complete training and evaluation implementation promised by the paper.
+
 ## [2026-10-25](../../../reports/2026/10/2026-10-25.md) — PARTIAL SEARCH
 
 ### [Kimi K3.1 Pro Tech Blog: Advancing Open Intelligence](<https://www.kimi.com/en/blog/kimi-k3-1-pro>)

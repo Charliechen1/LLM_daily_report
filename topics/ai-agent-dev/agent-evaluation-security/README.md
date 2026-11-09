@@ -5,6 +5,76 @@ Task success, trajectory evaluation, cost/reliability, prompt injection and perm
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-07](../../../reports/2026/11/2026-11-07.md) — PARTIAL SEARCH
+
+### [BioBasicsBench: Measuring how AI agents handle everyday wet-lab science](<https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science/>)
+
+BioBasicsBench tests agents on raw everyday laboratory evidence, including whether controls and ambiguous observations justify a conclusion. Task-level rubric credit makes weaknesses in experimental reasoning visible beyond benchmarks built from polished scientific figures.
+
+**Published:** 2026-11-06 · **First seen:** 2026-11-09T11:05:44.548+00:00 · **Novelty:** newly-discovered · **Tags:** Scientific Agents, Multimodal Evaluation, Experimental Evidence
+
+[Blog](<https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science/>)
+
+**Evidence:** technical-report; full-text. The full November 6 report covers 100 tasks, seven models and 37 model/effort settings, with five attempts per task. At xhigh effort, GPT-6 Astra earns 66.7% mean rubric credit versus 43.8% for GPT-5.6 Sol; 95% intervals resample whole tasks with attempts grouped. Task construction, review stages and concrete failure cases were inspected. This is retrospective discovery, not a November 7 release.
+
+**Limitations:** Rubric reward is not the fraction of independently completed experiments or a measure of physical laboratory execution. Model settings use unequal token budgets; selected examples do not estimate failure prevalence. No public benchmark/grader implementation or aggregate human-calibration rate was verified, and results were not independently reproduced.
+
+## [2026-11-06](../../../reports/2026/11/2026-11-06.md) — PARTIAL SEARCH
+
+### [Multi-step SWE: Can Coding Agents Keep Building on Their Own Code Over Long Horizons?](<https://arxiv.org/abs/2611.07166>)
+
+Multi-step SWE chains substantial engineering requests on the agent’s own evolving code, grading each milestone against specifications, reference behavior or correctness-gated performance targets. It tests whether agents can sustain progress across upgrades and migrations, and shows why passing individual steps can substantially overstate reliable completion of an entire project.
+
+**Published:** 2026-11-04 · **First seen:** 2026-11-09T11:06:58.825+00:00 · **Novelty:** newly-discovered · **Tags:** Long-horizon Coding, Sequential Evaluation, Verification
+
+[Paper](<https://arxiv.org/pdf/2611.07166v1>) · [Code](<https://github.com/Klavis-AI/Multi-step-SWE>) · [Project](<https://multistepswe.com/>)
+
+**Evidence:** research-paper; full-text. Full v1 methods, results and protocol/failure-analysis appendices inspected. The study contains 69 tasks and 574 steps across nine languages, with four rollouts per model–harness pair. The strongest evaluated configuration passes 56.8% of steps but solves 18.5% of complete rollouts; 38 tasks are unsolved across the evaluated configurations. The November 4 public repository already describes these results, so this November 6 catch-up does not treat Friday’s arXiv announcement as the first release.
+
+**Limitations:** No isolated-step control separates accumulated errors from later-step difficulty. Results combine models and harnesses; tasks favor C/C++ and public projects may be memorized. Optimization success requires exceeding a reference speedup, rather than only correctness. The retrieved repository tree is truncated, and no independent execution was performed.
+
+## [2026-11-05](../../../reports/2026/11/2026-11-05.md) — PARTIAL SEARCH
+
+### [A thousand fewer paths to root](<https://openai.com/index/a-thousand-fewer-paths-to-root/>)
+
+OpenAI’s agent pipeline turns candidate kernel bugs into evidence-backed reports through separate discovery, reproduction, impact assessment, patching and human review. The disclosure shows why agent evaluation must verify both an outcome and the path that produced it, and where automated triage can reduce review bottlenecks.
+
+**Published:** 2026-11-04 · **First seen:** 2026-11-09T11:05:44.548+00:00 · **Novelty:** newly-discovered · **Tags:** Security Agents, Runtime Validation, Agent Harnesses
+
+[Blog](<https://openai.com/index/a-thousand-fewer-paths-to-root/>)
+
+**Evidence:** engineering-report; full-text. The full November 4 disclosure reports 2,308 deduplicated candidates, 1,724 dynamically reproduced vulnerabilities and 948 distinct local-privilege-escalation patch groups from an October campaign costing about $1.21M in API credits. An early 200-success run contained 20 exploits using the wrong vulnerability, motivating an independent assigned-vulnerability check. Retrospective catch-up retains the disclosure date and older experiment timing.
+
+**Limitations:** Author-run results with an unreleased cyber model and withheld implementation details. Some findings were already patched or public before campaign review ended. API credits exclude complete operational costs, and hypothetical bounties are not realized returns. The separate kernelCTF experiment dropped an incompatible mitigation; it is not identical to the public program.
+
+## [2026-11-04](../../../reports/2026/11/2026-11-04.md) — PARTIAL SEARCH
+
+### [LifeVal: Evaluating AI Model Performance on Personalized Agentic Consumer Tasks](<https://openai.com/index/lifeval/>)
+
+LifeVal evaluates personalized agents on consumer workflows using task-writer histories, executable environments and rubrics checked against artifacts and backend state. Its survey-guided task mix offers a way to assess whether an assistant completes context-specific work rather than merely producing plausible advice.
+
+**Published:** 2026-11-02 · **First seen:** 2026-11-09T11:05:44.549+00:00 · **Novelty:** newly-discovered · **Tags:** Personalized Agents, Agent Evaluation, Evidence-Based Grading
+
+[Paper](<https://cdn.openai.com/pdf/lifeval.pdf>) · [Blog](<https://openai.com/index/lifeval/>)
+
+**Evidence:** technical-report; full-text. The complete November 3-dated publisher report describes 169 tasks, five evaluated models, eight-hour rollout limits, primary and hack graders, and a 30-rollout human-grader audit with correlation 0.864. It complements the November 2 announcement. Its text matches the later arXiv version apart from front-page dates, so that later posting is not claimed as new research. This is delayed editorial discovery.
+
+**Limitations:** US/English self-reported value estimates use 1,826 retained survey respondents. Private environments, a drifting web cache and a small grader audit limit reproducibility. Successful conversation-related criteria could use duplicated facts or titles; benchmark reward does not prove retrieval from conversation contents. No public evaluation implementation was verified.
+
+## [2026-11-02](../../../reports/2026/11/2026-11-02.md) — PARTIAL SEARCH
+
+### [Switch-SWE: Do Coding Agents Hold Focus When Switching Between Unfinished Tasks?](<https://arxiv.org/abs/2611.02017>)
+
+Switch-SWE pairs uninterrupted coding with sessions that repeatedly interleave five unfinished tasks in separate persistent workspaces, exposing failures when agents resume earlier work. Its context manager restores task-relevant history and compact state, suggesting a concrete way to reduce resumption failures without changing the coding model.
+
+**Published:** 2026-11-01 · **First seen:** 2026-11-09T11:06:58.499+00:00 · **Novelty:** newly-discovered · **Tags:** Task Switching, Coding Agents, Context Management
+
+[Paper](<https://arxiv.org/pdf/2611.02017v1>) · [Code](<https://github.com/Miraclecsc/Switch-SWE>)
+
+**Evidence:** research-paper; full-text. V1 study, resource accounting and RCM appendices inspected. On 200 paired focus tasks, seven model–harness configurations lose 6–15 percentage points under switching; OpenCode RCM raises switched resolution from 31.5% to 47.0% and from 43.0% to 48.5% for two models. The November 1 replacement adds the frozen same-repository 200-pair study and RCM to a May cross-repository draft. Retrospective November 2 catch-up retains that release date.
+
+**Limitations:** One paired run per configuration and diagnostically selected tasks constrain inference. Focus budgets match, but switched sessions contain additional work; token multipliers are not pure switching overhead. Public code exposes 200 switched tasks and the plugin, rather than verified complete paired-control artifacts. No independent reproduction.
+
 ## [2026-10-30](../../../reports/2026/10/2026-10-30.md) — PARTIAL SEARCH
 
 ### [VeriCUA: Verification as Agentic Exploration for Computer-Using Agents](<https://arxiv.org/abs/2610.40578>)

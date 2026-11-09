@@ -5,6 +5,22 @@ Data/tensor/pipeline/expert/context parallelism, sharding and communication over
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-09](../../../reports/2026/11/2026-11-09.md) — PARTIAL SEARCH
+
+### [AutoParallel: Composable, PyTorch-Native Automatic Parallelism for Production Training](<https://arxiv.org/abs/2611.08660>)
+
+This new evaluation of the existing AutoParallel library jointly searches operator placements across a training graph and emits an ordinary distributed PyTorch module. It shows how automatic planning can combine sharding strategies and adapt to changed workloads while leaving dynamic attention or expert-routing regions under explicit user control.
+
+**Published:** 2026-11-05 · **First seen:** 2026-11-09T11:06:58.644+00:00 · **Novelty:** newly-discovered · **Tags:** Automatic Parallelism, DTensor, Distributed Training
+
+**Public availability:** 2026-11-09T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2611.08660v1>) · [Code](<https://github.com/meta-pytorch/autoparallel>)
+
+**Evidence:** research-paper; full-text. Complete 21-page v1, Sections 1–8 and Appendices A–D inspected. On 8–128 H100 GPUs, BF16 complete-step tests beat the expert TorchTitan baseline in 9 of 14 configurations by up to 18.3%; the other five are within 3.6%. The new selected evidence is the multi-model 14-configuration study and controlled plan-ranking, replanning and 1,000-step numerical tests. The library, a fully inspected 2025 64-GPU poster and an October 2026 talk describing 128-GPU support predate this manuscript. November 9 first original-category announcement is schedule-inferred; November 5 receipt and actual November 9 discovery are retained.
+
+**Limitations:** MainTrainer versus GraphTrainer execution changes do not isolate placement search from compilation/overlap; tests exclude one-time tracing/planning/compilation. Approximate seeded search does not guarantee global optimality or search pipeline/dynamic-region internals. Seventeen-model appendix gains are cost-model-only. The earlier talk abstract was checked, but linked slides could not be retrieved, limiting historical comparison. No independent reproduction.
+
 ## [2026-10-30](../../../reports/2026/10/2026-10-30.md) — PARTIAL SEARCH
 
 ### [The Endgame of FSDP Communication: Layout-Aware Collectives on Copy Engines, RDMA, and NVSwitch](<https://arxiv.org/abs/2610.38228>)

@@ -5,6 +5,22 @@ Division of work, communication, delegation, collaboration topology and shared m
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-09](../../../reports/2026/11/2026-11-09.md) — PARTIAL SEARCH
+
+### [Test-Time Compute Scales Better with Parallel Agent Teams](<https://arxiv.org/abs/2611.09798>)
+
+Parallel agent teams run several small groups independently, let teammates share findings through a forum, and use a verifier to select the best result across groups. The study explains how collaboration can improve each attempt while multiple teams preserve the benefit of sampling, providing a useful starting point for allocating inference compute.
+
+**Published:** 2026-11-06 · **First seen:** 2026-11-09T11:06:58.830+00:00 · **Novelty:** newly-discovered · **Tags:** Parallel Teams, Test-time Compute, Verifier-guided Search
+
+**Public availability:** 2026-11-09T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.09798v1>)
+
+**Evidence:** research-paper; full-text. Full v1 methods, results and relevant appendices inspected. For Qwen3.8-27B, ten teams of ten beat 100 solo agents on 10 of 12 verifier-scored tasks; intermediate teams beat one 100-agent team on four tested tasks. Curves estimate expected best scores from finite run pools. Retrospective November 9 catch-up retains the November 6 receipt; first announcement is schedule-inferred.
+
+**Limitations:** Team pools are small, large-team cells have one to five runs, and one solo configuration has an 8-hour rather than 12-hour cap. Normal-score theory is explanatory and misses tails/ceilings. Dollar results depend on serving-cost accounting. The author-linked repository returns 404; no code release or independent reproduction was verified.
+
 ## [2026-10-23](../../../reports/2026/10/2026-10-23.md) — PARTIAL SEARCH
 
 ### [RoleFlow: Self-Evolving Multi-Role Agentic Collaboration via Structural Adaptation](<https://arxiv.org/abs/2610.30429>)

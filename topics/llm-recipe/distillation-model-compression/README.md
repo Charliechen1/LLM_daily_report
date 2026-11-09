@@ -5,6 +5,22 @@ Knowledge/reasoning distillation, pruning, quantization algorithms and model mer
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-06](../../../reports/2026/11/2026-11-06.md) — PARTIAL SEARCH
+
+### [CoRD: Coupled Rollouts Fill the Blind Spot of On-Policy Distillation](<https://arxiv.org/abs/2611.07959>)
+
+CoRD keeps the per-state distillation loss and uses exact coupled sampling from a geometric interpolation of student and teacher policies. Replacing tokens only where the distributions disagree exposes useful training states the student seldom reaches, improving the tested small models’ mathematical reasoning.
+
+**Published:** 2026-11-05 · **First seen:** 2026-11-09T11:03:40.430+00:00 · **Novelty:** newly-discovered · **Tags:** On-Policy Distillation, Rollout Distribution, Coupled Sampling
+
+**Public availability:** 2026-11-06T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2611.07959v1>)
+
+**Evidence:** research-paper; full-text. Main methods/results, sampler proof, substitution controls and training appendix inspected. Across six 0.6B–4B Qwen3/Qwen3.5 students trained for 80 steps, five-benchmark mean pass@1 improves by 0.9–2.0 points and pass@8 by 1.2–3.4 over matched OPD. Fixed-state analyses isolate replacement direction. Original November 5 receipt is preserved; November 6 announcement is schedule-inferred and actual discovery occurred November 9.
+
+**Limitations:** Teacher logits are required during generation; the baseline also steps its teacher serially, so matched step cost is not parity with optimized batched OPD. Tests use shared tokenizers, short math training and fixed runs without training-seed intervals. Some pass@16 results regress; one training/evaluation duplicate remains. No author implementation or independent reproduction was verified.
+
 ## [2026-10-27](../../../reports/2026/10/2026-10-27.md) — PARTIAL SEARCH
 
 ### [Learning When to Commit: Schedule Distillation for Fast Diffusion Language Models](<https://arxiv.org/abs/2610.35804>)

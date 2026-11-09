@@ -5,6 +5,22 @@ Distributed rollouts, asynchronous RL, generation/training coordination and weig
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-07](../../../reports/2026/11/2026-11-07.md) — PARTIAL SEARCH
+
+### [Bitwise train–rollout consistency: new DeepSeek-V4.1, Kimi-K3.1 and AMD validations](<https://vllm.ai/blog/2026-10-14-train-inference-consistency>)
+
+The November update extends the previously covered bitwise train–rollout alignment to DeepSeek-V4.1, Kimi-K3.1 and AMD MI355X, including low-precision execution and stateful attention. Its measured model and backend transfers show concrete ways to preserve identical same-weight token probabilities as kernels, caching and adapter execution change.
+
+**Published:** 2026-10-14 · **First seen:** 2026-10-15T15:09:52.031Z · **Novelty:** material-update · **Tags:** Train-Rollout Consistency, Low Precision, AMD, vLLM
+
+[Blog](<https://vllm.ai/blog/2026-11-06-zero-mismatch-async-rl>) · [Code](<https://github.com/Inferact/zero-mismatch-rl>) · [Project](<https://github.com/verl-project/verl/pull/8574>)
+
+**Evidence:** engineering-report; full-text. Complete November 6 blog and linked AMD draft PR descriptions inspected; selection is limited to Sections 5–6 engineering extensions. Kimi-K3.1 LoRA retains bitwise equality for 100 DAPO steps on 4x4 GB300; DeepSeek-V4-Flash does so for 36 GRPO steps on 4x8 MI355X, including a resume. The AMD Kimi draft documents token-by-token checks and a bit-preserving MoE change reducing measured step time from about 2,300 to 1,350 seconds. This is a dated material update to the October 14 work, assigned conservatively to November 7 catch-up; actual new-source retrieval was November 9.
+
+**Limitations:** These large-model experiments validate same-weight forward alignment, not long asynchronous learning stability or gradient correctness. The AMD Kimi comparison against the fastest baseline is unfinished; its rebased draft branch/image had not received a GPU run. AMD PRs are draft/open rather than upstream releases. The separate REINFORCE Zero paper was not fully audited, so its long-run and 2.40x asynchronous-throughput claims are not selected. No independent reproduction.
+
+**Update:** 2026-11-06: https://vllm.ai/blog/2026-11-06-zero-mismatch-async-rl adds measured DeepSeek-V4.1 and Kimi-K3.1 transfers plus AMD MI355X kernels/recipes beyond the October 14 DeepSeek-V4-Flash and Nemotron study. Original ID, publication date and earliest discovery are preserved. The blog front matter says November 6 09:00 UTC, while its first observed source commit is November 6 14:59:56 UTC; no exact historical visibility is inferred from the commit clock, and this entry uses conservative November 7 catch-up.
+
 ## [2026-10-30](../../../reports/2026/10/2026-10-30.md) — PARTIAL SEARCH
 
 ### [Sandman: Building and Operating Sandboxes for Agentic Reinforcement Learning on Shared Kubernetes](<https://arxiv.org/abs/2610.39711>)

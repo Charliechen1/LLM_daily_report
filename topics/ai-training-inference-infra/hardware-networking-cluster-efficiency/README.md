@@ -5,6 +5,22 @@ Accelerators, interconnects, cluster scheduling, profiling, utilization, cost an
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-05](../../../reports/2026/11/2026-11-05.md) — PARTIAL SEARCH
+
+### [flash-comm: Self-Synchronizing Collective Communication for LLM Decoding](<https://arxiv.org/abs/2611.06634>)
+
+flash-comm attaches readiness information to transferred data so decoding collectives can proceed without separate steady-state group barriers. Hardware-calibrated protocol selection and consistent reduction ordering lower communication latency while keeping participating GPUs’ results aligned.
+
+**Published:** 2026-11-04 · **First seen:** 2026-11-09T11:06:58.206+00:00 · **Novelty:** newly-discovered · **Tags:** Collective Communication, Decode Latency, NVLink
+
+**Public availability:** 2026-11-05T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2611.06634v1>)
+
+**Evidence:** research-paper; full-text. Complete 11-page v1, Sections 1–8, Appendix A and all tables inspected. Within one NVLink/NVSwitch domain, hardware/group/message-specific selection switches among sentinel and sequence-packet protocols. Eight-B300 all-reduce tests show a 28.8% median latency reduction versus SGLang custom all-reduce v2; one DeepSeek-V4-Flash-0731 tensor-parallel-8 decode workload reports 1.7–6.8% lower time per output token at concurrency 16–512. Retrospective November 5 catch-up preserves the November 4 receipt and schedule-inferred first announcement.
+
+**Limitations:** Evaluation covers 2/4/8-GPU H100, H200 and B300 groups, supported aligned BF16/FP32 layouts and one end-to-end model. Multi-node and all-to-all are future work. Participating ranks must share call order, supported progress assumptions and calibrated protocol tables. Agreement within a collective does not imply numerical identity with every backend. No author implementation or independent reproduction was verified.
+
 ## [2026-10-21](../../../reports/2026/10/2026-10-21.md) — PARTIAL SEARCH
 
 ### [The Token-Energy Law of LLM Decode: Active Bytes and Realized Time Account for Joules per Token](<https://arxiv.org/abs/2610.28576>)
