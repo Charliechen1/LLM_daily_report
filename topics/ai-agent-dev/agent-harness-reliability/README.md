@@ -5,6 +5,22 @@ Long-running execution, failure recovery, retries, persistence and human collabo
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-10](../../../reports/2026/11/2026-11-10.md) — PARTIAL SEARCH
+
+### [Keeping LLM Agents on Procedure: Executable Finite-State Control for Long-Horizon Instruction Fidelity](<https://arxiv.org/abs/2611.10884>)
+
+This study tests an executable finite-state controller that preserves workflow state outside the model context and gates tool calls, transitions, and stopping to reduce procedural drift. On one long account-review task, it substantially increases decisions that both follow the procedure and reach the correct outcome, illustrating how runtime controls can improve unattended automation while leaving specification and decision errors to address.
+
+**Published:** 2026-11-07 · **First seen:** 2026-11-10T11:07:09.687+00:00 · **Novelty:** new · **Tags:** Runtime Enforcement, Procedural Fidelity, Long-Horizon Agents
+
+**Public availability:** 2026-11-10T01:00:00+00:00 (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.10884v1>)
+
+**Evidence:** research-paper; full-text. All 19 pages, methods, failed predictions, ablations and appendices inspected. On 200-account SOP-Bench batches over eight Haiku 4.5 seeds, faithful-and-correct decisions average 139.2 versus 48.4 with reminders plus resumption; the paired difference is 90.9, with bootstrap 95% interval \[46.2, 130.2\]. First public announcement is inferred from the original November 10 cs.AI batch and official Eastern-US schedule; the November 7 submission date is retained.
+
+**Limitations:** The finite-state mechanism has precedents; this contribution is the drift/enforcement study. Static permissions leave an account-binding gap, Sonnet results fail a preregistered prediction, and strict accuracy need not improve. Haiku costs $10.64 versus $3.01 for its comparator. One main procedure, small extension samples and authored guards limit transfer; promised code/logs were not publicly verified. No independent reproduction.
+
 ## [2026-10-27](../../../reports/2026/10/2026-10-27.md) — PARTIAL SEARCH
 
 ### [Rethinking Verification in Agent Harnesses](<https://arxiv.org/abs/2610.34577>)

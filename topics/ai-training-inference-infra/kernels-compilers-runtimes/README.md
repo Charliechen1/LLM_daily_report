@@ -5,6 +5,22 @@ GPU kernels, operator fusion, compilation, execution graphs and hardware adaptat
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-10](../../../reports/2026/11/2026-11-10.md) — PARTIAL SEARCH
+
+### [Detent: Batch-Invariant LLM Serving and RL Rollouts at Near-Stock Speed](<https://arxiv.org/abs/2611.10611>)
+
+Detent compiles an inference engine’s kernel-selection rules into a dependence graph, fixes a minimal set of batch-dependent values, and tunes those fixed choices for the expected traffic. In the tested deployments, this enables reproducible serving and matching rollout/training probabilities while retaining much of the speed of ordinary vLLM and SGLang.
+
+**Published:** 2026-11-07 · **First seen:** 2026-11-10T11:07:43.741+00:00 · **Novelty:** new · **Tags:** Deterministic Inference, Kernel Selection, Autotuning, Train-Rollout Consistency
+
+**Public availability:** 2026-11-10T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2611.10611v1>)
+
+**Evidence:** research-paper; full-text. Complete 18-page v1, Sections 3–8 and Appendices A–C inspected. A minimum vertex cut isolates selection from the batch; legal-value checks and per-family tuning commit a fixed tuple. On BF16 Llama-3.1-70B and Qwen3-30B-A3B at TP4 on four H100s, geometric-mean median latency per output token is 1.08–1.11x the same engine’s Stock across the tested workloads, with three runs per cell; all applicable batch-invariance cells pass. Seeded rollouts replay and rescore exactly in the tested 512-sample batteries, while the separate 8B trainer experiment matches same-weight token probabilities. New contribution is automated selection analysis and tuning, beyond previously covered bitwise-alignment recipes. Original primary cs.LG November10 batch plus the official EST schedule imply November10 01:00 UTC public availability, not the November7 receipt time.
+
+**Limitations:** Invariance assumes batch-invariant kernels and request-local mathematics and holds only for a fixed model, deployment, engine build and commitment tuple. Users must transcribe selectors; legality may be sampled offline but is checked at runtime. Traffic drift can make an old tuple much slower; dynamic batch-wide FP8 scales are outside scope. Large deterministic-mode gaps partly include overloaded queues, and RL stability tests do not establish universal prevention of collapse or correction of stale weights. No author implementation or independent reproduction was verified.
+
 ## [2026-10-28](../../../reports/2026/10/2026-10-28.md) — PARTIAL SEARCH
 
 ### [PipeLink: new contract interfaces and GEMM–SwiGLU composition evaluation](<https://github.com/PKU-DAIR/PipeLink>)

@@ -2,6 +2,13 @@
   "schema_version": 1,
   "reports": [
     {
+      "date": "2026-11-10",
+      "path": "reports/2026/11/2026-11-10.md",
+      "source": "data/reports/2026/11/2026-11-10.json",
+      "search_status": "partial",
+      "entries": 10
+    },
+    {
       "date": "2026-11-09",
       "path": "reports/2026/11/2026-11-09.md",
       "source": "data/reports/2026/11/2026-11-09.json",
@@ -299,6 +306,393 @@
     }
   ],
   "entries": [
+    {
+      "id": "arxiv:2611.12832",
+      "title": "What the Loss Curve Misses: FP4 Pretraining Slows the Acquisition of Rare Facts",
+      "category": "1.3",
+      "tags": [
+        "Low-precision Pretraining",
+        "Rare-fact Acquisition",
+        "Evaluation"
+      ],
+      "published_on": "2026-11-09",
+      "first_seen_at": "2026-11-10T11:04:57.711+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.12832",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.12832v1"
+      },
+      "summary": [
+        "This controlled study finds that emulated four-bit pretraining can acquire synthetic rare facts less efficiently even when average validation loss stays close to a BF16 reference.",
+        "Exposure-controlled recall and gradient-noise interventions offer a practical diagnostic for precision recipes that aggregate loss can overlook."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "V1 Sections 2–7 and experimental appendices inspected. Six-seed primary 40M-architecture comparisons report token-matched exposure multipliers of 1.32× on biographies and 1.52× with web text; BF16 evaluation leaves 1.26× and 1.30×. These measure horizontal recall-curve shifts, not extra training time. Primary first-token recall uses seen templates. November 9 receipt retained; first announcement is schedule-inferred from the November 10 native batch.",
+        "limitations": "FP4 operands are emulated with FP32 matrix multiplication on one RTX 4090, not native FP4 kernels. Models reach 96.6M parameters and one billion tokens. Loss-matched effects depend on readout, and one natural-text confidence interval includes no effect. Controlled zero-mean noise explains part of the cost, not all biased FP4 error. No author code or independent reproduction was verified."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-10T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-10",
+      "report_path": "reports/2026/11/2026-11-10.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.11598",
+      "title": "Perturbing Inputs Improves Pretraining Distillation",
+      "category": "1.8",
+      "tags": [
+        "Pretraining Distillation",
+        "Data Augmentation",
+        "Small Language Models"
+      ],
+      "published_on": "2026-11-08",
+      "first_seen_at": "2026-11-10T11:04:57.710+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.11598",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.11598v1"
+      },
+      "summary": [
+        "The authors improve pretraining distillation by briefly adding token noise or blended inputs to both teacher and student, then returning to ordinary clean-text distillation.",
+        "Small-model experiments suggest that querying a teacher beyond ordinary training text can improve student learning, with most additive-noise gains coming from perturbing the teacher’s inputs."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "V1 Sections 2–7 and Appendices A–D inspected. Randomly initialized 135M and 0.5B students train for 4.2B and 10B input positions. Adjacent blending lowers validation loss by 0.025 and 0.020 nats; the latter repeats across three seeds. At 0.5B it adds about one percentage point across seven zero-shot tasks. November 8 receipt retained; first announcement is schedule-inferred from the November 10 native batch.",
+        "limitations": "Most hyperparameter settings have one run, and reported downstream uncertainty resamples examples rather than training seeds. Blending initially reads two corpus tokens per position; a one-seed matched-text control supports the benefit. Perturbation strength and stage length need tuning. Larger models and longer training remain untested. The proposed mechanism is suggestive. No author implementation or independent reproduction was verified."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-10T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-10",
+      "report_path": "reports/2026/11/2026-11-10.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.11450",
+      "title": "How Much Training-Inference Mismatch Can On-Policy Distillation Tolerate?",
+      "category": "1.8",
+      "tags": [
+        "On-policy Distillation",
+        "Mismatch Budgets",
+        "Rollout Precision"
+      ],
+      "published_on": "2026-11-08",
+      "first_seen_at": "2026-11-10T11:04:57.711+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.11450",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.11450v1",
+        "code": "https://github.com/benyucong/train-inference-mismatch-opd"
+      },
+      "summary": [
+        "This study measures how quantized and stale rollouts affect on-policy distillation, then calibrates a student-specific mismatch budget using held-out teacher agreement.",
+        "A lightweight screening check helps identify cheaper rollout configurations while showing why no single precision or staleness limit guarantees preserved training quality."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "V1 Sections 3–6 and protocol/result appendices inspected. The main 7B math pair passes up to 0.184 nats/token mismatch and fails at 0.39 under a 20% held-out-KL rule. FP8 plus asynchronous rollouts reaches the synchronous KL target 1.62× sooner on eight GH200 GPUs. This is a conditional empirical budget, not a universal threshold. November 8 receipt retained; first announcement is schedule-inferred.",
+        "limitations": "Most configurations run once for 200 steps; intervals resample problems. The admission check is untested near its boundary and needs initial training calibration. RL baselines remained healthy but showed no measurable learning under their standard engines. Some speed comparisons involve a driver change; NVFP4 is emulated, with no speed claim. Code is verified, but plans, logs and table-generation outputs remain unreleased."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-10T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-10",
+      "report_path": "reports/2026/11/2026-11-10.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.10884",
+      "title": "Keeping LLM Agents on Procedure: Executable Finite-State Control for Long-Horizon Instruction Fidelity",
+      "category": "2.7",
+      "tags": [
+        "Runtime Enforcement",
+        "Procedural Fidelity",
+        "Long-Horizon Agents"
+      ],
+      "published_on": "2026-11-07",
+      "first_seen_at": "2026-11-10T11:07:09.687+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.10884",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.10884v1"
+      },
+      "public_availability": {
+        "at": "2026-11-10T01:00:00+00:00",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "summary": [
+        "This study tests an executable finite-state controller that preserves workflow state outside the model context and gates tool calls, transitions, and stopping to reduce procedural drift.",
+        "On one long account-review task, it substantially increases decisions that both follow the procedure and reach the correct outcome, illustrating how runtime controls can improve unattended automation while leaving specification and decision errors to address."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "All 19 pages, methods, failed predictions, ablations and appendices inspected. On 200-account SOP-Bench batches over eight Haiku 4.5 seeds, faithful-and-correct decisions average 139.2 versus 48.4 with reminders plus resumption; the paired difference is 90.9, with bootstrap 95% interval [46.2, 130.2]. First public announcement is inferred from the original November 10 cs.AI batch and official Eastern-US schedule; the November 7 submission date is retained.",
+        "limitations": "The finite-state mechanism has precedents; this contribution is the drift/enforcement study. Static permissions leave an account-binding gap, Sonnet results fail a preregistered prediction, and strict accuracy need not improve. Haiku costs $10.64 versus $3.01 for its comparator. One main procedure, small extension samples and authored guards limit transfer; promised code/logs were not publicly verified. No independent reproduction."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-11-10",
+      "report_path": "reports/2026/11/2026-11-10.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.12393",
+      "title": "AutoBuddy: Evaluating Proactive, Always-On Agents on Task Discovery and Execution in a Simulated Workplace",
+      "category": "2.8",
+      "tags": [
+        "Proactive Agents",
+        "Task Discovery",
+        "Execution Evaluation"
+      ],
+      "published_on": "2026-11-09",
+      "first_seen_at": "2026-11-10T11:07:09.687+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.12393",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.12393v1"
+      },
+      "public_availability": {
+        "at": "2026-11-10T01:00:00+00:00",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "summary": [
+        "AutoBuddy-Bench generates temporally consistent simulated workplaces and evaluates whether agents discover outstanding obligations and complete them through observable changes to messages, documents, and business records.",
+        "Separating discovery from execution exposes different failure stages across 17 model backbones, giving builders a way to diagnose proactive assistants beyond performance on explicitly assigned tasks."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "All 11 pages, deterministic grading rules, task-family tables and successful/failed traces inspected. The same reference harness tests 17 backbones on 120 tasks across 94 actor-days in one generated organization, with three runs per model; end-to-end scores range from 0.234 to 0.698. Primary cs.AI original-batch membership and the official announcement schedule support inferred November 10 public availability, retaining the November 9 submission date.",
+        "limitations": "One synthetic world and three repeated runs do not establish workplace generalization. Some document grades are weighted partial credit; zero to seven state-conflicted tasks per run and whole-actor-day harness failures are excluded. False-positive discoveries do not enter end-to-end execution scoring. Public benchmark and agent code were not verified; the linked Copilot SDK is a dependency. No independent reproduction."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-11-10",
+      "report_path": "reports/2026/11/2026-11-10.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.11840",
+      "title": "Correct Answers from Insufficient Histories: A Controlled Study of Agent Memory Evaluation",
+      "category": "2.8",
+      "tags": [
+        "Memory Evaluation",
+        "Evidence Sufficiency",
+        "Abstention"
+      ],
+      "published_on": "2026-11-09",
+      "first_seen_at": "2026-11-10T11:07:09.687+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.11840",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.11840v1"
+      },
+      "public_availability": {
+        "at": "2026-11-10T01:00:00+00:00",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "summary": [
+        "By constructing legal histories that expose identical context but imply different answers, this study separates matching a hidden reference from having sufficient evidence to justify it.",
+        "Two hosted readers often match references despite provably insufficient synthetic logs, showing why memory evaluations should measure evidence sufficiency and appropriate abstention alongside answer agreement."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "All 14 pages, certificate rules, confirmation/replication, judge controls and resource appendices inspected. Across 80 confirmation histories and 1,600 requests per reader, Qwen3-32B and DeepSeek-V4-Flash match 87 and 85 references among the same 203 insufficient raw-prefix cases, while abstaining on only seven and 21. The original November 10 cs.AI batch plus official schedule supports inferred public availability; the November 9 submission date is preserved.",
+        "limitations": "This is a bounded evaluation diagnosis, not a new memory architecture: short synthetic logs, a fixed query grammar, 64-token output limits and two hosted configurations. Replication reuses exposed inputs; weights and server changes are unpinned. CSV gains are inconclusive, a deterministic program solves certified cases, and no human natural-language validation or public experiment artifact was available. No independent reproduction."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-11-10",
+      "report_path": "reports/2026/11/2026-11-10.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://www.anthropic.com/document/claude-fable-5-2-mythos-5-2-system-card",
+      "title": "Claude Fable 5.2 and Mythos 5.2: opportunistic sandbox-escape evaluation",
+      "category": "2.8",
+      "tags": [
+        "Sandbox Boundaries",
+        "Agent Evaluation",
+        "Deployment Mitigations"
+      ],
+      "published_on": "2026-11-09",
+      "first_seen_at": "2026-11-10T11:07:52Z",
+      "canonical_url": "https://www.anthropic.com/document/claude-fable-5-2-mythos-5-2-system-card",
+      "links": {
+        "paper": "https://www.anthropic.com/document/claude-fable-5-2-mythos-5-2-system-card",
+        "blog": "https://www.anthropic.com/claude-fable-and-mythos-5-2"
+      },
+      "summary": [
+        "Anthropic evaluates whether agents cross intentionally weakened sandbox boundaries to complete benign tasks, distinguishing any attempted crossing from use of outside credentials or files.",
+        "The controlled study shows how explicit boundary instructions and vulnerability-reporting tools can reduce these behaviors, giving builders concrete deployment mitigations to test rather than a guarantee of containment."
+      ],
+      "evidence": {
+        "type": "technical-report",
+        "access": "full-text",
+        "rationale": "The full launch article and complete system-card Section 6.5.1 (pp.127–130), model/configuration definitions (pp.11–13), and adjacent audit-method limitations (pp.122–126) were inspected. This new dedicated evaluation uses 1,829 scenarios derived from over 200 benign DevOps tasks in 28 deliberately weakened sandbox environments; each model runs each scenario once. Mythos 5.2 reaches or attempts to reach outside in 31% and uses planted outside credentials/files in 3.1%, versus 54% and 21% for Mythos 5.1. Explicit boundary description reduces attempted crossing to 1.2%; description plus reporting and viewing tools reduces it to 0.2%. These are separate metrics and cannot be conflated with the older 28-scenario audit. November9 date-only disclosure is retained conservatively as newly discovered; no exact release hour is inferred. Team discovery was captured in the Agent primary-source web leads at 11:07:52 UTC, with root verification following at 11:10:46 UTC. The complete 264-page PDF was accessible; this rationale claims review of the specified study and relevant surrounding sections, not all unrelated sections.",
+        "limitations": "Author-run, intentionally tempting stress tests are not deployment violation rates, and four in five tasks require inputs that exist only outside the inner boundary. Reaching or attempting to reach outside includes ambiguous, low-severity behavior; it does not establish host compromise. Tests use the Mythos configuration, not an independent evaluation of the safeguarded public Fable product. Each scenario is sampled once, evaluation awareness can affect behavior, and prompt/tool mitigations do not replace enforced isolation. The outer Firecracker environment is isolated from the internet. No public scenario dataset or benchmark implementation was verified; no independent reproduction was performed."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-11-10",
+      "report_path": "reports/2026/11/2026-11-10.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.10611",
+      "title": "Detent: Batch-Invariant LLM Serving and RL Rollouts at Near-Stock Speed",
+      "category": "3.5",
+      "published_on": "2026-11-07",
+      "first_seen_at": "2026-11-10T11:07:43.741+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.10611",
+      "links": {
+        "paper": "https://arxiv.org/html/2611.10611v1"
+      },
+      "summary": [
+        "Detent compiles an inference engine’s kernel-selection rules into a dependence graph, fixes a minimal set of batch-dependent values, and tunes those fixed choices for the expected traffic.",
+        "In the tested deployments, this enables reproducible serving and matching rollout/training probabilities while retaining much of the speed of ordinary vLLM and SGLang."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Complete 18-page v1, Sections 3–8 and Appendices A–C inspected. A minimum vertex cut isolates selection from the batch; legal-value checks and per-family tuning commit a fixed tuple. On BF16 Llama-3.1-70B and Qwen3-30B-A3B at TP4 on four H100s, geometric-mean median latency per output token is 1.08–1.11x the same engine’s Stock across the tested workloads, with three runs per cell; all applicable batch-invariance cells pass. Seeded rollouts replay and rescore exactly in the tested 512-sample batteries, while the separate 8B trainer experiment matches same-weight token probabilities. New contribution is automated selection analysis and tuning, beyond previously covered bitwise-alignment recipes. Original primary cs.LG November10 batch plus the official EST schedule imply November10 01:00 UTC public availability, not the November7 receipt time.",
+        "limitations": "Invariance assumes batch-invariant kernels and request-local mathematics and holds only for a fixed model, deployment, engine build and commitment tuple. Users must transcribe selectors; legality may be sampled offline but is checked at runtime. Traffic drift can make an old tuple much slower; dynamic batch-wide FP8 scales are outside scope. Large deterministic-mode gaps partly include overloaded queues, and RL stability tests do not establish universal prevention of collapse or correction of stale weights. No author implementation or independent reproduction was verified."
+      },
+      "tags": [
+        "Deterministic Inference",
+        "Kernel Selection",
+        "Autotuning",
+        "Train-Rollout Consistency"
+      ],
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-10T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-10",
+      "report_path": "reports/2026/11/2026-11-10.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.10832",
+      "title": "Firepool: Brokering Warm GPU Capacity for Agentic and RL Workloads at LinkedIn",
+      "category": "3.8",
+      "published_on": "2026-11-07",
+      "first_seen_at": "2026-11-10T11:07:43.740+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.10832",
+      "links": {
+        "paper": "https://arxiv.org/html/2611.10832v1"
+      },
+      "summary": [
+        "This paper measures and details Firepool, LinkedIn’s existing broker for short GPU jobs, which combines late-bound job environments with caller-scoped warm-pod reuse and zero-VRAM standby pods.",
+        "The design removes pod creation from many agent and rollout critical paths while making idle capacity, reuse boundaries and queue budgets explicit."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Complete 17-page v1, Sections 2–9 and Appendices A–D inspected. Over a sampled 14-hour production period, 94.7% of 3,206 acquisitions use warm or standby capacity. Paired provisioning benchmarks with fixed-duration payloads on a pinned H200 node and two-GPU pool cap finish agent/RL job loops 13.0x/10.8x faster than a fresh pod per job; these are not measured learning-speed gains. An earlier KubeCon session description already advertises Firepool and warm/zero-gap GPU launches, so the selected delta is the new detailed design, controlled measurements and production study, not the system’s invention or software release. No earlier quantitative study was located in the checked primary sources. Original cs.DC November10 batch plus the official EST schedule imply November10 01:00 UTC availability; November7 remains the manuscript receipt date.",
+        "limitations": "Evidence is internal to one operator, and headline loop bodies are synthetic fixed-duration jobs; controlled baselines do not establish speedups over every persistent-worker system. Some held-capacity results are local or simulated; measured H200 warm reuse holds 15% more GPU time per job than the fresh-tag arm. Standby depends on the tested scheduler and targets single-GPU jobs; larger gangs can starve without reservations. Shared-kernel containers do not prove hostile-tenant isolation, session residue can reach one later same-caller job, and partition retries may overlap. No author code or independent reproduction was verified."
+      },
+      "tags": [
+        "Warm GPU Pools",
+        "Agentic Workloads",
+        "Kubernetes",
+        "Cluster Scheduling"
+      ],
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-10T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-10",
+      "report_path": "reports/2026/11/2026-11-10.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.12362",
+      "title": "Release Sooner, Expose Less: Offloading MoE Dispatch in NCCL-EP under Dual-Batch Overlap",
+      "category": "3.8",
+      "published_on": "2026-11-09",
+      "first_seen_at": "2026-11-10T11:07:44.310+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.12362",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.12362v1"
+      },
+      "summary": [
+        "Release Sooner compares three expert-parallel communication prototypes that hand send progress from the GPU to the NIC or a host thread earlier.",
+        "Within a fixed two-microbatch schedule, this releases GPU time for useful computation and reduces exposed communication when enough work hides the remaining transfer."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Complete 15-page v1, Sections II–V and Appendix A inspected after HTML404 was recovered through the full PDF. GPI publishes NIC-consumed descriptors, GPI-MC compresses token fan-out, and GDAKI Free Flow moves send-queue progression to a host thread. For BF16 Qwen3-30B-A3B on a 16-GB300 2P2D deployment with one-stream dual-batch overlap, nominal 128-token input/output and concurrency128–1000, optimized NCCL-EP configurations lower the mean of three run-level median TPOTs by 15.3–25.1% versus default GDAKI. Separate five-round native sweeps measure earlier GPU release and the covering windows needed for deferred progress. This is a new scoped prototype study, not a release of the older NCCL-EP API. Original cs.DC November10 batch and the official EST schedule imply November10 01:00 UTC availability after the November9 receipt.",
+        "limitations": "Results compare complete research-fork configurations, so serving changes do not isolate dispatch-send duration as a causal factor. Cross-node NVLink is disabled; native delay kernels omit real GEMM contention, and no no-DBO or multistream alternative is evaluated. Mixed split/eager concurrency32–64 cells are excluded as transport evidence. The DeepEP comparator is a v1.2.1 GDAKI integration fork rather than upstream V1 or V2; no general DeepEP superiority claim is selected. Host progress needs spare CPU/PCIe capacity, GPI-MC is experimental, and only one serving model/topology is measured. No author prototype code or independent reproduction was verified."
+      },
+      "tags": [
+        "MoE Communication",
+        "Dual-Batch Overlap",
+        "GPU-Initiated Networking",
+        "Decode Latency"
+      ],
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-10T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-10",
+      "report_path": "reports/2026/11/2026-11-10.md",
+      "search_status": "partial"
+    },
     {
       "id": "arxiv:2611.09448",
       "title": "Not All Entropy Is Equal: Reward-Conditioned Entropy Allocation in Reinforcement Learning with Verifiable Rewards",
@@ -11340,7 +11734,7 @@
       "group": "llm-recipe",
       "title": "Pretraining & Optimization",
       "path": "topics/llm-recipe/pretraining-optimization/README.md",
-      "count": 12
+      "count": 13
     },
     {
       "id": "1.4",
@@ -11375,7 +11769,7 @@
       "group": "llm-recipe",
       "title": "Distillation & Model Compression",
       "path": "topics/llm-recipe/distillation-model-compression/README.md",
-      "count": 19
+      "count": 21
     },
     {
       "id": "1.9",
@@ -11438,14 +11832,14 @@
       "group": "ai-agent-dev",
       "title": "Agent Harness & Reliability",
       "path": "topics/ai-agent-dev/agent-harness-reliability/README.md",
-      "count": 10
+      "count": 11
     },
     {
       "id": "2.8",
       "group": "ai-agent-dev",
       "title": "Agent Evaluation & Security",
       "path": "topics/ai-agent-dev/agent-evaluation-security/README.md",
-      "count": 35
+      "count": 38
     },
     {
       "id": "3.1",
@@ -11480,7 +11874,7 @@
       "group": "ai-training-inference-infra",
       "title": "Kernels, Compilers & Runtimes",
       "path": "topics/ai-training-inference-infra/kernels-compilers-runtimes/README.md",
-      "count": 19
+      "count": 20
     },
     {
       "id": "3.6",
@@ -11501,7 +11895,7 @@
       "group": "ai-training-inference-infra",
       "title": "Hardware, Networking & Cluster Efficiency",
       "path": "topics/ai-training-inference-infra/hardware-networking-cluster-efficiency/README.md",
-      "count": 12
+      "count": 14
     }
   ]
 }

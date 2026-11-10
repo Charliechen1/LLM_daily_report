@@ -5,6 +5,22 @@ Objectives, optimizers, learning rates, batch sizes and training stability.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-10](../../../reports/2026/11/2026-11-10.md) — PARTIAL SEARCH
+
+### [What the Loss Curve Misses: FP4 Pretraining Slows the Acquisition of Rare Facts](<https://arxiv.org/abs/2611.12832>)
+
+This controlled study finds that emulated four-bit pretraining can acquire synthetic rare facts less efficiently even when average validation loss stays close to a BF16 reference. Exposure-controlled recall and gradient-noise interventions offer a practical diagnostic for precision recipes that aggregate loss can overlook.
+
+**Published:** 2026-11-09 · **First seen:** 2026-11-10T11:04:57.711+00:00 · **Novelty:** new · **Tags:** Low-precision Pretraining, Rare-fact Acquisition, Evaluation
+
+**Public availability:** 2026-11-10T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.12832v1>)
+
+**Evidence:** research-paper; full-text. V1 Sections 2–7 and experimental appendices inspected. Six-seed primary 40M-architecture comparisons report token-matched exposure multipliers of 1.32× on biographies and 1.52× with web text; BF16 evaluation leaves 1.26× and 1.30×. These measure horizontal recall-curve shifts, not extra training time. Primary first-token recall uses seen templates. November 9 receipt retained; first announcement is schedule-inferred from the November 10 native batch.
+
+**Limitations:** FP4 operands are emulated with FP32 matrix multiplication on one RTX 4090, not native FP4 kernels. Models reach 96.6M parameters and one billion tokens. Loss-matched effects depend on readout, and one natural-text confidence interval includes no effect. Controlled zero-mean noise explains part of the cost, not all biased FP4 error. No author code or independent reproduction was verified.
+
 ## [2026-11-03](../../../reports/2026/11/2026-11-03.md) — PARTIAL SEARCH
 
 ### [Pretraining Data Scale Reverses the Muon–AdamW Fine-Tuning Gap](<https://arxiv.org/abs/2611.03633>)

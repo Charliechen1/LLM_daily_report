@@ -5,6 +5,38 @@ Accelerators, interconnects, cluster scheduling, profiling, utilization, cost an
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-10](../../../reports/2026/11/2026-11-10.md) — PARTIAL SEARCH
+
+### [Firepool: Brokering Warm GPU Capacity for Agentic and RL Workloads at LinkedIn](<https://arxiv.org/abs/2611.10832>)
+
+This paper measures and details Firepool, LinkedIn’s existing broker for short GPU jobs, which combines late-bound job environments with caller-scoped warm-pod reuse and zero-VRAM standby pods. The design removes pod creation from many agent and rollout critical paths while making idle capacity, reuse boundaries and queue budgets explicit.
+
+**Published:** 2026-11-07 · **First seen:** 2026-11-10T11:07:43.740+00:00 · **Novelty:** new · **Tags:** Warm GPU Pools, Agentic Workloads, Kubernetes, Cluster Scheduling
+
+**Public availability:** 2026-11-10T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2611.10832v1>)
+
+**Evidence:** research-paper; full-text. Complete 17-page v1, Sections 2–9 and Appendices A–D inspected. Over a sampled 14-hour production period, 94.7% of 3,206 acquisitions use warm or standby capacity. Paired provisioning benchmarks with fixed-duration payloads on a pinned H200 node and two-GPU pool cap finish agent/RL job loops 13.0x/10.8x faster than a fresh pod per job; these are not measured learning-speed gains. An earlier KubeCon session description already advertises Firepool and warm/zero-gap GPU launches, so the selected delta is the new detailed design, controlled measurements and production study, not the system’s invention or software release. No earlier quantitative study was located in the checked primary sources. Original cs.DC November10 batch plus the official EST schedule imply November10 01:00 UTC availability; November7 remains the manuscript receipt date.
+
+**Limitations:** Evidence is internal to one operator, and headline loop bodies are synthetic fixed-duration jobs; controlled baselines do not establish speedups over every persistent-worker system. Some held-capacity results are local or simulated; measured H200 warm reuse holds 15% more GPU time per job than the fresh-tag arm. Standby depends on the tested scheduler and targets single-GPU jobs; larger gangs can starve without reservations. Shared-kernel containers do not prove hostile-tenant isolation, session residue can reach one later same-caller job, and partition retries may overlap. No author code or independent reproduction was verified.
+
+## [2026-11-10](../../../reports/2026/11/2026-11-10.md) — PARTIAL SEARCH
+
+### [Release Sooner, Expose Less: Offloading MoE Dispatch in NCCL-EP under Dual-Batch Overlap](<https://arxiv.org/abs/2611.12362>)
+
+Release Sooner compares three expert-parallel communication prototypes that hand send progress from the GPU to the NIC or a host thread earlier. Within a fixed two-microbatch schedule, this releases GPU time for useful computation and reduces exposed communication when enough work hides the remaining transfer.
+
+**Published:** 2026-11-09 · **First seen:** 2026-11-10T11:07:44.310+00:00 · **Novelty:** new · **Tags:** MoE Communication, Dual-Batch Overlap, GPU-Initiated Networking, Decode Latency
+
+**Public availability:** 2026-11-10T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.12362v1>)
+
+**Evidence:** research-paper; full-text. Complete 15-page v1, Sections II–V and Appendix A inspected after HTML404 was recovered through the full PDF. GPI publishes NIC-consumed descriptors, GPI-MC compresses token fan-out, and GDAKI Free Flow moves send-queue progression to a host thread. For BF16 Qwen3-30B-A3B on a 16-GB300 2P2D deployment with one-stream dual-batch overlap, nominal 128-token input/output and concurrency128–1000, optimized NCCL-EP configurations lower the mean of three run-level median TPOTs by 15.3–25.1% versus default GDAKI. Separate five-round native sweeps measure earlier GPU release and the covering windows needed for deferred progress. This is a new scoped prototype study, not a release of the older NCCL-EP API. Original cs.DC November10 batch and the official EST schedule imply November10 01:00 UTC availability after the November9 receipt.
+
+**Limitations:** Results compare complete research-fork configurations, so serving changes do not isolate dispatch-send duration as a causal factor. Cross-node NVLink is disabled; native delay kernels omit real GEMM contention, and no no-DBO or multistream alternative is evaluated. Mixed split/eager concurrency32–64 cells are excluded as transport evidence. The DeepEP comparator is a v1.2.1 GDAKI integration fork rather than upstream V1 or V2; no general DeepEP superiority claim is selected. Host progress needs spare CPU/PCIe capacity, GPI-MC is experimental, and only one serving model/topology is measured. No author prototype code or independent reproduction was verified.
+
 ## [2026-11-05](../../../reports/2026/11/2026-11-05.md) — PARTIAL SEARCH
 
 ### [flash-comm: Self-Synchronizing Collective Communication for LLM Decoding](<https://arxiv.org/abs/2611.06634>)

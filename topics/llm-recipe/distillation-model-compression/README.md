@@ -5,6 +5,38 @@ Knowledge/reasoning distillation, pruning, quantization algorithms and model mer
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-10](../../../reports/2026/11/2026-11-10.md) — PARTIAL SEARCH
+
+### [Perturbing Inputs Improves Pretraining Distillation](<https://arxiv.org/abs/2611.11598>)
+
+The authors improve pretraining distillation by briefly adding token noise or blended inputs to both teacher and student, then returning to ordinary clean-text distillation. Small-model experiments suggest that querying a teacher beyond ordinary training text can improve student learning, with most additive-noise gains coming from perturbing the teacher’s inputs.
+
+**Published:** 2026-11-08 · **First seen:** 2026-11-10T11:04:57.710+00:00 · **Novelty:** new · **Tags:** Pretraining Distillation, Data Augmentation, Small Language Models
+
+**Public availability:** 2026-11-10T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.11598v1>)
+
+**Evidence:** research-paper; full-text. V1 Sections 2–7 and Appendices A–D inspected. Randomly initialized 135M and 0.5B students train for 4.2B and 10B input positions. Adjacent blending lowers validation loss by 0.025 and 0.020 nats; the latter repeats across three seeds. At 0.5B it adds about one percentage point across seven zero-shot tasks. November 8 receipt retained; first announcement is schedule-inferred from the November 10 native batch.
+
+**Limitations:** Most hyperparameter settings have one run, and reported downstream uncertainty resamples examples rather than training seeds. Blending initially reads two corpus tokens per position; a one-seed matched-text control supports the benefit. Perturbation strength and stage length need tuning. Larger models and longer training remain untested. The proposed mechanism is suggestive. No author implementation or independent reproduction was verified.
+
+## [2026-11-10](../../../reports/2026/11/2026-11-10.md) — PARTIAL SEARCH
+
+### [How Much Training-Inference Mismatch Can On-Policy Distillation Tolerate?](<https://arxiv.org/abs/2611.11450>)
+
+This study measures how quantized and stale rollouts affect on-policy distillation, then calibrates a student-specific mismatch budget using held-out teacher agreement. A lightweight screening check helps identify cheaper rollout configurations while showing why no single precision or staleness limit guarantees preserved training quality.
+
+**Published:** 2026-11-08 · **First seen:** 2026-11-10T11:04:57.711+00:00 · **Novelty:** new · **Tags:** On-policy Distillation, Mismatch Budgets, Rollout Precision
+
+**Public availability:** 2026-11-10T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.11450v1>) · [Code](<https://github.com/benyucong/train-inference-mismatch-opd>)
+
+**Evidence:** research-paper; full-text. V1 Sections 3–6 and protocol/result appendices inspected. The main 7B math pair passes up to 0.184 nats/token mismatch and fails at 0.39 under a 20% held-out-KL rule. FP8 plus asynchronous rollouts reaches the synchronous KL target 1.62× sooner on eight GH200 GPUs. This is a conditional empirical budget, not a universal threshold. November 8 receipt retained; first announcement is schedule-inferred.
+
+**Limitations:** Most configurations run once for 200 steps; intervals resample problems. The admission check is untested near its boundary and needs initial training calibration. RL baselines remained healthy but showed no measurable learning under their standard engines. Some speed comparisons involve a driver change; NVFP4 is emulated, with no speed claim. Code is verified, but plans, logs and table-generation outputs remain unreleased.
+
 ## [2026-11-06](../../../reports/2026/11/2026-11-06.md) — PARTIAL SEARCH
 
 ### [CoRD: Coupled Rollouts Fill the Blind Spot of On-Policy Distillation](<https://arxiv.org/abs/2611.07959>)
