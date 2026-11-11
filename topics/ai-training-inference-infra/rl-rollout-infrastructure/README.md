@@ -5,6 +5,22 @@ Distributed rollouts, asynchronous RL, generation/training coordination and weig
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-11](../../../reports/2026/11/2026-11-11.md) — PARTIAL SEARCH
+
+### [Train High, Ship Low: Efficient LoRA Synchronization for Distributed On-Policy Post-Training](<https://arxiv.org/abs/2611.13306>)
+
+HiLo sends compressed LoRA gradients to rollout workers that retain optimizer state and replay the learner’s updates locally, separating training rank from synchronization payload. This can make bandwidth-constrained on-policy post-training cheaper: the tested GH200 recipes use about 1.6% of full-adapter bytes with modest accuracy differences, and paced cluster links yield up to 2.22× faster updates.
+
+**Published:** 2026-11-09 · **First seen:** 2026-11-11T11:07:49.633+00:00 · **Novelty:** new · **Tags:** LoRA Synchronization, Optimizer Replay, Gradient Compression, Distributed Rollouts
+
+**Public availability:** 2026-11-11T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/recent?skip=0&show=2000>) · [Timing source](<https://arxiv.org/list/cs.LG/new?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2611.13306v1>)
+
+**Evidence:** research-paper; full-text. Complete19-page v1 inspected, including Sections3–4, Tables1–3 and AppendicesA–E. Both learner and workers consume the same decoded BF16 gradient, not the original gradient; Spar allocates spectral directions under a shared byte budget with error feedback. Rank64 Qwen3-1.7B KK OPD pass@4 is81.6±1.8 versus83.2±1.2 for Full Sync at1.6% payload; Qwen3-0.6B Countdown-4 reward-guided distillation is63.7±1.5 versus64.0±0.7, three seeds. One learner and eight rollout workers on three GH200 nodes, TCP-paced62.5Mbps per worker, measure17.9→8.1 seconds/update in one-step-off mode (2.22×), or33.1→16.1 lockstep (2.06×); unpaced lockstep is slower15.3→15.9. Same-stack two-GH200 replay checks392 tensors bitwise over60 updates. Original primary-category dated November 11 batch plus the official Monday14:00–Tuesday14:00 -&gt; Tuesday20:00 Eastern schedule imply public availability November11 01:00 UTC (EST); submission receipt is preserved separately. The November11 holiday concerns the following Wednesday-evening announcement, not this observed Tuesday-evening batch.
+
+**Limitations:** Gradient compression changes the shared learning trajectory; equality is only between matching versions and does not remove temporal staleness or guarantee identical inference sampling. Replicated optimizer state, ordered exactly-once messages, shared initialization/configuration and numerical execution are required; AdamW moments alone cost about558MB per worker in the1.7B setup. Heterogeneous kernels/hardware, failures/restarts and real-WAN latency/jitter/loss were not validated. Pure GRPO learning is not evaluated. Spar rank allocation is a heuristic, not globally optimal; factor budgets omit headers/recovery. No verified author code repository or independent reproduction.
+
 ## [2026-11-07](../../../reports/2026/11/2026-11-07.md) — PARTIAL SEARCH
 
 ### [Bitwise train–rollout consistency: new DeepSeek-V4.1, Kimi-K3.1 and AMD validations](<https://vllm.ai/blog/2026-10-14-train-inference-consistency>)

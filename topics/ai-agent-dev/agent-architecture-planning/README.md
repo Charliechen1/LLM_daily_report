@@ -5,6 +5,22 @@ Agent loops, task decomposition, planning, reflection and execution control.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-11](../../../reports/2026/11/2026-11-11.md) — PARTIAL SEARCH
+
+### [ReTrace: Distilling Tool-Using Agents into Planner-Free Workflows](<https://arxiv.org/abs/2611.14492>)
+
+ReTrace extracts action conditions and input sources from a standard operating procedure and logged agent reasoning, then compiles them into reusable workflows whose steps are selected by code. This can remove repeated planning calls from stable, high-volume procedures while still allowing model-backed tools; on the authors’ telecom-only evaluation, execution averages 1.3 seconds versus 170 seconds for their agent. The speed–quality tradeoff remains visible: unrepaired task success is 75.8% versus 80.6%, and the recovered conditions are not formally verified.
+
+**Published:** 2026-11-10 · **First seen:** 2026-11-11T11:06:52.150+00:00 · **Novelty:** new · **Tags:** Workflow Compilation, Tool Use, Trace Distillation, Operating Cost
+
+**Public availability:** 2026-11-11T01:00:00+00:00 (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.14492v1>)
+
+**Evidence:** research-paper; full-text. Sections 3–5, full main results/limitations and relevant Appendices A–H/L inspected. The public telecom solo-mode study uses 74 training / 40 test inputs, successful Sonnet 4.6 traces and training-only configuration selection; eight admitted SOP-Bench domains provide a separate test. The original November 11 cs.AI entry plus the official Eastern-US schedule infer November 11 01:00 UTC paper availability; the November 10 receipt date is retained.
+
+**Limitations:** These modified benchmark settings are not directly comparable to published leaderboard scores. Public candidate selection favors ReTrace; its advantage over few-shot on the 40 telecom test inputs is not statistically resolved, and unrepaired ReTrace trails few-shot on SOP-Bench. Repair receives training labels on SOP-Bench, where repaired zero-shot scores higher. Private enterprise completion is imperfect, construction counts are lower bounds, and changed procedures can require recompilation. No author implementation was verified or experiment reproduced.
+
 ## [2026-10-16](../../../reports/2026/10/2026-10-16.md) — PARTIAL SEARCH
 
 ### [Discovering state-of-the-art quantum circuits with large language models](<https://arxiv.org/abs/2610.22367>)

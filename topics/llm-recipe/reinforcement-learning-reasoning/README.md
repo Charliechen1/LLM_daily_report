@@ -5,6 +5,22 @@ RLHF, RLVR, policy optimization, reasoning training, tool use and multi-turn age
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-11](../../../reports/2026/11/2026-11-11.md) — PARTIAL SEARCH
+
+### [Are Dense Rewards Worth Their Tokens in GRPO?](<https://arxiv.org/abs/2611.13560>)
+
+A 1,668-run study compares dense GRPO rewards and prompt selection at matched generated tokens and training GPU-hours, showing why per-update wins can disappear once continuation costs are counted. In its Qwen2.5-1.5B MATH setup, the four-continuation reward trails outcome-only GRPO by 14.3 percentage points at equal tokens, while small prompt-selection gains shrink after baseline learning-rate tuning. The protocol is useful for auditing RL recipes, with conclusions limited to the tested small-model math settings and adaptations of dense-reward methods.
+
+**Published:** 2026-11-10 · **First seen:** 2026-11-11T11:05:34.533+00:00 · **Novelty:** new · **Tags:** Compute-matched Evaluation, Process Rewards, GRPO
+
+**Public availability:** 2026-11-11T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/new>) · [Timing source](<https://arxiv.org/list/cs.CL/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.13560v1>) · [Project](<https://github.com/vicky157/grpo-validation>)
+
+**Evidence:** research-paper; full-text. Main PDF pages 1-10 and relevant supplementary pages 14-21, 35-37 and 40-44 read. The token budget counts continuations and discarded groups; GPU-hours include prompt scoring, generation, credit, updates and weight synchronization but exclude evaluation/logging/checkpointing. The original 14.3-point deficit uses 5 paired seeds at 12.25M tokens, 380-token completions, with a 14.9-point deficit on 12 fresh seeds. The 7.8-point equal-time deficit is an exploratory H200 reanalysis, not the same primary endpoint. A separate 8-seed A100 study with 768-token completions and strict verification runs four adaptations past outcome-only GRPO training time, finding no significant positive gain, with the cheapest reward unresolved rather than proven worse. Prompt-selection studies and tuned-baseline controls are reported separately. Author project verified, currently only a coming-soon README, so code/preregistration/log claims were not independently reproduced. November 10 receipt retained; original November 11 CL announcement establishes scheduled availability.
+
+**Limitations:** Models in matched-compute studies are at most 4B, with short 380/768-token math completions and 8-35M generated-token budgets. Generation and training time can rank methods differently across hardware. The VinePPO/SPO-tree/TreeRL-style arms are adaptations, not faithful reproductions. Internal preregistration timing rests on filesystem records not independently accessible in the current README-only repository. Prompt-selection benefits are small, absent on four of six models on the main pool, and mostly disappear with longer training or retuned learning rates. These results do not establish that all dense rewards or published process-reward methods fail.
+
 ## [2026-11-09](../../../reports/2026/11/2026-11-09.md) — PARTIAL SEARCH
 
 ### [Not All Entropy Is Equal: Reward-Conditioned Entropy Allocation in Reinforcement Learning with Verifiable Rewards](<https://arxiv.org/abs/2611.09448>)

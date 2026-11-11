@@ -5,6 +5,22 @@ Context organization/compression, working memory, long-term memory and state.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-11](../../../reports/2026/11/2026-11-11.md) — PARTIAL SEARCH
+
+### [Don't Just Trust Your Memory: Evidence-Linked Memory Reduces Memory-Induced Degradation in LLM Agents](<https://arxiv.org/abs/2611.14320>)
+
+WikiTrace links each reusable lesson to a diagnostic summary and its unchanged source trajectory, allowing an agent to inspect the evidence before applying questionable advice. Across the authors’ eight configured suites, this improves average performance by 3.2 points over the same insights alone and reduces memory-induced regression from 6.5% to 4.5%, at 17% higher average test-time cost. It provides a practical pattern for auditable experience reuse, while leaving very large memory retrieval and automatic verification of lessons unresolved.
+
+**Published:** 2026-11-10 · **First seen:** 2026-11-11T11:06:52.150+00:00 · **Novelty:** new · **Tags:** Evidence-Linked Memory, Experience Reuse, Memory Regression
+
+**Public availability:** 2026-11-11T01:00:00+00:00 (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.14320v1>) · [Code](<https://github.com/yukyeongleee/wikitrace>) · [Project](<https://yukyeongleee.github.io/wikitrace/>)
+
+**Evidence:** research-paper; full-text. Main mechanism/results/limitations and relevant Appendices A–F inspected, including exact Gain/Regression denominators, paired 10,000-task bootstrap, original prompts, splits and artifact configuration. The main Pi-agent study uses DeepSeek-V4-Flash at high reasoning effort over three trials, with an additional GLM-5.3-Flash subset. The same-insights comparison adds both source access and a descent prompt. Native original-batch plus official schedule infer November 11 01:00 UTC paper availability.
+
+**Limitations:** The frozen offline corpus exposes every insight initially, so prompt size grows with memory; source access does not prove that a lesson is correct. Memory reads add tokens and latency but consume no game steps. Baselines are adapted to the offline protocol, and AppWorld uses a disclosed null-gold-answer relaxation, so these are configured-suite results rather than official TGC comparisons. Descent and failure-cause analyses use LLM judgments and observational groups. Repository creation on October 21 is not proof of an old release: its only observed commit is November 11. No independent reproduction.
+
 ## [2026-11-07](../../../reports/2026/11/2026-11-07.md) — PARTIAL SEARCH
 
 ### [The components of agent memory](<https://www.anthropic.com/research/components-of-agent-memory>)

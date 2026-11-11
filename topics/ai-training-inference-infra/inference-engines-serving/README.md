@@ -5,6 +5,22 @@ Request scheduling, continuous batching, prefill/decode disaggregation and elast
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-11](../../../reports/2026/11/2026-11-11.md) — PARTIAL SEARCH
+
+### [SHADOWPREFILL: Keeping Your Next Model Warm for Per-Step Model Routing in Agentic LLM Serving](<https://arxiv.org/abs/2611.13176>)
+
+SHADOWPREFILL uses spare serving capacity to compute context on a model that an agent may switch to next, allowing that model to reuse its own prefix cache when the switch occurs. A simplified 16-H100 prototype reduces switch-call time to first token by 61.9% on average across four tested model pairs at the evaluated load, showing a way to shorten model-switch stalls; the complete SLO-slack controller and host-cache design are evaluated in simulation.
+
+**Published:** 2026-11-09 · **First seen:** 2026-11-11T11:07:49.631+00:00 · **Novelty:** new · **Tags:** Agent Serving, Model Routing, Prefix Caching, Idle-Capacity Harvesting
+
+**Public availability:** 2026-11-11T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/recent?skip=0&show=2000>) · [Timing source](<https://arxiv.org/list/cs.DC/new?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2611.13176v1>)
+
+**Evidence:** research-paper; full-text. Complete19-page v1, Sections2–6 and AppendicesA–E inspected. The full design combines incremental shadow jobs, sticky target placement, iteration-level SLO slack, routed-step credit, evict-first shadow KV and a host tier. Twenty-two H100-profiled Vidur simulation pairs use3seeds×3load windows; AppendixA gives3.5–21.4% switch-call latency and4.3–46.1% estimated token-cost reductions, so abstract headline ranges are not universal or hardware measurements. Section6/Figures10–13 and AppendixD separately test four pairs on a16-H100-80GB testbed, with one vLLM instance/model andTP1/2/4 as required, normal load0.3 of calibrated capacity. The request-level prototype obtains mean61.9% switch TTFT reduction,7.0% LLM time-per-task reduction and1.4% energy increase per SLO-compliant request; S7/Q72 all-call latency is essentially unchanged. SWE task accuracy comes from a separate50-task cohort; serving replays fix routes, output lengths and tool observations. Original primary-category dated November 11 batch plus the official Monday14:00–Tuesday14:00 -&gt; Tuesday20:00 Eastern schedule imply public availability November11 01:00 UTC (EST); submission receipt is preserved separately. The November11 holiday concerns the following Wednesday-evening announcement, not this observed Tuesday-evening batch.
+
+**Limitations:** The hardware prototype omits the per-iteration SLO controller, routed credit, evict-first cache and host tier, and therefore does not validate the full design’s safety claim. Its S7/S32 configuration slows LLM calls35.1% at0.5 background load, despite queue-based admission; low-load results do not imply universal non-regression. Token costs assume cached input priced at10% and are estimates, not measured cloud bills. Simulation energy is not prototype NVML energy. Shadow work is often unused, benefits shrink with long outputs/rare switches, and P/D simulation raises energy11.5%. No verified author release or independent reproduction.
+
 ## [2026-10-31](../../../reports/2026/10/2026-10-31.md) — PARTIAL SEARCH
 
 ### [PDScope: Breaking the Prefill-Decode Seesaw for Memory-Bound MoE Inference](<https://arxiv.org/abs/2610.39216>)

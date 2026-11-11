@@ -5,6 +5,22 @@ Data/tensor/pipeline/expert/context parallelism, sharding and communication over
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-11](../../../reports/2026/11/2026-11-11.md) — PARTIAL SEARCH
+
+### [Plumbline: When the Loss Lies, Validating LLM Training Correctly](<https://arxiv.org/abs/2611.13393>)
+
+This paper documents Plumbline, an existing Amazon training-validation system that checks data, checkpoints, optimizer updates and model layers against independent references, with agents operating the checks under human review. Its September–October study finds 61 problems across three frameworks and five models, including 32 silent failures, providing a practical method for catching incorrect training before committing to long runs.
+
+**Published:** 2026-11-10 · **First seen:** 2026-11-11T11:07:49.631+00:00 · **Novelty:** new · **Tags:** Training Correctness, Silent Failures, Reference Validation, Agentic Debugging
+
+**Public availability:** 2026-11-11T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/recent?skip=0&show=2000>) · [Timing source](<https://arxiv.org/list/cs.DC/new?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2611.13393v1>)
+
+**Evidence:** research-paper; full-text. Complete16-page v1 inspected. Sections3.2–3.3/Table1 define lifecycle, architecture and convergence checks with fixed per-version verdict rules, independent release/reference computations and measured noise floors; agents choose checks but do not redefine pass/fail. Section4 covers13 framework-model combinations across AutoModel, Megatron-SWIFT and Miles, five MoE models and validated recipes from1–16 nodes of8 B200s each. Tables2–3 report61 root-cause/framework problems,32 silent; lifecycle and architecture checks first find29 of32 silent problems, at least16 in runs passing convergence checks. Forty-two are fixed/reported upstream, eight first raised by the authors; this is not61 unique upstream software bugs or a measured61/61 recall benchmark. Selected delta is the newly public systematic methodology and dated detailed study of an existing system, not first implementation or software release. Original primary-category dated November 11 batch plus the official Monday14:00–Tuesday14:00 -&gt; Tuesday20:00 Eastern schedule imply public availability November11 01:00 UTC (EST); submission receipt is preserved separately. The November11 holiday concerns the following Wednesday-evening announcement, not this observed Tuesday-evening batch.
+
+**Limitations:** A production case study without an independently reproduced detection-recall or time-saved benchmark. Human approval and confirmation remain required. One-step checks use the first layers and a trusted independent model reference; shared-reference defects or absent reference implementations leave checks outside scope or unjudged. Convergence checks judge stability/recipe adherence and do not prove correct semantics. The4× noise bound is calibrated on the examined combinations, not a universal numerical theorem. Paper promises future open source; no author implementation was verified.
+
 ## [2026-11-09](../../../reports/2026/11/2026-11-09.md) — PARTIAL SEARCH
 
 ### [AutoParallel: Composable, PyTorch-Native Automatic Parallelism for Production Training](<https://arxiv.org/abs/2611.08660>)

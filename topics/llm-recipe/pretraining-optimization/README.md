@@ -5,6 +5,22 @@ Objectives, optimizers, learning rates, batch sizes and training stability.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-11](../../../reports/2026/11/2026-11-11.md) — PARTIAL SEARCH
+
+### [Closing the BF16-FP16 Convergence Speed Gap in RL Post-Training with Stochastic Rounding](<https://arxiv.org/abs/2611.13545>)
+
+This study traces slower low-learning-rate BF16 RL post-training to weight sticking, which persists even when training and rollout log-probabilities match exactly. Stochastically rounding FP32 shadow weights into the BF16 weights used by both backends matches FP16 reward trajectories across the tested math settings, without requiring FP16 loss scaling. It provides a targeted precision-recipe fix, with convergence measured in RL iterations and less reference-policy drift than simply increasing the BF16 learning rate.
+
+**Published:** 2026-11-10 · **First seen:** 2026-11-11T11:05:34.533+00:00 · **Novelty:** new · **Tags:** Mixed Precision, RLVR Stability, Stochastic Rounding
+
+**Public availability:** 2026-11-11T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/new>) · [Timing source](<https://arxiv.org/list/cs.LG/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.13545v1>)
+
+**Evidence:** research-paper; full-text. All 8 PDF pages read, including Sections 2-3 and Figures 1-7. Controlled DeepSeek-R1-Distill-Qwen-1.5B comparisons on MATH-1460 enforce bit-exact backend parity; mantissa-width and learning-rate sweeps support weight sticking as a contributor. Larger experiments use 14B distill models on MATH-1460/DAPO-Math-17k and Qwen3-30B-A3B on MATH-1460, with AIME 2024/2025 mean@32 evaluation. The simplest supported variant draws one stochastic weight realization after each optimizer step and reuses it in all forward passes until the next step, including synchronized rollout generation. The original November 10 receipt date is retained; first announcement is inferred from its original November 11 LG batch and official schedule.
+
+**Limitations:** Convergence speed means iterations to reward/score, not a measured wall-clock speedup. BF16 often catches up on downstream AIME later, so this is not an across-the-board final-quality gain. Parity controls use 64 H100s and other experiments 64 B200s; seed confidence intervals are not reported. TorchInductor observations cover the old vLLM 0.12-0.17 versions tested, not current releases. Frontier agentic/MXFP8 remarks are preliminary. Stochastic rounding is an established technique; this contribution is the controlled RLVR diagnosis/application, not invention of stochastic rounding. No author implementation was verified.
+
 ## [2026-11-10](../../../reports/2026/11/2026-11-10.md) — PARTIAL SEARCH
 
 ### [What the Loss Curve Misses: FP4 Pretraining Slows the Acquisition of Rare Facts](<https://arxiv.org/abs/2611.12832>)

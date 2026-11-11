@@ -5,6 +5,50 @@ Task success, trajectory evaluation, cost/reliability, prompt injection and perm
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-11](../../../reports/2026/11/2026-11-11.md) — PARTIAL SEARCH
+
+### [Agent Benchmarks Stop Ranking Before They Run Out of Tasks](<https://arxiv.org/abs/2611.13541>)
+
+Re-scoring released agent runs, this study separates two causes of benchmark saturation: binary rankings that cannot resolve nearby agents and scores that discard improvements beyond a reference solution. It proposes reporting acceptance gates, anchored graded quality and cost separately, helping evaluators measure useful progress when pass rates tie; the benefit depends on tasks with a meaningful quantitative objective.
+
+**Published:** 2026-11-10 · **First seen:** 2026-11-11T11:06:52.150+00:00 · **Novelty:** new · **Tags:** Benchmark Design, Statistical Uncertainty, Graded Evaluation, Cost Measurement
+
+**Public availability:** 2026-11-11T01:00:00+00:00 (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.13541v1>)
+
+**Evidence:** research-paper; full-text. Complete main Sections 1–8, methods/statistical controls, Tables 1–2 and Figures 1–4 inspected. Analyses cover eight benchmark families; a separate Terminal-Bench rerun uses 13 quantitative tasks, four models and three trials per task (156 runs). The same-task ALE-Bench re-scoring distinguishes capped versus above-reference information without pretending to simulate an entirely new task set. Original November 11 cs.AI membership plus official schedule infer November 11 01:00 UTC availability; the November 10 submission date remains unchanged.
+
+**Limitations:** The strongest sliding-bar evidence is ALE-Bench, with partly reconstructed model dates; continuous grading does not improve all benchmark rankings. Per-agent verifier error is available only for SWE-bench Verified and assumes strengthened tests as ground truth. The small rerun supports per-task differences more strongly than aggregate ranking claims. The log-ratio derivation requires positive ratio-scale quantities; the clip at 3 is a convention, and tasks without a scalar objective remain outside this remedy. Claimed code release was not located at a verified author URL; no reproduction.
+
+## [2026-11-11](../../../reports/2026/11/2026-11-11.md) — PARTIAL SEARCH
+
+### [AlphaProof Code: Verifying Signal’s Security at the Machine-Code Level](<https://deepmind.google/documents/36/Formal_Verification_of_Signal_4.pdf>)
+
+AlphaProof Code combines human-approved formal specifications, specialist proof agents and a held-out theorem comparator to verify selected properties of compiled Signal code in Lean. It demonstrates how large agent-generated proofs can be checked independently of the models, while concentrating human review on specifications and execution assumptions.
+
+**Published:** 2026-11-10 · **First seen:** 2026-11-11T11:05:48.471+00:00 · **Novelty:** newly-discovered · **Tags:** Formal Verification, Multi-Agent, Trusted Specifications, Lean
+
+[Paper](<https://deepmind.google/documents/36/Formal_Verification_of_Signal_4.pdf>) · [Blog](<https://deepmind.google/blog/introducing-alphaproof-code/>) · [Code](<https://github.com/google-deepmind/code-verification>) · [Project](<https://google-deepmind.github.io/code-verification/>)
+
+**Evidence:** research-paper; full-text. Read scientific main text, PDF pages 1–30, and relevant binary-scope and assumption appendices B.7 and C.5–C.7 (pages 44, 52–53), alongside the complete primary blog and released artifact README. The authors report five humans working for four weeks, roughly 6.5 million Lean proof lines and about 140,000 AArch64 instructions. A separate gatekeeper compares exported theorem types and transitive definitions against approved statements, with a fresh Lean kernel replay. These protocol-security properties differ substantively from the previously covered crash-freedom work on library fuzz targets. Delayed discovery within the 72-hour lookback: the November 10 publication date is retained; the artifact’s initial commit is November 10 08:14 UTC, before this daily window, and its historical public visibility is uncertain. The later 12:00 UTC blog timestamp is not asserted as the earliest release. First seen is the saved initial web-observation time; native fetch receipts are also preserved.
+
+**Limitations:** Author-reported case study, not independent proof reproduction or a controlled labor-efficiency comparison. The verified target is a fixed CLI harness over libsignal v0.105.4 and SPQR v1.6.0, compiled for a specific AArch64/Linux model; this is not a proof of the deployed Signal app. Thirty-nine hooked routines, execution models, approved specifications and cryptographic assumptions remain trusted. Computational results concern classical attackers and restricted scenarios; symbolic post-quantum claims use idealized primitives and do not establish SPQR post-quantum healing. Two historical, already-fixed bugs were reintroduced for demonstrations. The released Lean artifacts do not establish that the full agent harness is available.
+
+## [2026-11-11](../../../reports/2026/11/2026-11-11.md) — PARTIAL SEARCH
+
+### [MKA: Evaluating Multimodal Knowledge Agents on end-to-end professional tasks](<https://storage.googleapis.com/deepmind-media/papers/mka_tech_paper.pdf>)
+
+MKA evaluates agents on 200 expert-authored professional tasks that combine visually dense files and usually require a finished document, spreadsheet or other artifact. Its grader inspects both rendered pages and file internals, and a controlled image-tool ablation exposes failures that text extraction can hide. It offers a useful diagnostic for visual agent workflows, although only ten separate showcase tasks are public.
+
+**Published:** 2026-11-10 · **First seen:** 2026-11-11T11:08:14.374+00:00 · **Novelty:** newly-discovered · **Tags:** Multimodal Agents, Artifact Evaluation, Visual Tool Use, Agentic Judge
+
+[Paper](<https://storage.googleapis.com/deepmind-media/papers/mka_tech_paper.pdf>) · [Blog](<https://blog.google/innovation-and-ai/models-and-research/gemini-models/multimodal-knowledge-agent-benchmark/>) · [Code](<https://github.com/ArtificialAnalysis/Stirrup>) · [Project](<https://huggingface.co/datasets/google/multimodal-knowledge-agent>)
+
+**Evidence:** research-paper; full-text. Read the complete scientific body (PDF pages 1–16) and both appendices (pages 21–25), plus the primary Google blog, full public dataset card/tree, one pinned showcase task’s metadata and a bounded inspection of its 84-criterion rubric, and the existing Stirrup README. Section 4.3/Table 5 removes only view\_image from Gemini 4 Carbon while retaining code, OCR and search: Climb-WSR falls 5.94 percentage points, with a task-bootstrap 95% interval of −7.39 to −4.49, and output tokens rise 1.40×. Section 3.3’s 50-task, nine-sector human study focuses on high-weight balanced criteria; it reports 96.2% pairwise criterion agreement, not universal grading accuracy. Delayed discovery within the 72-hour lookback: the paper and blog are dated November 10; the showcase’s sole commit is November 10 10:02 UTC, before this window, but historical public visibility is not established. The later 16:00 UTC blog is not claimed as earliest release.
+
+**Limitations:** The 200-task evaluation suite is private; ten public showcase tasks are disjoint. Models run once per task and receive one grading pass, so task-bootstrap intervals exclude rollout and grader variance. The grader sees outputs, prompt and self-contained rubric, but no task inputs; its agreement study does not validate every low-weight formatting check. The image-tool ablation covers one model/harness, and coding/OCR workarounds remain available. The top three reported model scores are statistically indistinguishable; no universal model ranking is inferred. Three to eight hours describes expert task construction, solving and rubric writing, not a measured human completion-time baseline. API costs are dated list-price estimates. Stirrup is an existing framework, not newly released benchmark code, and current main was inspected only for availability.
+
 ## [2026-11-10](../../../reports/2026/11/2026-11-10.md) — PARTIAL SEARCH
 
 ### [AutoBuddy: Evaluating Proactive, Always-On Agents on Task Discovery and Execution in a Simulated Workplace](<https://arxiv.org/abs/2611.12393>)
