@@ -2,6 +2,13 @@
   "schema_version": 1,
   "reports": [
     {
+      "date": "2026-11-12",
+      "path": "reports/2026/11/2026-11-12.md",
+      "source": "data/reports/2026/11/2026-11-12.json",
+      "search_status": "partial",
+      "entries": 9
+    },
+    {
       "date": "2026-11-11",
       "path": "reports/2026/11/2026-11-11.md",
       "source": "data/reports/2026/11/2026-11-11.json",
@@ -313,6 +320,352 @@
     }
   ],
   "entries": [
+    {
+      "id": "arxiv:2611.14515",
+      "title": "AutoScaffold: AI-Guided Scaffolding for Reinforcement Learning of Language Models",
+      "category": "1.7",
+      "tags": [
+        "Adaptive Scaffolding",
+        "Reinforcement Learning",
+        "Teacher Feedback"
+      ],
+      "published_on": "2026-11-10",
+      "first_seen_at": "2026-11-11T11:05:34.533+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.14515",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.14515v1"
+      },
+      "summary": [
+        "AutoScaffold lets a frozen teacher inspect reinforcement-learning trajectories and periodically revise training-only strategies and hints, checking class-wide edits before use.",
+        "The student is evaluated without these scaffolds, and the authors report stronger results across household interaction, search-based question answering, mathematical reasoning, and GPU kernel generation.",
+        "This provides an adaptive support loop for training, while the comparisons and teacher-validation overhead do not establish lower total training cost."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "All 25 PDF pages read, including Algorithms 1-2, Tables 3-11 and Appendices A-D; result/cost tables on pages 11, 12 and 25 also visually inspected. GPT-5.5 writes class-level strategies every 10 student steps with at most 15 evidence queries and injection probability capped at 0.5; instance-level support is used only for math. Proposed class-level edits are compared with current/no scaffold on held-out training tasks, while all scaffolds are removed at evaluation. Authors report 93.9±0.3% ALFWorld success averaged across task types with Qwen2.5-1.5B versus the prior-paper GiGPO 86.7%, and 46.1±0.6% seven-dataset QA exact match with Qwen2.5-3B versus 42.1%. Experiments cover five students/four RL settings on 4-8 H200s; ALFWorld ablations and equal-start 20-step branch comparisons support the adaptive loop. Delayed report selection from the original November 11 LG batch: preserve the November 10 receipt date and earliest timestamped November 11 catalog discovery, and infer public announcement from that dated batch plus the official EST schedule.",
+        "limitations": "Most comparator scores are imported from prior papers rather than matched reruns; larger 7B skill models are reference-only. Section 4.1 states three independent runs, but the Nemotron and KernelBench tables omit seed variability. The 350-versus-1,100-step math comparison changes support/sampling and excludes teacher/validation overhead, so it is not total-compute or wall-clock savings. Validation alone takes 11-21 minutes per scaffold update on training GPUs, in addition to 3-5 minutes of teacher time. The binary-reward analysis assumes independent rollouts and idealized class shifts and does not prove transfer from scaffolded to unscaffolded behavior. No author implementation or independent reproduction was verified."
+      },
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-11T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/new",
+          "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-12",
+      "report_path": "reports/2026/11/2026-11-12.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.14467",
+      "title": "A Theory of Policy Optimization in Post-Training: Coverage Collapse and Reference Resets",
+      "category": "1.7",
+      "tags": [
+        "Policy Optimization Theory",
+        "Response Coverage",
+        "Reference Resets"
+      ],
+      "published_on": "2026-11-10",
+      "first_seen_at": "2026-11-11T11:05:34.533+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.14467",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.14467v1"
+      },
+      "summary": [
+        "A constructed counterexample shows that policy-gradient training can make optimal responses almost disappear even while average reward improves, despite anchoring the model to its initial policy.",
+        "The authors formalize periodically updating that reference and prove that several stylized post-training algorithms can preserve useful response coverage under fixed-feature, realizable-reward assumptions.",
+        "This gives a theoretical reason to study reference scheduling; it does not establish a convergence guarantee for nonlinear language models."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Full scientific main text pages 1-18 read, plus Appendix C.1-C.2 opening/complete lower-bound statement and construction on pages 45-48 and the complete KL-criterion Appendix D on pages 57-63 (page 64 MSE setup also read). Theorem 2.1 constructs a single-prompt tabular-softmax instance with initial inverse optimal-response mass at most 6, exact gradients and a fixed learning rate at most 1/5; eventual epsilon-optimality entails exponentially bad intermediate coverage even with a fixed KL reference. APMD approximately solves successive KL-regularized subproblems anchored at the latest policy; Theorem 3.1 requires explicitly shrinking inner KL error, not merely resetting an arbitrary trainer. End-to-end sample/gradient guarantees for PPO-NoClip/KimiPO/Rebel-OnPolicy use fixed-feature softmax-linear policies and linear realizable rewards. The clipped general-policy statement is conditional on inner optimization, with additional realizability/complexity conditions. Original November 10 receipt preserved; the original November 11 LG batch plus official schedule establishes inferred announcement time. Delayed selection of a previously reviewed but unpublished November 11 candidate; its original first-seen timestamp is retained. The unchanged v1 PDF was freshly fetched and its full main text pages 1-18 re-read in this run; the prior scoped appendix audit is preserved.",
+        "limitations": "This is theoretical evidence, not a measured LLM benchmark or production throughput gain. Full-response contextual bandits abstract away autoregressive token dynamics and multi-turn interaction. Figure 2 is an exact-gradient illustration on a modified constructed instance; it uses different constants/learning rate than the lower-bound theorem and schematic shading. Existing reference-reset practices are not newly invented here. The 141-page PDF is available, but review was scoped to the full main text, lower-bound construction and full KL-criterion appendix; every remaining technical proof was not independently checked. No author code/project was verified, and no universal convergence claim for nonlinear language models is made."
+      },
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-11T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/new",
+          "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-12",
+      "report_path": "reports/2026/11/2026-11-12.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "hf:qvac/botpsy-0.8b",
+      "title": "BotPsy: On-Device Personal Assistant with a Sub-Billion-Parameter Agentic Language Model",
+      "category": "2.2",
+      "tags": [
+        "Tool Use",
+        "Small Models",
+        "Post-training"
+      ],
+      "published_on": "2026-11-10",
+      "first_seen_at": "2026-11-12T16:31:18.579+00:00",
+      "canonical_url": "https://huggingface.co/qvac/BotPsy-0.8B",
+      "links": {
+        "blog": "https://huggingface.co/blog/qvac/botpsy",
+        "project": "https://huggingface.co/qvac/BotPsy-0.8B"
+      },
+      "summary": [
+        "BotPsy adapts a 0.8B model for tool use through supervised trajectories, three specialist distillation teachers and two rounds of verifiable-reward training.",
+        "Reported gains over its base model, alongside released weights, make it a useful small-model reference for assistants that call tools and follow multi-turn instructions.",
+        "Open-ended research remains weak, and the report does not measure real-device latency or battery use."
+      ],
+      "evidence": {
+        "type": "technical-report",
+        "access": "full-text",
+        "rationale": "Delayed discovery in the November 12 lookback. Full author blog, evaluation footnotes, current and initial model cards, commit history, repository tree and license were inspected. The initial release commit is dated November 10 03:10:37 UTC and already contains the four-stage recipe and main results, so the November 11 blog is not treated as a new method. Exact historical public visibility is not inferred from commit time. The report compares five reasoning-mode models; BFCL v4 uses the official weighted score averaged over three runs (44.0 versus base 23.4), ACEBench two runs (58.7 versus 30.1), and the stated tau aggregate averages retail/telecom/banking across three runs (51.5 versus 23.2). Current public metadata lists a 1.706GB safetensors file and BF16/Q8/Q4 GGUF artifacts; model weights were not downloaded or executed.",
+        "limitations": "These are author-reported evaluations of five selected small models, not a global SoTA ranking. Stage curves do not isolate every recipe component under matched compute. Training code/data are explicitly absent, compute accounting and seed confidence intervals are not supplied, and quantized variants have no separate quality measurements here. External-API benchmarks were run November 3; safety claims are not deployment guarantees. BrowseComp-Plus accuracy is only 4.5%, banking stays near 4%, and multi-turn/lower-resource-language weaknesses remain. On-device suitability is an intended use, with no measured device latency, battery use or end-to-end privacy guarantee."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-11-12",
+      "report_path": "reports/2026/11/2026-11-12.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2605.17558",
+      "title": "Firefly: Illuminating Large-Scale Verified Tool-Call Data Generation from Real APIs",
+      "category": "2.5",
+      "tags": [
+        "Synthetic Tool Data",
+        "Agent RL",
+        "Validation",
+        "Simulator Robustness"
+      ],
+      "published_on": "2026-05-17",
+      "first_seen_at": "2026-11-11T11:05:34.533+00:00",
+      "canonical_url": "https://arxiv.org/abs/2605.17558",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2605.17558v3",
+        "code": "https://github.com/leoleoasd/firefly-neurips-2026"
+      },
+      "summary": [
+        "Firefly’s November 10 revision adds a same-task SFT comparison, alternative judge/simulator backends and a blinded human audit to its existing real-API tool-data pipeline.",
+        "The added controls help assess whether training gains depend on one simulator, while the audit finds that only 78% of accepted tasks satisfy all three checked criteria, making residual data errors explicit."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read v3 scientific body, methods, results and limitations (PDF pages 1–10), training configuration and all new experimental Appendices B–D (pages 14–16), then compared v2 Sections 5–7 (pages 8–10), complete HTML paragraph diff and the absence of the new controls in v2. Earlier pipeline: graph-guided public MCP exploration, backward task synthesis from observed outputs, a cache-grounded simulator, 4,944 train/200 test tasks and Qwen3-4B Thinking GRPO. New Appendix B samples four Claude trajectories per training task and keeps correct ones; three-epoch SFT reaches 38.5% pass@1 versus 41.5% RL under the same held-out protocol. Appendix C jointly substitutes judge and simulator for all 15 RL checkpoints: stronger Qwen and Claude backends preserve the curve with average shifts of -0.96 and +4.2 points. Appendix D interleaves 50 accepted and 50 rejected tasks with blinded human assessment: all-three acceptance is 78% versus 38%, and accepted-task label correctness alone is 80%. Current public code README and GitHub repository/commit metadata were inspected statically; no code was executed. Original May17 receipt retained; v3 history is November10 05:01:06UTC, within this lookback. Earlier catalog first_seen is preserved.",
+        "limitations": "Author-side single-4B study, not independent reproduction. SFT and RL are not shown to use matched total compute, and no uncertainty interval establishes significance for the 3-point difference. Imported Toucan scores use different base families/scales, preventing a clean pipeline superiority claim. Simultaneous judge-and-simulator substitution does not isolate their separate biases. The 100-task audit lacks reported annotator counts/inter-rater agreement; accepted tasks are not guaranteed correct despite stronger wording in the abstract. Cached stateless, auth-free APIs and conservative simulator errors constrain valid paths; 34.7% of evaluated tool calls are rejected by the LLM stage. Live API access is avoided during RL, but simulator inference still costs compute. Data/model availability at the authors’ project domain could not be verified because DNS resolution failed; the reachable GitHub code is an existing September artifact, not a newly released November implementation."
+      },
+      "novelty": "material-update",
+      "update_note": "2026-11-10 v3 adds same-task SFT controls (Table6), joint judge/simulator replacements across15 checkpoints (Table8), and a blinded100-task validation audit (Table9), none present in the inspected2026-10-26 v2. The existing graph/back-chaining pipeline, primary RL gains and cross-benchmark results are not new contributions in this update.",
+      "report_kind": "daily",
+      "report_date": "2026-11-12",
+      "report_path": "reports/2026/11/2026-11-12.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.13355",
+      "title": "DEPUTYBENCH: Evaluating Contextual Safety in Enterprise Agents",
+      "category": "2.8",
+      "tags": [
+        "Authorization",
+        "Agent Evaluation",
+        "Evidence Sufficiency"
+      ],
+      "published_on": "2026-11-09",
+      "first_seen_at": "2026-11-12T16:31:40.725+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.13355",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.13355v1"
+      },
+      "summary": [
+        "DEPUTYBENCH evaluates whether enterprise agents complete legitimate work while withholding the same action when backend permissions prohibit it.",
+        "Matched permission changes and evidence-masking tests provide a concrete way to check authorization decisions without rewarding blanket refusal.",
+        "The authors find more restricted execution when deciding evidence is missing than when it explicitly denies permission, with most of the observed gap concentrated in four privacy tasks."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Delayed discovery of the original November 11 SE announcement, inferred at 01:00 UTC from its dated new-submission batch and the official Eastern-US schedule; the November 9 receipt date is preserved. Full main methods/results/limitations plus execution, scoring, missingness and context-control appendices were read. The benchmark has 79 base items, 375 isolated service instances, 188 permission pairs and 12 models over three rounds; 174 unanswered-verification twins are excluded from headline counted outcomes. A separate 28-task/six-model/5,058-run context study fixes requests while flipping deciding backend facts, masking evidence or rewriting irrelevant records. On the 27 matched masking tasks, deterministic restricted-action execution is 100/972 versus unauthorized harm 17/486 (10.3% versus 3.5%); the secondary difference is 6.8 points with a task-clustered 95% interval of 1.9-13.0.",
+        "limitations": "Synthetic English tasks cover six families under one executor with provider-default sampling and nonuniform reasoning routes, not equal-compute or production-risk estimates. The masking gap is a secondary comparison; its post-hoc four-task concentration accounts for 61/100 events, and excluding those tasks gives an interval spanning zero. Complete tested-model transcripts for those focal cases are unavailable, so no internal missing-means-zero mechanism is identified. Held-out scorer joint correctness is 266/284, leaving errors and uncovered disclosure paths; stage annotations and clean-container reproduction are author-side LLM-agent procedures, not independent human or external replication. Code/data remain internal and are promised for later release."
+      },
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-11T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.SE/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-12",
+      "report_path": "reports/2026/11/2026-11-12.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.14364",
+      "title": "ARE-bench: Benchmarking Agents' Research Ability in Real-World Researcher Sessions and Workspaces",
+      "category": "2.8",
+      "tags": [
+        "Research Agents",
+        "Workspace State",
+        "Evaluation"
+      ],
+      "published_on": "2026-11-10",
+      "first_seen_at": "2026-11-12T16:31:40.725+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.14364",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.14364v1",
+        "project": "https://arebench.com"
+      },
+      "summary": [
+        "ARE-bench tests research agents on 75 requests cut from real projects, restoring unfinished workspaces and carrying forward earlier user requirements.",
+        "Its evidence-linked checklists expose deliveries that look complete but violate the project’s method or prior decisions, providing a concrete way to assess research handoffs."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Delayed discovery of the original November 11 CL announcement, inferred at 01:00 UTC from its dated original batch and official schedule; retain the November 10 receipt rather than changing it to the manuscript front-page date. Main methods/results/limits and the replay/anonymization, complete repair-rubric, judge and run-configuration appendices were inspected. The 75 tasks cover seven stages and 1,173 binary checks; seven models have three rollouts/task. Strict instance success requires every applicable check; checklist success averages within each task before weighting tasks equally. Reported best strict success is 66.22% plus/minus 5.39 percentage points across three rounds. Reusing fixed deliveries and verdicts, expanding only the scoring checklist drops three models from about 69% to 28.44-40.00%, showing failures missed by narrower acceptance checks.",
+        "limitations": "Scores describe model-plus-harness combinations: GPT-6.1-Sol uses Codex and others Claude Code, with heterogeneous task time limits and incompletely verified physical hosts/GPUs. The checklist-scope comparison is a rescoring analysis, not an intervention proving that adding context improves models. Three-round standard deviations are not confidence intervals. Judge agreement is model-based on a selected 20-task subset without independent human ground truth; session selection, replay loss and human rubric judgments limit generality. The public project exposes summaries and examples but code/data links are null, so no full executable benchmark release is claimed. Some website cost and session-position prose differs from the manuscript; paper v1 governs this summary."
+      },
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-11T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-12",
+      "report_path": "reports/2026/11/2026-11-12.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://rocm.blogs.amd.com/artificial-intelligence/glm53flash-mi300x-vllm/readme.html",
+      "title": "Parallelism for Long-Context Serving: GLM-5.3-Flash on MI300X",
+      "category": "3.3",
+      "tags": [
+        "Serving Parallelism",
+        "KV Capacity",
+        "AMD MI300X",
+        "FP8 KV Cache"
+      ],
+      "published_on": "2026-11-11",
+      "first_seen_at": "2026-11-12T16:33:12.999+00:00",
+      "canonical_url": "https://rocm.blogs.amd.com/artificial-intelligence/glm53flash-mi300x-vllm/README.html",
+      "links": {
+        "blog": "https://rocm.blogs.amd.com/artificial-intelligence/glm53flash-mi300x-vllm/README.html",
+        "code": "https://github.com/ROCm/rocm-blogs/tree/b83c9d2f1ebada17ed05f2736507d393343fc4fd/blogs/artificial-intelligence/glm53flash-mi300x-vllm/src"
+      },
+      "summary": [
+        "AMD’s controlled serving study explains when replicated latent caches make tensor parallelism run out of capacity before data-parallel attention with sharded experts.",
+        "On eight MI300X GPUs, GLM-5.3-Flash favors tensor parallelism for one request, while the tested 96k-input/32k-output workload reaches 2.04× higher output throughput with data-plus-expert parallelism at concurrency256.",
+        "Its cache-capacity calculations help choose a deployment for the expected traffic and show why FP8 cache storage helps mainly after the BF16 capacity ceiling is reached."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "Full primary article, complete measured-results appendix, fixed release source, launch/benchmark script and both downloadable runtime diffs inspected statically. Release-path history first adds this dated study November11 at21:14:31Z; no associated earlier public pull request was returned by commit association or exact-title issue search. It evaluates the existing TP8 and DP8+EP8 configurations, not a new parallel algorithm. Same eight192GB MI300X GPUs, GLM-5.3-Flash FP8 weights, patched vLLM0.31.0/ROCm7.2.3/PyTorch2.13.0/AITER0.1.23, prefix caching disabled, max-num-seqs1024 and GPU utilization0.8. Fixed random prompts force full output lengths; each grid point has as many requests as its concurrency and one run. BF16 latent-cache capacity is9,841,634 tokens under TP8 versus56,564,848 across eight DP ranks:76 versus441 complete128,000-token sessions. At concurrency256 and96,000/32,000 lengths, output throughput is2317.08 versus4719.20 tok/s; at concurrency1 TP8 is78.74 versus49.89. FP8 KV gives+42.7% for TP8 at128 concurrency and+25.8% for DP8+EP8 at512, but under2% below the tested BF16 ceilings. These are node-total output-token throughputs, not input-plus-output or per-GPU rates.",
+        "limitations": "Single eight-GPU node, synthetic fixed-length burst workloads, one run per point and author-estimated noise about3%; no production arrival process, repeated-run error bars or SLO goodput result. FP8 model weights are distinct from the BF16-versus-FP8 cache intervention. The study measures throughput, not accuracy, so FP8 KV or INT4 communication does not carry an accuracy-preservation claim. Results require two vLLM patches plus an AITER split-K guard; performance of stock releases or other parallel layouts cannot be inferred. Cache-capacity arithmetic is specific to this replicated-MLA configuration, not all tensor-parallel engines or hybrid models. No independent reproduction."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-11-12",
+      "report_path": "reports/2026/11/2026-11-12.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.12956",
+      "title": "ADIndex: Layer-Adaptive Sparse Attention Indexing via Group-Level Distillation",
+      "category": "3.4",
+      "tags": [
+        "Sparse Attention",
+        "Indexer Distillation",
+        "Long Context",
+        "Inference Efficiency"
+      ],
+      "published_on": "2026-11-07",
+      "first_seen_at": "2026-11-11T11:07:49.633+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.12956",
+      "links": {
+        "paper": "https://arxiv.org/html/2611.12956v1"
+      },
+      "summary": [
+        "ADIndex learns small, layer-specific group indexers that scan a long history once for nearby queries, then lets the original sparse-attention indexer refine each query within a shared candidate bank.",
+        "This reduces repeated indexing work while keeping long-context benchmark scores close to the original models in the authors’ two-model evaluation; the reported B300 end-to-end speedup reaches 1.54× at 128K, with a slowdown at 16K."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "All 27 v1 pages inspected, including Sections 4–5, Figure 3, Tables 1–4 and Appendices A–C. Calibration selects per-layer query groups and candidate-bank budgets from 100 held-out 128K sequences; independent per-layer distillation uses 1,000 other source sequences, 256,000 anchor visits and 1,000 optimizer steps. Frozen-backbone DeepSeek-V3.2 and GLM-5.1 non-thinking evaluations use LongBench, LongBench v2 and RULER with final Top-2048 refinement. At 128K, RULER is 93.34 versus 93.69 and 94.49 versus 94.97 respectively. SGLang on B300 yields end-to-end speedups of 0.86×/1.07×/1.21×/1.54× at 16K/32K/64K/128K; 256K kernel gains (up to 6.22× prefill and 3.40× verification) are separate kernel measurements. Delayed completion of yesterday’s abstract-only reserve: actual discovery remains the November 11 native LG index retrieval, not today’s full-text read. The original primary-LG new listing and recent listing date the first announcement November 11; the official Tuesday 20:00 Eastern schedule implies November 11 01:00 UTC (EST), distinct from the November 7 submission receipt. This precedes the November 11 holiday’s deferred Wednesday-evening mailing.",
+        "limitations": "Approximate bank retrieval, not identical native DSA token selection or a guarantee of preserved autoregressive/speculative distributions: group representations are pooled across jointly processed queries. Calibration maximums bound only observed reference unions, and bank coverage is below 100%. LongBench v2 inputs are capped at 128K; the 256K numbers do not establish quality there. Competing methods are the authors’ specified adaptations, including a fixed uniform IndexCache schedule. The paper specifies B300 hardware but omits a complete serving hardware-count/parallelism/precision/batch and repeated-run uncertainty account, limiting transfer of the 1.54× result. The scoring-count analysis fixes an illustrative acceptance trace and excludes auxiliary overhead; it is not measured wall time. No author code release was linked and verified, no independent reproduction."
+      },
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-11T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/new",
+          "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-12",
+      "report_path": "reports/2026/11/2026-11-12.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://www.lmsys.org/blog/2026-11-11-unified-memory/",
+      "title": "Unified Memory in SGLang: One Arena for Every Token Lifetime",
+      "category": "3.4",
+      "tags": [
+        "Hybrid Models",
+        "Memory Allocation",
+        "KV Cache",
+        "Request Admission"
+      ],
+      "published_on": "2026-11-10",
+      "first_seen_at": "2026-11-12T16:32:55.137+00:00",
+      "canonical_url": "https://www.lmsys.org/blog/2026-11-11-unified-memory/",
+      "links": {
+        "blog": "https://www.lmsys.org/blog/2026-11-11-unified-memory/",
+        "code": "https://github.com/sgl-project/sglang/tree/daa171846f2dfc8162b4fbcfac13b073d7a6353a/python/sglang/srt/mem_cache/kv",
+        "project": "https://docs.sglang.io/docs/advanced_features/unified_memory"
+      },
+      "summary": [
+        "This new workload study explains SGLang’s existing unified allocator, which lets full-attention caches, sliding-window caches and recurrent state share one movable memory arena.",
+        "Joint admission and delayed physical reuse help recover capacity stranded by fixed partitions; on one H200, the tested long-context Qwen3.5-4B workload achieves 26% higher output throughput than the default separate pools."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "Complete primary blog, original public draft, fixed-version usage guide and relevant full design sections inspected. This is a newly disclosed measurement/design account of an existing feature, not a new allocator release: issue history contains the flag in April and September, and documentation PR49312 opened November 9. Public blog PR466 opened November 10 at 20:42:46Z; immutable initial commit313974a3 already has the exact result paragraphs and front matter November10. The official blog later changed its date to November11 and merged at22:59:10Z. Original November10 date retained and delayed discovery labeled. The H200 study at SGLang daa171846f averages two runs per model/workload. GPT-OSS-20B at512 input/1536 output and1024 concurrency admits about1000 versus618 requests, with14% higher output throughput and TTFT6 versus43 seconds; Qwen3.5-4B at16K input/4096 output and64 concurrency runs32 versus22 and is26% faster. The shorter1024/256 Qwen workload is5830 versus5880 output tokens/s, with equal0.875 GSM8K on200 questions. Per-token entries and virtual-to-physical mappings let bands compact; a page-use ledger distinguishes logical capacity from physical reuse while forwards/copies/transfers remain active.",
+        "limitations": "Experimental NVIDIA-CUDA hybrid-model feature, with two-run averages and no reported confidence intervals; default-ratio comparisons do not establish superiority to every tuned partition or traffic mix. Identical GSM8K on200 questions is not broad correctness equivalence. Compaction can wait under pressure. Full-attention-only models and multiple backend/model combinations are unsupported, and PD is Mooncake-only with PP/speculation/DCP combination restrictions. Priority preemption is disabled; stalled recurrent checkpoints can exceed admission’s estimated window bound. The pinned design explicitly says failed/timed-out PD transfers may release pages without proof the remote engine has stopped, so page-safety guarantees must not be generalized to all failed network transfers. Current live documentation changes after cutoff were not treated as new cutoff evidence; fixed November10 source was used. No author code execution or independent benchmark reproduction."
+      },
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-10T20:42:46Z",
+        "basis": "dated-source",
+        "sources": [
+          "https://api.github.com/repos/lm-sys/lm-sys.github.io/pulls/466",
+          "https://raw.githubusercontent.com/lm-sys/lm-sys.github.io/313974a3bcdfbeaee810b1812d88ffd7c2102c39/blog/2026-11-10-unified-memory.md"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-12",
+      "report_path": "reports/2026/11/2026-11-12.md",
+      "search_status": "partial"
+    },
     {
       "id": "arxiv:2611.13545",
       "title": "Closing the BF16-FP16 Convergence Speed Gap in RL Post-Training with Stochastic Rounding",
@@ -12169,7 +12522,7 @@
       "group": "llm-recipe",
       "title": "Reinforcement Learning & Reasoning",
       "path": "topics/llm-recipe/reinforcement-learning-reasoning/README.md",
-      "count": 15
+      "count": 17
     },
     {
       "id": "1.8",
@@ -12204,7 +12557,7 @@
       "group": "ai-agent-dev",
       "title": "Tool Use & Environment Interaction",
       "path": "topics/ai-agent-dev/tool-use-environment-interaction/README.md",
-      "count": 8
+      "count": 9
     },
     {
       "id": "2.3",
@@ -12225,7 +12578,7 @@
       "group": "ai-agent-dev",
       "title": "Agent Learning & Skill Acquisition",
       "path": "topics/ai-agent-dev/agent-learning-skill-acquisition/README.md",
-      "count": 17
+      "count": 18
     },
     {
       "id": "2.6",
@@ -12246,7 +12599,7 @@
       "group": "ai-agent-dev",
       "title": "Agent Evaluation & Security",
       "path": "topics/ai-agent-dev/agent-evaluation-security/README.md",
-      "count": 41
+      "count": 43
     },
     {
       "id": "3.1",
@@ -12267,14 +12620,14 @@
       "group": "ai-training-inference-infra",
       "title": "Inference Engines & Serving",
       "path": "topics/ai-training-inference-infra/inference-engines-serving/README.md",
-      "count": 22
+      "count": 23
     },
     {
       "id": "3.4",
       "group": "ai-training-inference-infra",
       "title": "Attention, KV Cache & Memory Systems",
       "path": "topics/ai-training-inference-infra/attention-kv-cache-memory-systems/README.md",
-      "count": 18
+      "count": 20
     },
     {
       "id": "3.5",

@@ -5,6 +5,38 @@ RLHF, RLVR, policy optimization, reasoning training, tool use and multi-turn age
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-12](../../../reports/2026/11/2026-11-12.md) — PARTIAL SEARCH
+
+### [AutoScaffold: AI-Guided Scaffolding for Reinforcement Learning of Language Models](<https://arxiv.org/abs/2611.14515>)
+
+AutoScaffold lets a frozen teacher inspect reinforcement-learning trajectories and periodically revise training-only strategies and hints, checking class-wide edits before use. The student is evaluated without these scaffolds, and the authors report stronger results across household interaction, search-based question answering, mathematical reasoning, and GPU kernel generation. This provides an adaptive support loop for training, while the comparisons and teacher-validation overhead do not establish lower total training cost.
+
+**Published:** 2026-11-10 · **First seen:** 2026-11-11T11:05:34.533+00:00 · **Novelty:** newly-discovered · **Tags:** Adaptive Scaffolding, Reinforcement Learning, Teacher Feedback
+
+**Public availability:** 2026-11-11T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/new>) · [Timing source](<https://arxiv.org/list/cs.LG/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.14515v1>)
+
+**Evidence:** research-paper; full-text. All 25 PDF pages read, including Algorithms 1-2, Tables 3-11 and Appendices A-D; result/cost tables on pages 11, 12 and 25 also visually inspected. GPT-5.5 writes class-level strategies every 10 student steps with at most 15 evidence queries and injection probability capped at 0.5; instance-level support is used only for math. Proposed class-level edits are compared with current/no scaffold on held-out training tasks, while all scaffolds are removed at evaluation. Authors report 93.9±0.3% ALFWorld success averaged across task types with Qwen2.5-1.5B versus the prior-paper GiGPO 86.7%, and 46.1±0.6% seven-dataset QA exact match with Qwen2.5-3B versus 42.1%. Experiments cover five students/four RL settings on 4-8 H200s; ALFWorld ablations and equal-start 20-step branch comparisons support the adaptive loop. Delayed report selection from the original November 11 LG batch: preserve the November 10 receipt date and earliest timestamped November 11 catalog discovery, and infer public announcement from that dated batch plus the official EST schedule.
+
+**Limitations:** Most comparator scores are imported from prior papers rather than matched reruns; larger 7B skill models are reference-only. Section 4.1 states three independent runs, but the Nemotron and KernelBench tables omit seed variability. The 350-versus-1,100-step math comparison changes support/sampling and excludes teacher/validation overhead, so it is not total-compute or wall-clock savings. Validation alone takes 11-21 minutes per scaffold update on training GPUs, in addition to 3-5 minutes of teacher time. The binary-reward analysis assumes independent rollouts and idealized class shifts and does not prove transfer from scaffolded to unscaffolded behavior. No author implementation or independent reproduction was verified.
+
+## [2026-11-12](../../../reports/2026/11/2026-11-12.md) — PARTIAL SEARCH
+
+### [A Theory of Policy Optimization in Post-Training: Coverage Collapse and Reference Resets](<https://arxiv.org/abs/2611.14467>)
+
+A constructed counterexample shows that policy-gradient training can make optimal responses almost disappear even while average reward improves, despite anchoring the model to its initial policy. The authors formalize periodically updating that reference and prove that several stylized post-training algorithms can preserve useful response coverage under fixed-feature, realizable-reward assumptions. This gives a theoretical reason to study reference scheduling; it does not establish a convergence guarantee for nonlinear language models.
+
+**Published:** 2026-11-10 · **First seen:** 2026-11-11T11:05:34.533+00:00 · **Novelty:** newly-discovered · **Tags:** Policy Optimization Theory, Response Coverage, Reference Resets
+
+**Public availability:** 2026-11-11T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/new>) · [Timing source](<https://arxiv.org/list/cs.LG/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.14467v1>)
+
+**Evidence:** research-paper; full-text. Full scientific main text pages 1-18 read, plus Appendix C.1-C.2 opening/complete lower-bound statement and construction on pages 45-48 and the complete KL-criterion Appendix D on pages 57-63 (page 64 MSE setup also read). Theorem 2.1 constructs a single-prompt tabular-softmax instance with initial inverse optimal-response mass at most 6, exact gradients and a fixed learning rate at most 1/5; eventual epsilon-optimality entails exponentially bad intermediate coverage even with a fixed KL reference. APMD approximately solves successive KL-regularized subproblems anchored at the latest policy; Theorem 3.1 requires explicitly shrinking inner KL error, not merely resetting an arbitrary trainer. End-to-end sample/gradient guarantees for PPO-NoClip/KimiPO/Rebel-OnPolicy use fixed-feature softmax-linear policies and linear realizable rewards. The clipped general-policy statement is conditional on inner optimization, with additional realizability/complexity conditions. Original November 10 receipt preserved; the original November 11 LG batch plus official schedule establishes inferred announcement time. Delayed selection of a previously reviewed but unpublished November 11 candidate; its original first-seen timestamp is retained. The unchanged v1 PDF was freshly fetched and its full main text pages 1-18 re-read in this run; the prior scoped appendix audit is preserved.
+
+**Limitations:** This is theoretical evidence, not a measured LLM benchmark or production throughput gain. Full-response contextual bandits abstract away autoregressive token dynamics and multi-turn interaction. Figure 2 is an exact-gradient illustration on a modified constructed instance; it uses different constants/learning rate than the lower-bound theorem and schematic shading. Existing reference-reset practices are not newly invented here. The 141-page PDF is available, but review was scoped to the full main text, lower-bound construction and full KL-criterion appendix; every remaining technical proof was not independently checked. No author code/project was verified, and no universal convergence claim for nonlinear language models is made.
+
 ## [2026-11-11](../../../reports/2026/11/2026-11-11.md) — PARTIAL SEARCH
 
 ### [Are Dense Rewards Worth Their Tokens in GRPO?](<https://arxiv.org/abs/2611.13560>)

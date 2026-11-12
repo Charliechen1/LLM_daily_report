@@ -5,6 +5,20 @@ Tool selection/calling, APIs, code execution, browser/computer use and protocols
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-12](../../../reports/2026/11/2026-11-12.md) — PARTIAL SEARCH
+
+### [BotPsy: On-Device Personal Assistant with a Sub-Billion-Parameter Agentic Language Model](<https://huggingface.co/qvac/BotPsy-0.8B>)
+
+BotPsy adapts a 0.8B model for tool use through supervised trajectories, three specialist distillation teachers and two rounds of verifiable-reward training. Reported gains over its base model, alongside released weights, make it a useful small-model reference for assistants that call tools and follow multi-turn instructions. Open-ended research remains weak, and the report does not measure real-device latency or battery use.
+
+**Published:** 2026-11-10 · **First seen:** 2026-11-12T16:31:18.579+00:00 · **Novelty:** newly-discovered · **Tags:** Tool Use, Small Models, Post-training
+
+[Blog](<https://huggingface.co/blog/qvac/botpsy>) · [Project](<https://huggingface.co/qvac/BotPsy-0.8B>)
+
+**Evidence:** technical-report; full-text. Delayed discovery in the November 12 lookback. Full author blog, evaluation footnotes, current and initial model cards, commit history, repository tree and license were inspected. The initial release commit is dated November 10 03:10:37 UTC and already contains the four-stage recipe and main results, so the November 11 blog is not treated as a new method. Exact historical public visibility is not inferred from commit time. The report compares five reasoning-mode models; BFCL v4 uses the official weighted score averaged over three runs (44.0 versus base 23.4), ACEBench two runs (58.7 versus 30.1), and the stated tau aggregate averages retail/telecom/banking across three runs (51.5 versus 23.2). Current public metadata lists a 1.706GB safetensors file and BF16/Q8/Q4 GGUF artifacts; model weights were not downloaded or executed.
+
+**Limitations:** These are author-reported evaluations of five selected small models, not a global SoTA ranking. Stage curves do not isolate every recipe component under matched compute. Training code/data are explicitly absent, compute accounting and seed confidence intervals are not supplied, and quantized variants have no separate quality measurements here. External-API benchmarks were run November 3; safety claims are not deployment guarantees. BrowseComp-Plus accuracy is only 4.5%, banking stays near 4%, and multi-turn/lower-resource-language weaknesses remain. On-device suitability is an intended use, with no measured device latency, battery use or end-to-end privacy guarantee.
+
 ## [2026-10-28](../../../reports/2026/10/2026-10-28.md) — PARTIAL SEARCH
 
 ### [Concordat: Typed Sessions for LLM Agents](<https://arxiv.org/abs/2610.37461>)

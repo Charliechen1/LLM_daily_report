@@ -5,6 +5,20 @@ Request scheduling, continuous batching, prefill/decode disaggregation and elast
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-12](../../../reports/2026/11/2026-11-12.md) — PARTIAL SEARCH
+
+### [Parallelism for Long-Context Serving: GLM-5.3-Flash on MI300X](<https://rocm.blogs.amd.com/artificial-intelligence/glm53flash-mi300x-vllm/README.html>)
+
+AMD’s controlled serving study explains when replicated latent caches make tensor parallelism run out of capacity before data-parallel attention with sharded experts. On eight MI300X GPUs, GLM-5.3-Flash favors tensor parallelism for one request, while the tested 96k-input/32k-output workload reaches 2.04× higher output throughput with data-plus-expert parallelism at concurrency256. Its cache-capacity calculations help choose a deployment for the expected traffic and show why FP8 cache storage helps mainly after the BF16 capacity ceiling is reached.
+
+**Published:** 2026-11-11 · **First seen:** 2026-11-12T16:33:12.999+00:00 · **Novelty:** new · **Tags:** Serving Parallelism, KV Capacity, AMD MI300X, FP8 KV Cache
+
+[Blog](<https://rocm.blogs.amd.com/artificial-intelligence/glm53flash-mi300x-vllm/README.html>) · [Code](<https://github.com/ROCm/rocm-blogs/tree/b83c9d2f1ebada17ed05f2736507d393343fc4fd/blogs/artificial-intelligence/glm53flash-mi300x-vllm/src>)
+
+**Evidence:** engineering-report; full-text. Full primary article, complete measured-results appendix, fixed release source, launch/benchmark script and both downloadable runtime diffs inspected statically. Release-path history first adds this dated study November11 at21:14:31Z; no associated earlier public pull request was returned by commit association or exact-title issue search. It evaluates the existing TP8 and DP8+EP8 configurations, not a new parallel algorithm. Same eight192GB MI300X GPUs, GLM-5.3-Flash FP8 weights, patched vLLM0.31.0/ROCm7.2.3/PyTorch2.13.0/AITER0.1.23, prefix caching disabled, max-num-seqs1024 and GPU utilization0.8. Fixed random prompts force full output lengths; each grid point has as many requests as its concurrency and one run. BF16 latent-cache capacity is9,841,634 tokens under TP8 versus56,564,848 across eight DP ranks:76 versus441 complete128,000-token sessions. At concurrency256 and96,000/32,000 lengths, output throughput is2317.08 versus4719.20 tok/s; at concurrency1 TP8 is78.74 versus49.89. FP8 KV gives+42.7% for TP8 at128 concurrency and+25.8% for DP8+EP8 at512, but under2% below the tested BF16 ceilings. These are node-total output-token throughputs, not input-plus-output or per-GPU rates.
+
+**Limitations:** Single eight-GPU node, synthetic fixed-length burst workloads, one run per point and author-estimated noise about3%; no production arrival process, repeated-run error bars or SLO goodput result. FP8 model weights are distinct from the BF16-versus-FP8 cache intervention. The study measures throughput, not accuracy, so FP8 KV or INT4 communication does not carry an accuracy-preservation claim. Results require two vLLM patches plus an AITER split-K guard; performance of stock releases or other parallel layouts cannot be inferred. Cache-capacity arithmetic is specific to this replicated-MLA configuration, not all tensor-parallel engines or hybrid models. No independent reproduction.
+
 ## [2026-11-11](../../../reports/2026/11/2026-11-11.md) — PARTIAL SEARCH
 
 ### [SHADOWPREFILL: Keeping Your Next Model Warm for Per-Step Model Routing in Agentic LLM Serving](<https://arxiv.org/abs/2611.13176>)

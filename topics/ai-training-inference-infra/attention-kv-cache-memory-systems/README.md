@@ -5,6 +5,38 @@ Attention execution, KV management/reuse, offloading and long-context memory eff
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-12](../../../reports/2026/11/2026-11-12.md) — PARTIAL SEARCH
+
+### [ADIndex: Layer-Adaptive Sparse Attention Indexing via Group-Level Distillation](<https://arxiv.org/abs/2611.12956>)
+
+ADIndex learns small, layer-specific group indexers that scan a long history once for nearby queries, then lets the original sparse-attention indexer refine each query within a shared candidate bank. This reduces repeated indexing work while keeping long-context benchmark scores close to the original models in the authors’ two-model evaluation; the reported B300 end-to-end speedup reaches 1.54× at 128K, with a slowdown at 16K.
+
+**Published:** 2026-11-07 · **First seen:** 2026-11-11T11:07:49.633+00:00 · **Novelty:** newly-discovered · **Tags:** Sparse Attention, Indexer Distillation, Long Context, Inference Efficiency
+
+**Public availability:** 2026-11-11T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/new>) · [Timing source](<https://arxiv.org/list/cs.LG/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2611.12956v1>)
+
+**Evidence:** research-paper; full-text. All 27 v1 pages inspected, including Sections 4–5, Figure 3, Tables 1–4 and Appendices A–C. Calibration selects per-layer query groups and candidate-bank budgets from 100 held-out 128K sequences; independent per-layer distillation uses 1,000 other source sequences, 256,000 anchor visits and 1,000 optimizer steps. Frozen-backbone DeepSeek-V3.2 and GLM-5.1 non-thinking evaluations use LongBench, LongBench v2 and RULER with final Top-2048 refinement. At 128K, RULER is 93.34 versus 93.69 and 94.49 versus 94.97 respectively. SGLang on B300 yields end-to-end speedups of 0.86×/1.07×/1.21×/1.54× at 16K/32K/64K/128K; 256K kernel gains (up to 6.22× prefill and 3.40× verification) are separate kernel measurements. Delayed completion of yesterday’s abstract-only reserve: actual discovery remains the November 11 native LG index retrieval, not today’s full-text read. The original primary-LG new listing and recent listing date the first announcement November 11; the official Tuesday 20:00 Eastern schedule implies November 11 01:00 UTC (EST), distinct from the November 7 submission receipt. This precedes the November 11 holiday’s deferred Wednesday-evening mailing.
+
+**Limitations:** Approximate bank retrieval, not identical native DSA token selection or a guarantee of preserved autoregressive/speculative distributions: group representations are pooled across jointly processed queries. Calibration maximums bound only observed reference unions, and bank coverage is below 100%. LongBench v2 inputs are capped at 128K; the 256K numbers do not establish quality there. Competing methods are the authors’ specified adaptations, including a fixed uniform IndexCache schedule. The paper specifies B300 hardware but omits a complete serving hardware-count/parallelism/precision/batch and repeated-run uncertainty account, limiting transfer of the 1.54× result. The scoring-count analysis fixes an illustrative acceptance trace and excludes auxiliary overhead; it is not measured wall time. No author code release was linked and verified, no independent reproduction.
+
+## [2026-11-12](../../../reports/2026/11/2026-11-12.md) — PARTIAL SEARCH
+
+### [Unified Memory in SGLang: One Arena for Every Token Lifetime](<https://www.lmsys.org/blog/2026-11-11-unified-memory/>)
+
+This new workload study explains SGLang’s existing unified allocator, which lets full-attention caches, sliding-window caches and recurrent state share one movable memory arena. Joint admission and delayed physical reuse help recover capacity stranded by fixed partitions; on one H200, the tested long-context Qwen3.5-4B workload achieves 26% higher output throughput than the default separate pools.
+
+**Published:** 2026-11-10 · **First seen:** 2026-11-12T16:32:55.137+00:00 · **Novelty:** newly-discovered · **Tags:** Hybrid Models, Memory Allocation, KV Cache, Request Admission
+
+**Public availability:** 2026-11-10T20:42:46Z (dated primary source). [Timing source](<https://api.github.com/repos/lm-sys/lm-sys.github.io/pulls/466>) · [Timing source](<https://raw.githubusercontent.com/lm-sys/lm-sys.github.io/313974a3bcdfbeaee810b1812d88ffd7c2102c39/blog/2026-11-10-unified-memory.md>)
+
+[Blog](<https://www.lmsys.org/blog/2026-11-11-unified-memory/>) · [Code](<https://github.com/sgl-project/sglang/tree/daa171846f2dfc8162b4fbcfac13b073d7a6353a/python/sglang/srt/mem_cache/kv>) · [Project](<https://docs.sglang.io/docs/advanced_features/unified_memory>)
+
+**Evidence:** engineering-report; full-text. Complete primary blog, original public draft, fixed-version usage guide and relevant full design sections inspected. This is a newly disclosed measurement/design account of an existing feature, not a new allocator release: issue history contains the flag in April and September, and documentation PR49312 opened November 9. Public blog PR466 opened November 10 at 20:42:46Z; immutable initial commit313974a3 already has the exact result paragraphs and front matter November10. The official blog later changed its date to November11 and merged at22:59:10Z. Original November10 date retained and delayed discovery labeled. The H200 study at SGLang daa171846f averages two runs per model/workload. GPT-OSS-20B at512 input/1536 output and1024 concurrency admits about1000 versus618 requests, with14% higher output throughput and TTFT6 versus43 seconds; Qwen3.5-4B at16K input/4096 output and64 concurrency runs32 versus22 and is26% faster. The shorter1024/256 Qwen workload is5830 versus5880 output tokens/s, with equal0.875 GSM8K on200 questions. Per-token entries and virtual-to-physical mappings let bands compact; a page-use ledger distinguishes logical capacity from physical reuse while forwards/copies/transfers remain active.
+
+**Limitations:** Experimental NVIDIA-CUDA hybrid-model feature, with two-run averages and no reported confidence intervals; default-ratio comparisons do not establish superiority to every tuned partition or traffic mix. Identical GSM8K on200 questions is not broad correctness equivalence. Compaction can wait under pressure. Full-attention-only models and multiple backend/model combinations are unsupported, and PD is Mooncake-only with PP/speculation/DCP combination restrictions. Priority preemption is disabled; stalled recurrent checkpoints can exceed admission’s estimated window bound. The pinned design explicitly says failed/timed-out PD transfers may release pages without proof the remote engine has stopped, so page-safety guarantees must not be generalized to all failed network transfers. Current live documentation changes after cutoff were not treated as new cutoff evidence; fixed November10 source was used. No author code execution or independent benchmark reproduction.
+
 ## [2026-11-04](../../../reports/2026/11/2026-11-04.md) — PARTIAL SEARCH
 
 ### [TapeSAC: Automated, Pareto-Optimal Fine-Grained Memory Management for Large Model Training](<https://arxiv.org/abs/2611.04897>)

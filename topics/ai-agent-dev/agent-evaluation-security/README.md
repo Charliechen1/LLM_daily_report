@@ -5,6 +5,38 @@ Task success, trajectory evaluation, cost/reliability, prompt injection and perm
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-12](../../../reports/2026/11/2026-11-12.md) — PARTIAL SEARCH
+
+### [DEPUTYBENCH: Evaluating Contextual Safety in Enterprise Agents](<https://arxiv.org/abs/2611.13355>)
+
+DEPUTYBENCH evaluates whether enterprise agents complete legitimate work while withholding the same action when backend permissions prohibit it. Matched permission changes and evidence-masking tests provide a concrete way to check authorization decisions without rewarding blanket refusal. The authors find more restricted execution when deciding evidence is missing than when it explicitly denies permission, with most of the observed gap concentrated in four privacy tasks.
+
+**Published:** 2026-11-09 · **First seen:** 2026-11-12T16:31:40.725+00:00 · **Novelty:** newly-discovered · **Tags:** Authorization, Agent Evaluation, Evidence Sufficiency
+
+**Public availability:** 2026-11-11T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.SE/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.13355v1>)
+
+**Evidence:** research-paper; full-text. Delayed discovery of the original November 11 SE announcement, inferred at 01:00 UTC from its dated new-submission batch and the official Eastern-US schedule; the November 9 receipt date is preserved. Full main methods/results/limitations plus execution, scoring, missingness and context-control appendices were read. The benchmark has 79 base items, 375 isolated service instances, 188 permission pairs and 12 models over three rounds; 174 unanswered-verification twins are excluded from headline counted outcomes. A separate 28-task/six-model/5,058-run context study fixes requests while flipping deciding backend facts, masking evidence or rewriting irrelevant records. On the 27 matched masking tasks, deterministic restricted-action execution is 100/972 versus unauthorized harm 17/486 (10.3% versus 3.5%); the secondary difference is 6.8 points with a task-clustered 95% interval of 1.9-13.0.
+
+**Limitations:** Synthetic English tasks cover six families under one executor with provider-default sampling and nonuniform reasoning routes, not equal-compute or production-risk estimates. The masking gap is a secondary comparison; its post-hoc four-task concentration accounts for 61/100 events, and excluding those tasks gives an interval spanning zero. Complete tested-model transcripts for those focal cases are unavailable, so no internal missing-means-zero mechanism is identified. Held-out scorer joint correctness is 266/284, leaving errors and uncovered disclosure paths; stage annotations and clean-container reproduction are author-side LLM-agent procedures, not independent human or external replication. Code/data remain internal and are promised for later release.
+
+## [2026-11-12](../../../reports/2026/11/2026-11-12.md) — PARTIAL SEARCH
+
+### [ARE-bench: Benchmarking Agents' Research Ability in Real-World Researcher Sessions and Workspaces](<https://arxiv.org/abs/2611.14364>)
+
+ARE-bench tests research agents on 75 requests cut from real projects, restoring unfinished workspaces and carrying forward earlier user requirements. Its evidence-linked checklists expose deliveries that look complete but violate the project’s method or prior decisions, providing a concrete way to assess research handoffs.
+
+**Published:** 2026-11-10 · **First seen:** 2026-11-12T16:31:40.725+00:00 · **Novelty:** newly-discovered · **Tags:** Research Agents, Workspace State, Evaluation
+
+**Public availability:** 2026-11-11T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.14364v1>) · [Project](<https://arebench.com>)
+
+**Evidence:** research-paper; full-text. Delayed discovery of the original November 11 CL announcement, inferred at 01:00 UTC from its dated original batch and official schedule; retain the November 10 receipt rather than changing it to the manuscript front-page date. Main methods/results/limits and the replay/anonymization, complete repair-rubric, judge and run-configuration appendices were inspected. The 75 tasks cover seven stages and 1,173 binary checks; seven models have three rollouts/task. Strict instance success requires every applicable check; checklist success averages within each task before weighting tasks equally. Reported best strict success is 66.22% plus/minus 5.39 percentage points across three rounds. Reusing fixed deliveries and verdicts, expanding only the scoring checklist drops three models from about 69% to 28.44-40.00%, showing failures missed by narrower acceptance checks.
+
+**Limitations:** Scores describe model-plus-harness combinations: GPT-6.1-Sol uses Codex and others Claude Code, with heterogeneous task time limits and incompletely verified physical hosts/GPUs. The checklist-scope comparison is a rescoring analysis, not an intervention proving that adding context improves models. Three-round standard deviations are not confidence intervals. Judge agreement is model-based on a selected 20-task subset without independent human ground truth; session selection, replay loss and human rubric judgments limit generality. The public project exposes summaries and examples but code/data links are null, so no full executable benchmark release is claimed. Some website cost and session-position prose differs from the manuscript; paper v1 governs this summary.
+
 ## [2026-11-11](../../../reports/2026/11/2026-11-11.md) — PARTIAL SEARCH
 
 ### [Agent Benchmarks Stop Ranking Before They Run Out of Tasks](<https://arxiv.org/abs/2611.13541>)

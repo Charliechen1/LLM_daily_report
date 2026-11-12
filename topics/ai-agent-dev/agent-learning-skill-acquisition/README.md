@@ -5,6 +5,22 @@ Learning from trajectories/feedback, skill generation/reuse, experience and self
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-12](../../../reports/2026/11/2026-11-12.md) — PARTIAL SEARCH
+
+### [Firefly: Illuminating Large-Scale Verified Tool-Call Data Generation from Real APIs](<https://arxiv.org/abs/2605.17558>)
+
+Firefly’s November 10 revision adds a same-task SFT comparison, alternative judge/simulator backends and a blinded human audit to its existing real-API tool-data pipeline. The added controls help assess whether training gains depend on one simulator, while the audit finds that only 78% of accepted tasks satisfy all three checked criteria, making residual data errors explicit.
+
+**Published:** 2026-05-17 · **First seen:** 2026-11-11T11:05:34.533+00:00 · **Novelty:** material-update · **Tags:** Synthetic Tool Data, Agent RL, Validation, Simulator Robustness
+
+[Paper](<https://arxiv.org/pdf/2605.17558v3>) · [Code](<https://github.com/leoleoasd/firefly-neurips-2026>)
+
+**Evidence:** research-paper; full-text. Read v3 scientific body, methods, results and limitations (PDF pages 1–10), training configuration and all new experimental Appendices B–D (pages 14–16), then compared v2 Sections 5–7 (pages 8–10), complete HTML paragraph diff and the absence of the new controls in v2. Earlier pipeline: graph-guided public MCP exploration, backward task synthesis from observed outputs, a cache-grounded simulator, 4,944 train/200 test tasks and Qwen3-4B Thinking GRPO. New Appendix B samples four Claude trajectories per training task and keeps correct ones; three-epoch SFT reaches 38.5% pass@1 versus 41.5% RL under the same held-out protocol. Appendix C jointly substitutes judge and simulator for all 15 RL checkpoints: stronger Qwen and Claude backends preserve the curve with average shifts of -0.96 and +4.2 points. Appendix D interleaves 50 accepted and 50 rejected tasks with blinded human assessment: all-three acceptance is 78% versus 38%, and accepted-task label correctness alone is 80%. Current public code README and GitHub repository/commit metadata were inspected statically; no code was executed. Original May17 receipt retained; v3 history is November10 05:01:06UTC, within this lookback. Earlier catalog first\_seen is preserved.
+
+**Limitations:** Author-side single-4B study, not independent reproduction. SFT and RL are not shown to use matched total compute, and no uncertainty interval establishes significance for the 3-point difference. Imported Toucan scores use different base families/scales, preventing a clean pipeline superiority claim. Simultaneous judge-and-simulator substitution does not isolate their separate biases. The 100-task audit lacks reported annotator counts/inter-rater agreement; accepted tasks are not guaranteed correct despite stronger wording in the abstract. Cached stateless, auth-free APIs and conservative simulator errors constrain valid paths; 34.7% of evaluated tool calls are rejected by the LLM stage. Live API access is avoided during RL, but simulator inference still costs compute. Data/model availability at the authors’ project domain could not be verified because DNS resolution failed; the reachable GitHub code is an existing September artifact, not a newly released November implementation.
+
+**Update:** 2026-11-10 v3 adds same-task SFT controls (Table6), joint judge/simulator replacements across15 checkpoints (Table8), and a blinded100-task validation audit (Table9), none present in the inspected2026-10-26 v2. The existing graph/back-chaining pipeline, primary RL gains and cross-benchmark results are not new contributions in this update.
+
 ## [2026-11-03](../../../reports/2026/11/2026-11-03.md) — PARTIAL SEARCH
 
 ### [Skill++: Towards Lifelong Agents via Routing-Aware Skill Refinement](<https://arxiv.org/abs/2611.00544>)
