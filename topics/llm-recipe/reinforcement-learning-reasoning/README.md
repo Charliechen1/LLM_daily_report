@@ -5,6 +5,36 @@ RLHF, RLVR, policy optimization, reasoning training, tool use and multi-turn age
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-13](../../../reports/2026/11/2026-11-13.md) — PARTIAL SEARCH
+
+### [Outcome–Mass Alignment: Controlling Length-Dependent Trajectory Influence in Multi-Turn LLM Agent Reinforcement Learning](<https://arxiv.org/abs/2611.16816>)
+
+Outcome–Mass Alignment tracks original agent trajectories when multi-turn training expands them into many rows and tokens, counting each outcome once and giving each trajectory explicit objective weight. This makes an often hidden training choice inspectable without replacing the underlying credit assignment or clipping. It improves the reported household-task results, while mixed shopping-task outcomes show that equal trajectory weighting is a conditional recipe choice.
+
+**Published:** 2026-11-12 · **First seen:** 2026-11-13T11:05:43.728Z · **Novelty:** new · **Tags:** Multi-Turn RL, Loss Aggregation, Trajectory Weighting
+
+**Public availability:** 2026-11-13T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.16816v1>)
+
+**Evidence:** research-paper; full-text. Read the complete18-page paper and all AppendicesA-G; directly viewed source tables on PDFpages6/12. Outcome Alignment computes designated outcome statistics over unique source trajectories before broadcasting the episode signal. Mass Alignment averages optimizer-native valid-token contributions within each source, then across sources, preserving native credit, ratios, detach and clipping. Original single-seed150-update Qwen2.5-1.5B/3B-Instruct GRPO runs on4GPUs improve ALFWorld endpoint success73.4 to82.8 and74.2 to81.2 percent. Additional two-seed ALFWorld3B runs report70.31 to86.33 percent mean endpoint success. OrdinaryWebShop1.5B gains endpoint but loses average learning-curve area; originalWebShop3B success falls64.8 to57.0 percent. This is useful for auditing unintended length weighting, not a universally better reducer. Originalcs.CLFriday13batch plus official schedule support inferredNovember13announcement, distinct from November12receipt. No author code/project link was verified.
+
+**Limitations:** Equal outer coefficient mass does not imply equal gradient norms or better policies. Exact representation invariance holds for complete groups; independently normalized partial microbatches are not invariant to arbitrary repartitioning. Baselines are the authors' row-expanded statistics/token-mean implementations; trainers already grouping outcomes by trajectory recover native OA. OA alone can hurt, and MA can lead early learning. Original cells use one seed, selected additions only two; fixed validation seeds, selected ratio-one frozen batches and excluded buggy runs limit generality. Only1.5B/3B Qwen2.5 and two environments are tested. A800/H20/software configurations differ; matched updates do not equal matched tokens, interactions, runtime or compute. No accessible implementation or independent reproduction verified.
+
+## [2026-11-13](../../../reports/2026/11/2026-11-13.md) — PARTIAL SEARCH
+
+### [Negative-Only Policy Optimization for One-Sided Verifiable Rewards](<https://arxiv.org/abs/2611.17287>)
+
+NOPO learns from incomplete verifiers by suppressing rejected responses while treating passing ones as unlabeled, using the number of unrefuted alternatives to control each rollout group's update. This enables learning from cheap failure checks without directly rewarding unchecked errors. The reported test-prompt adaptation and separate transfer results improve multi-sample accuracy, while still depending on trustworthy negative judgments.
+
+**Published:** 2026-11-12 · **First seen:** 2026-11-13T11:05:43.696Z · **Novelty:** newly-discovered · **Tags:** Partial Verification, Negative Feedback, Test-Time Adaptation, Policy Optimization
+
+[Paper](<https://arxiv.org/pdf/2611.17287v1>) · [Project](<https://xiaobanni.github.io/projects/nopo/>)
+
+**Evidence:** research-paper; full-text. Read complete18-page paper, all main experiments and AppendicesA-I. NOPO applies established reference-relative negative preference suppression only to verifier-negatives, weighting a group by(c/G)^gamma, defaultgamma1; all-rejected groups are dropped and all-accepted groups have no negative loss. The frozen base reference attenuates already-suppressed negatives. Qwen3-4B/8B nonthinking runs use8A10080GB, G16, up to150globalsteps and entropy-based pre-divergence checkpoint retention. Table2 trains on each benchmark's same test prompts using only publictests/schema-domainconstraints/self-error-checks, then scores with unavailable-during-training oraclelabels. Macro pass@16 is52.86/52.13 versus48.93/48.27GRPO; NOPO does not lead everycell orpass@1. SeparateCodeContests/LCB-to-unseen-code transfer is reported. AuthorprojectPDF independently compared: all18page texts identical to arXiv; projectmetadata datePublishedNovember12. Prior NeurIPSacceptance/title is visible, but dated earlier full manuscript could not be verified after OpenReview403/conferencefailures/inaccessibleinferredsitehistory. Conservatively a delayedNovember12discovery within72hours; no exact public\_availability or first-ever-release claim.
+
+**Limitations:** Reliable rejection is essential: an LLMfalsifier can reject correct answers and has only8.8–12.5percent negative recall onOlympiadBench. Non-falsified support is not guaranteedcorrect; negative suppression does not identify globally correct redistribution. Main results are transductive test-prompt adaptation, with generalization evaluated separately. Entropy-selected checkpoints and absent multiple-seed confidence intervals limit comparison. Finite512-sample coverage is not proof the base assigns zero probability to newly solved problems. Training and512-sample sweeps each take about12hours pertestedconfiguration. The NPOloss is existing work; earlierfull-paper chronology remains unresolved. No codeimplementation or independent reproduction verified.
+
 ## [2026-11-12](../../../reports/2026/11/2026-11-12.md) — PARTIAL SEARCH
 
 ### [AutoScaffold: AI-Guided Scaffolding for Reinforcement Learning of Language Models](<https://arxiv.org/abs/2611.14515>)

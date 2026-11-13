@@ -5,6 +5,22 @@ Task success, trajectory evaluation, cost/reliability, prompt injection and perm
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-13](../../../reports/2026/11/2026-11-13.md) — PARTIAL SEARCH
+
+### [Termination Lag: Coding Agents Solve Early but Stop Late](<https://arxiv.org/abs/2611.14960>)
+
+The researchers record every distinct intermediate repository patch and test it offline to measure how long coding agents continue after first producing a benchmark-correct fix. The resulting termination-lag metrics reveal verification effort and occasional regressions hidden by final solve rates, providing a reference for evaluating stopping policies. The analysis uses an oracle available only after execution and does not show that the measured steps can safely be removed in deployment.
+
+**Published:** 2026-11-11 · **First seen:** 2026-11-13T11:06:28.151+00:00 · **Novelty:** new · **Tags:** Coding Agents, Stopping Criteria, Trajectory Evaluation
+
+**Public availability:** 2026-11-13T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/new>) · [Timing source](<https://arxiv.org/list/cs.AI/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.14960v1>)
+
+**Evidence:** research-paper; full-text. All 13 PDF pages read, including methods, limitations and generalization/action appendices; tables/plots on pages 4, 5 and 13 visually inspected. A logging proxy snapshots patches through a temporary Git index while the agent waits, then official tests evaluate each distinct patch offline with no feedback to the agent. Five models, OpenHands plus a Qwen mini-SWE-agent check, and SWE-bench Verified/Multilingual/Pro are studied. Core settings cover 500 Verified and 300 Multilingual tasks with Qwen3-Coder-30B-A3B and Laguna-XS.2; normalized termination lag(S-F)/S has solved-run medians of 35%/37% for Qwen and 60%/54% for Laguna, respectively. The 38-82% initial-edit correctness statistic is conditioned on runs that ever reach a passing patch; activity shares concern ultimately solved runs, while 1-8% terminal regressions are among all runs that ever pass. The second harness yields 37% median lag over its solved runs on 500 Verified tasks. Original v1 receipt November 11 03:11UTC and original Friday November 13 AI batch support inferred November 13 01:00UTC availability, inside the main window. No author code/project or earlier public artifact was verified.
+
+**Limitations:** One run per task, no repeated-seed intervals, and success is defined only by the official benchmark tests. Offline first-correct stopping is an oracle reference, not a learned deployable rule; necessary verification may have broader value outside those tests. Steps approximate effort and do not directly measure wall-clock, monetary, token or energy savings. Tool/argument rules label activities; step/context limits terminate 1-4% of solved runs, and Seed-OSS solves few Pro tasks. Model/harness/budget settings differ, so this is not a controlled ranking of stopping ability or a universal cost-reduction result.
+
 ## [2026-11-12](../../../reports/2026/11/2026-11-12.md) — PARTIAL SEARCH
 
 ### [DEPUTYBENCH: Evaluating Contextual Safety in Enterprise Agents](<https://arxiv.org/abs/2611.13355>)

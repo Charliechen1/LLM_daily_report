@@ -5,6 +5,22 @@ GPU kernels, operator fusion, compilation, execution graphs and hardware adaptat
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-13](../../../reports/2026/11/2026-11-13.md) — PARTIAL SEARCH
+
+### [MegaOps: A Kernel Overlapping Framework with PyTorch-like Modularity and Megakernel Performance](<https://arxiv.org/abs/2611.16248>)
+
+MegaOps overlaps separate GPU kernels by synchronizing on ready tiles of intermediate tensors, preserving operator boundaries while hiding work that would otherwise wait for whole kernels to finish. Its shared data-tiling contract makes it easier to combine compute and communication kernels, with roughly 9–10% higher average decode throughput than the best tested alternatives in offline dense-model experiments. The results concern single-batch forward execution with common sampling and CUDA graphs, rather than online serving latency or universal megakernel superiority.
+
+**Published:** 2026-11-12 · **First seen:** 2026-11-13T11:09:02.287+00:00 · **Novelty:** new · **Tags:** Kernel Overlap, GPU Runtime, Data-Tile Synchronization
+
+**Public availability:** 2026-11-13T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/new>) · [Timing source](<https://arxiv.org/list/cs.DC/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.16248v1>)
+
+**Evidence:** research-paper; full-text. Methods and evaluation in Sections 2–5, plus Appendices A–C, inspected. Data-tile semaphores, kernel-to-data mappings, AsyncStream, dependency-aware prefetching and graph-level tuning allow compatible kernels to overlap without fusing them; closed-source kernels are decomposed into subkernels with proxy synchronization. Dense Llama/Qwen models span 0.6B–70B on single H100/A100/L40 GPUs and 4×A100/8×H100 servers. Authors report five-run medians: average decode throughput 1.10× (single GPU) and 1.09× (multi-GPU) versus the best other tested system, with prefill averages 0.98× and 1.10× respectively. Appendix C.1 extracts vLLM 0.31 forward execution into CUDA graphs and uses the same greedy sampler, intentionally excluding host/framework differences. Original v1 received November 12 at 03:43:34 UTC; its original primary-DC Friday November 13 batch plus the official EST schedule support the inferred November 13 at 01:00 UTC public announcement. No prior covered ID or verified earlier author artifact was found.
+
+**Limitations:** Experiments use fixed batches, selected dense models and one-node GPU systems, not request arrival/SLO or broad accuracy studies. Only one input and one output synchronization tensor are supported per kernel; matching data tilings, correct mappings/targets and peer annotations remain programmer obligations. Deadlock avoidance relies partly on empirically observed CUDA CTA scheduling, and symmetric allocation assumes consistent SPMD execution and coordinated garbage collection. Small-shape reduce-scatter cases fall to 0.62×–0.83× of the best baseline; single-GPU prefill can regress. Graph tuning and source adaptation are required; total tuning amortization and an accessible author code release were not verified. No results independently reproduced.
+
 ## [2026-11-10](../../../reports/2026/11/2026-11-10.md) — PARTIAL SEARCH
 
 ### [Detent: Batch-Invariant LLM Serving and RL Rollouts at Near-Stock Speed](<https://arxiv.org/abs/2611.10611>)
