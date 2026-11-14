@@ -2,6 +2,13 @@
   "schema_version": 1,
   "reports": [
     {
+      "date": "2026-11-14",
+      "path": "reports/2026/11/2026-11-14.md",
+      "source": "data/reports/2026/11/2026-11-14.json",
+      "search_status": "partial",
+      "entries": 7
+    },
+    {
       "date": "2026-11-13",
       "path": "reports/2026/11/2026-11-13.md",
       "source": "data/reports/2026/11/2026-11-13.json",
@@ -327,6 +334,273 @@
     }
   ],
   "entries": [
+    {
+      "id": "https://thinkingmachines.ai/blog/end-to-end-4-bit-training/",
+      "title": "End-to-End 4-Bit Training",
+      "category": "1.3",
+      "tags": [
+        "Mixed Precision",
+        "NVFP4",
+        "Stochastic Rounding",
+        "MoE"
+      ],
+      "published_on": "2026-11-13",
+      "first_seen_at": "2026-11-14T11:01:01.560+00:00",
+      "canonical_url": "https://thinkingmachines.ai/blog/end-to-end-4-bit-training/",
+      "links": {
+        "blog": "https://thinkingmachines.ai/blog/end-to-end-4-bit-training/",
+        "project": "https://huggingface.co/thinkingmachines/Inkling-2-Small"
+      },
+      "summary": [
+        "Thinking Machines describes a mixed-precision recipe that uses four-bit arithmetic for most expert-layer forward passes while retaining eight-bit backward computation.",
+        "Re-quantizing saved forward tensors with stochastic rounding and compressing expert communications make low precision useful across pretraining and reinforcement learning.",
+        "The authors report faster training on GB300 systems, alongside a small pretraining efficiency loss and limited public experimental detail."
+      ],
+      "evidence": {
+        "type": "technical-report",
+        "access": "full-text",
+        "rationale": "Complete November 13 technical post inspected, including block-scaled transposes, stochastic re-quantization, communication formats and final recipe. Saved quantized forward weights/activations are dequantized, transposed and stochastically re-quantized to MXFP8 for backward GEMMs; 32-dimensional random Hadamard transforms and block-scaled S2F6 reduce combine payloads from 16 to 8.25 bits/value. Authors report 8% pretraining and 20% RL wall-clock speedups versus full MXFP8, with about 2% pretraining compute-efficiency loss. This is a delayed discovery within the 72-hour lookback: the post is dated November 13 and first retrieved today. Earlier Inkling 2 launch/card already disclosed native NVFP4 and the 68-hour run, but not these detailed numerical mechanisms; those older facts are not treated as new results.",
+        "limitations": "This is a GB300-specific author engineering report with in-house BBBK kernels, no controlled run table, seed intervals or independent reproduction. Four-bit applies to most expert forward computation, not the whole network or backward pass; the final one-sixth of layers uses MXFP8. Stochastic re-quantization targets the saved quantized forward value in expectation, not the original unquantized tensor or guaranteed unbiased total gradients. The 68-hour run combines many changes and does not isolate this recipe. Weights are public; a reproducible training/kernel implementation was not verified."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-11-14",
+      "report_path": "reports/2026/11/2026-11-14.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.16433",
+      "title": "daVinci-Prover: Agent-Native Mid-Training for Formal Theorem Proving",
+      "category": "1.4",
+      "tags": [
+        "Mid-training",
+        "Formal Reasoning",
+        "Synthetic Data",
+        "Agent Training"
+      ],
+      "published_on": "2026-11-12",
+      "first_seen_at": "2026-11-13T11:05:43.728Z",
+      "canonical_url": "https://arxiv.org/abs/2611.16433",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.16433v1",
+        "code": "https://github.com/GAIR-NLP/daVinci-prover",
+        "project": "https://huggingface.co/datasets/davinci-prover/agentic-prover-SFT"
+      },
+      "summary": [
+        "daVinci-Prover combines synthetic mathematical skill traces and verifier-grounded interactions in mid-training before supervised learning from successful Lean proving sessions.",
+        "The added mid-training improves matched SFT-only baselines, supporting the value of learning an agent’s interaction patterns before downstream adaptation.",
+        "The evidence concerns the tested theorem-proving benchmarks and substantial additional training, with broader capability retention and full artifact reproduction still unresolved."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "All 19 PDF pages inspected, including complete methods, results, decontamination, synthesis costs and training/compaction appendices; actual result tables on pages 6 and 9 visually checked. The 33.7B-token corpus combines decomposition/search/revision/self-verification and environment-native trajectories, followed by 35,861 successful agent SFT trajectories. Table 5 reports Qwen3-8B pass@1 rising 73.4→85.3 on MiniF2F, 68.0→85.3 on FATE-M and 28.4→40.4 on ProofNet under matched downstream SFT; Qwen3.5 comparisons show smaller consistent gains. Retrospective catch-up within the 72-hour lookback preserves the original November 12 submission date and genuine November 13 catalog discovery. The newly disclosed mid-training study is distinct from the older public prover harness; earlier repository snapshots contain harness benchmarks, not these mid-training results.",
+        "limitations": "Extra mid-training is not matched total compute; data-component ablations also use different token budgets. Most whole-proof baselines are imported pass@32 results versus interactive pass@8, so no universal ranking is established. Main evaluation uses Lean 4.26, 200K context and 30 interactions; current code/data instead describe Lean 4.35, a newer teacher and different trajectory counts, so they are not the exact paper artifact. Broad model/data/training release remains promised. Exact-match decontamination cannot rule out all semantic leakage, general-domain replay is absent, and independent training-seed uncertainty and broader capability retention are not established."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-11-14",
+      "report_path": "reports/2026/11/2026-11-14.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.17316",
+      "title": "CoReMem: Cost-Internalizing Memory for Successive Coding Tasks with Prospective Valuation",
+      "category": "2.3",
+      "tags": [
+        "Coding Agents",
+        "Cross-Task Memory",
+        "Credit Assignment"
+      ],
+      "published_on": "2026-11-12",
+      "first_seen_at": "2026-11-13T11:06:28.151+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.17316",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.17316v1",
+        "code": "https://anonymous.4open.science/api/repo/CoReMem-F728/file/coremem/memory/anchors.py",
+        "project": "https://anonymous.4open.science/r/CoReMem-F728/README.md"
+      },
+      "summary": [
+        "CoReMem values a completed coding session by how much its contents help the next task on the inherited repository, then compresses useful experience into file locations and executable checks.",
+        "It also adapts the coding agent to act on those memory anchors, making cross-task memory serve measured task resolution and effort rather than relevance alone.",
+        "In the reported 27B ChainSWE comparison, the combined memory and training system raises resolution from 21.0% to 25.7% while reducing steps by 17% and session tokens by 11%, without measuring training cost or wall-clock savings."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read the complete main methods/results and scientific Appendices A-N of the 26-page v1, including the population-gradient derivation and finite-group qualification; directly viewed Table1 on PDFpage7. Paired next-task replays from the same inherited tree guide a compact memory design; training groups mix four no-memory, three own-memory and one misplaced-memory rollouts. The additional measured memory-value term is routed by a first-use anchor/provenance gate, while all steps retain outcome credit. The ChainSWE split is repository-disjoint:52training chains/97boundaries and48test chains/96boundaries. The 27B row reports35.1 to29.2steps and32.2K to28.5K total cache-aware tokens per session, including the writer; replay counts vary by model. Public author README, training documentation and anchor-extraction source were read without execution. Original November12receipt18:58:22UTC is retained; FridayNovember13 originalcs.AI batch and official20:00EST schedule support inferred01:00UTC availability. This is delayed November14 full-review/selection of an item already cataloged November13, with the earlier actual first_seen retained, not a Saturday release.",
+        "limitations": "The headline compares combined memory and actor adaptation with an untrained no-memory actor; it is not an isolated memory effect or an end-to-end training-cost result. Main experiments use Python repositories, mini-swe-agent, three post-trained open models and three frozen API models; replay repeats do not establish independent training-seed robustness. Checkpoint rules, unequal replay counts, serving windows and timeout/format-error exclusions matter. The gate matches strings, including reasoning text; traceable anchor use is not a step-level causal-effect estimate and can produce false positives. Public code has finer matcher exceptions than the paper shorthand:short paths can survive and trimmed tmp paths can count. The population analysis is not a convergence guarantee. The external SWEContextBench prose and Table5 differ about state inheritance, so no external-chain numerical claim is used here. No latency, energy or total post-training cost was measured or independently reproduced. Anonymous repository root/history returned401; specific public files were accessible, but earlier artifact release history was not established."
+      },
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-13T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-14",
+      "report_path": "reports/2026/11/2026-11-14.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.16526",
+      "title": "Lost in Delegation: Studying the Effectiveness of Task Orchestration in Generative Search",
+      "category": "2.6",
+      "tags": [
+        "Multi-Agent",
+        "Search",
+        "Evidence Handoffs"
+      ],
+      "published_on": "2026-11-12",
+      "first_seen_at": "2026-11-13T11:06:28.151+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.16526",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.16526v1"
+      },
+      "summary": [
+        "Lost in Delegation compares direct search with forced or optional delegation across four same-model agent families and factual queries from before and after their reported knowledge cutoffs.",
+        "It shows how query rewriting and final-answer-only handoffs can lose evidence or error information, giving builders concrete failure modes to inspect before adding a coordinator.",
+        "Delegation usually reduced accuracy in this protocol, but the result does not establish that heterogeneous teams, richer evidence sharing or interdependent tasks behave the same way."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read all13pages, including the main empirical analyses, exact configurations/budgets and scientific AppendicesA-C; directly viewed Table2 on PDFpage5. ClaudeSonnet4.5,GPT5,gpt-oss120b andQwen3-30B-A3B-Thinking-2507 compare no tools, direct Google/SerpAPI search, forced delegation and optional delegation. Delegators cannot search directly, executors are fresh instances of the same model, and only executor final answers return. Four curated factual domains cover books,Nobel ages,GDP and product launches. Optional delegation is below direct search in22/32model-domain-cutoff cells, forced in21/32; equal-domain/model mean post-cutoff accuracy is.75direct,.64optional,.66forced. Traces expose unsupported query attributes, loss of retrieval-failure information and re-delegation of correct answers. The similarity judge alone is human-validated on102eligible pairs,97%majority agreement,kappa.65. Original November12receipt09:25:33UTC is retained; the FridayNovember13 originalcs.AI batch and official schedule support inferred01:00UTC availability. This is delayed November14 full-review/selection of a November13cataloged item, preserving the earlier first_seen. No author code or dataset project release was verified.",
+        "limitations": "Small independent factual queries and homogeneous final-answer-only teams do not represent all agent orchestration. Reported training cutoffs, or Qwen release date as a conservative upper bound, are proxies for knowledge; live search availability and limited curated domains constrain transfer. Single agents have2nsearch/3npage-open calls, while delegators may call2nexecutors with2search/3opens each:budgets are not matched total tool calls, tokens or compute. No measured general latency/cost advantage is established. Model-specific benefits exist, especially Qwen; not every adverse cell is statistically distinct. Prompt-level bootstrap intervals do not resolve repeated-item dependence or repeated-generation variability; no multi-seed study is reported. Behavioral analyses mostly use an LLM judge, with human validation only of query similarity. Failure-report prompting helpsGPT5but hurtsgpt-oss on testedGDP; causal explanations are suggestive, not comprehensive causal isolation. No independent reproduction or verified implementation release."
+      },
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-13T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-14",
+      "report_path": "reports/2026/11/2026-11-14.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://www.lmsys.org/blog/2026-11-13-miles-vera-sandboxes/",
+      "title": "RadixArk Miles on NVIDIA Vera: Controlled Sandbox Measurements for Agentic RL",
+      "category": "3.2",
+      "published_on": "2026-11-13",
+      "first_seen_at": "2026-11-14T11:00:47.917+00:00",
+      "canonical_url": "https://www.lmsys.org/blog/2026-11-13-miles-vera-sandboxes/",
+      "links": {
+        "blog": "https://www.lmsys.org/blog/2026-11-13-miles-vera-sandboxes/",
+        "code": "https://github.com/radixark/miles",
+        "project": "https://miles.radixark.com/"
+      },
+      "summary": [
+        "This Miles study keeps the model and GPU setup fixed while moving coding-agent sandboxes between Vera and Turin CPUs, measuring how environment execution affects reinforcement-learning rollouts.",
+        "Across the tested four-task runs on eight H200 GPUs, Turin episodes take 12% longer on average, showing that CPU-side commands and verification can remain a rollout bottleneck even when inference is unchanged."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "Complete November13 primary blog, all14 methodological footnotes and linked Miles/AgentENV project artifacts inspected. The controlled comparison uses GLM-4.7-Flash, the same8-H200 serving machine, GRPO over the same4 SWE-bench Verified tasks,5steps and160episodes per CPU arm,8episodes/task and up to100turns. Both sockets run176 background evaluations; measured mean episode times are approximately429 versus482seconds, with Turin/Vera90%CI1.04–1.22. Per-turn model waits are matched at3.31/3.32seconds despite different network paths. The wider feasibility run covers68steps and2,400+episodes in synchronous/asynchronous modes, separately from this comparison. The new contribution is the dated controlled Vera sandbox study, not the release of Miles or AgentENV: their repositories and the September Miles report predate this work, and the inspected original report contains no Vera/Turin/Xeon comparison. The blog was absent from the successfully fetched November13 11:09UTC LMSYS index and first observed in this run's successful November14 index; its date-only November13 publication is conservatively assigned here without inventing an exact release timestamp.",
+        "limitations": "A vendor-partner author study of only4tasks and5steps per arm; episode time, not statistically resolved step throughput or time to target quality.176background jobs load96-thread Turin more heavily than176-thread Vera, although a96-background sensitivity still shows a smaller command-time gap. Vera uses NVIDIA-tuned boot parameters; x86 uses AWS settings with XeonC6 disabled. CPU architecture changes require rebuilding arm64 environments, and530reference-checked task images do not prove universal behavioral equivalence. The1.3–2.1x load-capacity results use a specific95th-percentile1.5x latency bar and CPU/socket setups. The8x/32x inference scenarios and up-to12% equal-staleness training-speed gain are projections, not measured RL speedups; no independent reproduction or complete benchmark raw-data release verified."
+      },
+      "tags": [
+        "RL Rollouts",
+        "Sandbox Performance",
+        "CPU-GPU Coordination",
+        "Controlled Measurement"
+      ],
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-11-14",
+      "report_path": "reports/2026/11/2026-11-14.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.16180",
+      "title": "Cairn: Sharing and Prewarming Serverless LLM Startup Work",
+      "category": "3.3",
+      "published_on": "2026-11-12",
+      "first_seen_at": "2026-11-13T11:09:02.287+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.16180",
+      "links": {
+        "paper": "https://arxiv.org/html/2611.16180v1"
+      },
+      "summary": [
+        "Cairn separates LLM startup into reusable model artifacts, model-independent setup that can run early, and process-bound CUDA graph capture, sharing the first group and replenishing prepared workers from a template process.",
+        "On two emulated servers with RTX A6000 GPUs, this cuts cold starts by 4.1–5.2× for the tested 1B–14B models, offering a way to reduce serverless waiting beyond faster weight loading."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Complete10-page v1 inspected, Sections3–6/Tables1–3/Figures6–10; references inspected without following all cited work. Cairn publishes immutable fingerprint-keyed weights, metadata, compile caches, compiler keys and graph-memory estimates with a single-writer/coordinator protocol, prepares model-agnostic workers, and forks replenishment from a pre-CUDA zygote; actual CUDA graphs are captured afresh. Two VMs on one NUMA host each have8dedicatedCPUcores,64GBmemory and an RTX A6000-48GB, sharing96GB remote-NUMA memory as an emulated CXL pool. On a ServerlessLLM fork ported to vLLM0.20, six1B–14B models fall from57–85s to11–21s for16-token prompts and8-token greedy outputs. Single-start tests clear destination disk/page/compile caches but preserve artifacts published by the other server. Separately, an initially empty-pool403-request one-hour Azure-trace-shaped/ShareGPT-length stream lowers medianTTFT32.5→11.8s,64%. New original cs.DC FridayNovember13 batch plus official Thursday20:00Eastern EST schedule imply November13 01:00UTC first public availability; retain November12 02:11:21UTC manuscript receipt. Earliest successful team discovery is November13 11:09:02.287458UTC, after that report cutoff, preserved from the exact pinned prior index/receipt. This is a delayed-discovery selection inside the72-hour lookback, not a new Saturday announcement.",
+        "limitations": "CXL hardware was not tested: two VMs share remote NUMA memory on one host. Single-start speedups require compatible previously populated artifacts and prepared workers; publishing the first7B weights increases its NVMe load by22–23%. Warm worker plus zygote costs2.9GB hostmemory/264MiBCUDAcontext and CPU. Cache reuse requires matching GPU/software/engine-option fingerprints; actual graph capture remains process-local, and failure/coordinator/heterogeneous-cluster behavior is not a demonstrated universal non-regression guarantee. The16-server timeout improvements are simulation, not a physical64-GPU deployment. Main hardware statistics lack a reported cross-run confidence interval and the serving baseline is version-specific. Author implementation is promised upon publication, but no verified release or independent reproduction was located."
+      },
+      "tags": [
+        "Serverless Inference",
+        "Cold Starts",
+        "Startup Artifact Reuse",
+        "Prewarming"
+      ],
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-13T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/new?skip=0&show=2000",
+          "https://arxiv.org/list/cs.DC/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-14",
+      "report_path": "reports/2026/11/2026-11-14.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.16661",
+      "title": "Reducing Batch Makespan through Inference–Environment Coordination",
+      "category": "3.3",
+      "published_on": "2026-11-12",
+      "first_seen_at": "2026-11-13T11:09:02.287+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.16661",
+      "links": {
+        "paper": "https://arxiv.org/html/2611.16661v1"
+      },
+      "summary": [
+        "This system jointly chooses hybrid-model cache allocation, trajectory-aware inference routing and scheduling, and separate limits for admitted tasks and executing environment jobs.",
+        "Advancing long action chains helps finish batches sooner: the combined design reduces measured makespan by 10.4–65.0% across the tested Ling agent workloads, while the added chain scheduler contributes a smaller 3.1–8.5% on live MCP-Atlas runs."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Complete26-page v1 inspected, all mainmethods/results and AppendicesA.1–A.3/TablesA1–A3. A continuous mean-footprint model statically partitions KV/recurrent-state memory; load-bounded consistent hashing balances trajectory affinity with in-flight counts, and routing-prefix scheduling uses recent trajectory labels plus selectively cached hit lengths. CAAS orders pending nonpreemptive environment jobs by arrival band, revealed chain depth, mean-inference-duration bucket and FCFS tie break, without predicting remaining length. Controlled replay uses real inference with fixed recorded environment responses/durations and output lengths; live tests independently allow trajectories to change. Ling-3.0 uses2TP4 workers/8H20 GPUs; Ling-3.1 uses2TP8/16H20, with thinking/256Kcontext and three live runs per configuration. For500-task MCP-Atlas, fixed environment concurrency3, the complete bundle changes466.1→163.0min or333.5→128.5min, whereas changing Opt-FCFS to Opt-CAAS alone yields168.2→163.0 and140.5→128.5min. Live SWE reductions versus tuned baseline are10.4%/20.9%; concurrent baseline controls separately show cache-reuse benefits. Original primary cs.DC FridayNovember13 batch and official EST release schedule imply November13 01:00UTC availability; preserve November12 11:38:21UTC receipt rather than the internal PDF's November11 cover date. Exact prior successful index/receipt preserves first_seen November13 11:09:02.287458UTC after the previous cutoff. This delayed review is within the72-hour lookback; old native SGLang cache knobs and earlier Ling deployment recipes are not claimed as newly invented.",
+        "limitations": "The65.0% headline is an integrated bundle versus a unified-admission baseline, not the gain of CAAS alone. Three-run means and broadly comparable scores are not a statistical noninferiority proof; live trajectories differ. Replay excludes unsuccessful historical SWE/MCP trajectories and does not test semantic correctness, whereas live runs include all tasks/retries. Memory allocation uses historical average context, is fixed during serving and ignores allocator fragmentation; recent labels can disagree with actual cache residency and stored hit lengths can become stale. Only homogeneous worker-local caches are evaluated, without transfer or latency SLO guarantees. Higher concurrency can worsen per-request latency: live SWE Opt has higher TTFT/TPOT than tuned Baseline-1 despite lower makespan. No measured RL convergence/time-to-quality gain, released author patch or independent reproduction was verified."
+      },
+      "tags": [
+        "Agent Serving",
+        "Hybrid Cache Allocation",
+        "Environment Scheduling",
+        "Batch Makespan"
+      ],
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-13T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/new?skip=0&show=2000",
+          "https://arxiv.org/list/cs.DC/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-14",
+      "report_path": "reports/2026/11/2026-11-14.md",
+      "search_status": "partial"
+    },
     {
       "id": "arxiv:2611.16816",
       "title": "Outcome–Mass Alignment: Controlling Length-Dependent Trajectory Influence in Multi-Turn LLM Agent Reinforcement Learning",
@@ -12891,14 +13165,14 @@
       "group": "llm-recipe",
       "title": "Pretraining & Optimization",
       "path": "topics/llm-recipe/pretraining-optimization/README.md",
-      "count": 14
+      "count": 15
     },
     {
       "id": "1.4",
       "group": "llm-recipe",
       "title": "Mid-training & Continual Learning",
       "path": "topics/llm-recipe/midtraining-continual-learning/README.md",
-      "count": 8
+      "count": 9
     },
     {
       "id": "1.5",
@@ -12961,7 +13235,7 @@
       "group": "ai-agent-dev",
       "title": "Context Engineering & Memory",
       "path": "topics/ai-agent-dev/context-engineering-memory/README.md",
-      "count": 19
+      "count": 20
     },
     {
       "id": "2.4",
@@ -12982,7 +13256,7 @@
       "group": "ai-agent-dev",
       "title": "Multi-Agent Collaboration",
       "path": "topics/ai-agent-dev/multi-agent-collaboration/README.md",
-      "count": 7
+      "count": 8
     },
     {
       "id": "2.7",
@@ -13010,14 +13284,14 @@
       "group": "ai-training-inference-infra",
       "title": "RL & Rollout Infrastructure",
       "path": "topics/ai-training-inference-infra/rl-rollout-infrastructure/README.md",
-      "count": 10
+      "count": 11
     },
     {
       "id": "3.3",
       "group": "ai-training-inference-infra",
       "title": "Inference Engines & Serving",
       "path": "topics/ai-training-inference-infra/inference-engines-serving/README.md",
-      "count": 23
+      "count": 25
     },
     {
       "id": "3.4",

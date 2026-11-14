@@ -5,6 +5,20 @@ Objectives, optimizers, learning rates, batch sizes and training stability.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-14](../../../reports/2026/11/2026-11-14.md) — PARTIAL SEARCH
+
+### [End-to-End 4-Bit Training](<https://thinkingmachines.ai/blog/end-to-end-4-bit-training/>)
+
+Thinking Machines describes a mixed-precision recipe that uses four-bit arithmetic for most expert-layer forward passes while retaining eight-bit backward computation. Re-quantizing saved forward tensors with stochastic rounding and compressing expert communications make low precision useful across pretraining and reinforcement learning. The authors report faster training on GB300 systems, alongside a small pretraining efficiency loss and limited public experimental detail.
+
+**Published:** 2026-11-13 · **First seen:** 2026-11-14T11:01:01.560+00:00 · **Novelty:** newly-discovered · **Tags:** Mixed Precision, NVFP4, Stochastic Rounding, MoE
+
+[Blog](<https://thinkingmachines.ai/blog/end-to-end-4-bit-training/>) · [Project](<https://huggingface.co/thinkingmachines/Inkling-2-Small>)
+
+**Evidence:** technical-report; full-text. Complete November 13 technical post inspected, including block-scaled transposes, stochastic re-quantization, communication formats and final recipe. Saved quantized forward weights/activations are dequantized, transposed and stochastically re-quantized to MXFP8 for backward GEMMs; 32-dimensional random Hadamard transforms and block-scaled S2F6 reduce combine payloads from 16 to 8.25 bits/value. Authors report 8% pretraining and 20% RL wall-clock speedups versus full MXFP8, with about 2% pretraining compute-efficiency loss. This is a delayed discovery within the 72-hour lookback: the post is dated November 13 and first retrieved today. Earlier Inkling 2 launch/card already disclosed native NVFP4 and the 68-hour run, but not these detailed numerical mechanisms; those older facts are not treated as new results.
+
+**Limitations:** This is a GB300-specific author engineering report with in-house BBBK kernels, no controlled run table, seed intervals or independent reproduction. Four-bit applies to most expert forward computation, not the whole network or backward pass; the final one-sixth of layers uses MXFP8. Stochastic re-quantization targets the saved quantized forward value in expectation, not the original unquantized tensor or guaranteed unbiased total gradients. The 68-hour run combines many changes and does not isolate this recipe. Weights are public; a reproducible training/kernel implementation was not verified.
+
 ## [2026-11-11](../../../reports/2026/11/2026-11-11.md) — PARTIAL SEARCH
 
 ### [Closing the BF16-FP16 Convergence Speed Gap in RL Post-Training with Stochastic Rounding](<https://arxiv.org/abs/2611.13545>)

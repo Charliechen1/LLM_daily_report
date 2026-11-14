@@ -5,6 +5,38 @@ Request scheduling, continuous batching, prefill/decode disaggregation and elast
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-14](../../../reports/2026/11/2026-11-14.md) — PARTIAL SEARCH
+
+### [Cairn: Sharing and Prewarming Serverless LLM Startup Work](<https://arxiv.org/abs/2611.16180>)
+
+Cairn separates LLM startup into reusable model artifacts, model-independent setup that can run early, and process-bound CUDA graph capture, sharing the first group and replenishing prepared workers from a template process. On two emulated servers with RTX A6000 GPUs, this cuts cold starts by 4.1–5.2× for the tested 1B–14B models, offering a way to reduce serverless waiting beyond faster weight loading.
+
+**Published:** 2026-11-12 · **First seen:** 2026-11-13T11:09:02.287+00:00 · **Novelty:** newly-discovered · **Tags:** Serverless Inference, Cold Starts, Startup Artifact Reuse, Prewarming
+
+**Public availability:** 2026-11-13T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/new?skip=0&show=2000>) · [Timing source](<https://arxiv.org/list/cs.DC/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2611.16180v1>)
+
+**Evidence:** research-paper; full-text. Complete10-page v1 inspected, Sections3–6/Tables1–3/Figures6–10; references inspected without following all cited work. Cairn publishes immutable fingerprint-keyed weights, metadata, compile caches, compiler keys and graph-memory estimates with a single-writer/coordinator protocol, prepares model-agnostic workers, and forks replenishment from a pre-CUDA zygote; actual CUDA graphs are captured afresh. Two VMs on one NUMA host each have8dedicatedCPUcores,64GBmemory and an RTX A6000-48GB, sharing96GB remote-NUMA memory as an emulated CXL pool. On a ServerlessLLM fork ported to vLLM0.20, six1B–14B models fall from57–85s to11–21s for16-token prompts and8-token greedy outputs. Single-start tests clear destination disk/page/compile caches but preserve artifacts published by the other server. Separately, an initially empty-pool403-request one-hour Azure-trace-shaped/ShareGPT-length stream lowers medianTTFT32.5→11.8s,64%. New original cs.DC FridayNovember13 batch plus official Thursday20:00Eastern EST schedule imply November13 01:00UTC first public availability; retain November12 02:11:21UTC manuscript receipt. Earliest successful team discovery is November13 11:09:02.287458UTC, after that report cutoff, preserved from the exact pinned prior index/receipt. This is a delayed-discovery selection inside the72-hour lookback, not a new Saturday announcement.
+
+**Limitations:** CXL hardware was not tested: two VMs share remote NUMA memory on one host. Single-start speedups require compatible previously populated artifacts and prepared workers; publishing the first7B weights increases its NVMe load by22–23%. Warm worker plus zygote costs2.9GB hostmemory/264MiBCUDAcontext and CPU. Cache reuse requires matching GPU/software/engine-option fingerprints; actual graph capture remains process-local, and failure/coordinator/heterogeneous-cluster behavior is not a demonstrated universal non-regression guarantee. The16-server timeout improvements are simulation, not a physical64-GPU deployment. Main hardware statistics lack a reported cross-run confidence interval and the serving baseline is version-specific. Author implementation is promised upon publication, but no verified release or independent reproduction was located.
+
+## [2026-11-14](../../../reports/2026/11/2026-11-14.md) — PARTIAL SEARCH
+
+### [Reducing Batch Makespan through Inference–Environment Coordination](<https://arxiv.org/abs/2611.16661>)
+
+This system jointly chooses hybrid-model cache allocation, trajectory-aware inference routing and scheduling, and separate limits for admitted tasks and executing environment jobs. Advancing long action chains helps finish batches sooner: the combined design reduces measured makespan by 10.4–65.0% across the tested Ling agent workloads, while the added chain scheduler contributes a smaller 3.1–8.5% on live MCP-Atlas runs.
+
+**Published:** 2026-11-12 · **First seen:** 2026-11-13T11:09:02.287+00:00 · **Novelty:** newly-discovered · **Tags:** Agent Serving, Hybrid Cache Allocation, Environment Scheduling, Batch Makespan
+
+**Public availability:** 2026-11-13T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/new?skip=0&show=2000>) · [Timing source](<https://arxiv.org/list/cs.DC/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2611.16661v1>)
+
+**Evidence:** research-paper; full-text. Complete26-page v1 inspected, all mainmethods/results and AppendicesA.1–A.3/TablesA1–A3. A continuous mean-footprint model statically partitions KV/recurrent-state memory; load-bounded consistent hashing balances trajectory affinity with in-flight counts, and routing-prefix scheduling uses recent trajectory labels plus selectively cached hit lengths. CAAS orders pending nonpreemptive environment jobs by arrival band, revealed chain depth, mean-inference-duration bucket and FCFS tie break, without predicting remaining length. Controlled replay uses real inference with fixed recorded environment responses/durations and output lengths; live tests independently allow trajectories to change. Ling-3.0 uses2TP4 workers/8H20 GPUs; Ling-3.1 uses2TP8/16H20, with thinking/256Kcontext and three live runs per configuration. For500-task MCP-Atlas, fixed environment concurrency3, the complete bundle changes466.1→163.0min or333.5→128.5min, whereas changing Opt-FCFS to Opt-CAAS alone yields168.2→163.0 and140.5→128.5min. Live SWE reductions versus tuned baseline are10.4%/20.9%; concurrent baseline controls separately show cache-reuse benefits. Original primary cs.DC FridayNovember13 batch and official EST release schedule imply November13 01:00UTC availability; preserve November12 11:38:21UTC receipt rather than the internal PDF's November11 cover date. Exact prior successful index/receipt preserves first\_seen November13 11:09:02.287458UTC after the previous cutoff. This delayed review is within the72-hour lookback; old native SGLang cache knobs and earlier Ling deployment recipes are not claimed as newly invented.
+
+**Limitations:** The65.0% headline is an integrated bundle versus a unified-admission baseline, not the gain of CAAS alone. Three-run means and broadly comparable scores are not a statistical noninferiority proof; live trajectories differ. Replay excludes unsuccessful historical SWE/MCP trajectories and does not test semantic correctness, whereas live runs include all tasks/retries. Memory allocation uses historical average context, is fixed during serving and ignores allocator fragmentation; recent labels can disagree with actual cache residency and stored hit lengths can become stale. Only homogeneous worker-local caches are evaluated, without transfer or latency SLO guarantees. Higher concurrency can worsen per-request latency: live SWE Opt has higher TTFT/TPOT than tuned Baseline-1 despite lower makespan. No measured RL convergence/time-to-quality gain, released author patch or independent reproduction was verified.
+
 ## [2026-11-12](../../../reports/2026/11/2026-11-12.md) — PARTIAL SEARCH
 
 ### [Parallelism for Long-Context Serving: GLM-5.3-Flash on MI300X](<https://rocm.blogs.amd.com/artificial-intelligence/glm53flash-mi300x-vllm/README.html>)

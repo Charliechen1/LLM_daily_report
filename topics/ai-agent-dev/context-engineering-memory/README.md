@@ -5,6 +5,22 @@ Context organization/compression, working memory, long-term memory and state.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-14](../../../reports/2026/11/2026-11-14.md) — PARTIAL SEARCH
+
+### [CoReMem: Cost-Internalizing Memory for Successive Coding Tasks with Prospective Valuation](<https://arxiv.org/abs/2611.17316>)
+
+CoReMem values a completed coding session by how much its contents help the next task on the inherited repository, then compresses useful experience into file locations and executable checks. It also adapts the coding agent to act on those memory anchors, making cross-task memory serve measured task resolution and effort rather than relevance alone. In the reported 27B ChainSWE comparison, the combined memory and training system raises resolution from 21.0% to 25.7% while reducing steps by 17% and session tokens by 11%, without measuring training cost or wall-clock savings.
+
+**Published:** 2026-11-12 · **First seen:** 2026-11-13T11:06:28.151+00:00 · **Novelty:** newly-discovered · **Tags:** Coding Agents, Cross-Task Memory, Credit Assignment
+
+**Public availability:** 2026-11-13T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.17316v1>) · [Code](<https://anonymous.4open.science/api/repo/CoReMem-F728/file/coremem/memory/anchors.py>) · [Project](<https://anonymous.4open.science/r/CoReMem-F728/README.md>)
+
+**Evidence:** research-paper; full-text. Read the complete main methods/results and scientific Appendices A-N of the 26-page v1, including the population-gradient derivation and finite-group qualification; directly viewed Table1 on PDFpage7. Paired next-task replays from the same inherited tree guide a compact memory design; training groups mix four no-memory, three own-memory and one misplaced-memory rollouts. The additional measured memory-value term is routed by a first-use anchor/provenance gate, while all steps retain outcome credit. The ChainSWE split is repository-disjoint:52training chains/97boundaries and48test chains/96boundaries. The 27B row reports35.1 to29.2steps and32.2K to28.5K total cache-aware tokens per session, including the writer; replay counts vary by model. Public author README, training documentation and anchor-extraction source were read without execution. Original November12receipt18:58:22UTC is retained; FridayNovember13 originalcs.AI batch and official20:00EST schedule support inferred01:00UTC availability. This is delayed November14 full-review/selection of an item already cataloged November13, with the earlier actual first\_seen retained, not a Saturday release.
+
+**Limitations:** The headline compares combined memory and actor adaptation with an untrained no-memory actor; it is not an isolated memory effect or an end-to-end training-cost result. Main experiments use Python repositories, mini-swe-agent, three post-trained open models and three frozen API models; replay repeats do not establish independent training-seed robustness. Checkpoint rules, unequal replay counts, serving windows and timeout/format-error exclusions matter. The gate matches strings, including reasoning text; traceable anchor use is not a step-level causal-effect estimate and can produce false positives. Public code has finer matcher exceptions than the paper shorthand:short paths can survive and trimmed tmp paths can count. The population analysis is not a convergence guarantee. The external SWEContextBench prose and Table5 differ about state inheritance, so no external-chain numerical claim is used here. No latency, energy or total post-training cost was measured or independently reproduced. Anonymous repository root/history returned401; specific public files were accessible, but earlier artifact release history was not established.
+
 ## [2026-11-13](../../../reports/2026/11/2026-11-13.md) — PARTIAL SEARCH
 
 ### [Cleaning an Agent's History Hurts When the World Still Holds the Error](<https://arxiv.org/abs/2611.14654>)

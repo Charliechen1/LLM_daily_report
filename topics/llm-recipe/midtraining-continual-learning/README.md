@@ -5,6 +5,20 @@ Domain continued pretraining, context extension, continual learning and forgetti
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-14](../../../reports/2026/11/2026-11-14.md) — PARTIAL SEARCH
+
+### [daVinci-Prover: Agent-Native Mid-Training for Formal Theorem Proving](<https://arxiv.org/abs/2611.16433>)
+
+daVinci-Prover combines synthetic mathematical skill traces and verifier-grounded interactions in mid-training before supervised learning from successful Lean proving sessions. The added mid-training improves matched SFT-only baselines, supporting the value of learning an agent’s interaction patterns before downstream adaptation. The evidence concerns the tested theorem-proving benchmarks and substantial additional training, with broader capability retention and full artifact reproduction still unresolved.
+
+**Published:** 2026-11-12 · **First seen:** 2026-11-13T11:05:43.728Z · **Novelty:** newly-discovered · **Tags:** Mid-training, Formal Reasoning, Synthetic Data, Agent Training
+
+[Paper](<https://arxiv.org/pdf/2611.16433v1>) · [Code](<https://github.com/GAIR-NLP/daVinci-prover>) · [Project](<https://huggingface.co/datasets/davinci-prover/agentic-prover-SFT>)
+
+**Evidence:** research-paper; full-text. All 19 PDF pages inspected, including complete methods, results, decontamination, synthesis costs and training/compaction appendices; actual result tables on pages 6 and 9 visually checked. The 33.7B-token corpus combines decomposition/search/revision/self-verification and environment-native trajectories, followed by 35,861 successful agent SFT trajectories. Table 5 reports Qwen3-8B pass@1 rising 73.4→85.3 on MiniF2F, 68.0→85.3 on FATE-M and 28.4→40.4 on ProofNet under matched downstream SFT; Qwen3.5 comparisons show smaller consistent gains. Retrospective catch-up within the 72-hour lookback preserves the original November 12 submission date and genuine November 13 catalog discovery. The newly disclosed mid-training study is distinct from the older public prover harness; earlier repository snapshots contain harness benchmarks, not these mid-training results.
+
+**Limitations:** Extra mid-training is not matched total compute; data-component ablations also use different token budgets. Most whole-proof baselines are imported pass@32 results versus interactive pass@8, so no universal ranking is established. Main evaluation uses Lean 4.26, 200K context and 30 interactions; current code/data instead describe Lean 4.35, a newer teacher and different trajectory counts, so they are not the exact paper artifact. Broad model/data/training release remains promised. Exact-match decontamination cannot rule out all semantic leakage, general-domain replay is absent, and independent training-seed uncertainty and broader capability retention are not established.
+
 ## [2026-10-16](../../../reports/2026/10/2026-10-16.md) — PARTIAL SEARCH
 
 ### [Priming Base Models for Agentic Post-Training: An Open Midtraining Recipe](<https://arxiv.org/abs/2610.22019>)

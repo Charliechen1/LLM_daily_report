@@ -1,0 +1,972 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-14",
+  "timezone": "America/Los_Angeles",
+  "generated_at": "2026-11-14T11:15:47.799+00:00",
+  "coverage": {
+    "start": "2026-11-13T03:00:00-08:00",
+    "end": "2026-11-14T03:00:00-08:00"
+  },
+  "search": {
+    "status": "partial",
+    "notes": "Cutoff is November14 03:00 America/Los_Angeles (11:00UTC), covering consecutive local03:00 boundaries November13–14, with discovery lookback November11 03:00 through the cutoff. All26 subdomains were screened against the September29 landscape and the complete347-record registry. Saturday native arXiv indexes still expose the Friday batch; this is not a retrieval outage or a claim of a new Saturday batch. Five selected papers preserve original November12 submission dates and genuine November13 catalog discoveries; full review and selection are delayed within the72-hour lookback. The two selected technical blogs retain November13 dates without invented exact global hosting times. Seven full-text contributions qualify; no quota padding or universal SoTA claim. OpenReview submission-discovery API returns403. CoReMem anonymous repository root/history returns401 although explicit README/training/source files are accessible; earlier artifact history remains unresolved. No matching released Cairn/coordination implementation or Lost in Delegation code was verified; daVinci current public harness/data differ from manuscript settings and its full models/corpus/training release remains unverified. TML detailed run tables/uncertainty/in-house kernels and exact Miles blog commit history are unavailable; numerical conclusions remain author reports under the stated settings. AMD category and PyTorch metadata endpoint404s were recovered through accessible primary root/blog/history routes. NeurIPS native downloads/poster access recovered today; no current NeurIPS outage is claimed. ACL/EMNLP/NeurIPS screening is bounded chronology/candidate lookup, not a full scientific audit of every proceeding. XYBench reuses an old September manuscript/results; LEAP revision retains old headline/ablation while adding narrower new comparisons/cases; the Teamwork recap combines old mechanisms with new application claims lacking complete accessible matched protocols. These were inspected but not promoted as new general methods or performance rankings. Additional reserve abstracts are screening only; no independent experiment execution or exhaustive venue coverage is claimed.",
+    "sources_checked": [
+      {
+        "name": "cl-new.html",
+        "url": "https://arxiv.org/list/cs.CL/new",
+        "status": "ok"
+      },
+      {
+        "name": "cl-recent.html",
+        "url": "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "lg-new.html",
+        "url": "https://arxiv.org/list/cs.LG/new",
+        "status": "ok"
+      },
+      {
+        "name": "arxiv-lg-recent.html",
+        "url": "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "hf-blog.html",
+        "url": "https://huggingface.co/blog",
+        "status": "ok"
+      },
+      {
+        "name": "tml-blog.html",
+        "url": "https://thinkingmachines.ai/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "tml-4bit.html",
+        "url": "https://thinkingmachines.ai/blog/end-to-end-4-bit-training/",
+        "status": "ok"
+      },
+      {
+        "name": "hf-llmon.html",
+        "url": "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
+        "status": "ok"
+      },
+      {
+        "name": "hf-token-pooling.html",
+        "url": "https://huggingface.co/blog/token-pooling",
+        "status": "ok"
+      },
+      {
+        "name": "tml-inkling2.html",
+        "url": "https://thinkingmachines.ai/news/inkling-2-small/",
+        "status": "ok"
+      },
+      {
+        "name": "davinci.pdf",
+        "url": "https://arxiv.org/pdf/2611.16433v1",
+        "status": "ok"
+      },
+      {
+        "name": "davinci.html",
+        "url": "https://arxiv.org/html/2611.16433v1",
+        "status": "ok"
+      },
+      {
+        "name": "davinci-abs.html",
+        "url": "https://arxiv.org/abs/2611.16433",
+        "status": "ok"
+      },
+      {
+        "name": "llmon-abs.html",
+        "url": "https://arxiv.org/abs/2610.38120",
+        "status": "ok"
+      },
+      {
+        "name": "llmon-repo.json",
+        "url": "https://api.github.com/repos/generative-computing/llmon",
+        "status": "ok"
+      },
+      {
+        "name": "llmon-commits.json",
+        "url": "https://api.github.com/repos/generative-computing/llmon/commits?per_page=10",
+        "status": "ok"
+      },
+      {
+        "name": "pool-model.json",
+        "url": "https://huggingface.co/api/models/tomaarsen/mve-ModernBERT-base-token-pooling",
+        "status": "ok"
+      },
+      {
+        "name": "pool-readme.md",
+        "url": "https://huggingface.co/tomaarsen/mve-ModernBERT-base-token-pooling/raw/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "davinci-repo.json",
+        "url": "https://api.github.com/repos/GAIR-NLP/daVinci-prover",
+        "status": "ok"
+      },
+      {
+        "name": "davinci-commits.json",
+        "url": "https://api.github.com/repos/GAIR-NLP/daVinci-prover/commits?per_page=15",
+        "status": "ok"
+      },
+      {
+        "name": "davinci-readme.md",
+        "url": "https://raw.githubusercontent.com/GAIR-NLP/daVinci-prover/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "tml-inkling-card.html",
+        "url": "https://thinkingmachines.ai/inkling/inkling-2-small-model-card/",
+        "status": "unavailable"
+      },
+      {
+        "name": "tml-inkling-card.html",
+        "url": "https://thinkingmachines.ai/model-card/inkling-2-small/",
+        "status": "ok"
+      },
+      {
+        "name": "davinci-old-readme.md",
+        "url": "https://raw.githubusercontent.com/GAIR-NLP/daVinci-prover/4b78d1ccbe4a/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "davinci-initial-readme.md",
+        "url": "https://raw.githubusercontent.com/GAIR-NLP/daVinci-prover/a8b8abd2151e/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "llmon-old-readme.md",
+        "url": "https://raw.githubusercontent.com/generative-computing/llmon/470da3970ab4/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "llmon-3b-model.json",
+        "url": "https://huggingface.co/api/models/ibm-granite/granite-4.1-3b-llmon-preview",
+        "status": "ok"
+      },
+      {
+        "name": "pool-commits.json",
+        "url": "https://huggingface.co/api/models/tomaarsen/mve-ModernBERT-base-token-pooling/commits/main",
+        "status": "ok"
+      },
+      {
+        "name": "arxiv-availability.html",
+        "url": "https://info.arxiv.org/help/availability.html",
+        "status": "ok"
+      },
+      {
+        "name": "davinci-old-tree.json",
+        "url": "https://api.github.com/repos/GAIR-NLP/daVinci-prover/git/trees/4b78d1ccbe4a?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "davinci-dataset.json",
+        "url": "https://huggingface.co/api/datasets/davinci-prover/agentic-prover-SFT",
+        "status": "ok"
+      },
+      {
+        "name": "davinci-data-readme.md",
+        "url": "https://huggingface.co/datasets/davinci-prover/agentic-prover-SFT/raw/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "pool-initial-readme.md",
+        "url": "https://huggingface.co/tomaarsen/mve-ModernBERT-base-token-pooling/raw/edc28fc2b333958cccff535cfcd3c4d5328765ce/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "tml-model.json",
+        "url": "https://huggingface.co/api/models/thinkingmachines/Inkling-2-Small",
+        "status": "ok"
+      },
+      {
+        "name": "ai-new.html",
+        "url": "https://arxiv.org/list/cs.AI/new",
+        "status": "ok"
+      },
+      {
+        "name": "se-new.html",
+        "url": "https://arxiv.org/list/cs.SE/new",
+        "status": "ok"
+      },
+      {
+        "name": "ai-recent.html",
+        "url": "https://arxiv.org/list/cs.AI/recent?show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "anthropic-research.html",
+        "url": "https://www.anthropic.com/research",
+        "status": "ok"
+      },
+      {
+        "name": "anthropic-engineering.html",
+        "url": "https://www.anthropic.com/engineering",
+        "status": "ok"
+      },
+      {
+        "name": "claude-blog.html",
+        "url": "https://www.claude.com/blog",
+        "status": "ok"
+      },
+      {
+        "name": "langchain-blog.html",
+        "url": "https://blog.langchain.com/",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17316-abs.html",
+        "url": "https://arxiv.org/abs/2611.17316",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17316-source.pdf",
+        "url": "https://arxiv.org/pdf/2611.17316v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17316-source.html",
+        "url": "https://arxiv.org/html/2611.17316v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17068-abs.html",
+        "url": "https://arxiv.org/abs/2611.17068",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17068-source.pdf",
+        "url": "https://arxiv.org/pdf/2611.17068v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17068-source.html",
+        "url": "https://arxiv.org/html/2611.17068v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.14581-abs.html",
+        "url": "https://arxiv.org/abs/2611.14581",
+        "status": "ok"
+      },
+      {
+        "name": "2611.14581-source.pdf",
+        "url": "https://arxiv.org/pdf/2611.14581v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.14581-source.html",
+        "url": "https://arxiv.org/html/2611.14581v1",
+        "status": "ok"
+      },
+      {
+        "name": "strong-safety-evals.html",
+        "url": "https://www.anthropic.com/research/building-strong-safety-evaluations",
+        "status": "ok"
+      },
+      {
+        "name": "always-on.html",
+        "url": "https://claude.com/resources/articles/building-always-on-agents",
+        "status": "ok"
+      },
+      {
+        "name": "mape-repo.json",
+        "url": "https://api.github.com/repos/ash-ding/MAPE",
+        "status": "ok"
+      },
+      {
+        "name": "mape-commits.json",
+        "url": "https://api.github.com/repos/ash-ding/MAPE/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "mape-readme.md",
+        "url": "https://raw.githubusercontent.com/ash-ding/MAPE/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "evaluation-zenodo.json",
+        "url": "https://zenodo.org/api/records/23683806",
+        "status": "ok"
+      },
+      {
+        "name": "2611.16526-abs.html",
+        "url": "https://arxiv.org/abs/2611.16526",
+        "status": "ok"
+      },
+      {
+        "name": "2611.16526-source.pdf",
+        "url": "https://arxiv.org/pdf/2611.16526v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.16526-source.html",
+        "url": "https://arxiv.org/html/2611.16526v1",
+        "status": "ok"
+      },
+      {
+        "name": "coremem-code.html",
+        "url": "https://anonymous.4open.science/r/CoReMem-F728/",
+        "status": "unavailable"
+      },
+      {
+        "name": "coremem-code-meta.json",
+        "url": "https://anonymous.4open.science/api/repo/CoReMem-F728",
+        "status": "unavailable"
+      },
+      {
+        "name": "coremem-readme.md",
+        "url": "https://anonymous.4open.science/api/repo/CoReMem-F728/file/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "mape-initial-readme.md",
+        "url": "https://raw.githubusercontent.com/ash-ding/MAPE/937a9266d8f42533c9c11eb6713d78f928d1a6f6/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "evaluation-package.zip",
+        "url": "https://zenodo.org/api/records/23683806/files/artifact_v9.zip/content",
+        "status": "ok"
+      },
+      {
+        "name": "coremem-readme-link.html",
+        "url": "https://anonymous.4open.science/r/CoReMem-F728/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "coremem-training-doc.md",
+        "url": "https://anonymous.4open.science/api/repo/CoReMem-F728/file/docs/training.md",
+        "status": "ok"
+      },
+      {
+        "name": "coremem-anchors.py",
+        "url": "https://anonymous.4open.science/api/repo/CoReMem-F728/file/coremem/memory/anchors.py",
+        "status": "ok"
+      },
+      {
+        "name": "arxiv-dc-recent.html",
+        "url": "https://arxiv.org/list/cs.DC/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "arxiv-dc-new.html",
+        "url": "https://arxiv.org/list/cs.DC/new?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "arxiv-ar-recent.html",
+        "url": "https://arxiv.org/list/cs.AR/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "arxiv-dc-month.html",
+        "url": "https://arxiv.org/list/cs.DC/2026-11?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "vllm-blog.html",
+        "url": "https://vllm.ai/blog",
+        "status": "ok"
+      },
+      {
+        "name": "vllm-old-blog.html",
+        "url": "https://blog.vllm.ai/",
+        "status": "ok"
+      },
+      {
+        "name": "pytorch-blog.html",
+        "url": "https://pytorch.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "sglang-blog.html",
+        "url": "https://www.lmsys.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "nvidia-blog.html",
+        "url": "https://developer.nvidia.com/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "amd-blog.html",
+        "url": "https://rocm.blogs.amd.com/artificial-intelligence/README.html",
+        "status": "unavailable"
+      },
+      {
+        "name": "14904-abstract.html",
+        "url": "https://arxiv.org/abs/2611.14904",
+        "status": "ok"
+      },
+      {
+        "name": "14904-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.14904v1",
+        "status": "ok"
+      },
+      {
+        "name": "14904-paper.html",
+        "url": "https://arxiv.org/html/2611.14904v1",
+        "status": "ok"
+      },
+      {
+        "name": "16180-abstract.html",
+        "url": "https://arxiv.org/abs/2611.16180",
+        "status": "ok"
+      },
+      {
+        "name": "16180-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.16180v1",
+        "status": "ok"
+      },
+      {
+        "name": "16661-abstract.html",
+        "url": "https://arxiv.org/abs/2611.16661",
+        "status": "ok"
+      },
+      {
+        "name": "16661-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.16661v1",
+        "status": "ok"
+      },
+      {
+        "name": "17206-abstract.html",
+        "url": "https://arxiv.org/abs/2611.17206",
+        "status": "ok"
+      },
+      {
+        "name": "miles-vera-blog.html",
+        "url": "https://www.lmsys.org/blog/2026-11-13-miles-vera-sandboxes/",
+        "status": "ok"
+      },
+      {
+        "name": "sglang-nim-blog.html",
+        "url": "https://www.lmsys.org/blog/2026-11-13-sglang-nvidia-nim/",
+        "status": "ok"
+      },
+      {
+        "name": "helion-heuristics-blog.html",
+        "url": "https://pytorch.org/blog/fast-by-default-compile-time-heuristics-for-helion-kernels/",
+        "status": "ok"
+      },
+      {
+        "name": "amd-root-blog.html",
+        "url": "https://rocm.blogs.amd.com/",
+        "status": "ok"
+      },
+      {
+        "name": "nvidia-groq-blog.html",
+        "url": "https://developer.nvidia.com/blog/how-nvidia-groq-3-lpx-deterministic-execution-drives-power-efficient-high-interactivity-inference-on-nvidia-vera-rubin/",
+        "status": "ok"
+      },
+      {
+        "name": "miles-project.html",
+        "url": "https://miles.radixark.com/",
+        "status": "ok"
+      },
+      {
+        "name": "agentenv-repo.json",
+        "url": "https://api.github.com/repos/kvcache-ai/AgentENV",
+        "status": "ok"
+      },
+      {
+        "name": "agentenv-readme.md",
+        "url": "https://raw.githubusercontent.com/kvcache-ai/AgentENV/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "helion-heuristics-history.json",
+        "url": "https://api.github.com/repos/pytorch/helion/commits?path=helion/_compiler/autotuner_heuristics&per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "helion-heuristics-tree.json",
+        "url": "https://api.github.com/repos/pytorch/helion/contents/helion/_compiler/autotuner_heuristics",
+        "status": "ok"
+      },
+      {
+        "name": "amd-sdma-blog.html",
+        "url": "https://rocm.blogs.amd.com/software-tools-optimization/gpu-initiated-sdma/README.html",
+        "status": "ok"
+      },
+      {
+        "name": "cairn-paper.html",
+        "url": "https://arxiv.org/html/2611.16180v1",
+        "status": "ok"
+      },
+      {
+        "name": "coordination-paper.html",
+        "url": "https://arxiv.org/html/2611.16661v1",
+        "status": "ok"
+      },
+      {
+        "name": "ling31-model-card.md",
+        "url": "https://huggingface.co/inclusionAI/Ling-3.1-flash/raw/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "ling30-model-card.md",
+        "url": "https://huggingface.co/inclusionAI/Ling-3.0-flash/raw/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "sglang-rp-search.json",
+        "url": "https://api.github.com/search/issues?q=repo%3Asgl-project%2Fsglang+%22routing-prefix%22",
+        "status": "ok"
+      },
+      {
+        "name": "sglang-lbch-search.json",
+        "url": "https://api.github.com/search/issues?q=repo%3Asgl-project%2Fsglang+%22LBCH%22",
+        "status": "ok"
+      },
+      {
+        "name": "coordination-code-search.json",
+        "url": "https://api.github.com/search/repositories?q=%22CAAS%22+%22Ling%22",
+        "status": "ok"
+      },
+      {
+        "name": "cairn-code-search.json",
+        "url": "https://api.github.com/search/repositories?q=%22Cairn%22+%22LLM%22",
+        "status": "ok"
+      },
+      {
+        "name": "miles-code-repo.json",
+        "url": "https://api.github.com/repos/radixark/miles",
+        "status": "ok"
+      },
+      {
+        "name": "miles-code-readme.md",
+        "url": "https://raw.githubusercontent.com/radixark/miles/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "lmsys-repo.json",
+        "url": "https://api.github.com/repos/lm-sys/lmsys.org",
+        "status": "unavailable"
+      },
+      {
+        "name": "miles-blog-history.json",
+        "url": "https://api.github.com/repos/lm-sys/lmsys.org/commits?path=blog/2026-11-13-miles-vera-sandboxes/index.md&per_page=10",
+        "status": "unavailable"
+      },
+      {
+        "name": "miles-original-report.html",
+        "url": "https://arxiv.org/html/2609.08368v1",
+        "status": "ok"
+      },
+      {
+        "name": "miles-original-abstract.html",
+        "url": "https://arxiv.org/abs/2609.08368",
+        "status": "ok"
+      },
+      {
+        "name": "agentenv-vera-history.json",
+        "url": "https://api.github.com/repos/kvcache-ai/AgentENV/commits?since=2026-11-01T00%3A00%3A00Z&until=2026-11-14T11%3A00%3A00Z&per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "helion-blog-metadata.json",
+        "url": "https://pytorch.org/wp-json/wp/v2/posts?slug=fast-by-default-compile-time-heuristics-for-helion-kernels",
+        "status": "unavailable"
+      },
+      {
+        "name": "amd-sdma-history.json",
+        "url": "https://api.github.com/repos/ROCm/rocm-blogs/commits?path=blogs/software-tools-optimization/gpu-initiated-sdma&per_page=10",
+        "status": "ok"
+      },
+      {
+        "name": "openai-research.html",
+        "url": "https://openai.com/news/research/",
+        "status": "ok"
+      },
+      {
+        "name": "openai-engineering.html",
+        "url": "https://openai.com/news/engineering/",
+        "status": "ok"
+      },
+      {
+        "name": "openai-security.html",
+        "url": "https://openai.com/news/security/",
+        "status": "ok"
+      },
+      {
+        "name": "deepmind-news.html",
+        "url": "https://deepmind.google/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "google-research.html",
+        "url": "https://research.google/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "ai2-research.html",
+        "url": "https://allenai.org/research",
+        "status": "ok"
+      },
+      {
+        "name": "xybench-blog.html",
+        "url": "https://allenai.org/blog/xybench",
+        "status": "ok"
+      },
+      {
+        "name": "teamwork-blog.html",
+        "url": "https://research.google/blog/advancing-science-engineering-with-antigravitys-teamwork-feature/",
+        "status": "ok"
+      },
+      {
+        "name": "deepmind-publications.html",
+        "url": "https://deepmind.google/research/publications/",
+        "status": "ok"
+      },
+      {
+        "name": "acl-index.html",
+        "url": "https://aclanthology.org/",
+        "status": "ok"
+      },
+      {
+        "name": "emnlp-index.html",
+        "url": "https://aclanthology.org/events/emnlp-2026/",
+        "status": "ok"
+      },
+      {
+        "name": "openreview-api.json",
+        "url": "https://api2.openreview.net/notes?invitation=ICLR.cc/2027/Conference/-/Submission&limit=20",
+        "status": "unavailable"
+      },
+      {
+        "name": "openreview-home.html",
+        "url": "https://openreview.net/",
+        "status": "ok"
+      },
+      {
+        "name": "neurips-download.html",
+        "url": "https://nips.cc/Downloads/2026",
+        "status": "ok"
+      },
+      {
+        "name": "xybench-abs.html",
+        "url": "https://arxiv.org/abs/2609.06842",
+        "status": "ok"
+      },
+      {
+        "name": "xybench-paper.pdf",
+        "url": "https://arxiv.org/pdf/2609.06842v1",
+        "status": "ok"
+      },
+      {
+        "name": "xybench-repo.json",
+        "url": "https://api.github.com/repos/allenai/XYBench",
+        "status": "ok"
+      },
+      {
+        "name": "xybench-commits.json",
+        "url": "https://api.github.com/repos/allenai/XYBench/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "xybench-readme.md",
+        "url": "https://raw.githubusercontent.com/allenai/XYBench/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "xybench-data.json",
+        "url": "https://huggingface.co/api/datasets/allenai/XYBench-dataset",
+        "status": "ok"
+      },
+      {
+        "name": "teamwork-old.html",
+        "url": "https://antigravity.google/blog/teamwork-when-ai-becomes-a-research-partner/",
+        "status": "ok"
+      },
+      {
+        "name": "duodiscover-abs.html",
+        "url": "https://arxiv.org/abs/2610.17184",
+        "status": "ok"
+      },
+      {
+        "name": "duodiscover-paper.pdf",
+        "url": "https://arxiv.org/pdf/2610.17184v1",
+        "status": "ok"
+      },
+      {
+        "name": "leap-abs.html",
+        "url": "https://arxiv.org/abs/2606.03303",
+        "status": "ok"
+      },
+      {
+        "name": "stellar-abs.html",
+        "url": "https://arxiv.org/abs/2609.15983",
+        "status": "ok"
+      },
+      {
+        "name": "nopo-poster.html",
+        "url": "https://nips.cc/virtual/2026/poster/152610",
+        "status": "ok"
+      },
+      {
+        "name": "leap-v2.pdf",
+        "url": "https://arxiv.org/pdf/2606.03303v2",
+        "status": "ok"
+      },
+      {
+        "name": "leap-v3.pdf",
+        "url": "https://arxiv.org/pdf/2606.03303v3",
+        "status": "ok"
+      },
+      {
+        "name": "xybench-latest-commit.json",
+        "url": "https://api.github.com/repos/allenai/XYBench/commits/f08bc805d432866c1f55033d68df261c2d654e44",
+        "status": "ok"
+      },
+      {
+        "name": "xybench-old-readme.md",
+        "url": "https://raw.githubusercontent.com/allenai/XYBench/68b4e83f12ba71fb01fe850c18775fad354883f0/README.md",
+        "status": "ok"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": "https://thinkingmachines.ai/blog/end-to-end-4-bit-training/",
+      "title": "End-to-End 4-Bit Training",
+      "category": "1.3",
+      "tags": [
+        "Mixed Precision",
+        "NVFP4",
+        "Stochastic Rounding",
+        "MoE"
+      ],
+      "published_on": "2026-11-13",
+      "first_seen_at": "2026-11-14T11:01:01.560+00:00",
+      "canonical_url": "https://thinkingmachines.ai/blog/end-to-end-4-bit-training/",
+      "links": {
+        "blog": "https://thinkingmachines.ai/blog/end-to-end-4-bit-training/",
+        "project": "https://huggingface.co/thinkingmachines/Inkling-2-Small"
+      },
+      "summary": [
+        "Thinking Machines describes a mixed-precision recipe that uses four-bit arithmetic for most expert-layer forward passes while retaining eight-bit backward computation.",
+        "Re-quantizing saved forward tensors with stochastic rounding and compressing expert communications make low precision useful across pretraining and reinforcement learning.",
+        "The authors report faster training on GB300 systems, alongside a small pretraining efficiency loss and limited public experimental detail."
+      ],
+      "evidence": {
+        "type": "technical-report",
+        "access": "full-text",
+        "rationale": "Complete November 13 technical post inspected, including block-scaled transposes, stochastic re-quantization, communication formats and final recipe. Saved quantized forward weights/activations are dequantized, transposed and stochastically re-quantized to MXFP8 for backward GEMMs; 32-dimensional random Hadamard transforms and block-scaled S2F6 reduce combine payloads from 16 to 8.25 bits/value. Authors report 8% pretraining and 20% RL wall-clock speedups versus full MXFP8, with about 2% pretraining compute-efficiency loss. This is a delayed discovery within the 72-hour lookback: the post is dated November 13 and first retrieved today. Earlier Inkling 2 launch/card already disclosed native NVFP4 and the 68-hour run, but not these detailed numerical mechanisms; those older facts are not treated as new results.",
+        "limitations": "This is a GB300-specific author engineering report with in-house BBBK kernels, no controlled run table, seed intervals or independent reproduction. Four-bit applies to most expert forward computation, not the whole network or backward pass; the final one-sixth of layers uses MXFP8. Stochastic re-quantization targets the saved quantized forward value in expectation, not the original unquantized tensor or guaranteed unbiased total gradients. The 68-hour run combines many changes and does not isolate this recipe. Weights are public; a reproducible training/kernel implementation was not verified."
+      },
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "arxiv:2611.16433",
+      "title": "daVinci-Prover: Agent-Native Mid-Training for Formal Theorem Proving",
+      "category": "1.4",
+      "tags": [
+        "Mid-training",
+        "Formal Reasoning",
+        "Synthetic Data",
+        "Agent Training"
+      ],
+      "published_on": "2026-11-12",
+      "first_seen_at": "2026-11-13T11:05:43.728Z",
+      "canonical_url": "https://arxiv.org/abs/2611.16433",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.16433v1",
+        "code": "https://github.com/GAIR-NLP/daVinci-prover",
+        "project": "https://huggingface.co/datasets/davinci-prover/agentic-prover-SFT"
+      },
+      "summary": [
+        "daVinci-Prover combines synthetic mathematical skill traces and verifier-grounded interactions in mid-training before supervised learning from successful Lean proving sessions.",
+        "The added mid-training improves matched SFT-only baselines, supporting the value of learning an agent’s interaction patterns before downstream adaptation.",
+        "The evidence concerns the tested theorem-proving benchmarks and substantial additional training, with broader capability retention and full artifact reproduction still unresolved."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "All 19 PDF pages inspected, including complete methods, results, decontamination, synthesis costs and training/compaction appendices; actual result tables on pages 6 and 9 visually checked. The 33.7B-token corpus combines decomposition/search/revision/self-verification and environment-native trajectories, followed by 35,861 successful agent SFT trajectories. Table 5 reports Qwen3-8B pass@1 rising 73.4→85.3 on MiniF2F, 68.0→85.3 on FATE-M and 28.4→40.4 on ProofNet under matched downstream SFT; Qwen3.5 comparisons show smaller consistent gains. Retrospective catch-up within the 72-hour lookback preserves the original November 12 submission date and genuine November 13 catalog discovery. The newly disclosed mid-training study is distinct from the older public prover harness; earlier repository snapshots contain harness benchmarks, not these mid-training results.",
+        "limitations": "Extra mid-training is not matched total compute; data-component ablations also use different token budgets. Most whole-proof baselines are imported pass@32 results versus interactive pass@8, so no universal ranking is established. Main evaluation uses Lean 4.26, 200K context and 30 interactions; current code/data instead describe Lean 4.35, a newer teacher and different trajectory counts, so they are not the exact paper artifact. Broad model/data/training release remains promised. Exact-match decontamination cannot rule out all semantic leakage, general-domain replay is absent, and independent training-seed uncertainty and broader capability retention are not established."
+      },
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "arxiv:2611.17316",
+      "title": "CoReMem: Cost-Internalizing Memory for Successive Coding Tasks with Prospective Valuation",
+      "category": "2.3",
+      "tags": [
+        "Coding Agents",
+        "Cross-Task Memory",
+        "Credit Assignment"
+      ],
+      "published_on": "2026-11-12",
+      "first_seen_at": "2026-11-13T11:06:28.151+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.17316",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.17316v1",
+        "code": "https://anonymous.4open.science/api/repo/CoReMem-F728/file/coremem/memory/anchors.py",
+        "project": "https://anonymous.4open.science/r/CoReMem-F728/README.md"
+      },
+      "summary": [
+        "CoReMem values a completed coding session by how much its contents help the next task on the inherited repository, then compresses useful experience into file locations and executable checks.",
+        "It also adapts the coding agent to act on those memory anchors, making cross-task memory serve measured task resolution and effort rather than relevance alone.",
+        "In the reported 27B ChainSWE comparison, the combined memory and training system raises resolution from 21.0% to 25.7% while reducing steps by 17% and session tokens by 11%, without measuring training cost or wall-clock savings."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read the complete main methods/results and scientific Appendices A-N of the 26-page v1, including the population-gradient derivation and finite-group qualification; directly viewed Table1 on PDFpage7. Paired next-task replays from the same inherited tree guide a compact memory design; training groups mix four no-memory, three own-memory and one misplaced-memory rollouts. The additional measured memory-value term is routed by a first-use anchor/provenance gate, while all steps retain outcome credit. The ChainSWE split is repository-disjoint:52training chains/97boundaries and48test chains/96boundaries. The 27B row reports35.1 to29.2steps and32.2K to28.5K total cache-aware tokens per session, including the writer; replay counts vary by model. Public author README, training documentation and anchor-extraction source were read without execution. Original November12receipt18:58:22UTC is retained; FridayNovember13 originalcs.AI batch and official20:00EST schedule support inferred01:00UTC availability. This is delayed November14 full-review/selection of an item already cataloged November13, with the earlier actual first_seen retained, not a Saturday release.",
+        "limitations": "The headline compares combined memory and actor adaptation with an untrained no-memory actor; it is not an isolated memory effect or an end-to-end training-cost result. Main experiments use Python repositories, mini-swe-agent, three post-trained open models and three frozen API models; replay repeats do not establish independent training-seed robustness. Checkpoint rules, unequal replay counts, serving windows and timeout/format-error exclusions matter. The gate matches strings, including reasoning text; traceable anchor use is not a step-level causal-effect estimate and can produce false positives. Public code has finer matcher exceptions than the paper shorthand:short paths can survive and trimmed tmp paths can count. The population analysis is not a convergence guarantee. The external SWEContextBench prose and Table5 differ about state inheritance, so no external-chain numerical claim is used here. No latency, energy or total post-training cost was measured or independently reproduced. Anonymous repository root/history returned401; specific public files were accessible, but earlier artifact release history was not established."
+      },
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-13T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2611.16526",
+      "title": "Lost in Delegation: Studying the Effectiveness of Task Orchestration in Generative Search",
+      "category": "2.6",
+      "tags": [
+        "Multi-Agent",
+        "Search",
+        "Evidence Handoffs"
+      ],
+      "published_on": "2026-11-12",
+      "first_seen_at": "2026-11-13T11:06:28.151+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.16526",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.16526v1"
+      },
+      "summary": [
+        "Lost in Delegation compares direct search with forced or optional delegation across four same-model agent families and factual queries from before and after their reported knowledge cutoffs.",
+        "It shows how query rewriting and final-answer-only handoffs can lose evidence or error information, giving builders concrete failure modes to inspect before adding a coordinator.",
+        "Delegation usually reduced accuracy in this protocol, but the result does not establish that heterogeneous teams, richer evidence sharing or interdependent tasks behave the same way."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read all13pages, including the main empirical analyses, exact configurations/budgets and scientific AppendicesA-C; directly viewed Table2 on PDFpage5. ClaudeSonnet4.5,GPT5,gpt-oss120b andQwen3-30B-A3B-Thinking-2507 compare no tools, direct Google/SerpAPI search, forced delegation and optional delegation. Delegators cannot search directly, executors are fresh instances of the same model, and only executor final answers return. Four curated factual domains cover books,Nobel ages,GDP and product launches. Optional delegation is below direct search in22/32model-domain-cutoff cells, forced in21/32; equal-domain/model mean post-cutoff accuracy is.75direct,.64optional,.66forced. Traces expose unsupported query attributes, loss of retrieval-failure information and re-delegation of correct answers. The similarity judge alone is human-validated on102eligible pairs,97%majority agreement,kappa.65. Original November12receipt09:25:33UTC is retained; the FridayNovember13 originalcs.AI batch and official schedule support inferred01:00UTC availability. This is delayed November14 full-review/selection of a November13cataloged item, preserving the earlier first_seen. No author code or dataset project release was verified.",
+        "limitations": "Small independent factual queries and homogeneous final-answer-only teams do not represent all agent orchestration. Reported training cutoffs, or Qwen release date as a conservative upper bound, are proxies for knowledge; live search availability and limited curated domains constrain transfer. Single agents have2nsearch/3npage-open calls, while delegators may call2nexecutors with2search/3opens each:budgets are not matched total tool calls, tokens or compute. No measured general latency/cost advantage is established. Model-specific benefits exist, especially Qwen; not every adverse cell is statistically distinct. Prompt-level bootstrap intervals do not resolve repeated-item dependence or repeated-generation variability; no multi-seed study is reported. Behavioral analyses mostly use an LLM judge, with human validation only of query similarity. Failure-report prompting helpsGPT5but hurtsgpt-oss on testedGDP; causal explanations are suggestive, not comprehensive causal isolation. No independent reproduction or verified implementation release."
+      },
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-13T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "https://www.lmsys.org/blog/2026-11-13-miles-vera-sandboxes/",
+      "title": "RadixArk Miles on NVIDIA Vera: Controlled Sandbox Measurements for Agentic RL",
+      "category": "3.2",
+      "published_on": "2026-11-13",
+      "first_seen_at": "2026-11-14T11:00:47.917+00:00",
+      "canonical_url": "https://www.lmsys.org/blog/2026-11-13-miles-vera-sandboxes/",
+      "links": {
+        "blog": "https://www.lmsys.org/blog/2026-11-13-miles-vera-sandboxes/",
+        "code": "https://github.com/radixark/miles",
+        "project": "https://miles.radixark.com/"
+      },
+      "summary": [
+        "This Miles study keeps the model and GPU setup fixed while moving coding-agent sandboxes between Vera and Turin CPUs, measuring how environment execution affects reinforcement-learning rollouts.",
+        "Across the tested four-task runs on eight H200 GPUs, Turin episodes take 12% longer on average, showing that CPU-side commands and verification can remain a rollout bottleneck even when inference is unchanged."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "Complete November13 primary blog, all14 methodological footnotes and linked Miles/AgentENV project artifacts inspected. The controlled comparison uses GLM-4.7-Flash, the same8-H200 serving machine, GRPO over the same4 SWE-bench Verified tasks,5steps and160episodes per CPU arm,8episodes/task and up to100turns. Both sockets run176 background evaluations; measured mean episode times are approximately429 versus482seconds, with Turin/Vera90%CI1.04–1.22. Per-turn model waits are matched at3.31/3.32seconds despite different network paths. The wider feasibility run covers68steps and2,400+episodes in synchronous/asynchronous modes, separately from this comparison. The new contribution is the dated controlled Vera sandbox study, not the release of Miles or AgentENV: their repositories and the September Miles report predate this work, and the inspected original report contains no Vera/Turin/Xeon comparison. The blog was absent from the successfully fetched November13 11:09UTC LMSYS index and first observed in this run's successful November14 index; its date-only November13 publication is conservatively assigned here without inventing an exact release timestamp.",
+        "limitations": "A vendor-partner author study of only4tasks and5steps per arm; episode time, not statistically resolved step throughput or time to target quality.176background jobs load96-thread Turin more heavily than176-thread Vera, although a96-background sensitivity still shows a smaller command-time gap. Vera uses NVIDIA-tuned boot parameters; x86 uses AWS settings with XeonC6 disabled. CPU architecture changes require rebuilding arm64 environments, and530reference-checked task images do not prove universal behavioral equivalence. The1.3–2.1x load-capacity results use a specific95th-percentile1.5x latency bar and CPU/socket setups. The8x/32x inference scenarios and up-to12% equal-staleness training-speed gain are projections, not measured RL speedups; no independent reproduction or complete benchmark raw-data release verified."
+      },
+      "tags": [
+        "RL Rollouts",
+        "Sandbox Performance",
+        "CPU-GPU Coordination",
+        "Controlled Measurement"
+      ],
+      "novelty": "new"
+    },
+    {
+      "id": "arxiv:2611.16180",
+      "title": "Cairn: Sharing and Prewarming Serverless LLM Startup Work",
+      "category": "3.3",
+      "published_on": "2026-11-12",
+      "first_seen_at": "2026-11-13T11:09:02.287+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.16180",
+      "links": {
+        "paper": "https://arxiv.org/html/2611.16180v1"
+      },
+      "summary": [
+        "Cairn separates LLM startup into reusable model artifacts, model-independent setup that can run early, and process-bound CUDA graph capture, sharing the first group and replenishing prepared workers from a template process.",
+        "On two emulated servers with RTX A6000 GPUs, this cuts cold starts by 4.1–5.2× for the tested 1B–14B models, offering a way to reduce serverless waiting beyond faster weight loading."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Complete10-page v1 inspected, Sections3–6/Tables1–3/Figures6–10; references inspected without following all cited work. Cairn publishes immutable fingerprint-keyed weights, metadata, compile caches, compiler keys and graph-memory estimates with a single-writer/coordinator protocol, prepares model-agnostic workers, and forks replenishment from a pre-CUDA zygote; actual CUDA graphs are captured afresh. Two VMs on one NUMA host each have8dedicatedCPUcores,64GBmemory and an RTX A6000-48GB, sharing96GB remote-NUMA memory as an emulated CXL pool. On a ServerlessLLM fork ported to vLLM0.20, six1B–14B models fall from57–85s to11–21s for16-token prompts and8-token greedy outputs. Single-start tests clear destination disk/page/compile caches but preserve artifacts published by the other server. Separately, an initially empty-pool403-request one-hour Azure-trace-shaped/ShareGPT-length stream lowers medianTTFT32.5→11.8s,64%. New original cs.DC FridayNovember13 batch plus official Thursday20:00Eastern EST schedule imply November13 01:00UTC first public availability; retain November12 02:11:21UTC manuscript receipt. Earliest successful team discovery is November13 11:09:02.287458UTC, after that report cutoff, preserved from the exact pinned prior index/receipt. This is a delayed-discovery selection inside the72-hour lookback, not a new Saturday announcement.",
+        "limitations": "CXL hardware was not tested: two VMs share remote NUMA memory on one host. Single-start speedups require compatible previously populated artifacts and prepared workers; publishing the first7B weights increases its NVMe load by22–23%. Warm worker plus zygote costs2.9GB hostmemory/264MiBCUDAcontext and CPU. Cache reuse requires matching GPU/software/engine-option fingerprints; actual graph capture remains process-local, and failure/coordinator/heterogeneous-cluster behavior is not a demonstrated universal non-regression guarantee. The16-server timeout improvements are simulation, not a physical64-GPU deployment. Main hardware statistics lack a reported cross-run confidence interval and the serving baseline is version-specific. Author implementation is promised upon publication, but no verified release or independent reproduction was located."
+      },
+      "tags": [
+        "Serverless Inference",
+        "Cold Starts",
+        "Startup Artifact Reuse",
+        "Prewarming"
+      ],
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-13T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/new?skip=0&show=2000",
+          "https://arxiv.org/list/cs.DC/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2611.16661",
+      "title": "Reducing Batch Makespan through Inference–Environment Coordination",
+      "category": "3.3",
+      "published_on": "2026-11-12",
+      "first_seen_at": "2026-11-13T11:09:02.287+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.16661",
+      "links": {
+        "paper": "https://arxiv.org/html/2611.16661v1"
+      },
+      "summary": [
+        "This system jointly chooses hybrid-model cache allocation, trajectory-aware inference routing and scheduling, and separate limits for admitted tasks and executing environment jobs.",
+        "Advancing long action chains helps finish batches sooner: the combined design reduces measured makespan by 10.4–65.0% across the tested Ling agent workloads, while the added chain scheduler contributes a smaller 3.1–8.5% on live MCP-Atlas runs."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Complete26-page v1 inspected, all mainmethods/results and AppendicesA.1–A.3/TablesA1–A3. A continuous mean-footprint model statically partitions KV/recurrent-state memory; load-bounded consistent hashing balances trajectory affinity with in-flight counts, and routing-prefix scheduling uses recent trajectory labels plus selectively cached hit lengths. CAAS orders pending nonpreemptive environment jobs by arrival band, revealed chain depth, mean-inference-duration bucket and FCFS tie break, without predicting remaining length. Controlled replay uses real inference with fixed recorded environment responses/durations and output lengths; live tests independently allow trajectories to change. Ling-3.0 uses2TP4 workers/8H20 GPUs; Ling-3.1 uses2TP8/16H20, with thinking/256Kcontext and three live runs per configuration. For500-task MCP-Atlas, fixed environment concurrency3, the complete bundle changes466.1→163.0min or333.5→128.5min, whereas changing Opt-FCFS to Opt-CAAS alone yields168.2→163.0 and140.5→128.5min. Live SWE reductions versus tuned baseline are10.4%/20.9%; concurrent baseline controls separately show cache-reuse benefits. Original primary cs.DC FridayNovember13 batch and official EST release schedule imply November13 01:00UTC availability; preserve November12 11:38:21UTC receipt rather than the internal PDF's November11 cover date. Exact prior successful index/receipt preserves first_seen November13 11:09:02.287458UTC after the previous cutoff. This delayed review is within the72-hour lookback; old native SGLang cache knobs and earlier Ling deployment recipes are not claimed as newly invented.",
+        "limitations": "The65.0% headline is an integrated bundle versus a unified-admission baseline, not the gain of CAAS alone. Three-run means and broadly comparable scores are not a statistical noninferiority proof; live trajectories differ. Replay excludes unsuccessful historical SWE/MCP trajectories and does not test semantic correctness, whereas live runs include all tasks/retries. Memory allocation uses historical average context, is fixed during serving and ignores allocator fragmentation; recent labels can disagree with actual cache residency and stored hit lengths can become stale. Only homogeneous worker-local caches are evaluated, without transfer or latency SLO guarantees. Higher concurrency can worsen per-request latency: live SWE Opt has higher TTFT/TPOT than tuned Baseline-1 despite lower makespan. No measured RL convergence/time-to-quality gain, released author patch or independent reproduction was verified."
+      },
+      "tags": [
+        "Agent Serving",
+        "Hybrid Cache Allocation",
+        "Environment Scheduling",
+        "Batch Makespan"
+      ],
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-13T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/new?skip=0&show=2000",
+          "https://arxiv.org/list/cs.DC/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    }
+  ]
+}

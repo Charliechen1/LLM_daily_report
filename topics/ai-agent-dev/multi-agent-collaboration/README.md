@@ -5,6 +5,22 @@ Division of work, communication, delegation, collaboration topology and shared m
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-14](../../../reports/2026/11/2026-11-14.md) — PARTIAL SEARCH
+
+### [Lost in Delegation: Studying the Effectiveness of Task Orchestration in Generative Search](<https://arxiv.org/abs/2611.16526>)
+
+Lost in Delegation compares direct search with forced or optional delegation across four same-model agent families and factual queries from before and after their reported knowledge cutoffs. It shows how query rewriting and final-answer-only handoffs can lose evidence or error information, giving builders concrete failure modes to inspect before adding a coordinator. Delegation usually reduced accuracy in this protocol, but the result does not establish that heterogeneous teams, richer evidence sharing or interdependent tasks behave the same way.
+
+**Published:** 2026-11-12 · **First seen:** 2026-11-13T11:06:28.151+00:00 · **Novelty:** newly-discovered · **Tags:** Multi-Agent, Search, Evidence Handoffs
+
+**Public availability:** 2026-11-13T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.16526v1>)
+
+**Evidence:** research-paper; full-text. Read all13pages, including the main empirical analyses, exact configurations/budgets and scientific AppendicesA-C; directly viewed Table2 on PDFpage5. ClaudeSonnet4.5,GPT5,gpt-oss120b andQwen3-30B-A3B-Thinking-2507 compare no tools, direct Google/SerpAPI search, forced delegation and optional delegation. Delegators cannot search directly, executors are fresh instances of the same model, and only executor final answers return. Four curated factual domains cover books,Nobel ages,GDP and product launches. Optional delegation is below direct search in22/32model-domain-cutoff cells, forced in21/32; equal-domain/model mean post-cutoff accuracy is.75direct,.64optional,.66forced. Traces expose unsupported query attributes, loss of retrieval-failure information and re-delegation of correct answers. The similarity judge alone is human-validated on102eligible pairs,97%majority agreement,kappa.65. Original November12receipt09:25:33UTC is retained; the FridayNovember13 originalcs.AI batch and official schedule support inferred01:00UTC availability. This is delayed November14 full-review/selection of a November13cataloged item, preserving the earlier first\_seen. No author code or dataset project release was verified.
+
+**Limitations:** Small independent factual queries and homogeneous final-answer-only teams do not represent all agent orchestration. Reported training cutoffs, or Qwen release date as a conservative upper bound, are proxies for knowledge; live search availability and limited curated domains constrain transfer. Single agents have2nsearch/3npage-open calls, while delegators may call2nexecutors with2search/3opens each:budgets are not matched total tool calls, tokens or compute. No measured general latency/cost advantage is established. Model-specific benefits exist, especially Qwen; not every adverse cell is statistically distinct. Prompt-level bootstrap intervals do not resolve repeated-item dependence or repeated-generation variability; no multi-seed study is reported. Behavioral analyses mostly use an LLM judge, with human validation only of query similarity. Failure-report prompting helpsGPT5but hurtsgpt-oss on testedGDP; causal explanations are suggestive, not comprehensive causal isolation. No independent reproduction or verified implementation release.
+
 ## [2026-11-09](../../../reports/2026/11/2026-11-09.md) — PARTIAL SEARCH
 
 ### [Test-Time Compute Scales Better with Parallel Agent Teams](<https://arxiv.org/abs/2611.09798>)

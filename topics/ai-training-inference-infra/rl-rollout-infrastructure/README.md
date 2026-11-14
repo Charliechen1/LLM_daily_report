@@ -5,6 +5,20 @@ Distributed rollouts, asynchronous RL, generation/training coordination and weig
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-14](../../../reports/2026/11/2026-11-14.md) — PARTIAL SEARCH
+
+### [RadixArk Miles on NVIDIA Vera: Controlled Sandbox Measurements for Agentic RL](<https://www.lmsys.org/blog/2026-11-13-miles-vera-sandboxes/>)
+
+This Miles study keeps the model and GPU setup fixed while moving coding-agent sandboxes between Vera and Turin CPUs, measuring how environment execution affects reinforcement-learning rollouts. Across the tested four-task runs on eight H200 GPUs, Turin episodes take 12% longer on average, showing that CPU-side commands and verification can remain a rollout bottleneck even when inference is unchanged.
+
+**Published:** 2026-11-13 · **First seen:** 2026-11-14T11:00:47.917+00:00 · **Novelty:** new · **Tags:** RL Rollouts, Sandbox Performance, CPU-GPU Coordination, Controlled Measurement
+
+[Blog](<https://www.lmsys.org/blog/2026-11-13-miles-vera-sandboxes/>) · [Code](<https://github.com/radixark/miles>) · [Project](<https://miles.radixark.com/>)
+
+**Evidence:** engineering-report; full-text. Complete November13 primary blog, all14 methodological footnotes and linked Miles/AgentENV project artifacts inspected. The controlled comparison uses GLM-4.7-Flash, the same8-H200 serving machine, GRPO over the same4 SWE-bench Verified tasks,5steps and160episodes per CPU arm,8episodes/task and up to100turns. Both sockets run176 background evaluations; measured mean episode times are approximately429 versus482seconds, with Turin/Vera90%CI1.04–1.22. Per-turn model waits are matched at3.31/3.32seconds despite different network paths. The wider feasibility run covers68steps and2,400+episodes in synchronous/asynchronous modes, separately from this comparison. The new contribution is the dated controlled Vera sandbox study, not the release of Miles or AgentENV: their repositories and the September Miles report predate this work, and the inspected original report contains no Vera/Turin/Xeon comparison. The blog was absent from the successfully fetched November13 11:09UTC LMSYS index and first observed in this run's successful November14 index; its date-only November13 publication is conservatively assigned here without inventing an exact release timestamp.
+
+**Limitations:** A vendor-partner author study of only4tasks and5steps per arm; episode time, not statistically resolved step throughput or time to target quality.176background jobs load96-thread Turin more heavily than176-thread Vera, although a96-background sensitivity still shows a smaller command-time gap. Vera uses NVIDIA-tuned boot parameters; x86 uses AWS settings with XeonC6 disabled. CPU architecture changes require rebuilding arm64 environments, and530reference-checked task images do not prove universal behavioral equivalence. The1.3–2.1x load-capacity results use a specific95th-percentile1.5x latency bar and CPU/socket setups. The8x/32x inference scenarios and up-to12% equal-staleness training-speed gain are projections, not measured RL speedups; no independent reproduction or complete benchmark raw-data release verified.
+
 ## [2026-11-11](../../../reports/2026/11/2026-11-11.md) — PARTIAL SEARCH
 
 ### [Train High, Ship Low: Efficient LoRA Synchronization for Distributed On-Policy Post-Training](<https://arxiv.org/abs/2611.13306>)
