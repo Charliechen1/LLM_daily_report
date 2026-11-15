@@ -13,7 +13,7 @@
 - [1.6 Preference Alignment &amp; Reward Modeling](llm-recipe/preference-alignment-reward-modeling/README.md) — 3 item(s)
 - [1.7 Reinforcement Learning &amp; Reasoning](llm-recipe/reinforcement-learning-reasoning/README.md) — 19 item(s)
 - [1.8 Distillation &amp; Model Compression](llm-recipe/distillation-model-compression/README.md) — 21 item(s)
-- [1.9 Test-Time Scaling &amp; Inference Algorithms](llm-recipe/test-time-scaling-inference-algorithms/README.md) — 3 item(s)
+- [1.9 Test-Time Scaling &amp; Inference Algorithms](llm-recipe/test-time-scaling-inference-algorithms/README.md) — 4 item(s)
 - [1.10 Model Evaluation, Safety &amp; Interpretability](llm-recipe/model-evaluation-safety-interpretability/README.md) — 14 item(s)
 
 ## AI Agent Dev
@@ -24,8 +24,8 @@
 - [2.4 Retrieval &amp; Knowledge Integration](ai-agent-dev/retrieval-knowledge-integration/README.md) — 7 item(s)
 - [2.5 Agent Learning &amp; Skill Acquisition](ai-agent-dev/agent-learning-skill-acquisition/README.md) — 18 item(s)
 - [2.6 Multi-Agent Collaboration](ai-agent-dev/multi-agent-collaboration/README.md) — 8 item(s)
-- [2.7 Agent Harness &amp; Reliability](ai-agent-dev/agent-harness-reliability/README.md) — 11 item(s)
-- [2.8 Agent Evaluation &amp; Security](ai-agent-dev/agent-evaluation-security/README.md) — 44 item(s)
+- [2.7 Agent Harness &amp; Reliability](ai-agent-dev/agent-harness-reliability/README.md) — 12 item(s)
+- [2.8 Agent Evaluation &amp; Security](ai-agent-dev/agent-evaluation-security/README.md) — 45 item(s)
 
 ## AI Training &amp; Inference Infra
 
@@ -33,7 +33,7 @@
 - [3.2 RL &amp; Rollout Infrastructure](ai-training-inference-infra/rl-rollout-infrastructure/README.md) — 11 item(s)
 - [3.3 Inference Engines &amp; Serving](ai-training-inference-infra/inference-engines-serving/README.md) — 25 item(s)
 - [3.4 Attention, KV Cache &amp; Memory Systems](ai-training-inference-infra/attention-kv-cache-memory-systems/README.md) — 20 item(s)
-- [3.5 Kernels, Compilers &amp; Runtimes](ai-training-inference-infra/kernels-compilers-runtimes/README.md) — 21 item(s)
+- [3.5 Kernels, Compilers &amp; Runtimes](ai-training-inference-infra/kernels-compilers-runtimes/README.md) — 23 item(s)
 - [3.6 Low-Precision &amp; Efficient Execution](ai-training-inference-infra/low-precision-efficient-execution/README.md) — 4 item(s)
 - [3.7 Data Pipelines, Storage &amp; Checkpointing](ai-training-inference-infra/data-pipelines-storage-checkpointing/README.md) — 6 item(s)
 - [3.8 Hardware, Networking &amp; Cluster Efficiency](ai-training-inference-infra/hardware-networking-cluster-efficiency/README.md) — 14 item(s)

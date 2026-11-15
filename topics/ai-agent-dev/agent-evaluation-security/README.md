@@ -5,6 +5,22 @@ Task success, trajectory evaluation, cost/reliability, prompt injection and perm
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-15](../../../reports/2026/11/2026-11-15.md) — PARTIAL SEARCH
+
+### [CapLite: Prompt-Injection Defense for Small Language Model Agents without Model-Written Security Artifacts](<https://arxiv.org/abs/2611.17115>)
+
+CapLite commits write operations before reading tool results and uses deterministic schema rules to admit sensitive arguments only when grounded in the user request. This separates a small model's proposals from authorization: the authors report no successful tool-goal attacks in 13,935 AgentDojo episodes across 15 models. The protection trades away task utility and leaves final answers and free-text payloads unprotected, so it is a scoped write-control design rather than complete prompt-injection immunity.
+
+**Published:** 2026-11-12 · **First seen:** 2026-11-13T11:06:28.151+00:00 · **Novelty:** newly-discovered · **Tags:** Prompt Injection, Authorization, Small Language Models
+
+**Public availability:** 2026-11-13T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.17115>)
+
+**Evidence:** research-paper; full-text. Complete 19-page v1 read, including all main methods/results, Appendices A-H, baseline ports, model tables, benign-failure analysis, grounding implementation and all five recorded case studies. Primary Tables 1-2 on PDF page 6 were directly viewed. A request-only Planner commits at most ten calls before observations; a read-only Reader, candidate-selecting Binder and payload Composer propose arguments, while deterministic mediation enforces a prefix of committed writes and exact membership in the request grounding set for schema-derived authority fields. The main experiment uses 15 open models, including 13 models of 1.7B-12B, with fixed seed and temperature zero. The main attack denominator is 15 times 929 tool-goal pairs, yielding 0/13,935; utility under attack uses all 949 pairs per model. Authors report 29.0% attacked utility versus 27.2% for their CaMeL port, with 17.1K versus 93.7K prompt-plus-completion tokens per episode, averaged across 97 benign and 949 attacked episodes. Eight-model robustness tests add tool-knowledge, read-exfiltration and descriptor-collision attacks; mediator and write-commitment ablations admit attacks. Original November 12 17:07:22 UTC receipt is preserved; the original cs.AI Friday November 13 batch and official EST announcement schedule support inferred November 13 01:00 UTC availability. Delayed selection retains the actual November 13 catalog first\_seen rather than inventing a Sunday release. No older complete public artifact was established by the primary links and bounded title/repository searches.
+
+**Limitations:** Write integrity is relative to trusted requests, tools, documentation, deterministic field classification and canonicalized grounding. Payload text, temporal/control values and final answers are not generally protected; 20 answer-only injection pairs are excluded from the ASR denominator, and the paper shows CapLite repeating an injected final-answer sentence. A value appearing in the request is not proof that the selected operation is semantically correct. Benign/attacked utility is 28.1%/29.0%, versus 59.4%/50.2% undefended; unknown identifiers require confirmation, which the main evaluation does not answer. Schema heuristics classify 17 human-labeled authority arguments as temporal/control, so semantic protection beyond the defined authority class is not established. One benchmark with four suites, one deterministic run per configuration and limited design-aware variants do not establish security against every adaptive attack or deployed environment. Ports and an explicit DRIFT parser adjustment matter; token totals are not measured latency or dollar costs. The paper states a code/outcome release, but no matching author implementation URL was verified in the paper, HTML or bounded public repository search; no code or project link is asserted and no source was executed.
+
 ## [2026-11-13](../../../reports/2026/11/2026-11-13.md) — PARTIAL SEARCH
 
 ### [Termination Lag: Coding Agents Solve Early but Stop Late](<https://arxiv.org/abs/2611.14960>)

@@ -5,6 +5,22 @@ Inference-time search, verification, reranking and adaptive reasoning budgets.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-15](../../../reports/2026/11/2026-11-15.md) — PARTIAL SEARCH
+
+### [DiVR: New Evaluation of Learned Block Regeneration for Diffusion Language Models](<https://arxiv.org/abs/2611.17320>)
+
+The new DiVR study evaluates using learned outcome scores to decide when a diffusion language model should regenerate a whole block, keeping the generator unchanged. Its controlled comparisons show how targeted revision can improve average reasoning accuracy with fewer forward passes than the tested search baselines, while documenting limits in calibration and repair reliability.
+
+**Published:** 2026-11-12 · **First seen:** 2026-11-13T11:05:43.728Z · **Novelty:** newly-discovered · **Tags:** Diffusion Language Models, Learned Verification, Selective Regeneration, Controlled Evaluation
+
+**Public availability:** 2026-11-13T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/new?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.17320v1>) · [Code](<https://github.com/minhaeoh/DiVR>)
+
+**Evidence:** research-paper; full-text. The complete22-page primary was read, including diagnostic methods, all matched results and AppendicesA-G; sourceTable1 and calibrationTable9 images inspected. This selection concerns newly disclosed scientific evidence for an existing implementation: the November11 initial repository already contains the verifier, guided decoder, SFT recipe and baselines, while its complete33-entry tree/README has no manuscript, result tables, Sudoku diagnosis or calibration study. The November13 repository diff only adds the paper link/citation and is not itself a research update. The newly announced manuscript supplies the controlled diagnosis and measured comparisons: its frozen-backbone LoRA/head verifier pools masked and visible response positions, learns outcome classification plus within-question ranking, and selectively regenerates32-token blocks with four alternatives/at mostthree events. With the same SFT LLaDA-8B generator, the authors report five-benchmark unweighted accuracy35.3→43.4%; cost1.9–3.5times paired greedy counts row-weighted forwards including verification. Same-loop signal controls and fixed-candidate selection separate verifier quality from extra search. Original cs.CL FridayNovember13 batch plus official Thursday20:00EST schedule imply November13 01:00UTC manuscript availability; retain November12 receipt and actual earliest catalog discoveryNovember13 11:05:43.728UTC. This is delayed review inside the72-hour lookback, not a new Sunday method/code release.
+
+**Limitations:** Older code/settings alone do not establish earlier public manuscript evidence, but the checked history is a bounded absence search rather than proof of first-ever publication. Costs are forward counts, not latency, FLOPs or total verifier-training expense. Only7B/8B masked-diffusion generators and five math/code benchmarks were tested; code uses MBPP-visible grader tests, and the SFT HumanEval gain is only0.6points. Search baselines are local reimplementations, and Prism answer-selection variants differ. A failed rollout label is not a token-error label; raw class-balanced scores are not calibrated success probabilities. Post-hoc calibration preserves ranking and is not credited with main accuracy gains; its one-event paired intervention does not validate the adaptive three-event policy. The Sudoku diagnosis uses tiny4x4 puzzles. Guidance also breaks some correct answers; seed checks vary one component rather than independently repeating the whole pipeline. No released trained verifier weights or independent reproduction was verified.
+
 ## [2026-10-13](../../../reports/2026/10/2026-10-13.md) — PARTIAL SEARCH
 
 ### [A Critical Look at Power Sampling when Test Time Sharpening LLMs](<https://arxiv.org/abs/2610.13653>)

@@ -2,6 +2,13 @@
   "schema_version": 1,
   "reports": [
     {
+      "date": "2026-11-15",
+      "path": "reports/2026/11/2026-11-15.md",
+      "source": "data/reports/2026/11/2026-11-15.json",
+      "search_status": "partial",
+      "entries": 5
+    },
+    {
       "date": "2026-11-14",
       "path": "reports/2026/11/2026-11-14.md",
       "source": "data/reports/2026/11/2026-11-14.json",
@@ -334,6 +341,211 @@
     }
   ],
   "entries": [
+    {
+      "id": "arxiv:2611.17320",
+      "title": "DiVR: New Evaluation of Learned Block Regeneration for Diffusion Language Models",
+      "category": "1.9",
+      "published_on": "2026-11-12",
+      "first_seen_at": "2026-11-13T11:05:43.728Z",
+      "canonical_url": "https://arxiv.org/abs/2611.17320",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.17320v1",
+        "code": "https://github.com/minhaeoh/DiVR"
+      },
+      "summary": [
+        "The new DiVR study evaluates using learned outcome scores to decide when a diffusion language model should regenerate a whole block, keeping the generator unchanged.",
+        "Its controlled comparisons show how targeted revision can improve average reasoning accuracy with fewer forward passes than the tested search baselines, while documenting limits in calibration and repair reliability."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "The complete22-page primary was read, including diagnostic methods, all matched results and AppendicesA-G; sourceTable1 and calibrationTable9 images inspected. This selection concerns newly disclosed scientific evidence for an existing implementation: the November11 initial repository already contains the verifier, guided decoder, SFT recipe and baselines, while its complete33-entry tree/README has no manuscript, result tables, Sudoku diagnosis or calibration study. The November13 repository diff only adds the paper link/citation and is not itself a research update. The newly announced manuscript supplies the controlled diagnosis and measured comparisons: its frozen-backbone LoRA/head verifier pools masked and visible response positions, learns outcome classification plus within-question ranking, and selectively regenerates32-token blocks with four alternatives/at mostthree events. With the same SFT LLaDA-8B generator, the authors report five-benchmark unweighted accuracy35.3→43.4%; cost1.9–3.5times paired greedy counts row-weighted forwards including verification. Same-loop signal controls and fixed-candidate selection separate verifier quality from extra search. Original cs.CL FridayNovember13 batch plus official Thursday20:00EST schedule imply November13 01:00UTC manuscript availability; retain November12 receipt and actual earliest catalog discoveryNovember13 11:05:43.728UTC. This is delayed review inside the72-hour lookback, not a new Sunday method/code release.",
+        "limitations": "Older code/settings alone do not establish earlier public manuscript evidence, but the checked history is a bounded absence search rather than proof of first-ever publication. Costs are forward counts, not latency, FLOPs or total verifier-training expense. Only7B/8B masked-diffusion generators and five math/code benchmarks were tested; code uses MBPP-visible grader tests, and the SFT HumanEval gain is only0.6points. Search baselines are local reimplementations, and Prism answer-selection variants differ. A failed rollout label is not a token-error label; raw class-balanced scores are not calibrated success probabilities. Post-hoc calibration preserves ranking and is not credited with main accuracy gains; its one-event paired intervention does not validate the adaptive three-event policy. The Sudoku diagnosis uses tiny4x4 puzzles. Guidance also breaks some correct answers; seed checks vary one component rather than independently repeating the whole pipeline. No released trained verifier weights or independent reproduction was verified."
+      },
+      "tags": [
+        "Diffusion Language Models",
+        "Learned Verification",
+        "Selective Regeneration",
+        "Controlled Evaluation"
+      ],
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-13T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/new?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-15",
+      "report_path": "reports/2026/11/2026-11-15.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.14980",
+      "title": "CoLFA: Collaboration-Guided Lightweight Failure Attribution for LLM-Based Multi-Agent Systems",
+      "category": "2.7",
+      "tags": [
+        "Failure Attribution",
+        "Multi-Agent",
+        "Trace Organization"
+      ],
+      "published_on": "2026-11-11",
+      "first_seen_at": "2026-11-13T11:06:28.151+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.14980",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.14980",
+        "project": "https://github.com/luoyufeihaha/CoLFA"
+      },
+      "summary": [
+        "CoLFA organizes failed multi-agent traces around handoffs and shared content, selecting related decisions and replacing repeated text with references before one attribution call.",
+        "Its newly available full study reports more accurate error localization with fewer attribution tokens on Who&When and LongRCA, making the design useful for cheaper debugging of long execution logs.",
+        "The gains concern retrospective diagnosis, with repair effectiveness untested and smaller-benchmark confidence intervals crossing zero."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Complete 23-page v1 read: main methods/results and Appendices A-G, including exact selection rules, baseline adaptations, token accounting, paired bootstrap and matched-step controls. Primary Tables 1-3 on PDF page 7 and Table 10 on page 20 were also viewed as rendered images. The output agent retains all decision steps; a selected upstream agent is expanded through content correspondence, with one-hop supply records from other agents. A trace overview, content references and original step indices support one LLM attribution call. Evaluation uses all 184 failed Who&When traces and 1,140 LongRCA traces. With two main backbones, exact localization improves by 1.84-3.26 percentage points over each setting's most accurate baseline while attribution token use drops by 66-90%; Claude Sonnet 5.5 supplies a smaller third-backbone comparison on Who&When. These are newly inspectable quantitative results, bootstrap analysis and controls, not a claim that the mechanism was first disclosed today: the identical November 8 README already described it and asserted unquantified ranking claims. The repository currently contains only README and gitignore, with a November 12 metadata-only commit. Original November 11 03:38:54 UTC submission is retained; the native original cs.CL Friday November 13 batch and official 20:00 EST announcement schedule support inferred November 13 01:00 UTC public availability. This is delayed November 15 scientific selection of an item cataloged November 13, preserving that actual first_seen.",
+        "limitations": "Retrospective benchmark labels are not direct causal validation of repairs or subsequent task success. Rules assume recorded handoffs, recognizable content and known delegation or broadcast configurations; restricting candidate steps can omit the true error. Who&When supplies task reference answers whereas LongRCA does not. LongRCA includes 108 single-agent traces and is dominated by 685 TravelPlanner traces. Trace-level paired 10,000-replicate bootstrap intervals are positive on LongRCA but cross zero on Who&When; no independent training-seed or deployment study is established. ECHO and RAFFLES were author reimplementations, and token totals exclude embedding requests, CPU preprocessing, latency and monetary pricing. A public README is verified, but implementation and per-trace outputs are not yet released; no code link or independent reproduction is claimed. Abstract maxima compare against individual weak baselines and are not used as the headline."
+      },
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-13T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-15",
+      "report_path": "reports/2026/11/2026-11-15.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.17115",
+      "title": "CapLite: Prompt-Injection Defense for Small Language Model Agents without Model-Written Security Artifacts",
+      "category": "2.8",
+      "tags": [
+        "Prompt Injection",
+        "Authorization",
+        "Small Language Models"
+      ],
+      "published_on": "2026-11-12",
+      "first_seen_at": "2026-11-13T11:06:28.151+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.17115",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.17115"
+      },
+      "summary": [
+        "CapLite commits write operations before reading tool results and uses deterministic schema rules to admit sensitive arguments only when grounded in the user request.",
+        "This separates a small model's proposals from authorization: the authors report no successful tool-goal attacks in 13,935 AgentDojo episodes across 15 models.",
+        "The protection trades away task utility and leaves final answers and free-text payloads unprotected, so it is a scoped write-control design rather than complete prompt-injection immunity."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Complete 19-page v1 read, including all main methods/results, Appendices A-H, baseline ports, model tables, benign-failure analysis, grounding implementation and all five recorded case studies. Primary Tables 1-2 on PDF page 6 were directly viewed. A request-only Planner commits at most ten calls before observations; a read-only Reader, candidate-selecting Binder and payload Composer propose arguments, while deterministic mediation enforces a prefix of committed writes and exact membership in the request grounding set for schema-derived authority fields. The main experiment uses 15 open models, including 13 models of 1.7B-12B, with fixed seed and temperature zero. The main attack denominator is 15 times 929 tool-goal pairs, yielding 0/13,935; utility under attack uses all 949 pairs per model. Authors report 29.0% attacked utility versus 27.2% for their CaMeL port, with 17.1K versus 93.7K prompt-plus-completion tokens per episode, averaged across 97 benign and 949 attacked episodes. Eight-model robustness tests add tool-knowledge, read-exfiltration and descriptor-collision attacks; mediator and write-commitment ablations admit attacks. Original November 12 17:07:22 UTC receipt is preserved; the original cs.AI Friday November 13 batch and official EST announcement schedule support inferred November 13 01:00 UTC availability. Delayed selection retains the actual November 13 catalog first_seen rather than inventing a Sunday release. No older complete public artifact was established by the primary links and bounded title/repository searches.",
+        "limitations": "Write integrity is relative to trusted requests, tools, documentation, deterministic field classification and canonicalized grounding. Payload text, temporal/control values and final answers are not generally protected; 20 answer-only injection pairs are excluded from the ASR denominator, and the paper shows CapLite repeating an injected final-answer sentence. A value appearing in the request is not proof that the selected operation is semantically correct. Benign/attacked utility is 28.1%/29.0%, versus 59.4%/50.2% undefended; unknown identifiers require confirmation, which the main evaluation does not answer. Schema heuristics classify 17 human-labeled authority arguments as temporal/control, so semantic protection beyond the defined authority class is not established. One benchmark with four suites, one deterministic run per configuration and limited design-aware variants do not establish security against every adaptive attack or deployed environment. Ports and an explicit DRIFT parser adjustment matter; token totals are not measured latency or dollar costs. The paper states a code/outcome release, but no matching author implementation URL was verified in the paper, HTML or bounded public repository search; no code or project link is asserted and no source was executed."
+      },
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-13T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-15",
+      "report_path": "reports/2026/11/2026-11-15.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.14904",
+      "title": "SubGPU Pipelining: Intra-GPU Fine-Grained Spatial Parallelism for LLM Inference",
+      "category": "3.5",
+      "tags": [
+        "GPU Spatial Pipelines",
+        "Decode Execution",
+        "SM Partitioning",
+        "Performance Modeling"
+      ],
+      "published_on": "2026-11-11",
+      "first_seen_at": "2026-11-13T11:09:02.287+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.14904",
+      "links": {
+        "paper": "https://arxiv.org/html/2611.14904v1"
+      },
+      "summary": [
+        "SubGPU Pipelining divides a decoding graph into stages on disjoint groups of GPU streaming multiprocessors, then streams microbatches through them to overlap operators with different resource demands.",
+        "A one-B200 prototype replaying a GPT-OSS 120B deployment shard reduces decoder iteration time by 10.33%, showing how spatial scheduling can improve memory utilization without rewriting the operator kernels.",
+        "The larger throughput-frontier gains are simulation results, rather than measurements from a 32-GPU serving deployment."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Complete13-page v1 read, Sections3–7 and Algorithms1–2 including modeling, search, hardware controls and limitations; no appendix exists. Search jointly chooses predecessor-closed contiguous cuts, stage/boundary reuse, even SM allocations and microbatch size using an event-driven shared-resource simulator. Physical proof uses one B200 to replay a per-rank GPT-OSS120B workload representing attentionTP8/DP4 and MoEEP32,32,768-token context, global decode batch2,048, TensorRT-LLM1.3.0rc22.post1. Two Green Contexts allocate68SMs to full attention and80SMs to remaining operators across two layers. After20warmups, three rounds of100uninstrumented CUDA Graph replays reduce36-layer makespan14.970→13.424ms; separate200kHz captures across four steady replays raise mean DRAM throughput71.8→83.6%of peak while activeSM throughput falls85.9→71.7%. Up-to2.2xper-user/1.9xper-GPU frontier gains are explicitly modeled. This delayed review preserves earliest successful team discovery November13 11:09:02.287458UTC from the pinned primaryDCindex; original receipt is November11 01:51:44UTC. The native primaryDC NEW FridayNovember13 section, plus official November11 holiday and20:00EST release schedule, supports inferred first announcement November13 01:00UTC, inside the72-hour lookback. No earlier full author release was located in the checked primary/search sources.",
+        "limitations": "The physical experiment emulates a32-GPU per-rank workload on oneGPU; communication uses virtual endpoint kernels floored at3microseconds plus payload/900GB/s, not a live network. It is a fixed batch/context decoder replay, not an end-to-end serving, quality or latency-SLO measurement. Simulation assumes linear SM compute scaling, calibrated shared-bandwidth/cache policies and negligible stage handoff; its searched frontiers are neither measured outcomes nor a proof of global optimality. Hardware allocation is separately tuned, not directly predicted by the model. Gains can disappear with small batches, compute-heavy kernels or L2working-set pressure; dynamic allocation, persistent workers, weight prefetch and recovery remain future work. No matching released author implementation or independent reproduction verified."
+      },
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-13T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/new?skip=0&show=2000",
+          "https://arxiv.org/list/cs.DC/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-15",
+      "report_path": "reports/2026/11/2026-11-15.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://pytorch.org/blog/fast-by-default-compile-time-heuristics-for-helion-kernels/",
+      "title": "Fast by Default: Compile-Time Heuristics for Helion Kernels",
+      "category": "3.5",
+      "tags": [
+        "Compiler Heuristics",
+        "Kernel Configuration",
+        "Autotuning",
+        "Static Resource Analysis"
+      ],
+      "published_on": "2026-11-12",
+      "first_seen_at": "2026-11-13T11:09:02.735+00:00",
+      "canonical_url": "https://pytorch.org/blog/fast-by-default-compile-time-heuristics-for-helion-kernels/",
+      "links": {
+        "blog": "https://pytorch.org/blog/fast-by-default-compile-time-heuristics-for-helion-kernels/",
+        "code": "https://github.com/pytorch/helion/tree/main/helion/_compiler/autotuner_heuristics"
+      },
+      "summary": [
+        "This Helion study uses compiler intermediate representation and approximate resource-liveness analysis to choose kernel configurations without running an autotuning search.",
+        "On the tested H100 reductions, its default configurations reach 1.27 times the speed of vLLM handwritten kernels and approach fully tuned Helion performance, making useful execution speed available before a costly search.",
+        "The report also shows that heuristic seeds mainly improve the early search, with much smaller benefits near the final best configuration."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "Complete dated primary article read, including family dispatch, live register/shared/tensor-memory estimates, occupancy and spill constraints, multi-matmul conflict ranking, reduction persistence, all benchmarks and seed-search controls. The H100 study reports1.18xforward and1.12xforward-plus-backward over FLA across96linear-attention kernel/shape cells;153cells across six vLLM reductions reach1.27xCUDA/C++ versus1.31xfull Helion autotuning. General suites cover80reduction and70matmul cells; fusion differences qualify the matmul baseline. A38-kernel paired seed experiment counts failures and reports median103.5→2.5configs to get within25%of best, but255.5→175within5%and521.5→420.5for completion; replayed final winners differ by less than a percent. Scientific novelty here is the newly dated methodology/evaluation disclosure of an existing implementation, not a newly released compiler: inspected source history extends at least October8 and current initialization verifies eligibility/fallback/default promotion mechanics without executing code. Preserve earliest successful prior index discovery November13 11:09:02.735726UTC. Primary article published_time/datePublished metadata agree on November12 16:45:26UTC, which lies after this run's November12 11:00UTC lookback boundary.",
+        "limitations": "Kernel benchmarks are not full-model inference or training speedups. Resource placement is predicted rather than measured from Triton output, runtime-unknown extents fall back to the old default, and heuristic constants were tuned for H100/B200 Triton; broader backend portability is not demonstrated. HSTU jagged attention regresses versus the old default, and some matmul comparisons include different intermediate materialization/fusion. Search counts include failed configs and are not wall-clock tuning-time ratios. Seeded and unseeded searches reach similar final quality; no independent reproduction, complete benchmark-run variance table or claim that static analysis beats full search."
+      },
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-12T16:45:26Z",
+        "basis": "dated-source",
+        "sources": [
+          "https://pytorch.org/blog/fast-by-default-compile-time-heuristics-for-helion-kernels/"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-15",
+      "report_path": "reports/2026/11/2026-11-15.md",
+      "search_status": "partial"
+    },
     {
       "id": "https://thinkingmachines.ai/blog/end-to-end-4-bit-training/",
       "title": "End-to-End 4-Bit Training",
@@ -13207,7 +13419,7 @@
       "group": "llm-recipe",
       "title": "Test-Time Scaling & Inference Algorithms",
       "path": "topics/llm-recipe/test-time-scaling-inference-algorithms/README.md",
-      "count": 3
+      "count": 4
     },
     {
       "id": "1.10",
@@ -13263,14 +13475,14 @@
       "group": "ai-agent-dev",
       "title": "Agent Harness & Reliability",
       "path": "topics/ai-agent-dev/agent-harness-reliability/README.md",
-      "count": 11
+      "count": 12
     },
     {
       "id": "2.8",
       "group": "ai-agent-dev",
       "title": "Agent Evaluation & Security",
       "path": "topics/ai-agent-dev/agent-evaluation-security/README.md",
-      "count": 44
+      "count": 45
     },
     {
       "id": "3.1",
@@ -13305,7 +13517,7 @@
       "group": "ai-training-inference-infra",
       "title": "Kernels, Compilers & Runtimes",
       "path": "topics/ai-training-inference-infra/kernels-compilers-runtimes/README.md",
-      "count": 21
+      "count": 23
     },
     {
       "id": "3.6",

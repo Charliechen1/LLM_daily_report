@@ -5,6 +5,22 @@ Long-running execution, failure recovery, retries, persistence and human collabo
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-15](../../../reports/2026/11/2026-11-15.md) — PARTIAL SEARCH
+
+### [CoLFA: Collaboration-Guided Lightweight Failure Attribution for LLM-Based Multi-Agent Systems](<https://arxiv.org/abs/2611.14980>)
+
+CoLFA organizes failed multi-agent traces around handoffs and shared content, selecting related decisions and replacing repeated text with references before one attribution call. Its newly available full study reports more accurate error localization with fewer attribution tokens on Who&amp;When and LongRCA, making the design useful for cheaper debugging of long execution logs. The gains concern retrospective diagnosis, with repair effectiveness untested and smaller-benchmark confidence intervals crossing zero.
+
+**Published:** 2026-11-11 · **First seen:** 2026-11-13T11:06:28.151+00:00 · **Novelty:** newly-discovered · **Tags:** Failure Attribution, Multi-Agent, Trace Organization
+
+**Public availability:** 2026-11-13T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.14980>) · [Project](<https://github.com/luoyufeihaha/CoLFA>)
+
+**Evidence:** research-paper; full-text. Complete 23-page v1 read: main methods/results and Appendices A-G, including exact selection rules, baseline adaptations, token accounting, paired bootstrap and matched-step controls. Primary Tables 1-3 on PDF page 7 and Table 10 on page 20 were also viewed as rendered images. The output agent retains all decision steps; a selected upstream agent is expanded through content correspondence, with one-hop supply records from other agents. A trace overview, content references and original step indices support one LLM attribution call. Evaluation uses all 184 failed Who&amp;When traces and 1,140 LongRCA traces. With two main backbones, exact localization improves by 1.84-3.26 percentage points over each setting's most accurate baseline while attribution token use drops by 66-90%; Claude Sonnet 5.5 supplies a smaller third-backbone comparison on Who&amp;When. These are newly inspectable quantitative results, bootstrap analysis and controls, not a claim that the mechanism was first disclosed today: the identical November 8 README already described it and asserted unquantified ranking claims. The repository currently contains only README and gitignore, with a November 12 metadata-only commit. Original November 11 03:38:54 UTC submission is retained; the native original cs.CL Friday November 13 batch and official 20:00 EST announcement schedule support inferred November 13 01:00 UTC public availability. This is delayed November 15 scientific selection of an item cataloged November 13, preserving that actual first\_seen.
+
+**Limitations:** Retrospective benchmark labels are not direct causal validation of repairs or subsequent task success. Rules assume recorded handoffs, recognizable content and known delegation or broadcast configurations; restricting candidate steps can omit the true error. Who&amp;When supplies task reference answers whereas LongRCA does not. LongRCA includes 108 single-agent traces and is dominated by 685 TravelPlanner traces. Trace-level paired 10,000-replicate bootstrap intervals are positive on LongRCA but cross zero on Who&amp;When; no independent training-seed or deployment study is established. ECHO and RAFFLES were author reimplementations, and token totals exclude embedding requests, CPU preprocessing, latency and monetary pricing. A public README is verified, but implementation and per-trace outputs are not yet released; no code link or independent reproduction is claimed. Abstract maxima compare against individual weak baselines and are not used as the headline.
+
 ## [2026-11-10](../../../reports/2026/11/2026-11-10.md) — PARTIAL SEARCH
 
 ### [Keeping LLM Agents on Procedure: Executable Finite-State Control for Long-Horizon Instruction Fidelity](<https://arxiv.org/abs/2611.10884>)

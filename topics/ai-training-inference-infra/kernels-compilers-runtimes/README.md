@@ -5,6 +5,38 @@ GPU kernels, operator fusion, compilation, execution graphs and hardware adaptat
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-15](../../../reports/2026/11/2026-11-15.md) — PARTIAL SEARCH
+
+### [SubGPU Pipelining: Intra-GPU Fine-Grained Spatial Parallelism for LLM Inference](<https://arxiv.org/abs/2611.14904>)
+
+SubGPU Pipelining divides a decoding graph into stages on disjoint groups of GPU streaming multiprocessors, then streams microbatches through them to overlap operators with different resource demands. A one-B200 prototype replaying a GPT-OSS 120B deployment shard reduces decoder iteration time by 10.33%, showing how spatial scheduling can improve memory utilization without rewriting the operator kernels. The larger throughput-frontier gains are simulation results, rather than measurements from a 32-GPU serving deployment.
+
+**Published:** 2026-11-11 · **First seen:** 2026-11-13T11:09:02.287+00:00 · **Novelty:** newly-discovered · **Tags:** GPU Spatial Pipelines, Decode Execution, SM Partitioning, Performance Modeling
+
+**Public availability:** 2026-11-13T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/new?skip=0&show=2000>) · [Timing source](<https://arxiv.org/list/cs.DC/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2611.14904v1>)
+
+**Evidence:** research-paper; full-text. Complete13-page v1 read, Sections3–7 and Algorithms1–2 including modeling, search, hardware controls and limitations; no appendix exists. Search jointly chooses predecessor-closed contiguous cuts, stage/boundary reuse, even SM allocations and microbatch size using an event-driven shared-resource simulator. Physical proof uses one B200 to replay a per-rank GPT-OSS120B workload representing attentionTP8/DP4 and MoEEP32,32,768-token context, global decode batch2,048, TensorRT-LLM1.3.0rc22.post1. Two Green Contexts allocate68SMs to full attention and80SMs to remaining operators across two layers. After20warmups, three rounds of100uninstrumented CUDA Graph replays reduce36-layer makespan14.970→13.424ms; separate200kHz captures across four steady replays raise mean DRAM throughput71.8→83.6%of peak while activeSM throughput falls85.9→71.7%. Up-to2.2xper-user/1.9xper-GPU frontier gains are explicitly modeled. This delayed review preserves earliest successful team discovery November13 11:09:02.287458UTC from the pinned primaryDCindex; original receipt is November11 01:51:44UTC. The native primaryDC NEW FridayNovember13 section, plus official November11 holiday and20:00EST release schedule, supports inferred first announcement November13 01:00UTC, inside the72-hour lookback. No earlier full author release was located in the checked primary/search sources.
+
+**Limitations:** The physical experiment emulates a32-GPU per-rank workload on oneGPU; communication uses virtual endpoint kernels floored at3microseconds plus payload/900GB/s, not a live network. It is a fixed batch/context decoder replay, not an end-to-end serving, quality or latency-SLO measurement. Simulation assumes linear SM compute scaling, calibrated shared-bandwidth/cache policies and negligible stage handoff; its searched frontiers are neither measured outcomes nor a proof of global optimality. Hardware allocation is separately tuned, not directly predicted by the model. Gains can disappear with small batches, compute-heavy kernels or L2working-set pressure; dynamic allocation, persistent workers, weight prefetch and recovery remain future work. No matching released author implementation or independent reproduction verified.
+
+## [2026-11-15](../../../reports/2026/11/2026-11-15.md) — PARTIAL SEARCH
+
+### [Fast by Default: Compile-Time Heuristics for Helion Kernels](<https://pytorch.org/blog/fast-by-default-compile-time-heuristics-for-helion-kernels/>)
+
+This Helion study uses compiler intermediate representation and approximate resource-liveness analysis to choose kernel configurations without running an autotuning search. On the tested H100 reductions, its default configurations reach 1.27 times the speed of vLLM handwritten kernels and approach fully tuned Helion performance, making useful execution speed available before a costly search. The report also shows that heuristic seeds mainly improve the early search, with much smaller benefits near the final best configuration.
+
+**Published:** 2026-11-12 · **First seen:** 2026-11-13T11:09:02.735+00:00 · **Novelty:** newly-discovered · **Tags:** Compiler Heuristics, Kernel Configuration, Autotuning, Static Resource Analysis
+
+**Public availability:** 2026-11-12T16:45:26Z (dated primary source). [Timing source](<https://pytorch.org/blog/fast-by-default-compile-time-heuristics-for-helion-kernels/>)
+
+[Blog](<https://pytorch.org/blog/fast-by-default-compile-time-heuristics-for-helion-kernels/>) · [Code](<https://github.com/pytorch/helion/tree/main/helion/_compiler/autotuner_heuristics>)
+
+**Evidence:** engineering-report; full-text. Complete dated primary article read, including family dispatch, live register/shared/tensor-memory estimates, occupancy and spill constraints, multi-matmul conflict ranking, reduction persistence, all benchmarks and seed-search controls. The H100 study reports1.18xforward and1.12xforward-plus-backward over FLA across96linear-attention kernel/shape cells;153cells across six vLLM reductions reach1.27xCUDA/C++ versus1.31xfull Helion autotuning. General suites cover80reduction and70matmul cells; fusion differences qualify the matmul baseline. A38-kernel paired seed experiment counts failures and reports median103.5→2.5configs to get within25%of best, but255.5→175within5%and521.5→420.5for completion; replayed final winners differ by less than a percent. Scientific novelty here is the newly dated methodology/evaluation disclosure of an existing implementation, not a newly released compiler: inspected source history extends at least October8 and current initialization verifies eligibility/fallback/default promotion mechanics without executing code. Preserve earliest successful prior index discovery November13 11:09:02.735726UTC. Primary article published\_time/datePublished metadata agree on November12 16:45:26UTC, which lies after this run's November12 11:00UTC lookback boundary.
+
+**Limitations:** Kernel benchmarks are not full-model inference or training speedups. Resource placement is predicted rather than measured from Triton output, runtime-unknown extents fall back to the old default, and heuristic constants were tuned for H100/B200 Triton; broader backend portability is not demonstrated. HSTU jagged attention regresses versus the old default, and some matmul comparisons include different intermediate materialization/fusion. Search counts include failed configs and are not wall-clock tuning-time ratios. Seeded and unseeded searches reach similar final quality; no independent reproduction, complete benchmark-run variance table or claim that static analysis beats full search.
+
 ## [2026-11-13](../../../reports/2026/11/2026-11-13.md) — PARTIAL SEARCH
 
 ### [MegaOps: A Kernel Overlapping Framework with PyTorch-like Modularity and Megakernel Performance](<https://arxiv.org/abs/2611.16248>)
