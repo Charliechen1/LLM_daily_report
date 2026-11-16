@@ -5,6 +5,22 @@ Request scheduling, continuous batching, prefill/decode disaggregation and elast
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-16](../../../reports/2026/11/2026-11-16.md) — PARTIAL SEARCH
+
+### [Superfluid: New Local and Heterogeneous-Fleet Evaluation of an Existing LLM Server](<https://arxiv.org/abs/2611.17753>)
+
+A new study of the existing Superfluid server evaluates priority scheduling, cached-prefix reuse and whole-session placement across local machines that each hold a complete model replica. In a six-device heterogeneous fleet, all 5,041 requests complete as nodes join and one is killed, while output throughput rises from 112 to 534 tokens per second. It provides a practical reference for resilient local agent serving, although fleet placement lacks a controlled baseline and model sharding is unsupported.
+
+**Published:** 2026-11-13 · **First seen:** 2026-11-16T11:05:47.736+00:00 · **Novelty:** new · **Tags:** Local Inference, Session Durability, Heterogeneous Fleets, Priority Scheduling
+
+**Public availability:** 2026-11-16T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/new?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2611.17753v1>) · [Code](<https://github.com/basecompute/superfluid>)
+
+**Evidence:** research-paper; full-text. Complete 8-page v1 inspected, Sections 3–4 architecture/scheduler/durability/fleet protocol and both measured tables; actual Table 1 p.4 and Table 2 p.6 visually checked. New study documents Qwen3.8-27B 4-bit on M5 Pro 64 GB matched-runtime local tests (llama.cpp b11284,mlx-lm 0.31.3,Ollama 0.35.1), with interactive TTFT1.47s for Superfluid/llama.cpp versus291/380s for llama-server/Ollama, and2.01 versus612s for MLX. The main heterogeneous closed-loop fleet uses64 simulated office users for1 hour, Qwen3-4B Q4\_K\_M/llama.cpp on6 Apple/AMD/NVIDIA machines joining every 6 minutes, with one node killed at 42 minutes/rejoining 8 minutes later. All 5,041 requests complete; output112→534 tok/s, TTFT p50 98.5→11.7s. Separate BaseRT 4-bit 35B-MoE fleet completes7,151 requests.12 M3 Ultra 512 GB machines at384 agents/2,048-token prompts reach10,656 aggregate tok/s, explicitly9,249 prompt + 1,407 output, not10,656 generated tok/s. Prior software was public October8; pinned November9 README and benchmark docs already disclose its mechanism and older 4B local results. This selection is specifically the newly disclosed27B/fleet measurement study: the paper is an original DC NEW MondayNovember 16 entry, while the November 16 03:22:31 UTC README commit newly adds fleet numeric tables. Official EST scheduling supports earlier manuscript announcementNovember 16 01:00 UTC despite receiptNovember 13 05:10:32 UTC; earlier software release is not being relabeled as new. Earliest successful team CL cross-catalog completion11:05:47.736183 UTC is pinned, with primary DC original membership establishing manuscript timing. Repository/tree and benchmark-suite README inspected without execution.
+
+**Limitations:** Existing system and many mechanisms predate this window; no new software-launch or invention claim. Closed-loop demand grows with faster service, fleet stages differ in hardware/count, and no randomized placement-policy baseline or confidence/repeated-run analysis supports a causal 4.8x scaling claim. Five-node throughput nearly matches six nodes after the failure, indicating demand saturation. Each node must fit the full model; migration recomputes context, differing runtime/quantization can change output, and seeded replay is not a universal cross-device bitwise guarantee. One runtime per fleet was tested; the BaseRT engine is separately licensed and not made open by the server Apache 2 license. The public tree verifies local benchmark suite source, not the actual raw fleet logs or a complete fleet reproduction harness; suite documentation notes that durable-session-ID resume is not exercised by its stateless daemon-restart test. No TLS in server and no independent reproduction.
+
 ## [2026-11-14](../../../reports/2026/11/2026-11-14.md) — PARTIAL SEARCH
 
 ### [Cairn: Sharing and Prewarming Serverless LLM Startup Work](<https://arxiv.org/abs/2611.16180>)

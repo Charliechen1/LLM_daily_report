@@ -1,0 +1,1259 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-16",
+  "timezone": "America/Los_Angeles",
+  "generated_at": "2026-11-16T11:26:11.745+00:00",
+  "coverage": {
+    "start": "2026-11-15T03:00:00-08:00",
+    "end": "2026-11-16T03:00:00-08:00"
+  },
+  "search": {
+    "status": "partial",
+    "notes": "The cutoff is November 16 at 03:00 America/Los_Angeles (11:00 UTC), with consecutive local 03:00 boundaries and a total 72-hour discovery lookback beginning November 13 at 03:00. All 26 topics were screened against the September 29 baseline and complete 359-record registry. Fresh native arXiv NEW pages actually contain the original Monday November 16 batch; verified original sections and the official Eastern-US submission/announcement schedule support inferred manuscript public availability November 16 01:00 UTC. This is a dated-announcement inference, not an observed exact server-release time. Friday November 13 01:00 UTC announcements lie outside this exact lookback and were not redated. Seven full-text contributions were selected from eight reviewed proposals without padding. Concertina, WebArena-Pro and Superfluid already had public implementations or benchmark materials; selection is specifically their newly disclosed controlled studies or measurements, with earlier artifacts and limitations retained, not new method/software launches. The Muon report keeps its October 1 original date and identifies the new norm-reset and 3.4B evidence as a dated material update; the old 1.4B headline is not repeated as new. Actual successful catalog-completion timestamps, rather than request starts, establish first discovery; raw microsecond receipts are preserved privately while public timestamps are rendered to milliseconds. The generated-regression pilot was reviewed but ranked below the selected work because its small single-run design, post hoc analyses, trace-dependent ceiling and weak judge agreement limit the strength of the conclusion. The earlier ACL-published MDLM study and older complete result artifacts were excluded rather than promoted by new arXiv uploads. OpenReview submission discovery returned HTTP 403. CarryOn landing/metadata endpoints returned 401 while its file APIs exposed source; historical commit dates and selector weights/data/run outputs were not verified. TIDE and Callo lack a verified matching author implementation; no code release was invented. Exploratory endpoint failures are retained, and successfully recovered primary endpoints are not labeled ongoing outages. ACL/EMNLP and NeurIPS checks are bounded native-index chronology/candidate screening, not complete scientific reviews of proceedings. The EMNLP rebuild preserves 7,070 paper IDs; inspected changes are formatting/link rendering and the site footer. Unchanged XYBench/Teamwork recaps and prior model cards were not recycled. Outcomes and efficiency remain scoped to the authors' tested models, tasks, budgets, baselines and hardware, separating simulations/replays from deployments, parameter storage from computation, local costs from reported request metrics and policy invariants from bitwise or convergence equivalence. No universal SoTA or independent reproduction is claimed.",
+    "sources_checked": [
+      {
+        "name": "cl-new.html",
+        "url": "https://arxiv.org/list/cs.CL/new?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "cl-recent.html",
+        "url": "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "arxiv-lg-new.html",
+        "url": "https://arxiv.org/list/cs.LG/new?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "arxiv-lg-recent.html",
+        "url": "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "arxiv-availability.html",
+        "url": "https://info.arxiv.org/help/availability.html",
+        "status": "ok"
+      },
+      {
+        "name": "hf-blog.html",
+        "url": "https://huggingface.co/blog",
+        "status": "ok"
+      },
+      {
+        "name": "hf-papers.html",
+        "url": "https://huggingface.co/papers/date/2026-11-16",
+        "status": "ok"
+      },
+      {
+        "name": "tml-blog.html",
+        "url": "https://thinkingmachines.ai/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17754.abs.html",
+        "url": "https://arxiv.org/abs/2611.17754",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17754.html",
+        "url": "https://arxiv.org/html/2611.17754v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17754.pdf",
+        "url": "https://arxiv.org/pdf/2611.17754v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17876.abs.html",
+        "url": "https://arxiv.org/abs/2611.17876",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17876.html",
+        "url": "https://arxiv.org/html/2611.17876v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17876.pdf",
+        "url": "https://arxiv.org/pdf/2611.17876v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.18113.abs.html",
+        "url": "https://arxiv.org/abs/2611.18113",
+        "status": "ok"
+      },
+      {
+        "name": "2611.18113.html",
+        "url": "https://arxiv.org/html/2611.18113v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.18113.pdf",
+        "url": "https://arxiv.org/pdf/2611.18113v1",
+        "status": "ok"
+      },
+      {
+        "name": "mdlm-repo.json",
+        "url": "https://api.github.com/repos/githubhyz/See_Every_Block_Once",
+        "status": "ok"
+      },
+      {
+        "name": "mdlm-commits.json",
+        "url": "https://api.github.com/repos/githubhyz/See_Every_Block_Once/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "mdlm-readme.md",
+        "url": "https://raw.githubusercontent.com/githubhyz/See_Every_Block_Once/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "concertina-repo.json",
+        "url": "https://api.github.com/repos/myboker/concertina",
+        "status": "ok"
+      },
+      {
+        "name": "concertina-commits.json",
+        "url": "https://api.github.com/repos/myboker/concertina/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "concertina-readme.md",
+        "url": "https://raw.githubusercontent.com/myboker/concertina/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "muon-author.html",
+        "url": "https://rarefin.github.io/",
+        "status": "ok"
+      },
+      {
+        "name": "muon-author-repo.json",
+        "url": "https://api.github.com/repos/rarefin/rarefin.github.io",
+        "status": "ok"
+      },
+      {
+        "name": "muon-author-history.json",
+        "url": "https://api.github.com/repos/rarefin/rarefin.github.io/commits?per_page=30",
+        "status": "ok"
+      },
+      {
+        "name": "muon-old-author.pdf",
+        "url": "https://rarefin.github.io/assets/files/papers/muon-temporary-weight-decay.pdf",
+        "status": "ok"
+      },
+      {
+        "name": "muon-old-immutable.pdf",
+        "url": "https://raw.githubusercontent.com/rarefin/rarefin.github.io/fffa94dbf3f5659bddc2812b87530d30d200d491/assets/files/papers/muon-temporary-weight-decay.pdf",
+        "status": "ok"
+      },
+      {
+        "name": "muon-old-tree.json",
+        "url": "https://api.github.com/repos/rarefin/rarefin.github.io/git/trees/fffa94dbf3f5659bddc2812b87530d30d200d491?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "concertina-initial-readme.md",
+        "url": "https://raw.githubusercontent.com/myboker/concertina/41a1d6b2abeb08830dc9a29b571365082a9d8ca8/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "concertina-initial-tree.json",
+        "url": "https://api.github.com/repos/myboker/concertina/git/trees/41a1d6b2abeb08830dc9a29b571365082a9d8ca8?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "concertina-latest-commit.json",
+        "url": "https://api.github.com/repos/myboker/concertina/commits/64d303029947b83c3011c2c2262d7c185cab7f4c",
+        "status": "ok"
+      },
+      {
+        "name": "mdlm-acl.html",
+        "url": "https://aclanthology.org/2026.aacl-long.263/",
+        "status": "ok"
+      },
+      {
+        "name": "mdlm-acl.pdf",
+        "url": "https://aclanthology.org/2026.aacl-long.263.pdf",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17563.abs.html",
+        "url": "https://arxiv.org/abs/2611.17563",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17563.html",
+        "url": "https://arxiv.org/html/2611.17563v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17563.pdf",
+        "url": "https://arxiv.org/pdf/2611.17563v1",
+        "status": "ok"
+      },
+      {
+        "name": "concertina-initial.py",
+        "url": "https://raw.githubusercontent.com/myboker/concertina/41a1d6b2abeb08830dc9a29b571365082a9d8ca8/concertina.py",
+        "status": "ok"
+      },
+      {
+        "name": "concertina-model.json",
+        "url": "https://huggingface.co/api/models/myboker/Concertina-2.27B",
+        "status": "ok"
+      },
+      {
+        "name": "concertina-model-readme.md",
+        "url": "https://huggingface.co/myboker/Concertina-2.27B/raw/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "Earliest team agents cl-new.html",
+        "url": "https://arxiv.org/list/cs.CL/new",
+        "status": "ok"
+      },
+      {
+        "name": "carryon-project.html",
+        "url": "https://anonymous.4open.science/r/CarryOn-0816/",
+        "status": "unavailable"
+      },
+      {
+        "name": "carryon-tree.json",
+        "url": "https://anonymous.4open.science/api/repo/CarryOn-0816/files/",
+        "status": "ok"
+      },
+      {
+        "name": "webarena-repo.json",
+        "url": "https://api.github.com/repos/McGill-NLP/webarena-pro",
+        "status": "ok"
+      },
+      {
+        "name": "webarena-commits.json",
+        "url": "https://api.github.com/repos/McGill-NLP/webarena-pro/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "webarena-readme.md",
+        "url": "https://raw.githubusercontent.com/McGill-NLP/webarena-pro/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "webarena-hf.json",
+        "url": "https://huggingface.co/api/datasets/WebArena-Pro/webarena-pro",
+        "status": "unavailable"
+      },
+      {
+        "name": "2611.17610-mahmoudsajjadi-pace-repo.json",
+        "url": "https://api.github.com/repos/mahmoudsajjadi/pace",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17610-mahmoudsajjadi-pace-commits.json",
+        "url": "https://api.github.com/repos/mahmoudsajjadi/pace/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17610-mahmoudsajjadi-pace-readme.md",
+        "url": "https://raw.githubusercontent.com/mahmoudsajjadi/pace/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17955-jonty-airline-route-data-repo.json",
+        "url": "https://api.github.com/repos/Jonty/airline-route-data",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17955-jonty-airline-route-data-commits.json",
+        "url": "https://api.github.com/repos/Jonty/airline-route-data/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17955-jonty-airline-route-data-readme.md",
+        "url": "https://raw.githubusercontent.com/Jonty/airline-route-data/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17955-peppermint-lab-peppermint-repo.json",
+        "url": "https://api.github.com/repos/Peppermint-Lab/peppermint",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17955-peppermint-lab-peppermint-commits.json",
+        "url": "https://api.github.com/repos/Peppermint-Lab/peppermint/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17955-peppermint-lab-peppermint-readme.md",
+        "url": "https://raw.githubusercontent.com/Peppermint-Lab/peppermint/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17955-aneebnaqvi15-jobportal-repo.json",
+        "url": "https://api.github.com/repos/aneebnaqvi15/jobportal",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17955-aneebnaqvi15-jobportal-commits.json",
+        "url": "https://api.github.com/repos/aneebnaqvi15/jobportal/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17955-aneebnaqvi15-jobportal-readme.md",
+        "url": "https://raw.githubusercontent.com/aneebnaqvi15/jobportal/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17955-dovecot-core-repo.json",
+        "url": "https://api.github.com/repos/dovecot/core",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17955-dovecot-core-commits.json",
+        "url": "https://api.github.com/repos/dovecot/core/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17955-dovecot-core-readme.md",
+        "url": "https://raw.githubusercontent.com/dovecot/core/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17955-firefly-iii-firefly-iii-repo.json",
+        "url": "https://api.github.com/repos/firefly-iii/firefly-iii",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17955-firefly-iii-firefly-iii-commits.json",
+        "url": "https://api.github.com/repos/firefly-iii/firefly-iii/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17955-firefly-iii-firefly-iii-readme.md",
+        "url": "https://raw.githubusercontent.com/firefly-iii/firefly-iii/main/README.md",
+        "status": "unavailable"
+      },
+      {
+        "name": "2611.17955-frappe-erpnext-repo.json",
+        "url": "https://api.github.com/repos/frappe/erpnext",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17955-frappe-erpnext-commits.json",
+        "url": "https://api.github.com/repos/frappe/erpnext/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17955-frappe-erpnext-readme.md",
+        "url": "https://raw.githubusercontent.com/frappe/erpnext/main/README.md",
+        "status": "unavailable"
+      },
+      {
+        "name": "2611.17955-immich-app-immich-repo.json",
+        "url": "https://api.github.com/repos/immich-app/immich",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17955-immich-app-immich-commits.json",
+        "url": "https://api.github.com/repos/immich-app/immich/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17955-immich-app-immich-readme.md",
+        "url": "https://raw.githubusercontent.com/immich-app/immich/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17955-mattermost-mattermost-repo.json",
+        "url": "https://api.github.com/repos/mattermost/mattermost",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17955-mattermost-mattermost-commits.json",
+        "url": "https://api.github.com/repos/mattermost/mattermost/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17955-mattermost-mattermost-readme.md",
+        "url": "https://raw.githubusercontent.com/mattermost/mattermost/main/README.md",
+        "status": "unavailable"
+      },
+      {
+        "name": "2611.17955-metabase-metabase-repo.json",
+        "url": "https://api.github.com/repos/metabase/metabase",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17955-metabase-metabase-commits.json",
+        "url": "https://api.github.com/repos/metabase/metabase/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17955-metabase-metabase-readme.md",
+        "url": "https://raw.githubusercontent.com/metabase/metabase/main/README.md",
+        "status": "unavailable"
+      },
+      {
+        "name": "2611.17955-nextcloud-server-repo.json",
+        "url": "https://api.github.com/repos/nextcloud/server",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17955-nextcloud-server-commits.json",
+        "url": "https://api.github.com/repos/nextcloud/server/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17955-nextcloud-server-readme.md",
+        "url": "https://raw.githubusercontent.com/nextcloud/server/main/README.md",
+        "status": "unavailable"
+      },
+      {
+        "name": "2611.17955-penpot-penpot-repo.json",
+        "url": "https://api.github.com/repos/penpot/penpot",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17955-penpot-penpot-commits.json",
+        "url": "https://api.github.com/repos/penpot/penpot/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17955-penpot-penpot-readme.md",
+        "url": "https://raw.githubusercontent.com/penpot/penpot/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17955-roundcube-roundcubemail-repo.json",
+        "url": "https://api.github.com/repos/roundcube/roundcubemail",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17955-roundcube-roundcubemail-commits.json",
+        "url": "https://api.github.com/repos/roundcube/roundcubemail/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17955-roundcube-roundcubemail-readme.md",
+        "url": "https://raw.githubusercontent.com/roundcube/roundcubemail/main/README.md",
+        "status": "unavailable"
+      },
+      {
+        "name": "webarena-project.html",
+        "url": "https://webarena-pro.github.io",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17610-abs.html",
+        "url": "https://arxiv.org/abs/2611.17610",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17610-source.pdf",
+        "url": "https://arxiv.org/pdf/2611.17610",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17610-html.html",
+        "url": "https://arxiv.org/html/2611.17610v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17632-abs.html",
+        "url": "https://arxiv.org/abs/2611.17632",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17632-source.pdf",
+        "url": "https://arxiv.org/pdf/2611.17632",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17632-html.html",
+        "url": "https://arxiv.org/html/2611.17632v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17808-abs.html",
+        "url": "https://arxiv.org/abs/2611.17808",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17808-source.pdf",
+        "url": "https://arxiv.org/pdf/2611.17808",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17808-html.html",
+        "url": "https://arxiv.org/html/2611.17808v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17955-abs.html",
+        "url": "https://arxiv.org/abs/2611.17955",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17955-source.pdf",
+        "url": "https://arxiv.org/pdf/2611.17955",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17955-html.html",
+        "url": "https://arxiv.org/html/2611.17955v1",
+        "status": "ok"
+      },
+      {
+        "name": "carryon-context.py.txt",
+        "url": "https://anonymous.4open.science/api/repo/CarryOn-0816/file/src/carryon/context.py",
+        "status": "ok"
+      },
+      {
+        "name": "carryon-evaluation-tree.json",
+        "url": "https://anonymous.4open.science/api/repo/CarryOn-0816/files/src/carryon/evaluation",
+        "status": "unavailable"
+      },
+      {
+        "name": "carryon-config-tree.json",
+        "url": "https://anonymous.4open.science/api/repo/CarryOn-0816/files/configs",
+        "status": "unavailable"
+      },
+      {
+        "name": "carryon-readme.md",
+        "url": "https://anonymous.4open.science/api/repo/CarryOn-0816/file/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "carryon-info.json",
+        "url": "https://anonymous.4open.science/api/repo/CarryOn-0816",
+        "status": "unavailable"
+      },
+      {
+        "name": "webarena-old-readme.md",
+        "url": "https://raw.githubusercontent.com/McGill-NLP/webarena-pro/e6fb471eba5e962d753a9c0d211cb54aef98666e/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "webarena-old-tree.json",
+        "url": "https://api.github.com/repos/McGill-NLP/webarena-pro/git/trees/e6fb471eba5e962d753a9c0d211cb54aef98666e?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "webarena-citation-patch.json",
+        "url": "https://api.github.com/repos/McGill-NLP/webarena-pro/commits/8c771645431d656917152a477be5003a86bb47ec",
+        "status": "ok"
+      },
+      {
+        "name": "ai-new.html",
+        "url": "https://arxiv.org/list/cs.AI/new",
+        "status": "ok"
+      },
+      {
+        "name": "se-new.html",
+        "url": "https://arxiv.org/list/cs.SE/new",
+        "status": "ok"
+      },
+      {
+        "name": "anthropic-research.html",
+        "url": "https://www.anthropic.com/research",
+        "status": "ok"
+      },
+      {
+        "name": "anthropic-engineering.html",
+        "url": "https://www.anthropic.com/engineering",
+        "status": "ok"
+      },
+      {
+        "name": "claude-articles.html",
+        "url": "https://claude.com/resources/articles",
+        "status": "ok"
+      },
+      {
+        "name": "langchain-blog.html",
+        "url": "https://blog.langchain.com/",
+        "status": "ok"
+      },
+      {
+        "name": "webarena-old-benchmark.md",
+        "url": "https://raw.githubusercontent.com/McGill-NLP/webarena-pro/e6fb471eba5e962d753a9c0d211cb54aef98666e/docs/source/benchmark.md",
+        "status": "ok"
+      },
+      {
+        "name": "webarena-old-evaluators.md",
+        "url": "https://raw.githubusercontent.com/McGill-NLP/webarena-pro/e6fb471eba5e962d753a9c0d211cb54aef98666e/docs/source/evaluators.md",
+        "status": "ok"
+      },
+      {
+        "name": "webarena-old-script.js",
+        "url": "https://raw.githubusercontent.com/webarena-pro/webarena-pro.github.io/ac47eb797aa229d7eaef812698ccfc7ea60d3db4/script.js",
+        "status": "ok"
+      },
+      {
+        "name": "webarena-old-site.html",
+        "url": "https://raw.githubusercontent.com/webarena-pro/webarena-pro.github.io/ac47eb797aa229d7eaef812698ccfc7ea60d3db4/index.html",
+        "status": "ok"
+      },
+      {
+        "name": "webarena-alignment-patch.json",
+        "url": "https://api.github.com/repos/webarena-pro/webarena-pro.github.io/commits/4e4d567ae2578e6486fac151f7b03dcd56c1ce59",
+        "status": "ok"
+      },
+      {
+        "name": "webarena-old-site-tree.json",
+        "url": "https://api.github.com/repos/webarena-pro/webarena-pro.github.io/git/trees/ac47eb797aa229d7eaef812698ccfc7ea60d3db4?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "webarena-site-repo.json",
+        "url": "https://api.github.com/repos/webarena-pro/webarena-pro.github.io",
+        "status": "ok"
+      },
+      {
+        "name": "webarena-site-commits.json",
+        "url": "https://api.github.com/repos/webarena-pro/webarena-pro.github.io/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "arxiv-dc-new.html",
+        "url": "https://arxiv.org/list/cs.DC/new?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "arxiv-dc-recent.html",
+        "url": "https://arxiv.org/list/cs.DC/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "arxiv-dc-month.html",
+        "url": "https://arxiv.org/list/cs.DC/2026-11?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "arxiv-ar-recent.html",
+        "url": "https://arxiv.org/list/cs.AR/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "vllm-blog.html",
+        "url": "https://vllm.ai/blog",
+        "status": "ok"
+      },
+      {
+        "name": "vllm-old-blog.html",
+        "url": "https://blog.vllm.ai/",
+        "status": "ok"
+      },
+      {
+        "name": "pytorch-blog.html",
+        "url": "https://pytorch.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "sglang-blog.html",
+        "url": "https://www.lmsys.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "nvidia-blog.html",
+        "url": "https://developer.nvidia.com/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "amd-blog.html",
+        "url": "https://rocm.blogs.amd.com/",
+        "status": "ok"
+      },
+      {
+        "name": "arxiv-ar-new.html",
+        "url": "https://arxiv.org/list/cs.AR/new?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17753-abstract.html",
+        "url": "https://arxiv.org/abs/2611.17753",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17753-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.17753v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17753-paper.html",
+        "url": "https://arxiv.org/html/2611.17753v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17824-abstract.html",
+        "url": "https://arxiv.org/abs/2611.17824",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17824-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.17824v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17824-paper.html",
+        "url": "https://arxiv.org/html/2611.17824v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.18075-abstract.html",
+        "url": "https://arxiv.org/abs/2611.18075",
+        "status": "ok"
+      },
+      {
+        "name": "2611.18075-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.18075v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.18075-paper.html",
+        "url": "https://arxiv.org/html/2611.18075v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.18145-abstract.html",
+        "url": "https://arxiv.org/abs/2611.18145",
+        "status": "ok"
+      },
+      {
+        "name": "2611.18145-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.18145v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.18145-paper.html",
+        "url": "https://arxiv.org/html/2611.18145v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.18459-abstract.html",
+        "url": "https://arxiv.org/abs/2611.18459",
+        "status": "ok"
+      },
+      {
+        "name": "2611.18459-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.18459v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.18459-paper.html",
+        "url": "https://arxiv.org/html/2611.18459v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17924-abstract.html",
+        "url": "https://arxiv.org/abs/2611.17924",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17924-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.17924v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17924-paper.html",
+        "url": "https://arxiv.org/html/2611.17924v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17857-abstract.html",
+        "url": "https://arxiv.org/abs/2611.17857",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17857-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.17857v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.17857-paper.html",
+        "url": "https://arxiv.org/html/2611.17857v1",
+        "status": "ok"
+      },
+      {
+        "name": "obaleth-repo.html",
+        "url": "https://github.com/ParCoreLab/aboleth",
+        "status": "ok"
+      },
+      {
+        "name": "obaleth-repo.json",
+        "url": "https://api.github.com/repos/ParCoreLab/aboleth",
+        "status": "ok"
+      },
+      {
+        "name": "obaleth-readme.md",
+        "url": "https://raw.githubusercontent.com/ParCoreLab/aboleth/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "obaleth-readme-history.json",
+        "url": "https://api.github.com/repos/ParCoreLab/aboleth/commits?path=README.md&per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "tide-repo-search.json",
+        "url": "https://api.github.com/search/repositories?q=%22TIDE%22+%22on-policy%22",
+        "status": "ok"
+      },
+      {
+        "name": "superfluid-repo.json",
+        "url": "https://api.github.com/repos/basecompute/superfluid",
+        "status": "ok"
+      },
+      {
+        "name": "superfluid-readme.md",
+        "url": "https://raw.githubusercontent.com/basecompute/superfluid/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "superfluid-readme-history.json",
+        "url": "https://api.github.com/repos/basecompute/superfluid/commits?path=README.md&per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "zero-sm-readme.md",
+        "url": "https://raw.githubusercontent.com/spcl/zero-sm-artifact/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "zero-sm-repo.json",
+        "url": "https://api.github.com/repos/spcl/zero-sm-artifact",
+        "status": "ok"
+      },
+      {
+        "name": "amd-sdma-blog.html",
+        "url": "https://rocm.blogs.amd.com/software-tools-optimization/gpu-initiated-sdma/README.html",
+        "status": "ok"
+      },
+      {
+        "name": "amd-sdma-history.json",
+        "url": "https://api.github.com/repos/ROCm/rocm-blogs/commits?path=blogs/software-tools-optimization/gpu-initiated-sdma/README.md&per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "obaleth-original-tree.json",
+        "url": "https://api.github.com/repos/ParCoreLab/aboleth/git/trees/a0f055d3bac8df560a695200ddc1bd1b660bae6a?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "obaleth-history.json",
+        "url": "https://api.github.com/repos/ParCoreLab/aboleth/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "superfluid-nov9-readme.md",
+        "url": "https://raw.githubusercontent.com/basecompute/superfluid/d6dde24148915d66c5e65d413156353fde10f48e/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "superfluid-nov16-doc-commit.json",
+        "url": "https://api.github.com/repos/basecompute/superfluid/commits/88bde74d7973796849e4ab2de1ad56f239dc5b59",
+        "status": "ok"
+      },
+      {
+        "name": "callo-author.html",
+        "url": "https://www.jianjunou.com/",
+        "status": "unavailable"
+      },
+      {
+        "name": "superfluid-nov9-benchmarks.md",
+        "url": "https://raw.githubusercontent.com/basecompute/superfluid/d6dde24148915d66c5e65d413156353fde10f48e/docs/performance/benchmarks.md",
+        "status": "ok"
+      },
+      {
+        "name": "superfluid-benchmarks.md",
+        "url": "https://raw.githubusercontent.com/basecompute/superfluid/main/docs/performance/benchmarks.md",
+        "status": "ok"
+      },
+      {
+        "name": "superfluid-benchmark-history.json",
+        "url": "https://api.github.com/repos/basecompute/superfluid/commits?path=docs/performance/benchmarks.md&per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "superfluid-nov9-distributed.md",
+        "url": "https://raw.githubusercontent.com/basecompute/superfluid/d6dde24148915d66c5e65d413156353fde10f48e/docs/serving/distributed_serving.md",
+        "status": "ok"
+      },
+      {
+        "name": "obaleth-original-moe.png",
+        "url": "https://raw.githubusercontent.com/ParCoreLab/aboleth/a0f055d3bac8df560a695200ddc1bd1b660bae6a/docs/figures/moe-vs-deepep.png",
+        "status": "ok"
+      },
+      {
+        "name": "superfluid-tree.json",
+        "url": "https://api.github.com/repos/basecompute/superfluid/git/trees/main?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "superfluid-tools-suite-readme.md",
+        "url": "https://raw.githubusercontent.com/basecompute/superfluid/main/tools/suite/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "superfluid-fleet-doc-history.json",
+        "url": "https://api.github.com/repos/basecompute/superfluid/commits?path=docs/serving/distributed_serving.md&per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "superfluid-original-commit.json",
+        "url": "https://api.github.com/repos/basecompute/superfluid/commits/d6dde24148915d66c5e65d413156353fde10f48e",
+        "status": "ok"
+      },
+      {
+        "name": "openai-research.html",
+        "url": "https://openai.com/news/research/",
+        "status": "ok"
+      },
+      {
+        "name": "openai-engineering.html",
+        "url": "https://openai.com/news/engineering/",
+        "status": "ok"
+      },
+      {
+        "name": "openai-security.html",
+        "url": "https://openai.com/news/security/",
+        "status": "ok"
+      },
+      {
+        "name": "deepmind-news.html",
+        "url": "https://deepmind.google/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "google-research.html",
+        "url": "https://research.google/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "ai2-research.html",
+        "url": "https://allenai.org/research",
+        "status": "ok"
+      },
+      {
+        "name": "xybench-blog.html",
+        "url": "https://allenai.org/blog/xybench",
+        "status": "ok"
+      },
+      {
+        "name": "teamwork-blog.html",
+        "url": "https://research.google/blog/advancing-science-engineering-with-antigravitys-teamwork-feature/",
+        "status": "ok"
+      },
+      {
+        "name": "deepmind-publications.html",
+        "url": "https://deepmind.google/research/publications/",
+        "status": "ok"
+      },
+      {
+        "name": "acl-index.html",
+        "url": "https://aclanthology.org/",
+        "status": "ok"
+      },
+      {
+        "name": "emnlp-index.html",
+        "url": "https://aclanthology.org/events/emnlp-2026/",
+        "status": "ok"
+      },
+      {
+        "name": "openreview-api.json",
+        "url": "https://api2.openreview.net/notes?invitation=ICLR.cc/2027/Conference/-/Submission&limit=20",
+        "status": "unavailable"
+      },
+      {
+        "name": "openreview-home.html",
+        "url": "https://openreview.net/",
+        "status": "ok"
+      },
+      {
+        "name": "neurips-download.html",
+        "url": "https://nips.cc/Downloads/2026",
+        "status": "ok"
+      },
+      {
+        "name": "alignment-index.html",
+        "url": "https://alignment.anthropic.com/",
+        "status": "ok"
+      },
+      {
+        "name": "alignment-worse-together.html",
+        "url": "https://alignment.anthropic.com/2026/worse-together/",
+        "status": "ok"
+      },
+      {
+        "name": "alignment-homeopathic.html",
+        "url": "https://alignment.anthropic.com/2026/homeopathic-learning/",
+        "status": "ok"
+      },
+      {
+        "name": "alignment-welfare.html",
+        "url": "https://alignment.anthropic.com/2026/welfare-regard/",
+        "status": "ok"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": "arxiv:2611.17876",
+      "title": "Delayed Effects of Temporary Weight Decay in Muon Pretraining",
+      "category": "1.3",
+      "tags": [
+        "Muon",
+        "Weight Decay",
+        "Causal Controls",
+        "Training Evaluation"
+      ],
+      "published_on": "2026-10-01",
+      "first_seen_at": "2026-11-16T11:05:47.736+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.17876",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.17876v1"
+      },
+      "summary": [
+        "The updated Muon study adds norm-reset interventions and 3.4B-parameter runs to an earlier investigation of temporary weight decay.",
+        "Swapping weight norms at the end of decay transfers much of the later loss benefit in the tested small models, while larger-model experiments show why early loss regressions should be assessed again at the final training budget.",
+        "These controls strengthen a specific optimization diagnosis, rather than establishing a universal decay schedule."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read the complete updated 25-page source, all main methods/results and Appendices A-K, with Appendix H/Table14 and Appendix K/Tables17-18 directly inspected as rendered source pages22/24. Compared the immutable October2 author-site PDF (21 pages, internally dated October 1) with the current manuscript and preserved both hashes/full extracted text/diff. The original report already contains the 1.4B delayed crossover, fixed-norm replay and norm-dynamics account; those are context, not today's new findings. The checked older PDF has no 3.4B study or norm-reset/gradual-decay/rate-sensitivity Appendices H-K. New norm swaps rescale the six block-matrix families while preserving directions and optimizer state, then continue original data order/rate without decay: they recover/remove 96%/97% of the final paired benefit at 162M and 91%/71% at 405M. New 3.4B FineWeb100B experiments train about 69B tokens for 66,000 updates: all four tested early schedules improve loss and five-task mean zero-shot accuracy versus no decay and the two sampled constant references. Fixed-update transfer lambda 0.15 for 12,320 updates yields loss 2.4638 versus 2.4832 and mean 66.90% versus 65.30%; preserving 44% duration instead yields 2.4782/66.85%. Preserve original October 1 report date and earliest successful team catalog discovery November 16 11:05:47.736183UTC. The new arXiv manuscript is in the primary Monday 16 LG original section; its inferred Sunday 20:00 EST announcement is November 16 01:00UTC.",
+        "limitations": "The new reset controls are individual matched comparisons and also immediately change model outputs, so they do not prove norms are the only causal state or that larger relative steps are always better. The 405M no-decay source stopped after a hardware fault; its reset checkpoint and a rerun supply different continuations, as disclosed. Most configurations, including 3.4B, are single-seed; the norm-control data differs across scales. Five 3.4B configurations use 32 H100 GPUs while the fixed-update transfers use B200s; transfer rules differ in duration and total shrinkage, and only two constant coefficients are sampled. Mean downstream gains do not imply every-task gains; earlier 405M/1.4B comparisons lack a clear advantage over constant decay. Gradual schedules can outperform the abrupt window. No optimal schedule, universal coefficients, architecture-independent mechanism, full matched experiment code release or independent reproduction is established. Earlier artifact absence of the new controls is verified only for the inspected immutable report, not every possible historical draft."
+      },
+      "novelty": "material-update",
+      "update_note": "2026-11-16: The updated manuscript was announced at approximately 01:00 UTC, inferred from the original Monday 16 arXiv cs.LG batch and official Sunday 20:00 EST schedule. Compared with the internally October 1-dated 21-page PDF preserved in the author website's immutable October 2 commit, it adds norm-reset controls at 162M/405M and new 3.4B loss/downstream experiments (Appendices H and K), plus gradual-decay and learning-rate sensitivity controls. The earlier 1.4B headline and fixed-norm replay are not presented as new. Timing sources: https://arxiv.org/list/cs.LG/new?skip=0&show=2000 and https://info.arxiv.org/help/availability.html ; earlier full source: https://raw.githubusercontent.com/rarefin/rarefin.github.io/fffa94dbf3f5659bddc2812b87530d30d200d491/assets/files/papers/muon-temporary-weight-decay.pdf ."
+    },
+    {
+      "id": "arxiv:2611.18113",
+      "title": "Folding Language Models into Themselves",
+      "category": "1.8",
+      "tags": [
+        "Weight Sharing",
+        "Distillation",
+        "Controlled Ablations",
+        "Parameter Storage"
+      ],
+      "published_on": "2026-11-13",
+      "first_seen_at": "2026-11-16T11:05:47.736+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.18113",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.18113v1",
+        "code": "https://github.com/myboker/concertina",
+        "project": "https://huggingface.co/myboker/Concertina-2.27B"
+      },
+      "summary": [
+        "New controlled experiments evaluate Concertina, which compresses a pretrained model by repeatedly applying shared blocks with token-dependent low-rank corrections initialized from adjacent teacher layers.",
+        "The study separates folding topology, token gating and training-data coverage, showing how a smaller stored model can recover much of a teacher's tested capability through distillation.",
+        "Parameter savings retain the original computation depth and key-value cache, so they do not establish faster inference."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read all 14 primary pages, including Sections 3-5 and complete Appendices A-D; directly inspected source page 5 Table 1/Figure 2 and page 7 matched design-control plots. The selected contribution is the newly disclosed quantitative manuscript and controls for an existing implementation, not a first algorithm or code release. The November 11 initial repository tree already contains folding/distillation code and settings, but its complete README contains no measured task table, scaling curve, matched topology/gate results or data-mixture evaluation; the tree has no paper or experiment-result assets. The current paper reports 2.27B stored parameters versus a 4.02B Qwen3 teacher, 36 computation steps preserved, and 83.6% mean relative teacher score across eight benchmark groups after 22B distillation tokens. Matched static topology controls on FineWeb-Edu yield base-7 0.498 versus 0.468 at 197M tokens and 0.535 versus 0.521 at 2B; matched gate controls at 490M yield GSM8K 0.235 versus 0.189 and MATH 0.142 versus 0.124. At equal 22B tokens the targeted mixture raises mean relative recovery 78.6% to 83.6%, while base-7 decreases 0.592 to 0.580. Primary code and public ungated model card/file metadata were verified, without loading weights or executing code. Preserve earliest successful team CL catalog discovery 11:05:47.736183 UTC. The original Monday November16 CL listing plus the official Sunday20:00 Eastern schedule support inferred manuscript announcement November16 01:00 UTC; this quantitative study is in the daily window. No earlier full manuscript was located in the bounded exact-title/source checks.",
+        "limitations": "Parameter storage falls but the teacher's depth and KV cache remain; no serving latency, FLOP reduction or equal-total-compute advantage is demonstrated. Only Qwen3-4B/8B are tested. The 84% headline is a mean of relative benchmark scores, not 84% accuracy; GPQA has 198 questions and MATH uses 1,250 sampled problems. Main broad benchmarks and small matched gate/topology gains lack multi-seed uncertainty; matched controls use a common single seed. RRT/FoldGPT headline recipe comparisons differ in objectives, initialization, norms, trainable capacity and schedules; they do not isolate architecture alone. The native 1.7B model's 36T pretraining comparison excludes inherited teacher training and synthetic-data generation/verification costs. Targeted data reduces some commonsense scores; 13-gram decontamination is author-reported. The N=2 first correction is zero, but softmax bias8 produces near-one-hot, not mathematically exact one-hot gated initialization. Model files were listed, not independently reproduced or runtime-validated."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-16T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/new?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2611.17808",
+      "title": "CarryOn: Learning What to Keep in Context for Long-Horizon LLM Agents",
+      "category": "2.3",
+      "tags": [
+        "Context Engineering",
+        "Working Memory",
+        "Evidence Selection"
+      ],
+      "published_on": "2026-11-13",
+      "first_seen_at": "2026-11-16T11:05:47.736+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.17808",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.17808",
+        "code": "https://anonymous.4open.science/api/repo/CarryOn-0816/file/src/carryon/context.py"
+      },
+      "summary": [
+        "CarryOn separates a compact execution-state note from source-linked evidence fragments, using a trained 0.6B selector to recover older records without separate LLM context-management calls.",
+        "Across three benchmarks and three Actors, it reports 75.7% equally weighted task success, 6.7 percentage points above the strongest overall baseline, offering a practical way to retain exact details during long workflows.",
+        "These are single-run results with a separate selector per benchmark; the reported resource metrics exclude local selector and pruning compute and do not establish end-to-end savings."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Full 31-page v1 read, including all main methods/results, execution Algorithm 1, training labels, cost accounting, detailed task denominators, evidence-event counting, ablations, local distillation and prompt templates. Primary Table 1 on PDF page 7 was directly viewed. The Actor emits an action plus a bounded five-field state note; a frozen Qwen3-Reranker-0.6B LoRA selector scores source-linked observation fragments for relevance and next-action use. Recent interactions remain visible, and predicted imminent-use fragments may expand beyond the 16,384-character base pack. Training uses successful official training-split trajectories, offline Claude annotations and later public evidence-use labels, while inference inputs contain only the current public prefix. AppWorld/OfficeBench/Tau2 Telecom use 168/95/40 test tasks and three Actors, one run per setting; Table 1 success macro-averages to 75.657%, versus 68.942% for SWE-Pruner. The author anonymous repository tree, complete README and context.py implementation were actually retrieved and read without executing code. Original receipt November13 06:43:19 UTC is retained. Native original cs.CL membership and the official Thursday14-Friday14 to Sunday20 Eastern schedule imply Monday November16 01:00 UTC announcement; this inference is not an observed exact release timestamp. No older full public study was established by the linked artifacts and bounded title search.",
+        "limitations": "One selector is trained per benchmark, then reused across Actors; this does not establish zero-shot transfer to new environments. Single runs provide no sampling confidence intervals; private user/simulator state is excluded but training/test contamination was not independently audited. Local selector/pruner token processing is excluded from system-request accounting, and training wall times exclude trajectory generation/evaluation. Tau2 includes User simulator request tokens; these measures are not latency, energy or dollar costs. Success is not uniformly best: Claude Tau2 reaches 75%, below LLMLingua-2 at 80%, and CarryOn has worse NCS than Full History in that cell. Base evidence budget is not a hard total-context limit, because recent interactions and expansion may exceed it. Most Tau2 trajectories never invoke learned selection; its evidence-age statistics cover 13/120 trajectories. The anonymous landing page and repository metadata return401, although its file-list, README and context.py API endpoints return200; historical commit dates could not be verified. The README explicitly excludes model weights, datasets and run outputs, so a downloadable selector checkpoint or complete reproduction is not asserted."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-16T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2611.17955",
+      "title": "WebArena-Pro: A Heterogeneous, Multimodal, Reproducible Benchmark for Web Agents",
+      "category": "2.8",
+      "tags": [
+        "Web Agents",
+        "Multimodal Evaluation",
+        "Media Tools"
+      ],
+      "published_on": "2026-11-13",
+      "first_seen_at": "2026-11-16T11:05:47.736+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.17955",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.17955",
+        "code": "https://github.com/McGill-NLP/webarena-pro",
+        "project": "https://webarena-pro.github.io"
+      },
+      "summary": [
+        "Newly disclosed analyses of the existing WebArena-Pro benchmark evaluate media tools and validate rubric grading, extending its earlier public benchmark, code and leaderboard.",
+        "On a post hoc 43-task media-dependent subset with a 50-step cap, Claude Code/Opus 5.5 improves from 14.0% to 48.8% success with transcription and frame-extraction tools, showing why evaluations should distinguish content access from metadata shortcuts.",
+        "The small selected subset, single runs and different model-harness resources prevent general model or efficiency rankings."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Main paper pages1-11 and all Appendices A-E/pages14-22 read, with bibliography inspected for source/artifact discovery; Table7 on PDF page10 and Table15 on page21 were directly viewed. The existing benchmark has300test and100dev tasks across20self-hosted applications;204test tasks are single-site,96cross-site, and79audio/video. The newly disclosed paper contains a media-tools intervention on all79media tasks and a conservative post hoc43-task subset selected from task metadata, thumbnails and rubric criteria: Opus5.5/Claude Code success14.0% without tools and48.8% with transcript/frame tools. Gemini3.1Pro rises2.3% to30.2% with tools and34.9% with native omni input on that subset; this is not a universal multimodal advantage. AppendixD judges300trajectories (50tasks by6agent models); rubric-level human agreement is89.5% for Qwen3.6-27B versus90.5/90.6% for two other judges. Historical repository commit e6fb471 dated November12 16:33:57 UTC already contains the functioning benchmark; the November16 08:56:26 repository patch only adds the paper citation. The old November12 project website already reports13numeric configuration scores, including Claude62.3%, Codex61.7% and Kimi60.3%; no novelty is claimed for this benchmark release or those earlier headline results. The old version-pinned README, benchmark/evaluator documentation, website and leaderboard were checked and do not disclose the paper's43-task ablation or300-trajectory human-judge study. November16 website alignment changes three published scores and adds Qwen; it does not alone establish a new method. Selection is specifically the new full paper evidence beyond the earlier artifacts, not the older benchmark or recycled leaderboard. Native original cs.AI listing plus schedule infer November16 01:00 UTC announcement; original November13 09:44:48 UTC receipt is retained.",
+        "limitations": "One selected run per task/configuration and post hoc subset selection do not give a population treatment effect or run-to-run reliability. Models, harnesses, observation frequencies, native tools, tokens and costs differ, so a50browser-action cap is not compute parity and the headline comparison is not a controlled model ranking. Media support covers prerecorded clips/frames rather than streaming or live voice. The rubric DAG uses deterministic, heuristic then LLM checks, with eventual LLM fallback;89.5% pooled rubric agreement is not task-level grading correctness or immunity to reward hacking. Main text says Kimi60.3% while abstract/Table5 say60.7%; any use must prefer the directly inspected table and disclose the discrepancy. Recorded provider API costs include retries/recovery and exclude hosting; they are not a reproducible cost-normalized ranking. Old artifact checks are bounded to linked native history and version-pinned primary documents, not an exhaustive search of every old code blob or private manuscript. The HuggingFace organization is linked but a guessed dataset endpoint returned401, so no specific downloadable dataset URL is asserted."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-16T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2611.17924",
+      "title": "TIDE: Reclaiming Lost Performance In On-Policy Reinforcement Learning",
+      "category": "3.2",
+      "tags": [
+        "On-Policy RL",
+        "Dynamic GPU Allocation",
+        "Rollout Migration",
+        "Training Overlap"
+      ],
+      "published_on": "2026-11-13",
+      "first_seen_at": "2026-11-16T11:06:42.640+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.17924",
+      "links": {
+        "paper": "https://arxiv.org/html/2611.17924v1"
+      },
+      "summary": [
+        "TIDE repurposes GPUs from completed or consolidated rollouts for gradient computation, while delaying the optimizer update until the entire synchronous on-policy batch is finished.",
+        "Overlapping training with the rollout tail and migrating requests to improve decode batching gives reported 1.16–1.36× end-to-end speedups across two tasks on three single-node GPU testbeds.",
+        "This offers a way to recover idle capacity without introducing stale-policy rollouts, although multi-node behavior and downstream training-quality equivalence were not established."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Complete 15-page v1 inspected: scientific main pp.1–11, Appendix A case study p.12, references/disclosure pp.12–15; actual Figure 7/Table 2 p.9 and Table 3/Figure 9 p.10 visually checked. Sections 4–5 stream only completed GRPO groups, compute advantages then accumulate gradients with fixed weights; optimizer steps and nonlinear whole-batch operations such as clipping wait for all gradients. A starvation-feedback threshold (defaultB0=8, deltaB=8), intra-step KV-capacity veto and training-group granularity govern token-based migration and GPU repurposing. Megatron/SGLang on8 H200 and FSDP2/vLLM on4 H100 or4 L40S cover DeepSeek-R1-Distill-Llama-8B DAPO-Math20 steps and Qwen2.5-Coder-7B-Instruct Text2SQL35 steps. Reported synchronous-colocation speedups:1.16/1.36x on8 H200,1.17x Math4 H100,1.21x SQL4 L40S. Table 2 reaches77.2–97.4% of an estimated utilization-optimal throughput, not a global scheduling optimum. Actual receipt is November 13 09:03:23UTC; native original LG NEW MondayNovember 16 plus official Thursday14:00–Friday14:00EST submission row/Sunday20:00 announcement supports inferred availability November 16 01:00UTC. Earliest successful team LG discovery completion11:06:42.640410 UTC is pinned. No earlier full TIDE release located in the bounded inspected primary/search sources.",
+        "limitations": "Only two 7B/8B-model tasks,20/35 steps and single-node setups; no convergence/quality-equivalence, bitwise trajectory equivalence or multi-node scaling test. FSDP re-sharding/rebuilding communicators costs2–3%, short steps or insufficient tails can regress, and usable training groups/KV headroom constrain migration. RollPacker repurposing is ported onto the same base implementation, but TLT uses its own no-speculation run as denominator with an offline-trained drafter; its bars do not form a common absolute-runtime comparison. Ablations sample fresh rollouts and differ from main gains; adaptive-threshold/oracle comparisons use trace simulation. Public source inspection did not verify a released TIDE implementation; no author code or experiment executed."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-16T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/new?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2611.17753",
+      "title": "Superfluid: New Local and Heterogeneous-Fleet Evaluation of an Existing LLM Server",
+      "category": "3.3",
+      "tags": [
+        "Local Inference",
+        "Session Durability",
+        "Heterogeneous Fleets",
+        "Priority Scheduling"
+      ],
+      "published_on": "2026-11-13",
+      "first_seen_at": "2026-11-16T11:05:47.736+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.17753",
+      "links": {
+        "paper": "https://arxiv.org/html/2611.17753v1",
+        "code": "https://github.com/basecompute/superfluid"
+      },
+      "summary": [
+        "A new study of the existing Superfluid server evaluates priority scheduling, cached-prefix reuse and whole-session placement across local machines that each hold a complete model replica.",
+        "In a six-device heterogeneous fleet, all 5,041 requests complete as nodes join and one is killed, while output throughput rises from 112 to 534 tokens per second.",
+        "It provides a practical reference for resilient local agent serving, although fleet placement lacks a controlled baseline and model sharding is unsupported."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Complete 8-page v1 inspected, Sections 3–4 architecture/scheduler/durability/fleet protocol and both measured tables; actual Table 1 p.4 and Table 2 p.6 visually checked. New study documents Qwen3.8-27B 4-bit on M5 Pro 64 GB matched-runtime local tests (llama.cpp b11284,mlx-lm 0.31.3,Ollama 0.35.1), with interactive TTFT1.47s for Superfluid/llama.cpp versus291/380s for llama-server/Ollama, and2.01 versus612s for MLX. The main heterogeneous closed-loop fleet uses64 simulated office users for1 hour, Qwen3-4B Q4_K_M/llama.cpp on6 Apple/AMD/NVIDIA machines joining every 6 minutes, with one node killed at 42 minutes/rejoining 8 minutes later. All 5,041 requests complete; output112→534 tok/s, TTFT p50 98.5→11.7s. Separate BaseRT 4-bit 35B-MoE fleet completes7,151 requests.12 M3 Ultra 512 GB machines at384 agents/2,048-token prompts reach10,656 aggregate tok/s, explicitly9,249 prompt + 1,407 output, not10,656 generated tok/s. Prior software was public October8; pinned November9 README and benchmark docs already disclose its mechanism and older 4B local results. This selection is specifically the newly disclosed27B/fleet measurement study: the paper is an original DC NEW MondayNovember 16 entry, while the November 16 03:22:31 UTC README commit newly adds fleet numeric tables. Official EST scheduling supports earlier manuscript announcementNovember 16 01:00 UTC despite receiptNovember 13 05:10:32 UTC; earlier software release is not being relabeled as new. Earliest successful team CL cross-catalog completion11:05:47.736183 UTC is pinned, with primary DC original membership establishing manuscript timing. Repository/tree and benchmark-suite README inspected without execution.",
+        "limitations": "Existing system and many mechanisms predate this window; no new software-launch or invention claim. Closed-loop demand grows with faster service, fleet stages differ in hardware/count, and no randomized placement-policy baseline or confidence/repeated-run analysis supports a causal 4.8x scaling claim. Five-node throughput nearly matches six nodes after the failure, indicating demand saturation. Each node must fit the full model; migration recomputes context, differing runtime/quantization can change output, and seeded replay is not a universal cross-device bitwise guarantee. One runtime per fleet was tested; the BaseRT engine is separately licensed and not made open by the server Apache 2 license. The public tree verifies local benchmark suite source, not the actual raw fleet logs or a complete fleet reproduction harness; suite documentation notes that durable-session-ID resume is not exercised by its stateless daemon-restart test. No TLS in server and no independent reproduction."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-16T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/new?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2611.18459",
+      "title": "Callo: Serving Cache-Miss Requests with Speculative Decoding on Invalidated KV under Prefill-Decode Disaggregation",
+      "category": "3.4",
+      "tags": [
+        "Edited Contexts",
+        "KV Cache",
+        "Speculative Decoding",
+        "Disaggregated Serving"
+      ],
+      "published_on": "2026-11-13",
+      "first_seen_at": "2026-11-16T11:06:42.640+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.18459",
+      "links": {
+        "paper": "https://arxiv.org/html/2611.18459v1"
+      },
+      "summary": [
+        "Callo drafts tokens using a cache invalidated by an agent’s context edits while a separate prefill GPU recomputes exact state, then verifies every committed token against the repaired cache.",
+        "This turns part of a cache-miss wait into useful generation, yielding reported 1.05–1.19× mean request-latency speedups in moderate-load, two-H200 session replays.",
+        "Benefits require reusable session state and spare decode capacity; larger deployments were evaluated through simulation."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Complete 24-page v1 inspected: scientific main pp.1–11 and all AppendicesA–F pp.13–24, with actual Table 3/Figures4–5 p.7 and Table 4 p.9 visually checked. The system aligns retained tokens, re-rotates keys, stages new spans in scratch blocks, drafts while layer-major exact KV arrives, and verifies only after all prompt KV has landed; rejected drafts never enter the prefix cache. Admission prioritizes ready requests, bounds staging sB <= 4096, requires256 reusable tokens and limits scratch space; model-specific held-out logit-gap calibration triggers early stopping. Live serving uses vLLM0.29/NIXL push on one141 GB H200 NVL for prefill and another for decode, Llama 3.3-70B FP8 or Gemma 4-31B/Mistral Small 3.2-24B BF16, all with BF16 KV. SWE-agent L5/L10 recordings on100 SWE-bench Verified issues exclude 20 held-out issues and replay fixed prompts/reply lengths/tool times; Table 3 moderate load is52% of each baseline capacity. All-request1.05–1.19x and miss-request1.06–1.24x mean latency ratios include streaming/notification and speculation; transfer-only controls isolate gains. Separate correctness instrumentation checks1,928 verification events/44,792 committed tokens against the same verification pass and exact-KV fingerprints. Original DC NEW MondayNovember 16 plus the official EST schedule supports inferred manuscript availabilityNovember 16 01:00 UTC despite receiptNovember 13 17:28:37 UTC. Earliest successful team LG discovery completion11:06:42.640410 UTC is pinned. No earlier full Callo release located; concurrent StaleSpec is acknowledged as prior related work, so no first-ever stale-cache idea claim is made.",
+        "limitations": "Replay fixes future prompts, reply lengths and tool delays; no end-to-end SWE task-success or live-agent quality gain is established. Exact verification preserves its chosen decoding rule, not bitwise equivalence to arbitrary batch-dependent baseline runs. Current implementation requires TP=1 and identical block sizes across instances; re-rotation expects BF16 KV. Layer refresh did not significantly improve online acceptance over frozen invalidated KV; in-place refresh saves memory, while much of the transfer gain is prompt completion notification. Non-speculating decode work lengthens about2–6%; saturated decode and cache eviction limit or remove gains. Cluster 96-GPU results and100–400Gb/s sensitivity are simulations fitted to testbed measurements, not a measured cluster deployment. Timing uses small12–33-session cells; only the main moderate-load configuration was run twice, other cells have session-bootstrap intervals. No matching author code release verified and no independent reproduction performed."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-16T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/new?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    }
+  ]
+}

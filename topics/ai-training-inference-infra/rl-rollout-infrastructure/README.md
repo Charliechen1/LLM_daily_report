@@ -5,6 +5,22 @@ Distributed rollouts, asynchronous RL, generation/training coordination and weig
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-16](../../../reports/2026/11/2026-11-16.md) — PARTIAL SEARCH
+
+### [TIDE: Reclaiming Lost Performance In On-Policy Reinforcement Learning](<https://arxiv.org/abs/2611.17924>)
+
+TIDE repurposes GPUs from completed or consolidated rollouts for gradient computation, while delaying the optimizer update until the entire synchronous on-policy batch is finished. Overlapping training with the rollout tail and migrating requests to improve decode batching gives reported 1.16–1.36× end-to-end speedups across two tasks on three single-node GPU testbeds. This offers a way to recover idle capacity without introducing stale-policy rollouts, although multi-node behavior and downstream training-quality equivalence were not established.
+
+**Published:** 2026-11-13 · **First seen:** 2026-11-16T11:06:42.640+00:00 · **Novelty:** new · **Tags:** On-Policy RL, Dynamic GPU Allocation, Rollout Migration, Training Overlap
+
+**Public availability:** 2026-11-16T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/new?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2611.17924v1>)
+
+**Evidence:** research-paper; full-text. Complete 15-page v1 inspected: scientific main pp.1–11, Appendix A case study p.12, references/disclosure pp.12–15; actual Figure 7/Table 2 p.9 and Table 3/Figure 9 p.10 visually checked. Sections 4–5 stream only completed GRPO groups, compute advantages then accumulate gradients with fixed weights; optimizer steps and nonlinear whole-batch operations such as clipping wait for all gradients. A starvation-feedback threshold (defaultB0=8, deltaB=8), intra-step KV-capacity veto and training-group granularity govern token-based migration and GPU repurposing. Megatron/SGLang on8 H200 and FSDP2/vLLM on4 H100 or4 L40S cover DeepSeek-R1-Distill-Llama-8B DAPO-Math20 steps and Qwen2.5-Coder-7B-Instruct Text2SQL35 steps. Reported synchronous-colocation speedups:1.16/1.36x on8 H200,1.17x Math4 H100,1.21x SQL4 L40S. Table 2 reaches77.2–97.4% of an estimated utilization-optimal throughput, not a global scheduling optimum. Actual receipt is November 13 09:03:23UTC; native original LG NEW MondayNovember 16 plus official Thursday14:00–Friday14:00EST submission row/Sunday20:00 announcement supports inferred availability November 16 01:00UTC. Earliest successful team LG discovery completion11:06:42.640410 UTC is pinned. No earlier full TIDE release located in the bounded inspected primary/search sources.
+
+**Limitations:** Only two 7B/8B-model tasks,20/35 steps and single-node setups; no convergence/quality-equivalence, bitwise trajectory equivalence or multi-node scaling test. FSDP re-sharding/rebuilding communicators costs2–3%, short steps or insufficient tails can regress, and usable training groups/KV headroom constrain migration. RollPacker repurposing is ported onto the same base implementation, but TLT uses its own no-speculation run as denominator with an offline-trained drafter; its bars do not form a common absolute-runtime comparison. Ablations sample fresh rollouts and differ from main gains; adaptive-threshold/oracle comparisons use trace simulation. Public source inspection did not verify a released TIDE implementation; no author code or experiment executed.
+
 ## [2026-11-14](../../../reports/2026/11/2026-11-14.md) — PARTIAL SEARCH
 
 ### [RadixArk Miles on NVIDIA Vera: Controlled Sandbox Measurements for Agentic RL](<https://www.lmsys.org/blog/2026-11-13-miles-vera-sandboxes/>)

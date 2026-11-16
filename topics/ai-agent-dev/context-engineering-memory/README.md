@@ -5,6 +5,22 @@ Context organization/compression, working memory, long-term memory and state.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-16](../../../reports/2026/11/2026-11-16.md) — PARTIAL SEARCH
+
+### [CarryOn: Learning What to Keep in Context for Long-Horizon LLM Agents](<https://arxiv.org/abs/2611.17808>)
+
+CarryOn separates a compact execution-state note from source-linked evidence fragments, using a trained 0.6B selector to recover older records without separate LLM context-management calls. Across three benchmarks and three Actors, it reports 75.7% equally weighted task success, 6.7 percentage points above the strongest overall baseline, offering a practical way to retain exact details during long workflows. These are single-run results with a separate selector per benchmark; the reported resource metrics exclude local selector and pruning compute and do not establish end-to-end savings.
+
+**Published:** 2026-11-13 · **First seen:** 2026-11-16T11:05:47.736+00:00 · **Novelty:** new · **Tags:** Context Engineering, Working Memory, Evidence Selection
+
+**Public availability:** 2026-11-16T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.17808>) · [Code](<https://anonymous.4open.science/api/repo/CarryOn-0816/file/src/carryon/context.py>)
+
+**Evidence:** research-paper; full-text. Full 31-page v1 read, including all main methods/results, execution Algorithm 1, training labels, cost accounting, detailed task denominators, evidence-event counting, ablations, local distillation and prompt templates. Primary Table 1 on PDF page 7 was directly viewed. The Actor emits an action plus a bounded five-field state note; a frozen Qwen3-Reranker-0.6B LoRA selector scores source-linked observation fragments for relevance and next-action use. Recent interactions remain visible, and predicted imminent-use fragments may expand beyond the 16,384-character base pack. Training uses successful official training-split trajectories, offline Claude annotations and later public evidence-use labels, while inference inputs contain only the current public prefix. AppWorld/OfficeBench/Tau2 Telecom use 168/95/40 test tasks and three Actors, one run per setting; Table 1 success macro-averages to 75.657%, versus 68.942% for SWE-Pruner. The author anonymous repository tree, complete README and context.py implementation were actually retrieved and read without executing code. Original receipt November13 06:43:19 UTC is retained. Native original cs.CL membership and the official Thursday14-Friday14 to Sunday20 Eastern schedule imply Monday November16 01:00 UTC announcement; this inference is not an observed exact release timestamp. No older full public study was established by the linked artifacts and bounded title search.
+
+**Limitations:** One selector is trained per benchmark, then reused across Actors; this does not establish zero-shot transfer to new environments. Single runs provide no sampling confidence intervals; private user/simulator state is excluded but training/test contamination was not independently audited. Local selector/pruner token processing is excluded from system-request accounting, and training wall times exclude trajectory generation/evaluation. Tau2 includes User simulator request tokens; these measures are not latency, energy or dollar costs. Success is not uniformly best: Claude Tau2 reaches 75%, below LLMLingua-2 at 80%, and CarryOn has worse NCS than Full History in that cell. Base evidence budget is not a hard total-context limit, because recent interactions and expansion may exceed it. Most Tau2 trajectories never invoke learned selection; its evidence-age statistics cover 13/120 trajectories. The anonymous landing page and repository metadata return401, although its file-list, README and context.py API endpoints return200; historical commit dates could not be verified. The README explicitly excludes model weights, datasets and run outputs, so a downloadable selector checkpoint or complete reproduction is not asserted.
+
 ## [2026-11-14](../../../reports/2026/11/2026-11-14.md) — PARTIAL SEARCH
 
 ### [CoReMem: Cost-Internalizing Memory for Successive Coding Tasks with Prospective Valuation](<https://arxiv.org/abs/2611.17316>)

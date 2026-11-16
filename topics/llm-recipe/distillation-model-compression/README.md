@@ -5,6 +5,22 @@ Knowledge/reasoning distillation, pruning, quantization algorithms and model mer
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-16](../../../reports/2026/11/2026-11-16.md) — PARTIAL SEARCH
+
+### [Folding Language Models into Themselves](<https://arxiv.org/abs/2611.18113>)
+
+New controlled experiments evaluate Concertina, which compresses a pretrained model by repeatedly applying shared blocks with token-dependent low-rank corrections initialized from adjacent teacher layers. The study separates folding topology, token gating and training-data coverage, showing how a smaller stored model can recover much of a teacher's tested capability through distillation. Parameter savings retain the original computation depth and key-value cache, so they do not establish faster inference.
+
+**Published:** 2026-11-13 · **First seen:** 2026-11-16T11:05:47.736+00:00 · **Novelty:** new · **Tags:** Weight Sharing, Distillation, Controlled Ablations, Parameter Storage
+
+**Public availability:** 2026-11-16T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/new?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.18113v1>) · [Code](<https://github.com/myboker/concertina>) · [Project](<https://huggingface.co/myboker/Concertina-2.27B>)
+
+**Evidence:** research-paper; full-text. Read all 14 primary pages, including Sections 3-5 and complete Appendices A-D; directly inspected source page 5 Table 1/Figure 2 and page 7 matched design-control plots. The selected contribution is the newly disclosed quantitative manuscript and controls for an existing implementation, not a first algorithm or code release. The November 11 initial repository tree already contains folding/distillation code and settings, but its complete README contains no measured task table, scaling curve, matched topology/gate results or data-mixture evaluation; the tree has no paper or experiment-result assets. The current paper reports 2.27B stored parameters versus a 4.02B Qwen3 teacher, 36 computation steps preserved, and 83.6% mean relative teacher score across eight benchmark groups after 22B distillation tokens. Matched static topology controls on FineWeb-Edu yield base-7 0.498 versus 0.468 at 197M tokens and 0.535 versus 0.521 at 2B; matched gate controls at 490M yield GSM8K 0.235 versus 0.189 and MATH 0.142 versus 0.124. At equal 22B tokens the targeted mixture raises mean relative recovery 78.6% to 83.6%, while base-7 decreases 0.592 to 0.580. Primary code and public ungated model card/file metadata were verified, without loading weights or executing code. Preserve earliest successful team CL catalog discovery 11:05:47.736183 UTC. The original Monday November16 CL listing plus the official Sunday20:00 Eastern schedule support inferred manuscript announcement November16 01:00 UTC; this quantitative study is in the daily window. No earlier full manuscript was located in the bounded exact-title/source checks.
+
+**Limitations:** Parameter storage falls but the teacher's depth and KV cache remain; no serving latency, FLOP reduction or equal-total-compute advantage is demonstrated. Only Qwen3-4B/8B are tested. The 84% headline is a mean of relative benchmark scores, not 84% accuracy; GPQA has 198 questions and MATH uses 1,250 sampled problems. Main broad benchmarks and small matched gate/topology gains lack multi-seed uncertainty; matched controls use a common single seed. RRT/FoldGPT headline recipe comparisons differ in objectives, initialization, norms, trainable capacity and schedules; they do not isolate architecture alone. The native 1.7B model's 36T pretraining comparison excludes inherited teacher training and synthetic-data generation/verification costs. Targeted data reduces some commonsense scores; 13-gram decontamination is author-reported. The N=2 first correction is zero, but softmax bias8 produces near-one-hot, not mathematically exact one-hot gated initialization. Model files were listed, not independently reproduced or runtime-validated.
+
 ## [2026-11-10](../../../reports/2026/11/2026-11-10.md) — PARTIAL SEARCH
 
 ### [Perturbing Inputs Improves Pretraining Distillation](<https://arxiv.org/abs/2611.11598>)

@@ -5,6 +5,22 @@ Attention execution, KV management/reuse, offloading and long-context memory eff
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-16](../../../reports/2026/11/2026-11-16.md) — PARTIAL SEARCH
+
+### [Callo: Serving Cache-Miss Requests with Speculative Decoding on Invalidated KV under Prefill-Decode Disaggregation](<https://arxiv.org/abs/2611.18459>)
+
+Callo drafts tokens using a cache invalidated by an agent’s context edits while a separate prefill GPU recomputes exact state, then verifies every committed token against the repaired cache. This turns part of a cache-miss wait into useful generation, yielding reported 1.05–1.19× mean request-latency speedups in moderate-load, two-H200 session replays. Benefits require reusable session state and spare decode capacity; larger deployments were evaluated through simulation.
+
+**Published:** 2026-11-13 · **First seen:** 2026-11-16T11:06:42.640+00:00 · **Novelty:** new · **Tags:** Edited Contexts, KV Cache, Speculative Decoding, Disaggregated Serving
+
+**Public availability:** 2026-11-16T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/new?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2611.18459v1>)
+
+**Evidence:** research-paper; full-text. Complete 24-page v1 inspected: scientific main pp.1–11 and all AppendicesA–F pp.13–24, with actual Table 3/Figures4–5 p.7 and Table 4 p.9 visually checked. The system aligns retained tokens, re-rotates keys, stages new spans in scratch blocks, drafts while layer-major exact KV arrives, and verifies only after all prompt KV has landed; rejected drafts never enter the prefix cache. Admission prioritizes ready requests, bounds staging sB &lt;= 4096, requires256 reusable tokens and limits scratch space; model-specific held-out logit-gap calibration triggers early stopping. Live serving uses vLLM0.29/NIXL push on one141 GB H200 NVL for prefill and another for decode, Llama 3.3-70B FP8 or Gemma 4-31B/Mistral Small 3.2-24B BF16, all with BF16 KV. SWE-agent L5/L10 recordings on100 SWE-bench Verified issues exclude 20 held-out issues and replay fixed prompts/reply lengths/tool times; Table 3 moderate load is52% of each baseline capacity. All-request1.05–1.19x and miss-request1.06–1.24x mean latency ratios include streaming/notification and speculation; transfer-only controls isolate gains. Separate correctness instrumentation checks1,928 verification events/44,792 committed tokens against the same verification pass and exact-KV fingerprints. Original DC NEW MondayNovember 16 plus the official EST schedule supports inferred manuscript availabilityNovember 16 01:00 UTC despite receiptNovember 13 17:28:37 UTC. Earliest successful team LG discovery completion11:06:42.640410 UTC is pinned. No earlier full Callo release located; concurrent StaleSpec is acknowledged as prior related work, so no first-ever stale-cache idea claim is made.
+
+**Limitations:** Replay fixes future prompts, reply lengths and tool delays; no end-to-end SWE task-success or live-agent quality gain is established. Exact verification preserves its chosen decoding rule, not bitwise equivalence to arbitrary batch-dependent baseline runs. Current implementation requires TP=1 and identical block sizes across instances; re-rotation expects BF16 KV. Layer refresh did not significantly improve online acceptance over frozen invalidated KV; in-place refresh saves memory, while much of the transfer gain is prompt completion notification. Non-speculating decode work lengthens about2–6%; saturated decode and cache eviction limit or remove gains. Cluster 96-GPU results and100–400Gb/s sensitivity are simulations fitted to testbed measurements, not a measured cluster deployment. Timing uses small12–33-session cells; only the main moderate-load configuration was run twice, other cells have session-bootstrap intervals. No matching author code release verified and no independent reproduction performed.
+
 ## [2026-11-12](../../../reports/2026/11/2026-11-12.md) — PARTIAL SEARCH
 
 ### [ADIndex: Layer-Adaptive Sparse Attention Indexing via Group-Level Distillation](<https://arxiv.org/abs/2611.12956>)
