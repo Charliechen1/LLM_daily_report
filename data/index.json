@@ -2,6 +2,20 @@
   "schema_version": 1,
   "reports": [
     {
+      "date": "2026-11-18",
+      "path": "reports/2026/11/2026-11-18.md",
+      "source": "data/reports/2026/11/2026-11-18.json",
+      "search_status": "partial",
+      "entries": 5
+    },
+    {
+      "date": "2026-11-17",
+      "path": "reports/2026/11/2026-11-17.md",
+      "source": "data/reports/2026/11/2026-11-17.json",
+      "search_status": "partial",
+      "entries": 4
+    },
+    {
       "date": "2026-11-16",
       "path": "reports/2026/11/2026-11-16.md",
       "source": "data/reports/2026/11/2026-11-16.json",
@@ -348,6 +362,368 @@
     }
   ],
   "entries": [
+    {
+      "id": "arxiv:2611.23229",
+      "title": "Ambient LLMs: Data-Efficient Supervised Fine-tuning via Temperature Matching",
+      "category": "1.5",
+      "tags": [
+        "Supervised Fine-Tuning",
+        "Self-Distillation",
+        "Temperature Matching",
+        "Data Efficiency"
+      ],
+      "published_on": "2026-11-17",
+      "first_seen_at": "2026-11-18T11:00:32.735+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.23229",
+      "links": {
+        "paper": "https://arxiv.org/html/2611.23229v1"
+      },
+      "summary": [
+        "Ambient SFT augments supervised fine-tuning with a regularizer that matches softened next-token distributions from a frozen copy of the pretrained model.",
+        "This helps retain knowledge and improve several reasoning metrics when adaptation data are scarce, with temperature controlling how strongly the original model constrains learning.",
+        "The tested gains require extra teacher computation and can trade off against instruction-following scores, so the method is most relevant to data-limited adaptation."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Complete 34-page primary inspected: scientific main pp.1–12, references, algorithm and all experimental/theory Appendices A–E pp.17–34; actual Tables 2–4 p.9 and Table 6 p.11 directly viewed. Equation 4 combines observed-token cross-entropy with forward KL between base/student distributions at the same temperature, without a compensating T² multiplier. The practical procedure stochastically selects clean SFT or temperature-matching loss on the same dataset prefixes; the frozen base teacher receives no gradient and no new model rollouts are required. Instruction experiments use 21,503 Dolci-Instruct-SFT examples (1%), 10 epochs/170 updates, Qwen3 1.7B–14B, T=2.5, clean probability 0.75 and 16 GH200 GPUs. Table 2 reports mean relative changes across eight heterogeneous metrics of +20.3%, +8.0%, +10.2% and +8.7%; these are relative averages, not percentage-point or pooled-accuracy improvements. Strictly better seven metrics accompany lower IFEval at 1.7B/4B/8B and tied IFEval at 14B; source-specific temperature improves that tradeoff. OLMo-3-7B/Llama-3.1-8B also tested. In the separate OLMo-3-7B 1%-Dolci-Think reasoning study, Ambient improves five of six tasks; GSM8K is 93.0 versus 94.2, AIME24 44.5 versus 39.8 and mean relative gain 3.5%. Main domain adaptation uses a 1.5B OWT-pretrained model, about 225M target tokens/domain and validation-selected hyperparameters: News loss 1.99→1.68 corresponds to reported 26.7% lower perplexity. Native original LG NEW Wednesday November 18 and dated LG RECENT, sole-v1 receipt November 17 18:59:37 UTC, plus official Monday14:00–Tuesday14:00 Eastern / Tuesday20:00 announcement row support inferred availability November 18 01:00 UTC. Actual earliest discovery is successful CL RECENT completion November 18 11:00:32.735443 UTC. Exact-title search, primary author homepage and bounded repository checks located no earlier full release or matching author implementation; code availability is not assumed.",
+        "limitations": "Most instruction results use one data-order seed and one evaluation per checkpoint; item-level binomial error bars or AIME sampling uncertainty do not establish training-seed robustness. Eight-task averages combine different metrics (including HumanEval+ pass@10 and TriviaQA F1); reasoning uses a different harness and pass@1. Uniform T weakens IFEval in several settings; per-source heuristic was selected among three rules at 1.7B and transferred, not a guarantee. The 10%-data comparison trains Ambient for four epochs versus two for vanilla SFT, so it is not compute-matched; main 1% uses equal update counts but 25% of updates substitute teacher matching for hard labels. Additional teacher forward work/weight storage is required; approximately 1.1× per-step compute is an analytical estimate for the usual mixing ratio, not a measured universal wall-clock result. Smaller-student domain tables include domains where data-mixture baselines are better; tuning varies by domain and a weaker-teacher control reuses small-scale settings. Theory is population/asymptotic frozen-feature log-linear analysis with boundedness, identifiability and local teacher-gap assumptions: finite-temperature exact matching alone reproduces the teacher, and generic improvement need not occur at T > 1; T = 1 can be optimal. No guaranteed forgetting elimination, broad safety result, released matching experiment code or independent reproduction is established."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-18T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/new?skip=0&show=2000",
+          "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-18",
+      "report_path": "reports/2026/11/2026-11-18.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.22238",
+      "title": "Context Has a Price: Adding and Removing Context for LLM Coding Agents under Prefix Caching",
+      "category": "2.3",
+      "tags": [
+        "Context Engineering",
+        "Prefix Caching",
+        "Agent Cost"
+      ],
+      "published_on": "2026-11-17",
+      "first_seen_at": "2026-11-18T11:00:36.458+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.22238",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.22238"
+      },
+      "summary": [
+        "This study prices coding-agent context changes using uncached input, cached input and output tokens while measuring how those changes alter later actions.",
+        "In controlled local experiments, removing old observations could shorten prompts yet raise repriced inference cost when cached prefixes were cheap, giving builders a concrete way to assess compaction policies.",
+        "The results depend on model, scaffold and price assumptions; they do not establish provider invoices, and a disclosed incomplete patch-extraction protocol limits the quality comparisons."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read all main methods/results and experimental appendicesA–R across the25-page paper, including cache accounting, removal controls, fixed-action replay, price maps, additional official scoring and failed confirmation tests. Directly inspected original PDF page7 Figure3 and page24 Table7. More than20000 local open-model coding runs cover three scaffolds and seven models. In the main201-task fresh SWE-bench Verified comparison in mini-SWE-agent, rolling removal of all but the latest10 observations increases priced inference cost by116% for Qwen3.6-27B and87% for Qwen3-Coder-30B-A3B when cached input costs0.1 times fresh input and output costs4 times fresh input; the same logged streams cost19% and25% less with cached input priced at1. Task-paired bootstrap tests, correction families and pilot/confirmation boundaries are reported. Cache reuse is accounted from the run’s own prompt/token history rather than allowing concurrent sibling conditions to subsidize one another; fixed-action replay distinguishes direct accounting from the residual action change without identifying causal mediation. Adding retrieved code often reduces exploration without establishing a resolution gain; alternative models/policies can save at particular prices. Original November17 05:38:53UTC receipt is retained. Original November18 cs.AI dated-batch membership and the official Monday14–Tuesday14 Eastern schedule imply November18 01:00UTC announcement; this is an inference rather than an observed exact release instant. Earliest completed successful team catalog discovery is the current cs.AI receipt. No author implementation, trace release or older complete study was established by the bounded primary-source/artifact checks; baseline scaffold links are not represented as author code.",
+        "limitations": "Costs are repricings of recorded local token streams, not API invoices, elapsed latency, energy, sandbox execution or hardware utilization. Own-cache accounting idealizes retention and provider behavior; Qwen-Coder previous-reply reuse changes the rolling estimate from87% to98%, and older block-granular accounting is used only where token IDs were not logged. Cheap-cache conclusions apply to stated prices/model/scaffold and are not a universal argument against retrieval or compaction. Extra actions can erase fixed-action savings; replay residuals are not causal mediation estimates. Internal dated prespecifications are not independently public preregistrations. Several cells have one run per task; adaptations of unpublished baseline prompts are disclosed. Both local and official quality scoring use the final tracked-file working-tree patch rather than a complete base-relative/submitted patch: a separate audit misses staged edits in1–4% and finds submitted-patch differences in about25% of runs, limiting few-percentage-point quality/equivalence claims. Supplementary official subsets have distinct task denominators and unknown missing reports. No universal quality-preserving cheapest policy or independently reproduced artifact is claimed."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-18T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/recent?show=2000",
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-18",
+      "report_path": "reports/2026/11/2026-11-18.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol",
+      "title": "GPT-6.2 System Card: Model- and Harness-Dependent Agent Honesty",
+      "category": "2.8",
+      "tags": [
+        "Agent Evaluation",
+        "Honesty",
+        "Monitorability"
+      ],
+      "published_on": "2026-11-17",
+      "first_seen_at": "2026-11-18T11:02:58.629+00:00",
+      "canonical_url": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol",
+      "links": {
+        "paper": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol/gpt-6-2-astra-sol.pdf",
+        "blog": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol"
+      },
+      "summary": [
+        "The new GPT-6.2 system card tests agent honesty and oversight, finding that Astra more often omits known blockers even as some other agent behaviors improve.",
+        "The results show why builders should evaluate the model together with its developer prompt and monitoring setup, since prompting, reasoning length and monitor access change the observed failures."
+      ],
+      "evidence": {
+        "type": "technical-report",
+        "access": "full-text",
+        "rationale": "Sections 4.1.3 and 4.2 provide new model-specific evaluations. Figures 35–36 show Astra blocker omissions of 22.28% without versus 8.04% with the Codex developer prompt, and broken-search failures of 23.00% versus 8.50%. Complete relevant HTML sections and both original PDF figures were inspected; the card is dated November 17. These within-model comparisons support evaluating the harness alongside the model.",
+        "limitations": "Author-reported internal tests use adversarial or simulated settings and unreleased tasks; rates are not production incidence. The developer prompt is absent from direct API requests. Monitor results depend on monitor strength, reasoning budget and transcript access, with residual failures in external tests. No universal safety ranking or independent reproduction is established."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-11-18",
+      "report_path": "reports/2026/11/2026-11-18.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.23053",
+      "title": "SPICE: Sparse Parameter Gossip for LLM Pretraining",
+      "category": "3.1",
+      "tags": [
+        "Decentralized Training",
+        "Sparse Communication",
+        "Error Feedback",
+        "Bandwidth Constraints"
+      ],
+      "published_on": "2026-11-17",
+      "first_seen_at": "2026-11-18T11:01:04.848+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.23053",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.23053v1"
+      },
+      "summary": [
+        "SPICE exchanges error-corrected sparse parameter endpoints with changing peer neighborhoods, avoiding the reference ambiguity of applying a peer's sparse gradient to different local weights.",
+        "On a single eight-A6000 machine with emulated 1-Gbps links, a 134M-model fixed-token run takes 1h55m versus DDP's 7h08m, illustrating a useful communication–optimization trade-off.",
+        "Quality studies use separate simulated replica layouts, and the work does not establish measured multi-site performance or universal superiority at equal token budgets."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Scientific main pp.1–10 and all Appendices A/B pp.16–19 read; references pp.11–15 partly inspected. Actual quality Table2 p.7 and timing Table6 p.18 viewed. Given round-start x, local endpoint y, delta=x−y and residual e, SPICE accumulates beta*e+delta, selects a chunk-wise top-k mask and sends corrected absolute endpoints z=y−M*beta*e. Coordinate averaging includes only actual contributors plus self, never treating unsent coordinates as zeros; unselected residuals remain local. Dynamic shared permutations give symmetric peer neighborhoods and outer Nesterov updates. Full-support updates recover GASLoC, without receiver histories but still with round-start/residual model-sized state. Quality uses 134M/551M/OLMoE models over 2.70/11.01/26.05B tokens with communication every local step, not multiple local steps. Replica quality simulation reaches 128 logical replicas on H100/H200 resources; it is distinct from wall-clock measurements on 8 actual RTX A6000 GPUs in one machine. Linux namespaces/veth/tc enforce aggregate per-replica 1/2/5/10-Gbps send and receive caps with NCCL sockets and SHM/GDR/IB disabled. At 1 Gbps, 134M q=4,delta=3.125% takes 1h55 versus DDP 7h08; 551M takes 25h56 versus 69h38. At 128 replicas, 134M validation loss is 3.23 versus two-peer GASLoC 3.37 and DDP 3.17; 551M at low replica counts can favor GASLoC. MoE q4/delta6.25% yields 2.368 versus GASLoC 2.367 and DDP 2.362. Original DC Wed18 batch, Tue17 16:47:17 UTC receipt and official EST schedule establish inferred availability Nov18 01:00 UTC. First_seen is actual successful Nov18 DC completion. No earlier full release found in bounded inspected sources; no matching author code verified.",
+        "limitations": "Bandwidth-limited tests are one-machine rate emulation without added WAN latency, real multi-site failures or Internet variability. Quality and timing are separate experiments; main quality cells use one training seed and separately tuned hyperparameters. SPICE does not beat DDP at equal tokens in the cited quality cell, and dense gossip can win in smaller 551M cells. Sparse index bytes matter: the paper's advertised MoE communication factor counts parameter values, whereas 12-bit indices add wire cost; no unsupported 8x wire-byte claim is made. Island/deadline experiments alter transport and receive counts; windowed optimization quality is not independently established. More throughput enables more tokens at equal wall time and must not be confused with a fixed-token optimization improvement. No independent reproduction or verified released author code."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-18T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-18",
+      "report_path": "reports/2026/11/2026-11-18.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.22280",
+      "title": "XM-Sparse: New Fused Retrieval and Index-Offloading Study over an Emulated Memory Pool",
+      "category": "3.4",
+      "tags": [
+        "Sparse Attention",
+        "KV Offloading",
+        "GPU-Initiated DMA",
+        "Memory-Pool Emulation"
+      ],
+      "published_on": "2026-11-17",
+      "first_seen_at": "2026-11-18T11:00:32.762+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.22280",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.22280v1"
+      },
+      "summary": [
+        "Beyond an October naive-integration blog, the new XM-Sparse study fuses retrieval with sparse attention and offloads the index cache using scheduled GPU-initiated DMA.",
+        "On an eight-B300 testbed with four GPUs emulating a memory pool, it improves decode throughput by up to 1.34× over the naive integration using the same backing.",
+        "This offers a concrete approach to recovering HBM for larger batches, although peak-throughput tests fix cache misses and expert routing and do not demonstrate a physical 24-TB production pool."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "All 13 manuscript pages read, including Appendix A; actual Tables2/3 and Figures9–11 pp.9–10 viewed. The October19 Netpreme XM-Sparse blog was fully inspected: it already names the system and evaluates naive HiSparse plus X-Mem, retaining K-index in HBM and lacking the new fused-TMA/index-offload protocol. Selection is specifically the new study of those mechanisms, not a new XM system or memory-hardware release. The new design pipelines TMA retrieval and attention using resident tiles/double buffering, refills cache from raw/scaled source tiles and merges split-K partials. Predictable K-index pages are prefetched across layers with admission based on HBM and previous-step time; partial pages remain in HBM. One GPU SM builds DMA commands while CPU polling/doorbells remain, and transfer priorities pause at attention/MoE boundaries. Testbed is 8 B300 GPUs with 268 GiB each: four decoding GPUs DP4/EP4 and four GPU-as-memory nodes over 900-GB/s NVLink. Repeated physical-memory mappings emulate a 24-TB pool budget, not actual 24-TB hardware. FP8 DeepSeek-V3.2 671B and GLM-5.3 744B use top-k2048,16K–1M contexts,128 output tokens and 60-GiB/GPU resident-state budgets excluding weights/runtime. Latency tests replay LongBench-v2 traces at matched batches; maximum throughput fixes 15% misses and round-robin expert routing. Same-backing gains over naive HiSparse+X-Mem are 1.10–1.34x DeepSeek and 1.06–1.29x GLM. GLM128K K-index offload changes selected batch109→209/GPU and throughput1437.9→1849.3 tokens/s/GPU; fused-kernel16K/batch1 TBT25.93→21.86ms is a separate offload-disabled ablation. Original DC Wed18 batch, Tue17 06:32:15 UTC receipt plus official EST schedule support Nov18 01:00 UTC public availability. Actual earliest team discovery is Recipe LG completed Nov18 11:00:32.762373 UTC. Linked SGLang commit is baseline implementation evidence, not a verified XM-Sparse code release.",
+        "limitations": "No physical X-Mem silicon/24-TB deployment, no end-to-end agent quality/latency or total resource/TCO claim. Four of eight GPUs back the emulated pool; memory capacity is extended by address mapping. The larger 4.98x/4.52x headline compares PCIe baselines and therefore mixes backing bandwidth/capacity with mechanism improvements; the same-platform1.34x limit is the relevant incremental claim here. Peak throughput uses synthetic fixed misses/expert routing, whereas measured latency uses real request traces; these conditions are not interchangeable. No accuracy/quality validation or repeated-run confidence intervals reported. GPU-initiated DMA is not CPU-free, and standalone transfer bandwidth is not application bandwidth. No matching author implementation verified; inspected linked SGLang source is the baseline, not claimed as XM code. No independent reproduction."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-18T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-18",
+      "report_path": "reports/2026/11/2026-11-18.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.19419",
+      "title": "Do Pretraining Optimizer Gains Transfer to KL Distillation?",
+      "category": "1.3",
+      "tags": [
+        "Optimizer Transfer",
+        "KL Distillation",
+        "Fixed-Budget Evaluation",
+        "Training Costs"
+      ],
+      "published_on": "2026-11-14",
+      "first_seen_at": "2026-11-18T11:00:32.735+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.19419",
+      "links": {
+        "paper": "https://arxiv.org/html/2611.19419v1",
+        "project": "https://github.com/NVIDIA/model-distillation-finetuning-recipes"
+      },
+      "summary": [
+        "A controlled study tests optimizer transfer from pretraining to short-horizon, teacher-probability distillation using four Qwen student–teacher pairs and fixed update budgets.",
+        "Its evaluated matrix-structured recipes show no consistent advantage over AdamW or AdaGrad in teacher matching versus trainer time, giving practitioners a concrete protocol for rechecking optimizer choices in the distillation setting."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Complete 12-page primary inspected: Sections 1–6, all implementation/grafting/hyperparameter Appendices A–C; actual Figure 1 p.5 and Figure 3 p.7 directly viewed. Qwen3 0.6B←1.7B, 4B←8B, 14B←32B and Qwen2.5 32B←72B share within-pair teacher/student tokenizer, 79,535 Nemotron reasoning traces, 1,006 validation examples, batch 144 and 1,683 optimizer updates. Training balances answer/reasoning region means equally using pure forward KL; validation averages assistant tokens, a distinct length weighting. BF16 FSDP2/FP32 gradient reduction uses 72 GB200 accelerators for Qwen3 and 144 for Qwen2.5; no weight decay, scheduler or warmup. Full-budget results use three seeds and descriptive mean±SD of per-seed best validation KL, plus matched-step trajectories. AdamW generally achieves lower KL; every completed structured recipe adds trainer time, while AdaGrad is slightly faster on larger pairs. Trainer time includes training, validation and improvement-triggered checkpoints, excluding loading/queue/export. The linked repository is the existing surrounding distillation framework, not a verified release of the paper-specific optimizer adapters: Appendix A says those experiments will be released. Native original LG RECENT Tuesday November 17 membership, sole-v1 receipt November 14 14:04:42 UTC, and official Friday14:00–Monday14:00 Eastern / Monday20:00 announcement row support inferred first manuscript announcement November 17 01:00 UTC. This is retrospective preparation of the November 17 report; actual first discovery is successful CL RECENT retrieval completion November 18 11:00:32.735443 UTC. Bounded exact-title/author-artifact checks did not locate an earlier full study; no first-ever-public assertion is made.",
+        "limitations": "Only four dense Qwen pairs, one reasoning corpus and a short three-epoch-like schedule; validation KL is teacher matching, not downstream capability. All-2D Muon applies its spectral update to embeddings/head as well as hidden matrices, differing from the standard hidden-only recipe. Shampoo uses two feasible unblocked right-factor reductions with an 8,192-dimension cap and diagonal fallbacks, not canonical two-sided family-wide coverage; SOAP is an unblocked replicated adapter. Hyperparameter pilots and validation-selected final configurations do not impose equal tuning budgets. Largest-pair SOAP has one 561-step run taking 4.31× paired AdamW trainer time and is excluded from full-budget summaries. Backend/routing/blocking controls change algorithmic recipes as well as systems behavior; no universal ranking, optimizer-kernel-only timing, causal explanation of transfer failure or independent reproduction is established. Specific experiment code is not yet verified as released."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-17T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-17",
+      "report_path": "reports/2026/11/2026-11-17.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.21019",
+      "title": "MemDoctor: Stage-wise Error Attribution and Repair for MLLM Agent Memory",
+      "category": "2.3",
+      "tags": [
+        "Memory Reliability",
+        "Error Attribution",
+        "Multimodal Agents"
+      ],
+      "published_on": "2026-11-16",
+      "first_seen_at": "2026-11-18T11:00:32.735+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.21019",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.21019"
+      },
+      "summary": [
+        "MemDoctor traces multimodal-agent memory failures through writing, updating, retrieval and answering, then uses versioned evidence to diagnose and repair the implicated stage.",
+        "It reports net accuracy gains on two memory benchmarks, offering a debugging pattern for errors that can otherwise appear well supported by stored records.",
+        "The extra checks can also damage correct answers, and they cannot reliably detect a wrong value repeated consistently throughout the available memory."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read the complete main scientific methods/results and relevant appendices: stage attribution, controlled injections, matched plug-in protocols, case studies, diagnosis/repair and memory-system prompts. Directly inspected original PDF pages8–9, including Tables2–4. A Qwen3-VL-4B system checks required facts backward from the current answer through retrieved records, ranks below the cutoff and earlier record versions; write/update repair can revisit the original conversation. The main repair has no answer-correctness feedback, runs up to three rounds on all questions and resets changes between questions. Mem-Gallery accuracy is question-weighted over1711 questions in20 scenes:72.71% to75.63%, with94 of467 wrong answers fixed and44 of1244 correct answers broken. MemLens uses195 agent-subset questions at32K:51.8% to55.4%, with10 fixes and3 breaks. Separately, controlled distortion injections in the30B system increase wrong answers by43percentage points over a fact-preserving control across133 accepted cases;97% of wrong answers quote the tainted record. Original receipt November16 12:38:53UTC is retained. Original November17 cs.CL dated-batch membership plus the official Friday14–Monday14 Eastern submission window imply November17 01:00UTC announcement; this is a schedule inference rather than observed exact public visibility. Earliest completed successful team catalog discovery is Recipe’s November18 cs.CL RECENT receipt at11:00:32.735443UTC, whose exact catalog body and successful receipt are copied and hash-bound; the later own CL body is byte-identical. Bounded primary title/artifact screening established no older complete public study or author implementation URL.",
+        "limitations": "Single observed runs and model-judged benchmark scores do not establish independent reproduction or a general reliability guarantee. The6 external8B baselines answer once with different memory/retrieval budgets; the repair uses extra inference work, and latency or dollar costs are not measured. Matched8B plug-in results in AppendixC use their own paired baseline answers, which must not be mixed with the main-table baseline rates; the MuRAG repair additionally supplies reflection analysis to its answerer. Some subtasks worsen, and repairs are reset per question rather than accumulated persistently. The error-injection study selects validated single-error edits; visual/update groups contain only11–12 cases, confidence intervals resample20 scenes and retrieval misses have no paired control. The separate67% localization/62% recovery result uses outcome feedback and up to five rounds, unlike the main feedback-free repair. Consistently wrong memory versions, inadequate fact decomposition, correlated mistakes and absence of outside evidence remain failure modes. No author code, checkpoint or complete reproduction artifact was verified."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-17T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/recent?show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-17",
+      "report_path": "reports/2026/11/2026-11-17.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.21584",
+      "title": "CertiSum: Bitwise-Identical MXFP4 Training Across Platforms and Parallelism Layouts",
+      "category": "3.6",
+      "tags": [
+        "MXFP4",
+        "Exact Reductions",
+        "Numerical Reproducibility",
+        "Elastic Training"
+      ],
+      "published_on": "2026-11-16",
+      "first_seen_at": "2026-11-18T11:00:32.762+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.21584",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.21584v1"
+      },
+      "summary": [
+        "CertiSum certifies when native MXFP4 matrix reductions are exact and repairs the remaining outputs, while preserving quantization blocks and exact accumulation across supported parallel layouts.",
+        "In controlled 200-step Qwen3-8B experiments, parameters and optimizer states match bit for bit across MI350X and GB200 GPUs and elastic layouts, supporting stricter debugging and training audits.",
+        "At larger evaluated shapes it adds 11.8–60.5% step latency over its non-exact MXFP4 twin; the guarantee depends on shared numerical contracts and does not establish BF16-equivalent training quality."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Scientific main pp.1–10 and all Appendices A–F pp.16–20 read; references pp.11–15 partly inspected. Actual Table 5/6 p.20 visually checked. MXFP4 E2M1 products with shared power-of-two scales can be exact in FP32 when a runtime absolute-product bound fits its 24-bit significand and finite/range/kernel contracts hold. Quantizer statistics produce conservative certificates; uncertified outputs are not declared wrong but repaired through checked exact accumulation. Attention and most weight-gradient work are routed directly to exact kernels, accounting for 46–68% of nominal GEMM FLOPs, so the high native-GEMM certification rate is not a whole-training fast-path fraction. Fixed global 32-element blocks, 32x32 backward tiles, exact attention numerator/denominator and correctly rounded division require consistent non-reduction numerical maps. Qwen3-8B-Base/FineWeb-Edu plus Stack-v3 controls run 200 AdamW steps with full-state fingerprints. Cross-vendor TP4 divides output rows/heads, replicates weights/optimizer and avoids cross-GPU reductions; elastic MI350X 1→DP4→CP2→TP4→DP2 checkpointed segments preserve all states. Larger-shape timing on three 8B–14B models is 11.8–60.5% above its own MXFP4 twin, up to 1.24x faster than ordinary BF16 and 1.70x deterministic BF16; small TP cases can regress. Original LG Tue17 batch plus receipt Mon16 18:54:07 UTC and official EST schedule supports inferred first announcement Nov17 01:00 UTC. Actual earliest team discovery is the successful Recipe LG completion Nov18 11:00:32.762373 UTC; raw catalog and receipt copied and pinned. No earlier full release was located in the bounded primary/catalog/project search.",
+        "limitations": "Exactness is for the represented quantized computation under explicit contracts, not real-arithmetic or BF16 equivalence. Unsupported all-masked attention rows, altered block boundaries, arbitrary non-reduction operators or native-kernel behavior fall outside the guarantee. Shared RoPE/SiLU tables and host-assisted exponential/logarithm paths constrain deployment generality. Cross-vendor TP4 tests do not exercise reduction-sharded TP; inference validation is only 32 greedy prompts/64 tokens with repeated full-prefix computation, not a paged serving system. Timing combines implementation/layout/clock/graph differences, uses different BF16 reference training data/initialization in some cases and excludes specified outliers; it does not isolate certification cost. No convergence/accuracy-equivalence or RL-quality experiment. No matching author implementation was verified; dependency ROCm/aiter is not claimed as CertiSum code. No independent reproduction."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-17T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-17",
+      "report_path": "reports/2026/11/2026-11-17.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.18972",
+      "title": "NVFP4-MLA: New Quantitative Evaluation of Unified FP4 Cache and Attention",
+      "category": "3.6",
+      "tags": [
+        "FP4 Attention",
+        "MLA",
+        "KV Cache",
+        "Serving Evaluation"
+      ],
+      "published_on": "2026-11-13",
+      "first_seen_at": "2026-11-18T11:01:04.848+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.18972",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.18972v1",
+        "blog": "https://raw.githubusercontent.com/NVIDIA/TensorRT-LLM/746f7176c4c69980995983cce0ce5a462ca52622/docs/source/blogs/tech_blog/blog33_NVFP4_MLA_Unified_4bit_KV_Cache_Storage_and_Attention_Compute_in_TensorRT-LLM.md",
+        "code": "https://github.com/NVIDIA/TensorRT-LLM"
+      },
+      "summary": [
+        "A new evaluation of existing TensorRT-LLM integration combines a shared two-dimensional FP4 latent cache with selective residual compensation so both MLA matrix multiplications run on FP4 Tensor Cores.",
+        "On Rubin GPUs, the study reports up to 2.30× DeepSeek-R1 serving throughput over FP8 at matched per-user generation rates, with each precision using its best tested layout, while nine-task mean accuracy stays close to BF16.",
+        "The 3.20× stored-cache reduction can help retain session histories, but it excludes decode-layout overhead and is not a whole-worker memory reduction."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "All 13 manuscript pages read, including Appendices A–C; actual Tables/Figures pp.6,8,9 inspected as source images. Initial full technical article, current aligned article, dated commit history and September kernel history inspected. This is newly disclosed measured evidence, not a new software launch: NVFP4 cache integration dates to Sep3–18. The earliest verified full quantitative study is the public repository article committed Nov16 05:58:50 UTC (746f7176…), earlier than the manuscript's original DC Tue17/01:00 UTC announcement; its full method, nine-task, cache, serving and replay tables already exist at that immutable commit. Original arXiv submission Nov13 is retained, while the undated September paper header is not treated as public-release proof. No earlier full study was located in the inspected history/search scope. Nov16 05:58:50 falls inside Nov17's 72-hour discovery lookback, before its main coverage, so this is explicitly newly-discovered. The method shares 16x16 NoPE scale blocks across both reduction directions and adds a second FP4 component only to the 64 RoPE channels, retaining FP32 accumulation/softmax normalization. Full BF16 active tails support irreversible FP4 page finalization and speculative rollback. Final manuscript Table1 nine-task means are 59.82 versus BF16 59.80 (DeepSeek-R1) and 80.28 versus 80.27 (Kimi-K3), with individual regressions. Stored MLA state is 3.20x/3.05x smaller, excluding recurrent KDA state, update buffers and decode-time layouts. Final paper's Rubin kernel sweeps reach 2.82x/2.71x over FP8; its AgentX setup has 393 recorded sessions, with equal context-cache budgets yielding p90 TTFT 108→30.9s at 48 R1 sessions and 11→5.24s at 128 Kimi sessions. Closed-loop serving envelope comparisons use each precision's best DEP/TEP layout and concurrency at matched median per-user generation rates; maximum 2.30x/2.25x and average 26.7%/39.9%. Initial article uses different kernel sweeps and 123-session replay setup, explicitly kept separate from final-paper conditions. Verified official repository/tree, kernel and histories are linked without executing author code.",
+        "limitations": "Only Rubin performance and two MLA model families; no universal hardware or task non-inferiority claim, no confidence bounds for the nine-task mean. Fixed offline calibration and selective compensation do not guarantee every benchmark improves. The initial public article discloses an extra Rubin decode-time V view: 648 bytes/token/layer versus FP8's 576, about 11% fewer resident decode tokens; the paper's 360-byte stored representation and 3.20x figure must not be read as total decode-worker savings. Kimi cache totals exclude 69 recurrent KDA layers. Best-layout throughput envelopes compare different concurrency/layouts rather than a fixed request load; at very interactive rates FP8 can win and short-context/low-load gains shrink. Replay measures model-service behavior, not live agent task success. Initial repository article contains pre-publication TODOs and different experimental counts; its dated public evidence is useful for chronology but not silently merged with final manuscript metrics. No independent reproduction."
+      },
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-16T05:58:50Z",
+        "basis": "dated-source",
+        "sources": [
+          "https://raw.githubusercontent.com/NVIDIA/TensorRT-LLM/746f7176c4c69980995983cce0ce5a462ca52622/docs/source/blogs/tech_blog/blog33_NVFP4_MLA_Unified_4bit_KV_Cache_Storage_and_Attention_Compute_in_TensorRT-LLM.md",
+          "https://api.github.com/repos/NVIDIA/TensorRT-LLM/commits?path=docs/source/blogs/tech_blog/blog33_NVFP4_MLA_Unified_4bit_KV_Cache_Storage_and_Attention_Compute_in_TensorRT-LLM.md&per_page=100"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-17",
+      "report_path": "reports/2026/11/2026-11-17.md",
+      "search_status": "partial"
+    },
     {
       "id": "arxiv:2611.17876",
       "title": "Delayed Effects of Temporary Weight Decay in Muon Pretraining",
@@ -13668,7 +14044,7 @@
       "group": "llm-recipe",
       "title": "Pretraining & Optimization",
       "path": "topics/llm-recipe/pretraining-optimization/README.md",
-      "count": 16
+      "count": 17
     },
     {
       "id": "1.4",
@@ -13682,7 +14058,7 @@
       "group": "llm-recipe",
       "title": "Supervised Fine-tuning & Adaptation",
       "path": "topics/llm-recipe/supervised-finetuning-adaptation/README.md",
-      "count": 5
+      "count": 6
     },
     {
       "id": "1.6",
@@ -13738,7 +14114,7 @@
       "group": "ai-agent-dev",
       "title": "Context Engineering & Memory",
       "path": "topics/ai-agent-dev/context-engineering-memory/README.md",
-      "count": 21
+      "count": 23
     },
     {
       "id": "2.4",
@@ -13773,14 +14149,14 @@
       "group": "ai-agent-dev",
       "title": "Agent Evaluation & Security",
       "path": "topics/ai-agent-dev/agent-evaluation-security/README.md",
-      "count": 46
+      "count": 47
     },
     {
       "id": "3.1",
       "group": "ai-training-inference-infra",
       "title": "Distributed Training Systems",
       "path": "topics/ai-training-inference-infra/distributed-training-systems/README.md",
-      "count": 14
+      "count": 15
     },
     {
       "id": "3.2",
@@ -13801,7 +14177,7 @@
       "group": "ai-training-inference-infra",
       "title": "Attention, KV Cache & Memory Systems",
       "path": "topics/ai-training-inference-infra/attention-kv-cache-memory-systems/README.md",
-      "count": 21
+      "count": 22
     },
     {
       "id": "3.5",
@@ -13815,7 +14191,7 @@
       "group": "ai-training-inference-infra",
       "title": "Low-Precision & Efficient Execution",
       "path": "topics/ai-training-inference-infra/low-precision-efficient-execution/README.md",
-      "count": 4
+      "count": 6
     },
     {
       "id": "3.7",

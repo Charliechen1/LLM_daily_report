@@ -5,6 +5,22 @@ Objectives, optimizers, learning rates, batch sizes and training stability.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-17](../../../reports/2026/11/2026-11-17.md) — PARTIAL SEARCH
+
+### [Do Pretraining Optimizer Gains Transfer to KL Distillation?](<https://arxiv.org/abs/2611.19419>)
+
+A controlled study tests optimizer transfer from pretraining to short-horizon, teacher-probability distillation using four Qwen student–teacher pairs and fixed update budgets. Its evaluated matrix-structured recipes show no consistent advantage over AdamW or AdaGrad in teacher matching versus trainer time, giving practitioners a concrete protocol for rechecking optimizer choices in the distillation setting.
+
+**Published:** 2026-11-14 · **First seen:** 2026-11-18T11:00:32.735+00:00 · **Novelty:** new · **Tags:** Optimizer Transfer, KL Distillation, Fixed-Budget Evaluation, Training Costs
+
+**Public availability:** 2026-11-17T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2611.19419v1>) · [Project](<https://github.com/NVIDIA/model-distillation-finetuning-recipes>)
+
+**Evidence:** research-paper; full-text. Complete 12-page primary inspected: Sections 1–6, all implementation/grafting/hyperparameter Appendices A–C; actual Figure 1 p.5 and Figure 3 p.7 directly viewed. Qwen3 0.6B←1.7B, 4B←8B, 14B←32B and Qwen2.5 32B←72B share within-pair teacher/student tokenizer, 79,535 Nemotron reasoning traces, 1,006 validation examples, batch 144 and 1,683 optimizer updates. Training balances answer/reasoning region means equally using pure forward KL; validation averages assistant tokens, a distinct length weighting. BF16 FSDP2/FP32 gradient reduction uses 72 GB200 accelerators for Qwen3 and 144 for Qwen2.5; no weight decay, scheduler or warmup. Full-budget results use three seeds and descriptive mean±SD of per-seed best validation KL, plus matched-step trajectories. AdamW generally achieves lower KL; every completed structured recipe adds trainer time, while AdaGrad is slightly faster on larger pairs. Trainer time includes training, validation and improvement-triggered checkpoints, excluding loading/queue/export. The linked repository is the existing surrounding distillation framework, not a verified release of the paper-specific optimizer adapters: Appendix A says those experiments will be released. Native original LG RECENT Tuesday November 17 membership, sole-v1 receipt November 14 14:04:42 UTC, and official Friday14:00–Monday14:00 Eastern / Monday20:00 announcement row support inferred first manuscript announcement November 17 01:00 UTC. This is retrospective preparation of the November 17 report; actual first discovery is successful CL RECENT retrieval completion November 18 11:00:32.735443 UTC. Bounded exact-title/author-artifact checks did not locate an earlier full study; no first-ever-public assertion is made.
+
+**Limitations:** Only four dense Qwen pairs, one reasoning corpus and a short three-epoch-like schedule; validation KL is teacher matching, not downstream capability. All-2D Muon applies its spectral update to embeddings/head as well as hidden matrices, differing from the standard hidden-only recipe. Shampoo uses two feasible unblocked right-factor reductions with an 8,192-dimension cap and diagonal fallbacks, not canonical two-sided family-wide coverage; SOAP is an unblocked replicated adapter. Hyperparameter pilots and validation-selected final configurations do not impose equal tuning budgets. Largest-pair SOAP has one 561-step run taking 4.31× paired AdamW trainer time and is excluded from full-budget summaries. Backend/routing/blocking controls change algorithmic recipes as well as systems behavior; no universal ranking, optimizer-kernel-only timing, causal explanation of transfer failure or independent reproduction is established. Specific experiment code is not yet verified as released.
+
 ## [2026-11-16](../../../reports/2026/11/2026-11-16.md) — PARTIAL SEARCH
 
 ### [Delayed Effects of Temporary Weight Decay in Muon Pretraining](<https://arxiv.org/abs/2611.17876>)

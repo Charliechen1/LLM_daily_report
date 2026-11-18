@@ -5,6 +5,22 @@ Attention execution, KV management/reuse, offloading and long-context memory eff
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-18](../../../reports/2026/11/2026-11-18.md) — PARTIAL SEARCH
+
+### [XM-Sparse: New Fused Retrieval and Index-Offloading Study over an Emulated Memory Pool](<https://arxiv.org/abs/2611.22280>)
+
+Beyond an October naive-integration blog, the new XM-Sparse study fuses retrieval with sparse attention and offloads the index cache using scheduled GPU-initiated DMA. On an eight-B300 testbed with four GPUs emulating a memory pool, it improves decode throughput by up to 1.34× over the naive integration using the same backing. This offers a concrete approach to recovering HBM for larger batches, although peak-throughput tests fix cache misses and expert routing and do not demonstrate a physical 24-TB production pool.
+
+**Published:** 2026-11-17 · **First seen:** 2026-11-18T11:00:32.762+00:00 · **Novelty:** new · **Tags:** Sparse Attention, KV Offloading, GPU-Initiated DMA, Memory-Pool Emulation
+
+**Public availability:** 2026-11-18T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.22280v1>)
+
+**Evidence:** research-paper; full-text. All 13 manuscript pages read, including Appendix A; actual Tables2/3 and Figures9–11 pp.9–10 viewed. The October19 Netpreme XM-Sparse blog was fully inspected: it already names the system and evaluates naive HiSparse plus X-Mem, retaining K-index in HBM and lacking the new fused-TMA/index-offload protocol. Selection is specifically the new study of those mechanisms, not a new XM system or memory-hardware release. The new design pipelines TMA retrieval and attention using resident tiles/double buffering, refills cache from raw/scaled source tiles and merges split-K partials. Predictable K-index pages are prefetched across layers with admission based on HBM and previous-step time; partial pages remain in HBM. One GPU SM builds DMA commands while CPU polling/doorbells remain, and transfer priorities pause at attention/MoE boundaries. Testbed is 8 B300 GPUs with 268 GiB each: four decoding GPUs DP4/EP4 and four GPU-as-memory nodes over 900-GB/s NVLink. Repeated physical-memory mappings emulate a 24-TB pool budget, not actual 24-TB hardware. FP8 DeepSeek-V3.2 671B and GLM-5.3 744B use top-k2048,16K–1M contexts,128 output tokens and 60-GiB/GPU resident-state budgets excluding weights/runtime. Latency tests replay LongBench-v2 traces at matched batches; maximum throughput fixes 15% misses and round-robin expert routing. Same-backing gains over naive HiSparse+X-Mem are 1.10–1.34x DeepSeek and 1.06–1.29x GLM. GLM128K K-index offload changes selected batch109→209/GPU and throughput1437.9→1849.3 tokens/s/GPU; fused-kernel16K/batch1 TBT25.93→21.86ms is a separate offload-disabled ablation. Original DC Wed18 batch, Tue17 06:32:15 UTC receipt plus official EST schedule support Nov18 01:00 UTC public availability. Actual earliest team discovery is Recipe LG completed Nov18 11:00:32.762373 UTC. Linked SGLang commit is baseline implementation evidence, not a verified XM-Sparse code release.
+
+**Limitations:** No physical X-Mem silicon/24-TB deployment, no end-to-end agent quality/latency or total resource/TCO claim. Four of eight GPUs back the emulated pool; memory capacity is extended by address mapping. The larger 4.98x/4.52x headline compares PCIe baselines and therefore mixes backing bandwidth/capacity with mechanism improvements; the same-platform1.34x limit is the relevant incremental claim here. Peak throughput uses synthetic fixed misses/expert routing, whereas measured latency uses real request traces; these conditions are not interchangeable. No accuracy/quality validation or repeated-run confidence intervals reported. GPU-initiated DMA is not CPU-free, and standalone transfer bandwidth is not application bandwidth. No matching author implementation verified; inspected linked SGLang source is the baseline, not claimed as XM code. No independent reproduction.
+
 ## [2026-11-16](../../../reports/2026/11/2026-11-16.md) — PARTIAL SEARCH
 
 ### [Callo: Serving Cache-Miss Requests with Speculative Decoding on Invalidated KV under Prefill-Decode Disaggregation](<https://arxiv.org/abs/2611.18459>)

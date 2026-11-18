@@ -1,0 +1,932 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-17",
+  "timezone": "America/Los_Angeles",
+  "generated_at": "2026-11-18T11:23:02.947+00:00",
+  "coverage": {
+    "start": "2026-11-16T03:00:00-08:00",
+    "end": "2026-11-17T03:00:00-08:00"
+  },
+  "search": {
+    "status": "partial",
+    "notes": "This retrospectively prepared report covers November 16 03:00 through November 17 03:00 America/Los_Angeles (-08:00), with an exact 72-hour discovery window from November 14 11:00 UTC to November 17 11:00 UTC. The three original arXiv studies were announced in the November 17 batch. NVFP4-MLA is explicitly newly-discovered: the earliest verified full quantitative article was public November 16 05:58:50 UTC, inside the discovery lookback but before the main window. Its September integration is not a new release, and the initial article and final manuscript use different experimental conditions that are kept separate. All 26 topics were screened through current primary catalogs and relevant lab/engineering sources against the September 29 baseline and complete 366-record registry. Nine contributions across the two separate reports passed full-text evidence review without a minimum quota; unselected reserves were not promoted merely because their PDFs were retrieved. Actual first discovery occurred during November 18 retrieval and uses successful completion timestamps, including earlier cross-team catalogs; original submission/publication dates are preserved. Original arXiv dated batches plus the official Eastern-US schedule support explicitly inferred announcement times, not observed exact server-release instants. Selected primary papers/reports were accessible; no abstract-only item is included. OpenReview submission discovery returned HTTP 403, leaving a material gap. ACL/EMNLP and NeurIPS checks are bounded native-index chronology/metadata screening, not full scientific reviews of proceedings; all 7,070 EMNLP paper IDs remain present, with inspected title/author/footer corrections. No matching author implementation was verified for MemDoctor, Context Has a Price, CertiSum, Ambient SFT, SPICE or XM-Sparse; the optimizer link is an existing surrounding framework rather than the promised experiment adapters. Old complete releases, existing code alone, cross-listings and minor revisions do not establish novelty: the older Olmo-core release, Gandalf/BVB results and earlier complete skill/harness studies were not recycled. Numerical exactness is distinguished from BF16 quality, teacher KL from downstream capability, repriced token streams from invoices, simulated/emulated systems from measured deployments, and model-only behavior from harness- and monitor-dependent outcomes. No independent reproduction or universal SoTA claim is made.",
+    "sources_checked": [
+      {
+        "name": "earlier-team-cl-recent.html",
+        "url": "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "recipe-lg-recent.html (earlier completed primary discovery)",
+        "url": "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "cl-month.html",
+        "url": "https://arxiv.org/list/cs.CL/2026-11?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "availability.html",
+        "url": "https://info.arxiv.org/help/availability.html",
+        "status": "ok"
+      },
+      {
+        "name": "hf-blog.html",
+        "url": "https://huggingface.co/blog",
+        "status": "ok"
+      },
+      {
+        "name": "tml-blog.html",
+        "url": "https://thinkingmachines.ai/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "cl-new.html",
+        "url": "https://arxiv.org/list/cs.CL/new?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "lg-new.html",
+        "url": "https://arxiv.org/list/cs.LG/new?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "2611.19419-abstract.html",
+        "url": "https://arxiv.org/abs/2611.19419",
+        "status": "ok"
+      },
+      {
+        "name": "2611.19419.pdf",
+        "url": "https://arxiv.org/pdf/2611.19419v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.19419.html",
+        "url": "https://arxiv.org/html/2611.19419v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.19042-abstract.html",
+        "url": "https://arxiv.org/abs/2611.19042",
+        "status": "ok"
+      },
+      {
+        "name": "2611.19042.pdf",
+        "url": "https://arxiv.org/pdf/2611.19042v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.19042.html",
+        "url": "https://arxiv.org/html/2611.19042v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.23229-abstract.html",
+        "url": "https://arxiv.org/abs/2611.23229",
+        "status": "ok"
+      },
+      {
+        "name": "2611.23229.pdf",
+        "url": "https://arxiv.org/pdf/2611.23229v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.23229.html",
+        "url": "https://arxiv.org/html/2611.23229v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.22947-abstract.html",
+        "url": "https://arxiv.org/abs/2611.22947",
+        "status": "ok"
+      },
+      {
+        "name": "2611.22947.pdf",
+        "url": "https://arxiv.org/pdf/2611.22947v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.22947.html",
+        "url": "https://arxiv.org/html/2611.22947v1",
+        "status": "ok"
+      },
+      {
+        "name": "optimizer-repo.json",
+        "url": "https://api.github.com/repos/NVIDIA/model-distillation-recipes",
+        "status": "ok"
+      },
+      {
+        "name": "optimizer-readme.md",
+        "url": "https://raw.githubusercontent.com/NVIDIA/model-distillation-recipes/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "optimizer-tree.json",
+        "url": "https://api.github.com/repos/NVIDIA/model-distillation-recipes/git/trees/main?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "kernel-repo.json",
+        "url": "https://api.github.com/repos/firatoncel/KernelRealityCheckNeurIPS2026",
+        "status": "ok"
+      },
+      {
+        "name": "kernel-readme.md",
+        "url": "https://raw.githubusercontent.com/firatoncel/KernelRealityCheckNeurIPS2026/main/README.md",
+        "status": "unavailable"
+      },
+      {
+        "name": "kernel-commits.json",
+        "url": "https://api.github.com/repos/firatoncel/KernelRealityCheckNeurIPS2026/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "ambient-title-search.html",
+        "url": "https://arxiv.org/search/?query=%22Ambient+LLMs%22&searchtype=all&abstracts=show&order=-announced_date_first&size=50",
+        "status": "ok"
+      },
+      {
+        "name": "kernel-readme-master.md",
+        "url": "https://raw.githubusercontent.com/firatoncel/KernelRealityCheckNeurIPS2026/master/readme.md",
+        "status": "unavailable"
+      },
+      {
+        "name": "kernel-initial-tree.json",
+        "url": "https://api.github.com/repos/firatoncel/KernelRealityCheckNeurIPS2026/git/trees/78e331da25c3eb18f80892d039f9a0a094582c04?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "ambient-author-home.html",
+        "url": "https://giannisdaras.com/",
+        "status": "ok"
+      },
+      {
+        "name": "ambient-repo-search.json",
+        "url": "https://api.github.com/search/repositories?q=%22Ambient%22+%22LLMs%22",
+        "status": "ok"
+      },
+      {
+        "name": "optimizer-history.json",
+        "url": "https://api.github.com/repos/NVIDIA/model-distillation-recipes/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "optimizer-project.html",
+        "url": "https://github.com/NVIDIA/model-distillation-finetuning-recipes",
+        "status": "ok"
+      },
+      {
+        "name": "kernel-readme-master-correct.md",
+        "url": "https://raw.githubusercontent.com/firatoncel/KernelRealityCheckNeurIPS2026/master/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "ambient-exact-repo-search.json",
+        "url": "https://api.github.com/search/repositories?q=%22ambient-sft%22",
+        "status": "ok"
+      },
+      {
+        "name": "jetriever-repo.json",
+        "url": "https://api.github.com/repos/imlrz/Jetriever",
+        "status": "ok"
+      },
+      {
+        "name": "jetriever-commits.json",
+        "url": "https://api.github.com/repos/imlrz/Jetriever/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "jetriever-readme.md",
+        "url": "https://raw.githubusercontent.com/imlrz/Jetriever/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "skilltransfer-repo.json",
+        "url": "https://api.github.com/repos/Yifan-Lan/Skill-Transfer",
+        "status": "ok"
+      },
+      {
+        "name": "skilltransfer-commits.json",
+        "url": "https://api.github.com/repos/Yifan-Lan/Skill-Transfer/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "2611.21478-abs.html",
+        "url": "https://arxiv.org/abs/2611.21478",
+        "status": "ok"
+      },
+      {
+        "name": "2611.18585-abs.html",
+        "url": "https://arxiv.org/abs/2611.18585",
+        "status": "ok"
+      },
+      {
+        "name": "2611.18624-abs.html",
+        "url": "https://arxiv.org/abs/2611.18624",
+        "status": "ok"
+      },
+      {
+        "name": "2611.22238-abs.html",
+        "url": "https://arxiv.org/abs/2611.22238",
+        "status": "ok"
+      },
+      {
+        "name": "2611.22017-abs.html",
+        "url": "https://arxiv.org/abs/2611.22017",
+        "status": "ok"
+      },
+      {
+        "name": "2611.22841-abs.html",
+        "url": "https://arxiv.org/abs/2611.22841",
+        "status": "ok"
+      },
+      {
+        "name": "ai-recent.html",
+        "url": "https://arxiv.org/list/cs.AI/recent?show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "cl-recent.html",
+        "url": "https://arxiv.org/list/cs.CL/recent?show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "se-recent.html",
+        "url": "https://arxiv.org/list/cs.SE/recent?show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "anthropic-research.html",
+        "url": "https://www.anthropic.com/research",
+        "status": "ok"
+      },
+      {
+        "name": "anthropic-engineering.html",
+        "url": "https://www.anthropic.com/engineering",
+        "status": "ok"
+      },
+      {
+        "name": "claude-articles.html",
+        "url": "https://claude.com/blog",
+        "status": "ok"
+      },
+      {
+        "name": "langchain-blog.html",
+        "url": "https://blog.langchain.com/",
+        "status": "ok"
+      },
+      {
+        "name": "2611.21478-source.pdf",
+        "url": "https://arxiv.org/pdf/2611.21478",
+        "status": "ok"
+      },
+      {
+        "name": "2611.21478-html.html",
+        "url": "https://arxiv.org/html/2611.21478v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.22238-source.pdf",
+        "url": "https://arxiv.org/pdf/2611.22238",
+        "status": "ok"
+      },
+      {
+        "name": "2611.22238-html.html",
+        "url": "https://arxiv.org/html/2611.22238v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.22841-source.pdf",
+        "url": "https://arxiv.org/pdf/2611.22841",
+        "status": "ok"
+      },
+      {
+        "name": "2611.22841-html.html",
+        "url": "https://arxiv.org/html/2611.22841v1",
+        "status": "unavailable"
+      },
+      {
+        "name": "2611.21019-abs.html",
+        "url": "https://arxiv.org/abs/2611.21019",
+        "status": "ok"
+      },
+      {
+        "name": "2611.21019-source.pdf",
+        "url": "https://arxiv.org/pdf/2611.21019",
+        "status": "ok"
+      },
+      {
+        "name": "2611.21019-html.html",
+        "url": "https://arxiv.org/html/2611.21019v1",
+        "status": "ok"
+      },
+      {
+        "name": "gandalf-launch.html",
+        "url": "https://joinhandshake.com/research/ai/gandalf-the-grader/",
+        "status": "ok"
+      },
+      {
+        "name": "bvb-results-readme.md",
+        "url": "https://raw.githubusercontent.com/Handshake-AI-Research/bankerverifierbench/main/results/paper/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "bvb-tree.json",
+        "url": "https://api.github.com/repos/Handshake-AI-Research/bankerverifierbench/git/trees/main?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "jetriever-old-tree.json",
+        "url": "https://api.github.com/repos/imlrz/Jetriever/git/trees/86307cd379?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "jetriever-old-method.md",
+        "url": "https://raw.githubusercontent.com/imlrz/Jetriever/86307cd379/docs/METHOD_CARD.md",
+        "status": "ok"
+      },
+      {
+        "name": "skilltransfer-paper-commit.json",
+        "url": "https://api.github.com/repos/Yifan-Lan/Skill-Transfer/commits/219a992e71",
+        "status": "ok"
+      },
+      {
+        "name": "ai-new.html",
+        "url": "https://arxiv.org/list/cs.AI/new",
+        "status": "ok"
+      },
+      {
+        "name": "cl-new.html",
+        "url": "https://arxiv.org/list/cs.CL/new",
+        "status": "ok"
+      },
+      {
+        "name": "se-new.html",
+        "url": "https://arxiv.org/list/cs.SE/new",
+        "status": "ok"
+      },
+      {
+        "name": "bvb-conditions.csv",
+        "url": "https://raw.githubusercontent.com/Handshake-AI-Research/bankerverifierbench/da7f54d18/results/paper/conditions.csv",
+        "status": "ok"
+      },
+      {
+        "name": "bvb-capability-summary.json",
+        "url": "https://raw.githubusercontent.com/Handshake-AI-Research/bankerverifierbench/da7f54d18/results/paper/capabilities/summary.json",
+        "status": "ok"
+      },
+      {
+        "name": "skilltransfer-old-preprint.pdf",
+        "url": "https://raw.githubusercontent.com/Yifan-Lan/Skill-Transfer/219a992e71edb423735b11423725a5c6ddada2e3/paper/SKill_Transfer_preprint.pdf",
+        "status": "ok"
+      },
+      {
+        "name": "langchain-proactive.html",
+        "url": "https://www.langchain.com/blog/what-weve-learned-building-proactive-agents",
+        "status": "ok"
+      },
+      {
+        "name": "langchain-goals.html",
+        "url": "https://www.langchain.com/blog/from-tasks-to-goals",
+        "status": "ok"
+      },
+      {
+        "name": "langchain-rebuild.html",
+        "url": "https://www.langchain.com/blog/we-rebuilt-langsmith-around-the-agent",
+        "status": "ok"
+      },
+      {
+        "name": "gandalf-repo.json",
+        "url": "https://api.github.com/repos/Handshake-AI-Research/gandalf-the-grader",
+        "status": "ok"
+      },
+      {
+        "name": "gandalf-commits.json",
+        "url": "https://api.github.com/repos/Handshake-AI-Research/gandalf-the-grader/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "gandalf-readme.md",
+        "url": "https://raw.githubusercontent.com/Handshake-AI-Research/gandalf-the-grader/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "bvb-repo.json",
+        "url": "https://api.github.com/repos/Handshake-AI-Research/bankerverifierbench",
+        "status": "ok"
+      },
+      {
+        "name": "bvb-commits.json",
+        "url": "https://api.github.com/repos/Handshake-AI-Research/bankerverifierbench/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "bvb-readme.md",
+        "url": "https://raw.githubusercontent.com/Handshake-AI-Research/bankerverifierbench/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "certisum-repo-search.json",
+        "url": "https://api.github.com/search/repositories?q=CertiSum",
+        "status": "ok"
+      },
+      {
+        "name": "trt-repo.json",
+        "url": "https://api.github.com/repos/NVIDIA/TensorRT-LLM",
+        "status": "ok"
+      },
+      {
+        "name": "trt-tree.json",
+        "url": "https://api.github.com/repos/NVIDIA/TensorRT-LLM/git/trees/main?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "nv-sparse-blog.html",
+        "url": "https://developer.nvidia.com/blog/co-designing-sparse-attention-for-efficient-long-context-inference/",
+        "status": "ok"
+      },
+      {
+        "name": "tailroll-report.md",
+        "url": "https://raw.githubusercontent.com/Accio-Lab/Dressage/main/docs/engine-rebalancing-report-en.md",
+        "status": "ok"
+      },
+      {
+        "name": "tailroll-history.json",
+        "url": "https://api.github.com/repos/Accio-Lab/Dressage/commits?path=docs/engine-rebalancing-report-en.md&per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "gemmakv-pr.json",
+        "url": "https://api.github.com/repos/vllm-project/vllm/pulls/65685",
+        "status": "ok"
+      },
+      {
+        "name": "gemmakv-issue.json",
+        "url": "https://api.github.com/repos/vllm-project/vllm/issues/64307",
+        "status": "ok"
+      },
+      {
+        "name": "xm-commit.json",
+        "url": "https://api.github.com/repos/sgl-project/sglang/commits/5469faec45c89110be1ebc3828ee409932077435",
+        "status": "ok"
+      },
+      {
+        "name": "2611.18972-abs.html",
+        "url": "https://arxiv.org/abs/2611.18972v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.20106-abs.html",
+        "url": "https://arxiv.org/abs/2611.20106v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.18956-abs.html",
+        "url": "https://arxiv.org/abs/2611.18956v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.21584-abs.html",
+        "url": "https://arxiv.org/abs/2611.21584v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.23053-abs.html",
+        "url": "https://arxiv.org/abs/2611.23053v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.22206-abs.html",
+        "url": "https://arxiv.org/abs/2611.22206v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.22280-abs.html",
+        "url": "https://arxiv.org/abs/2611.22280v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.23035-abs.html",
+        "url": "https://arxiv.org/abs/2611.23035v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.18972-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.18972v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.20106-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.20106v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.18956-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.18956v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.21584-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.21584v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.23053-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.23053v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.22206-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.22206v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.22280-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.22280v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.23035-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.23035v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.18972-canonical.html",
+        "url": "https://arxiv.org/abs/2611.18972",
+        "status": "ok"
+      },
+      {
+        "name": "2611.21584-canonical.html",
+        "url": "https://arxiv.org/abs/2611.21584",
+        "status": "ok"
+      },
+      {
+        "name": "2611.23053-canonical.html",
+        "url": "https://arxiv.org/abs/2611.23053",
+        "status": "ok"
+      },
+      {
+        "name": "2611.22280-canonical.html",
+        "url": "https://arxiv.org/abs/2611.22280",
+        "status": "ok"
+      },
+      {
+        "name": "nvfp4-trt-blog.md",
+        "url": "https://raw.githubusercontent.com/NVIDIA/TensorRT-LLM/main/docs/source/blogs/tech_blog/blog33_NVFP4_MLA_Unified_4bit_KV_Cache_Storage_and_Attention_Compute_in_TensorRT-LLM.md",
+        "status": "ok"
+      },
+      {
+        "name": "nvfp4-trt-blog-history.json",
+        "url": "https://api.github.com/repos/NVIDIA/TensorRT-LLM/commits?path=docs/source/blogs/tech_blog/blog33_NVFP4_MLA_Unified_4bit_KV_Cache_Storage_and_Attention_Compute_in_TensorRT-LLM.md&per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "nvfp4-kernel.cu",
+        "url": "https://raw.githubusercontent.com/NVIDIA/TensorRT-LLM/main/cpp/tensorrt_llm/kernels/nvfp4MlaKvCacheGather.cu",
+        "status": "ok"
+      },
+      {
+        "name": "nvfp4-kernel-history.json",
+        "url": "https://api.github.com/repos/NVIDIA/TensorRT-LLM/commits?path=cpp/tensorrt_llm/kernels/nvfp4MlaKvCacheGather.cu&per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "dc-recent.html",
+        "url": "https://arxiv.org/list/cs.DC/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "ar-recent.html",
+        "url": "https://arxiv.org/list/cs.AR/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "vllm-index.html",
+        "url": "https://vllm.ai/blog",
+        "status": "ok"
+      },
+      {
+        "name": "vllm-blog-index.html",
+        "url": "https://blog.vllm.ai/",
+        "status": "ok"
+      },
+      {
+        "name": "sglang-index.html",
+        "url": "https://www.lmsys.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "pytorch-index.html",
+        "url": "https://pytorch.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "nvidia-index.html",
+        "url": "https://developer.nvidia.com/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "amd-index.html",
+        "url": "https://rocm.blogs.amd.com/",
+        "status": "ok"
+      },
+      {
+        "name": "dc-month.html",
+        "url": "https://arxiv.org/list/cs.DC/2026-11?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "ar-month.html",
+        "url": "https://arxiv.org/list/cs.AR/2026-11?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "lg-month.html",
+        "url": "https://arxiv.org/list/cs.LG/2026-11?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "xm-old-blog.html",
+        "url": "https://netpreme.com/blog/xm-sparse-sglang-hisparse-netpreme-xmem",
+        "status": "ok"
+      },
+      {
+        "name": "spice-repo-search.json",
+        "url": "https://api.github.com/search/repositories?q=%22sparse+parameter+gossip%22",
+        "status": "ok"
+      },
+      {
+        "name": "stint-repo-search.json",
+        "url": "https://api.github.com/search/repositories?q=%22Stint%22+LLM",
+        "status": "ok"
+      },
+      {
+        "name": "trt-nvfp4-published-blog.html",
+        "url": "https://nvidia.github.io/TensorRT-LLM/blogs/tech_blog/blog33_NVFP4_MLA_Unified_4bit_KV_Cache_Storage_and_Attention_Compute_in_TensorRT-LLM.html",
+        "status": "unavailable"
+      },
+      {
+        "name": "nvfp4-initial-blog.md",
+        "url": "https://raw.githubusercontent.com/NVIDIA/TensorRT-LLM/746f7176c4c69980995983cce0ce5a462ca52622/docs/source/blogs/tech_blog/blog33_NVFP4_MLA_Unified_4bit_KV_Cache_Storage_and_Attention_Compute_in_TensorRT-LLM.md",
+        "status": "ok"
+      },
+      {
+        "name": "nvfp4-alignment-commit.json",
+        "url": "https://api.github.com/repos/NVIDIA/TensorRT-LLM/commits/6e9beff65f0c18c3e39c9ea40c8178112e87e05f",
+        "status": "ok"
+      },
+      {
+        "name": "trt-project.html",
+        "url": "https://github.com/NVIDIA/TensorRT-LLM",
+        "status": "ok"
+      },
+      {
+        "name": "openai-research.html",
+        "url": "https://openai.com/news/research/",
+        "status": "ok"
+      },
+      {
+        "name": "openai-engineering.html",
+        "url": "https://openai.com/news/engineering/",
+        "status": "ok"
+      },
+      {
+        "name": "openai-security.html",
+        "url": "https://openai.com/news/security/",
+        "status": "ok"
+      },
+      {
+        "name": "deepmind-news.html",
+        "url": "https://deepmind.google/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "google-research.html",
+        "url": "https://research.google/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "ai2-research.html",
+        "url": "https://allenai.org/research",
+        "status": "ok"
+      },
+      {
+        "name": "xybench-blog.html",
+        "url": "https://allenai.org/blog/xybench",
+        "status": "ok"
+      },
+      {
+        "name": "teamwork-blog.html",
+        "url": "https://research.google/blog/advancing-science-engineering-with-antigravitys-teamwork-feature/",
+        "status": "ok"
+      },
+      {
+        "name": "deepmind-publications.html",
+        "url": "https://deepmind.google/research/publications/",
+        "status": "ok"
+      },
+      {
+        "name": "acl-index.html",
+        "url": "https://aclanthology.org/",
+        "status": "ok"
+      },
+      {
+        "name": "emnlp-index.html",
+        "url": "https://aclanthology.org/events/emnlp-2026/",
+        "status": "ok"
+      },
+      {
+        "name": "openreview-api.json",
+        "url": "https://api2.openreview.net/notes?invitation=ICLR.cc/2027/Conference/-/Submission&limit=20",
+        "status": "unavailable"
+      },
+      {
+        "name": "openreview-home.html",
+        "url": "https://openreview.net/",
+        "status": "ok"
+      },
+      {
+        "name": "neurips-download.html",
+        "url": "https://nips.cc/Downloads/2026",
+        "status": "ok"
+      },
+      {
+        "name": "alignment-index.html",
+        "url": "https://alignment.anthropic.com/",
+        "status": "ok"
+      },
+      {
+        "name": "gpt62-launch.html",
+        "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol/",
+        "status": "ok"
+      },
+      {
+        "name": "gpt62-system-card.html",
+        "url": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol",
+        "status": "ok"
+      },
+      {
+        "name": "science-access.html",
+        "url": "https://openai.com/index/expanding-chatgpt-for-academic-researchers/",
+        "status": "ok"
+      },
+      {
+        "name": "gpt62-system-card.pdf",
+        "url": "https://deploymentsafety.openai.com/gpt-6-2-astra-sol/gpt-6-2-astra-sol.pdf",
+        "status": "ok"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": "arxiv:2611.19419",
+      "title": "Do Pretraining Optimizer Gains Transfer to KL Distillation?",
+      "category": "1.3",
+      "tags": [
+        "Optimizer Transfer",
+        "KL Distillation",
+        "Fixed-Budget Evaluation",
+        "Training Costs"
+      ],
+      "published_on": "2026-11-14",
+      "first_seen_at": "2026-11-18T11:00:32.735+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.19419",
+      "links": {
+        "paper": "https://arxiv.org/html/2611.19419v1",
+        "project": "https://github.com/NVIDIA/model-distillation-finetuning-recipes"
+      },
+      "summary": [
+        "A controlled study tests optimizer transfer from pretraining to short-horizon, teacher-probability distillation using four Qwen student–teacher pairs and fixed update budgets.",
+        "Its evaluated matrix-structured recipes show no consistent advantage over AdamW or AdaGrad in teacher matching versus trainer time, giving practitioners a concrete protocol for rechecking optimizer choices in the distillation setting."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Complete 12-page primary inspected: Sections 1–6, all implementation/grafting/hyperparameter Appendices A–C; actual Figure 1 p.5 and Figure 3 p.7 directly viewed. Qwen3 0.6B←1.7B, 4B←8B, 14B←32B and Qwen2.5 32B←72B share within-pair teacher/student tokenizer, 79,535 Nemotron reasoning traces, 1,006 validation examples, batch 144 and 1,683 optimizer updates. Training balances answer/reasoning region means equally using pure forward KL; validation averages assistant tokens, a distinct length weighting. BF16 FSDP2/FP32 gradient reduction uses 72 GB200 accelerators for Qwen3 and 144 for Qwen2.5; no weight decay, scheduler or warmup. Full-budget results use three seeds and descriptive mean±SD of per-seed best validation KL, plus matched-step trajectories. AdamW generally achieves lower KL; every completed structured recipe adds trainer time, while AdaGrad is slightly faster on larger pairs. Trainer time includes training, validation and improvement-triggered checkpoints, excluding loading/queue/export. The linked repository is the existing surrounding distillation framework, not a verified release of the paper-specific optimizer adapters: Appendix A says those experiments will be released. Native original LG RECENT Tuesday November 17 membership, sole-v1 receipt November 14 14:04:42 UTC, and official Friday14:00–Monday14:00 Eastern / Monday20:00 announcement row support inferred first manuscript announcement November 17 01:00 UTC. This is retrospective preparation of the November 17 report; actual first discovery is successful CL RECENT retrieval completion November 18 11:00:32.735443 UTC. Bounded exact-title/author-artifact checks did not locate an earlier full study; no first-ever-public assertion is made.",
+        "limitations": "Only four dense Qwen pairs, one reasoning corpus and a short three-epoch-like schedule; validation KL is teacher matching, not downstream capability. All-2D Muon applies its spectral update to embeddings/head as well as hidden matrices, differing from the standard hidden-only recipe. Shampoo uses two feasible unblocked right-factor reductions with an 8,192-dimension cap and diagonal fallbacks, not canonical two-sided family-wide coverage; SOAP is an unblocked replicated adapter. Hyperparameter pilots and validation-selected final configurations do not impose equal tuning budgets. Largest-pair SOAP has one 561-step run taking 4.31× paired AdamW trainer time and is excluded from full-budget summaries. Backend/routing/blocking controls change algorithmic recipes as well as systems behavior; no universal ranking, optimizer-kernel-only timing, causal explanation of transfer failure or independent reproduction is established. Specific experiment code is not yet verified as released."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-17T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2611.21019",
+      "title": "MemDoctor: Stage-wise Error Attribution and Repair for MLLM Agent Memory",
+      "category": "2.3",
+      "tags": [
+        "Memory Reliability",
+        "Error Attribution",
+        "Multimodal Agents"
+      ],
+      "published_on": "2026-11-16",
+      "first_seen_at": "2026-11-18T11:00:32.735+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.21019",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.21019"
+      },
+      "summary": [
+        "MemDoctor traces multimodal-agent memory failures through writing, updating, retrieval and answering, then uses versioned evidence to diagnose and repair the implicated stage.",
+        "It reports net accuracy gains on two memory benchmarks, offering a debugging pattern for errors that can otherwise appear well supported by stored records.",
+        "The extra checks can also damage correct answers, and they cannot reliably detect a wrong value repeated consistently throughout the available memory."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read the complete main scientific methods/results and relevant appendices: stage attribution, controlled injections, matched plug-in protocols, case studies, diagnosis/repair and memory-system prompts. Directly inspected original PDF pages8–9, including Tables2–4. A Qwen3-VL-4B system checks required facts backward from the current answer through retrieved records, ranks below the cutoff and earlier record versions; write/update repair can revisit the original conversation. The main repair has no answer-correctness feedback, runs up to three rounds on all questions and resets changes between questions. Mem-Gallery accuracy is question-weighted over1711 questions in20 scenes:72.71% to75.63%, with94 of467 wrong answers fixed and44 of1244 correct answers broken. MemLens uses195 agent-subset questions at32K:51.8% to55.4%, with10 fixes and3 breaks. Separately, controlled distortion injections in the30B system increase wrong answers by43percentage points over a fact-preserving control across133 accepted cases;97% of wrong answers quote the tainted record. Original receipt November16 12:38:53UTC is retained. Original November17 cs.CL dated-batch membership plus the official Friday14–Monday14 Eastern submission window imply November17 01:00UTC announcement; this is a schedule inference rather than observed exact public visibility. Earliest completed successful team catalog discovery is Recipe’s November18 cs.CL RECENT receipt at11:00:32.735443UTC, whose exact catalog body and successful receipt are copied and hash-bound; the later own CL body is byte-identical. Bounded primary title/artifact screening established no older complete public study or author implementation URL.",
+        "limitations": "Single observed runs and model-judged benchmark scores do not establish independent reproduction or a general reliability guarantee. The6 external8B baselines answer once with different memory/retrieval budgets; the repair uses extra inference work, and latency or dollar costs are not measured. Matched8B plug-in results in AppendixC use their own paired baseline answers, which must not be mixed with the main-table baseline rates; the MuRAG repair additionally supplies reflection analysis to its answerer. Some subtasks worsen, and repairs are reset per question rather than accumulated persistently. The error-injection study selects validated single-error edits; visual/update groups contain only11–12 cases, confidence intervals resample20 scenes and retrieval misses have no paired control. The separate67% localization/62% recovery result uses outcome feedback and up to five rounds, unlike the main feedback-free repair. Consistently wrong memory versions, inadequate fact decomposition, correlated mistakes and absence of outside evidence remain failure modes. No author code, checkpoint or complete reproduction artifact was verified."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-17T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/recent?show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2611.21584",
+      "title": "CertiSum: Bitwise-Identical MXFP4 Training Across Platforms and Parallelism Layouts",
+      "category": "3.6",
+      "tags": [
+        "MXFP4",
+        "Exact Reductions",
+        "Numerical Reproducibility",
+        "Elastic Training"
+      ],
+      "published_on": "2026-11-16",
+      "first_seen_at": "2026-11-18T11:00:32.762+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.21584",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.21584v1"
+      },
+      "summary": [
+        "CertiSum certifies when native MXFP4 matrix reductions are exact and repairs the remaining outputs, while preserving quantization blocks and exact accumulation across supported parallel layouts.",
+        "In controlled 200-step Qwen3-8B experiments, parameters and optimizer states match bit for bit across MI350X and GB200 GPUs and elastic layouts, supporting stricter debugging and training audits.",
+        "At larger evaluated shapes it adds 11.8–60.5% step latency over its non-exact MXFP4 twin; the guarantee depends on shared numerical contracts and does not establish BF16-equivalent training quality."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Scientific main pp.1–10 and all Appendices A–F pp.16–20 read; references pp.11–15 partly inspected. Actual Table 5/6 p.20 visually checked. MXFP4 E2M1 products with shared power-of-two scales can be exact in FP32 when a runtime absolute-product bound fits its 24-bit significand and finite/range/kernel contracts hold. Quantizer statistics produce conservative certificates; uncertified outputs are not declared wrong but repaired through checked exact accumulation. Attention and most weight-gradient work are routed directly to exact kernels, accounting for 46–68% of nominal GEMM FLOPs, so the high native-GEMM certification rate is not a whole-training fast-path fraction. Fixed global 32-element blocks, 32x32 backward tiles, exact attention numerator/denominator and correctly rounded division require consistent non-reduction numerical maps. Qwen3-8B-Base/FineWeb-Edu plus Stack-v3 controls run 200 AdamW steps with full-state fingerprints. Cross-vendor TP4 divides output rows/heads, replicates weights/optimizer and avoids cross-GPU reductions; elastic MI350X 1→DP4→CP2→TP4→DP2 checkpointed segments preserve all states. Larger-shape timing on three 8B–14B models is 11.8–60.5% above its own MXFP4 twin, up to 1.24x faster than ordinary BF16 and 1.70x deterministic BF16; small TP cases can regress. Original LG Tue17 batch plus receipt Mon16 18:54:07 UTC and official EST schedule supports inferred first announcement Nov17 01:00 UTC. Actual earliest team discovery is the successful Recipe LG completion Nov18 11:00:32.762373 UTC; raw catalog and receipt copied and pinned. No earlier full release was located in the bounded primary/catalog/project search.",
+        "limitations": "Exactness is for the represented quantized computation under explicit contracts, not real-arithmetic or BF16 equivalence. Unsupported all-masked attention rows, altered block boundaries, arbitrary non-reduction operators or native-kernel behavior fall outside the guarantee. Shared RoPE/SiLU tables and host-assisted exponential/logarithm paths constrain deployment generality. Cross-vendor TP4 tests do not exercise reduction-sharded TP; inference validation is only 32 greedy prompts/64 tokens with repeated full-prefix computation, not a paged serving system. Timing combines implementation/layout/clock/graph differences, uses different BF16 reference training data/initialization in some cases and excludes specified outliers; it does not isolate certification cost. No convergence/accuracy-equivalence or RL-quality experiment. No matching author implementation was verified; dependency ROCm/aiter is not claimed as CertiSum code. No independent reproduction."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-17T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2611.18972",
+      "title": "NVFP4-MLA: New Quantitative Evaluation of Unified FP4 Cache and Attention",
+      "category": "3.6",
+      "tags": [
+        "FP4 Attention",
+        "MLA",
+        "KV Cache",
+        "Serving Evaluation"
+      ],
+      "published_on": "2026-11-13",
+      "first_seen_at": "2026-11-18T11:01:04.848+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.18972",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.18972v1",
+        "blog": "https://raw.githubusercontent.com/NVIDIA/TensorRT-LLM/746f7176c4c69980995983cce0ce5a462ca52622/docs/source/blogs/tech_blog/blog33_NVFP4_MLA_Unified_4bit_KV_Cache_Storage_and_Attention_Compute_in_TensorRT-LLM.md",
+        "code": "https://github.com/NVIDIA/TensorRT-LLM"
+      },
+      "summary": [
+        "A new evaluation of existing TensorRT-LLM integration combines a shared two-dimensional FP4 latent cache with selective residual compensation so both MLA matrix multiplications run on FP4 Tensor Cores.",
+        "On Rubin GPUs, the study reports up to 2.30× DeepSeek-R1 serving throughput over FP8 at matched per-user generation rates, with each precision using its best tested layout, while nine-task mean accuracy stays close to BF16.",
+        "The 3.20× stored-cache reduction can help retain session histories, but it excludes decode-layout overhead and is not a whole-worker memory reduction."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "All 13 manuscript pages read, including Appendices A–C; actual Tables/Figures pp.6,8,9 inspected as source images. Initial full technical article, current aligned article, dated commit history and September kernel history inspected. This is newly disclosed measured evidence, not a new software launch: NVFP4 cache integration dates to Sep3–18. The earliest verified full quantitative study is the public repository article committed Nov16 05:58:50 UTC (746f7176…), earlier than the manuscript's original DC Tue17/01:00 UTC announcement; its full method, nine-task, cache, serving and replay tables already exist at that immutable commit. Original arXiv submission Nov13 is retained, while the undated September paper header is not treated as public-release proof. No earlier full study was located in the inspected history/search scope. Nov16 05:58:50 falls inside Nov17's 72-hour discovery lookback, before its main coverage, so this is explicitly newly-discovered. The method shares 16x16 NoPE scale blocks across both reduction directions and adds a second FP4 component only to the 64 RoPE channels, retaining FP32 accumulation/softmax normalization. Full BF16 active tails support irreversible FP4 page finalization and speculative rollback. Final manuscript Table1 nine-task means are 59.82 versus BF16 59.80 (DeepSeek-R1) and 80.28 versus 80.27 (Kimi-K3), with individual regressions. Stored MLA state is 3.20x/3.05x smaller, excluding recurrent KDA state, update buffers and decode-time layouts. Final paper's Rubin kernel sweeps reach 2.82x/2.71x over FP8; its AgentX setup has 393 recorded sessions, with equal context-cache budgets yielding p90 TTFT 108→30.9s at 48 R1 sessions and 11→5.24s at 128 Kimi sessions. Closed-loop serving envelope comparisons use each precision's best DEP/TEP layout and concurrency at matched median per-user generation rates; maximum 2.30x/2.25x and average 26.7%/39.9%. Initial article uses different kernel sweeps and 123-session replay setup, explicitly kept separate from final-paper conditions. Verified official repository/tree, kernel and histories are linked without executing author code.",
+        "limitations": "Only Rubin performance and two MLA model families; no universal hardware or task non-inferiority claim, no confidence bounds for the nine-task mean. Fixed offline calibration and selective compensation do not guarantee every benchmark improves. The initial public article discloses an extra Rubin decode-time V view: 648 bytes/token/layer versus FP8's 576, about 11% fewer resident decode tokens; the paper's 360-byte stored representation and 3.20x figure must not be read as total decode-worker savings. Kimi cache totals exclude 69 recurrent KDA layers. Best-layout throughput envelopes compare different concurrency/layouts rather than a fixed request load; at very interactive rates FP8 can win and short-context/low-load gains shrink. Replay measures model-service behavior, not live agent task success. Initial repository article contains pre-publication TODOs and different experimental counts; its dated public evidence is useful for chronology but not silently merged with final manuscript metrics. No independent reproduction."
+      },
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-16T05:58:50Z",
+        "basis": "dated-source",
+        "sources": [
+          "https://raw.githubusercontent.com/NVIDIA/TensorRT-LLM/746f7176c4c69980995983cce0ce5a462ca52622/docs/source/blogs/tech_blog/blog33_NVFP4_MLA_Unified_4bit_KV_Cache_Storage_and_Attention_Compute_in_TensorRT-LLM.md",
+          "https://api.github.com/repos/NVIDIA/TensorRT-LLM/commits?path=docs/source/blogs/tech_blog/blog33_NVFP4_MLA_Unified_4bit_KV_Cache_Storage_and_Attention_Compute_in_TensorRT-LLM.md&per_page=100"
+        ]
+      }
+    }
+  ]
+}

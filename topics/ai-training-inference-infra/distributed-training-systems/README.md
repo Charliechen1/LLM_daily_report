@@ -5,6 +5,22 @@ Data/tensor/pipeline/expert/context parallelism, sharding and communication over
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-18](../../../reports/2026/11/2026-11-18.md) — PARTIAL SEARCH
+
+### [SPICE: Sparse Parameter Gossip for LLM Pretraining](<https://arxiv.org/abs/2611.23053>)
+
+SPICE exchanges error-corrected sparse parameter endpoints with changing peer neighborhoods, avoiding the reference ambiguity of applying a peer's sparse gradient to different local weights. On a single eight-A6000 machine with emulated 1-Gbps links, a 134M-model fixed-token run takes 1h55m versus DDP's 7h08m, illustrating a useful communication–optimization trade-off. Quality studies use separate simulated replica layouts, and the work does not establish measured multi-site performance or universal superiority at equal token budgets.
+
+**Published:** 2026-11-17 · **First seen:** 2026-11-18T11:01:04.848+00:00 · **Novelty:** new · **Tags:** Decentralized Training, Sparse Communication, Error Feedback, Bandwidth Constraints
+
+**Public availability:** 2026-11-18T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.23053v1>)
+
+**Evidence:** research-paper; full-text. Scientific main pp.1–10 and all Appendices A/B pp.16–19 read; references pp.11–15 partly inspected. Actual quality Table2 p.7 and timing Table6 p.18 viewed. Given round-start x, local endpoint y, delta=x−y and residual e, SPICE accumulates beta\*e+delta, selects a chunk-wise top-k mask and sends corrected absolute endpoints z=y−M\*beta\*e. Coordinate averaging includes only actual contributors plus self, never treating unsent coordinates as zeros; unselected residuals remain local. Dynamic shared permutations give symmetric peer neighborhoods and outer Nesterov updates. Full-support updates recover GASLoC, without receiver histories but still with round-start/residual model-sized state. Quality uses 134M/551M/OLMoE models over 2.70/11.01/26.05B tokens with communication every local step, not multiple local steps. Replica quality simulation reaches 128 logical replicas on H100/H200 resources; it is distinct from wall-clock measurements on 8 actual RTX A6000 GPUs in one machine. Linux namespaces/veth/tc enforce aggregate per-replica 1/2/5/10-Gbps send and receive caps with NCCL sockets and SHM/GDR/IB disabled. At 1 Gbps, 134M q=4,delta=3.125% takes 1h55 versus DDP 7h08; 551M takes 25h56 versus 69h38. At 128 replicas, 134M validation loss is 3.23 versus two-peer GASLoC 3.37 and DDP 3.17; 551M at low replica counts can favor GASLoC. MoE q4/delta6.25% yields 2.368 versus GASLoC 2.367 and DDP 2.362. Original DC Wed18 batch, Tue17 16:47:17 UTC receipt and official EST schedule establish inferred availability Nov18 01:00 UTC. First\_seen is actual successful Nov18 DC completion. No earlier full release found in bounded inspected sources; no matching author code verified.
+
+**Limitations:** Bandwidth-limited tests are one-machine rate emulation without added WAN latency, real multi-site failures or Internet variability. Quality and timing are separate experiments; main quality cells use one training seed and separately tuned hyperparameters. SPICE does not beat DDP at equal tokens in the cited quality cell, and dense gossip can win in smaller 551M cells. Sparse index bytes matter: the paper's advertised MoE communication factor counts parameter values, whereas 12-bit indices add wire cost; no unsupported 8x wire-byte claim is made. Island/deadline experiments alter transport and receive counts; windowed optimization quality is not independently established. More throughput enables more tokens at equal wall time and must not be confused with a fixed-token optimization improvement. No independent reproduction or verified released author code.
+
 ## [2026-11-13](../../../reports/2026/11/2026-11-13.md) — PARTIAL SEARCH
 
 ### [SS-HSDP: Efficient and Flexible Sharded Data Parallelism via Runtime–Update Decoupling](<https://arxiv.org/abs/2611.16467>)
