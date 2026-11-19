@@ -5,6 +5,22 @@ Knowledge/reasoning distillation, pruning, quantization algorithms and model mer
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-19](../../../reports/2026/11/2026-11-19.md) — PARTIAL SEARCH
+
+### [On-Policy Morphing into Hybrid Attention Models](<https://arxiv.org/abs/2611.24809>)
+
+FlashMorph2 selects which Transformer layers retain full attention by sampling discrete hybrid architectures, propagating their own hidden states and adapting shared weights during the selection stage. Under matched subsequent recovery, it improves average long-context and recall scores over FlashMorph across the tested Qwen configurations, providing a practical way to account for interactions that frozen, continuously mixed layer scoring misses.
+
+**Published:** 2026-11-18 · **First seen:** 2026-11-19T11:06:46.469+00:00 · **Novelty:** new · **Tags:** Hybrid Attention, Architecture Selection, Knowledge Distillation, Long Context
+
+**Public availability:** 2026-11-19T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/new>) · [Timing source](<https://arxiv.org/list/cs.CL/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2611.24809v1>)
+
+**Evidence:** research-paper; full-text. Complete scientific main pp.1–8 and Appendices A–C pp.13–18 read; references pp.9–12 are not separately audited. Actual p.6 Table 1 and p.8 Figure 3/Table 3 directly inspected. Each selection step samples exactly K full-attention layers with Gumbel-Top-K, evaluates the discrete hybrid end to end and jointly updates selection scores and model weights under teacher-to-student vocabulary KL. A budget-preserving sigmoid relaxation with implicitly differentiated threshold supplies a biased straight-through gradient; both attention branches are evaluated for score gradients. Crucially, adapted selection-stage weights are discarded: all compared selected architectures restart from the same layerwise-aligned checkpoint and receive the same recovery. The default 3:1 linear/full budget gives seven full-attention layers in 28-layer Qwen3 0.6B/1.7B; Lightning, GLA and GatedDeltaNet provide six main configurations. Mean RULER rises 63.26→65.68 (+2.42 points), LongBench 29.86→30.94 (+1.08), and six-task recall 48.94→49.70 (+0.76) versus FlashMorph. Appendix tables extend Lightning results to 8B and 30B-A3B. Stage budgets are 320M alignment, 20M selection, 1B logits distillation and 1B long-context finetuning tokens. Selection takes 0.72–3.57 GPU-hours for 0.6B–8B, but costs 1.9–2.4 times FlashMorph selection time. Sole-v1 receipt November 18 17:45:51 UTC, original CL NEW and dated November 19 RECENT, plus the official Eastern schedule support inferred November 19 01:00 UTC manuscript availability. Bounded matching-title/FlashMorph2 artifact searches found no verified prior full release; generic library references are not claimed as author method code.
+
+**Limitations:** On-policy refers to sampled architecture computation/hidden states and adapting shared weights, not sampling new text trajectories. The straight-through architecture gradient is biased and does not establish optimal subset selection. One-time selection GPU-hours exclude alignment and two billion recovery tokens; they are not total conversion or deployment latency/throughput gains. The paper provides no repeated-seed uncertainty for the reported comparisons and some baseline rankings are imported from the earlier FlashMorph study. Averaged benchmark gains do not imply every task improves, and full-attention teacher retrieval remains substantially higher. The continuous-computation ablation is worse than removing both components, so it is not evidence that each component independently gives monotone gains. Exact inference-cost equivalence under the same layer budget is not independently measured here; no dedicated matching author implementation or model release was verified.
+
 ## [2026-11-16](../../../reports/2026/11/2026-11-16.md) — PARTIAL SEARCH
 
 ### [Folding Language Models into Themselves](<https://arxiv.org/abs/2611.18113>)

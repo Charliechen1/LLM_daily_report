@@ -5,6 +5,20 @@ Tool selection/calling, APIs, code execution, browser/computer use and protocols
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-19](../../../reports/2026/11/2026-11-19.md) — PARTIAL SEARCH
+
+### [Tool-Verified RTL Optimization and Specification-Driven Processor Design](<https://openai.com/index/advancing-chip-design-with-our-models/>)
+
+OpenAI reports model-assisted circuit rewrites and compares optimizing existing processor RTL with building a core from a written specification. The work illustrates how simulation and design tools can guide hardware agents, while showing why throughput scores need to be assessed alongside correctness, circuit area and retained functionality.
+
+**Published:** 2026-11-18 · **First seen:** 2026-11-19T11:08:04.665+00:00 · **Novelty:** new · **Tags:** Hardware Agents, Tool Verification, RTL Optimization
+
+[Blog](<https://openai.com/index/advancing-chip-design-with-our-models/>)
+
+**Evidence:** engineering-report; full-text. Complete November18 technical article inspected. Its new evaluation includes 9,881 scored runs across two 32-bit RISC-V cores, two tasks and multiple token budgets. Valid designs receive normalized throughput from hidden-workload instructions per cycle and Yosys-estimated clock frequency; failures or area above16× baseline score zero. Separate production-block area and AMD PPA claims are author reports, not the same benchmark or newly released silicon evidence.
+
+**Limitations:** Simulation tests do not prove full functional equivalence. A loose16× area cap and omission of original features can favor specification-built designs; physical timing checks are deferred. Scores normalize to the best observed throughput and average over failures, rather than measuring a universal chip speedup. Matching author evaluation code, uncertainty estimates and the proprietary design artifacts were not supplied in the inspected article.
+
 ## [2026-11-12](../../../reports/2026/11/2026-11-12.md) — PARTIAL SEARCH
 
 ### [BotPsy: On-Device Personal Assistant with a Sub-Billion-Parameter Agentic Language Model](<https://huggingface.co/qvac/BotPsy-0.8B>)

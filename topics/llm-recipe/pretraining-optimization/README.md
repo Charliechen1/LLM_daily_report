@@ -5,6 +5,22 @@ Objectives, optimizers, learning rates, batch sizes and training stability.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-19](../../../reports/2026/11/2026-11-19.md) — PARTIAL SEARCH
+
+### [Do Frontier Model Ingredients Add Up? A Replicated Factorial Study of Small Language Models](<https://arxiv.org/abs/2611.24540>)
+
+A replicated factorial experiment tests five modern training ingredients jointly in small language models, separating average recipe effects from interactions and run noise. The 32-run study finds mostly additive loss gains within its tested settings, while showing why shared baselines, replication and explicit aliasing assumptions are needed before transferring isolated improvements into a combined recipe.
+
+**Published:** 2026-11-18 · **First seen:** 2026-11-19T11:06:46.455+00:00 · **Novelty:** new · **Tags:** Factorial Experiments, Training Recipes, Replication, Optimizer Evaluation
+
+**Public availability:** 2026-11-19T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.CL/new>) · [Timing source](<https://arxiv.org/list/cs.CL/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/html/2611.24540v1>)
+
+**Evidence:** research-paper; full-text. Complete five-page primary read, including design, implementation failures, statistics, results and limitations; actual p.3 Figure 1/Table 2 directly inspected. Sixteen resolution-V half-fraction configurations combine attention gating G, a Muon optimizer recipe M, sandwich normalization S, routed/shared experts E and a GatedDeltaNet hybrid H, repeated at two initialization/data-stream seeds (32 core runs). Each run trains about 300M FineWeb tokens with sequence length 1,024 and about 51.5M active parameters; MoE models instead have about 161.3M total parameters. Within-seed configurations share the data stream. Mean single-switch loss contrasts are E −0.0983, M −0.0506, H −0.0365, S −0.0194 and G +0.0018 nats. The largest pairwise alias contrast is MH/GSE +0.0122 nats; the repeated-run reference margin gives about 0.017 nats against the 0.02-nat practical bound. Five completed H-only runs and paired seed contrasts estimate run noise at 0.0036 nats, versus the sparse-effects estimate of 0.020. The all-five configuration is best only within the measured half-fraction. Original CL/LG NEW membership and dated RECENT November 19 header, sole-v1 receipt November 18 14:48:52 UTC, and official Wednesday-before-14:00 Eastern / Wednesday-20:00 announcement row support inferred November 19 01:00 UTC availability. Earliest completed team discovery is the pinned AI NEW receipt, not a request start. Exact-title/primary artifact searches found no verified earlier full study; this is a bounded chronology check, not proof of first-ever public disclosure.
+
+**Limitations:** The half-fraction aliases each main effect with a four-way effect and each pair with a three-way effect; two-seed replication does not resolve these aliases. The independence/equal-variance noise interval is a reference under assumptions, since shared streams can correlate errors. MoE changes total capacity; gates reduce feed-forward width to match active parameters; Muon and the hybrid are bundled recipes rather than isolated primitives. Only one corpus, a small active model, short context and token-matched budgets are tested, without matched wall time, FLOPs, energy, downstream accuracy or long-context evaluation. Learning rates and final results use the same validation set; unmeasured combinations, independently tuned recipes and frontier scales may differ. No matching author code/checkpoint release was verified.
+
 ## [2026-11-17](../../../reports/2026/11/2026-11-17.md) — PARTIAL SEARCH
 
 ### [Do Pretraining Optimizer Gains Transfer to KL Distillation?](<https://arxiv.org/abs/2611.19419>)

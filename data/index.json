@@ -2,6 +2,13 @@
   "schema_version": 1,
   "reports": [
     {
+      "date": "2026-11-19",
+      "path": "reports/2026/11/2026-11-19.md",
+      "source": "data/reports/2026/11/2026-11-19.json",
+      "search_status": "partial",
+      "entries": 10
+    },
+    {
       "date": "2026-11-18",
       "path": "reports/2026/11/2026-11-18.md",
       "source": "data/reports/2026/11/2026-11-18.json",
@@ -362,6 +369,396 @@
     }
   ],
   "entries": [
+    {
+      "id": "arxiv:2611.24844",
+      "title": "General progress substitutes for specific training data in language models",
+      "category": "1.1",
+      "tags": [
+        "Data Withholding",
+        "Capability Acquisition",
+        "Continued Pretraining",
+        "Controlled Experiments"
+      ],
+      "published_on": "2026-11-18",
+      "first_seen_at": "2026-11-19T11:06:46.455+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.24844",
+      "links": {
+        "paper": "https://arxiv.org/html/2611.24844v1",
+        "code": "https://github.com/Mapika/progress-substitutes-data"
+      },
+      "summary": [
+        "Controlled training experiments withhold skill-specific supervision and later restore it to measure how general model progress changes the additional data needed to acquire a skill.",
+        "Across synthetic domains and web-text models up to 7B, more advanced checkpoints often learn the withheld skills with fewer additional tokens, motivating adaptation tests alongside capability scores when evaluating data-filtering strategies.",
+        "Target masking preserves the original inputs, and the whole-domain Rust experiment retains residual data, so the results do not establish that filtering is ineffective in general."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Scientific main pp.1–20 and complete scientific Appendices A–G pp.24–49 read; references pp.21–23 are not claimed as a separate review. Actual p.43 Tables E1/E2 and p.45 Figure E2 directly inspected. The study separates deterministic loss-target thinning (inputs unchanged), whole-document filtering and later target/domain returns, with background held-out loss indexing general progress. Chess, Othello, SMILES, Dyck and web-text experiments span small decoders through 7B; matched true-versus-permuted-rule returns and random/whole-game filtering controls restrict alternative explanations. At the latest two-seed 7B capital checkpoints, restored targets reach smoothed competence 0.20 after 29.9M/17.6M tokens, 1.8%/1.1% of matched from-initialization references; earlier checkpoints may fail within the return budget. A separate single-seed 7B Rust run retains a realized 2.9% of reference-labelled Rust data; after unfiltered continuation, half the term-accuracy gap closes after 9.4M versus about 450M tokens from initialization. This is 2.1% additional continuation tokens, but 28% when prior residual Rust exposure is charged. Methods explicitly report that 55 of 290 Rust term-evaluation documents occur in the 7B training order; the unseen-document analysis is a distinct robustness check. The verified code repository has one initial release commit de22c1c at November 18 18:18:58 UTC whose immutable README equals the current README and already describes the central results. This earlier dated artifact is retained as public availability instead of resetting the work to the later inferred November 19 arXiv announcement. Repository creation November 14 is not treated as public release evidence. Earliest actual discovery is the copied completed AI NEW receipt.",
+        "limitations": "Loss masking is not removal of the skill-bearing input distribution, semantic labels are incomplete heuristics, and whole-domain filtering retains residual exposure at 7B. Acquisition-token ratios count added training after a pretrained checkpoint, not the sunk pretraining or universal end-to-end compute savings; charging chess optimizer reconstruction/warmup changes 0.10–0.78% to 3.1–7.5%. The Rust result is term accuracy, while compilation and hidden-test correctness are separate modest metrics; it is one source seed with evaluation overlap disclosed. Web 7B models are trained for only about 3–4B tokens, not frontier-scale training; synthetic domains dominate causal controls. The empirical cost relation has domain-dependent slopes and conditional reference/representation assumptions, repeated checkpoints are not independent seeds, and no harmful-capability or production filtering guarantee is established. The released code omits trained models, outputs, figures, Rust function tasks and several causal/restricted-return analyses; its GPU paths were ported but not run by the authors for release verification, and the SMILES rebuild differs from the original stream. No independent reproduction was performed."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-18T18:18:58Z",
+        "basis": "dated-source",
+        "sources": [
+          "https://api.github.com/repos/Mapika/progress-substitutes-data/commits/de22c1ca862b4e4389832c650fed4b3ebd827054",
+          "https://raw.githubusercontent.com/Mapika/progress-substitutes-data/de22c1ca862b4e4389832c650fed4b3ebd827054/README.md"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-19",
+      "report_path": "reports/2026/11/2026-11-19.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.24540",
+      "title": "Do Frontier Model Ingredients Add Up? A Replicated Factorial Study of Small Language Models",
+      "category": "1.3",
+      "tags": [
+        "Factorial Experiments",
+        "Training Recipes",
+        "Replication",
+        "Optimizer Evaluation"
+      ],
+      "published_on": "2026-11-18",
+      "first_seen_at": "2026-11-19T11:06:46.455+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.24540",
+      "links": {
+        "paper": "https://arxiv.org/html/2611.24540v1"
+      },
+      "summary": [
+        "A replicated factorial experiment tests five modern training ingredients jointly in small language models, separating average recipe effects from interactions and run noise.",
+        "The 32-run study finds mostly additive loss gains within its tested settings, while showing why shared baselines, replication and explicit aliasing assumptions are needed before transferring isolated improvements into a combined recipe."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Complete five-page primary read, including design, implementation failures, statistics, results and limitations; actual p.3 Figure 1/Table 2 directly inspected. Sixteen resolution-V half-fraction configurations combine attention gating G, a Muon optimizer recipe M, sandwich normalization S, routed/shared experts E and a GatedDeltaNet hybrid H, repeated at two initialization/data-stream seeds (32 core runs). Each run trains about 300M FineWeb tokens with sequence length 1,024 and about 51.5M active parameters; MoE models instead have about 161.3M total parameters. Within-seed configurations share the data stream. Mean single-switch loss contrasts are E −0.0983, M −0.0506, H −0.0365, S −0.0194 and G +0.0018 nats. The largest pairwise alias contrast is MH/GSE +0.0122 nats; the repeated-run reference margin gives about 0.017 nats against the 0.02-nat practical bound. Five completed H-only runs and paired seed contrasts estimate run noise at 0.0036 nats, versus the sparse-effects estimate of 0.020. The all-five configuration is best only within the measured half-fraction. Original CL/LG NEW membership and dated RECENT November 19 header, sole-v1 receipt November 18 14:48:52 UTC, and official Wednesday-before-14:00 Eastern / Wednesday-20:00 announcement row support inferred November 19 01:00 UTC availability. Earliest completed team discovery is the pinned AI NEW receipt, not a request start. Exact-title/primary artifact searches found no verified earlier full study; this is a bounded chronology check, not proof of first-ever public disclosure.",
+        "limitations": "The half-fraction aliases each main effect with a four-way effect and each pair with a three-way effect; two-seed replication does not resolve these aliases. The independence/equal-variance noise interval is a reference under assumptions, since shared streams can correlate errors. MoE changes total capacity; gates reduce feed-forward width to match active parameters; Muon and the hybrid are bundled recipes rather than isolated primitives. Only one corpus, a small active model, short context and token-matched budgets are tested, without matched wall time, FLOPs, energy, downstream accuracy or long-context evaluation. Learning rates and final results use the same validation set; unmeasured combinations, independently tuned recipes and frontier scales may differ. No matching author code/checkpoint release was verified."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-19T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/new",
+          "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-19",
+      "report_path": "reports/2026/11/2026-11-19.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.24809",
+      "title": "On-Policy Morphing into Hybrid Attention Models",
+      "category": "1.8",
+      "tags": [
+        "Hybrid Attention",
+        "Architecture Selection",
+        "Knowledge Distillation",
+        "Long Context"
+      ],
+      "published_on": "2026-11-18",
+      "first_seen_at": "2026-11-19T11:06:46.469+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.24809",
+      "links": {
+        "paper": "https://arxiv.org/html/2611.24809v1"
+      },
+      "summary": [
+        "FlashMorph2 selects which Transformer layers retain full attention by sampling discrete hybrid architectures, propagating their own hidden states and adapting shared weights during the selection stage.",
+        "Under matched subsequent recovery, it improves average long-context and recall scores over FlashMorph across the tested Qwen configurations, providing a practical way to account for interactions that frozen, continuously mixed layer scoring misses."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Complete scientific main pp.1–8 and Appendices A–C pp.13–18 read; references pp.9–12 are not separately audited. Actual p.6 Table 1 and p.8 Figure 3/Table 3 directly inspected. Each selection step samples exactly K full-attention layers with Gumbel-Top-K, evaluates the discrete hybrid end to end and jointly updates selection scores and model weights under teacher-to-student vocabulary KL. A budget-preserving sigmoid relaxation with implicitly differentiated threshold supplies a biased straight-through gradient; both attention branches are evaluated for score gradients. Crucially, adapted selection-stage weights are discarded: all compared selected architectures restart from the same layerwise-aligned checkpoint and receive the same recovery. The default 3:1 linear/full budget gives seven full-attention layers in 28-layer Qwen3 0.6B/1.7B; Lightning, GLA and GatedDeltaNet provide six main configurations. Mean RULER rises 63.26→65.68 (+2.42 points), LongBench 29.86→30.94 (+1.08), and six-task recall 48.94→49.70 (+0.76) versus FlashMorph. Appendix tables extend Lightning results to 8B and 30B-A3B. Stage budgets are 320M alignment, 20M selection, 1B logits distillation and 1B long-context finetuning tokens. Selection takes 0.72–3.57 GPU-hours for 0.6B–8B, but costs 1.9–2.4 times FlashMorph selection time. Sole-v1 receipt November 18 17:45:51 UTC, original CL NEW and dated November 19 RECENT, plus the official Eastern schedule support inferred November 19 01:00 UTC manuscript availability. Bounded matching-title/FlashMorph2 artifact searches found no verified prior full release; generic library references are not claimed as author method code.",
+        "limitations": "On-policy refers to sampled architecture computation/hidden states and adapting shared weights, not sampling new text trajectories. The straight-through architecture gradient is biased and does not establish optimal subset selection. One-time selection GPU-hours exclude alignment and two billion recovery tokens; they are not total conversion or deployment latency/throughput gains. The paper provides no repeated-seed uncertainty for the reported comparisons and some baseline rankings are imported from the earlier FlashMorph study. Averaged benchmark gains do not imply every task improves, and full-attention teacher retrieval remains substantially higher. The continuous-computation ablation is worse than removing both components, so it is not evidence that each component independently gives monotone gains. Exact inference-cost equivalence under the same layer budget is not independently measured here; no dedicated matching author implementation or model release was verified."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-19T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/new",
+          "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-19",
+      "report_path": "reports/2026/11/2026-11-19.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.23509",
+      "title": "GRAFT: Execution-Guided Genetic Recombination for Agent Design",
+      "category": "2.1",
+      "tags": [
+        "Agent Architecture Search",
+        "Execution Feedback",
+        "Evolutionary Optimization"
+      ],
+      "published_on": "2026-11-17",
+      "first_seen_at": "2026-11-19T11:06:46.455+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.23509",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.23509"
+      },
+      "summary": [
+        "GRAFT gives an evolutionary agent-program designer bounded examples of each parent’s successes and failures, alongside its code and aggregate fitness.",
+        "Controlled searches improve held-out performance when this evidence is added, offering a way to turn evaluation logs into architectural changes without extra task executions to collect that feedback.",
+        "Some gains reflect interface normalization, and the study does not establish long-horizon transfer or equal total inference cost."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read the full main scientific methods, experiments, cases and limitations on PDF pages1–8 and relevant AppendicesA–D on pages12–13; directly inspected Table1 on page5. The search keeps five executable Python agents, selects parents by aggregate validation fitness, and supplies up to three success and six failure traces from the exact evaluated parent versions to a semantic crossover/mutation proposer. Those records contain inputs, outputs and evaluator/error feedback but not reference answers. Bounded proposal repairs, elitist replacement and a fixed validation-to-held-out split complete the loop. The Qwen3.5-35B-A3B-FP8 main configuration reports an unweighted six-setting mean of82.0%, versus72.2% for its strongest baseline mean. More directly, an otherwise matched GA-only control that removes per-example feedback scores56.7% rather than91.6% on MGSM and56.7% rather than58.0% on ARC. The public anonymous repository API currently lists only a64-byte title README; the landing page returns401, so no implementation release is claimed. Original November17 submission dates are retained. Both studies appear as original new submissions in the November19 cs.AI batch; the official Tuesday14:00–Wednesday14:00 Eastern submission window implies Wednesday20:00EST, or November19 01:00UTC, announcement. This is a schedule inference, not a directly observed exact visibility time. Actual first_seen is the earliest successful completed team catalog containing the paper: this run’s cs.AI NEW response at November19 11:06:46.455335UTC; Recipe and Infra confirmed their matching catalogs were later. No earlier complete public study was established by the bounded primary-title and artifact-history checks.",
+        "limitations": "The authors identify MGSM language/output-interface normalization as an important source of improvement, rather than establishing a pure reasoning gain. Although Table1’s caption says equal candidate budgets, the main text and AppendixC explicitly give SwarmAgentic50 evaluations versus30 for the other search methods. Candidate counts are not total LLM-token, wall-time or compute parity. Cached traces avoid new task executions for feedback collection but still add proposer input and repair work. Reference agents differ in structure/call counts, some executor/optimizer settings favor other methods, and no general task-transfer, long-horizon interactive or distribution-shift result is established. Main model prose and the actual executor table disagree on one executor name; no claim here relies on that name. Held-out bootstrap intervals for a selected agent are not independent repeated-search-seed uncertainty. No code execution, experiment reproduction, usable author implementation or weight release was verified."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-19T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-19",
+      "report_path": "reports/2026/11/2026-11-19.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://openai.com/index/advancing-chip-design-with-our-models/",
+      "title": "Tool-Verified RTL Optimization and Specification-Driven Processor Design",
+      "category": "2.2",
+      "tags": [
+        "Hardware Agents",
+        "Tool Verification",
+        "RTL Optimization"
+      ],
+      "published_on": "2026-11-18",
+      "first_seen_at": "2026-11-19T11:08:04.665+00:00",
+      "canonical_url": "https://openai.com/index/advancing-chip-design-with-our-models/",
+      "links": {
+        "blog": "https://openai.com/index/advancing-chip-design-with-our-models/"
+      },
+      "summary": [
+        "OpenAI reports model-assisted circuit rewrites and compares optimizing existing processor RTL with building a core from a written specification.",
+        "The work illustrates how simulation and design tools can guide hardware agents, while showing why throughput scores need to be assessed alongside correctness, circuit area and retained functionality."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "Complete November18 technical article inspected. Its new evaluation includes 9,881 scored runs across two 32-bit RISC-V cores, two tasks and multiple token budgets. Valid designs receive normalized throughput from hidden-workload instructions per cycle and Yosys-estimated clock frequency; failures or area above16× baseline score zero. Separate production-block area and AMD PPA claims are author reports, not the same benchmark or newly released silicon evidence.",
+        "limitations": "Simulation tests do not prove full functional equivalence. A loose16× area cap and omission of original features can favor specification-built designs; physical timing checks are deferred. Scores normalize to the best observed throughput and average over failures, rather than measuring a universal chip speedup. Matching author evaluation code, uncertainty estimates and the proprietary design artifacts were not supplied in the inspected article."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-11-19",
+      "report_path": "reports/2026/11/2026-11-19.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.23588",
+      "title": "ARISE: Practical Self-Evolving Memory for Accurate and Cost-Efficient Enterprise Agents",
+      "category": "2.3",
+      "tags": [
+        "Procedural Memory",
+        "Failure Feedback",
+        "Enterprise Agents"
+      ],
+      "published_on": "2026-11-17",
+      "first_seen_at": "2026-11-19T11:06:46.455+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.23588",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.23588"
+      },
+      "summary": [
+        "ARISE turns failed enterprise-agent runs into retrievable corrections and a compact set of rules, checking rule updates on held-out training validation while keeping model weights, tools and workflow fixed.",
+        "Across five models it reports gains on SOP-Bench and τ²-bench, suggesting a practical way to reuse labeled mistakes without retraining.",
+        "Expected-label feedback drives much of the gain, and accuracy-based acceptance does not establish policy compliance or memory safety."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read the complete main scientific pages1–9, AppendixA algorithms/hyperparameters and AppendixB protocols, controls, statistics, cost accounting and full results on pages11–16; directly inspected Table2/page5 and Table7 with adaptation-cost and micro-memory details/page12. Failed training traces plus expected outputs/action checks produce conditional corrections, an embedding-retrieved micro store and at most five consolidated macro rules. Candidate rules require validation-accuracy improvement; the final optional micro-retrieval gate is a separate check. Five Bedrock models are evaluated over11 SOP-Bench domains and3 τ² domains, with three adaptation runs per model/domain. Teacher-memory domain-mean accuracy is76.5% to87.4% on SOP-Bench and56.5% to62.3% on τ²; the overall14-domain average is72.2% to82.0%. A matched macro-fixed ablation attributes only0.7percentage points on SOP-Bench to micro retrieval, while pass/fail-only feedback reaches79.6% rather than the full87.4%, showing substantial dependence on expected labels. No author implementation or project URL was verified. Original November17 submission dates are retained. Both studies appear as original new submissions in the November19 cs.AI batch; the official Tuesday14:00–Wednesday14:00 Eastern submission window implies Wednesday20:00EST, or November19 01:00UTC, announcement. This is a schedule inference, not a directly observed exact visibility time. Actual first_seen is the earliest successful completed team catalog containing the paper: this run’s cs.AI NEW response at November19 11:06:46.455335UTC; Recipe and Infra confirmed their matching catalogs were later. No earlier complete public study was established by the bounded primary-title and artifact-history checks.",
+        "limitations": "Expected labels can contradict the written SOP: the case study learns a different missing-field threshold and a required FAILED label. Higher benchmark agreement therefore is not a policy-compliance guarantee. Validation checks accuracy, not privacy, provenance, poisoning resistance or permission boundaries for persistent memory. The micro gate compares macro+micro on the first20 validation cases with macro-only on the full validation set, so its acceptance is not a matched causal estimate. Baselines and Teacher/Self conditions have unequal test-trial and adaptation-replicate structures; some model/domain results regress. Bootstrap p-values are unadjusted and do not substitute for independent reproduction. Overall reported4.0% fewer calls,5.2% fewer output tokens,0.4% fewer total tokens and1.0% lower token-priced inference cost are different metrics; they do not establish end-to-end latency or compute savings. The estimated mean$17.46 adaptation token cost excludes embedding calls and final testing and uses maximum output-token budgets for attribution/consolidation; storage/retrieval costs are unmeasured. No author code, weights or deployment safety evaluation was verified."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-19T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-19",
+      "report_path": "reports/2026/11/2026-11-19.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://openai.com/index/research-acceleration-jagged-frontier/",
+      "title": "Research Acceleration: Measuring a Jagged Frontier of Agent Assistance",
+      "category": "2.8",
+      "tags": [
+        "Research Agents",
+        "Task Evaluation",
+        "Human Oversight"
+      ],
+      "published_on": "2026-11-18",
+      "first_seen_at": "2026-11-19T11:08:04.665+00:00",
+      "canonical_url": "https://openai.com/index/research-acceleration-jagged-frontier/",
+      "links": {
+        "blog": "https://openai.com/index/research-acceleration-jagged-frontier/"
+      },
+      "summary": [
+        "OpenAI combines internal coding-agent traces, researcher surveys and activity measures to examine where AI research assistance succeeds and where people still intervene.",
+        "The task-level differences offer a useful framework for deciding what to delegate, while separating agent usage and research activity from demonstrated scientific progress."
+      ],
+      "evidence": {
+        "type": "technical-report",
+        "access": "full-text",
+        "rationale": "Complete article and embedded methods, task schemas, uncertainty bounds and chart specifications inspected. August–October task estimates differ sharply: 79% for monitoring training runs versus 25% for inference/serving code. The estimator keeps all tasks in the denominator, bounds uncertain outcomes and bootstraps user-months; headline points assume half of uncertain zero-intervention tasks succeeded. November18 primary date and new methods distinguish this report from September.",
+        "limitations": "Observational, model-judged internal data cannot identify causal productivity uplift. Delegated tasks, roster, pricing and harnesses change; uncertain-outcome midpoints are assumptions, not measured success labels. Surveys are partly non-random; some categories are omitted for small samples. Activity, list-price spend and the internal capability index do not establish recursive self-improvement. No matching evaluation implementation or independent reproduction was verified."
+      },
+      "novelty": "new",
+      "report_kind": "daily",
+      "report_date": "2026-11-19",
+      "report_path": "reports/2026/11/2026-11-19.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.24496",
+      "title": "Harvesting Expert-Parallel Bubbles for Fine-Tuning",
+      "category": "3.3",
+      "tags": [
+        "MoE",
+        "LoRA Colocation",
+        "GPU Scheduling",
+        "Serving Latency"
+      ],
+      "published_on": "2026-11-18",
+      "first_seen_at": "2026-11-19T11:06:46.455+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.24496",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.24496v1"
+      },
+      "summary": [
+        "BubbleTea predicts each GPU’s idle window inside an expert-parallel MoE layer and fills it with compiler-generated LoRA training chunks that share serving weights.",
+        "On four A100 GPUs with BF16 serving across three MoE models, it delivers 1.9–6.2× the fine-tuning throughput of a ported LLMStation baseline while keeping both p90 TTFT and TPOT within 10% of serving alone in 50 of 63 workloads.",
+        "It offers a concrete way to reclaim serving capacity, but those gains include improved decode/idle-time execution; residual bubble filling adds 12–23% at high load with expert load balancing, and some configurations substantially worsen serving latency."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read scientific main pp.1–11 and all experimental/compiler appendices A–E pp.14–25; references pp.11–13 not separately audited in full. Actual source p.8 Figs.6–7, p.17 exception text/Table3 and p.20 Fig.17 visually inspected. Per-layer router assignment predicts expert-GEMM tile imbalance; the most-loaded GPU admits no work. Offline operation substitution, AOTAutograd, roofline partitioning into <=50us chunks, Inductor/CUDA graphs, GPU mailbox readiness and paired training chains enable uneven progress; a 60us early close is heuristic, not a hard SLO guarantee. Core evaluation is one node, four NVLink A100-SXM4-80GB, vLLM0.21.1/PyTorch2.11/Triton3.6, BF16, TP=EP=4, eager execution, chunked prefill/prefix caching disabled. Three MoEs, 1k–32k arXiv prompts with32 generated tokens,400 requests and three runs; LoRA rank16 attention adapters on128-token Alpaca samples, same job across systems. LLMStation was ported to the software versions and its fastest tested separate-PyTorch padded-cuBLAS MoE training path; no claim of an unchanged released dense fusion engine. Full-system FT median improvement2.8x and range1.9–6.2x;13/63 workloads miss the10% latency bound. At8k/high-load with EPLB, filling residual bubbles adds12–23% across lengths, not the full-system headline multiple. Two10-minute Azure arrival/length trace replays use arXiv text, not a live production deployment; FT3.2–3.3x and tail latencies within7%.476-step moving-average loss comparison is a limited correctness check, not convergence equivalence. Primary OS NEW Thu19 plus v1 receipt Wed18 14:24:23UTC and the official Tuesday14–Wednesday14 -> Wednesday20EST schedule support inferred announcement Nov19 01Z. Earliest completed team discovery is Agents AI NEW Nov19 11:06:46.455335UTC; its raw index and receipt are copied and pinned. Bounded paper/HTML/native/web/repository search found no earlier matching full study or verified matching author code; unrelated third-party code-release labels are not accepted.",
+        "limitations": "Single-node A100/BF16 colocation evidence; the eight-H100/FP8 experiments characterize bubbles, not end-to-end BubbleTea performance. Short-output controlled workloads are prefill-heavy, and gains at1k/2k come only from decode/idle runtime. The 13 latency failures include Qwen1.5 TPOT1.14–1.47x at long prompts and TTFT3.61x at1k/high load; the current policy does not stop decode/idle training when a request queue builds. With EPLB,16k/medium-load TPOT1.32x accompanies no FT gain. Fine-tuning residency removes4.3–5.8GiB/GPU from KV capacity. A margin sweep excludes one queueing episode and uses fewer repetitions in some ablations; no deterministic latency guarantee, multi-node study, broad convergence/quality guarantee or independent reproduction. Compiler support for a new unsupported operation still needs a lowering and gradient rule. No matching author implementation or project was verified, so only the paper link is exposed."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-19T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.OS/new?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-19",
+      "report_path": "reports/2026/11/2026-11-19.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.24891",
+      "title": "Cap-and-Track: Optimizing LLM Inference Request Dispatch Across Shifting Capacity",
+      "category": "3.3",
+      "tags": [
+        "Admission Control",
+        "Asynchronous Inference",
+        "Serving Efficiency",
+        "Production Evaluation"
+      ],
+      "published_on": "2026-11-18",
+      "first_seen_at": "2026-11-19T11:07:13.983+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.24891",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.24891v1"
+      },
+      "summary": [
+        "Cap-and-Track keeps excess asynchronous inference work in durable priority queues, combines prompt per-replica refusals with a refusal-driven dispatcher, and follows capacity changes without predicting output length.",
+        "In a same-traffic production A/B, Meta’s complete shaper served a classifier on 39 H100s versus 68 for its fixed-rate precursor with matching coverage and scores; controlled real-engine replay separately tests admission and dispatch.",
+        "The design is useful for latency-tolerant backfills and media processing, but the smaller fleet trades lower-priority freshness for utilization: the lowest band waited a median 6.6 hours versus 0.5 hours at backfill peaks, and interactive or agent-session traffic was not evaluated."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read complete scientific main pp.1–11, AI-usage disclosure pp.13–14, and full production/coordination/experimental appendices A–C pp.15–20; bibliography pp.11–13 not separately audited. Actual p.7 Table1/Fig.3 and p.19 TableC1 visually inspected. Cap promptly labels overload near the saturating resource; excess/refused work waits in FOQS or the worker ready queue rather than holding execution connections. Track uses successful/429 outcomes only,15second MIMD control,3% growth/three decrease tiers, one controller per capacity domain, utilization gating, worker-placement hysteresis and rate freezes during restarts. Production cap140 is slightly above vLLM128 running sequences. Same-traffic classifier A/B keeps model,prompts,vLLM settings and fulltraffic fixed:39 versus68 H100,coverage parity and scores identical up to sampling noise. This compares combined admission+controller+durable dispatch, not Track in isolation. Five of29saved cards are the precursor safety margin. Zero-shot23day A/B on approximately600MI300X/GPU per arm drains all8shared backlogs earlier by median3hours; no smaller zero-shot fleet is tested. Controlled Llama3.1-8B replay uses real A100 engines: cap vs blocking at ~2xcapacity (3runs) and separate fixed-rate/Track three-host experiments(2A100replicas/host,three runs/cell). At stable fullcapacity,108.5req/s Track vs109.5 fixed120% and107.0 fixed100%; source refusal shares3.8%vs15.5% differ from refused-attempts-per-completion in TableC1. Track takes220s to95% after restore; fixed pre-drop rate recovers immediately, and moderate40%capacity losses can take~13minutes to descend. Emulator/simulation comparisons are identified separately, not claimed as GPU measurements. Original LG NEW Thu19, v1 receipt Wed18 18:34:10UTC(13:34EST), and Tuesday14–Wednesday14 -> Wednesday20EST schedule support Nov19 01Z public availability. Earliest successful team discovery is Recipe LG NEW completed11:07:13.983332UTC; copied rawcatalog/receipt pinned. No earlier matching public full study located in bounded primary/native/web search. No author code or reproducible raw production logs verified; unrelated GitHub name matches excluded.",
+        "limitations": "Only asynchronous, latency-tolerant work with prompt labeled refusals and one controller/capacity domain; no interactive or agent-session serving validation. Production A/B identifies the whole shaper change, not refusal-only control in isolation; other provider comparisons are observational and confounded by backlog/admission/token-mix changes. Classifier fleet43%reduction is39vs68 in the comparison, not current45production sizing; low-priority freshness worsens, with44–55% meeting goals during backfill. Larger fleet capacity-savings extrapolations, prefix-aware ordering, queue autoscaling and general framework-stack integration are untested. Real-engine controller replay is classifier-shaped with synthetic prompts; generative production results are observational. Slow adaptation/freezes and refusal/network overhead remain. Controller code, traces, raw logs and production model details are not publicly verified; no independent reproduction."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-19T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/new?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-19",
+      "report_path": "reports/2026/11/2026-11-19.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.23848",
+      "title": "A Fast, Programmable GPU-to-CPU Invocation Layer for GPU-Initiated Communication",
+      "category": "3.8",
+      "tags": [
+        "GPU Communication",
+        "CPU Proxies",
+        "Expert Parallelism",
+        "AMD Instinct"
+      ],
+      "published_on": "2026-11-18",
+      "first_seen_at": "2026-11-19T11:07:13.983+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.23848",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.23848v1",
+        "code": "https://github.com/AMDResearch/kiwi"
+      },
+      "summary": [
+        "A new KIWI study evaluates programmable CPU-proxy communication built on the existing public invocation library, using per-wave queues and workload-specific host callbacks to simplify MoE dispatch and combine.",
+        "On MI300X nodes with 400 Gb/s RoCE links, its BF16 expert-parallel benchmark reaches up to 2.3× lower dispatch-plus-combine latency than the best tested backend, while separate FP8 GLM-5.3 vLLM experiments reduce TPOT by up to 29% versus MORI.",
+        "The results make CPU-assisted networking worth considering for low-latency MoE serving, with four proxy CPU cores per GPU and weaker performance at some larger token counts; they establish a new measured study rather than a new software release."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read complete scientific main pp.1–9; pp.9–11 references not separately read in full. Actual p.7 TableIII/Figs.5–6 and p.8 Figs.7–8 directly inspected. GPU waves publish descriptor+signal pairs into SPSC host-memory queues through wave-wide stores; ordinary application-owned CPU threads poll endpoints and execute registered callbacks. Data still moves GPU-to-GPU via NIC RDMA; only protocol/control moves to the host. KIWI-EP defines multicast, count all-to-all and barrier callbacks plus dynamic active-range polling and skewed round-robin endpoint ownership. The queue1.92us p50 unloaded RTT and earlier core design are not presented as newly released results. New full paper provides2–8node MI300X measurements:8GPUs/node,8ConnectX-7 400Gb/s RoCE NICs/node,PCIeGen5,NUMA pinning,median at least3runs. BF16 DeepSeekV3-shaped EP uses hidden7168/256experts/top8 and reports slowest-rank dispatch+combine latency: best tested up to16tokens/GPU on2nodes,32on4,all tested on8; maximum2.3x. Separate FP8 GLM5.3 PD-disaggregated vLLM serves8Kinput/1Koutput;NPND denotes N prefill PLUS N decode nodes,8ranks/node. Prefill stays MORI; only decode switches backend. TPOT improves up to29% over MORI; GSM8K/needle checks report no accuracy effect without detailed confidence intervals. Repository history/initial tree and historical README/docs were inspected: initial full library/prototype EP code Nov6, queue/performance README Nov17, paper link Nov19. The initial tree contains implementation, benchmark drivers and tuning tables, but no raw experiment-result artifacts or paper; bounded inspected initial documentation does not disclose the paper’s2.3x/29% comparative study. Thus the report concerns the newly disclosed measured manuscript, not invention/release of previously available callbacks/EP code. Primary DC NEW Thu19 and v1 receipt Wed18 04:52:50UTC (=Tue23:52EST) support Wednesday20EST/Nov19 01Z public announcement by official schedule. First actual completed team discovery is Recipe LG NEW Nov19 11:07:13.983332UTC, copied/pinned. Public repository landing, API and README verified200; source and tests not executed.",
+        "limitations": "Earlier public library and prototype EP code date Nov6, so no new-method or new-code-release claim. AMD MI300X/RoCE-specific comparative evidence, not all GPUs/networks; host proxy CPU resource/pinning requirements are material. Four CPU proxy cores/GPU in EP deployment; ordinary OS thread preemption is unmodeled. KIWI sends a token once per destination GPU, while MORI can send once per destination node, so at higher token counts on2/4nodes it can lose. NPND serving scale is two fleets and is not the same experiment as the2–8node microbenchmark. Some queue baseline protocols are reimplemented on AMD and callbacks reduce bare-queue throughput. No reported software-version pin for the paper’s full cluster, no raw run records or detailed quality uncertainty inspected, no broad semantic/accuracy guarantee, no independent reproduction."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-19T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/new?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-19",
+      "report_path": "reports/2026/11/2026-11-19.md",
+      "search_status": "partial"
+    },
     {
       "id": "arxiv:2611.23229",
       "title": "Ambient LLMs: Data-Efficient Supervised Fine-tuning via Temperature Matching",
@@ -14030,7 +14427,7 @@
       "group": "llm-recipe",
       "title": "Data Curation & Tokenization",
       "path": "topics/llm-recipe/data-curation-tokenization/README.md",
-      "count": 10
+      "count": 11
     },
     {
       "id": "1.2",
@@ -14044,7 +14441,7 @@
       "group": "llm-recipe",
       "title": "Pretraining & Optimization",
       "path": "topics/llm-recipe/pretraining-optimization/README.md",
-      "count": 17
+      "count": 18
     },
     {
       "id": "1.4",
@@ -14079,7 +14476,7 @@
       "group": "llm-recipe",
       "title": "Distillation & Model Compression",
       "path": "topics/llm-recipe/distillation-model-compression/README.md",
-      "count": 22
+      "count": 23
     },
     {
       "id": "1.9",
@@ -14100,21 +14497,21 @@
       "group": "ai-agent-dev",
       "title": "Agent Architecture & Planning",
       "path": "topics/ai-agent-dev/agent-architecture-planning/README.md",
-      "count": 6
+      "count": 7
     },
     {
       "id": "2.2",
       "group": "ai-agent-dev",
       "title": "Tool Use & Environment Interaction",
       "path": "topics/ai-agent-dev/tool-use-environment-interaction/README.md",
-      "count": 9
+      "count": 10
     },
     {
       "id": "2.3",
       "group": "ai-agent-dev",
       "title": "Context Engineering & Memory",
       "path": "topics/ai-agent-dev/context-engineering-memory/README.md",
-      "count": 23
+      "count": 24
     },
     {
       "id": "2.4",
@@ -14149,7 +14546,7 @@
       "group": "ai-agent-dev",
       "title": "Agent Evaluation & Security",
       "path": "topics/ai-agent-dev/agent-evaluation-security/README.md",
-      "count": 47
+      "count": 48
     },
     {
       "id": "3.1",
@@ -14170,7 +14567,7 @@
       "group": "ai-training-inference-infra",
       "title": "Inference Engines & Serving",
       "path": "topics/ai-training-inference-infra/inference-engines-serving/README.md",
-      "count": 26
+      "count": 28
     },
     {
       "id": "3.4",
@@ -14205,7 +14602,7 @@
       "group": "ai-training-inference-infra",
       "title": "Hardware, Networking & Cluster Efficiency",
       "path": "topics/ai-training-inference-infra/hardware-networking-cluster-efficiency/README.md",
-      "count": 14
+      "count": 15
     }
   ]
 }

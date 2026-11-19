@@ -5,6 +5,22 @@ Agent loops, task decomposition, planning, reflection and execution control.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-19](../../../reports/2026/11/2026-11-19.md) — PARTIAL SEARCH
+
+### [GRAFT: Execution-Guided Genetic Recombination for Agent Design](<https://arxiv.org/abs/2611.23509>)
+
+GRAFT gives an evolutionary agent-program designer bounded examples of each parent’s successes and failures, alongside its code and aggregate fitness. Controlled searches improve held-out performance when this evidence is added, offering a way to turn evaluation logs into architectural changes without extra task executions to collect that feedback. Some gains reflect interface normalization, and the study does not establish long-horizon transfer or equal total inference cost.
+
+**Published:** 2026-11-17 · **First seen:** 2026-11-19T11:06:46.455+00:00 · **Novelty:** new · **Tags:** Agent Architecture Search, Execution Feedback, Evolutionary Optimization
+
+**Public availability:** 2026-11-19T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.23509>)
+
+**Evidence:** research-paper; full-text. Read the full main scientific methods, experiments, cases and limitations on PDF pages1–8 and relevant AppendicesA–D on pages12–13; directly inspected Table1 on page5. The search keeps five executable Python agents, selects parents by aggregate validation fitness, and supplies up to three success and six failure traces from the exact evaluated parent versions to a semantic crossover/mutation proposer. Those records contain inputs, outputs and evaluator/error feedback but not reference answers. Bounded proposal repairs, elitist replacement and a fixed validation-to-held-out split complete the loop. The Qwen3.5-35B-A3B-FP8 main configuration reports an unweighted six-setting mean of82.0%, versus72.2% for its strongest baseline mean. More directly, an otherwise matched GA-only control that removes per-example feedback scores56.7% rather than91.6% on MGSM and56.7% rather than58.0% on ARC. The public anonymous repository API currently lists only a64-byte title README; the landing page returns401, so no implementation release is claimed. Original November17 submission dates are retained. Both studies appear as original new submissions in the November19 cs.AI batch; the official Tuesday14:00–Wednesday14:00 Eastern submission window implies Wednesday20:00EST, or November19 01:00UTC, announcement. This is a schedule inference, not a directly observed exact visibility time. Actual first\_seen is the earliest successful completed team catalog containing the paper: this run’s cs.AI NEW response at November19 11:06:46.455335UTC; Recipe and Infra confirmed their matching catalogs were later. No earlier complete public study was established by the bounded primary-title and artifact-history checks.
+
+**Limitations:** The authors identify MGSM language/output-interface normalization as an important source of improvement, rather than establishing a pure reasoning gain. Although Table1’s caption says equal candidate budgets, the main text and AppendixC explicitly give SwarmAgentic50 evaluations versus30 for the other search methods. Candidate counts are not total LLM-token, wall-time or compute parity. Cached traces avoid new task executions for feedback collection but still add proposer input and repair work. Reference agents differ in structure/call counts, some executor/optimizer settings favor other methods, and no general task-transfer, long-horizon interactive or distribution-shift result is established. Main model prose and the actual executor table disagree on one executor name; no claim here relies on that name. Held-out bootstrap intervals for a selected agent are not independent repeated-search-seed uncertainty. No code execution, experiment reproduction, usable author implementation or weight release was verified.
+
 ## [2026-11-11](../../../reports/2026/11/2026-11-11.md) — PARTIAL SEARCH
 
 ### [ReTrace: Distilling Tool-Using Agents into Planner-Free Workflows](<https://arxiv.org/abs/2611.14492>)

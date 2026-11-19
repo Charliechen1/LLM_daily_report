@@ -5,6 +5,20 @@ Task success, trajectory evaluation, cost/reliability, prompt injection and perm
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-19](../../../reports/2026/11/2026-11-19.md) — PARTIAL SEARCH
+
+### [Research Acceleration: Measuring a Jagged Frontier of Agent Assistance](<https://openai.com/index/research-acceleration-jagged-frontier/>)
+
+OpenAI combines internal coding-agent traces, researcher surveys and activity measures to examine where AI research assistance succeeds and where people still intervene. The task-level differences offer a useful framework for deciding what to delegate, while separating agent usage and research activity from demonstrated scientific progress.
+
+**Published:** 2026-11-18 · **First seen:** 2026-11-19T11:08:04.665+00:00 · **Novelty:** new · **Tags:** Research Agents, Task Evaluation, Human Oversight
+
+[Blog](<https://openai.com/index/research-acceleration-jagged-frontier/>)
+
+**Evidence:** technical-report; full-text. Complete article and embedded methods, task schemas, uncertainty bounds and chart specifications inspected. August–October task estimates differ sharply: 79% for monitoring training runs versus 25% for inference/serving code. The estimator keeps all tasks in the denominator, bounds uncertain outcomes and bootstraps user-months; headline points assume half of uncertain zero-intervention tasks succeeded. November18 primary date and new methods distinguish this report from September.
+
+**Limitations:** Observational, model-judged internal data cannot identify causal productivity uplift. Delegated tasks, roster, pricing and harnesses change; uncertain-outcome midpoints are assumptions, not measured success labels. Surveys are partly non-random; some categories are omitted for small samples. Activity, list-price spend and the internal capability index do not establish recursive self-improvement. No matching evaluation implementation or independent reproduction was verified.
+
 ## [2026-11-18](../../../reports/2026/11/2026-11-18.md) — PARTIAL SEARCH
 
 ### [GPT-6.2 System Card: Model- and Harness-Dependent Agent Honesty](<https://deploymentsafety.openai.com/gpt-6-2-astra-sol>)

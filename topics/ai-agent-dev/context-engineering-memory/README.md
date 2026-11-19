@@ -5,6 +5,22 @@ Context organization/compression, working memory, long-term memory and state.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-19](../../../reports/2026/11/2026-11-19.md) — PARTIAL SEARCH
+
+### [ARISE: Practical Self-Evolving Memory for Accurate and Cost-Efficient Enterprise Agents](<https://arxiv.org/abs/2611.23588>)
+
+ARISE turns failed enterprise-agent runs into retrievable corrections and a compact set of rules, checking rule updates on held-out training validation while keeping model weights, tools and workflow fixed. Across five models it reports gains on SOP-Bench and τ²-bench, suggesting a practical way to reuse labeled mistakes without retraining. Expected-label feedback drives much of the gain, and accuracy-based acceptance does not establish policy compliance or memory safety.
+
+**Published:** 2026-11-17 · **First seen:** 2026-11-19T11:06:46.455+00:00 · **Novelty:** new · **Tags:** Procedural Memory, Failure Feedback, Enterprise Agents
+
+**Public availability:** 2026-11-19T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.AI/new>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.23588>)
+
+**Evidence:** research-paper; full-text. Read the complete main scientific pages1–9, AppendixA algorithms/hyperparameters and AppendixB protocols, controls, statistics, cost accounting and full results on pages11–16; directly inspected Table2/page5 and Table7 with adaptation-cost and micro-memory details/page12. Failed training traces plus expected outputs/action checks produce conditional corrections, an embedding-retrieved micro store and at most five consolidated macro rules. Candidate rules require validation-accuracy improvement; the final optional micro-retrieval gate is a separate check. Five Bedrock models are evaluated over11 SOP-Bench domains and3 τ² domains, with three adaptation runs per model/domain. Teacher-memory domain-mean accuracy is76.5% to87.4% on SOP-Bench and56.5% to62.3% on τ²; the overall14-domain average is72.2% to82.0%. A matched macro-fixed ablation attributes only0.7percentage points on SOP-Bench to micro retrieval, while pass/fail-only feedback reaches79.6% rather than the full87.4%, showing substantial dependence on expected labels. No author implementation or project URL was verified. Original November17 submission dates are retained. Both studies appear as original new submissions in the November19 cs.AI batch; the official Tuesday14:00–Wednesday14:00 Eastern submission window implies Wednesday20:00EST, or November19 01:00UTC, announcement. This is a schedule inference, not a directly observed exact visibility time. Actual first\_seen is the earliest successful completed team catalog containing the paper: this run’s cs.AI NEW response at November19 11:06:46.455335UTC; Recipe and Infra confirmed their matching catalogs were later. No earlier complete public study was established by the bounded primary-title and artifact-history checks.
+
+**Limitations:** Expected labels can contradict the written SOP: the case study learns a different missing-field threshold and a required FAILED label. Higher benchmark agreement therefore is not a policy-compliance guarantee. Validation checks accuracy, not privacy, provenance, poisoning resistance or permission boundaries for persistent memory. The micro gate compares macro+micro on the first20 validation cases with macro-only on the full validation set, so its acceptance is not a matched causal estimate. Baselines and Teacher/Self conditions have unequal test-trial and adaptation-replicate structures; some model/domain results regress. Bootstrap p-values are unadjusted and do not substitute for independent reproduction. Overall reported4.0% fewer calls,5.2% fewer output tokens,0.4% fewer total tokens and1.0% lower token-priced inference cost are different metrics; they do not establish end-to-end latency or compute savings. The estimated mean$17.46 adaptation token cost excludes embedding calls and final testing and uses maximum output-token budgets for attribution/consolidation; storage/retrieval costs are unmeasured. No author code, weights or deployment safety evaluation was verified.
+
 ## [2026-11-18](../../../reports/2026/11/2026-11-18.md) — PARTIAL SEARCH
 
 ### [Context Has a Price: Adding and Removing Context for LLM Coding Agents under Prefix Caching](<https://arxiv.org/abs/2611.22238>)
