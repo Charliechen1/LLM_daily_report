@@ -5,6 +5,20 @@ Long-running execution, failure recovery, retries, persistence and human collabo
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-20](../../../reports/2026/11/2026-11-20.md) — PARTIAL SEARCH
+
+### [Performance Factory: Persistent, Event-Driven Agents for Production Regressions](<https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast/>)
+
+OpenAI describes a production workflow in which persistent tasks, explicit state transitions and event subscriptions coordinate agents that investigate performance regressions, propose fixes and verify recovery after deployment. The design helps long-running agent services resume work across sessions and challenge diagnoses through separate reviewers, while engineers retain merge decisions.
+
+**Published:** 2026-11-19 · **First seen:** 2026-11-20T16:16:43.404+00:00 · **Novelty:** new · **Tags:** production-agents, persistent-workflows, adversarial-review
+
+[Blog](<https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast/>)
+
+**Evidence:** engineering-report; full-text. The complete article describes the task-service, dispatcher, cloud execution and subscription architecture, recovery loop and historical backtests. Authors report over 1,700 investigations and over 600 root-caused cases in just over three months; a manual sample of 100 root-cause suggestions was graded 70% accurate. These are operational observations, not a controlled estimate of automation gains.
+
+**Limitations:** Internal deployment; sample selection, grading reliability, fix success, end-to-end latency/cost and reviewer-isolated effects are unreported. No verified public implementation or reproducible benchmark; synthetic performance testing and autonomous shipping remain future work. Counts describe investigations and diagnoses, not merged fixes or causal productivity uplift.
+
 ## [2026-11-15](../../../reports/2026/11/2026-11-15.md) — PARTIAL SEARCH
 
 ### [CoLFA: Collaboration-Guided Lightweight Failure Attribution for LLM-Based Multi-Agent Systems](<https://arxiv.org/abs/2611.14980>)

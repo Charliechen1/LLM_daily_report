@@ -1,0 +1,961 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-20",
+  "timezone": "America/Los_Angeles",
+  "generated_at": "2026-11-20T16:33:38.205+00:00",
+  "coverage": {
+    "start": "2026-11-19T03:00:00-08:00",
+    "end": "2026-11-20T03:00:00-08:00"
+  },
+  "search": {
+    "status": "partial",
+    "notes": "Coverage is November19 03:00 through November20 03:00 America/Los_Angeles (-08:00); the total72-hour discovery interval is November17 11:00UTC through November20 11:00UTC. Actual retrieval around November20 16:15UTC does not extend that cutoff. The September29baseline and complete385-record registry were checked, and all26subdomains were screened without a quota. Ten contributions passed full scientific-text review, with relevant methods, appendices and source tables inspected; no abstract-only item is included. Seven papers use original dated arXiv batches plus the official Eastern-US schedule for explicitly inferred November20 01:00UTC manuscript announcements, not measured exact server release times. BudgetInternalization retains its earlier inspected November19 11:33:50UTC checkpoint artifact; its collection was later updated after cutoff. BlindSpotsTravel is a delayed discovery of the verified November18 19:08:08UTC original full-source release. Original submission dates are preserved. The OpenAI engineering article is dated November19 without an invented hour. first_seen records earliest successful timestamped team-catalog completions; untimestamped web previews cannot establish an exact earlier instant. OpenReview submission discovery returned HTTP403, leaving a material gap. No matching author implementation was verified for the four selected Infra papers; only inspected paper links are provided. An immutable November1GrepMem artifact already contains the central methods/results; historical public visibility and a qualifying newly dated delta were not established, so it is reserved. The harness-adapters blog first inspected main-source commit was November20 13:36:52UTC, after cutoff; no earlier complete public source was verified, so it is deferred. CanonLayers has a November12v1 receipt and unresolved earlier availability, so it remains a reserve. ACL/EMNLP changes were venue/build metadata, with all7070event IDs retained; NeurIPS changes removed navigation, and OpenReview changed venue listings. This is bounded index chronology, not a fresh scientific audit of all proceedings. No experiment was independently reproduced and no universal SoTA ranking is asserted.",
+    "sources_checked": [
+      {
+        "name": "cl-new.html",
+        "url": "https://arxiv.org/list/cs.CL/new",
+        "status": "ok"
+      },
+      {
+        "name": "lg-new.html",
+        "url": "https://arxiv.org/list/cs.LG/new",
+        "status": "ok"
+      },
+      {
+        "name": "cl-recent.html",
+        "url": "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "lg-recent.html",
+        "url": "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "availability.html",
+        "url": "https://info.arxiv.org/help/availability.html",
+        "status": "ok"
+      },
+      {
+        "name": "hf-blog.html",
+        "url": "https://huggingface.co/blog",
+        "status": "ok"
+      },
+      {
+        "name": "tml-blog.html",
+        "url": "https://thinkingmachines.ai/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "2611.24963-abs.html",
+        "url": "https://arxiv.org/abs/2611.24963",
+        "status": "ok"
+      },
+      {
+        "name": "2611.25191-abs.html",
+        "url": "https://arxiv.org/abs/2611.25191",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26584-abs.html",
+        "url": "https://arxiv.org/abs/2611.26584",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26084-abs.html",
+        "url": "https://arxiv.org/abs/2611.26084",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26172-abs.html",
+        "url": "https://arxiv.org/abs/2611.26172",
+        "status": "ok"
+      },
+      {
+        "name": "2611.25597-abs.html",
+        "url": "https://arxiv.org/abs/2611.25597",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26059-abs.html",
+        "url": "https://arxiv.org/abs/2611.26059",
+        "status": "ok"
+      },
+      {
+        "name": "2611.25763-abs.html",
+        "url": "https://arxiv.org/abs/2611.25763",
+        "status": "ok"
+      },
+      {
+        "name": "2611.25191-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.25191v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.25191-paper.html",
+        "url": "https://arxiv.org/html/2611.25191v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26084-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.26084v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26084-paper.html",
+        "url": "https://arxiv.org/html/2611.26084v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26584-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.26584v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26584-paper.html",
+        "url": "https://arxiv.org/html/2611.26584v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26172-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.26172v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26172-paper.html",
+        "url": "https://arxiv.org/html/2611.26172v1",
+        "status": "ok"
+      },
+      {
+        "name": "judge-repo.json",
+        "url": "https://api.github.com/repos/liyu2195/blind-spots-travel",
+        "status": "ok"
+      },
+      {
+        "name": "judge-commits.json",
+        "url": "https://api.github.com/repos/liyu2195/blind-spots-travel/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "judge-readme.md",
+        "url": "https://raw.githubusercontent.com/liyu2195/blind-spots-travel/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "budget-collection.json",
+        "url": "https://huggingface.co/api/collections/JetBrains-Research/budget-internalization",
+        "status": "ok"
+      },
+      {
+        "name": "budget-collection.html",
+        "url": "https://huggingface.co/collections/JetBrains-Research/budget-internalization",
+        "status": "ok"
+      },
+      {
+        "name": "judge-initial-readme.md",
+        "url": "https://raw.githubusercontent.com/liyu2195/blind-spots-travel/e2259b162016e1c37928deb8a495ed7483bd9bd9/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "judge-initial-tree.json",
+        "url": "https://api.github.com/repos/liyu2195/blind-spots-travel/git/trees/e2259b162016e1c37928deb8a495ed7483bd9bd9?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "judge-initial-main.tex",
+        "url": "https://raw.githubusercontent.com/liyu2195/blind-spots-travel/e2259b162016e1c37928deb8a495ed7483bd9bd9/paper/main.tex",
+        "status": "unavailable"
+      },
+      {
+        "name": "budget-model.json",
+        "url": "https://huggingface.co/api/models/JetBrains-Research/budget-internalization-qwen3.5-4b-4k-grpo-sunnyfoal-s300",
+        "status": "ok"
+      },
+      {
+        "name": "budget-model-commits.json",
+        "url": "https://huggingface.co/api/models/JetBrains-Research/budget-internalization-qwen3.5-4b-4k-grpo-sunnyfoal-s300/commits/main",
+        "status": "ok"
+      },
+      {
+        "name": "budget-model-readme.md",
+        "url": "https://huggingface.co/JetBrains-Research/budget-internalization-qwen3.5-4b-4k-grpo-sunnyfoal-s300/raw/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "judge-initial-paper.tex",
+        "url": "https://raw.githubusercontent.com/liyu2195/blind-spots-travel/e2259b162016e1c37928deb8a495ed7483bd9bd9/paper/paper.tex",
+        "status": "ok"
+      },
+      {
+        "name": "judge-initial-appendix.tex",
+        "url": "https://raw.githubusercontent.com/liyu2195/blind-spots-travel/e2259b162016e1c37928deb8a495ed7483bd9bd9/paper/appendix.tex",
+        "status": "ok"
+      },
+      {
+        "name": "budget-immutable-readme.md",
+        "url": "https://huggingface.co/JetBrains-Research/budget-internalization-qwen3.5-4b-4k-grpo-sunnyfoal-s300/raw/6808e57c8e97d950630f2b9991bd0977075422ce/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "grep-repo.json",
+        "url": "https://api.github.com/repos/limenlp/GrepMem",
+        "status": "ok"
+      },
+      {
+        "name": "grep-commits.json",
+        "url": "https://api.github.com/repos/limenlp/GrepMem/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "grep-readme.md",
+        "url": "https://raw.githubusercontent.com/limenlp/GrepMem/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "harness-adapters.html",
+        "url": "https://huggingface.co/blog/harness-adapters-at-scale",
+        "status": "ok"
+      },
+      {
+        "name": "langchain-gateway.html",
+        "url": "https://www.langchain.com/blog/langsmith-tool-gateway",
+        "status": "ok"
+      },
+      {
+        "name": "langchain-governance.html",
+        "url": "https://www.langchain.com/blog/agent-governance-observability",
+        "status": "ok"
+      },
+      {
+        "name": "2611.25043-abs.html",
+        "url": "https://arxiv.org/abs/2611.25043",
+        "status": "ok"
+      },
+      {
+        "name": "2611.25043-source.pdf",
+        "url": "https://arxiv.org/pdf/2611.25043v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.25043-source.html",
+        "url": "https://arxiv.org/html/2611.25043v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.25123-abs.html",
+        "url": "https://arxiv.org/abs/2611.25123",
+        "status": "ok"
+      },
+      {
+        "name": "2611.25123-source.pdf",
+        "url": "https://arxiv.org/pdf/2611.25123v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.25123-source.html",
+        "url": "https://arxiv.org/html/2611.25123v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26423-abs.html",
+        "url": "https://arxiv.org/abs/2611.26423",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26423-source.pdf",
+        "url": "https://arxiv.org/pdf/2611.26423v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26423-source.html",
+        "url": "https://arxiv.org/html/2611.26423v1",
+        "status": "ok"
+      },
+      {
+        "name": "grep-initial-readme.md",
+        "url": "https://raw.githubusercontent.com/limenlp/GrepMem/b7e3744c2f7489feac4060b379be6936960dc7bd/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "grep-initial-method.md",
+        "url": "https://raw.githubusercontent.com/limenlp/GrepMem/b7e3744c2f7489feac4060b379be6936960dc7bd/docs/method.md",
+        "status": "ok"
+      },
+      {
+        "name": "grep-initial-reproduction.md",
+        "url": "https://raw.githubusercontent.com/limenlp/GrepMem/b7e3744c2f7489feac4060b379be6936960dc7bd/docs/reproduction.md",
+        "status": "ok"
+      },
+      {
+        "name": "harness-blog-history.json",
+        "url": "https://api.github.com/repos/huggingface/blog/commits?path=harness-adapters-at-scale.md&per_page=10",
+        "status": "ok"
+      },
+      {
+        "name": "ai-new.html",
+        "url": "https://arxiv.org/list/cs.AI/new?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "ai-recent.html",
+        "url": "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "cl-new.html",
+        "url": "https://arxiv.org/list/cs.CL/new?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "se-new.html",
+        "url": "https://arxiv.org/list/cs.SE/new?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "se-recent.html",
+        "url": "https://arxiv.org/list/cs.SE/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "anthropic-research.html",
+        "url": "https://www.anthropic.com/research",
+        "status": "ok"
+      },
+      {
+        "name": "anthropic-engineering.html",
+        "url": "https://www.anthropic.com/engineering",
+        "status": "ok"
+      },
+      {
+        "name": "langchain-blog.html",
+        "url": "https://www.langchain.com/blog",
+        "status": "ok"
+      },
+      {
+        "name": "dc-new.html",
+        "url": "https://arxiv.org/list/cs.DC/new?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "dc-recent.html",
+        "url": "https://arxiv.org/list/cs.DC/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "ar-new.html",
+        "url": "https://arxiv.org/list/cs.AR/new?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "ar-recent.html",
+        "url": "https://arxiv.org/list/cs.AR/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "lg-new.html",
+        "url": "https://arxiv.org/list/cs.LG/new?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "vllm-index.html",
+        "url": "https://vllm.ai/blog",
+        "status": "ok"
+      },
+      {
+        "name": "pytorch-index.html",
+        "url": "https://pytorch.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "nvidia-index.html",
+        "url": "https://developer.nvidia.com/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "amd-index.html",
+        "url": "https://rocm.blogs.amd.com/",
+        "status": "ok"
+      },
+      {
+        "name": "sglang-index.html",
+        "url": "https://www.lmsys.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "flashinfer-index.html",
+        "url": "https://flashinfer.ai/",
+        "status": "ok"
+      },
+      {
+        "name": "trt-blog-directory.json",
+        "url": "https://api.github.com/repos/NVIDIA/TensorRT-LLM/contents/docs/source/blogs/tech_blog",
+        "status": "ok"
+      },
+      {
+        "name": "2611.25091-abs.html",
+        "url": "https://arxiv.org/abs/2611.25091",
+        "status": "ok"
+      },
+      {
+        "name": "2611.25091-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.25091",
+        "status": "ok"
+      },
+      {
+        "name": "2611.25091-paper.html",
+        "url": "https://arxiv.org/html/2611.25091v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.25112-abs.html",
+        "url": "https://arxiv.org/abs/2611.25112",
+        "status": "ok"
+      },
+      {
+        "name": "2611.25112-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.25112",
+        "status": "ok"
+      },
+      {
+        "name": "2611.25112-paper.html",
+        "url": "https://arxiv.org/html/2611.25112v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26106-abs.html",
+        "url": "https://arxiv.org/abs/2611.26106",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26106-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.26106",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26106-paper.html",
+        "url": "https://arxiv.org/html/2611.26106v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26619-abs.html",
+        "url": "https://arxiv.org/abs/2611.26619",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26619-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.26619",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26619-paper.html",
+        "url": "https://arxiv.org/html/2611.26619v1",
+        "status": "ok"
+      },
+      {
+        "name": "dynamo-rollout.html",
+        "url": "https://developer.nvidia.com/blog/reducing-rollout-bottlenecks-in-reinforcement-learning-with-nvidia-dynamo/",
+        "status": "ok"
+      },
+      {
+        "name": "flashinfer-rl.html",
+        "url": "https://flashinfer.ai/2026/11/17/rl-ready-kernels.html",
+        "status": "ok"
+      },
+      {
+        "name": "github-search-Berth-GPU.json",
+        "url": "https://api.github.com/search/repositories?q=Berth+GPU",
+        "status": "ok"
+      },
+      {
+        "name": "github-search-TripleKV.json",
+        "url": "https://api.github.com/search/repositories?q=TripleKV",
+        "status": "ok"
+      },
+      {
+        "name": "github-search-AscMLA.json",
+        "url": "https://api.github.com/search/repositories?q=AscMLA",
+        "status": "ok"
+      },
+      {
+        "name": "github-search-TideCache.json",
+        "url": "https://api.github.com/search/repositories?q=TideCache",
+        "status": "ok"
+      },
+      {
+        "name": "sglang-ump.py",
+        "url": "https://raw.githubusercontent.com/sgl-project/sglang/25ce8063f7dbe444c4e24c562f31f86268e05a23/python/sglang/srt/mem_cache/unified_memory_pool.py",
+        "status": "ok"
+      },
+      {
+        "name": "sglang-hook.py",
+        "url": "https://raw.githubusercontent.com/sgl-project/sglang/25ce8063f7dbe444c4e24c562f31f86268e05a23/python/sglang/srt/arg_groups/kv_cache_hook.py",
+        "status": "ok"
+      },
+      {
+        "name": "cake-pr.json",
+        "url": "https://api.github.com/repos/flashinfer-ai/flashinfer/pulls/6242",
+        "status": "ok"
+      },
+      {
+        "name": "sglang-h20.html",
+        "url": "https://www.lmsys.org/blog/2026-11-19-deepseek-v41-h20/",
+        "status": "ok"
+      },
+      {
+        "name": "sglang-humming.html",
+        "url": "https://www.lmsys.org/blog/2026-11-18-humming-sglang/",
+        "status": "ok"
+      },
+      {
+        "name": "openai-research.html",
+        "url": "https://openai.com/news/research/",
+        "status": "ok"
+      },
+      {
+        "name": "openai-engineering.html",
+        "url": "https://openai.com/news/engineering/",
+        "status": "ok"
+      },
+      {
+        "name": "openai-security.html",
+        "url": "https://openai.com/news/security/",
+        "status": "ok"
+      },
+      {
+        "name": "deepmind-news.html",
+        "url": "https://deepmind.google/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "google-research.html",
+        "url": "https://research.google/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "ai2-research.html",
+        "url": "https://allenai.org/research",
+        "status": "ok"
+      },
+      {
+        "name": "xybench-blog.html",
+        "url": "https://allenai.org/blog/xybench",
+        "status": "ok"
+      },
+      {
+        "name": "teamwork-blog.html",
+        "url": "https://research.google/blog/advancing-science-engineering-with-antigravitys-teamwork-feature/",
+        "status": "ok"
+      },
+      {
+        "name": "deepmind-publications.html",
+        "url": "https://deepmind.google/research/publications/",
+        "status": "ok"
+      },
+      {
+        "name": "acl-index.html",
+        "url": "https://aclanthology.org/",
+        "status": "ok"
+      },
+      {
+        "name": "emnlp-index.html",
+        "url": "https://aclanthology.org/events/emnlp-2026/",
+        "status": "ok"
+      },
+      {
+        "name": "openreview-api.json",
+        "url": "https://api2.openreview.net/notes?invitation=ICLR.cc/2027/Conference/-/Submission&limit=20",
+        "status": "unavailable"
+      },
+      {
+        "name": "openreview-home.html",
+        "url": "https://openreview.net/",
+        "status": "ok"
+      },
+      {
+        "name": "neurips-download.html",
+        "url": "https://nips.cc/Downloads/2026",
+        "status": "ok"
+      },
+      {
+        "name": "alignment-index.html",
+        "url": "https://alignment.anthropic.com/",
+        "status": "ok"
+      },
+      {
+        "name": "performance-factory.html",
+        "url": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast/",
+        "status": "ok"
+      },
+      {
+        "name": "openai-alignment.html",
+        "url": "https://alignment.openai.com/",
+        "status": "ok"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": "arxiv:2611.25191",
+      "title": "Blind Spots Travel, Knowledge Stays Home: What RL Inherits from an LLM Judge",
+      "category": "1.6",
+      "tags": [
+        "LLM Judges",
+        "Reward Misspecification",
+        "Abstention",
+        "Controlled Experiments"
+      ],
+      "published_on": "2026-11-18",
+      "first_seen_at": "2026-11-20T16:15:25.993+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.25191",
+      "links": {
+        "paper": "https://arxiv.org/html/2611.25191v1",
+        "code": "https://github.com/liyu2195/blind-spots-travel"
+      },
+      "summary": [
+        "Controlled factual-answering RL experiments separate a judge’s answer-specific errors from category-level doubts, showing that structured false rejections can teach students to withhold answers they still know.",
+        "Hand-edited verdicts and matched-abstention controls reveal category losses that aggregate accuracy can hide, motivating audits of reward errors and refusals by question type before deploying judge-based training.",
+        "A student’s own sampled consensus is a useful comparator for abstention training in this setting, with calibration and scope limits rather than a general replacement for stronger judges."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read main scientific pp.1–9 and all supporting Appendices A–N pp.12–31; references pp.9–11 not separately audited. Actual p.4 Table2/Figure2 and p.18 Table10/hand-set control inspected. The814 main runs train Qwen2.5-7B-Instruct/Llama3.1-8B-Instruct with LoRA-GRPO for120 steps,750 questions per dataset, reward1/0 for accepted/rejected answers and0.5 for abstention, with KL0.2. Two-to-six runs per main cell compare answer keys, reference-free judges, stronger/reference-guided graders, designed error controls and32-sample student consensus. Editing only twelve known former-state training verdicts in a key-matched Llama control shifts unseen former-capital refusal5%→90% (three runs per arm); this is a controlled category effect, not a universal judge rate. At a stricter35% acceptance cut, four judges’ Llama students refuse89–98% of known former-state capitals, but forced decoding recovers95% pooled; collapsed runs are an explicit exception. Own-vote training at20-of32 is0.2 true-reward points below answer-key training pooled (95% interval−1.1,+0.7), but fails one pair by3.4 points and needs labeled calibration. Source main Table2 rewards abstention at50 on a0–100 scale, so it is not raw accuracy. Bounded exact-title searches and immutable GitHub history establish a complete original source/analysis release November18 19:08:08UTC: initial README/tree/paper.tex/appendix.tex inspected, not repository creation alone. This earlier full release precedes the daily main window but lies inside the72-hour discovery lookback, so the item is a delayed discovery, not newly released by today’s arXiv listing. Original publication date remains November18. Earliest actual team catalog completion is November20 16:15:25.993492UTC.",
+        "limitations": "Short closed-book factual answers and abstention under one KL-anchored LoRA recipe; open-ended generation and broad safety-refusal transfer are unestablished. The hand-built capitals probe and several analyses were developed after observing training errors, then tested with designed interventions; this is not a fully preregistered benchmark. PopQA includes324 near-duplicate held-out questions among750; relevant results include exclusions/fresh-question checks. Truth combines answer keys with a Sonnet audit also used as a grader; the human check agrees93.1% on189 settled items, with lower agreement on refused answers, and key-only sensitivity checks are provided. Thirty-one nearly-all-abstaining main runs are counted but excluded from grader contrasts; collapsed cases can lose knowledge, and removing KL changes the result substantially. Own-vote thresholds require labels to calibrate; a stronger judge can still improve true reward. Not every false rejection, category or operating cut exhibits the same effect. Verified code/source exists, but large release archives, adapters and experiments were not downloaded or run; no independent reproduction is claimed."
+      },
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-18T19:08:08Z",
+        "basis": "dated-source",
+        "sources": [
+          "https://api.github.com/repos/liyu2195/blind-spots-travel/commits?per_page=100",
+          "https://raw.githubusercontent.com/liyu2195/blind-spots-travel/e2259b162016e1c37928deb8a495ed7483bd9bd9/paper/paper.tex"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2611.26172",
+      "title": "Budget Internalization: Fixed-Budget RLVR Trades Test-Time Scaling for In-Budget Accuracy",
+      "category": "1.7",
+      "tags": [
+        "RLVR",
+        "Training Budgets",
+        "Test-Time Scaling",
+        "Controlled Ablations"
+      ],
+      "published_on": "2026-11-19",
+      "first_seen_at": "2026-11-20T16:15:25.993+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.26172",
+      "links": {
+        "paper": "https://arxiv.org/html/2611.26172v1",
+        "project": "https://huggingface.co/collections/JetBrains-Research/budget-internalization"
+      },
+      "summary": [
+        "Fixed-cap reasoning post-training can improve accuracy near the training budget while reducing the model’s ability to benefit from longer inference, with ranking reversals across three model families.",
+        "Matched truncation, KL and supervised-training controls link this budget internalization to the response lengths rewarded during training, making accuracy and output-length curves across budgets essential when evaluating an RLVR recipe.",
+        "Shorter responses can still be useful on tasks with little benefit from extra reasoning, and the tested interventions trade preserved high-budget capability against in-budget gains."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read scientific main pp.1–10 and all relevant Appendices A–I pp.15–39, including exact values, prompt/termination protocols, matched-token forcing and multi-seed tables; bibliography pp.10–14 not separately audited. Actual p.7 Table3 and p.39 Tables15–16 inspected visually. Three active-4–5B model families receive fixed-cap GRPO on DeepScaleR or Reasoning Gym. Six main DeepScaleR conditions have three training seeds each, validated every10 steps through step300; both validation-selected and final checkpoints show the AIME crossover in all18 runs. For Qwen3.5-4B trained at4,096 tokens, Table8 gives avg@3 accuracy35.93% versus base1.11% at4k, but48.15% versus78.33% at64k; those are seed-mean trained results against one base evaluation, not the single-seed avg@16 ablation. Curves replay saved long completions with post-hoc caps, giving unfinished responses zero credit. Separate Qwen8k/avg@16 controls show standard GRPO50.4% at8k and56.5% at64k; forced-answer training gives7.0%/77.2%, stronger KL32.4%/70.1%, versus base9.2%/78.8%. Naturally short successful SFT traces retain high-budget accuracy, whereas artificially budget-forced traces lose it; data selection differs, so this supports a length-censoring account rather than proving a unique internal mechanism. Original LG NEW Friday20, dated RECENT, sole-v1 receipt November19 14:20:41UTC, and official Wednesday14–Thursday14 -> Thursday20EST schedule imply November20 01:00UTC manuscript announcement. Earlier individual checkpoint upload November19 11:33:50UTC is conservatively retained as the work’s earliest inspected dated artifact, inside the main coverage window; immutable card and weight filenames verified. The current collection was updated after the cutoff, so its update is not treated as new pre-cutoff research. First_seen uses the earliest successful completed team LG RECENT, not the request start.",
+        "limitations": "Only the main DeepScaleR/AIME comparison is replicated across three training seeds; transfer, Reasoning Gym and training ablations are single-seed. AIME has60 problems, and problem-level confidence intervals or seed ranges are not uncertainty over all model families. Caps were chosen below base completion lengths, so many apparent low-budget gains include producing any parseable final answer; matched-total-token answer-forcing controls expose this dependency. Different tasks can retain accuracy with shorter outputs, including positive GPQA exceptions. Token counts are not measured end-to-end latency, FLOPs or equal training compute; fixed steps with different lengths are not compute matched. No tested intervention preserves both full in-budget gains and base high-budget AIME performance, and this does not establish impossibility for other recipes. Explicit cap representation versus shifted response distributions remains unresolved. Checkpoint cards are verified artifacts, not a matching complete implementation or independent reproduction; the inspected card’s stated training prompt differs from the paper’s evaluation prompt."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-19T11:33:50Z",
+        "basis": "dated-source",
+        "sources": [
+          "https://huggingface.co/api/models/JetBrains-Research/budget-internalization-qwen3.5-4b-4k-grpo-sunnyfoal-s300/commits/main",
+          "https://huggingface.co/JetBrains-Research/budget-internalization-qwen3.5-4b-4k-grpo-sunnyfoal-s300/raw/6808e57c8e97d950630f2b9991bd0977075422ce/README.md"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2611.26084",
+      "title": "RL Can Only Reinforce What It Sees Succeed",
+      "category": "1.7",
+      "tags": [
+        "RLVR",
+        "Exploration",
+        "Controlled Pretraining",
+        "Group Sampling"
+      ],
+      "published_on": "2026-11-19",
+      "first_seen_at": "2026-11-20T16:15:25.993+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.26084",
+      "links": {
+        "paper": "https://arxiv.org/html/2611.26084v1"
+      },
+      "summary": [
+        "A synthetic puzzle world with fully controlled pretraining priors tests when outcome-reward RL learns to switch away from a familiar action after failures.",
+        "Across many small-model runs, a base-model estimate of groups containing a successful alternative predicts learning better than counts of attempts or distinct problems, separating insufficient exploration budget from an absolute inability to acquire the behavior.",
+        "The fitted threshold and advice about group size or restarts are specific to the tested world and recipes, providing a diagnostic hypothesis for larger models rather than a universal scaling law."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read complete scientific main pp.1–10 and Appendices A–C pp.13–16; references pp.11–12 not separately audited. Actual p.3 Figure1 and p.8 Figure5 inspected. Models are trained from scratch on9million templated Bayesian-player games,516–548M tokens, with explicit exposure/reliability/rarity controls. Core10.7M models and1.3M/85M variants use outcome-reward GRPO with group-mean advantages and no default KL or spread normalization. Each baseline RL run has102,400 attempts; larger groups therefore reduce distinct presentations. The count sums r[1−(1−q_i)^N] from a pre-RL unbiased estimator of successful-alternative reach. A fitted400-run curve gives roughly35 expected successful groups for50% take-off in this setting, and fixed-attempt group-size tests give9/10 take-offs at4 or16 attempts/group versus1/10 at256. Repeats and budget extensions separate group opportunities from distinct problems, while repeated practice can exceed the frozen-base prediction. Twelve recipe changes are evaluated in910 runs including the default recipe, within1,558 total reported RL runs; threshold shifts and extrapolation failures are explicit. OLMo3-7B is a decision-point probe only, not successful full-game RL validation. Original LG NEW Friday20 membership, matching dated RECENT, sole-v1 receipt November19 13:24:40UTC and official Wednesday14–Thursday14 -> Thursday20EST schedule imply November20 01:00UTC manuscript announcement. Bounded exact-title search found the primary preprint and no verified earlier matching full study or dedicated implementation. Earliest actual discovery is the copied completed team LG RECENT receipt.",
+        "limitations": "Synthetic108-token vocabulary, templated language, one family of short-horizon conflicts and models no larger than85M; the published7B probe fails whole games, so there is no demonstrated large-pretrained-model training transfer. The approximately35-group threshold is fitted to the same400 runs used for the curve, not a theoretical constant or prospective external validation. Cross-recipe leave-one-out predictions fail outside the fitted settings; frequent repetition changes success probabilities, so the static count can underpredict. Shared relational structure permits transfer to a rule never individually sampled successfully; the title does not imply every exact action must be observed. Groups where all attempts fail or all succeed give zero centered policy advantage; a group with a successful alternative is a useful opportunity count, not a guarantee of a nonzero beneficial update. Larger groups trade group count against attempts under a fixed rollout budget, not matched wall time or universal optimizer efficiency. Code/data release is stated as future work; only the paper link is verified, and no author code or reproduction is claimed."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-20T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/new",
+          "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2611.26423",
+      "title": "Seer: Guiding Small Deep-Research Agents with Shared Decision Models",
+      "category": "2.1",
+      "tags": [
+        "Research Agents",
+        "Model-Based Lookahead",
+        "Value Estimation"
+      ],
+      "published_on": "2026-11-19",
+      "first_seen_at": "2026-11-20T16:15:37.304+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.26423",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.26423v1"
+      },
+      "summary": [
+        "Seer guides a frozen research agent by predicting candidate tool responses and scoring the resulting imagined histories with two shared learned models.",
+        "Only the chosen action is executed and only real responses enter the continuing history, improving several small-agent question-answering results without making real tool calls for discarded alternatives.",
+        "The extra models and candidate evaluation consume computation, and the study does not establish on-device latency or memory savings."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read complete main scientific methods/results pages1–9 and relevant algorithm, training, case-study and limitation AppendicesC–H pages16–24; notation/extended background screened separately, not a scientific audit of cited works. Directly inspected Figure3/page6 and Tables2–6/pages7–8. Shared training uses0.7Mreal call–response pairs for a tool simulator and1Mhistory-prefix samples for a value estimator, with evaluation questions excluded according to the authors. A Qwen3.5-9Bbase is shared through separate rank64/32LoRA adapters; the value head learns discounted terminal correctness withγ=.95, not calibrated deployment success probability. At deployment, frozen agents propose actions, depth-one imagined search compares widths4–32, and only the selected calls execute; fabricated simulator content is discarded before the next committed history. At width32, GAIA accuracy rises13.6→41.7% for Qwen3.5-4B and22.3→50.5% for9B, with gains over base in26of30main-table settings. Figure3 shows an accuracy/real-tool-call tradeoff on BrowseComp-200, not measured total runtime. Same decision checkpoints guide Qwen and Gemma agents without agent-specific retraining. No matching author code, data or model release was verified. Original manuscript receipt dates are preserved. Both appear in the original Friday November20 cs.AI NEW batch and dated RECENT header. The official Wednesday14:00–Thursday14:00 Eastern window announces Thursday20:00EST, implying November20 01:00UTC public availability; this is an announcement-schedule inference, not an observed exact public visibility instant. The laboratory paper was received November18 19:00:10UTC, ten seconds after the Wednesday14:00EST boundary; Seer was received November19 17:03:24UTC. Actual first_seen is the earliest completed successful matching team catalog: own cs.AI RECENT at November20 16:15:37.304680UTC, one millisecond before own NEW; Infra verified neither ID occurs in its earlier six catalogs, and Recipe’s matching discovery was later. A bounded exact-title primary search found no verified earlier complete study or matching implementation release; this is not proof of first-ever disclosure.",
+        "limitations": "The shared decision models add a9Bbase plus adapters/head to the agent, with no measured hardware latency, peak memory, energy or training-cost accounting. Real visit extraction uses a shared external Qwen3.5-397B-A17Bservice, so the overall pipeline is not a fully local private deployment; tool-call counts do not measure its dollar/token cost. Candidate widths are not compute-matched to four full-trajectory baselines, and speculative proposals do not count toward the100committed-round cap. Adding simulator predictions at width4 lowers accuracy for six of eight agents compared with executing all four alternatives; width32 is below the best tested width in14of40settings. Simulator and scorer errors can overvalue bad actions, and wider search is not universally better. Training filters unfinished/error trajectories from value supervision, question-disjoint splits do not prove full semantic decontamination, and the paper does not report repeated-seed uncertainty for the main accuracy comparisons. Only Qwen/Gemma, two tool schemas and answer correctness are tested; full report quality, robust citations, context compression and broader tool/schema transfer remain unvalidated. The estimator is an outcome/proximity ranking signal, not a calibrated evidence-sufficiency or safety check. No independent reproduction or usable artifact release verified."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-20T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new?skip=0&show=2000",
+          "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2611.25043",
+      "title": "Closing the Analyze-to-Design Gap: An Authorization-Bounded Agent for Self-Driving Laboratories",
+      "category": "2.2",
+      "tags": [
+        "Laboratory Agents",
+        "Execution Controls",
+        "Human Oversight"
+      ],
+      "published_on": "2026-11-18",
+      "first_seen_at": "2026-11-20T16:15:37.304+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.25043",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.25043v1"
+      },
+      "summary": [
+        "This laboratory-agent architecture routes proposed measurements through researcher-approved campaign settings and deterministic instrument services, while preserving records that connect each result to the next decision.",
+        "A real chromatography–mass-spectrometry campaign and archived-data replays show how these controls can support agent-directed measurement selection and analysis.",
+        "The demonstration covers one plate, and an operator changed approved limits outside the formal approval workflow, exposing a remaining governance gap."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read the complete scientific main pages1–12, relevant analytical verification in AppendixA pages17–21, full workflow/simulation/authority/prompt AppendicesB–E pages21–27, and bounded interface descriptions in AppendixF; directly inspected Table1/page9 and Figure7/page10. Project-scoped records and a persistent per-well ledger feed an agent that proposes a measurement; the submission path checks execution controls, campaign state, method, wells and budget before the instrument sidecar checks ownership, queue and device state. A deterministic watcher stages completed evidence and starts a new turn. The live campaign used a human-prepared28-well plate and465main-room tool calls, with12operational requests refused/deferred; all wells were eventually measured at the operator’s instruction. The controlled selection evaluation is instead23archived-data campaigns using Claude Opus5, with one or three runs at each injection budget. At budgets8–24 the best well was typically measured around injection7, versus14.5 expected under a random ordering of28wells; all tested campaigns with budget≥8 identified it, but the single budget28run reached it at injection21. No fresh chemistry was run in these replays. The architecture is useful as an inspectable integration of authorization, deterministic measurement services and persistent state, not as invention of those individual mechanisms. No matching public agent implementation or raw campaign-trace release was verified. Original manuscript receipt dates are preserved. Both appear in the original Friday November20 cs.AI NEW batch and dated RECENT header. The official Wednesday14:00–Thursday14:00 Eastern window announces Thursday20:00EST, implying November20 01:00UTC public availability; this is an announcement-schedule inference, not an observed exact public visibility instant. The laboratory paper was received November18 19:00:10UTC, ten seconds after the Wednesday14:00EST boundary; Seer was received November19 17:03:24UTC. Actual first_seen is the earliest completed successful matching team catalog: own cs.AI RECENT at November20 16:15:37.304680UTC, one millisecond before own NEW; Infra verified neither ID occurs in its earlier six catalogs, and Recipe’s matching discovery was later. A bounded exact-title primary search found no verified earlier complete study or matching implementation release; this is not proof of first-ever disclosure.",
+        "limitations": "One reaction system, one instrument workflow and one physical campaign; humans prepared samples, approved operation and later forced exhaustive well coverage. No synthesis or sample-preparation autonomy is demonstrated. Only the replay uses controlled injection budgets; random ordering is an analytical reference rather than an equal-information comparison with informed heuristics or Bayesian optimization. Each budget has at most three campaigns, and expensive20/28budgets have one. The12refusals out of465tool calls are operational events, not an adversarial attack success rate. E-stop/Stop and a pause-review-resume intervention were not exercised. An operator raised the live budget20→30 by directly editing the campaign record outside approval, so immutable approved limits are not established. Checks regulate instrument operations, not chemical hazards. Each condition has one reaction well; independent integrations support the strongest condition but closely ranked oxidants are not statistically separable. Logged replay reasoning adds10–24minutes for budgets8–24; the assumed15minutes/injection is not a general wall-time or cost advantage. No independent reproduction, security proof or verified full implementation release."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-20T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.AI/new?skip=0&show=2000",
+          "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast/",
+      "title": "Performance Factory: Persistent, Event-Driven Agents for Production Regressions",
+      "category": "2.7",
+      "tags": [
+        "production-agents",
+        "persistent-workflows",
+        "adversarial-review"
+      ],
+      "published_on": "2026-11-19",
+      "first_seen_at": "2026-11-20T16:16:43.404+00:00",
+      "canonical_url": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast/",
+      "links": {
+        "blog": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast/"
+      },
+      "summary": [
+        "OpenAI describes a production workflow in which persistent tasks, explicit state transitions and event subscriptions coordinate agents that investigate performance regressions, propose fixes and verify recovery after deployment.",
+        "The design helps long-running agent services resume work across sessions and challenge diagnoses through separate reviewers, while engineers retain merge decisions."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "The complete article describes the task-service, dispatcher, cloud execution and subscription architecture, recovery loop and historical backtests. Authors report over 1,700 investigations and over 600 root-caused cases in just over three months; a manual sample of 100 root-cause suggestions was graded 70% accurate. These are operational observations, not a controlled estimate of automation gains.",
+        "limitations": "Internal deployment; sample selection, grading reliability, fix success, end-to-end latency/cost and reviewer-isolated effects are unreported. No verified public implementation or reproducible benchmark; synthetic performance testing and autonomous shipping remain future work. Counts describe investigations and diagnoses, not merged fixes or causal productivity uplift."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "arxiv:2611.25112",
+      "title": "TripleKV: Predict, Prefetch, Protect -- KV Cache Management for AI Agents",
+      "category": "3.4",
+      "tags": [
+        "KV Cache",
+        "Tiered Storage",
+        "Tool-Aware Prefetch",
+        "Agent Serving"
+      ],
+      "published_on": "2026-11-18",
+      "first_seen_at": "2026-11-20T16:15:25.883+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.25112",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.25112v1"
+      },
+      "summary": [
+        "TripleKV predicts when an agent’s tool call will finish, prefetches its reusable KV prefix from SSD into host DRAM, and protects those blocks without reserving GPU memory.",
+        "In replayed traces from four agent benchmarks on one H100 NVL with Qwen3-30B-A3B, it cuts p95 TTFT by up to 23–49% across the benchmarks relative to vLLM extended with DRAM and SSD tiers.",
+        "The design shows how tool execution can hide storage reads, but gains depend on predictable tool timing and finite DRAM capacity; it evaluates serving latency rather than live agent success."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read scientific pp.1–12 through the conclusion and scanned references for artifacts. Directly inspected p.8 Tables3–4 and p.9 Figs.14–16. A harness-visible tool predictor schedules SSD-to-DRAM reads before request admission; demand reads retain higher priority, and protected DRAM blocks remain evictable. GPU-resident prefixes are watched and refilled from SSD if evicted before reuse, avoiding duplicate GPU/DRAM occupancy. The setup uses one H100 NVL 94GB, BF16 Qwen3-30B-A3B, 32GiB GPU KV capacity, a 64GiB DRAM tier and 1TiB SSD RAID with O_DIRECT. Four benchmarks each supply recorded traces of 50 random tasks, replayed with identical prompt/output/tool timings at 12, 16 and 20 concurrent agents. All baselines retain 64GiB of DRAM. Maximum p95 TTFT reductions versus vLLM with L3 are 35%, 49%, 23% and 33% on DRB, GAIA, TB4 and BC+, respectively. The 1.5–7x headline compares against other agent-aware systems, not vLLM. Coverage falls to 87% and 60% at GAIA20 and BC+20 as protected demand exceeds DRAM; protection does not create capacity. The tool-prediction error study covers 18.5K calls, with MAE 1.1s versus 7.6s for the TokenCake estimator. Original v1 receipt: November 18, 19:50:23 UTC. Earliest completed discovery is the AR NEW cross entry at 16:15:25.883716 UTC; this establishes discovery only, while the original DC NEW entry establishes announcement timing. Original primary-subject DC NEW membership plus the Friday 20 November dated RECENT batch and v1 submission history establish an original announcement, not a later cross-list. All four receipts fall in the official Wednesday 14:00–Thursday 14:00 US Eastern submission interval, announced Thursday 20:00 EST = 2026-11-20T01:00Z. Original receipt dates are retained as published_on. Discovery is retrospective at actual successful catalog completion on November 20; the delayed 16:12 execution does not extend the 11:00Z cutoff. The exact discovery lookback is November 17 11:00Z through November 20 11:00Z. No matching author implementation or project link was identified in the primary PDF/HTML and bounded web/GitHub repository searches. This is a verification limit, not proof that no implementation exists. Only the verified paper is exposed. Search-result absence is not used as evidence of novelty; the new dated primary study is the contribution, and no software-release claim is made.",
+        "limitations": "One model/GPU and intentionally64GiB host tier; fixed replayed trajectories and tool latencies are not a live-quality or task-success comparison. The storage tier is large enough never to evict, and DRAM-to-GPU transfer remains on the critical path. Predictors depend on harness-visible tool signals and may not transfer to unfamiliar tools. At high protected demand,13%/38% of prefetched blocks are evicted before use. The text does not establish broad multi-node scaling or clearly report repeated-run uncertainty for every end-to-end cell. No public matching author code or independent reproduction verified."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-20T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/new?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2611.26619",
+      "title": "TideCache: Efficient Hybrid LLM Serving with Transparent Cache Management and Layer-Wise Streaming",
+      "category": "3.4",
+      "tags": [
+        "Hybrid Models",
+        "KV Streaming",
+        "Virtual Memory",
+        "Serving Capacity"
+      ],
+      "published_on": "2026-11-19",
+      "first_seen_at": "2026-11-20T16:15:25.885+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.26619",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.26619v1"
+      },
+      "summary": [
+        "TideCache repartitions physical GPU pages behind fixed cache addresses and selectively streams historical KV layer by layer, overlapping transfers with the bounded-state layers of hybrid models.",
+        "Across seven GB300/GH200 model-platform configurations under memory pressure, it completes up to 2.04× as many agent turns and improves agent p50 TTFT by 1.40–3.05× over SGLang with HiCache using the best tested static split ratios.",
+        "This helps serving adapt when different cache pools become bottlenecks, although the evaluation uses controlled traffic mixtures, two large models run only a subset of layers, and request latency per output token includes prefill and queueing."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read complete scientific pp.1–10 and inspected reference-only pp.11–13 for artifact links. Directly viewed p.8 Table3/protocol and p.9 Figs.9–10. The Transparent Cache Pool remaps unused 2MiB pages behind fixed tensors after a step fence, applying moves consistently across ranks every eight forward passes. Streamed host prefixes use two aliased GPU slots; newly generated KV remains resident. FREE/READY flag kernels coordinate selective dynamic copies with a full CUDA graph. Admission uses an offline-calibrated aggregate transfer budget, not a proof of every layer deadline. Seven configurations run on GB300 and GH200; Kimi K3 and Qwen3.8-2.4T use only their first 48 and 36 layers. Synthetic ShareGPT/Claude Code mixtures preserve agent tool gaps, use 600-second measurement windows and intentionally exceed resident-prefix capacity. Both baselines use the best tested fixed split ratios. The maximum 2.04x turn gain is GPT-OSS-120B on GH200; GB300 gains reach 1.44x. P50 per-token latency is end-to-end request latency divided by actual output count, including prefill and queueing. In the shifting Qwen3.8-27B case, HiCache completes 115 turns, adaptive allocation without streaming 174, and the full system 183; streaming adds nine turns beyond adaptive allocation rather than causing the entire 59% gain. Equal-batch decode-step cost varies from -1.1% to +6.3%. Retrieved cited SGLang revision 25ce8063 files confirm the baseline UMP host-offload incompatibility; those files are not TideCache code. Original v1 receipt: November 19, 18:58:31 UTC. Original primary-subject DC NEW membership plus the Friday 20 November dated RECENT batch and v1 submission history establish an original announcement, not a later cross-list. All four receipts fall in the official Wednesday 14:00–Thursday 14:00 US Eastern submission interval, announced Thursday 20:00 EST = 2026-11-20T01:00Z. Original receipt dates are retained as published_on. Discovery is retrospective at actual successful catalog completion on November 20; the delayed 16:12 execution does not extend the 11:00Z cutoff. The exact discovery lookback is November 17 11:00Z through November 20 11:00Z. No matching author implementation or project link was identified in the primary PDF/HTML and bounded web/GitHub repository searches. This is a verification limit, not proof that no implementation exists. Only the verified paper is exposed. Search-result absence is not used as evidence of novelty; the new dated primary study is the contribution, and no software-release claim is made.",
+        "limitations": "High-bandwidth superchip CPU–GPU links and reusable host prefixes are central; there is no PCIe-only or multi-node demonstration. Aggregate transfer bounds do not prove each layer deadline. Two configurations use partial model layers. Main points target memory pressure and controlled replay, with no production A/B or quality claim. Main-figure repeated-run uncertainty is not established; the three-run protocol is specific to the decode-overhead ablation. Equal-batch decode can slow by 6.3%. SGLang compatibility limitations are pinned to the cited revision, not all future releases. No matching author implementation was verified."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-20T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/new?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2611.26106",
+      "title": "AscMLA: Unlocking FP4 Efficiency for Long-Context MLA Decoding through Asymmetric Scaling",
+      "category": "3.6",
+      "tags": [
+        "FP4 Execution",
+        "MLA",
+        "KV Quantization",
+        "GPU Kernels"
+      ],
+      "published_on": "2026-11-19",
+      "first_seen_at": "2026-11-20T16:15:25.885+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.26106",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.26106v1"
+      },
+      "summary": [
+        "AscMLA stores a shared FP4 MLA latent with separate per-token value scales and per-block key scales, then pipelines scale delivery so both attention products can consume the low-bit payload directly.",
+        "Across 40 single-GPU SM103-class decode cases it reports 1.35× geometric-mean speedup over TensorRT-LLM FP8 and 1.26× over CAKE NVFP4, using 38.2% less persistent KV memory than FP8.",
+        "An eight-GPU Kimi-K2.6 serving test gains 18.8% throughput at its highest offered load while meeting the stated latency targets, but quantization increases attention error and the downstream quality comparison uses officially reported scores rather than a matched full-precision run."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read all seven primary pages and directly inspected p.5 Table II/Fig.5 and p.6 Tables III–IV/Fig.6. The shared E2M1 payload is chosen for the per-token value reconstruction first; per-16-channel E4M3 key scales are then fitted without changing its codes. Value scales enter the softmax numerator through probabilities, while the denominator is unchanged. Separate K-scale TMEM multibuffering and V-scale SMEM prefetching remove overwrite/loading waits. For 512 latent channels and 64 RoPE channels, storage is 356 bytes/token versus 576 for FP8 and 352 for CAKE. The 40 kernel cases use compute capability 10.3, batches 16–128, contexts 16K–256K and 64/128 heads. CUPTI measures complete decode calls under cold-L2 CUDA Graph replay; results are medians of five round medians. CAKE separately uses CUDA 13.4. The serving study uses four prefill and four decode GPUs with TP4, ModelOpt-NVFP4 Kimi-K2.6, SGLang 0.5.21, 64K-token prompts and 4K outputs on identical 120-second arrival schedules. At 1.8 requests/s, AscMLA delivers 3,139 output tokens/s with p90 TTFT 1.11s and mean TPOT 44.05ms, meeting the 20s/50ms limits. Synthetic attention error averages 13.37%, versus 11.88% for CAKE. Eight-round GPQA scores are compared with official model scores, not controlled matched full-precision executions. The cited CAKE PR6242 was created October 8 and merged October 17: it is a distinct older comparator, not AscMLA code. Original v1 receipt: November 19, 13:37:28 UTC. Original primary-subject DC NEW membership plus the Friday 20 November dated RECENT batch and v1 submission history establish an original announcement, not a later cross-list. All four receipts fall in the official Wednesday 14:00–Thursday 14:00 US Eastern submission interval, announced Thursday 20:00 EST = 2026-11-20T01:00Z. Original receipt dates are retained as published_on. Discovery is retrospective at actual successful catalog completion on November 20; the delayed 16:12 execution does not extend the 11:00Z cutoff. The exact discovery lookback is November 17 11:00Z through November 20 11:00Z. No matching author implementation or project link was identified in the primary PDF/HTML and bounded web/GitHub repository searches. This is a verification limit, not proof that no implementation exists. Only the verified paper is exposed. Search-result absence is not used as evidence of novelty; the new dated primary study is the contribution, and no software-release claim is made.",
+        "limitations": "Hardware-specific and limited to the tested dense absorbed MLA geometry; the exact GPU product is unspecified beyond capability 10.3. Mean synthetic attention error is 13.37%, with outlier sensitivity. Official downstream scores do not establish controlled quality parity or long-horizon agent reliability. Kernel timing excludes cache preparation; serving uses a warmed prefill cache, one model/workload and four arrival rates. Different CUDA versions for the CAKE comparator are disclosed. No independent reproduction or matching author implementation was verified."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-20T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/new?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2611.25091",
+      "title": "Berth: SLO-Preserving GPU Sharing Without New Preemption",
+      "category": "3.8",
+      "tags": [
+        "GPU Sharing",
+        "SLO Scheduling",
+        "Runtime Interposition",
+        "LLM Serving"
+      ],
+      "published_on": "2026-11-18",
+      "first_seen_at": "2026-11-20T16:15:25.885+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.25091",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.25091v1"
+      },
+      "summary": [
+        "Berth combines a preloaded launch-control shim with the GPU’s existing time-slicer, admitting best-effort work only when latency-critical requests or decode steps have room for it.",
+        "Across 31 A100 scenario points, it attains 95.8% of request SLOs versus 97.9% when running alone, while retaining 48% of best-effort throughput; that is 2.7–3.5× the throughput of the four baselines closest in SLO attainment.",
+        "This provides a practical route to colocating serving and training without application or driver patches, although protection depends on cooperative tenants, profiled launches and supported driver controls, and mixed-load latency targets can still fail."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read the complete scientific main pp.1–14, including design assumptions, all evaluations and limitations; reference-only pp.15–16 were scanned for artifact links. Directly inspected source p.8 Fig.5/Table3 and p.12 Figs.14–15. The shim intercepts driver launch callbacks and device/event synchronizations; feed control combines a request gate, a GPU-wide 1ms predicted queue budget, a 0.5ms grace period, deadline references and tiered feed. It rewrites an unprivileged per-context time-slice control to 500us for best-effort work, retaining the default slice beside iteration-deadline engines except during arrival-deadline requests. It does not add hardware preemption. Main testbed is one A100 PCIe40GB, driver580.178.04/CUDA12.8/PyTorch2.8, with ResNet50/RetinaNet/BERT/perception request services and training/GEMM jobs; 90s windows and three runs per cell, with documented two-run exceptions. Released and reimplemented baselines are distinguished, including incomplete LithOS-style quotas and unsupported tenant cells scored zero. Seven separate vLLM0.11 Qwen2.5-0.5B/1.5B points use TTFT250ms/TPOT25ms targets. Non-mixed LLM points achieve99.8–100% while retaining17–38% training throughput; the mixed request-server point achieves only79.6%/91.5% attainment. GH200 repeats30 core points and adds7B checks; it is a measured portability study, not a cross-platform guarantee. v1 receipt is Nov18 19:29:56UTC. Repository search returned unrelated same-name GPU utilities, not author Berth code. Original primary-subject DC NEW membership plus the Friday 20 November dated RECENT batch and v1 submission history establish an original announcement, not a later cross-list. All four receipts fall in the official Wednesday 14:00–Thursday 14:00 US Eastern submission interval, announced Thursday 20:00 EST = 2026-11-20T01:00Z. Original receipt dates are retained as published_on. Discovery is retrospective at actual successful catalog completion on November 20; the delayed 16:12 execution does not extend the 11:00Z cutoff. The exact discovery lookback is November 17 11:00Z through November 20 11:00Z. No matching author implementation or project link was identified in the primary PDF/HTML and bounded web/GitHub repository searches. This is a verification limit, not proof that no implementation exists. Only the verified paper is exposed. Search-result absence is not used as evidence of novelty; the new dated primary study is the contribution, and no software-release claim is made.",
+        "limitations": "Heuristic rather than hard SLO isolation: profile assumptions, unknown launches, per-thread queue accounting, synchronization boundaries and tiered-feed guards limit the bound. Device-launched graphs are unseen; memory capacity, PCIe/copy-engine contention, L2/bandwidth and hostile tenants are outside management. All footprints fit. A new model/batch/GPU needs profiling. Grouped latency-critical tenants share an MPS fault domain. Driver controls may change; main results are one A100 and a GH200 follow-up. Baseline zeroes include unsupported configurations, and some baseline implementations are restricted or ported. No independent reproduction or training-quality study."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-20T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/new?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    }
+  ]
+}
