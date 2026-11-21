@@ -1,0 +1,1117 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-21",
+  "timezone": "America/Los_Angeles",
+  "generated_at": "2026-11-21T17:00:13.418+00:00",
+  "coverage": {
+    "start": "2026-11-20T03:00:00-08:00",
+    "end": "2026-11-21T03:00:00-08:00"
+  },
+  "search": {
+    "status": "partial",
+    "notes": "Fixed coverage is November 20 03:00 PST to November 21 03:00 PST (11:00 UTC); delayed generation does not extend the cutoff. The total 72-hour discovery window begins November 18 11:00 UTC. Native arXiv NEW/RECENT catalogs still show Friday20 originals: no new Saturday batch was observed, and repeated listings are not new research. Selected nine full-text contributions across all three domains without a quota. Twindex, Aggron, SkillBridge and the new HF merged-adapter study are explicitly delayed discoveries with earlier completed first-seen receipts and original dates preserved. Chorus is the newly disclosed November 19 quantitative study beyond earlier code, not a new algorithm/optimizer or novelty from its v2 wording. Snorkel contributes a new professional-task study of an older binary-gated method. MedChemBench is the dated November 20 technical article/new model evaluation; its accompanying manuscript remains explicitly datedNovember 9. The Inkling integration uses launch-time immutable source/table; later PR-body validation and the post-cutoff main merge are excluded. Primary papers, technical articles, matching artifacts and timing sources were inspected; no selected experiment was independently reproduced. OpenReview’s ICLR 2027 submission API returned 403; its accessible homepage is not a substitute for submission review. The NeurIPS proceedings root lists through 2025 and the checked 2026 path returned 404, so no current proceedings-wide study review is claimed. Twindex’s HTML returned 404 but its complete PDF was read. Unread compression candidates, CompAct’s older complete study, IBM memory’s previously released headline evidence and unselected new deployment details, and the unvalidated Duplex retrospective were reserved rather than padded into the report. Bounded discovery is representative, not exhaustive.",
+    "sources_checked": [
+      {
+        "name": "cl-new-native.html",
+        "url": "https://arxiv.org/list/cs.CL/new?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "cl-recent.html",
+        "url": "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "lg-new.html",
+        "url": "https://arxiv.org/list/cs.LG/new?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "lg-recent.html",
+        "url": "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "availability.html",
+        "url": "https://info.arxiv.org/help/availability.html",
+        "status": "ok"
+      },
+      {
+        "name": "hf-blog.html",
+        "url": "https://huggingface.co/blog",
+        "status": "ok"
+      },
+      {
+        "name": "tml-blog-native.html",
+        "url": "https://thinkingmachines.ai/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "chorus-abs.html",
+        "url": "https://arxiv.org/abs/2611.23386",
+        "status": "ok"
+      },
+      {
+        "name": "chorus-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.23386v1",
+        "status": "ok"
+      },
+      {
+        "name": "chorus-full.html",
+        "url": "https://arxiv.org/html/2611.23386v1",
+        "status": "ok"
+      },
+      {
+        "name": "snorkel-blog.html",
+        "url": "https://snorkel.ai/blog/gdpval-agents-rare-success/",
+        "status": "ok"
+      },
+      {
+        "name": "svd-abs.html",
+        "url": "https://arxiv.org/abs/2611.26059",
+        "status": "ok"
+      },
+      {
+        "name": "hisa-abs.html",
+        "url": "https://arxiv.org/abs/2611.26363",
+        "status": "ok"
+      },
+      {
+        "name": "dlp-abs.html",
+        "url": "https://arxiv.org/abs/2611.26627",
+        "status": "ok"
+      },
+      {
+        "name": "ember-abs.html",
+        "url": "https://arxiv.org/abs/2607.01455",
+        "status": "ok"
+      },
+      {
+        "name": "chorus-repo.json",
+        "url": "https://api.github.com/repos/dualverse-ai/chorus",
+        "status": "ok"
+      },
+      {
+        "name": "chorus-commits.json",
+        "url": "https://api.github.com/repos/dualverse-ai/chorus/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "chorus-readme.md",
+        "url": "https://raw.githubusercontent.com/dualverse-ai/chorus/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "chorus-tree.json",
+        "url": "https://api.github.com/repos/dualverse-ai/chorus/git/trees/main?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "chorus-paper-v2.pdf",
+        "url": "https://arxiv.org/pdf/2611.23386v2",
+        "status": "ok"
+      },
+      {
+        "name": "snorkel-prior.html",
+        "url": "https://snorkel.ai/blog/when-partial-credit-opposes-completion/",
+        "status": "ok"
+      },
+      {
+        "name": "chorous-repo.json",
+        "url": "https://api.github.com/repos/dualverse-ai/chorous",
+        "status": "ok"
+      },
+      {
+        "name": "chorus-initial-readme.md",
+        "url": "https://raw.githubusercontent.com/dualverse-ai/chorus/fc78612cff8c7bf910a54b4a79cda17dc9f3c71e/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "chorus-initial-tree.json",
+        "url": "https://api.github.com/repos/dualverse-ai/chorus/git/trees/fc78612cff8c7bf910a54b4a79cda17dc9f3c71e?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "chorus-initial-experiments.md",
+        "url": "https://raw.githubusercontent.com/dualverse-ai/chorus/fc78612cff8c7bf910a54b4a79cda17dc9f3c71e/docs/experiments.md",
+        "status": "ok"
+      },
+      {
+        "name": "dualverse-research.html",
+        "url": "https://dualverse.ai/auto_research",
+        "status": "ok"
+      },
+      {
+        "name": "chorous-commits.json",
+        "url": "https://api.github.com/repos/dualverse-ai/chorous/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "chorous-initial-tree.json",
+        "url": "https://api.github.com/repos/dualverse-ai/chorous/git/trees/fc78612cff8c7bf910a54b4a79cda17dc9f3c71e?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "snorkel-project.html",
+        "url": "https://snorkel.ai/data-series/gdpval/",
+        "status": "ok"
+      },
+      {
+        "name": "cl-new.html",
+        "url": "https://arxiv.org/list/cs.CL/new",
+        "status": "ok"
+      },
+      {
+        "name": "qwen3.8-27b-super-adapter-model.json",
+        "url": "https://huggingface.co/api/models/harness-hub/Qwen3.8-27B-super-adapter",
+        "status": "ok"
+      },
+      {
+        "name": "qwen3.8-27b-super-adapter-commits.json",
+        "url": "https://huggingface.co/api/models/harness-hub/Qwen3.8-27B-super-adapter/commits/main",
+        "status": "ok"
+      },
+      {
+        "name": "qwen3.8-27b-super-adapter-readme.md",
+        "url": "https://huggingface.co/harness-hub/Qwen3.8-27B-super-adapter/raw/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "qwen3.8-27b-pi-adapted-model.json",
+        "url": "https://huggingface.co/api/models/harness-hub/Qwen3.8-27B-pi-adapted",
+        "status": "ok"
+      },
+      {
+        "name": "qwen3.8-27b-pi-adapted-commits.json",
+        "url": "https://huggingface.co/api/models/harness-hub/Qwen3.8-27B-pi-adapted/commits/main",
+        "status": "ok"
+      },
+      {
+        "name": "qwen3.8-27b-pi-adapted-readme.md",
+        "url": "https://huggingface.co/harness-hub/Qwen3.8-27B-pi-adapted/raw/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "qwen3.8-27b-opencode-adapted-model.json",
+        "url": "https://huggingface.co/api/models/harness-hub/Qwen3.8-27B-opencode-adapted",
+        "status": "ok"
+      },
+      {
+        "name": "qwen3.8-27b-opencode-adapted-commits.json",
+        "url": "https://huggingface.co/api/models/harness-hub/Qwen3.8-27B-opencode-adapted/commits/main",
+        "status": "ok"
+      },
+      {
+        "name": "qwen3.8-27b-opencode-adapted-readme.md",
+        "url": "https://huggingface.co/harness-hub/Qwen3.8-27B-opencode-adapted/raw/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "qwen-safeagents-plugin-model.json",
+        "url": "https://huggingface.co/api/models/harness-hub/qwen-safeagents-plugin",
+        "status": "ok"
+      },
+      {
+        "name": "qwen-safeagents-plugin-commits.json",
+        "url": "https://huggingface.co/api/models/harness-hub/qwen-safeagents-plugin/commits/main",
+        "status": "ok"
+      },
+      {
+        "name": "qwen-safeagents-plugin-readme.md",
+        "url": "https://huggingface.co/harness-hub/qwen-safeagents-plugin/raw/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "skillbridge-repo.json",
+        "url": "https://api.github.com/repos/TankTechnology/SkillBridge",
+        "status": "ok"
+      },
+      {
+        "name": "skillbridge-readme-history.json",
+        "url": "https://api.github.com/repos/TankTechnology/SkillBridge/commits?path=README.md&per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "skillbridge-tree.json",
+        "url": "https://api.github.com/repos/TankTechnology/SkillBridge/git/trees/HEAD?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "skillbridge-readme.md",
+        "url": "https://raw.githubusercontent.com/TankTechnology/SkillBridge/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "ibm-memory-repo.json",
+        "url": "https://api.github.com/repos/AgentToolkit/altk-evolve",
+        "status": "ok"
+      },
+      {
+        "name": "ibm-memory-readme-history.json",
+        "url": "https://api.github.com/repos/AgentToolkit/altk-evolve/commits?path=README.md&per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "ibm-memory-tree.json",
+        "url": "https://api.github.com/repos/AgentToolkit/altk-evolve/git/trees/HEAD?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "ibm-memory-readme.md",
+        "url": "https://raw.githubusercontent.com/AgentToolkit/altk-evolve/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "compact-project.html",
+        "url": "https://compaction-eval.github.io/CompAct-Bench/",
+        "status": "ok"
+      },
+      {
+        "name": "compact-repo.json",
+        "url": "https://api.github.com/repos/compaction-eval/CompAct-Bench",
+        "status": "ok"
+      },
+      {
+        "name": "compact-commits.json",
+        "url": "https://api.github.com/repos/compaction-eval/CompAct-Bench/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "compact-readme.md",
+        "url": "https://raw.githubusercontent.com/compaction-eval/CompAct-Bench/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "compact-old-paper.pdf",
+        "url": "https://raw.githubusercontent.com/compaction-eval/CompAct-Bench/138e4e42f1ff55053452975658f6213c7ac0c3c8/assets/compact-bench-paper.pdf",
+        "status": "ok"
+      },
+      {
+        "name": "compact-old-index.html",
+        "url": "https://raw.githubusercontent.com/compaction-eval/CompAct-Bench/138e4e42f1ff55053452975658f6213c7ac0c3c8/index.html",
+        "status": "ok"
+      },
+      {
+        "name": "ai-new.html",
+        "url": "https://arxiv.org/list/cs.AI/new",
+        "status": "ok"
+      },
+      {
+        "name": "ai-recent.html",
+        "url": "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "se-new.html",
+        "url": "https://arxiv.org/list/cs.SE/new",
+        "status": "ok"
+      },
+      {
+        "name": "se-recent.html",
+        "url": "https://arxiv.org/list/cs.SE/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "anthropic-research.html",
+        "url": "https://www.anthropic.com/research",
+        "status": "ok"
+      },
+      {
+        "name": "anthropic-engineering.html",
+        "url": "https://www.anthropic.com/engineering",
+        "status": "ok"
+      },
+      {
+        "name": "langchain-blog.html",
+        "url": "https://blog.langchain.com/",
+        "status": "ok"
+      },
+      {
+        "name": "qwen3.8-27b-pi-adapted-initial-readme.md",
+        "url": "https://huggingface.co/harness-hub/Qwen3.8-27B-pi-adapted/raw/43e0aa0bea75efe6d4c6c84623676b182e19c658/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "qwen3.8-27b-opencode-adapted-initial-readme.md",
+        "url": "https://huggingface.co/harness-hub/Qwen3.8-27B-opencode-adapted/raw/1a092f1c0b78416adc8ff5e1c19414405d888fbc/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "qwen3.8-27b-super-adapter-initial-readme.md",
+        "url": "https://huggingface.co/harness-hub/Qwen3.8-27B-super-adapter/raw/adb00e9c796132bc7a3f137c25671f9366496865/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "harness-super-results.png",
+        "url": "https://huggingface.co/harness-hub/Qwen3.8-27B-super-adapter/resolve/adb00e9c796132bc7a3f137c25671f9366496865/card-super-results.png",
+        "status": "ok"
+      },
+      {
+        "name": "harness-super-calls.png",
+        "url": "https://huggingface.co/harness-hub/Qwen3.8-27B-super-adapter/resolve/adb00e9c796132bc7a3f137c25671f9366496865/card-super-calls.png",
+        "status": "ok"
+      },
+      {
+        "name": "harness-adapters.html",
+        "url": "https://huggingface.co/blog/harness-adapters-at-scale",
+        "status": "ok"
+      },
+      {
+        "name": "harness-history.json",
+        "url": "https://api.github.com/repos/huggingface/blog/commits?path=harness-adapters-at-scale.md&per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "ibm-old-results.md",
+        "url": "https://raw.githubusercontent.com/AgentToolkit/altk-evolve/2c285478aec8941a2d707d60217f47daa6fc53dc/docs/results/index.md",
+        "status": "ok"
+      },
+      {
+        "name": "ibm-results-history.json",
+        "url": "https://api.github.com/repos/AgentToolkit/altk-evolve/commits?path=docs/results/index.md&per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "from-tasks-to-goals.html",
+        "url": "https://www.langchain.com/blog/from-tasks-to-goals",
+        "status": "ok"
+      },
+      {
+        "name": "context-engineering-challenges-late-2026.html",
+        "url": "https://www.langchain.com/blog/context-engineering-challenges-late-2026",
+        "status": "ok"
+      },
+      {
+        "name": "2611.25673-abs.html",
+        "url": "https://arxiv.org/abs/2611.25673",
+        "status": "ok"
+      },
+      {
+        "name": "2611.25673-source.pdf",
+        "url": "https://arxiv.org/pdf/2611.25673",
+        "status": "ok"
+      },
+      {
+        "name": "2611.25673-source.html",
+        "url": "https://arxiv.org/html/2611.25673v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26256-abs.html",
+        "url": "https://arxiv.org/abs/2611.26256",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26256-source.pdf",
+        "url": "https://arxiv.org/pdf/2611.26256",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26256-source.html",
+        "url": "https://arxiv.org/html/2611.26256v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26361-abs.html",
+        "url": "https://arxiv.org/abs/2611.26361",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26361-source.pdf",
+        "url": "https://arxiv.org/pdf/2611.26361",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26361-source.html",
+        "url": "https://arxiv.org/html/2611.26361v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.25380-abs.html",
+        "url": "https://arxiv.org/abs/2611.25380",
+        "status": "ok"
+      },
+      {
+        "name": "2611.25380-source.pdf",
+        "url": "https://arxiv.org/pdf/2611.25380",
+        "status": "ok"
+      },
+      {
+        "name": "2611.25380-source.html",
+        "url": "https://arxiv.org/html/2611.25380v1",
+        "status": "ok"
+      },
+      {
+        "name": "harness-initial.md",
+        "url": "https://raw.githubusercontent.com/huggingface/blog/bca468d4d659aacb38146d155af4a96e8bd49920/harness-adapters-at-scale.md",
+        "status": "ok"
+      },
+      {
+        "name": "harness-current.md",
+        "url": "https://raw.githubusercontent.com/huggingface/blog/98b95fd5f5e7f6c21f6ffa4d9f47aefba813ce61/harness-adapters-at-scale.md",
+        "status": "ok"
+      },
+      {
+        "name": "ibm-old-readme.md",
+        "url": "https://raw.githubusercontent.com/AgentToolkit/altk-evolve/2c285478aec8941a2d707d60217f47daa6fc53dc/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "ibm-results.html",
+        "url": "https://agenttoolkit.github.io/altk-evolve/results/",
+        "status": "ok"
+      },
+      {
+        "name": "skillbridge-code-readme.md",
+        "url": "https://raw.githubusercontent.com/TankTechnology/SkillBridge/ead20ae1720a3cdd03579f8bd183bad6ba1dd33c/code/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "skillbridge-release-audit.json",
+        "url": "https://raw.githubusercontent.com/TankTechnology/SkillBridge/ead20ae1720a3cdd03579f8bd183bad6ba1dd33c/audit/raw-release-audit.json",
+        "status": "ok"
+      },
+      {
+        "name": "skillbridge-commits.json",
+        "url": "https://api.github.com/repos/TankTechnology/SkillBridge/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "skillbridge-static-source.py",
+        "url": "https://raw.githubusercontent.com/TankTechnology/SkillBridge/ead20ae1720a3cdd03579f8bd183bad6ba1dd33c/code/core/static-analyze-skills.py",
+        "status": "ok"
+      },
+      {
+        "name": "dc-new.html",
+        "url": "https://arxiv.org/list/cs.DC/new?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "Prior completed catalog discovery for 2611.25078",
+        "url": "https://arxiv.org/list/cs.DC/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "Prior completed catalog discovery for 2611.26435",
+        "url": "https://arxiv.org/list/cs.AR/new?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "ar-recent.html",
+        "url": "https://arxiv.org/list/cs.AR/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "vllm-index.html",
+        "url": "https://vllm.ai/blog",
+        "status": "ok"
+      },
+      {
+        "name": "pytorch-index.html",
+        "url": "https://pytorch.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "nvidia-index.html",
+        "url": "https://developer.nvidia.com/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "amd-index.html",
+        "url": "https://rocm.blogs.amd.com/",
+        "status": "ok"
+      },
+      {
+        "name": "sglang-index.html",
+        "url": "https://www.lmsys.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "flashinfer-index.html",
+        "url": "https://flashinfer.ai/",
+        "status": "ok"
+      },
+      {
+        "name": "trt-blog-directory.json",
+        "url": "https://api.github.com/repos/NVIDIA/TensorRT-LLM/contents/docs/source/blogs/tech_blog",
+        "status": "ok"
+      },
+      {
+        "name": "2611.25078-abs.html",
+        "url": "https://arxiv.org/abs/2611.25078",
+        "status": "ok"
+      },
+      {
+        "name": "2611.25078-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.25078",
+        "status": "ok"
+      },
+      {
+        "name": "2611.25078-paper.html",
+        "url": "https://arxiv.org/html/2611.25078v1",
+        "status": "unavailable"
+      },
+      {
+        "name": "2611.26435-abs.html",
+        "url": "https://arxiv.org/abs/2611.26435",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26435-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.26435",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26435-paper.html",
+        "url": "https://arxiv.org/html/2611.26435v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26268-abs.html",
+        "url": "https://arxiv.org/abs/2611.26268",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26268-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.26268",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26268-paper.html",
+        "url": "https://arxiv.org/html/2611.26268v1",
+        "status": "ok"
+      },
+      {
+        "name": "locojax-abs.html",
+        "url": "https://arxiv.org/abs/2611.16301",
+        "status": "ok"
+      },
+      {
+        "name": "inkling-vllm.html",
+        "url": "https://vllm.ai/blog/2026-11-20-inkling2-mini",
+        "status": "ok"
+      },
+      {
+        "name": "amd-flashinfer.html",
+        "url": "https://rocm.blogs.amd.com/artificial-intelligence/flashinfer-release3/README.html",
+        "status": "ok"
+      },
+      {
+        "name": "inkling-model-api.json",
+        "url": "https://api.github.com/repos/vllm-project/vllm/contents/vllm/model_executor/models?ref=main",
+        "status": "ok"
+      },
+      {
+        "name": "inkling-blog-history.json",
+        "url": "https://api.github.com/repos/vllm-project/vllm-project.github.io/commits?path=_posts/2026-11-20-inkling2-mini.md&per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "inkling-model-card.json",
+        "url": "https://huggingface.co/api/models/thinkingmachines/Inkling-2-Mini",
+        "status": "ok"
+      },
+      {
+        "name": "inkling-variable-card.json",
+        "url": "https://huggingface.co/api/models/thinkingmachines/TML-d24-varloop-research",
+        "status": "ok"
+      },
+      {
+        "name": "inkling-release.html",
+        "url": "https://thinkingmachines.ai/news/inkling-2-mini/",
+        "status": "ok"
+      },
+      {
+        "name": "inkling-github-tree.json",
+        "url": "https://api.github.com/repos/vllm-project/vllm/git/trees/main?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "inkling-fixed-config.json",
+        "url": "https://huggingface.co/thinkingmachines/Inkling-2-Mini/raw/main/config.json",
+        "status": "ok"
+      },
+      {
+        "name": "inkling-variable-config.json",
+        "url": "https://huggingface.co/thinkingmachines/TML-d24-varloop-research/raw/main/config.json",
+        "status": "ok"
+      },
+      {
+        "name": "twindex-github-search.json",
+        "url": "https://api.github.com/search/repositories?q=Twindex",
+        "status": "ok"
+      },
+      {
+        "name": "aggron-github-search.json",
+        "url": "https://api.github.com/search/repositories?q=Aggron",
+        "status": "ok"
+      },
+      {
+        "name": "inkling-loop.py.txt",
+        "url": "https://raw.githubusercontent.com/vllm-project/vllm/main/vllm/models/inkling2/nvidia/loop.py",
+        "status": "ok"
+      },
+      {
+        "name": "inkling-loop-history.json",
+        "url": "https://api.github.com/repos/vllm-project/vllm/commits?path=vllm/models/inkling2/nvidia/loop.py&per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "inkling-model.py.txt",
+        "url": "https://raw.githubusercontent.com/vllm-project/vllm/main/vllm/models/inkling2/nvidia/model.py",
+        "status": "ok"
+      },
+      {
+        "name": "inkling-blog-initial.md",
+        "url": "https://raw.githubusercontent.com/vllm-project/vllm-project.github.io/c29cac02828531bb410100ca4e4b92acd0006080/_posts/2026-11-20-inkling2-mini.md",
+        "status": "ok"
+      },
+      {
+        "name": "inkling-pull69028.json",
+        "url": "https://api.github.com/repos/vllm-project/vllm/pulls/69028",
+        "status": "ok"
+      },
+      {
+        "name": "inkling-pull69028-commits.json",
+        "url": "https://api.github.com/repos/vllm-project/vllm/pulls/69028/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "inkling-configs.py.txt",
+        "url": "https://raw.githubusercontent.com/vllm-project/vllm/main/vllm/models/inkling2/configs.py",
+        "status": "ok"
+      },
+      {
+        "name": "inkling-loop-initial.py.txt",
+        "url": "https://raw.githubusercontent.com/vllm-project/vllm/b3c0ff75424ea9393ce2dbfd2e912bb19f7323f0/vllm/models/inkling2/nvidia/loop.py",
+        "status": "ok"
+      },
+      {
+        "name": "inkling-configs-initial.py.txt",
+        "url": "https://raw.githubusercontent.com/vllm-project/vllm/b3c0ff75424ea9393ce2dbfd2e912bb19f7323f0/vllm/models/inkling2/configs.py",
+        "status": "ok"
+      },
+      {
+        "name": "inkling-pull-page.html",
+        "url": "https://github.com/vllm-project/vllm/pull/69028",
+        "status": "ok"
+      },
+      {
+        "name": "openai-research.html",
+        "url": "https://openai.com/news/research/",
+        "status": "ok"
+      },
+      {
+        "name": "openai-engineering.html",
+        "url": "https://openai.com/news/engineering/",
+        "status": "ok"
+      },
+      {
+        "name": "openai-security.html",
+        "url": "https://openai.com/news/security/",
+        "status": "ok"
+      },
+      {
+        "name": "deepmind-news.html",
+        "url": "https://deepmind.google/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "google-research.html",
+        "url": "https://research.google/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "ai2-research.html",
+        "url": "https://allenai.org/research",
+        "status": "ok"
+      },
+      {
+        "name": "xybench-blog.html",
+        "url": "https://allenai.org/blog/xybench",
+        "status": "ok"
+      },
+      {
+        "name": "teamwork-blog.html",
+        "url": "https://research.google/blog/advancing-science-engineering-with-antigravitys-teamwork-feature/",
+        "status": "ok"
+      },
+      {
+        "name": "deepmind-publications.html",
+        "url": "https://deepmind.google/research/publications/",
+        "status": "ok"
+      },
+      {
+        "name": "acl-index.html",
+        "url": "https://aclanthology.org/",
+        "status": "ok"
+      },
+      {
+        "name": "emnlp-index.html",
+        "url": "https://aclanthology.org/events/emnlp-2026/",
+        "status": "ok"
+      },
+      {
+        "name": "openreview-api.json",
+        "url": "https://api2.openreview.net/notes?invitation=ICLR.cc/2027/Conference/-/Submission&limit=20",
+        "status": "unavailable"
+      },
+      {
+        "name": "openreview-home.html",
+        "url": "https://openreview.net/",
+        "status": "ok"
+      },
+      {
+        "name": "neurips-download.html",
+        "url": "https://nips.cc/Downloads/2026",
+        "status": "ok"
+      },
+      {
+        "name": "alignment-index.html",
+        "url": "https://alignment.anthropic.com/",
+        "status": "ok"
+      },
+      {
+        "name": "openai-research-metadata.html",
+        "url": "https://openai.com/index/introducing-medchembench/",
+        "status": "ok"
+      },
+      {
+        "name": "duplex-blog.html",
+        "url": "https://research.google/blog/how-google-duplex-evolved-to-also-call-businesses-for-you-in-gemini/",
+        "status": "ok"
+      },
+      {
+        "name": "openai-alignment.html",
+        "url": "https://alignment.openai.com/",
+        "status": "ok"
+      },
+      {
+        "name": "neurips-proceedings.html",
+        "url": "https://papers.nips.cc/paper_files/paper/2026",
+        "status": "unavailable"
+      },
+      {
+        "name": "neurips-proceedings-root.html",
+        "url": "https://proceedings.neurips.cc/",
+        "status": "ok"
+      },
+      {
+        "name": "openai-medchem-github-search.json",
+        "url": "https://api.github.com/search/repositories?q=MedChemBench",
+        "status": "ok"
+      },
+      {
+        "name": "adversarial-distillation.html",
+        "url": "https://openai.com/index/combatting-adversarial-distillation/",
+        "status": "ok"
+      },
+      {
+        "name": "MedChemBench full primary manuscript",
+        "url": "https://cdn.openai.com/pdf/09c4ec60-a32e-4652-837b-1811368a3bb0/medchembench-paper.pdf",
+        "status": "ok"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": "arxiv:2611.23386",
+      "title": "Chorus: Shared N-gram Embeddings with Layer-wise Adaptation",
+      "category": "1.2",
+      "tags": [
+        "N-gram Memory",
+        "Shared Parameters",
+        "Controlled Ablations",
+        "Pretraining"
+      ],
+      "published_on": "2026-11-17",
+      "first_seen_at": "2026-11-19T11:06:46.469+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.23386",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.23386v2",
+        "code": "https://github.com/dualverse-ai/chorus"
+      },
+      "summary": [
+        "Chorus’s new experimental report tests sharing n-gram memory across a language model while letting each layer rescale and project the shared features for its current state.",
+        "Matched small-model comparisons show lower validation loss and selective recall gains with smaller memory tables, offering a way to expand stored knowledge without duplicating a table at every read layer."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read all 18 pages of v 1, including main pp.1–10, references pp.10–12 and Appendices A–D pp.13–18; current v 2 text differs only in wording and the corrected repository link, not the experiments. Directly inspected current v 2 p.5 Table 1, p.8 Table 3/Figure 5 and p.14 Table 5. Chorus computes shared hashed bigram/trigram features once, refines them causally and injects layer-specific gated projections at the input and selected attention-value layers. Three-seed comparisons match backbone initialization, data order and token budgets in 20.7M/17.1M/133M backbones trained on 3.15B/5.24B tokens; Table 1 gives 133M FineWeb BPB 1.0568±0.0001 versus TN-gram 1.0648±0.0006 with 60M added parameters (mean±standard error). The single-seed ClimbMix size sweep gives BPB 0.922863 with 1.203B added parameters versus 0.925836/0.927301 for FactorEngram/Engram at 9.603B; this is a table-parameter quality comparison, not a frontier-model or total-compute result. At 76M, same-optimizer controls retain a Chorus gain under AdamW, while Ember helps some table designs and harms FactorEngram. The November 19 full study adds the quantitative scaling, optimizer, component, downstream and cost comparisons beyond the inspected earlier implementation/docs. This is a dated study update to existing code, not a new Ember optimizer or a reset of the method’s age.",
+        "limitations": "Backbones stop at 133M and use 1,024-token context; scaling, component and order sweeps use one seed, while main method tables use three. Most main baselines retain different placement/optimizer recipes; matched added parameters and data do not isolate architecture alone, although Table 3 crosses designs and table optimizers. The 22-task mean advantage is small and gains concentrate on recall/prediction; some reasoning tasks regress. The 99.2% figure concerns calculated TABLE optimizer-state bytes under the stated AdamW-BF 16 versus Ember-FP 32 conventions, not whole-model memory or speed. At 9.6B the four-GPU placement largely removes the peak-memory advantage; the 133M Chorus run costs 19.3h versus 17.0h plain, so no universal speedup is inferred. Current public code documents a single-device trainer and omits several compared methods/results, limiting full reproduction of the largest multi-GPU study. The original chorous repository already existed on November 18 with an older initial commit; commit time is not proof of historical public visibility. Author-site November 18 headline text and code are not presented as newly released results."
+      },
+      "novelty": "material-update",
+      "update_note": "2026-11-19: The original Thursday 19 cs.CL announcement and official Wednesday 20:00 EST schedule support an inferred full-manuscript announcement at approximately 01:00 UTC. This newly inspected quantitative study reports three-seed cross-dataset/model comparisons, optimizer/design controls, component ablations, 22-task evaluation and training-cost measurements beyond the inspected November18 code, README and experiment-command notes. Preserve November17 as the original arXiv receipt date and acknowledge the earlier implementation; do not count the November19 v2 wording/repository-link correction as research novelty. Timing sources: https://arxiv.org/list/cs.CL/recent?skip=0&show=2000 and https://info.arxiv.org/help/availability.html ; immutable older implementation tree: https://api.github.com/repos/dualverse-ai/chorous/git/trees/fc78612cff8c7bf910a54b4a79cda17dc9f3c71e?recursive=1 ."
+    },
+    {
+      "id": "https://snorkel.ai/blog/gdpval-agents-rare-success/",
+      "title": "Training agents for professional work when success is rare",
+      "category": "1.7",
+      "tags": [
+        "GRPO",
+        "Sparse Success",
+        "Professional Tasks",
+        "Graded Feedback"
+      ],
+      "published_on": "2026-11-19",
+      "first_seen_at": "2026-11-21T16:40:03.578+00:00",
+      "canonical_url": "https://snorkel.ai/blog/gdpval-agents-rare-success/",
+      "links": {
+        "blog": "https://snorkel.ai/blog/gdpval-agents-rare-success/",
+        "project": "https://snorkel.ai/data-series/gdpval/"
+      },
+      "summary": [
+        "Snorkel’s new professional-task study evaluates an existing binary-gated policy-gradient recipe that uses graded feedback only when every attempt in a rollout group fails.",
+        "On matched training data and similar rollout counts, it improves a 27B model’s judged deliverables over binary-only GRPO, illustrating how near-successes can provide learning signal while completion retains priority within mixed groups."
+      ],
+      "evidence": {
+        "type": "technical-report",
+        "access": "full-text",
+        "rationale": "Read the full November 19 primary technical article and directly viewed all six original inline SVG figures, rendered without running source JavaScript. The earlier October 15 article’s algorithm/assumptions and current November 18 modification metadata were checked separately; the algorithm is not claimed new. The new study trains Qwen 3.8-27B on 1,105 GDPval+ tasks, comparing binary-gated and binary-only GRPO with eight rollouts per task and dynamic sampling in both runs. The training score multiplies weighted rubric satisfaction by a 0.5–1 reference-agreement factor; training passes require score≥0.9 and no budget exhaustion, while evaluation passes require at least 90% rubric satisfaction. Mixed groups use binary-centered returns; all-fail groups add 0.85 times the centered clipped score clamp((R−0.4)/0.5,0,1). At roughly 102K generated training rollouts, the best observed gated evaluation reaches 40.7% pass@1 versus base 31.9% on 185 GDPval tasks, estimated from eight attempts per task. The binary-only run stays near the base across evaluations. Figure 2 reports 95% versus 21% generated groups carrying signal, and the six figures distinguish training scores, expert-reference comparisons, sectors and completion-within-token-cap results. The new dated contribution is this controlled professional-work evaluation and diagnostic, not an October algorithm release. Delayed discovery retains November 19 publication and the earliest timestamped inspected primary completion on November 21; an earlier secondary preview has no separately captured exact timestamp.",
+        "limitations": "Each method is trained once; the headline selects the best gated evaluation within 102K rollouts, with no training-seed confidence interval or final-checkpoint-only claim. Sector plots average three gated evaluations versus one base evaluation, not three independently trained models. Rubric scores and expert-reference preferences are LLM judgments, not independently validated human success;44.0% rated above an expert reference is not a universal human-comparison result. Training and evaluation pass definitions differ. The earlier method analysis explicitly warns that all-fail fallback can oppose completion across groups; preserving mixed-group signs is not a general convergence or safety guarantee. Similar generated-rollout counts do not match total tokens, wall time, verifier cost or GPU compute; attempts average about 50k response tokens. Figure 6 counts only original trajectories that finish within each cap, without truncating, rescoring or regenerating them. The article does not provide a complete public training implementation, checkpoint release or judge-validation audit; the linked GDPval+ page describes an expert-data series rather than an openly reproduced training dataset. Publication metadata contains different timezone renderings on the same November 19 date; no unsupported exact first-publication instant is asserted."
+      },
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "https://openai.com/index/introducing-medchembench/",
+      "title": "MedChemBench: Public Evaluation of Molecular Representation and Decision Quality",
+      "category": "1.10",
+      "tags": [
+        "Scientific Evaluation",
+        "Multimodal Reasoning",
+        "Benchmark Design",
+        "Contamination"
+      ],
+      "published_on": "2026-11-20",
+      "first_seen_at": "2026-11-21T16:37:28.402Z",
+      "canonical_url": "https://openai.com/index/introducing-medchembench/",
+      "links": {
+        "paper": "https://cdn.openai.com/pdf/09c4ec60-a32e-4652-837b-1811368a3bb0/medchembench-paper.pdf",
+        "blog": "https://openai.com/index/introducing-medchembench/"
+      },
+      "summary": [
+        "OpenAI’s new technical release documents a retrospective medicinal-chemistry benchmark that separately grades molecular reconstruction, evidence-based explanations, compound selection and property prediction.",
+        "Its component analysis shows why strong representation scores can conceal weak decisions, offering a useful template for evaluating scientific reasoning beyond an aggregate score.",
+        "The fixed, single-turn tasks do not establish successful drug discovery or improved laboratory decisions."
+      ],
+      "evidence": {
+        "type": "technical-report",
+        "access": "full-text",
+        "rationale": "Read the complete27-page primary manuscript, all four supplementary table pages and the November20 article; directly inspected Table3, Figure2 and TablesS1–S2. The release documents99 tasks from117 publications and761 molecular structures. Eleven GPT models/61effort conditions contribute60,390 retained responses, with ten responses averaged within each equally weighted task. GPT-6 Astra at xhigh earns95.37% structure credit but50.42% selection and47.02% numerical credit; these are different subtask sets. The dated article separately adds GPT-6.2 Astra84.5% at xhigh, absent from the manuscript tables. This item dates the November20 public technical article and new evaluation, while retaining the manuscript’s November9 date here; PDF creation/Last-Modified headers are not claimed to prove first public availability.",
+        "limitations": "Only the reported GPT family is compared; no broad model leadership or independent reproduction. Public-source exposure remains possible despite a source-identifier sensitivity check. Rationale uses a GPT-6 Astra judge, alternative designs need expert validation, and completion recovery conditions results. Token summaries exclude failed attempts and judge calls. No matching downloadable full benchmark/code release was verified."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "https://huggingface.co/blog/harness-adapters-at-scale",
+      "title": "Introducing harness adapters: adapt your favorite model to your harness to improve performance and cost",
+      "category": "2.5",
+      "tags": [
+        "Harness Adaptation",
+        "LoRA Merging",
+        "Coding Agents",
+        "Paired Evaluation"
+      ],
+      "published_on": "2026-11-20",
+      "first_seen_at": "2026-11-20T16:15:37.668+00:00",
+      "canonical_url": "https://huggingface.co/blog/harness-adapters-at-scale",
+      "links": {
+        "blog": "https://huggingface.co/blog/harness-adapters-at-scale",
+        "project": "https://huggingface.co/harness-hub/Qwen3.8-27B-super-adapter"
+      },
+      "summary": [
+        "Hugging Face’s new merge study combines three previously released, harness-specific reinforcement-learning adapters into one adapter and evaluates it inside three coding-agent harnesses.",
+        "The paired tests expose a practical tradeoff between sharing one adapter, retaining each specialist’s gains and reducing tool calls on tasks both systems solve.",
+        "The evidence concerns one 27B base model and small benchmark subsets, with merge selection partly tuned on Terminal-Bench and no clear benefit on a separate business-automation harness."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "Read the complete primary article in bounded sections and the complete immutable initial super-adapter card, including paired results, solved-task work, context/infra checks, merge protocol and deployment caveats. Actual author pass@1 and tool-call figures were retrieved at the initial revision and directly viewed. The older specialists already had complete cards and weights datedNovember16; their existence, the general training-in-harness idea, and the older underlying algorithms are not counted as new. The selected new contribution is the November20 merged-adapter release and quantitative merge/transfer study, with its first inspected complete card commit at07:03:29UTC; the article’s first main-branch source commit follows at13:36:52UTC. The article’s first source commit is after yesterday’s cutoff, while the earlier complete card lies in the previous report window and was not previously covered; this is a delayed discovery in the current72-hour lookback, with originalNovember20 publication retained. Rank32 specialist updates are combined by exact rank-dimension concatenation into rank96 with0.5 weight per update; the merge itself has no additional training. The weight was chosen using Terminal-Bench and earlier step120 adapters. On the common-all-run50-51 SWE-bench Pro/82-85 Terminal-Bench subsets, mean pass@1 rises39.5% to49.0% with thinking off and55.5% to63.5% with thinking on, comparing unchanged adapters under each harness. Pairwise tables use their own task intersections, including85-87 Terminal-Bench tasks and74.5% rather than74.0% for pi SWE-bench Pro; those denominators must not be mixed. Medians on mutually solved tasks show53-73% fewer tool calls with thinking off and19-48% fewer with thinking on. Initial cards, model metadata/weight filenames, plugin metadata and article source history were verified without downloading tensors or executing code. Earliest actual discovery is the prior successful HF blog-index completion onNovember20, retained rather than replacing it with today’s reread.",
+        "limitations": "One Qwen3.8-27B base model, one attempt per task and small benchmark/task intersections; pooled sign tests reuse the same benchmark tasks across harnesses and are not independent training-seed replications. Many individual comparisons have broad uncertainty. Equal harness settings do not make cross-harness rankings valid: history retention differs. Terminal-Bench participated in merge-weight selection and some checkpoint selection, so those results are optimistic; SWE-bench Pro did not choose the merge weight. Efficiency is conditional median work on tasks both systems solve, not unconditional token spend, measured wall latency or dollar savings; missing pi counters and corrected infrastructure reruns remain relevant. Thinking-on transfer was evaluated but not trained, and extra visible text with thinking off leaves the internal mechanism unresolved. AutomationBench’s300 business tasks show no clear gain for the merged adapter and a weaker Hermes specialist result. The article’s task-filter counts do not reconcile171 total qualified tasks with its source-row sum193, and its validated corpus is distinct from the final1050-task mixture; no precise causal dataset-quality effect is claimed here. Declining regex/pattern-block rates are not a demonstrated security guarantee. The inspected branch begins the super releaseNovember20 despite repository creationNovember16; commit dates are conservative inspected chronology, not proof that no earlier public branch/artifact ever existed. The older specialist study is explicitly not republished as new; no independent training or tensor verification is claimed."
+      },
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-20T07:03:29Z",
+        "basis": "dated-source",
+        "sources": [
+          "https://huggingface.co/api/models/harness-hub/Qwen3.8-27B-super-adapter/commits/main",
+          "https://huggingface.co/harness-hub/Qwen3.8-27B-super-adapter/raw/adb00e9c796132bc7a3f137c25671f9366496865/README.md"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2611.26256",
+      "title": "SkillBridge: Cost-Aware Diagnosis and Repair of Cross-OS Compatibility Defects in Agent Skills",
+      "category": "2.7",
+      "tags": [
+        "Agent Skills",
+        "Portability",
+        "Static Triage",
+        "Repair Evaluation"
+      ],
+      "published_on": "2026-11-19",
+      "first_seen_at": "2026-11-20T16:15:37.204+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.26256",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.26256",
+        "code": "https://github.com/TankTechnology/SkillBridge"
+      },
+      "summary": [
+        "SkillBridge treats an agent skill’s guide, scripts, metadata and dependencies as one operating-system contract, using static evidence to prioritize runtime diagnosis and targeted repairs.",
+        "A reviewed replay study and retrospective validation-budget analysis show how this evidence chain can improve target-system task completion while concentrating expensive checks on likely compatibility problems.",
+        "The judgments come from agents, and the repairs were not consistently retested on other previously working systems, so the evidence supports scoped target-system improvements rather than general portability guarantees."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read all12 primary PDF pages, including main methods/results and AppendicesA-C on p.11; bibliography was inspected for artifact pointers rather than independently auditing cited papers. Actual p.8 Figure2/repair example and p.9 TablesIV-V were directly viewed. The contract combines guide, package, metadata, dependencies and OS assumptions; static rules enqueue hypotheses, dynamic execution supplies symptoms, and an agent review assigns root-cause and repair labels. The corpus screens1090 skills/3270 skill-OS pairs, but175 replay-aligned confirmed target-OS cases and205 root-cause annotations are different empirical units. On those175 cases the reviewer-judged target-task pass rate rises30.6% to38.4%;44 cases improve,111 stay unchanged and20 have lower pass counts. A direct-agent ablation reaches37.4% with31 lower cases, so the review workflow adds a modest endpoint difference rather than demonstrating that direct agents cannot repair skills. In a separate1298-candidate audited Linux/macOS universe, static-guided185 validations recover38 of57 reviewed issues; uniform random selection would require about865 validations in expectation for the same yield. Original SE NEW Friday20 membership and the official schedule corroborate the manuscript announcement, while the sole inspected complete code/raw release commit datedNovember19 12:53:19UTC is conservatively retained as the earlier dated full artifact. The repository creation dateNovember11 does not by itself establish an earlier complete release. This is a delayed selection in the current72-hour lookback, not a newSaturday publication. Earliest actual discovery is the prior successful SE NEW completion onNovember20, preserved with the raw catalog and receipt. Public pipeline, static implementation and redacted artifact audit were inspected without executing source code.",
+        "limitations": "Static hypotheses are not compatibility verdicts: reported pooled precision0.218/recall0.685 use reviewed subsets, and the Windows universe differs from Linux/macOS. The30-problematic-skill seed and34 hand-reviewed screening heuristics do not establish representative prevalence or generalization. Review is agent-implemented, sees the static predictions, and is not blinded human adjudication or maintainer acceptance. Outcomes depend on generated tasks, stage-specific models/harnesses and native runner states; complete historical runner/patch-review deployment settings are outside the release. Twenty target cases get worse; other previously passing OSes are not consistently replayed, and no package-wide semantic-regression guarantee follows. Budget and cost results are retrospective expected-yield comparisons with a Linux-measured resource proxy, not new randomized executions or measured macOS/Windows token costs; human review and machine rental are excluded. Public code/summary data omit private execution archives, credentials and transcripts. Commit timestamps document inspected artifacts, not proof of global public visibility at that exact instant; no independent reproduction is claimed."
+      },
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-19T12:53:19Z",
+        "basis": "dated-source",
+        "sources": [
+          "https://api.github.com/repos/TankTechnology/SkillBridge/commits?per_page=100",
+          "https://raw.githubusercontent.com/TankTechnology/SkillBridge/ead20ae1720a3cdd03579f8bd183bad6ba1dd33c/code/README.md"
+        ]
+      }
+    },
+    {
+      "id": "https://openai.com/index/combatting-adversarial-distillation/",
+      "title": "New Evidence on Reasoning-Trace Distillation and Extraction Safeguards",
+      "category": "2.8",
+      "tags": [
+        "Distillation",
+        "Reasoning Traces",
+        "Adaptive Evaluation",
+        "Security"
+      ],
+      "published_on": "2026-11-20",
+      "first_seen_at": "2026-11-21T16:39:10.961Z",
+      "canonical_url": "https://openai.com/index/combatting-adversarial-distillation/",
+      "links": {
+        "blog": "https://openai.com/index/combatting-adversarial-distillation/"
+      },
+      "summary": [
+        "OpenAI compares students trained from the same pretrained model on exact reasoning traces or user-visible summaries, finding budget-dependent differences in transferred cybersecurity capability after fine-tuning and reinforcement learning.",
+        "The report pairs this study with extraction defenses spanning model training, message and tool-argument checks, and reasoning-state boundaries.",
+        "Its internal adaptive results support evaluating the complete safeguard stack; they do not isolate a single defense or establish universal protection."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "Read the complete November20 article and both embedded32-point primary chart specifications. At the largest tested weighted-output-token allowance, exact-trace students outperform summary students on both shown benchmarks after RL; summaries lead at lower allowances. Six-attacker pooled adaptive black-box extraction rates compare GPT-6 Astra/original stack with GPT-6.2 Astra/updated stack:54.0→0.2% for earlier-request reasoning and22.9→0.9% for current-request reasoning.",
+        "limitations": "One internal student comparison without disclosed training seeds, student size, full recipe or public reproduction artifacts. Weighted token budgets are not measured latency. Defender model and safeguards both change; pooled attack rates lack per-attacker uncertainty or proof against future attacks. Campaign-enforcement counts are not effectiveness estimates."
+      },
+      "novelty": "new"
+    },
+    {
+      "id": "arxiv:2611.26435",
+      "title": "Aggron: Aggressive Compression of Agentic KV Caches during Head-of-Line Stalls in the Request Queue",
+      "category": "3.3",
+      "tags": [
+        "Agent Serving",
+        "Context Compression",
+        "Admission Scheduling",
+        "Trace Simulation"
+      ],
+      "published_on": "2026-11-19",
+      "first_seen_at": "2026-11-20T16:15:25.883+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.26435",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.26435"
+      },
+      "summary": [
+        "Aggron compresses an agent’s prose tail while its request waits for KV-memory admission, retaining the latest protected tool-output prefix and using a separate summary queue plus a latency predictor to hide compaction behind existing stalls.",
+        "In trace-driven Qwen3.6-35B-A3B simulations at high offered load, it improves throughput by 1.34–1.40× and reduces program p99 latency by 27–31% against Slipstream and APEC, suggesting a practical way to turn admission delays into memory savings.",
+        "Those system gains are simulated rather than measured under concurrent live Aggron traffic; separate live compression-arm quality checks have wide noise bands and do not prove adaptive-controller quality equivalence, while low-memory-pressure configurations can regress."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read complete scientific main pp.1–12 (references start on p.12; remaining references pp.13–14 scanned for artifact links). Directly viewed source pp.8,10,11, including Fig.8, Table5/Fig.9 and Fig.10. The classifier uses tool identity/arguments to protect non-prose filesystem/database/execution outputs: the entire prefix through the latest such output stays verbatim; only later prose is summarized and older summaries stay frozen. At the high reset ceiling the system can summarize the whole history including protected output, so protection is not unconditional. Queue-time thresholds vary1024–4032 tokens below a4096 synchronous backstop. Gates predict summary completion versus admission wait, require a tail≥2.5 times the summary cap and require freeing at least one KV block. Late summaries hold the request at the queue head; this can hurt latency. Same-code vLLM0.24 controller and discrete-event scheduler replay1000 agent programs from fixed-seed Poisson arrivals. Qwen live accuracy/calibration uses one H100NVL94GB, FP8,131072context/256sequence slots; four-task traces comprise SWE-bench,TerminalBench,DeepResearchBench,MCPMark. Headline throughput1.34×Slipstream/1.40×APEC and p99−27%/−31% occur at λ=1program/s in simulation. End-to-end simulator validation is against live vanilla vLLM only, at λ=.05/.2; it is not a live-concurrent validation of Aggron’s gains. Table5 separately measures grow-1K/grow-4K fixed compression arms on Qwen/GLM/Gemma; task-cell score changes can be positive or negative, TerminalBench bands are±12–20pp, and two SWE trajectory cells make1.3–1.7×as many tool calls. The paper expects adaptive accuracy to lie between fixed arms, but no monotonicity theorem or direct adaptive-quality experiment establishes that. Frontier TP8–32 results also use calibrated simulation: under120K caps unmodified DSV4 loses1.7% because summaries consume compute without relieving memory; cached-tail reuse is an additional assumption and separate side summarization uses one extra GPU. Native original DC NEW/Friday20 RECENT plus v1 receipt Nov19 17:09:37UTC and the official Wednesday14→Thursday14→Thursday20EST schedule infer Nov20 01Z announcement. Delayed discovery remains within Nov18 11Z–Nov21 11Z; actual earliest completed team catalog is the copied Nov20 AR NEW16:15:25.883716Z cross-list, which establishes discovery only, while original DC establishes announcement. No matching author code was verified in primary sources and bounded GitHub repository search; baseline/project links are not misrepresented as Aggron code.",
+        "limitations": "Headline serving gains and frontier scaling are trace-driven simulations, with fixed-seed offered load and separately recorded trajectories. Live validation covers vanilla only; quality uses fixed compression endpoints rather than the adaptive controller, small benchmark intersections and wide run-to-run bands. Summarization changes trajectories/tool counts and can erase important prose. Protected non-prose is still compressed at the reset ceiling. The summary predictor can miss and stall the head, low-load benefits shrink, memory-unsaturated DSV4 loses throughput, and side-model results consume another GPU. No verified public author implementation, live production concurrency result or accuracy-equivalence guarantee."
+      },
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-20T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/new?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2611.25078",
+      "title": "Twindex: Index Cache Offloading with Coarse-to-Fine Selection for Long-Context Sparse-Attention Serving",
+      "category": "3.4",
+      "tags": [
+        "Sparse Attention",
+        "Index Offloading",
+        "Long Context",
+        "Native Rescoring"
+      ],
+      "published_on": "2026-11-18",
+      "first_seen_at": "2026-11-20T16:15:25.885+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.25078",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.25078"
+      },
+      "summary": [
+        "Twindex keeps compressed sparse-attention indexes in GPU memory, fetches a larger candidate pool from host memory and rescores it in the model’s native precision, reducing the index bottleneck after main-KV offloading without retraining model weights.",
+        "At 992K-token prompts, it raises peak steady-state decode throughput by 1.25–2.54× over an equivalently optimized HiSparse baseline across three models on anonymized 179-GiB GPUs with TP4 or TP8.",
+        "These gains trade larger batches for longer decode steps and depend on memory and prefix-sharing policies; they are not an end-to-end latency or exact global-selection guarantee, and a batched shared-index alternative narrows one Qwen comparison to about 1.04×."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read the complete scientific main pp.1–11 and all scientific Appendices A–E pp.16–25; reference-only pp.12–15 were scanned for artifact links. Directly viewed source pp.8,10,23,25 (Fig.5/Tables2,4–5,D.1,E.1 and App.E.8). Full native index rows reside in host memory; a position-shared component plus query-metric low-rank residual compression produces an HBM shortlist, then a GPU-managed host-row hot buffer supports native rescoring. Rescoring is exact within the candidate set, not over every history row; global native top-k is recovered only if the candidate set contains it. Qwen3.8-Flash-Next/DeepSeek-V4.1-Flash use TP4; GLM-5.2 uses TP8. Hardware is disclosed only as GPU-A,179GiB HBM with native NVFP4 tensor cores, an eight-GPU node and4TiB host memory/PCIe5x16; do not identify an undisclosed GPU SKU. HiSparse-Opt receives the same generic index-sharing/fetch/fusion/overlap optimizations. At992K, baseline→Twindex concurrency is861→1532/640→1036/232→704; decode throughput12332→17734/14704→18400/2910→7391tokens/s while steps69.82→86.39/43.53→56.30/79.73→95.25ms. Decode throughput is concurrent requests divided by mean step time, not request completion throughput. Qwen/GLM main-KV share98% of three host-resident prefixes while indexes remain private; V4.1 main KV is private. Qwen at256K is host-limited, and V4.1 at256K is0.947×. Mixed-length gains are1.35×Qwen/1.16×V4.1. Qwen prefill/decode validation freshly prefills only the last64 requests, restoring the rest from snapshots; it verifies steady decode rather than a fresh1532-request end-to-end workload. Table4 reports task-quality differences, including lower LongGenBench scores, not equivalence; Qwen exact-top-k controls are separate from the stock baseline’s documented4096-bin overflow at512K+. App.E.8 sharing and batch-scoring prefix indexes narrows Qwen to1.044/1.042× at equal concurrency. Original v1 receipt Nov18 19:19:42UTC, original DC NEW membership and Friday20 RECENT header plus the official Wednesday14→Thursday14→Thursday20EST schedule establish first arXiv announcement Nov20 01Z. This is a delayed discovery for the Nov21 report within the exact Nov18 11Z–Nov21 11Z lookback. Actual first_seen preserves successful Nov20 DC RECENT completion16:15:25.885710Z from copied hash-bound raw catalog/receipt, not today’s full-text read. No earlier matching full author artifact was verified in bounded primary/GitHub repository searches; paper explicitly says code pending internal review. No code-release claim is made.",
+        "limitations": "Anonymized hardware and unreleased implementation limit reproduction. Offline model-specific calibration/development tuning and sufficient host bandwidth/capacity are required; model weights are not retrained. Native rescoring is conditional on shortlist coverage and remains approximate globally. Full-HBM throughput comparisons use different concurrency and longer steps; Qwen/GLM headline prompts share98% main-KV prefixes. Index-sharing/scoring policy materially reduces the gain. Native Qwen top-k has an overflow quirk, separately controlled. No SSD/remote-tier experiment, full fresh-traffic1532-request run, general serving-cost result or quality-equivalence proof;1.5–2M Qwen checks use YaRN beyond supported context."
+      },
+      "novelty": "newly-discovered",
+      "public_availability": {
+        "at": "2026-11-20T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/new?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "https://vllm.ai/blog/2026-11-20-inkling2-mini",
+      "title": "Inkling 2 Mini on vLLM: Per-Pass Caches and Variable-Loop Execution",
+      "category": "3.5",
+      "tags": [
+        "Looped Models",
+        "Execution Runtime",
+        "KV Cache",
+        "Operator Fusion"
+      ],
+      "published_on": "2026-11-20",
+      "first_seen_at": "2026-11-21T16:37:08.523+00:00",
+      "canonical_url": "https://vllm.ai/blog/2026-11-20-inkling2-mini",
+      "links": {
+        "blog": "https://vllm.ai/blog/2026-11-20-inkling2-mini",
+        "code": "https://github.com/vllm-project/vllm/pull/69028",
+        "project": "https://huggingface.co/thinkingmachines/TML-d24-varloop-research"
+      },
+      "summary": [
+        "vLLM’s Inkling2 Mini integration represents repeated core-layer visits as separate cache layers and fuses cross-pass message reads and gated controllers, supporting shared weights without incorrectly sharing each pass’s KV and convolution state.",
+        "For the separate variable-loop research checkpoint on one GB200 at TP1 and 4K context, reducing three passes to one lowers batch-one forward decode-step time from 3.85 ms to 1.51 ms and raises KV capacity from 175K to 352K tokens; sharing KV across three passes instead yields 194K tokens with similar step time.",
+        "These controls make loop execution and its memory tradeoffs inspectable, but are rejected by fixed-loop Inkling2 Mini, do not establish a quality–speed frontier and measure forward passes rather than end-to-end serving."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "Read the complete primary technical article and its immutable initial Markdown at blog commit c29cac02828531bb410100ca4e4b92acd0006080 (Nov20 20:18:15Z), including all mechanisms, variable-loop table and accuracy disclosures. Also read the complete launch-time loop controller (16257bytes) and relevant config option/cache-visit/DSpark validation sections; both immutable first-PR loop/config files are byte-identical to current files.24 unique layers comprise prelude0–5/core6–17/coda18–23; three core passes give48 visits. Each later pass restarts from prelude state and reads gated messages from the previous pass’s two blocks. Controllers stack four message streams for batched GEMMs; merges are FP32 with preserved normalization and fused kernels extended from Inkling2 Small. Separate per-pass KV and conv states appear as ordinary cache layers. Only TML-d24-varloop-research permits pass-count and shared-KV overrides; sharing overwrites each token’s earlier-pass keys/values but retains per-pass convolution states, and DSpark requires the checkpoint’s default visit count. Original table on oneGB200,TP1,4K,forward-only gives batch1/batch32 step ms1pass1.51/3.81,2passes2.67/5.92,3passes3.85/8.11,3shared3.86/8.10; capacity352K/233K/175K/194K. These are configurations of the research checkpoint, not fixed Mini ablations against other models. Article lists end-to-end evaluation names but supplies no task scores, intervals or quality-versus-passes curve; its bitwise claim applies only to MoE outputs given identical inputs, not the full model. The Nov20 dated initial technical article is eligible conservatively in Nov21’s local03 window. Public PR69028 was created Nov20 20:21:10Z and first commit b3c0ff75424ea9393ce2dbfd2e912bb19f7323f0 is Nov20 20:17:02Z, but main merged only Nov21 16:19:34Z AFTER cutoff. Later mutable PR-body validation and post-cutoff main-merge performance are deliberately excluded. Current source is linked for review; initial immutable files verify the cutoff mechanism. HF repository creation dates Nov17/18 do not establish public availability of complete checkpoints; the dated release/blog and public PR are the evidence. This is a distinct execution integration/table, not a duplicate model-architecture evaluation entry or a new invention of prior Inkling2 Small kernels. First_seen is actual successful Nov21 vLLM catalog completion16:37:08.523409Z; copied Nov20 index lacks Mini. No source code, container or model was executed.",
+        "limitations": "Single-node GB200 TP1 forward microbenchmarks at4K, with no run-count/variance or serving-throughput study in the frozen article. Variable-loop controls belong to a separate research checkpoint; fewer passes/shared KV alter computation and have no quantified quality comparison here. Conv state remains per pass and limits KV-sharing savings. Fixed Mini rejects these options, DSpark requires fixed default visits, and whole-model bitwise equivalence is not claimed. Existing Small kernels are reused. Current PR body/main branch include post-cutoff updates; only initial article/file mechanisms and table support this entry."
+      },
+      "novelty": "new"
+    }
+  ]
+}

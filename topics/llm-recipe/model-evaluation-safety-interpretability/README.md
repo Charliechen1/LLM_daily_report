@@ -5,6 +5,20 @@ Capability evaluation, contamination, generalization, robustness, safety and mec
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-21](../../../reports/2026/11/2026-11-21.md) — PARTIAL SEARCH
+
+### [MedChemBench: Public Evaluation of Molecular Representation and Decision Quality](<https://openai.com/index/introducing-medchembench/>)
+
+OpenAI’s new technical release documents a retrospective medicinal-chemistry benchmark that separately grades molecular reconstruction, evidence-based explanations, compound selection and property prediction. Its component analysis shows why strong representation scores can conceal weak decisions, offering a useful template for evaluating scientific reasoning beyond an aggregate score. The fixed, single-turn tasks do not establish successful drug discovery or improved laboratory decisions.
+
+**Published:** 2026-11-20 · **First seen:** 2026-11-21T16:37:28.402Z · **Novelty:** new · **Tags:** Scientific Evaluation, Multimodal Reasoning, Benchmark Design, Contamination
+
+[Paper](<https://cdn.openai.com/pdf/09c4ec60-a32e-4652-837b-1811368a3bb0/medchembench-paper.pdf>) · [Blog](<https://openai.com/index/introducing-medchembench/>)
+
+**Evidence:** technical-report; full-text. Read the complete27-page primary manuscript, all four supplementary table pages and the November20 article; directly inspected Table3, Figure2 and TablesS1–S2. The release documents99 tasks from117 publications and761 molecular structures. Eleven GPT models/61effort conditions contribute60,390 retained responses, with ten responses averaged within each equally weighted task. GPT-6 Astra at xhigh earns95.37% structure credit but50.42% selection and47.02% numerical credit; these are different subtask sets. The dated article separately adds GPT-6.2 Astra84.5% at xhigh, absent from the manuscript tables. This item dates the November20 public technical article and new evaluation, while retaining the manuscript’s November9 date here; PDF creation/Last-Modified headers are not claimed to prove first public availability.
+
+**Limitations:** Only the reported GPT family is compared; no broad model leadership or independent reproduction. Public-source exposure remains possible despite a source-identifier sensitivity check. Rationale uses a GPT-6 Astra judge, alternative designs need expert validation, and completion recovery conditions results. Token summaries exclude failed attempts and judge calls. No matching downloadable full benchmark/code release was verified.
+
 ## [2026-11-13](../../../reports/2026/11/2026-11-13.md) — PARTIAL SEARCH
 
 ### [Breaking Bad: "Going Badly" Activations Drive Reward Hacking](<https://arxiv.org/abs/2611.14996>)

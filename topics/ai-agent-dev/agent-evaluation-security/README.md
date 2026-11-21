@@ -5,6 +5,20 @@ Task success, trajectory evaluation, cost/reliability, prompt injection and perm
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-21](../../../reports/2026/11/2026-11-21.md) — PARTIAL SEARCH
+
+### [New Evidence on Reasoning-Trace Distillation and Extraction Safeguards](<https://openai.com/index/combatting-adversarial-distillation/>)
+
+OpenAI compares students trained from the same pretrained model on exact reasoning traces or user-visible summaries, finding budget-dependent differences in transferred cybersecurity capability after fine-tuning and reinforcement learning. The report pairs this study with extraction defenses spanning model training, message and tool-argument checks, and reasoning-state boundaries. Its internal adaptive results support evaluating the complete safeguard stack; they do not isolate a single defense or establish universal protection.
+
+**Published:** 2026-11-20 · **First seen:** 2026-11-21T16:39:10.961Z · **Novelty:** new · **Tags:** Distillation, Reasoning Traces, Adaptive Evaluation, Security
+
+[Blog](<https://openai.com/index/combatting-adversarial-distillation/>)
+
+**Evidence:** engineering-report; full-text. Read the complete November20 article and both embedded32-point primary chart specifications. At the largest tested weighted-output-token allowance, exact-trace students outperform summary students on both shown benchmarks after RL; summaries lead at lower allowances. Six-attacker pooled adaptive black-box extraction rates compare GPT-6 Astra/original stack with GPT-6.2 Astra/updated stack:54.0→0.2% for earlier-request reasoning and22.9→0.9% for current-request reasoning.
+
+**Limitations:** One internal student comparison without disclosed training seeds, student size, full recipe or public reproduction artifacts. Weighted token budgets are not measured latency. Defender model and safeguards both change; pooled attack rates lack per-attacker uncertainty or proof against future attacks. Campaign-enforcement counts are not effectiveness estimates.
+
 ## [2026-11-19](../../../reports/2026/11/2026-11-19.md) — PARTIAL SEARCH
 
 ### [Research Acceleration: Measuring a Jagged Frontier of Agent Assistance](<https://openai.com/index/research-acceleration-jagged-frontier/>)
