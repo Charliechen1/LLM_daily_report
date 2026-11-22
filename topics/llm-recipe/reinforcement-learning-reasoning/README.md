@@ -5,6 +5,22 @@ RLHF, RLVR, policy optimization, reasoning training, tool use and multi-turn age
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-22](../../../reports/2026/11/2026-11-22.md) — PARTIAL SEARCH
+
+### [Decision-Focused Reinforcement Learning for LLM Post-Training](<https://arxiv.org/abs/2611.25597>)
+
+Decision-focused reinforcement learning post-trains a language model using the cost of decisions induced by its predictions, without differentiating through the downstream optimizer. Synthetic optimization and offline inventory experiments show why minimizing prediction error can miss decision quality, while cheap-feedback variants expose the bias and variance tradeoffs behind faster early learning.
+
+**Published:** 2026-11-19 · **First seen:** 2026-11-20T16:15:25.993+00:00 · **Novelty:** newly-discovered · **Tags:** Decision-Focused Learning, Post-training, Reward Estimation, Controlled Experiments
+
+**Public availability:** 2026-11-20T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/new?skip=0&show=2000>) · [Timing source](<https://arxiv.org/list/cs.LG/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.25597v1>)
+
+**Evidence:** research-paper; full-text. Catch-up selection of an original Friday November 20 cs.LG announcement within the exact 72-hour lookback; retain the November 19 receipt date and actual November 20 successful catalog discovery. Read scientific main pp.1-12, theoretical Appendix A pp.16-24, empirical/protocol Appendix B pp.24-30 and prompts Appendix C pp.30-32. Directly inspected p.9 Table 1, p.11 Table 2 and p.28 Table 5. The framework predicts optimization parameters, solves for their induced decision and uses negative realized decision regret as the response reward; within-instance leave-one-out baselines cancel the common hindsight optimum. Reward correction uses one independent Bernoulli coin for the entire prediction batch and inverse-probability correction, with explicit policy/moment/decision-procedure conditions rather than a guaranteed speedup. Three-seed affine-predictor experiments cover shortest path, knapsack and quadratic allocation; a 96-item knapsack study compares exact, heuristic, warm-start and correction feedback under one-hour budgets. In offline H&amp;M-derived inventory planning, Qwen3.5-4B with rank-16 LoRA and non-thinking RLOO reduces mean regret on 1,251 test instances from SFT 234.01 to 172.72, versus XGBoost 183.22. Negative-SPO+ RLOO gives regret 222.11 despite slightly lower prediction MAE. The best 160.53 additionally uses target-conditioned teacher reasoning-trace SFT and thinking-enabled RL, so its 31.4% reduction is not attributed to RL alone. No matching author code/project was verified in the primary metadata/full text; cited libraries are not claimed as this implementation.
+
+**Limitations:** Compute-efficiency experiments use affine Gaussian predictors on synthetic knapsacks, not measured LLM training speedups. At five minutes correction with p=0.5 improves regret, but after one hour its mean regret is worse than exact RLOO; more updates can entail similar or greater total exact-solver calls. The estimator and stationarity analysis concern specified response-level stochastic-gradient updates under regularity assumptions, not every clipped, normalized or Adam-based implementation. Inventory evidence is one constructed offline task with hand-set costs/order menus and a 4B model; repeated training-seed uncertainty is not reported for Table 2 and no production A/B is reported. The thinking variant changes initialization/data and inference as well as RL. Broader domain transfer and fully reproducible author code were not established. No experiment was independently reproduced.
+
 ## [2026-11-21](../../../reports/2026/11/2026-11-21.md) — PARTIAL SEARCH
 
 ### [Training agents for professional work when success is rare](<https://snorkel.ai/blog/gdpval-agents-rare-success/>)

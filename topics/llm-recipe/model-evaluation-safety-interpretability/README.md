@@ -5,6 +5,22 @@ Capability evaluation, contamination, generalization, robustness, safety and mec
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-22](../../../reports/2026/11/2026-11-22.md) — PARTIAL SEARCH
+
+### [PosteriorBench: Evaluating Behavior Posterior Sampling in Language Models](<https://arxiv.org/abs/2611.25735>)
+
+PosteriorBench evaluates whether methods that elicit rare language-model behaviors preserve the original model’s distribution of those behaviors, rather than merely increasing their frequency. Its reference samples and explicit cost accounting reveal a gap between cheap elicitation and faithful posterior sampling, giving safety researchers a controlled way to compare coverage, realism and efficiency.
+
+**Published:** 2026-11-19 · **First seen:** 2026-11-20T16:15:25.993+00:00 · **Novelty:** newly-discovered · **Tags:** Rare Behaviors, Posterior Sampling, Evaluation, Compute Accounting
+
+**Public availability:** 2026-11-20T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/new?skip=0&show=2000>) · [Timing source](<https://arxiv.org/list/cs.LG/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.25735v1>) · [Code](<https://github.com/TransluceAI/PosteriorBench>) · [Project](<https://huggingface.co/datasets/Transluce/PosteriorBench>)
+
+**Evidence:** research-paper; full-text. Catch-up selection within the fixed 72-hour lookback: the original Friday November 20 cs.LG batch and official Thursday 20:00 EST schedule support an inferred November 20 01:00 UTC announcement, while the November 19 receipt date and actual November 20 completed catalog discovery are retained. Read scientific main pp.1-10 and all claim-bearing Appendices A-D pp.13-29, including metric definitions, method adaptations, threshold/cap sensitivity, larger models and judge-based behaviors. Directly viewed p.7 Figure 5/Table 1, p.14 Table 4 and p.25 Table 8/Figure 12. The authors sample 50 million responses for each of 20 prompts from Qwen3.5-0.8B, label seven lexical/regex proxies, and select 21 prompt-behavior tasks spanning approximately 1e-5 to 1e-1 probability. Each task holds out 250 hits; evaluation uses 1,024 fresh sampler draws, a 10% native-hit threshold with fallback scores, forward KL capped at 50 nats and reverse KL. Three replicates are averaged within tasks, then tasks equally; error bars are standard errors across tasks. Training-free methods plateau near 100,000 counted construction inferences, while posterior-sample SFT catches up around one million; adapted prior training methods show no consistent efficiency advantage over SFT under this protocol. Immutable benchmark README/protocol/cost docs and dataset metadata/card are accessible. No code or experiments were executed.
+
+**Limitations:** The main benchmark uses one 0.8B model, 20 short English prompts, responses capped at 50 tokens and seven simple proxies; it does not certify deployment tail-risk coverage. Conditional hits are reference samples, while behavior probabilities and KLs are finite-sample estimates. Capping and threshold-triggered fallback affect rankings; error bars omit shared reference/probability-estimation uncertainty. Counted inferences approximate compute and omit external prompt-writer calls, so they are not total monetary or latency costs. Larger models have only two tasks each and training-free comparisons; two more complex behaviors use model judges and longer responses. Current protocol docs distinguish shipped BF16/SGLang reference log probabilities from recomputed FP32/Transformers values. The billion-row dataset was checked through metadata/card, not downloaded or independently validated.
+
 ## [2026-11-21](../../../reports/2026/11/2026-11-21.md) — PARTIAL SEARCH
 
 ### [MedChemBench: Public Evaluation of Molecular Representation and Decision Quality](<https://openai.com/index/introducing-medchembench/>)
