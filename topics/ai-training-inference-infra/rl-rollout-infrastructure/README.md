@@ -5,6 +5,22 @@ Distributed rollouts, asynchronous RL, generation/training coordination and weig
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-23](../../../reports/2026/11/2026-11-23.md) — PARTIAL SEARCH
+
+### [CTRL: Concurrent Training and Rollout through GPU Co-Residency](<https://arxiv.org/abs/2611.27119>)
+
+CTRL keeps a host-owned learner and persistent rollout engine concurrently on every GPU, using bounded layer streaming and a policy-publication gate to overlap complete updates with generation under a staleness bound. Matched-learner controls show when sharing a GPU beats time-sharing or whole-device splits, giving reinforcement-learning builders a concrete way to use decoding’s spare compute capacity. The authors report 1.11–2.24× system-throughput gains across 24 workload settings, but substantial host memory and workload balance are prerequisites, and some whole-GPU splits still win.
+
+**Published:** 2026-11-20 · **First seen:** 2026-11-23T11:02:23.935+00:00 · **Novelty:** new · **Tags:** RL Infrastructure, GPU Co-Residency, Policy Versioning, Host Offload
+
+**Public availability:** 2026-11-23T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/new?skip=0&show=2000>) · [Timing source](<https://arxiv.org/list/cs.DC/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.27119>)
+
+**Evidence:** research-paper; full-text. Read all 13 PDF pages: complete scientific main pp.1–11, references pp.11–13 for provenance, no appendix. Directly viewed pp.7,8,10. CTRL combines immutable host policy versions, FP32 host training state and bounded layer streaming with a persistent vLLM rollout engine under CUDA MPS. Ready prompt groups train before a publication gate waits for due trajectories; ordered consumption and earliest behavior versions enforce the stated staleness bound under its assumptions. On four-GPU H100 80GB NVLink, A800 80GB PCIe and RTX 4090 24GB PCIe nodes with 1–2TiB host DRAM, Figure8 reports 1.11–2.24× consumed-token throughput versus the faster verl asynchronous baseline across 24 Qwen3/DAPO-Math/MBPP settings at configured staleness 2. Timing covers updates 5–12 through final publication; cells mix single-seed probes and three-seed means. Main comparisons also change the learner. Holding the learner/recipe fixed, Table3 gives 1.10–1.26× over time-sharing on DAPO-Math, while a short RTX4090 MBPP setting favors splitting (0.86×). Eight-H100 system throughput is 1.23× versus asynchronous time-sharing. Separate 150-update quality checks report 63.6% versus 63.3% OlympiadBench accuracy over two H100 seeds and 79.4% versus 79.2% on a 500-question MATH subset on RTX4090. No verified author implementation was found; upstream libraries are not presented as CTRL code. All three are original cs.DC NEW entries in the Monday November 23 batch, not later cross-listings. Their Friday November 20 receipts precede 14:00 EST and fall in the official Thursday 14:00–Friday 14:00 submission row, announced Sunday at 20:00 EST: inferred November 23 01:00 UTC. Native NEW/dated RECENT and the official schedule were checked. Original receipt dates remain published\_on; successful completed catalog timestamps establish actual first\_seen, including the earlier copied Recipe LG receipt for CTRL. Bounded exact-title primary and GitHub searches found no verified earlier complete study, without proving global historical absence.
+
+**Limitations:** Large host-memory capacity/bandwidth and policy-lifecycle changes are part of the gain: Qwen3-14B uses 220GiB of training state plus 27.5GiB per leased BF16 policy image. Main system comparisons change the learner; matched-learner controls narrow attribution and include splits that tie or win. The headline metric is a short steady-state window with mixed one-/three-seed cells, not total training cost or convergence. Quality evidence is narrow and short, with no learning-equivalence guarantee. Equal configured staleness is not always equal realized age: the native baseline reaches age5 at limit4, whereas CTRL enforces4; headline comparisons use limit2. Compute-share search is a bounded heuristic, not global optimization. No verified released implementation or independent reproduction.
+
 ## [2026-11-16](../../../reports/2026/11/2026-11-16.md) — PARTIAL SEARCH
 
 ### [TIDE: Reclaiming Lost Performance In On-Policy Reinforcement Learning](<https://arxiv.org/abs/2611.17924>)

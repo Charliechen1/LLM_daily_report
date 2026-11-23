@@ -1,0 +1,952 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-23",
+  "timezone": "America/Los_Angeles",
+  "generated_at": "2026-11-23T11:23:42.293+00:00",
+  "coverage": {
+    "start": "2026-11-22T03:00:00-08:00",
+    "end": "2026-11-23T03:00:00-08:00"
+  },
+  "search": {
+    "status": "partial",
+    "notes": "This delta report uses the most recent elapsed 03:00 America/Los_Angeles cutoff: November 23, 2026 at 11:00 UTC. Coverage is November 22 03:00 PST through November 23 03:00 PST; the total 72-hour discovery lookback starts November 20 at 11:00 UTC. Generation and actual completed discovery timestamps are recorded separately. The September 29 baseline and all 409 existing registry rows were checked before selection; no already covered contribution is repeated. Fresh original Monday November 23 arXiv batches, dated recent listings, the official announcement schedule, primary lab blogs and conference catalogs were inspected across LLM Recipe, AI Agent Dev and AI Training & Inference Infra using the 26-topic taxonomy. Six substantive full-text contributions were selected without a category quota. QueryLM is a newly disclosed comparative study over older model/method/data artifacts, and ProbeAgent adds expanded configuration and blinded-human evaluation over an already documented framework; neither is presented as a newly invented method. Native original announcement timing is distinguished from submission dates and later cross-listings. Earlier matching CSPD full text is outside the exact lookback, older Gumbel method/run material is not promoted, and METR's primary November 20 08:00 UTC timestamp is conservatively outside the 11:00 UTC boundary. A vendor article with only a November 23 date is deferred because exact pre-cutoff availability could not be established. Methods, reported results, relevant limitations and available primary artifacts were read for selected items; no experiments were independently reproduced. Search remains partial: OpenReview's submission API returned HTTP 403 and the canonical NeurIPS 2026 proceedings entry returned HTTP 404, although their public navigation/download catalogs were accessible. IsoMoE's anonymous repository landing and history/metadata returned HTTP 401; direct implementation and evaluation documentation were accessible, but complete release history is unresolved. SkillPrivus and CTRL have no verified author code destination; Weave promises future code, and ProbeAgent repository/history endpoints returned HTTP 404 while author documentation was accessible. These artifact limitations are preserved per item. Discovery is representative and bounded; unselected downloads, community posts and every conference paper are not claimed fully audited, and a partial search does not certify exhaustive coverage.",
+    "sources_checked": [
+      {
+        "name": "querylm-collection.json",
+        "url": "https://huggingface.co/api/collections/Kausp11/search-native-pretraining",
+        "status": "ok"
+      },
+      {
+        "name": "querylm-collection.html",
+        "url": "https://huggingface.co/collections/Kausp11/search-native-pretraining",
+        "status": "ok"
+      },
+      {
+        "name": "gumbel-repo.json",
+        "url": "https://api.github.com/repos/reliquadotai/reliquary",
+        "status": "ok"
+      },
+      {
+        "name": "gumbel-readme.md",
+        "url": "https://raw.githubusercontent.com/reliquadotai/reliquary/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "gumbel-readme-history.json",
+        "url": "https://api.github.com/repos/reliquadotai/reliquary/commits?path=README.md&per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "querylm-model.json",
+        "url": "https://huggingface.co/api/models/Kausp11/querylm-dclm-1.4b",
+        "status": "ok"
+      },
+      {
+        "name": "querylm-model-commits.json",
+        "url": "https://huggingface.co/api/models/Kausp11/querylm-dclm-1.4b/commits/main",
+        "status": "ok"
+      },
+      {
+        "name": "querylm-model-card.md",
+        "url": "https://huggingface.co/Kausp11/querylm-dclm-1.4b/raw/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "cspd-alphaxiv.html",
+        "url": "https://www.alphaxiv.org/abs/2611.composable-soft-prompt-distillation",
+        "status": "ok"
+      },
+      {
+        "name": "reliquary-release.html",
+        "url": "https://www.reliqua.ai/research/teutonic-i-reliquary",
+        "status": "ok"
+      },
+      {
+        "name": "querylm-modeling.py.txt",
+        "url": "https://huggingface.co/Kausp11/querylm-dclm-1.4b/raw/3ea96d905a834b47376b2506b1ea22834e993b67/modeling_nanochat.py",
+        "status": "ok"
+      },
+      {
+        "name": "cl-new.html",
+        "url": "https://arxiv.org/list/cs.CL/new?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "cl-recent.html",
+        "url": "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "lg-new.html",
+        "url": "https://arxiv.org/list/cs.LG/new?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "Earlier successful completed CTRL catalog discovery",
+        "url": "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "availability.html",
+        "url": "https://info.arxiv.org/help/availability.html",
+        "status": "ok"
+      },
+      {
+        "name": "success-hf-blog.html",
+        "url": "https://huggingface.co/blog",
+        "status": "ok"
+      },
+      {
+        "name": "tml-index.html",
+        "url": "https://thinkingmachines.ai/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "snorkel-index.html",
+        "url": "https://snorkel.ai/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "eleuther-index.html",
+        "url": "https://blog.eleuther.ai/",
+        "status": "ok"
+      },
+      {
+        "name": "querylm-earlier-alias.json",
+        "url": "https://huggingface.co/api/models/Kausp11/searchlm-dclm_nc-v1_d24_chin28",
+        "status": "ok"
+      },
+      {
+        "name": "querylm-earlier-alias-card.md",
+        "url": "https://huggingface.co/Kausp11/searchlm-dclm_nc-v1_d24_chin28/raw/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "querylm-earlier-alias-commits.json",
+        "url": "https://huggingface.co/api/models/Kausp11/searchlm-dclm_nc-v1_d24_chin28/commits/main",
+        "status": "ok"
+      },
+      {
+        "name": "querylm-data.json",
+        "url": "https://huggingface.co/api/datasets/Kausp11/querylm-dclm-pretraining-data",
+        "status": "ok"
+      },
+      {
+        "name": "querylm-data-card.md",
+        "url": "https://huggingface.co/datasets/Kausp11/querylm-dclm-pretraining-data/raw/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "querylm-data-commits.json",
+        "url": "https://huggingface.co/api/datasets/Kausp11/querylm-dclm-pretraining-data/commits/main",
+        "status": "ok"
+      },
+      {
+        "name": "querylm-initial-card.md",
+        "url": "https://huggingface.co/Kausp11/querylm-dclm-1.4b/raw/9e00dbcae219c1e5f037c2d9f6f0c2ba78a616c1/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "cspd-alphaxiv.pdf",
+        "url": "https://www.alphaxiv.org/abs/2611.composable-soft-prompt-distillation.pdf",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26756-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.26756v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26756-full.html",
+        "url": "https://arxiv.org/html/2611.26756v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26863-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.26863v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26863-full.html",
+        "url": "https://arxiv.org/html/2611.26863v1",
+        "status": "ok"
+      },
+      {
+        "name": "querylm-alias-immutable-card.md",
+        "url": "https://huggingface.co/Kausp11/searchlm-dclm_nc-v1_d24_chin28/raw/3bfed279585fb5e32bd99f0183f83e7e92a2856d/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "querylm-data-immutable-card.md",
+        "url": "https://huggingface.co/datasets/Kausp11/querylm-dclm-pretraining-data/raw/c7ea03f2a44ce39cfcb58def7ecadee566a6f11a/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26809-abs.html",
+        "url": "https://arxiv.org/abs/2611.26809",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26809-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.26809v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26809-full.html",
+        "url": "https://arxiv.org/html/2611.26809v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.27375-abs.html",
+        "url": "https://arxiv.org/abs/2611.27375",
+        "status": "ok"
+      },
+      {
+        "name": "2611.27375-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.27375v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.27375-full.html",
+        "url": "https://arxiv.org/html/2611.27375v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.27376-abs.html",
+        "url": "https://arxiv.org/abs/2611.27376",
+        "status": "ok"
+      },
+      {
+        "name": "2611.27376-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.27376v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.27376-full.html",
+        "url": "https://arxiv.org/html/2611.27376v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26756-abs.html",
+        "url": "https://arxiv.org/abs/2611.26756",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26863-abs.html",
+        "url": "https://arxiv.org/abs/2611.26863",
+        "status": "ok"
+      },
+      {
+        "name": "2611.27578-abs.html",
+        "url": "https://arxiv.org/abs/2611.27578",
+        "status": "ok"
+      },
+      {
+        "name": "probe-site-commits.json",
+        "url": "https://api.github.com/repos/HowieHwong/HowieHwong.github.io/commits?path=probeagent&per_page=100",
+        "status": "unavailable"
+      },
+      {
+        "name": "probe-repo.json",
+        "url": "https://api.github.com/repos/HowieHwong/probeagent",
+        "status": "unavailable"
+      },
+      {
+        "name": "probe-commits.json",
+        "url": "https://api.github.com/repos/HowieHwong/probeagent/commits?per_page=100",
+        "status": "unavailable"
+      },
+      {
+        "name": "probe-readme-api.json",
+        "url": "https://api.github.com/repos/HowieHwong/probeagent/readme",
+        "status": "unavailable"
+      },
+      {
+        "name": "astronaut-reposearch.json",
+        "url": "https://api.github.com/search/repositories?q=AstronautBench",
+        "status": "ok"
+      },
+      {
+        "name": "skill-reposearch.json",
+        "url": "https://api.github.com/search/repositories?q=SkillPrivus",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26747-abs.html",
+        "url": "https://arxiv.org/abs/2611.26747",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26897-abs.html",
+        "url": "https://arxiv.org/abs/2611.26897",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26910-abs.html",
+        "url": "https://arxiv.org/abs/2611.26910",
+        "status": "ok"
+      },
+      {
+        "name": "2611.27116-abs.html",
+        "url": "https://arxiv.org/abs/2611.27116",
+        "status": "ok"
+      },
+      {
+        "name": "2611.27973-abs.html",
+        "url": "https://arxiv.org/abs/2611.27973",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26747-source.html",
+        "url": "https://arxiv.org/html/2611.26747v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26897-source.html",
+        "url": "https://arxiv.org/html/2611.26897v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26910-source.html",
+        "url": "https://arxiv.org/html/2611.26910v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.27116-source.html",
+        "url": "https://arxiv.org/html/2611.27116v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.27973-source.html",
+        "url": "https://arxiv.org/html/2611.27973v1",
+        "status": "ok"
+      },
+      {
+        "name": "success-ai-new.html",
+        "url": "https://arxiv.org/list/cs.AI/new",
+        "status": "ok"
+      },
+      {
+        "name": "success-ai-recent.html",
+        "url": "https://arxiv.org/list/cs.AI/recent",
+        "status": "ok"
+      },
+      {
+        "name": "success-cl-new.html",
+        "url": "https://arxiv.org/list/cs.CL/new",
+        "status": "ok"
+      },
+      {
+        "name": "success-cl-recent.html",
+        "url": "https://arxiv.org/list/cs.CL/recent",
+        "status": "ok"
+      },
+      {
+        "name": "success-se-new.html",
+        "url": "https://arxiv.org/list/cs.SE/new",
+        "status": "ok"
+      },
+      {
+        "name": "success-se-recent.html",
+        "url": "https://arxiv.org/list/cs.SE/recent",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26747-source.pdf",
+        "url": "https://arxiv.org/pdf/2611.26747",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26747-exact-v1.pdf",
+        "url": "https://arxiv.org/pdf/2611.26747v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26897-source.pdf",
+        "url": "https://arxiv.org/pdf/2611.26897",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26897-exact-v1.pdf",
+        "url": "https://arxiv.org/pdf/2611.26897v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.26910-source.pdf",
+        "url": "https://arxiv.org/pdf/2611.26910",
+        "status": "ok"
+      },
+      {
+        "name": "2611.27116-source.pdf",
+        "url": "https://arxiv.org/pdf/2611.27116",
+        "status": "ok"
+      },
+      {
+        "name": "2611.27973-source.pdf",
+        "url": "https://arxiv.org/pdf/2611.27973",
+        "status": "ok"
+      },
+      {
+        "name": "success-langchain-blog.html",
+        "url": "https://blog.langchain.com/",
+        "status": "ok"
+      },
+      {
+        "name": "success-claude-blog.html",
+        "url": "https://claude.com/blog",
+        "status": "ok"
+      },
+      {
+        "name": "probe-landing.html",
+        "url": "https://github.com/HowieHwong/probeagent",
+        "status": "unavailable"
+      },
+      {
+        "name": "probe-docs-architecture.html",
+        "url": "https://howiehwong.github.io/probeagent/architecture.html",
+        "status": "ok"
+      },
+      {
+        "name": "probe-docs-changelog.html",
+        "url": "https://howiehwong.github.io/probeagent/changelog.html",
+        "status": "ok"
+      },
+      {
+        "name": "probe-docs-configuration.html",
+        "url": "https://howiehwong.github.io/probeagent/configuration.html",
+        "status": "ok"
+      },
+      {
+        "name": "probe-docs.html",
+        "url": "https://howiehwong.github.io/probeagent/index.html",
+        "status": "ok"
+      },
+      {
+        "name": "probe-docs-methodology.html",
+        "url": "https://howiehwong.github.io/probeagent/methodology.html",
+        "status": "ok"
+      },
+      {
+        "name": "probe-docs-search.html",
+        "url": "https://howiehwong.github.io/probeagent/search.html",
+        "status": "ok"
+      },
+      {
+        "name": "probe-docs-validation.html",
+        "url": "https://howiehwong.github.io/probeagent/validation.html",
+        "status": "ok"
+      },
+      {
+        "name": "success-anthropic-engineering.html",
+        "url": "https://www.anthropic.com/engineering",
+        "status": "ok"
+      },
+      {
+        "name": "anthropic-research.html - fresh primary source",
+        "url": "https://www.anthropic.com/research",
+        "status": "ok"
+      },
+      {
+        "name": "dc-new.html",
+        "url": "https://arxiv.org/list/cs.DC/new?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "dc-recent.html",
+        "url": "https://arxiv.org/list/cs.DC/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "ar-new.html",
+        "url": "https://arxiv.org/list/cs.AR/new?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "ar-recent.html",
+        "url": "https://arxiv.org/list/cs.AR/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "vllm-index.html",
+        "url": "https://vllm.ai/blog",
+        "status": "ok"
+      },
+      {
+        "name": "pytorch-index.html",
+        "url": "https://pytorch.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "nvidia-index.html",
+        "url": "https://developer.nvidia.com/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "amd-index.html",
+        "url": "https://rocm.blogs.amd.com/",
+        "status": "ok"
+      },
+      {
+        "name": "sglang-index.html",
+        "url": "https://www.lmsys.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "flashinfer-index.html",
+        "url": "https://flashinfer.ai/",
+        "status": "ok"
+      },
+      {
+        "name": "trt-blog-directory.json",
+        "url": "https://api.github.com/repos/NVIDIA/TensorRT-LLM/contents/docs/source/blogs/tech_blog",
+        "status": "ok"
+      },
+      {
+        "name": "2611.27119-abs.html",
+        "url": "https://arxiv.org/abs/2611.27119",
+        "status": "ok"
+      },
+      {
+        "name": "2611.27119-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.27119v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.27119-paper.html",
+        "url": "https://arxiv.org/html/2611.27119v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.27765-abs.html",
+        "url": "https://arxiv.org/abs/2611.27765",
+        "status": "ok"
+      },
+      {
+        "name": "2611.27765-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.27765v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.27765-paper.html",
+        "url": "https://arxiv.org/html/2611.27765v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.27604-abs.html",
+        "url": "https://arxiv.org/abs/2611.27604",
+        "status": "ok"
+      },
+      {
+        "name": "2611.27604-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.27604v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.27604-paper.html",
+        "url": "https://arxiv.org/html/2611.27604v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.27596-abs.html",
+        "url": "https://arxiv.org/abs/2611.27596",
+        "status": "ok"
+      },
+      {
+        "name": "2611.27596-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.27596v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.27596-paper.html",
+        "url": "https://arxiv.org/html/2611.27596v1",
+        "status": "ok"
+      },
+      {
+        "name": "vllm-nvme.html",
+        "url": "https://vllm.ai/blog/2026-11-23-skip-the-dram-tier",
+        "status": "ok"
+      },
+      {
+        "name": "isomoe-root.html",
+        "url": "https://anonymous.4open.science/r/isomoe-artifact-9C21/",
+        "status": "unavailable"
+      },
+      {
+        "name": "isomoe-meta.json",
+        "url": "https://anonymous.4open.science/api/repo/isomoe-artifact-9C21",
+        "status": "unavailable"
+      },
+      {
+        "name": "isomoe-readme.md",
+        "url": "https://anonymous.4open.science/api/repo/isomoe-artifact-9C21/file/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "isomoe-evaluation.md",
+        "url": "https://anonymous.4open.science/api/repo/isomoe-artifact-9C21/file/docs/3_Evaluation.md",
+        "status": "ok"
+      },
+      {
+        "name": "isomoe-gpu-exact.py.txt",
+        "url": "https://anonymous.4open.science/api/repo/isomoe-artifact-9C21/file/isomoe/gpu_exact.py",
+        "status": "ok"
+      },
+      {
+        "name": "isomoe-format12.py.txt",
+        "url": "https://anonymous.4open.science/api/repo/isomoe-artifact-9C21/file/isomoe/format12.py",
+        "status": "ok"
+      },
+      {
+        "name": "gh-isomoe-search.json",
+        "url": "https://api.github.com/search/repositories?q=IsoMoE&per_page=5",
+        "status": "ok"
+      },
+      {
+        "name": "gh-ctrl-search.json",
+        "url": "https://api.github.com/search/repositories?q=CTRL+co-residency&per_page=5",
+        "status": "ok"
+      },
+      {
+        "name": "gh-weave-search.json",
+        "url": "https://api.github.com/search/repositories?q=Weave+MoE+warp&per_page=5",
+        "status": "ok"
+      },
+      {
+        "name": "openai-research.html - fresh primary source",
+        "url": "https://openai.com/news/research/",
+        "status": "ok"
+      },
+      {
+        "name": "openai-engineering.html - fresh primary source",
+        "url": "https://openai.com/news/engineering/",
+        "status": "ok"
+      },
+      {
+        "name": "openai-security.html - fresh primary source",
+        "url": "https://openai.com/news/security/",
+        "status": "ok"
+      },
+      {
+        "name": "deepmind-news.html - fresh primary source",
+        "url": "https://deepmind.google/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "google-research.html - fresh primary source",
+        "url": "https://research.google/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "ai2-research.html - fresh primary source",
+        "url": "https://allenai.org/research",
+        "status": "ok"
+      },
+      {
+        "name": "xybench-blog.html - fresh primary source",
+        "url": "https://allenai.org/blog/xybench",
+        "status": "ok"
+      },
+      {
+        "name": "teamwork-blog.html - fresh primary source",
+        "url": "https://research.google/blog/advancing-science-engineering-with-antigravitys-teamwork-feature/",
+        "status": "ok"
+      },
+      {
+        "name": "deepmind-publications.html - fresh primary source",
+        "url": "https://deepmind.google/research/publications/",
+        "status": "ok"
+      },
+      {
+        "name": "acl-index.html - fresh primary source",
+        "url": "https://aclanthology.org/",
+        "status": "ok"
+      },
+      {
+        "name": "emnlp-index.html - fresh primary source",
+        "url": "https://aclanthology.org/events/emnlp-2026/",
+        "status": "ok"
+      },
+      {
+        "name": "openreview-api.json - fresh primary source",
+        "url": "https://api2.openreview.net/notes?invitation=ICLR.cc/2027/Conference/-/Submission&limit=20",
+        "status": "unavailable"
+      },
+      {
+        "name": "openreview-home.html - fresh primary source",
+        "url": "https://openreview.net/",
+        "status": "ok"
+      },
+      {
+        "name": "neurips-download.html - fresh primary source",
+        "url": "https://nips.cc/Downloads/2026",
+        "status": "ok"
+      },
+      {
+        "name": "alignment-index.html - fresh primary source",
+        "url": "https://alignment.anthropic.com/",
+        "status": "ok"
+      },
+      {
+        "name": "neurips-proceedings.html - fresh primary source",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2026",
+        "status": "unavailable"
+      },
+      {
+        "name": "ai2-blog.html - fresh primary source",
+        "url": "https://allenai.org/blog",
+        "status": "ok"
+      },
+      {
+        "name": "ai2-news.html - fresh primary source",
+        "url": "https://allenai.org/news",
+        "status": "ok"
+      },
+      {
+        "name": "metr-blog.html - fresh primary source",
+        "url": "https://metr.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "google-labs.html - fresh primary source",
+        "url": "https://labs.google/",
+        "status": "ok"
+      },
+      {
+        "name": "metr-research.html - fresh primary source",
+        "url": "https://metr.org/research/",
+        "status": "ok"
+      },
+      {
+        "name": "metr-q4.html - fresh primary source",
+        "url": "https://metr.org/blog/2026-11-20-q4-2026-capability-update/",
+        "status": "ok"
+      },
+      {
+        "name": "theorizer-asta.html - fresh primary source",
+        "url": "https://allenai.org/blog/theorizer-in-asta",
+        "status": "ok"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": "arxiv:2611.26809",
+      "title": "Search From the Start: Search-Native Pretraining for Language Models",
+      "category": "1.3",
+      "tags": [
+        "Search Pretraining",
+        "Data Augmentation",
+        "Controlled Evaluation",
+        "Retrieval Grounding"
+      ],
+      "published_on": "2026-11-19",
+      "first_seen_at": "2026-11-23T11:02:23.935+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.26809",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.26809v1",
+        "project": "https://huggingface.co/collections/Kausp11/search-native-pretraining",
+        "code": "https://huggingface.co/Kausp11/querylm-dclm-1.4b/raw/3ea96d905a834b47376b2506b1ea22834e993b67/modeling_nanochat.py"
+      },
+      "summary": [
+        "New comparative experiments test search-native pretraining, which inserts query and retrieval blocks into ordinary text while masking retrieved passages from the prediction loss.",
+        "Models retain stronger search-based question answering after shared post-training, giving builders evidence for teaching retrieval use earlier alongside clear tradeoffs in closed-book capability and data-preparation cost."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read scientific main pages 1–10 and every methodological and results appendix on pages 15–26 of the 26-page manuscript; reference-only pages 11–14 were not independently audited. Directly inspected actual source page 7 Figure 5, page 18 Table 5, page 22 Table 10, and page 25 Tables 13–14. A small annotator inserts search queries and BM25/Sphere passages into unchanged Wikipedia or DCLM-Edu documents; original text and query tokens receive next-token loss, while retrieved passage tokens are masked. The initial teacher sees the full document when choosing insertion points, but query generation uses only preceding text; relevance filtering uses overlap with the future continuation. The study compares same-architecture models under approximately matched pretraining FLOPs, counting masked retrieval positions, then applies the same standard or search-heavy SFT within each corpus. In the reported 1.4B DCLM pair, Table 10 gives eight-task mean zero-shot, LLM-judged QA of 36.0 versus 33.1 after Search SFT, and 27.8 versus 20.4 after standard SFT. These are reported model sizes excluding value embeddings; the 1.4B model stores 2.619B total parameters. Base-model answer-containment scores and SFT judge scores are distinct metrics. Counterfactual probes reveal stronger adherence to supplied evidence, including false evidence, rather than verified factual correctness. The new contribution selected here is the comparative pretraining/post-training, retrieval-source, counterfactual and cost/quality study, not the older model, algorithm or dataset release. Earlier alias weights and a short card are dated October 26; the immutable November 19 detailed card describes the recipe but explicitly defers evaluation results and citation. The November 19 dataset card contains format and construction details, without the manuscript’s comparative results. A bounded primary-history and exact-title search did not verify an earlier full quantitative paper. Original arXiv receipt is November 19 at 20:58:34 UTC; the original Monday November 23 CL NEW batch and official Thursday 14:00–Friday 14:00 / Sunday 20:00 Eastern schedule support an inferred manuscript announcement on November 23 at 01:00 UTC. This is a material study update within the exact November 20 11:00–November 23 11:00 UTC discovery interval. Git/HF timestamps alone do not establish historical public visibility; the earlier artifact dates are retained conservatively rather than replaced by the new paper announcement. Actual first_seen is the successful LG RECENT retrieval completion on November 23 at 11:02:23.935353 UTC. Author model/data collection and the immutable model implementation link were retrieved successfully; model weights, datasets and author code were not executed or independently reproduced.",
+        "limitations": "The evidence uses 360M–3.3B reported-parameter models, English corpora, short QA outputs and small fixed search budgets with the first query forced; it does not establish autonomous search timing, broad agent reliability or frontier-scale benefits. DCLM reported sizes omit substantial value embeddings. Matched FLOPs do not equal matched original-document exposure or total system cost: the 3.3B plain-text baseline repeats documents, larger-pair decay schedules differ slightly, and annotation/index construction, search APIs and inference retrieval are additional costs. Wikipedia compute differs by about 4%. Base models are scored by answer containment while SFT uses an LLM judge; bootstrap intervals are over questions, not repeated training seeds. Standard base models borrow QueryLM queries; SFT models generate their own, and external model comparisons change search access and training histories. Closed-book general means can decline, FreshQA differences after search SFT are small, and stronger counterfactual following can also mean following false or adversarial retrieval. The released packed dataset reports 102.6B tokens whereas the paper describes 101.5B processed in its overtrained run; these artifact/run accounting scopes are not treated as identical. No full end-to-end latency, total-cost advantage, causal mechanism guarantee or independent reproduction is claimed."
+      },
+      "novelty": "material-update",
+      "update_note": "2026-11-23: the original arXiv announcement, inferred at 01:00 UTC from its dated native batch and official schedule, adds the inspected matched-compute, shared-SFT, counterfactual, retrieval-source and cost/quality evaluation. Earlier identical 1.4B weights were already dated October 26, and method/data cards were dated November 19; the initial detailed model card explicitly said evaluation results would be added later. This entry reports the newly disclosed quantitative study, not a new model, dataset or search-pretraining algorithm release. Retain the manuscript’s November 19 submission date; no exact earliest public-availability timestamp for the older work is asserted."
+    },
+    {
+      "id": "arxiv:2611.26747",
+      "title": "SkillPrivus: Uncovering PRIVacy of USe Harms in Agentic Skills",
+      "category": "2.8",
+      "tags": [
+        "Agent Skills",
+        "Privacy",
+        "Static Auditing",
+        "Human Evaluation"
+      ],
+      "published_on": "2026-11-19",
+      "first_seen_at": "2026-11-23T11:02:24.038+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.26747",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.26747v1"
+      },
+      "summary": [
+        "SkillPrivus audits installable agent skills before execution by extracting evidence-linked personal-data operations from instructions and code, then assessing their scope and recipients against the advertised purpose and context.",
+        "Its public-skill study and reviewable privacy cards show how ordinary functionality can raise privacy concerns, while the static, model-dependent flags remain distinct from demonstrated breaches or safety certification."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read all 21 PDF pages, including the full method, results, limitations and Appendices A-H; directly viewed actual p. 7 evaluation/results and p. 20 Table 4/Figure 9. The pipeline screens personal-data relevance, extracts READ/INFER/SAVE/SEND/DELETE moves with source locations and supporting slices, reconstructs contextual-information flows and applies a model judgment plus explicit deterministic checks before harm typing and Privacy Card generation. Its contextual norms are an engineering approximation from the stated purpose and data domain, not independently established social or legal norms. From 726 collected skills, 118 are screened out and 45 fail analysis; 307 of the remaining 563 completed privacy-relevant audits have at least one flag, with 2,144 flags among 22,158 extracted moves. Three blinded STEM doctoral annotators label 311 deduplicated moves from 21 deliberately accessible skills, seeing the system-reconstructed flows and evidence but not its inferred norm or verdict. Average pairwise system-human agreement is 83.2%, Cohen kappa 0.346; human-human agreement is 83.4%, kappa 0.478, Krippendorff alpha 0.380. Appendix H compares both backends on the same 37 fully resolved NVIDIA skills: GPT-OSS120B flags 24/37 versus GPT-5 18/37 and 7.26% versus 2.66% of moves. These are scoped author measurements. Original CL NEW membership in the Monday November 23 batch and the official Thursday 14:00-Friday 14:00 Eastern submission / Sunday 20:00 EST announcement schedule support an inferred November 23 01:00 UTC first manuscript announcement, preserving the November 19 submission date. The earliest timestamped team discovery is the successful Recipe CL NEW completion at 11:02:24.038015 UTC today; raw bytes and receipt are copied and hash-bound. Bounded exact-title searches and primary links did not verify a matching public implementation/project; the paper mentions a released codebase without an identifiable verified destination. No source code or experiment was executed.",
+        "limitations": "Flags are potential static privacy-of-use concerns, not observed runtime data flows, realized harms, malicious intent, legal findings or proof that security verification failed its own objectives. The corpus and human subset are selected snapshots;45 analysis failures and screening false negatives limit coverage, and no dedicated extraction-fidelity audit is reported. Human validation reuses system-extracted moves/flows and excludes pairwise unresolved cases, so it does not validate missed operations or full-skill recall. Label imbalance, only three non-specialist annotators and kappa 0.346 qualify the high raw agreement. Backend flag rates differ substantially; extracted-move rank correlation does not establish identical extracted moves. The sensitive-data locality rule is the authors' audit policy, not a GDPR requirement, and artifact-level consent does not prove runtime consent. No prospective mitigation/user study or runtime evaluation validates Privacy Card recommendations; absence of a flag does not certify safety. Public author code was not verified and no independent reproduction is claimed."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-23T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2611.26897",
+      "title": "ProbeAgent: Principled Diagnosis of Agent Failures in Verifiable Environments",
+      "category": "2.8",
+      "tags": [
+        "Failure Diagnosis",
+        "Executable Evaluation",
+        "Controlled Probes",
+        "Human Evaluation"
+      ],
+      "published_on": "2026-11-19",
+      "first_seen_at": "2026-11-23T11:02:24.038+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.26897",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.26897v1",
+        "project": "https://howiehwong.github.io/probeagent/index.html"
+      },
+      "summary": [
+        "ProbeAgent's expanded evaluation tests a workflow that builds checked agent tasks, varies a suspected failure trigger across new contexts and groups trajectories into specific error descriptions.",
+        "The manuscript adds broader configuration coverage and a small blinded human study to an earlier documented framework, giving developers evidence-linked diagnostic tests while exposing how many explanations remain unverified."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read all 28 PDF pages, including complete scientific main and Appendices A-E; directly viewed actual p. 10 Table 3, p. 25 Table 6 and p. 28 Tables 7/8. This selection is the original expanded quantitative manuscript, not a claim that the underlying workflow was newly invented. Accessible author docs identify an October 17-built unreleased 0.2.0 artifact, describe the same full workflow and already disclose 16 configurations/961 failures, recurrence proportions, replay and corpus audits. The new manuscript reports 22 configurations, 347 generated environments, 1244 explained failures and 536 accepted descriptions from 565 groups, plus a blinded human evaluation absent from the inspected older-build docs. Two annotators assess 30 held-out assigned failures and 30 similar alternatives each: assigned-description acceptance averages 90.0% and alternative rejection 83.3%. Reference-success/no-op-failure controls, checker inspection and separate read-only model review admit probes; sibling tasks preserve the proposed trigger while varying context, and cause-embedding graphs plus density splitting create descriptions contrasted with nearby excluded failures. Those controls are useful diagnostics, not proofs of causal attribution. The original CL NEW Monday 23 membership and official schedule support inferred November 23 01:00 UTC announcement of this manuscript evaluation, while retaining its November 19 receipt date and actual successful November 23 CL NEW team discovery. Current docs retain the old-build tag; that tag does not prove the site was publicly visible then or that every current line existed then. No earlier complete source for the expanded 22-configuration/human evaluation was verified in bounded searches. GitHub landing, repository API and history return HTTP 404, so no code link or verified implementation/release history is claimed; the author documentation is verified HTTP 200. No experiment or source code was executed.",
+        "limitations": "The documented framework and substantial 16-configuration evidence predate this manuscript's claimed novelty; do not count recurrence, replay or prior corpus-audit numbers as new discoveries. Historical public visibility cannot be reconstructed from HTTP 404 repository/history endpoints and a documentation build date alone. Most main-corpus groups are singletons (361/565), and 404/565 have no linked sibling tests; only 33 groups carry agent-behavior sibling verdicts. In the 239-explanation experiment, 120 are untested, 25/119 tested cases have fewer than three siblings, and only 20/119 satisfy the configured recurrence criterion. Repeated rollouts count an environment as reproduced if any attempt repeats the error, which is not a causal identification experiment. Construction, review, diagnosis, grouping and held-out classification share the GPT-5.6-sol model family/configuration;88.5% held-out agreement conditions on assigned failures and excludes no-match/failed calls, not independent human ground truth. The human sample contains only 30 failures and two annotators. One campaign per configuration and adaptive task allocation make discovery counts unsuitable as agent rankings; matched replay has only 18 trials on five selected discriminating environments, broad uncertainty and non-significant paired contrasts. Manual 20-environment audit finds one hard expected-answer error and six wrong-or-format-ambiguous tasks; reference feasibility and repeatability do not prove checker validity. No observed repair benefit, complete released implementation or independent reproduction is established."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-23T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2611.27119",
+      "title": "CTRL: Concurrent Training and Rollout through GPU Co-Residency",
+      "category": "3.2",
+      "tags": [
+        "RL Infrastructure",
+        "GPU Co-Residency",
+        "Policy Versioning",
+        "Host Offload"
+      ],
+      "published_on": "2026-11-20",
+      "first_seen_at": "2026-11-23T11:02:23.935+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.27119",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.27119"
+      },
+      "summary": [
+        "CTRL keeps a host-owned learner and persistent rollout engine concurrently on every GPU, using bounded layer streaming and a policy-publication gate to overlap complete updates with generation under a staleness bound.",
+        "Matched-learner controls show when sharing a GPU beats time-sharing or whole-device splits, giving reinforcement-learning builders a concrete way to use decoding’s spare compute capacity.",
+        "The authors report 1.11–2.24× system-throughput gains across 24 workload settings, but substantial host memory and workload balance are prerequisites, and some whole-GPU splits still win."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read all 13 PDF pages: complete scientific main pp.1–11, references pp.11–13 for provenance, no appendix. Directly viewed pp.7,8,10. CTRL combines immutable host policy versions, FP32 host training state and bounded layer streaming with a persistent vLLM rollout engine under CUDA MPS. Ready prompt groups train before a publication gate waits for due trajectories; ordered consumption and earliest behavior versions enforce the stated staleness bound under its assumptions. On four-GPU H100 80GB NVLink, A800 80GB PCIe and RTX 4090 24GB PCIe nodes with 1–2TiB host DRAM, Figure8 reports 1.11–2.24× consumed-token throughput versus the faster verl asynchronous baseline across 24 Qwen3/DAPO-Math/MBPP settings at configured staleness 2. Timing covers updates 5–12 through final publication; cells mix single-seed probes and three-seed means. Main comparisons also change the learner. Holding the learner/recipe fixed, Table3 gives 1.10–1.26× over time-sharing on DAPO-Math, while a short RTX4090 MBPP setting favors splitting (0.86×). Eight-H100 system throughput is 1.23× versus asynchronous time-sharing. Separate 150-update quality checks report 63.6% versus 63.3% OlympiadBench accuracy over two H100 seeds and 79.4% versus 79.2% on a 500-question MATH subset on RTX4090. No verified author implementation was found; upstream libraries are not presented as CTRL code. All three are original cs.DC NEW entries in the Monday November 23 batch, not later cross-listings. Their Friday November 20 receipts precede 14:00 EST and fall in the official Thursday 14:00–Friday 14:00 submission row, announced Sunday at 20:00 EST: inferred November 23 01:00 UTC. Native NEW/dated RECENT and the official schedule were checked. Original receipt dates remain published_on; successful completed catalog timestamps establish actual first_seen, including the earlier copied Recipe LG receipt for CTRL. Bounded exact-title primary and GitHub searches found no verified earlier complete study, without proving global historical absence.",
+        "limitations": "Large host-memory capacity/bandwidth and policy-lifecycle changes are part of the gain: Qwen3-14B uses 220GiB of training state plus 27.5GiB per leased BF16 policy image. Main system comparisons change the learner; matched-learner controls narrow attribution and include splits that tie or win. The headline metric is a short steady-state window with mixed one-/three-seed cells, not total training cost or convergence. Quality evidence is narrow and short, with no learning-equivalence guarantee. Equal configured staleness is not always equal realized age: the native baseline reaches age5 at limit4, whereas CTRL enforces4; headline comparisons use limit2. Compute-share search is a bounded heuristic, not global optimization. No verified released implementation or independent reproduction."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-23T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/new?skip=0&show=2000",
+          "https://arxiv.org/list/cs.DC/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2611.27765",
+      "title": "Weave: Routing-Adaptive Warp Scheduling for MoE Megakernels",
+      "category": "3.5",
+      "tags": [
+        "MoE Megakernels",
+        "Warp Scheduling",
+        "Communication Overlap",
+        "Runtime Cost Model"
+      ],
+      "published_on": "2026-11-20",
+      "first_seen_at": "2026-11-23T11:03:32.490+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.27765",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.27765"
+      },
+      "summary": [
+        "Weave chooses spatial warp allocations and phase-dependent communication roles from each GPU’s routing counts, keeping matrix units active inside a fused mixture-of-experts layer.",
+        "Its NVIDIA and AMD layer benchmarks show how runtime scheduling can reduce communication and computation imbalance without changing expert routing.",
+        "Reported layer speedups are substantially larger than the paper’s broader-path latency controls, so they should not be interpreted as whole-request throughput gains."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read all seven PDF pages, including complete methods/evaluation/limitations pp.1–6 and references p.7; no appendix. Directly viewed pp.4,5,6. Routing counts drive per-GPU on-device selection of spatial communication/compute warp ratios and temporal role changes, including scatter handoff and token-ready tail reduction. This preserves matrix units on every SM/CU rather than reserving whole units for communication. Six MoE configurations use real ShareGPT routing but random weights/activations: FP8/NVFP4 on 8 SM103 GPUs, FP8 on 8 SM90 GPUs and two-node 16 CDNA3 GPUs. The reported statistic is median slowest-GPU layer latency after warmup. Across 30 workloads per platform, layer geometric-mean speedups over MegaMoE are 1.30× on SM103 and 1.24× on SM90; versus each workload’s fastest baseline these are 1.22×/1.21×. CDNA3 achieves 1.44× over the fastest official RCCL+AITER path. The 48-workload ablation and calibrated 1.86–3.65microsecond cost-model decisions support the mechanism. TableIV labels a broader-path control “end-to-end” and reports 1.08× decode at S=128/context4K and 1.01× prefill at S=16K on 8 SM90 GPUs, but does not specify a full generation harness or full-model layer count; we do not validate a whole-model/request gain from that label. Code is promised for future release, not verified as available. All three are original cs.DC NEW entries in the Monday November 23 batch, not later cross-listings. Their Friday November 20 receipts precede 14:00 EST and fall in the official Thursday 14:00–Friday 14:00 submission row, announced Sunday at 20:00 EST: inferred November 23 01:00 UTC. Native NEW/dated RECENT and the official schedule were checked. Original receipt dates remain published_on; successful completed catalog timestamps establish actual first_seen, including the earlier copied Recipe LG receipt for CTRL. Bounded exact-title primary and GitHub searches found no verified earlier complete study, without proving global historical absence.",
+        "limitations": "Core evidence is MoE-layer execution with random values and real routing, not model quality, convergence or request throughput. Architecture, precision, routing shape and baseline versions bound the results; several systems are author reimplementations. One AITER path fails numerical checking on MiniMax-M3 and is excluded there. Exact GPU product SKU, repetition counts/uncertainty and complete full-model timing details are missing. TableIV’s broader-path label is insufficient to certify whole-model semantics; one prefill cell slightly slows (9.31→9.36ms). The cost model needs hardware calibration. Adding expert load balancing lowers imbalance but raises Weave average latency 12.9% in the reported control, so combination is not free. No verified code release or independent reproduction."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-23T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/new?skip=0&show=2000",
+          "https://arxiv.org/list/cs.DC/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    },
+    {
+      "id": "arxiv:2611.27604",
+      "title": "IsoMoE: Placement-Invariant Hybrid CPU-GPU Inference with Lossless 12-bit Experts",
+      "category": "3.6",
+      "tags": [
+        "Lossless Compression",
+        "Deterministic Inference",
+        "MoE Offloading",
+        "CPU-GPU Coexecution"
+      ],
+      "published_on": "2026-11-20",
+      "first_seen_at": "2026-11-23T11:03:32.490+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.27604",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.27604",
+        "code": "https://anonymous.4open.science/api/repo/isomoe-artifact-9C21/file/isomoe/gpu_exact.py"
+      },
+      "summary": [
+        "IsoMoE makes hybrid CPU/GPU expert placement an execution choice by having the GPU replay the CPU’s arithmetic, while a CPU-oriented lossless 12-bit layout reduces expert-memory traffic.",
+        "An exact dual-microbatch pipeline preserves whole-batch operator shapes and merge order, allowing cached experts to move without changing greedy outputs under a fixed hardware, software and request-batch configuration.",
+        "On one Xeon 8488C / RTX A6000 server, the authors report 1.26× average decode speedup over the fastest tested baseline across three MoE models; the placement guarantee is not cross-platform or batch invariance."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read all eight PDF pages, including complete scientific main pp.1–7 and references pp.7–8; no appendix. Directly viewed pp.5/6 and statically read the complete current README, evaluation docs, gpu_exact.py and format12.py. The GPU replays KTransformers0.3.2 CPU accumulation/rounding, a 65,536-entry activation lookup and routing-order merge. Lossless 12-bit codewords with exceptions restore BF16 weights (about 12.1bits/weight); CPU-order layout avoids repeated transposition. Dual microbatches preserve whole-batch shapes and KV partitions, with expert swaps committed at layer boundaries. On one 48-core Xeon Platinum8488C / 48GB RTX A6000 over PCIe4x16, three MoE models at two batch sizes and four memory budgets achieve reported 1.26× mean/up to 1.54× decoding speedup versus each cell’s fastest baseline. Figure6 labels use KTransformers instead and have different maxima. Qwen3 consistency tests match all160 static-placement outputs and56 online outputs after49,712 swap-ins; DeepSeek/Mixtral tests compare logits and per-layer hashes. Evaluation docs define throughput from median full-batch decode-step times after step400 to fixed step budgets, then median of three prompt-offset runs; this is not variable-length session throughput. Landing/metadata endpoints return401, but inspected direct code/docs return200; links.code uses the verified implementation-file URL. Anonymous history/earliest code visibility could not be verified; no dated code-release claim is made. All three are original cs.DC NEW entries in the Monday November 23 batch, not later cross-listings. Their Friday November 20 receipts precede 14:00 EST and fall in the official Thursday 14:00–Friday 14:00 submission row, announced Sunday at 20:00 EST: inferred November 23 01:00 UTC. Native NEW/dated RECENT and the official schedule were checked. Original receipt dates remain published_on; successful completed catalog timestamps establish actual first_seen, including the earlier copied Recipe LG receipt for CTRL. Bounded exact-title primary and GitHub searches found no verified earlier complete study, without proving global historical absence.",
+        "limitations": "Placement invariance is for fixed hardware, software and request batch, not cross-platform, batch-size or arbitrary library agreement. Lossless storage preserves weights rather than demonstrating a lossy-quantization quality gain. CPU AVX512BF16 arithmetic, scalar GPU replay, lookup tables and padding restrict portability. Throughput omits full prefill/queue/tail behavior; repeated prompt offsets are not independently trained models. Baselines have different cache policies and supported shapes, two llama.cpp OOM cells, and FreeToken supports only Qwen with positive GPU budgets. Adapted KTransformers reuses the proposed slots/pipeline. Current docs note Mixtral’s four compressed slots occupy 31.75GiB, slightly above the nominal31.5GiB budget, with small layer-based baseline budget differences. Anonymous landing/history401 prevents a complete release/history claim, although direct code/docs are accessible. No independent numerical or performance reproduction."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-23T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/new?skip=0&show=2000",
+          "https://arxiv.org/list/cs.DC/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      }
+    }
+  ]
+}

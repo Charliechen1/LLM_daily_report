@@ -3,6 +3,7 @@
 
 [Repository overview](../README.md) · [Browse topics](../topics/README.md) · [Landscape baselines](../landscape/README.md)
 
+- [2026-11-23](2026/11/2026-11-23.md) — 6 selected item(s) — **PARTIAL SEARCH**
 - [2026-11-22](2026/11/2026-11-22.md) — 5 selected item(s) — **PARTIAL SEARCH**
 - [2026-11-21](2026/11/2026-11-21.md) — 9 selected item(s) — **PARTIAL SEARCH**
 - [2026-11-20](2026/11/2026-11-20.md) — 10 selected item(s) — **PARTIAL SEARCH**

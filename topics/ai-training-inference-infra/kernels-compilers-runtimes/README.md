@@ -5,6 +5,22 @@ GPU kernels, operator fusion, compilation, execution graphs and hardware adaptat
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-23](../../../reports/2026/11/2026-11-23.md) — PARTIAL SEARCH
+
+### [Weave: Routing-Adaptive Warp Scheduling for MoE Megakernels](<https://arxiv.org/abs/2611.27765>)
+
+Weave chooses spatial warp allocations and phase-dependent communication roles from each GPU’s routing counts, keeping matrix units active inside a fused mixture-of-experts layer. Its NVIDIA and AMD layer benchmarks show how runtime scheduling can reduce communication and computation imbalance without changing expert routing. Reported layer speedups are substantially larger than the paper’s broader-path latency controls, so they should not be interpreted as whole-request throughput gains.
+
+**Published:** 2026-11-20 · **First seen:** 2026-11-23T11:03:32.490+00:00 · **Novelty:** new · **Tags:** MoE Megakernels, Warp Scheduling, Communication Overlap, Runtime Cost Model
+
+**Public availability:** 2026-11-23T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/new?skip=0&show=2000>) · [Timing source](<https://arxiv.org/list/cs.DC/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.27765>)
+
+**Evidence:** research-paper; full-text. Read all seven PDF pages, including complete methods/evaluation/limitations pp.1–6 and references p.7; no appendix. Directly viewed pp.4,5,6. Routing counts drive per-GPU on-device selection of spatial communication/compute warp ratios and temporal role changes, including scatter handoff and token-ready tail reduction. This preserves matrix units on every SM/CU rather than reserving whole units for communication. Six MoE configurations use real ShareGPT routing but random weights/activations: FP8/NVFP4 on 8 SM103 GPUs, FP8 on 8 SM90 GPUs and two-node 16 CDNA3 GPUs. The reported statistic is median slowest-GPU layer latency after warmup. Across 30 workloads per platform, layer geometric-mean speedups over MegaMoE are 1.30× on SM103 and 1.24× on SM90; versus each workload’s fastest baseline these are 1.22×/1.21×. CDNA3 achieves 1.44× over the fastest official RCCL+AITER path. The 48-workload ablation and calibrated 1.86–3.65microsecond cost-model decisions support the mechanism. TableIV labels a broader-path control “end-to-end” and reports 1.08× decode at S=128/context4K and 1.01× prefill at S=16K on 8 SM90 GPUs, but does not specify a full generation harness or full-model layer count; we do not validate a whole-model/request gain from that label. Code is promised for future release, not verified as available. All three are original cs.DC NEW entries in the Monday November 23 batch, not later cross-listings. Their Friday November 20 receipts precede 14:00 EST and fall in the official Thursday 14:00–Friday 14:00 submission row, announced Sunday at 20:00 EST: inferred November 23 01:00 UTC. Native NEW/dated RECENT and the official schedule were checked. Original receipt dates remain published\_on; successful completed catalog timestamps establish actual first\_seen, including the earlier copied Recipe LG receipt for CTRL. Bounded exact-title primary and GitHub searches found no verified earlier complete study, without proving global historical absence.
+
+**Limitations:** Core evidence is MoE-layer execution with random values and real routing, not model quality, convergence or request throughput. Architecture, precision, routing shape and baseline versions bound the results; several systems are author reimplementations. One AITER path fails numerical checking on MiniMax-M3 and is excluded there. Exact GPU product SKU, repetition counts/uncertainty and complete full-model timing details are missing. TableIV’s broader-path label is insufficient to certify whole-model semantics; one prefill cell slightly slows (9.31→9.36ms). The cost model needs hardware calibration. Adding expert load balancing lowers imbalance but raises Weave average latency 12.9% in the reported control, so combination is not free. No verified code release or independent reproduction.
+
 ## [2026-11-22](../../../reports/2026/11/2026-11-22.md) — PARTIAL SEARCH
 
 ### [LightningMoBA: Dynamic Routing and KV-Centric Sparse-Attention Execution](<https://arxiv.org/abs/2611.26268>)
