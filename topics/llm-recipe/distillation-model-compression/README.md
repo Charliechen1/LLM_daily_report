@@ -5,6 +5,22 @@ Knowledge/reasoning distillation, pruning, quantization algorithms and model mer
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-24](../../../reports/2026/11/2026-11-24.md) — PARTIAL SEARCH
+
+### [Verifiable On-Policy Distillation](<https://arxiv.org/abs/2611.30325>)
+
+VOPD uses the observed correlation between verified rollout outcomes and a teacher’s likelihood preferences to adapt the strength of on-policy distillation. In two Qwen3 mathematical-distillation settings, this improves reported average accuracy over direct imitation and fixed extrapolation, offering a concrete way to use outcome feedback inside dense teacher supervision.
+
+**Published:** 2026-11-23 · **First seen:** 2026-11-24T11:06:48.629+00:00 · **Novelty:** new · **Tags:** On-Policy Distillation, Verifiable Rewards, Teacher Feedback, Reasoning
+
+**Public availability:** 2026-11-24T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/new?skip=0&show=2000>) · [Timing source](<https://arxiv.org/list/cs.LG/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.30325v1>) · [Project](<https://github.com/juntongshi48/VOPD>)
+
+**Evidence:** research-paper; full-text. Independently read complete scientific main pp.1–10 and implementation AppendixA pp.14–15, including all relevant formulas/algorithm, evaluation conditions, zero-variance handling and limitations; reference-only pp.11–13 were not independently audited. Directly viewed actual source pp.8,10,15. VOPD forms a per-prompt correlation between standardized verifier outcomes and cumulative teacher/reference log ratios, then scales the teacher implicit-reward direction. Its Rao–Blackwell interpretation preserves only a conditional local next-token estimator after an immediate-token approximation; it does not recover the exact sequence-level verifier gradient or verify unsampled actions. Frozen teacher/reference logits define an adaptive extrapolation target; reference is the student initialization. Experiments actually use the student’s top16 vocabulary entries, token-mean loss, four rollouts/prompt and lambda0.25. On DAPO-Math17,917 prompts with8A100 GPUs, same-size4B runs140 updates and1.7B runs160. Eight-task mean avg@n is66.38 versus64.71 vanillaOPD/65.25 fixedExOPD for4B;53.32 versus50.88/52.34 for1.7B. The metric is mean sampled correctness, with16 generations/problem for small contest sets and4 for larger sets, not pass@n. About65% of default four-rollout groups have no verifier variance and use fixed extrapolation0.25 instead of an estimated correlation. Initial repository commit21c6c15b dated2026-11-23T08:15:17Z contains only a239-byte coming-soon README; no earlier full implementation/study is established and no available code claim is made. Project destination and immutable README/API are verified200. Original MondayNovember23 receipt is preserved; original TuesdayNovember24 LG NEW/RECENT and official Friday14:00–Monday14:00 / Monday20:00 Eastern schedule support inferred arXiv announcementNovember24 01:00UTC. First\_seen preserves the earliest successful completed Infra LG catalog; Agents catalogs were checked and did not contain this ID.
+
+**Limitations:** Evidence covers two students from one Qwen3 family, one fixed4B RL-math teacher, one math training dataset and eight related tests. Training-seed replication/uncertainty is not reported; repeated sampled answers do not replace independent training seeds. AIME24/25 also appear in validation curves and lambda tuning, with no independent held-out model-selection protocol stated. Final checkpoints are reported but validation convergence determines run lengths. Full-vocabulary derivation is approximated by student top16 in experiments; the projection only represents verifier information aligned with the teacher direction and immediate-token approximation. Roughly65% zero-variance groups revert to fixed extrapolation. Additional frozen-reference memory/forward passes are real costs; faster learning curves are in optimizer steps, not established wall-clock savings. Reference-zero-variance handling is not fully specified. Truncated completions receive zero verifier reward. Repository promises future code; no executable implementation or independent reproduction verified.
+
 ## [2026-11-19](../../../reports/2026/11/2026-11-19.md) — PARTIAL SEARCH
 
 ### [On-Policy Morphing into Hybrid Attention Models](<https://arxiv.org/abs/2611.24809>)

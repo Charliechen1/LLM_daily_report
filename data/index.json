@@ -2,6 +2,13 @@
   "schema_version": 1,
   "reports": [
     {
+      "date": "2026-11-24",
+      "path": "reports/2026/11/2026-11-24.md",
+      "source": "data/reports/2026/11/2026-11-24.json",
+      "search_status": "partial",
+      "entries": 9
+    },
+    {
       "date": "2026-11-23",
       "path": "reports/2026/11/2026-11-23.md",
       "source": "data/reports/2026/11/2026-11-23.json",
@@ -397,6 +404,353 @@
     }
   ],
   "entries": [
+    {
+      "id": "arxiv:2611.29588",
+      "title": "How Multi-Timescale Memory Cools Optimization: Theory and Evidence from AdEMAMix",
+      "category": "1.3",
+      "tags": [
+        "Optimizer Memory",
+        "Weight Decay",
+        "Rotational Dynamics",
+        "Pretraining"
+      ],
+      "published_on": "2026-11-22",
+      "first_seen_at": "2026-11-24T11:05:59.790+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.29588",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.29588v1"
+      },
+      "summary": [
+        "Controlled pretraining experiments show that AdEMAMix’s slow momentum helps optimization partly by growing parameter norms and gradually reducing how far weights rotate, even when its contribution to the current update is small.",
+        "Norm-transfer and fixed-radius interventions help separate this implicit schedule from the update direction, giving researchers a concrete way to compare optimizer memory, weight decay and explicit learning-rate schedules together."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "New mechanistic study of an existing optimizer, rather than a new AdEMAMix release. Independently read main pp.1–10; geometry AppendixB pp.15–16; controlled tests AppendixD pp.31–32; scheduling AppendixE pp.33–37; all LLM protocols/interventions/negative controls AppendixF pp.38–49. AppendixC’s extended algebra/proofs and reference-only pp.11–12 were not fully independently audited. Directly viewed actual source pp.2,39,41,44. Theory separates instantaneous update power from weight-decay-weighted temporal correlation under explicit stationarity/uncorrelated-input assumptions and a preconditioner approximation. Experiments train a124M Llama-style model on12.4B FineWeb tokens over189,000 updates, with within-seed matched initialization/data order. Tuned constant-rate final validation losses are3.283 AdamW versus3.209 AdEMAMix; transferring AdEMAMix matrix norms to AdamW gives3.221 and reverse transfer gives3.273 (three-seed means; Table2 p.39). Under cosine the native gap is0.030 nats/token; fixed-radius Hyperball narrows it to roughly0.009. Same-rate norm/power recordings show a roughly42-fold squared-norm ratio with only1.07-fold update power, while coordinate-panel estimates separate small current slow-buffer power from its accumulated displacement. This is evidence for an important norm/scheduling channel, not the only benefit of optimizer memory. No verified new author implementation link is supplied. Original SundayNovember22 v1 receipt is preserved; original TuesdayNovember24 LG NEW and dated RECENT plus official Friday14:00–Monday14:00 / Monday20:00 Eastern schedule support inferred first arXiv announcementNovember24 01:00UTC. Earliest successful team AI catalog completion is retained, not request start. Bounded exact-title primary/web searches found no verified earlier complete manuscript, without proving historical absence.",
+        "limitations": "LLM experiments are one small124M architecture, overtrained/small-batch regime, one dataset/context length and validation cross-entropy; they do not establish downstream reasoning gains or frontier-scale rankings. Main selected performance configurations use three seeds; hyperparameter searches, norm/power recorders, switch interventions and some curve cells are single runs. Equal-rate geometric diagnostics are distinct from separately tuned performance comparisons. The LLM matrix bucket is approximately, not exactly, scale-invariant: residuals, finite RMSNorm epsilon and attention scaling break the symmetry, and norm transfer is an intervention on model parameters. Moment stationarity/uncorrelated-input and slowly varying preconditioner approximations are idealizations; the last-iterate bound uses a geodesically convex-cap/fresh-oracle surrogate, not an LLM convergence guarantee. Fixed-radius control also changes update normalization and weight decay. Cosine norm-transfer effects change sign across peak rates. Coordinate-panel estimates and no independent reproduction limit causal/general claims."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-24T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/new?skip=0&show=2000",
+          "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-24",
+      "report_path": "reports/2026/11/2026-11-24.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.30325",
+      "title": "Verifiable On-Policy Distillation",
+      "category": "1.8",
+      "tags": [
+        "On-Policy Distillation",
+        "Verifiable Rewards",
+        "Teacher Feedback",
+        "Reasoning"
+      ],
+      "published_on": "2026-11-23",
+      "first_seen_at": "2026-11-24T11:06:48.629+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.30325",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.30325v1",
+        "project": "https://github.com/juntongshi48/VOPD"
+      },
+      "summary": [
+        "VOPD uses the observed correlation between verified rollout outcomes and a teacher’s likelihood preferences to adapt the strength of on-policy distillation.",
+        "In two Qwen3 mathematical-distillation settings, this improves reported average accuracy over direct imitation and fixed extrapolation, offering a concrete way to use outcome feedback inside dense teacher supervision."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Independently read complete scientific main pp.1–10 and implementation AppendixA pp.14–15, including all relevant formulas/algorithm, evaluation conditions, zero-variance handling and limitations; reference-only pp.11–13 were not independently audited. Directly viewed actual source pp.8,10,15. VOPD forms a per-prompt correlation between standardized verifier outcomes and cumulative teacher/reference log ratios, then scales the teacher implicit-reward direction. Its Rao–Blackwell interpretation preserves only a conditional local next-token estimator after an immediate-token approximation; it does not recover the exact sequence-level verifier gradient or verify unsampled actions. Frozen teacher/reference logits define an adaptive extrapolation target; reference is the student initialization. Experiments actually use the student’s top16 vocabulary entries, token-mean loss, four rollouts/prompt and lambda0.25. On DAPO-Math17,917 prompts with8A100 GPUs, same-size4B runs140 updates and1.7B runs160. Eight-task mean avg@n is66.38 versus64.71 vanillaOPD/65.25 fixedExOPD for4B;53.32 versus50.88/52.34 for1.7B. The metric is mean sampled correctness, with16 generations/problem for small contest sets and4 for larger sets, not pass@n. About65% of default four-rollout groups have no verifier variance and use fixed extrapolation0.25 instead of an estimated correlation. Initial repository commit21c6c15b dated2026-11-23T08:15:17Z contains only a239-byte coming-soon README; no earlier full implementation/study is established and no available code claim is made. Project destination and immutable README/API are verified200. Original MondayNovember23 receipt is preserved; original TuesdayNovember24 LG NEW/RECENT and official Friday14:00–Monday14:00 / Monday20:00 Eastern schedule support inferred arXiv announcementNovember24 01:00UTC. First_seen preserves the earliest successful completed Infra LG catalog; Agents catalogs were checked and did not contain this ID.",
+        "limitations": "Evidence covers two students from one Qwen3 family, one fixed4B RL-math teacher, one math training dataset and eight related tests. Training-seed replication/uncertainty is not reported; repeated sampled answers do not replace independent training seeds. AIME24/25 also appear in validation curves and lambda tuning, with no independent held-out model-selection protocol stated. Final checkpoints are reported but validation convergence determines run lengths. Full-vocabulary derivation is approximated by student top16 in experiments; the projection only represents verifier information aligned with the teacher direction and immediate-token approximation. Roughly65% zero-variance groups revert to fixed extrapolation. Additional frozen-reference memory/forward passes are real costs; faster learning curves are in optimizer steps, not established wall-clock savings. Reference-zero-variance handling is not fully specified. Truncated completions receive zero verifier reward. Repository promises future code; no executable implementation or independent reproduction verified."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-24T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.LG/new?skip=0&show=2000",
+          "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-24",
+      "report_path": "reports/2026/11/2026-11-24.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://alignment.anthropic.com/2026/neuron-basis-applications/",
+      "title": "Returning to the Neuron Basis for Interpretability, Part 2: Using Neurons For Safety Applications",
+      "category": "1.10",
+      "tags": [
+        "Neuron Readouts",
+        "Safety Evaluation",
+        "Model Auditing"
+      ],
+      "published_on": "2026-11-23",
+      "first_seen_at": "2026-11-24T11:09:13.537+00:00",
+      "canonical_url": "https://alignment.anthropic.com/2026/neuron-basis-applications/",
+      "links": {
+        "blog": "https://alignment.anthropic.com/2026/neuron-basis-applications/"
+      },
+      "summary": [
+        "This study uses existing MLP neurons as detectors selected from their descriptions and readouts, and as weight-space evidence for identifying behaviors added by fine-tuning.",
+        "Without labeled target examples, neuron probes beat the strongest tested text-search alternatives on 11 of 16 safety sets across six open models; adding steering and neuron readouts to a Claude auditor raised hidden-behavior identification from 40% to 75% on 58 LoRA adapters.",
+        "These tools offer a useful complement to behavioral audits, although supervised probes usually do better and the findings do not establish comprehensive hidden-behavior detection."
+      ],
+      "evidence": {
+        "type": "technical-report",
+        "access": "full-text",
+        "rationale": "The full primary technical article, all main sections and Appendices A-D, including Tables A1, C1-C2 and D1, were read; original Figures 1 and 3 were visually inspected. Figure 1 covers six 7B-32B open models and 16 sets, using recall at a 1% false-positive rate for three ToxicChat sets and AUROC otherwise; a match means a gap within 0.02, rather than statistical equivalence. Appendix A.2 selects 10-20 neurons per category and model with Claude and explicitly gives text-search and trained-probe baselines favorable test-set selection. Appendix C.2 compares answers on 216 fixed elicitation prompts with additional singular-vector steering and neuron readouts on 68 LoRA adapters (58 with hidden behaviors and 10 controls), running each Claude Opus 5.5 auditor three times: 70/174 versus 131/174 correct hidden-behavior audits, assessed by a Claude judge with evidence labels masked. These are audit-run rates, rather than 58 independent single-shot outcomes. The primary publishedDate is November 23 at 12:00 UTC, within coverage; first_seen_at retains the actual fresh index receipt. The companion theory main text was inspected for prerequisites, without treating it as a separate selection. No author implementation or project link was verified.",
+        "limitations": "Zero labeled target examples still requires precomputed lenses and descriptions, corpus access, model activations or weights, and Claude selection. Supervised probes often outperform neurons; on cyber-versus-news hard negatives, neuron AUROC is 0.49 versus 0.95 for a 40-label probe. Most model organisms are short finetunes or LoRA adapters; fixed elicitation prompts and LLM judges limit generalization. Steering contributes part of the audit gain from 40% to 75%, with steering alone reaching 61%. The broader unlearning discussion does not establish impossibility: cloze ranking and synthetic organisms do not prove that every hazardous capability is retained or detected. No experiments were independently reproduced."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-23T12:00:00Z",
+        "basis": "dated-source",
+        "sources": [
+          "https://alignment.anthropic.com/2026/neuron-basis-applications/"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-24",
+      "report_path": "reports/2026/11/2026-11-24.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.29155",
+      "title": "ContextFact: Remembering Facts in Context for Long-Term Conversational Agents",
+      "category": "2.3",
+      "tags": [
+        "Conversational Memory",
+        "Entity Grounding",
+        "Retrieval",
+        "Evidence Efficiency"
+      ],
+      "published_on": "2026-11-21",
+      "first_seen_at": "2026-11-24T11:05:59.790+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.29155",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.29155v1",
+        "code": "https://github.com/JiayuHuang01/ContextFact"
+      },
+      "summary": [
+        "ContextFact stores each fact with the surrounding context needed to interpret it and reconstructs source-grounded entity records that reconnect evidence across conversations.",
+        "Separate retrieval and reranking of facts and entities improve the authors' long-term conversational-memory benchmarks with shorter reader evidence, providing a concrete design for preserving local meaning while selectively reconnecting related memories."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read the scientific main text, pp. 1-11; construction and provenance in Appendix B, pp. 16-18; retrieval and experimental settings in Appendices C-D, pp. 24-26; controlled diagnostics and ablations in Appendices E-F, pp. 31-40; and failure analysis in Appendix H, pp. 46-47. Directly viewed actual Tables 1-3 on pp. 7-9 and the construction/latency tables on p. 37. Extraction groups nonadjacent turns around a contextual fact; provisional cross-session referents are bound and topic-grouped, then reconstructed by rereading linked source dialogue. Query-time fact and entity seeds expand once through provenance links, followed by independent reranking and complete-entity readout. With Qwen3.5-27B, the authors report GPT-4o-mini-judged accuracy of 86.49% on 1,540 LoCoMo questions and 91.00% on 500 LongMemEval-S questions, versus 84.29% and 89.20% for the strongest evaluated native-pipeline baseline, Memora(P). Reader-evidence means are 2,907 versus 14,156 and 2,854 versus 13,588 tokens; the roughly 79% reduction applies only to supplied memory evidence. Matched evidence-budget, decomposition and selected-fact controls support the proposed organization; main native-pipeline comparisons do not match all retrieval or construction compute. Adding entities raises multi-hop accuracy from 76.95% to 84.04% in one setting but lowers open-domain accuracy from 54.17% to 51.04%. Static inspection verified initial extraction, source-reconstruction orchestration and single-expansion/reranking implementations without execution. Delayed discovery: the earliest reachable complete repository release, root commit dce7b0dff68edae9646c30b22ea1ec8ebcd4c711 dated November 21 22:26:44 UTC, already includes the method, working source tree and all main result tables. Therefore published_on retains November 21, not the later arXiv announcement. The original arXiv submission is November 22 02:25:07 UTC and its original CL announcement is inferred as November 24 01:00 UTC. Commit time does not establish the exact public-visibility instant, so no exact public_availability is asserted. The dated complete release falls inside the 72-hour lookback starting November 21 11:00 UTC; actual first discovery is today's successful AI NEW completion at 11:05:59.790014 UTC, with no earlier team catalog match found. All 18 reachable commits, immutable initial README/tree/source and the exact working GitHub landing URL are verified; no weight download or experiment was run.",
+        "limitations": "This is a delayed report of a November 21 complete release, not a new method introduced by the November 24 arXiv listing. Reachable Git history cannot prove historical public visibility or rule out deleted/rewritten history. Main results use a single model judge and selected synthetic/curated conversational benchmarks, with no reported multi-run confidence intervals; small overall differences do not establish general memory superiority. Native retrieval pipelines and final unit limits differ across methods; evidence tokens exclude full prompts, embeddings, reranking and construction. The entity view adds construction and query-time overhead relative to fact-only memory and reduces open-domain accuracy in both main backbones. GPT-4.1-mini latency measurements on the stated four-A100/API setup are not universal hardware speedups. Source links do not guarantee semantic faithfulness, correct identity binding or robust temporal normalization. The evaluated full-history reconstruction is not a demonstrated indefinitely updating production service; consent, access control, retention, deletion and correction safeguards are explicitly outside the benchmark. No independent reproduction is claimed."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-11-24",
+      "report_path": "reports/2026/11/2026-11-24.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.28374",
+      "title": "Taking the PULSE of Enterprise Workflows: Evaluating Persistent Project-State Understanding",
+      "category": "2.8",
+      "tags": [
+        "Enterprise Agents",
+        "Project State",
+        "Temporal Reasoning",
+        "Evaluation"
+      ],
+      "published_on": "2026-11-20",
+      "first_seen_at": "2026-11-24T11:05:59.698+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.28374",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.28374v1"
+      },
+      "summary": [
+        "PULSE evaluates whether enterprise agents can reconstruct what remains open, what changed, and which updates a collaborator has encountered across time-stamped project records.",
+        "On synthetic enterprise histories, controlled evidence and project-state interventions expose separate retrieval and state-reconciliation failures, giving builders a targeted way to evaluate persistent understanding before relying on it for coordination."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read the complete scientific main text, pp. 1-11, and construction, question contracts, experimental implementations, statistics, diagnostics and limitations in Appendices A-D, pp. 14-31; reference-only pp. 12-13 were not scientifically re-audited. Directly viewed actual PDF p. 6 Table 1 and p. 25 Tables 12-14. PULSE extends existing synthetic HERB histories with 1,573 questions over 30 projects: 779 open-loop, 563 evolution and 231 documented-view questions. Source-linked records and time cutoffs define state and collaborator exposure; one commitment-closure rule uses a cached GPT-4o verdict, so reproducible construction is not wholly free of model judgment. Sixteen extraction types use deterministic scoring and two generation types use LLM judging. With GPT-5.6-Sol in the controlled ReAct setup, macro-averaged extraction F1 is 31.4, compared with 52.9 for full pre-cutoff context, 66.9 for gold source artifacts and 78.1 when the same artifacts are supplemented with resolved project state. The last gap is 11.2 points with a product-clustered paired 95% interval of [9.2,13.3]; these are diagnostic interventions, not implemented agent capabilities. Product-level bootstrap and paired tests respect shared project histories; the 282-question Claude Code pilot changes the full harness and cannot isolate a model effect. Original CL NEW membership in the dated Tuesday November 24 batch and the official Friday 14:00-Monday 14:00 Eastern / Monday 20:00 EST announcement schedule support an inferred November 24 01:00 UTC first manuscript announcement, retaining its November 20 submission date. Earliest timestamped team discovery is the completed SE NEW retrieval at 11:05:59.698317 UTC today; this cross-subject appearance establishes discovery, while the original CL batch establishes announcement timing. Bounded exact-title search and inspected primary PDF/HTML links did not verify a matching downloadable PULSE code or dataset project; no release or reproduction is claimed merely because the paper says it releases them.",
+        "limitations": "HERB histories are synthetic and follow fixed workflows; 19 validation gates and selected state rules do not establish real-enterprise label validity. Documented views approximate recorded exposure, not beliefs, private knowledge or memory. Commitment closure partly depends on cached model verdicts, and generation/error analysis uses model judges. The oracle conditions add benchmark-designated evidence or resolved state, are not universal performance ceilings and are not an achieved deployable memory system. Results depend on the selected scaffold, retrieval granularity, budgets and model versions; they are not rankings of all graph or memory methods. Cross-family judging and the stronger Claude Code pilot cover only five projects, and the latter changes harness and model together. No online continuous-update deployment, prioritization/delegation evaluation, public matching code verification, independent experiment or prospective privacy study was performed."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-24T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.CL/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-24",
+      "report_path": "reports/2026/11/2026-11-24.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.30034",
+      "title": "STUN-Bench: Truly Unseen Tools for Evaluating Shared Tool Experience",
+      "category": "2.8",
+      "tags": [
+        "Tool Routing",
+        "Benchmark Leakage",
+        "Shared Experience",
+        "Retrieval"
+      ],
+      "published_on": "2026-11-23",
+      "first_seen_at": "2026-11-24T11:05:59.681+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.30034",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.30034v1",
+        "code": "https://anonymous.4open.science/api/repo/STUN-Bench-4860/file/scripts/export_stabletoolbench_release_filter_manifest.py",
+        "project": "https://anonymous.4open.science/api/repo/STUN-Bench-4860/file/README.md"
+      },
+      "summary": [
+        "STUN-Bench excludes held-out tools from shared experience and retriever training, then shows how pooling other tools' experience can crowd their descriptions out of candidate retrieval.",
+        "Its leakage audit, matched exposure controls and conditional separate-index mitigation help builders evaluate shared tool memory more faithfully, while the measured outcome remains tool routing rather than successful API execution."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read main methods, results and limitations on pp. 1-8 and the critical datasheet, controls, release description, data-lineage, training, inference, statistical and auxiliary experiments in Appendices A-I, pp. 12-15 and 17-29; reference-only pages and the historical-method survey table are not independently re-audited paper by paper. Directly viewed actual p. 5 Table 2 and p. 24 Table 20. STUN-Bench retains 729 existing StableToolBench queries and 3,180 tools after a junk filter, excludes labels and mentions of 172 tools from a 90,704-item experience pool, and stratifies 309 wholly held-out queries versus 420 others. Five simulated clients each draw 5,000 items. With Jina-v2 retrieval and a frozen Llama-3.1-8B reranker, shared-index experience lowers held-out top-1 routing accuracy from 0.534 to 0.278 across three seeds; a tool-clustered 95% interval for the difference is [-30.8,-20.6] percentage points. Reserving three of five candidate slots for descriptions and two for a separate experience index recovers 0.520. A clean tool-trained BGE retriever has a much smaller shared-index accuracy loss whose interval includes zero; its separate-index router trades held-out gains for labeled-query losses. At a stricter query filter and exactly 1,051 training updates, tool-exposed versus clean retriever recall differs by 5.6 points, but tool labels and mentions change together, so this is not a unique causal decomposition. All raw test-query overlap and reported historical exclusion findings are attributed to this audit, not independently rerun. Exact original SE NEW membership in the Tuesday November 24 batch plus the official release schedule supports an inferred first manuscript announcement at November 24 01:00 UTC, preserving the November 23 submission. Earliest actual discovery is the completed SE RECENT retrieval at 11:05:59.681678 UTC today; original NEW membership separately governs announcement timing. An unverified GitHub destination advertised in the paper is not used. The actual anonymous landing/API return 401, while the exact direct README, filter implementation, datasheet, provenance map and table manifest return 200. Published links point to those verified direct files; code was inspected statically, never executed. Reachable anonymous artifacts lack a verified historical public-release timeline, and no first-ever artifact-visibility claim is made.",
+        "limitations": "Unseen means excluded from shared experience and clean-retriever training, not absent from base-model pretraining. Accuracy counts any gold tool as correct and does not test all required APIs, arguments, execution or task completion. Only 50 of 309 held-out labels were manually audited: one was incorrect and 23 incomplete; removing them leaves a similar 24.8-point Jina loss, but the other 259 remain unaudited. Experience is synthetic and description-derived; the full pipeline covers one main catalog and a small retail benchmark, while other corpora test retrieval only. Pooled McNemar p-values reuse seed rows and are descriptive; inference rests on clustered intervals. Separate-index benefits depend on retriever and stratum and are not a universal fix. Comparisons do not revise published system rankings or prove all historical methods were contaminated. Current direct-source README acknowledges missing third-party aggregator modules, omitted checkpoints/raw data and local table-generation inputs, contradicting any assumption that a fresh checkout reproduces every table. Anonymous history is unavailable, the general landing is inaccessible, and no independent reproduction or broad privacy guarantee is established."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-24T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.SE/new",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-24",
+      "report_path": "reports/2026/11/2026-11-24.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.28550",
+      "title": "CCAMoE: Cache-Conditioned Adaptive Inference for Offloaded MoE",
+      "category": "3.6",
+      "tags": [
+        "Expert Offloading",
+        "Speculative Decoding",
+        "Cache Prefetching",
+        "Consumer GPUs"
+      ],
+      "published_on": "2026-11-21",
+      "first_seen_at": "2026-11-24T11:06:48.604+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.28550",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.28550v1"
+      },
+      "summary": [
+        "CCAMoE drafts tokens using only the target-model experts already cached on the GPU, then uses draft routing hints to prefetch experts while computation continues.",
+        "Sharing an evolving expert cache between drafting and exact target verification avoids separate draft weights and reduces decoding cost for memory-constrained local inference.",
+        "The authors report 1.78–2.33× decode speedups over the fastest compared baseline on an RTX 4090, but evaluation is limited to one request at a time and the draft controller adds much less than the complete system."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read the complete scientific main text on pp. 1–13 of 15; references on pp. 13–15 are not an independently audited literature review. Source pp. 9, 10 and 12 were directly viewed. A cache-only approximate drafter reuses resident target experts; disturbance-weighted routing hints and verified-route history drive bounded transfers into safe shared slots at CUDA-graph segment boundaries. Original target verification computes missing experts on the CPU and discards approximate draft KV state. Approximation is confined to proposals under the standard speculative acceptance/correction contract; no independent bitwise or distributional reproduction was performed. Qwen3-30B-A3B and DeepSeek-V2-Lite use 16-bit target weights at batch size 1. Hardware is RTX 4090 24 GB, PCIe 4.0×16, EPYC 9554 and 1 TB DRAM, or RTX 3080 10 GB, PCIe 3.0×16, Xeon Gold 5218R and 128 GB DRAM; CPU execution uses 16 threads by default. Figure 9 compares five systems on MMLU-Pro validation, MT-Bench and HumanEval. RTX 4090 speedups over the fastest measured baseline are 1.78–2.33× for Qwen and 2.21–2.27× for DeepSeek; RTX 3080 margins narrow to 1.34× and 1.20–1.24×. Figure 18 is cumulative: eager cache-only drafting is slower; CUDA graphs and concurrent cache updates account for most subsequent reductions, while the length controller adds 1.1% and 0.9% in that setup. On the matched DeepSeek sweep, adaptive length stays within 1.25% of the best fixed length; Qwen adaptive runs were collected separately. No CCAMoE implementation release was verified: the linked nano-vllm fork is an older generic runtime rather than the described 26K-line system, and an exact-name repository search returns zero. Original cs.DC NEW membership is in the Tuesday November 24 batch. The November 21 04:15:13 UTC receipt falls in the official Friday 14:00–Monday 14:00 Eastern submission interval, announced Monday at 20:00 EST: inferred public availability is November 24 01:00 UTC. The original submission date is retained; actual discovery uses the successful completed DC NEW receipt.",
+        "limitations": "Batch-size-one local decoding only, two target models and two CPU/GPU platforms; concurrent serving is future work. Reported TPOT is decoding cost, not total request latency including prefill or startup calibration. The consumer GPUs are paired with substantial server CPUs and host memory, so ordinary-desktop performance is not established. Startup profiles, fixed cache allocation, transfer-window heuristics and calibration are required; repeat counts and uncertainty are not clearly specified for headline comparisons. The target-verification argument does not establish bitwise invariance. No verified full author implementation or independent reproduction."
+      },
+      "novelty": "new",
+      "public_availability": {
+        "at": "2026-11-24T01:00:00Z",
+        "basis": "announcement-schedule",
+        "sources": [
+          "https://arxiv.org/list/cs.DC/new?skip=0&show=2000",
+          "https://arxiv.org/list/cs.DC/recent?skip=0&show=2000",
+          "https://info.arxiv.org/help/availability.html"
+        ]
+      },
+      "report_kind": "daily",
+      "report_date": "2026-11-24",
+      "report_path": "reports/2026/11/2026-11-24.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "arxiv:2611.30027",
+      "title": "Fast 4-bit KV-Cache Decoding on Hopper GPUs: Why Existing Kernels Are Slow and How to Fix Them",
+      "category": "3.6",
+      "tags": [
+        "KV Cache",
+        "Hopper",
+        "4-bit Execution",
+        "Serving"
+      ],
+      "published_on": "2026-11-22",
+      "first_seen_at": "2026-11-24T11:06:48.604+00:00",
+      "canonical_url": "https://arxiv.org/abs/2611.30027",
+      "links": {
+        "paper": "https://arxiv.org/pdf/2611.30027v1",
+        "code": "https://github.com/thomaszhang2661/kv4-hopper"
+      },
+      "summary": [
+        "This study identifies instruction overhead and serialized loading as reasons why existing 4-bit key-value cache kernels can be slower than FP8 on Hopper GPUs.",
+        "Its kernel combines asynchronous loading, register-fed matrix operations and a cache layout prepared at write time, with a vLLM plugin that pairs the fast path with calibrated key centering and selective higher precision.",
+        "On H200, the full recipe accelerates Llama-3.1-8B decode steps at batch size 8 and above, while batch size 1 is roughly level with FP8 and prefill-heavy serving can regress."
+      ],
+      "evidence": {
+        "type": "research-paper",
+        "access": "full-text",
+        "rationale": "Read scientific pp. 1–23 and relevant Appendix A on pp. 30–31 of 31; references on pp. 24–29 are excluded from a full-reference-read claim. Actual Tables 5, 9 and 13 on pp. 10, 16 and 19 were viewed. NVBit instruction counts and controlled removals separate instruction issue overhead from serialized waiting. The kernel overlaps a Tensor Memory Accelerator producer with two compute warpgroups, feeds decoded operands from registers and swaps matrix operands to avoid padding work for small query groups. These techniques build on prior kernels; the contribution is their Hopper decode integration and evaluation. On H200 SXM 141 GB, Table 5 reports 1.12–1.49× kernel speed over the faster of XQA and proposed native FlashAttention-4 FP8 at 11 Llama-3.1-8B head shapes, using CUDA-graph replays. Kernel tables use per-shape best splits, whereas the vLLM plugin uses a fixed rule. In vLLM 0.33.0, the full NVFP4 recipe uses static key-mean removal, Hadamard rotation, four BF16 sink tokens and BF16 layer 0. It gives 1.12–1.64× Llama-3.1-8B decode-step speed over FlashInfer/XQA FP8 at batch size 8 and above, and 1.63× KV-token capacity; a development FlashAttention-4 build narrows the step margin to 1.04–1.24×. Dummy-weight bench-forward timing is distinct from real serving. Table 9 uses one H200, synthetic Poisson requests with nominal 1K input and 8K output tokens, four API-server processes, FP8/XQA, fixed 2-second TTFT and 100-ms TPOT targets, and at least 99% request success. Llama sustainable-rate brackets imply 1.23–1.32×; larger models gain more from capacity, and Qwen2.5-72B uses FP8 weights. Five models have repeated paired accuracy runs with no statistically significant difference detected, which does not establish equality. Repository landing, README, immutable initial tree/README/paper source and current kernel availability were checked without running code. Repository creation on November 18 alone does not establish method release; the first complete code/results/TeX commit in the inspected current history is dated November 22 00:51 UTC, inside the 72-hour lookback. Historical visibility is not independently proven by commit dates. For this delayed discovery, published_on conservatively uses the earlier dated complete artifact on November 22; the original manuscript submission was November 23 04:29:01 UTC. No exact earliest-public-availability timestamp is asserted, and the later arXiv announcement is not treated as the first complete release. Original Tuesday cs.LG membership and the official schedule were checked separately; bounded primary discovery verified no earlier complete out-of-window artifact.",
+        "limitations": "Hopper SM90, head dimension 128 and 1–8 query heads per KV head; no MLA, unsupported head dimensions, speculative decoding or demonstrated tensor-parallel performance. Batch-size-one gains vanish after merge/write/rotation overhead. Prefill is about 7% slower, and prefill-heavy request streams perform worse. Serving uses synthetic prompts on one GPU type; API-process count and preemptions affect saturation, and some runs failed to reproduce. Accuracy intervals allow smaller several-point losses; task scores and perplexity do not certify safety. Newer FlashAttention-4 comparisons narrow older baseline margins. Earlier repository creation is not treated as historical public visibility; initial inspected complete artifacts are dated inside the lookback. No author code executed or independent reproduction."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-11-24",
+      "report_path": "reports/2026/11/2026-11-24.md",
+      "search_status": "partial"
+    },
+    {
+      "id": "https://vllm.ai/blog/2026-11-23-skip-the-dram-tier",
+      "title": "MoRI UMBP: New Equal-Capacity NVMe-versus-DRAM Evaluation for Agentic KV Caching",
+      "category": "3.7",
+      "tags": [
+        "KV Storage",
+        "NVMe",
+        "MoRI",
+        "Agentic Serving"
+      ],
+      "published_on": "2026-11-23",
+      "first_seen_at": "2026-11-23T11:03:32.610+00:00",
+      "canonical_url": "https://vllm.ai/blog/2026-11-23-skip-the-dram-tier",
+      "links": {
+        "blog": "https://vllm.ai/blog/2026-11-23-skip-the-dram-tier",
+        "code": "https://github.com/ROCm/mori"
+      },
+      "summary": [
+        "This engineering study compares existing MoRI UMBP key-value pools backed by NVMe and DRAM, keeping capacity and serving settings matched.",
+        "On Kimi-K3 trace replays across 16 MI355X GPUs, a 1.8 TB NVMe pool stays within 1% of equal-capacity DRAM throughput when most cached tokens remain GPU-resident and asynchronous loads fit behind prefill queues.",
+        "The result helps size longer-retention caches, but drive wear, small DRAM buffers, incomplete upstream patches and heavier-read workloads limit the conclusion."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "Read the full 39-minute article, all tables, limitations and setup/software appendix in native HTML and its 39,406-character extracted body; actual Figures 1 and 7 were inspected. This is a newly dated comparative measurement study of existing UMBP SSD capabilities, not a new SSD architecture or software launch. The immutable November 13 pure-SSD guide is byte-identical to current documentation and already describes direct I/O, staging, eviction and single-request Kimi-K2.6 tier-hit timings; MoRI PR 967 merged on November 17. The November 23 report adds busy vLLM Kimi-K3/AgentX equal-capacity measurements, repeated machine pairs, retention/write-rate analysis and configuration effects absent from that guide. Kimi runs use prefill/decode disaggregation on 16 MI355X GPUs: TP8 per phase and DCP8, FP8 KV, two EPYC 9575F CPUs and 3 TB host DRAM per node, with local Micron 7450 PRO SSDs. All also use DSpark with a synthetic acceptance length of 3.36 tokens, so they do not establish answer-quality preservation. Six matched 1.8 TB AgentX comparisons at 48, 70 and 96 sessions run for one hour after 37–46 minutes of warmup, back-to-back on matched machines/settings: NVMe throughput differs from DRAM by −0.2% to +0.9%. Throughput counts input and output tokens, cached prompt tokens included, divided over all 16 GPUs. The NVMe path uses a 64 GB write buffer and 16 GiB read staging, bypasses the Linux page cache, disables checksum verification and uses relaxed durability. Only 1–16% of prompt tokens come from the external pool in these comparisons. Switching 4 GiB segment files to 256 MiB raises one 70-session result by 15.6%; this is not an isolated new storage algorithm or additive with other ablations. A separate no-buffer 96-session run loses 6.7%. Day-retention/cost curves are list-price arithmetic, not an 83 TB experiment; the largest measured pool is 4.6 TB. The article retains its November 23 date. Genuine first_seen comes from the copied successful November 23 vLLM catalog completion, not a fabricated new discovery today. It was conservatively deferred then because exact pre-cutoff article availability was not verified; full validation now belongs to November 24 catch-up. An initial post commit dated November 23 06:30 UTC corroborates content chronology but is not independently equated with public site visibility.",
+        "limitations": "Busy hybrid/MLA workloads with most hits still in GPU memory; no equal-capacity test where external storage serves most tokens, or a dense high-KV model. Light-load NVMe can add about 0.4 seconds to TTFT. Most ancillary results are single runs; long-prompt shared-cluster variation is about ±2.5%. Checksums are off and durability is relaxed. At 83 TB/day of writes, the small test drives would consume rated life in months. Larger endurance-sized retention/cost projections are arithmetic, omit power/rack/server costs and chain fitted models. Some connector, eviction and checkpoint changes remain non-upstream. Synthetic speculation acceptance and hashed trace replay control system load rather than prove semantic quality. No independent reproduction."
+      },
+      "novelty": "newly-discovered",
+      "report_kind": "daily",
+      "report_date": "2026-11-24",
+      "report_path": "reports/2026/11/2026-11-24.md",
+      "search_status": "partial"
+    },
     {
       "id": "arxiv:2611.26809",
       "title": "Search From the Start: Search-Native Pretraining for Language Models",
@@ -15649,7 +16003,7 @@
       "group": "llm-recipe",
       "title": "Pretraining & Optimization",
       "path": "topics/llm-recipe/pretraining-optimization/README.md",
-      "count": 19
+      "count": 20
     },
     {
       "id": "1.4",
@@ -15684,7 +16038,7 @@
       "group": "llm-recipe",
       "title": "Distillation & Model Compression",
       "path": "topics/llm-recipe/distillation-model-compression/README.md",
-      "count": 23
+      "count": 24
     },
     {
       "id": "1.9",
@@ -15698,7 +16052,7 @@
       "group": "llm-recipe",
       "title": "Model Evaluation, Safety & Interpretability",
       "path": "topics/llm-recipe/model-evaluation-safety-interpretability/README.md",
-      "count": 16
+      "count": 17
     },
     {
       "id": "2.1",
@@ -15719,7 +16073,7 @@
       "group": "ai-agent-dev",
       "title": "Context Engineering & Memory",
       "path": "topics/ai-agent-dev/context-engineering-memory/README.md",
-      "count": 24
+      "count": 25
     },
     {
       "id": "2.4",
@@ -15754,7 +16108,7 @@
       "group": "ai-agent-dev",
       "title": "Agent Evaluation & Security",
       "path": "topics/ai-agent-dev/agent-evaluation-security/README.md",
-      "count": 51
+      "count": 53
     },
     {
       "id": "3.1",
@@ -15796,14 +16150,14 @@
       "group": "ai-training-inference-infra",
       "title": "Low-Precision & Efficient Execution",
       "path": "topics/ai-training-inference-infra/low-precision-efficient-execution/README.md",
-      "count": 8
+      "count": 10
     },
     {
       "id": "3.7",
       "group": "ai-training-inference-infra",
       "title": "Data Pipelines, Storage & Checkpointing",
       "path": "topics/ai-training-inference-infra/data-pipelines-storage-checkpointing/README.md",
-      "count": 6
+      "count": 7
     },
     {
       "id": "3.8",

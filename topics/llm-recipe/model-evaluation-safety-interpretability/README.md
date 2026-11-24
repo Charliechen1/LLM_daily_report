@@ -5,6 +5,22 @@ Capability evaluation, contamination, generalization, robustness, safety and mec
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-24](../../../reports/2026/11/2026-11-24.md) — PARTIAL SEARCH
+
+### [Returning to the Neuron Basis for Interpretability, Part 2: Using Neurons For Safety Applications](<https://alignment.anthropic.com/2026/neuron-basis-applications/>)
+
+This study uses existing MLP neurons as detectors selected from their descriptions and readouts, and as weight-space evidence for identifying behaviors added by fine-tuning. Without labeled target examples, neuron probes beat the strongest tested text-search alternatives on 11 of 16 safety sets across six open models; adding steering and neuron readouts to a Claude auditor raised hidden-behavior identification from 40% to 75% on 58 LoRA adapters. These tools offer a useful complement to behavioral audits, although supervised probes usually do better and the findings do not establish comprehensive hidden-behavior detection.
+
+**Published:** 2026-11-23 · **First seen:** 2026-11-24T11:09:13.537+00:00 · **Novelty:** new · **Tags:** Neuron Readouts, Safety Evaluation, Model Auditing
+
+**Public availability:** 2026-11-23T12:00:00Z (dated primary source). [Timing source](<https://alignment.anthropic.com/2026/neuron-basis-applications/>)
+
+[Blog](<https://alignment.anthropic.com/2026/neuron-basis-applications/>)
+
+**Evidence:** technical-report; full-text. The full primary technical article, all main sections and Appendices A-D, including Tables A1, C1-C2 and D1, were read; original Figures 1 and 3 were visually inspected. Figure 1 covers six 7B-32B open models and 16 sets, using recall at a 1% false-positive rate for three ToxicChat sets and AUROC otherwise; a match means a gap within 0.02, rather than statistical equivalence. Appendix A.2 selects 10-20 neurons per category and model with Claude and explicitly gives text-search and trained-probe baselines favorable test-set selection. Appendix C.2 compares answers on 216 fixed elicitation prompts with additional singular-vector steering and neuron readouts on 68 LoRA adapters (58 with hidden behaviors and 10 controls), running each Claude Opus 5.5 auditor three times: 70/174 versus 131/174 correct hidden-behavior audits, assessed by a Claude judge with evidence labels masked. These are audit-run rates, rather than 58 independent single-shot outcomes. The primary publishedDate is November 23 at 12:00 UTC, within coverage; first\_seen\_at retains the actual fresh index receipt. The companion theory main text was inspected for prerequisites, without treating it as a separate selection. No author implementation or project link was verified.
+
+**Limitations:** Zero labeled target examples still requires precomputed lenses and descriptions, corpus access, model activations or weights, and Claude selection. Supervised probes often outperform neurons; on cyber-versus-news hard negatives, neuron AUROC is 0.49 versus 0.95 for a 40-label probe. Most model organisms are short finetunes or LoRA adapters; fixed elicitation prompts and LLM judges limit generalization. Steering contributes part of the audit gain from 40% to 75%, with steering alone reaching 61%. The broader unlearning discussion does not establish impossibility: cloze ranking and synthetic organisms do not prove that every hazardous capability is retained or detected. No experiments were independently reproduced.
+
 ## [2026-11-22](../../../reports/2026/11/2026-11-22.md) — PARTIAL SEARCH
 
 ### [PosteriorBench: Evaluating Behavior Posterior Sampling in Language Models](<https://arxiv.org/abs/2611.25735>)
