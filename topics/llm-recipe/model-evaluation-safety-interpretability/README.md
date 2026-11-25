@@ -5,6 +5,20 @@ Capability evaluation, contamination, generalization, robustness, safety and mec
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-25](../../../reports/2026/11/2026-11-25.md) — PARTIAL SEARCH
+
+### [Humanity’s First Exam: Measuring the Reliability Floor of LLMs](<https://storage.googleapis.com/deepmind-media/papers/hfe_tech_paper.pdf>)
+
+HFE tests whether language models answer elementary tasks consistently across repeated runs and controlled prompt variants, rather than merely solving one sample. Its family-level reliability metric exposes failures hidden by high average accuracy and helps evaluation teams distinguish visual weaknesses from errors that extra reasoning can reduce.
+
+**Published:** 2026-11-24 · **First seen:** 2026-11-25T11:06:30.330+00:00 · **Novelty:** new · **Tags:** Reliability, Evaluation, Multimodal, Prompt Robustness
+
+[Paper](<https://storage.googleapis.com/deepmind-media/papers/hfe_tech_paper.pdf>) · [Blog](<https://blog.google/innovation-and-ai/models-and-research/google-deepmind/humanitys-first-exam/>) · [Project](<https://www.kaggle.com/datasets/deepmind/hfe-public>)
+
+**Evidence:** technical-report; full-text. Read all 28 pages; inspected source pages 6, 7, 9 and 18. HFE evaluates 544 prompts in 136 four-prompt families, with six rollouts per prompt, zero-shot single-turn inputs, no tools, and provider-default sampling. Equation 2 estimates all 16 selected responses being correct. Table 4’s top five configurations score 95.6–97.8% pass@1 but 80.5–92.4% family pass^4: different events, not corrected accuracy. These are static full-set paper results. The November 24 official announcement corroborates the report date; Kaggle describes a 112-prompt public subset.
+
+**Limitations:** Adversarial selection, model-informed quality filtering, synthetic imagery and a single Gemini grader limit interpretation. Human testing covers seeds only. Provider effort settings do not match compute, and confidence intervals are broad. This single-turn metric does not establish agent workflow reliability. No experiments were reproduced or public implementation verified.
+
 ## [2026-11-24](../../../reports/2026/11/2026-11-24.md) — PARTIAL SEARCH
 
 ### [Returning to the Neuron Basis for Interpretability, Part 2: Using Neurons For Safety Applications](<https://alignment.anthropic.com/2026/neuron-basis-applications/>)

@@ -5,6 +5,22 @@ GPU kernels, operator fusion, compilation, execution graphs and hardware adaptat
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-25](../../../reports/2026/11/2026-11-25.md) — PARTIAL SEARCH
+
+### [Joule is FLOP: Optimizing Tensor-Core Kernels Beyond Latency Hiding at the GPU Power Wall](<https://arxiv.org/abs/2611.32440>)
+
+Joule models how data movement consumes energy even when its latency is hidden, reducing the clock that a power-capped GPU can sustain. It uses that model to guide wider tensor-core tiles, asynchronous accumulator reuse and power-aware work placement, connecting kernel design to energy and runtime rather than cycle counts alone. The tested low-precision GEMMs improve geometric-mean speed by 2.12–6.64% over exhaustively selected cuBLAS algorithms on three GPUs; these are kernel measurements requiring device- and input-specific calibration.
+
+**Published:** 2026-11-24 · **First seen:** 2026-11-25T11:06:00.644+00:00 · **Novelty:** new · **Tags:** Tensor Core Kernels, Power Capping, Energy Modeling
+
+**Public availability:** 2026-11-25T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/new?skip=0&show=2000>) · [Timing source](<https://arxiv.org/list/cs.DC/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.32440v1>)
+
+**Evidence:** research-paper; full-text. Read the full scientific main text, pages 1–11 and the page 12 pre-reference conclusion/acknowledgments of the 14-page paper; there are no scientific appendices. Original source pages 8 and 9 were visually inspected. A calibrated physical-path event-energy model incorporates nonlinear voltage/frequency curves and solves for the steady-state clock under a power cap. Its conditional data-movement bounds are modeled ceilings, rather than universal measured hardware limits. On B200, wide tiles use two accumulator panels and a rotated K-block order with early release to overlap epilogue readout; a CPU scheduler coordinates die-local placement, variable widths, read sharing and cache traversal. Low-precision dense tests cover 60 layer shapes from five Qwen3 models at 2K, 4K, 8K and 16K token counts: MXFP8 on B200 at 1,000 W and RTX PRO 6000 at 600 W, and 1×128 FP8 on H100 NVL at 400 W, using CUDA 13.4 and cuBLAS 13.1. Each point is the median of three 3-second CUDA-graph runs after a 45°C cooldown, discarding the initial second and flushing L2. Geometric-mean speedups over per-shape exhaustive cuBLAS selection are 4.94%, 6.64% and 2.12%, respectively; separate BF16 suites are also reported. B200 without caller-side die-local placement still improves by 4.25%, versus 4.94% with placement. Given measured event counts, held-out-family energy error on B200 is 0.69%, distinct from analytical event estimation for candidate selection. Fused DeepSeek-V4-Pro Mega-MoE on eight B200 GPUs gains 2.60–5.17% over upstream DeepGEMM with die-local expert weights. The original v1 receipt is November 24 at 11:40:37 UTC; the original Wednesday November 25 DC batch and official schedule infer paper announcement at November 25, 01:00 UTC. The paper promises later open sourcing; no author implementation was verified by its links or bounded repository search.
+
+**Limitations:** The method applies to steady-state kernels near their board power cap with meaningful reducible traffic. Per-device coefficients, voltage curves and the target operand-value distribution require calibration; another card of the same model still needs fitting. Profiling counters perturb power, so event collection and steady-state measurements use separate passes. The 0.69% energy error assumes measured event counts and must not be presented as end-to-end error without profiling. Some 2K-token shapes regress; there is no whole-model latency, quality or convergence evaluation. Caller-side die placement constrains portability. MoE accumulation order differs from upstream even though each implementation is batch invariant. Timing repeats do not establish deployment-wide robustness. Author code was not verified and no results were independently reproduced.
+
 ## [2026-11-23](../../../reports/2026/11/2026-11-23.md) — PARTIAL SEARCH
 
 ### [Weave: Routing-Adaptive Warp Scheduling for MoE Megakernels](<https://arxiv.org/abs/2611.27765>)

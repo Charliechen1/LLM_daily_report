@@ -5,6 +5,22 @@ Objectives, optimizers, learning rates, batch sizes and training stability.
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-25](../../../reports/2026/11/2026-11-25.md) — PARTIAL SEARCH
+
+### [Weight Scale Rebalancing: Transferable Training Recipes for Transformers](<https://arxiv.org/abs/2611.32866>)
+
+UDV-Rebalance inserts diagonal scale buffers between paired Transformer weights and restores their factors to fixed norms after every update. A recipe calibrated on small vision models transfers to 120M–1.3B language pretraining without per-model sweeps, offering a practical starting point for reducing tuning while wider-model stability failures show its limits.
+
+**Published:** 2026-11-24 · **First seen:** 2026-11-25T11:05:16.503+00:00 · **Novelty:** new · **Tags:** Reparameterization, Training Stability, Hyperparameter Transfer, Pretraining
+
+**Public availability:** 2026-11-25T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.LG/new?skip=0&show=2000>) · [Timing source](<https://arxiv.org/list/cs.LG/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.32866v1>)
+
+**Evidence:** research-paper; full-text. New reparameterization and deployment study, distinct from the previously covered analysis of existing optimizer memory. Independently read main pp.1–12 and all scientific Appendices A–F pp.15–32; reference-only pp.13–14 were not independently audited. Directly viewed Figure3 p.11, wider-model Figure11 p.28 and configurations/results Tables21–23 p.32. UDVR adds a non-gradient diagonal buffer D between paired U,V matrices, fixes each U-column/V-row norm to alpha\*sqrt(d), and uses shape-dependent learning rates plus a scale regularizer. Linear/attention rebalancing preserves UDV, whereas the operational GELU/SiLU FFN rule absorbs only the U scale and discards V scale; it is not an exact function-preserving transformation there. One-off small-vision characterization selects alpha=.01, gamma=1e-7 and C=.0217, then deploys a fixed rule across the tested target models. GPT-style models of 120.76M/379.94M/1313.53M parameters train on 7B SlimPajama tokens with 2048 context, AdamW and three training seeds. Their fixed UDVR configurations approach the best tuned Vanilla validation perplexity and beat the tested WN/sigma-Reparam configurations, while Vanilla remains slightly stronger on LAMBADA. Additional Llama-S/OLMoE-S tests report PPL12.432/10.897 versus Vanilla12.404/10.939, with tuned Llama-S baselines but only a single reused baseline configuration for OLMoE-S. The manuscript v1 receipt is November24 16:03:02UTC; original LG NEW and dated RECENT plus official Monday14–Tuesday14/Tues20 Eastern schedule support inferred first arXiv announcement November25 01:00UTC. Earliest matching team successful catalog completion is retained. Bounded exact-title searches did not verify an earlier complete manuscript; no claim of exhaustive historical absence is made. No author code/project URL is supplied by the inspected paper.
+
+**Limitations:** The recipe has a substantial one-off calibration cost and retains conventional choices for parameters outside paired maps; it is not universally tuning-free. Wider small-data CIFAR transformers become unstable at the fixed C and need a lower value, and non-UDV weight decay changes sign across architectures. ImageNet results are single training seeds; language results use three seeds but small models, one short 7B-token corpus budget and limited metrics. Fixed factor norms do not imply function preservation for nonlinear FFNs, and the auxiliary scale buffer requires regularization. The SGD convergence result assumes objective-preserving rebalancing, smoothness and bounded stochastic variance; it does not prove convergence for the actual GELU/AdamW Transformer recipe. No measured wall-clock efficiency study or verified author implementation is available. OLMoE-S baseline reuse and cross-dataset muP comparisons do not establish a universal optimizer or scaling-law ranking.
+
 ## [2026-11-24](../../../reports/2026/11/2026-11-24.md) — PARTIAL SEARCH
 
 ### [How Multi-Timescale Memory Cools Optimization: Theory and Evidence from AdEMAMix](<https://arxiv.org/abs/2611.29588>)

@@ -5,6 +5,22 @@ Attention execution, KV management/reuse, offloading and long-context memory eff
 
 [All topics](../../README.md) · [Daily reports](../../../reports/README.md)
 
+## [2026-11-25](../../../reports/2026/11/2026-11-25.md) — PARTIAL SEARCH
+
+### [Norn: Context-Length-Aware Optimization of Weight and KV Cache Placement for Offloaded LLM Inference](<https://arxiv.org/abs/2611.32295>)
+
+Norn precomputes CPU/GPU execution plans and switches weight and KV-cache placement as a request’s context grows, without requiring its output length in advance. It also processes prompt chunks by sublayer to reuse transferred weights, helping memory-constrained desktop inference balance weight residency, cache growth and PCIe traffic. On two single-GPU systems it reduces end-to-end latency by up to 4.2× versus an output-length-aware Pipelined Sharding oracle, with batch-one dummy-input evaluation and substantial offline planning costs.
+
+**Published:** 2026-11-24 · **First seen:** 2026-11-25T11:06:00.644+00:00 · **Novelty:** new · **Tags:** CPU GPU Offloading, KV Cache, Dynamic Placement
+
+**Public availability:** 2026-11-25T01:00:00Z (inferred from dated announcement and official schedule). [Timing source](<https://arxiv.org/list/cs.DC/new?skip=0&show=2000>) · [Timing source](<https://arxiv.org/list/cs.DC/recent?skip=0&show=2000>) · [Timing source](<https://info.arxiv.org/help/availability.html>)
+
+[Paper](<https://arxiv.org/pdf/2611.32295v1>)
+
+**Evidence:** research-paper; full-text. Read the complete scientific main text, pages 1–10 of the 13-page paper; pages 11–13 are references and there are no appendices. Original source pages 8–10 were visually inspected. Offline profiling measures compute, transfer and contention; a mixed-integer linear program chooses counts of eight attention/FFN modes, followed by simulation and heuristic assignment across layers. The planner scans context ranges from long to short, uses 5%/10% degradation thresholds, and adjusts or merges boundaries with migration costs. Optimal MILP subproblems do not make the combined planner globally optimal. Runtime switches at token boundaries; operator-major chunked prefill retains full-input hidden states to avoid reloading weights for every chunk. FP16 Qwen3-14B/32B tests use batch 1, greedy decoding, fixed output lengths and dummy inputs: RTX 5090 with 32 GiB, Core Ultra 7 265K and PCIe 5×16, or RTX 3090 Ti with 24 GiB, i9-10980XE and PCIe 3×16; each has 128 GiB RAM and eight CPU threads. For 1K–128K inputs with 32-token outputs, end-to-end latency improves by up to 16.8× over Pipelined Sharding fixed at 128K capacity and up to 4.2× over PS-O, which knows input and output lengths. In the longer-output sweeps, average time per output token beats PS-O in 16 of 24 cells, including all eight 16K-output cases, but is up to 5.8% slower in some short-output cells. Planning takes 245–2,081 seconds for 2–27 final plans, outside request latency. Switching spikes and prefill-to-decode transfers are separately discussed. The v1 receipt is November 24 at 09:55:02 UTC; original Wednesday November 25 DC batch membership and the official schedule infer paper announcement at November 25, 01:00 UTC. No author implementation was verified: the linked Zenodo/GitHub artifact is the older Pipelined Sharding baseline, rather than Norn code.
+
+**Limitations:** Only two dense Qwen models, two desktop systems, batch 1 and synthetic fixed-length inputs are evaluated. The 16.8× headline partly reflects a fixed 128K-capacity baseline; the stronger output-length-aware oracle sometimes wins. No standard serving-engine, concurrent-request, quality, stochastic-generation or production-workload evaluation is supplied. Although the method does not quantize and is called lossless, heterogeneous CPU/GPU execution is not demonstrated to be bitwise identical or semantically equivalent. Offline profiling and planning need amortization and stable hardware/contention. Heuristic plans incur migration latency spikes. The PyTorch/Transformers implementation and llama.cpp-based comparator differ, so gains bundle planner, placement, prefill and backend choices. Repeat counts and statistical uncertainty are not clearly specified. Author code was not verified.
+
 ## [2026-11-21](../../../reports/2026/11/2026-11-21.md) — PARTIAL SEARCH
 
 ### [Twindex: Index Cache Offloading with Coarse-to-Fine Selection for Long-Context Sparse-Attention Serving](<https://arxiv.org/abs/2611.25078>)
