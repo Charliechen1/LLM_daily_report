@@ -1,0 +1,886 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-27",
+  "timezone": "America/Los_Angeles",
+  "generated_at": "2026-11-27T11:25:09.913+00:00",
+  "coverage": {
+    "start": "2026-11-26T03:00:00-08:00",
+    "end": "2026-11-27T03:00:00-08:00"
+  },
+  "search": {
+    "status": "partial",
+    "notes": "Coverage is November 26 03:00 PST to November 27 03:00 PST, with a total 72-hour discovery lookback from November 24 11:00 UTC through November 27 11:00 UTC. All three areas were searched and deduplicated against the landscape, prior daily reports and the separately backfilled November 26 selection. Successful native arXiv catalogs still show the November 26 batch; the official Thanksgiving notice defers later submissions rather than establishing a fresh November 27 mailing. Earlier papers were not shifted into this report to populate it. Two useful delayed discoveries are included with original publication dates intact: a new shared-policy training experiment in the Hugging Face swarms article, whose earliest reachable added-file source commit is after the earlier cutoff, and the currently inspected Mass Spec Skills article, which has a November 26 11:24 UTC modification after that cutoff. For Mass Spec Skills, no historical version diff establishes whether the current quantitative content was already present in the earlier window, so it is conservatively reported here rather than projected back. Neither source-history timestamps nor page modification metadata prove an exact global first-public instant or a substantive new scientific update by themselves. The old swarms mechanism/code and unknown-molecule discovery are not claimed as new results. No additional Recipe or Infra item passed the current novelty and evidence screen after deduplication; this is a statement about the inspected scope, not a claim that no such research appeared. OpenReview API 403, canonical NeurIPS 2026 proceedings 404 and the unavailable Eleuther blog remain search gaps despite many successful primary-source checks. The search is therefore partial. No experiments or training were reproduced.",
+    "sources_checked": [
+      {
+        "name": "2611.33302-abs.html",
+        "url": "https://arxiv.org/abs/2611.33302",
+        "status": "ok"
+      },
+      {
+        "name": "2611.33302-paper.html",
+        "url": "https://arxiv.org/html/2611.33302v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.33302-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.33302v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.33625-abs.html",
+        "url": "https://arxiv.org/abs/2611.33625",
+        "status": "ok"
+      },
+      {
+        "name": "2611.33625-paper.html",
+        "url": "https://arxiv.org/html/2611.33625v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.33625-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.33625v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.33896-abs.html",
+        "url": "https://arxiv.org/abs/2611.33896",
+        "status": "ok"
+      },
+      {
+        "name": "2611.33896-paper.html",
+        "url": "https://arxiv.org/html/2611.33896v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.33896-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.33896v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.34492-abs.html",
+        "url": "https://arxiv.org/abs/2611.34492",
+        "status": "ok"
+      },
+      {
+        "name": "2611.34492-paper.html",
+        "url": "https://arxiv.org/html/2611.34492v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.34492-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.34492v1",
+        "status": "ok"
+      },
+      {
+        "name": "schedule.html",
+        "url": "https://info.arxiv.org/help/availability.html",
+        "status": "ok"
+      },
+      {
+        "name": "cl-new.html — 2026-11-27T11:03:31.468726+00:00",
+        "url": "https://arxiv.org/list/cs.CL/new?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "cl-recent.html — 2026-11-27T11:03:52.218211+00:00",
+        "url": "https://arxiv.org/list/cs.CL/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "eleuther-blog.html",
+        "url": "https://www.eleuther.ai/blog",
+        "status": "unavailable"
+      },
+      {
+        "name": "floodgates-commits.json",
+        "url": "https://api.github.com/repos/MisakiTaro0414/floodgates/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "floodgates-initial-readme.md",
+        "url": "https://raw.githubusercontent.com/MisakiTaro0414/floodgates/1492e28eac20c8a397bc835df82905f408e71271/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "floodgates-readme.md",
+        "url": "https://raw.githubusercontent.com/MisakiTaro0414/floodgates/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "floodgates-repo.json",
+        "url": "https://api.github.com/repos/MisakiTaro0414/floodgates",
+        "status": "ok"
+      },
+      {
+        "name": "forgetting-commits.json",
+        "url": "https://api.github.com/repos/yilin-luo/two-timescales-of-forgetting/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "forgetting-initial-readme.md",
+        "url": "https://raw.githubusercontent.com/yilin-luo/two-timescales-of-forgetting/ebec4465a7cabe90d218104f0964719160bdec8b/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "forgetting-readme.md",
+        "url": "https://raw.githubusercontent.com/yilin-luo/two-timescales-of-forgetting/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "forgetting-repo.json",
+        "url": "https://api.github.com/repos/yilin-luo/two-timescales-of-forgetting",
+        "status": "ok"
+      },
+      {
+        "name": "hf-blog.html — 2026-11-27T11:03:31.620187+00:00",
+        "url": "https://huggingface.co/blog",
+        "status": "ok"
+      },
+      {
+        "name": "lg-new.html",
+        "url": "https://arxiv.org/list/cs.LG/new?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "lg-recent.html",
+        "url": "https://arxiv.org/list/cs.LG/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "modern-abs.html",
+        "url": "https://arxiv.org/abs/2611.31495",
+        "status": "ok"
+      },
+      {
+        "name": "modernelectra-blog.html",
+        "url": "https://huggingface.co/blog/knowledgator/modernelectra",
+        "status": "ok"
+      },
+      {
+        "name": "nemo-assets-api.json",
+        "url": "https://huggingface.co/api/datasets/nvidia/Nemotron-Parse-Blog-Assets",
+        "status": "ok"
+      },
+      {
+        "name": "nemo-assets-commits.json",
+        "url": "https://huggingface.co/api/datasets/nvidia/Nemotron-Parse-Blog-Assets/commits/main",
+        "status": "ok"
+      },
+      {
+        "name": "nemo-code-repo.json",
+        "url": "https://api.github.com/repos/NVIDIA-NeMo/Nemotron",
+        "status": "ok"
+      },
+      {
+        "name": "nemo-dental-example.md",
+        "url": "https://huggingface.co/datasets/nvidia/Nemotron-Parse-Blog-Assets/raw/main/examples/dental-adaptation.md",
+        "status": "ok"
+      },
+      {
+        "name": "nemo-initial-measurement-notes.md",
+        "url": "https://huggingface.co/datasets/nvidia/Nemotron-Parse-Blog-Assets/raw/258831906d00005a680fbdae47bf651476c99d35/measurement-notes.md",
+        "status": "ok"
+      },
+      {
+        "name": "nemo-initial-model-readme.md",
+        "url": "https://huggingface.co/nvidia/Nemotron-3.5-Parse/raw/dca5b2df89d00a671509204501d8f1f379d5e94f/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "nemo-measurement-notes.md",
+        "url": "https://huggingface.co/datasets/nvidia/Nemotron-Parse-Blog-Assets/raw/main/measurement-notes.md",
+        "status": "ok"
+      },
+      {
+        "name": "nemo-model-api.json",
+        "url": "https://huggingface.co/api/models/nvidia/Nemotron-3.5-Parse",
+        "status": "ok"
+      },
+      {
+        "name": "nemo-model-commits.json",
+        "url": "https://huggingface.co/api/models/nvidia/Nemotron-3.5-Parse/commits/main",
+        "status": "ok"
+      },
+      {
+        "name": "nemo-model-readme.md",
+        "url": "https://huggingface.co/nvidia/Nemotron-3.5-Parse/raw/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "nemo-training-figure.png",
+        "url": "https://huggingface.co/datasets/nvidia/Nemotron-Parse-Blog-Assets/resolve/main/images/figure-03-sft-grpo-gains.png",
+        "status": "ok"
+      },
+      {
+        "name": "nemo-workflow.md",
+        "url": "https://raw.githubusercontent.com/NVIDIA-NeMo/Nemotron/main/docs/nemotron/parse/workflow.md",
+        "status": "ok"
+      },
+      {
+        "name": "nemotron-parse-blog.html",
+        "url": "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin",
+        "status": "ok"
+      },
+      {
+        "name": "snorkel-blog.html",
+        "url": "https://snorkel.ai/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "ssa-commits.json",
+        "url": "https://api.github.com/repos/Ege-Cakar/State-Space-Attention/commits?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "ssa-openreview-api.json",
+        "url": "https://api2.openreview.net/notes?id=5ObCoNGSiT",
+        "status": "unavailable"
+      },
+      {
+        "name": "ssa-openreview.pdf",
+        "url": "https://openreview.net/pdf?id=5ObCoNGSiT",
+        "status": "unavailable"
+      },
+      {
+        "name": "ssa-readme.md",
+        "url": "https://raw.githubusercontent.com/Ege-Cakar/State-Space-Attention/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "ssa-repo.json",
+        "url": "https://api.github.com/repos/Ege-Cakar/State-Space-Attention",
+        "status": "ok"
+      },
+      {
+        "name": "tml-blog.html",
+        "url": "https://thinkingmachines.ai/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "floodgates-code-landing.html",
+        "url": "https://github.com/MisakiTaro0414/floodgates",
+        "status": "ok"
+      },
+      {
+        "name": "nemo-code-landing.html",
+        "url": "https://github.com/NVIDIA-NeMo/Nemotron",
+        "status": "ok"
+      },
+      {
+        "name": "nemo-model-landing.html",
+        "url": "https://huggingface.co/nvidia/Nemotron-3.5-Parse",
+        "status": "ok"
+      },
+      {
+        "name": "ai-new.html — 2026-11-27T11:03:52.314650+00:00",
+        "url": "https://arxiv.org/list/cs.AI/new?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "ai-recent.html — 2026-11-27T11:03:52.269328+00:00",
+        "url": "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "se-new.html — 2026-11-27T11:03:52.121716+00:00",
+        "url": "https://arxiv.org/list/cs.SE/new?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "se-recent.html — 2026-11-27T11:03:52.172749+00:00",
+        "url": "https://arxiv.org/list/cs.SE/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "anthropic-research.html — 2026-11-27T11:03:52.614138+00:00",
+        "url": "https://www.anthropic.com/research",
+        "status": "ok"
+      },
+      {
+        "name": "anthropic-engineering-index.html",
+        "url": "https://www.anthropic.com/engineering",
+        "status": "ok"
+      },
+      {
+        "name": "langchain-blog.html — 2026-11-27T11:03:52.612140+00:00",
+        "url": "https://www.langchain.com/blog",
+        "status": "ok"
+      },
+      {
+        "name": "claude-blog.html — 2026-11-27T11:03:52.786095+00:00",
+        "url": "https://claude.com/resources/articles",
+        "status": "ok"
+      },
+      {
+        "name": "2611.33402-abstract.html — 2026-11-27T11:05:35.126290+00:00",
+        "url": "https://arxiv.org/abs/2611.33402",
+        "status": "ok"
+      },
+      {
+        "name": "2611.33402-source.pdf — 2026-11-27T11:05:35.214055+00:00",
+        "url": "https://arxiv.org/pdf/2611.33402v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.33402-source.html — 2026-11-27T11:05:35.215052+00:00",
+        "url": "https://arxiv.org/html/2611.33402v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.34147-abstract.html — 2026-11-27T11:05:35.122300+00:00",
+        "url": "https://arxiv.org/abs/2611.34147",
+        "status": "ok"
+      },
+      {
+        "name": "2611.34147-source.pdf — 2026-11-27T11:05:35.251954+00:00",
+        "url": "https://arxiv.org/pdf/2611.34147v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.34147-source.html — 2026-11-27T11:05:35.215052+00:00",
+        "url": "https://arxiv.org/html/2611.34147v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.34875-abstract.html — 2026-11-27T11:05:35.332738+00:00",
+        "url": "https://arxiv.org/abs/2611.34875",
+        "status": "ok"
+      },
+      {
+        "name": "2611.34875-source.pdf — 2026-11-27T11:05:35.448489+00:00",
+        "url": "https://arxiv.org/pdf/2611.34875v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.34875-source.html — 2026-11-27T11:05:35.496362+00:00",
+        "url": "https://arxiv.org/html/2611.34875v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.34624-abstract.html — 2026-11-27T11:05:35.410349+00:00",
+        "url": "https://arxiv.org/abs/2611.34624",
+        "status": "ok"
+      },
+      {
+        "name": "2611.34624-source.pdf — 2026-11-27T11:05:35.558278+00:00",
+        "url": "https://arxiv.org/pdf/2611.34624v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.34624-source.html — 2026-11-27T11:05:35.586202+00:00",
+        "url": "https://arxiv.org/html/2611.34624v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.34044-abstract.html — 2026-11-27T11:05:35.578224+00:00",
+        "url": "https://arxiv.org/abs/2611.34044",
+        "status": "ok"
+      },
+      {
+        "name": "2611.34044-source.pdf — 2026-11-27T11:05:35.732186+00:00",
+        "url": "https://arxiv.org/pdf/2611.34044v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.34044-source.html — 2026-11-27T11:05:35.660379+00:00",
+        "url": "https://arxiv.org/html/2611.34044v1",
+        "status": "ok"
+      },
+      {
+        "name": "nooa-old-blog.html — 2026-11-27T11:07:08.514832+00:00",
+        "url": "https://developer.nvidia.com/blog/six-agent-harness-capabilities-for-higher-model-performance/",
+        "status": "ok"
+      },
+      {
+        "name": "partial-zenodo.json — 2026-11-27T11:07:07.752260+00:00",
+        "url": "https://zenodo.org/api/records/19700291",
+        "status": "ok"
+      },
+      {
+        "name": "reme-repo.json — 2026-11-27T11:07:07.197273+00:00",
+        "url": "https://api.github.com/repos/agentscope-ai/ReMe",
+        "status": "ok"
+      },
+      {
+        "name": "reme-commits.json — 2026-11-27T11:07:07.270080+00:00",
+        "url": "https://api.github.com/repos/agentscope-ai/ReMe/commits?path=plugins%2Fhome&per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "nooa-repo.json — 2026-11-27T11:12:23.457830+00:00",
+        "url": "https://api.github.com/repos/nvidia-nemo/labs-OO-Agents",
+        "status": "ok"
+      },
+      {
+        "name": "nooa-readme.md — 2026-11-27T11:12:23.048358+00:00",
+        "url": "https://raw.githubusercontent.com/nvidia-nemo/labs-OO-Agents/main/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "nooa-tree.json — 2026-11-27T11:12:23.387451+00:00",
+        "url": "https://api.github.com/repos/nvidia-nemo/labs-OO-Agents/git/trees/main?recursive=1",
+        "status": "ok"
+      },
+      {
+        "name": "nooa-commits.json — 2026-11-27T11:12:23.302678+00:00",
+        "url": "https://api.github.com/repos/nvidia-nemo/labs-OO-Agents/commits?per_page=30",
+        "status": "ok"
+      },
+      {
+        "name": "nooa-project.html — 2026-11-27T11:12:23.563547+00:00",
+        "url": "https://github.com/nvidia-nemo/labs-OO-Agents",
+        "status": "ok"
+      },
+      {
+        "name": "nooa-events.py — 2026-11-27T11:13:02.741294+00:00",
+        "url": "https://raw.githubusercontent.com/nvidia-nemo/labs-OO-Agents/3299ed9aa044766c5434e0f22026bff0cc387544/src/nooa/context_blocks/events.py",
+        "status": "ok"
+      },
+      {
+        "name": "nooa-concepts.md — 2026-11-27T11:13:02.739298+00:00",
+        "url": "https://raw.githubusercontent.com/nvidia-nemo/labs-OO-Agents/3299ed9aa044766c5434e0f22026bff0cc387544/docs/concepts/prompts-and-context.md",
+        "status": "ok"
+      },
+      {
+        "name": "nooa-before-study.json — 2026-11-27T11:13:02.848010+00:00",
+        "url": "https://api.github.com/repos/nvidia-nemo/labs-OO-Agents/commits?until=2026-11-24T23%3A59%3A59Z&per_page=1",
+        "status": "ok"
+      },
+      {
+        "name": "nooa-old-paper-abstract.html — 2026-11-27T11:13:02.651535+00:00",
+        "url": "https://arxiv.org/abs/2607.20709",
+        "status": "ok"
+      },
+      {
+        "name": "hf-training-swarms.html — 2026-11-27T11:13:31.487128+00:00",
+        "url": "https://huggingface.co/blog/training-swarms",
+        "status": "ok"
+      },
+      {
+        "name": "nooa-earlier-readme.md — 2026-11-27T11:13:31.519041+00:00",
+        "url": "https://raw.githubusercontent.com/nvidia-nemo/labs-OO-Agents/fbcfa41213c65924d0d4bf19065b43e69adf5f2c/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "swarm-blog-commits.json — 2026-11-27T11:14:26.817191+00:00",
+        "url": "https://api.github.com/repos/huggingface/blog/commits?path=training-swarms.md&per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "swarm-trl-example.html — 2026-11-27T11:14:27.085475+00:00",
+        "url": "https://github.com/huggingface/trl/tree/main/examples/async_grpo_s3_aggregation",
+        "status": "ok"
+      },
+      {
+        "name": "swarm-trl-pr.json — 2026-11-27T11:14:26.878028+00:00",
+        "url": "https://api.github.com/repos/huggingface/trl/pulls/8424",
+        "status": "ok"
+      },
+      {
+        "name": "swarm-old-paper-abstract.html — 2026-11-27T11:14:26.604759+00:00",
+        "url": "https://arxiv.org/abs/2611.08615",
+        "status": "ok"
+      },
+      {
+        "name": "swarm-initial-blog.md — 2026-11-27T11:15:54.597782+00:00",
+        "url": "https://raw.githubusercontent.com/huggingface/blog/eb7188be79b742ae0323deb86650b59d08bbb11b/training-swarms.md",
+        "status": "ok"
+      },
+      {
+        "name": "swarm-initial-commit.json — 2026-11-27T11:15:54.726439+00:00",
+        "url": "https://api.github.com/repos/huggingface/blog/commits/eb7188be79b742ae0323deb86650b59d08bbb11b",
+        "status": "ok"
+      },
+      {
+        "name": "swarm-code-readme.md — 2026-11-27T11:15:54.598778+00:00",
+        "url": "https://raw.githubusercontent.com/huggingface/trl/1ee1b33e0079f3b2666a2ca84d28d19037e660a6/examples/async_grpo_s3_aggregation/README.md",
+        "status": "ok"
+      },
+      {
+        "name": "swarm-code-training.py — 2026-11-27T11:15:54.602769+00:00",
+        "url": "https://raw.githubusercontent.com/huggingface/trl/1ee1b33e0079f3b2666a2ca84d28d19037e660a6/examples/async_grpo_s3_aggregation/async_grpo_s3_aggregation.py",
+        "status": "ok"
+      },
+      {
+        "name": "dc-new.html",
+        "url": "https://arxiv.org/list/cs.DC/new?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "dc-recent.html",
+        "url": "https://arxiv.org/list/cs.DC/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "ar-new.html",
+        "url": "https://arxiv.org/list/cs.AR/new?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "ar-recent.html",
+        "url": "https://arxiv.org/list/cs.AR/recent?skip=0&show=2000",
+        "status": "ok"
+      },
+      {
+        "name": "vllm-index.html",
+        "url": "https://vllm.ai/blog",
+        "status": "ok"
+      },
+      {
+        "name": "pytorch-index.html",
+        "url": "https://pytorch.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "nvidia-index.html",
+        "url": "https://developer.nvidia.com/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "amd-index.html",
+        "url": "https://rocm.blogs.amd.com/",
+        "status": "ok"
+      },
+      {
+        "name": "sglang-index.html",
+        "url": "https://www.lmsys.org/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "flashinfer-index.html",
+        "url": "https://flashinfer.ai/posts/",
+        "status": "ok"
+      },
+      {
+        "name": "trt-index.html",
+        "url": "https://nvidia.github.io/TensorRT-LLM/",
+        "status": "ok"
+      },
+      {
+        "name": "2611.33542-abs.html",
+        "url": "https://arxiv.org/abs/2611.33542",
+        "status": "ok"
+      },
+      {
+        "name": "2611.33542-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.33542v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.33542-source.html",
+        "url": "https://arxiv.org/html/2611.33542v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.34615-abs.html",
+        "url": "https://arxiv.org/abs/2611.34615",
+        "status": "ok"
+      },
+      {
+        "name": "2611.34615-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.34615v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.34615-source.html",
+        "url": "https://arxiv.org/html/2611.34615v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.33981-abs.html",
+        "url": "https://arxiv.org/abs/2611.33981",
+        "status": "ok"
+      },
+      {
+        "name": "2611.33981-paper.pdf",
+        "url": "https://arxiv.org/pdf/2611.33981v1",
+        "status": "ok"
+      },
+      {
+        "name": "2611.33981-source.html",
+        "url": "https://arxiv.org/html/2611.33981v1",
+        "status": "ok"
+      },
+      {
+        "name": "anthropic-rust.html",
+        "url": "https://www.anthropic.com/research/migrating-api-to-rust",
+        "status": "ok"
+      },
+      {
+        "name": "rankcast-reposearch.json",
+        "url": "https://api.github.com/search/repositories?q=RankCast+in:name,description",
+        "status": "ok"
+      },
+      {
+        "name": "pipeaxes-reposearch.json",
+        "url": "https://api.github.com/search/repositories?q=PipeAxes+in:name,description",
+        "status": "ok"
+      },
+      {
+        "name": "mixmomo-reposearch.json",
+        "url": "https://api.github.com/search/repositories?q=MixMoMo+in:name,description",
+        "status": "ok"
+      },
+      {
+        "name": "arxiv-holiday-index.html",
+        "url": "https://blog.arxiv.org/",
+        "status": "ok"
+      },
+      {
+        "name": "arxiv-holiday.html",
+        "url": "https://blog.arxiv.org/2026/11/25/holiday-announcement-schedule/",
+        "status": "ok"
+      },
+      {
+        "name": "nvidia-mlperf-endpoints.html",
+        "url": "https://developer.nvidia.com/blog/nvidia-vera-rubin-nvl72-leads-agentic-inference-performance-on-mlperf-endpoints-v1-0/",
+        "status": "ok"
+      },
+      {
+        "name": "nvidia-mlperf-training.html",
+        "url": "https://developer.nvidia.com/blog/nvidia-vera-rubin-nvl72-achieves-up-to-2x-blackwell-ultra-performance-in-mlperf-training-v6-1/",
+        "status": "ok"
+      },
+      {
+        "name": "nvidia-nvfp4-registers.html",
+        "url": "https://developer.nvidia.com/blog/how-to-optimize-nvfp4-attention-on-nvidia-rtx-blackwell-through-register-recycling/",
+        "status": "ok"
+      },
+      {
+        "name": "amd-rocm102.html",
+        "url": "https://rocm.blogs.amd.com/ecosystems-and-partners/rocm-10.2-blog/README.html",
+        "status": "ok"
+      },
+      {
+        "name": "amd-mlperf-training.html",
+        "url": "https://rocm.blogs.amd.com/artificial-intelligence/mlperf-training-v6.1/README.html",
+        "status": "ok"
+      },
+      {
+        "name": "pytorch-robot.html",
+        "url": "https://pytorch.org/blog/executorch-tensorrt-pytorch-robot-policies-at-nvidia-tensorrt-speed/",
+        "status": "ok"
+      },
+      {
+        "name": "flashinfer-pr4502.json",
+        "url": "https://api.github.com/repos/flashinfer-ai/flashinfer/pulls/4502",
+        "status": "ok"
+      },
+      {
+        "name": "flashinfer-pr4502-files.json",
+        "url": "https://api.github.com/repos/flashinfer-ai/flashinfer/pulls/4502/files?per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "reactor-nvfp4.html",
+        "url": "https://www.reactor.inc/blog/nvfp4-attention-world-models",
+        "status": "ok"
+      },
+      {
+        "name": "flashinfer-original-mainloop.cuh",
+        "url": "https://raw.githubusercontent.com/flashinfer-ai/flashinfer/1ff1f79ec7417334f0cf6f603911215071275348/include/flashinfer/attention/sm120/nvfp4_attention_sm120/compute/mainloop.cuh",
+        "status": "ok"
+      },
+      {
+        "name": "flashinfer-original-benchmark.py",
+        "url": "https://raw.githubusercontent.com/flashinfer-ai/flashinfer/1ff1f79ec7417334f0cf6f603911215071275348/benchmarks/bench_sm120_attention.py",
+        "status": "ok"
+      },
+      {
+        "name": "flashinfer-pr4502-page.html",
+        "url": "https://github.com/flashinfer-ai/flashinfer/pull/4502",
+        "status": "ok"
+      },
+      {
+        "name": "openai-research.html",
+        "url": "https://openai.com/news/research/",
+        "status": "ok"
+      },
+      {
+        "name": "openai-engineering.html",
+        "url": "https://openai.com/news/engineering/",
+        "status": "ok"
+      },
+      {
+        "name": "openai-security.html",
+        "url": "https://openai.com/news/security/",
+        "status": "ok"
+      },
+      {
+        "name": "deepmind-news.html",
+        "url": "https://deepmind.google/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "google-research-index.html",
+        "url": "https://research.google/blog/",
+        "status": "ok"
+      },
+      {
+        "name": "ai2-research.html",
+        "url": "https://allenai.org/research",
+        "status": "ok"
+      },
+      {
+        "name": "deepmind-publications.html",
+        "url": "https://deepmind.google/research/publications/",
+        "status": "ok"
+      },
+      {
+        "name": "acl-index.html",
+        "url": "https://aclanthology.org/",
+        "status": "ok"
+      },
+      {
+        "name": "emnlp-index.html",
+        "url": "https://aclanthology.org/events/emnlp-2026/",
+        "status": "ok"
+      },
+      {
+        "name": "openreview-api.json",
+        "url": "https://api2.openreview.net/notes?invitation=ICLR.cc/2027/Conference/-/Submission&limit=20",
+        "status": "unavailable"
+      },
+      {
+        "name": "openreview-home.html",
+        "url": "https://openreview.net/",
+        "status": "ok"
+      },
+      {
+        "name": "neurips-download.html",
+        "url": "https://nips.cc/Downloads/2026",
+        "status": "ok"
+      },
+      {
+        "name": "neurips-proceedings.html",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2026",
+        "status": "unavailable"
+      },
+      {
+        "name": "alignment-index.html",
+        "url": "https://alignment.anthropic.com/",
+        "status": "ok"
+      },
+      {
+        "name": "ai2-blog.html",
+        "url": "https://allenai.org/blog",
+        "status": "ok"
+      },
+      {
+        "name": "social-blog.html",
+        "url": "https://research.google/blog/verifiable-social-reasoning-for-llm-assistants/",
+        "status": "ok"
+      },
+      {
+        "name": "massspec-blog.html",
+        "url": "https://deepmind.google/blog/interpreting-mass-spectra-with-google-antigravity/",
+        "status": "ok"
+      },
+      {
+        "name": "neon-card.html",
+        "url": "https://deepmind.google/models/model-cards/gemini-4-neon/",
+        "status": "ok"
+      },
+      {
+        "name": "protein-blog.html",
+        "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities/",
+        "status": "ok"
+      },
+      {
+        "name": "social-abstract.html",
+        "url": "https://arxiv.org/abs/2609.17496",
+        "status": "ok"
+      },
+      {
+        "name": "social-github-commits.json",
+        "url": "https://api.github.com/repos/google-research/google-research/commits?path=user_mediated_social_reasoning&per_page=100",
+        "status": "ok"
+      },
+      {
+        "name": "social-code.html",
+        "url": "https://github.com/google-research/google-research/tree/master/user_mediated_social_reasoning",
+        "status": "ok"
+      },
+      {
+        "name": "massspec-app.html",
+        "url": "https://antigravity.google/",
+        "status": "ok"
+      },
+      {
+        "name": "google-model-cards.html",
+        "url": "https://deepmind.google/models/model-cards/",
+        "status": "ok"
+      },
+      {
+        "name": "massspec-accuracy.svg",
+        "url": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/IsxadwTjRmxuf9LN/AGY_Mass-spec_fig-7__light.svg",
+        "status": "ok"
+      },
+      {
+        "name": "massspec-tokens.svg",
+        "url": "https://storage.googleapis.com/gdm-deepmind-com-prod-public/media/original_images/2aj6bbgSOGsnalbJ/AGY_Mass-spec_fig-8__light.svg",
+        "status": "ok"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": "https://deepmind.google/blog/interpreting-mass-spectra-with-google-antigravity/",
+      "title": "Mass Spec Skills: Tool-Grounded Molecular Identification with Lightweight Agents",
+      "category": "2.2",
+      "tags": [
+        "Scientific Agents",
+        "Tool Use",
+        "Reusable Skills",
+        "Evaluation"
+      ],
+      "published_on": "2026-11-25",
+      "first_seen_at": "2026-11-27T11:04:25.833+00:00",
+      "canonical_url": "https://deepmind.google/blog/interpreting-mass-spectra-with-google-antigravity/",
+      "links": {
+        "blog": "https://deepmind.google/blog/interpreting-mass-spectra-with-google-antigravity/",
+        "project": "https://antigravity.google/"
+      },
+      "summary": [
+        "Mass Spec Skills packages established spectral-search, formula-inference and molecular-validation tools into reusable workflows that a language-model agent can combine and explain.",
+        "On 100 spectra whose compounds occur in public reference libraries, the authors report about 97% exact identification across lightweight and frontier models with fewer generated tokens, making this a useful example of improving agents through reliable tools rather than model scale alone."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "Read the complete official technical post, including the end-to-end negative-ion example, the library-covered benchmark, and limitations; directly viewed the original Figure5a/5b SVGs after lossless rasterization. The workflow chains matchms cleaning, GNPS/MoNA library search, SIRIUS formula inference, MAGMa/MetFrag fragment scoring, PubChem candidates, and RDKit validity checks. Its illustrative end-to-end run disables library lookup and shows why equal matched intensity is insufficient: the verified molecule and rejected isomers all explain97.7% of summed intensity, so chemical connectivity and diagnostic neutral losses distinguish them. This single worked example is not the benchmark. The separate controlled benchmark samples100 Enamine REAL spectra in MoNA with structures in PubChem, filters under-fragmented recordings, and runs three attempts per spectrum per setup with Gemini3.8Flash, Gemini4Argon and Gemini4Carbon. No-internet/no-skills accuracy is below4%; internet-plus-skills reaches roughly97% for all three. Figures5a/5b display means and95% intervals; timeouts over one hour are failures, while transient infrastructure/quota errors are excluded. Generated tokens fall relative to internet-only tooling by nearly fourfold for Flash, half for Argon and nearly a fifth for Carbon; these are generated-token comparisons, not end-to-end cost or latency speedups. Delayed discovery for November27: original article metadata dates publication November25 17:00UTC, while the currently inspected version has a November26 11:24UTC modification timestamp, after the November26 report cutoff. No earlier version diff is available, so current quantitative content is not projected back into the November26 window. The original publication date is retained within the November27 72-hour discovery window; this is not a claimed new November27 scientific update. The official application entry point resolves successfully, but no standalone MassSpecSkills source-code or raw benchmark release is linked or claimed here.",
+        "limitations": "The quantitative study measures retrieval and verification for a filtered100-compound, library-covered population, not discovery of genuinely unknown molecular structures. Three attempts per spectrum are repeated measurements, not300 independent compounds. Library membership and candidate database coverage are central; many isomers and mirror-image molecules cannot be distinguished from tandem spectra alone and require other measurements. The case study does not establish general de-novo identification accuracy. Transient infrastructure/quota failures are excluded and raw denominators, code, prompts and numeric trial data are not released in the inspected post, limiting independent reproducibility and uncertainty auditing. Skills combine multiple changes, so the comparison does not isolate each tool or reasoning component. No experiments were executed."
+      },
+      "novelty": "newly-discovered"
+    },
+    {
+      "id": "https://huggingface.co/blog/training-swarms",
+      "title": "Swarms, Flocks, Gangs: How to build, train, and evaluate multi-agent systems",
+      "category": "2.6",
+      "tags": [
+        "Multi-Agent Learning",
+        "Communication",
+        "Shared Policy",
+        "Reproducibility"
+      ],
+      "published_on": "2026-11-26",
+      "first_seen_at": "2026-11-27T11:03:31.620+00:00",
+      "canonical_url": "https://huggingface.co/blog/training-swarms",
+      "links": {
+        "blog": "https://huggingface.co/blog/training-swarms",
+        "code": "https://github.com/huggingface/trl/tree/main/examples/async_grpo_s3_aggregation"
+      },
+      "summary": [
+        "A new Hugging Face experiment trains four agents sharing a 0.6B policy to communicate private numbers, using a common team reward and group-relative updates on an existing cooperative-learning task.",
+        "The 75-update run reaches 26/32 held-out successes and uses fewer training tokens per team; the accompanying TRL example makes the setup inspectable while clearly separating this narrow information-sharing result from general claims that swarms beat single agents."
+      ],
+      "evidence": {
+        "type": "engineering-report",
+        "access": "full-text",
+        "rationale": "Read the full current primary article from introduction through protocol, reported results, retry comparison, infrastructure, complete walkthrough and limitations; also read its immutable initial markdown and the linked immutable TRL README/training script statically, without running them. The existing November 5 s3 paper is context, not a new method release; only its abstract and protocol provenance were inspected, not its full experiments. Four logical agents share Qwen3-0.6B, each holding one private integer 1–99. Any one exact sorted-list answer wins. Eight team attempts per problem share group-standardized advantages across all their agents, with reward success×(1−0.25×min(1,tokens/36864)). The original run uses 256 teams/update on 32 sampled training problems, a 1024-problem training pool and one trainer plus seven H200 rollout GPUs. Over 75 updates, first/last-five training success rises 6.56→82.34% and training tokens fall 12826.9→8026.0,37.4%; the held-out checkpoint result is 26/32,81.25%, with no retained held-out token-efficiency measure. The best-of 8 comparison uses training problems and updates 2–5 already slightly trained, so it is an approximate comparison rather than a matched held-out causal estimate. Single agents cannot infer other agents’ private numbers, so this task does not test general equal-budget cooperation gains. The separate TRL walkthrough uses roughly 150 teams/update,50 updates/two GPUs, differs in prompt and sampling details, omits the original paper’s unspecified KL term and drops zero-variance groups. Its older README reports 60.9% on 192 held-out problems after 4.8h on two H100s; this is not the original 75-update result or a claimed replication. TRL PR 8424 was createdNovember 17 and mergedNovember 24. The article source has one reachable added-file commit eb7188be79b742ae0323deb86650b59d08bbb11b atNovember 26 12:49:47 UTC, which already contains the 75-update results. This is after the November 26 report cutoff; originalNovember 26 publication is retained and the study is conservatively assignedNovember 27 as a delayed discovery. Midnight JSONLD is not accepted as an exact public-release clock, and source commits cannot prove all historical public visibility or exclude deleted history. Earlier code and s3 are not re-promoted as new. Actual article, initial immutable source, PR metadata, linked example and immutable training file are HTTP 200. Earliest timestamped team discovery is the copied Recipe HF index’s successful completionNovember 27 11:03:31.620187 UTC.",
+        "limitations": "One small, synthetic private-information task and one reported original training run do not establish broad swarm scaling, better reasoning, seed robustness or benefits over a solvable single-agent baseline. The held-out sample is only 32 problems; training token reductions are not held-out cost, wall-clock or causal communication-efficiency gains. Repeated training-pool tasks and early partially trained best-of 8 baselines limit the retry comparison. The tutorial is a different run/implementation and its approximate team batching, omitted KL and group replacement matter. Source-history evidence is bounded, and exact historical public visibility is unknown. No jobs, model training, checkpoint downloads or independent reproductions were performed."
+      },
+      "novelty": "newly-discovered"
+    }
+  ]
+}
